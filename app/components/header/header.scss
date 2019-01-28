@@ -1,0 +1,111 @@
+.header {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  padding: 29px 0;
+
+  $b: &;
+
+  @include screen('lg') {
+    padding: 23px 0;
+  }
+
+  @include screen('md') {
+    padding: 7px 0;
+  }
+
+  &__logo {
+    fill: white;
+    width: 29px;
+    height: 36px;
+
+    @include screen('lg') {
+      width: 22px;
+      height: 28px;
+    }
+
+    @include screen('md') {
+      width: 13px;
+      height: 17px;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__container {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__burger {
+    width: 35px;
+    height: 35px;
+    position: relative;
+    display: block;
+
+    @include screen('lg') {
+      width: 27px;
+      height: 27px;
+    }
+
+    @include screen('md') {
+      width: 19px;
+      height: 17px;
+    }
+
+    span, &::before, &::after {
+      height: 7px;
+      width: 100%;
+      border-radius: 50px;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      margin-top: -3px;
+      background-color: white;
+
+      @include screen('lg') {
+        height: 5px;
+        margin-top: -2px;
+      }
+
+      @include screen('md') {
+        height: 1px;
+        margin-top: 0;
+      }
+    }
+
+    &::before, &::after {
+      content: '';
+    }
+
+    &::before {
+      transform: translate3d(0, -14px, 0);
+
+      @include screen('lg') {
+        transform: translate3d(0, -10px, 0);
+      }
+
+      @include screen('md') {
+        transform: translate3d(0, -7px, 0);
+      }
+    }
+
+    &::after {
+      transform: translate3d(0, 14px, 0);
+
+      @include screen('lg') {
+        transform: translate3d(0, 10px, 0);
+      }
+
+      @include screen('md') {
+        transform: translate3d(0, 7px, 0);
+      }
+    }
+  }
+}

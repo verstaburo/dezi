@@ -15,6 +15,7 @@ import '../blocks/rating/rating';
 import '../blocks/accordion/accordion';
 import '../blocks/dropdown/dropdown';
 import '../blocks/put-block-into-slot/put-block-into-slot';
+import aizkulises from '../components/aizkulises/aizkulises';
 
 const $ = window.$;
 
@@ -35,4 +36,6 @@ $(() => {
   numberinput();
   maps();
   scrollanimation();
+
+  aizkulises();
 });

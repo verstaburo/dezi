@@ -11,13 +11,51 @@
 @import '../components/**/*';
 @import '../pages/**/*';
 
+body {
+  overflow: hidden;
+}
+
 .container {
   width: $container-width;
   padding-left: $container-padding;
   padding-right: $container-padding;
   margin: 0 auto;
-  max-width: 100%;
   box-sizing: border-box;
+
+  @include screen('lg') {
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+
+  @include screen('md') {
+    padding-left: 7px;
+    padding-right: 7px;
+  }
+
+  &_inner {
+    padding-left: 160px;
+    padding-right: 160px;
+
+    @include screen('xl') {
+      padding-left: 100px;
+      padding-right: 100px;
+    }
+
+    @include screen('lg') {
+      padding-left: 75px;
+      padding-right: 75px;
+    }
+
+    @include screen('md') {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+  }
+
+  &_flex {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 .js-sr {

@@ -3,16 +3,16 @@
 // ##########
 // Базовые настройки сетки сайта
 // ##########
-$container-width: 960px; // Максимальная ширина контейнера контента
-$container-padding: 20px; // Отступы слева и справа у контейнера
+$container-width: 100%; // Максимальная ширина контейнера контента
+$container-padding: 36px; // Отступы слева и справа у контейнера
 $grid-container-width: 100%; // Ширина контейнера сетки
 $grid-cols: 12; // Количество колонок в сетке
-$grid-gap: 20px; // Расстояние между колонками
-$grid-gap-vertical: 20px; // Расстояние между строками в сетке
+$grid-gap: 26px; // Расстояние между колонками
+$grid-gap-vertical: 26px; // Расстояние между строками в сетке
 $grid-col-width: $grid-container-width/$grid-cols; // Ширина одной колонки
 $breakpoints: (
   'xl': 1920px,
-  'lg': 1280px,
+  'lg': 1366px,
   'md': 1024px,
   'sm': 768px,
   'xs': 480px
@@ -21,11 +21,19 @@ $breakpoints: (
 // ##########
 // Цвета
 // ##########
-$color-basic: black; // Основной цвет текста (применяется к body)
+$color-basic: white; // Основной цвет текста (применяется к body)
 $color-placeholder: #777; // Основной цвет для placeholder
 $color-input: black; // Основной цвет input, select и textarea
-$color-main: #2252d8; // Основной фирменный цвет
+$color-main: white; // Основной фирменный цвет
 $color-border: #ccc; // Основной цвет границ таблиц, секций
+
+$color-red: #d53b30;
+$color-red-dark: #4d2233;
+$color-yellow-light: #f3e2c3;
+$color-yellow-light-2: #f6f1e8;
+$color-yellow-light-3: #f6f2e9;
+$color-purple: #261923;
+$color-purple-2: #4a2132;
 
 // ##########
 // Transitions
@@ -35,5 +43,6 @@ $ease-main: .3s ease;
 // ##########
 // Шрифты
 // ##########
-$font-main: Arial, sans-serif; // Основной шрифт сайта
-$font-second: Times New Roman, sans-serif; // Дополнительный шрифт
+$font-main: 'Montserrat', Arial, sans-serif; // Основной шрифт сайта
+$font-second: 'Roboto', Arial, sans-serif; // Дополнительный шрифт
+$font-third: 'Corbel', Arial, sans-serif; // Дополнительный шрифт

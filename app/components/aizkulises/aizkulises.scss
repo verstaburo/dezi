@@ -1,0 +1,1384 @@
+.aizkulises {
+  display: block;
+  background-color: $color-red;
+  color: white;
+
+  $b: &;
+
+  &__col {
+    &_left {
+      flex: 1;
+      padding-right: 94px;
+
+      @include screen('lg') {
+        padding-right: 55px;
+      }
+
+      @include screen('md') {
+        padding-right: 35px;
+      }
+
+      &_fix {
+        flex: 0 auto;
+        width: 877px;
+        margin-right: 124px;
+        padding-right: 0;
+
+        @include screen('xl') {
+          margin-left: -224px;
+        }
+
+        @include screen('lg') {
+          margin-right: 95px;
+          width: 570px;
+          margin-left: -75px;
+        }
+
+        @include screen('md') {
+          width: 100%;
+          margin-right: 0;
+          margin-left: 0;
+        }
+      }
+    }
+
+    &_right {
+      width: 976px;
+      flex-shrink: 0;
+      min-height: 1px;
+
+      @include screen('xl') {
+        margin-right: -212px;
+      }
+
+      @include screen('lg') {
+        width: 740px;
+        margin-right: -171px;
+      }
+
+      @include screen('md') {
+        width: 100%;
+        margin-right: 0;
+        margin-top: 421px;
+      }
+
+      &_flex {
+        width: auto;
+        flex: 1;
+
+        @include screen('xl') {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+/* Блок с макбуком */
+.aizkulises-device {
+  display: block;
+  position: relative;
+  font-size: 0;
+
+  $b: &;
+
+  &_static-phone {
+    width: 159px;
+  }
+
+  &__screen {
+    width: 100%;
+    box-shadow: 0 0 93px rgba(21, 9, 18, 0.54);
+
+    #{$b}_iphone & {
+      height: 1026px;
+      overflow: hidden;
+      position: relative;
+
+      @include screen('lg') {
+        height: 770px;
+      }
+
+      @include screen('md') {
+        height: 363px;
+      }
+    }
+
+    #{$b}_static-phone & {
+      height: 347px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    img {
+      width: 100%;
+
+      #{$b}_iphone &, #{$b}_static-phone & {
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+    }
+  }
+
+  &__device {
+    position: absolute;
+    bottom: -150px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @include screen('lg') {
+      bottom: -111px;
+    }
+
+    @include screen('md') {
+      bottom: -41px;
+    }
+
+    #{$b}_ipad & {
+      bottom: -92px;
+
+      @include screen('lg') {
+        bottom: -71px;
+      }
+
+      @include screen('md') {
+        bottom: -27px;
+      }
+    }
+
+    #{$b}_iphone & {
+      bottom: 314px;
+
+      @include screen('lg') {
+        bottom: 30%;
+      }
+
+      @include screen('md') {
+        bottom: auto;
+        top: 38px;
+      }
+    }
+
+    #{$b}_static-phone & {
+      top: -9px;
+    }
+
+    img {
+      width: 1438px;
+
+      @include screen('lg') {
+        width: 1093px;
+      }
+
+      @include screen('md') {
+        width: 398px;
+      }
+
+      #{$b}_ipad & {
+        width: 868px;
+
+        @include screen('lg') {
+          width: 655px;
+        }
+
+        @include screen('md') {
+          width: 239px;
+        }
+      }
+
+      #{$b}_iphone & {
+        width: 709px;
+
+        @include screen('lg') {
+          width: 537px;
+        }
+
+        @include screen('md') {
+          width: 196px;
+        }
+      }
+
+      #{$b}_static-phone & {
+        width: 467px;
+      }
+    }
+  }
+}
+
+/* 1 экран */
+.aizkulises-offer {
+  display: block;
+  background-image: url('../images/aizkulises/bg_1.jpg');
+  background-size: cover;
+  background-position: center top;
+  padding: 200px 0 100px;
+  min-height: 899px;
+  box-sizing: border-box;
+
+  @include screen('xl') {
+    padding-top: 153px;
+    padding-bottom: 30px;
+  }
+
+  @include screen('lg') {
+    padding-top: 115px;
+    min-height: 682px;
+  }
+
+  @include screen('md') {
+    padding-top: 75px;
+    padding-bottom: 58px;
+    min-height: 715px;
+  }
+
+  &__right {
+    @include screen('md') {
+      width: 1px;
+      margin-right: 0;
+      margin-top: 231px;
+    }
+  }
+
+  &__phone {
+    margin-left: -90px;
+
+    @include screen('md', min) {
+      display: none;
+    }
+  }
+
+  &__device {
+    position: absolute;
+    left: 0;
+    top: 108px;
+    width: 100%;
+
+    @include screen('xl') {
+      top: 155px;
+    }
+
+    @include screen('lg') {
+      top: 118px;
+    }
+
+    @include screen('md') {
+      display: none;
+    }
+  }
+
+  &__logo {
+    fill: $color-yellow-light;
+    width: 100%;
+    height: 49px;
+    position: relative;
+
+    @include screen('lg') {
+      height: 34px;
+    }
+
+    @include screen('md') {
+      height: 17px;
+    }
+
+    img {
+      width: 515px;
+      position: absolute;
+      left: 0;
+      top: 0;
+
+      @include screen('lg') {
+        width: 390px;
+      }
+
+      @include screen('md') {
+        width: 195px;
+      }
+    }
+  }
+
+  &__link {
+    color: $color-yellow-light-2;
+    font-family: $font-second;
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 1;
+    margin-top: 86px;
+    display: block;
+    transition: opacity $ease-main;
+
+    @include screen('xl') {
+      margin-top: 102px;
+    }
+
+    @include screen('lg') {
+      font-size: 16px;
+      margin-top: 63px;
+    }
+
+    @include screen('md') {
+      font-size: 15px;
+      margin-top: 39px;
+    }
+
+    &:hover {
+      opacity: .5;
+    }
+  }
+
+  &__heading {
+    font-family: $font-third;
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+    margin-top: 70px;
+
+    @include screen('xl') {
+      margin-top: 37px;
+    }
+
+    @include screen('lg') {
+      font-size: 30px;
+      margin-top: 25px;
+    }
+
+    @include screen('md') {
+      margin-top: 33px;
+      line-height: 25px;
+    }
+  }
+
+  &__text {
+    font-family: $font-third;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-top: 45px;
+
+    @include screen('xl') {
+      margin-top: 69px;
+    }
+
+    @include screen('lg') {
+      font-size: 18px;
+      margin-top: 36px;
+    }
+
+    @include screen('md') {
+      margin-top: 43px;
+      font-size: 15px;
+      line-height: 20px;
+      margin-right: 80px;
+    }
+  }
+
+  .aizkulises__col_right {
+    position: relative;
+    z-index: 3;
+  }
+}
+
+/* 2 экран */
+.aizkulises-second {
+  display: block;
+
+  @include screen('md') {
+    display: none;
+  }
+
+  &__col {
+    position: relative;
+    flex: 1;
+  }
+
+  &__info {
+    min-height: 384px;
+    display: flex;
+    align-items: center;
+    padding-top: 42px;
+    padding-bottom: 42px;
+    position: relative;
+    box-sizing: border-box;
+
+    @include screen('lg') {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      min-height: 290px;
+    }
+
+    &::after,  &::before {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      left: -200px;
+    }
+
+    &::before {
+      background-color: $color-purple;
+    }
+
+    &::after {
+      background-color: rgba($color-purple, .82);
+      z-index: 2;
+    }
+  }
+
+  &__point {
+    position: relative;
+    z-index: 3;
+  }
+
+  &__flower {
+    width: 100%;
+    height: 1139px;
+    position: relative;
+
+    @include screen('lg') {
+      height: 863px;
+    }
+
+    img {
+      width: 429px;
+      left: -62px;
+      top: -97px;
+      position: absolute;
+      z-index: 1;
+
+      @include screen('xl') {
+        left: -161px;
+      }
+
+      @include screen('lg') {
+        width: 325px;
+        left: -121px;
+        top: -71px;
+      }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      left: -200px;
+      background-image: linear-gradient(to top, $color-purple 0%, $color-red-dark 100%);
+    }
+  }
+}
+
+/* Блок с инфо */
+.aizkulises-point {
+  display: block;
+
+  $b: &;
+
+  &_horizontal {
+    display: flex;
+  }
+
+  &__heading {
+    color: $color-yellow-light;
+    font-family: $font-third;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: .35em;
+
+    @include screen('lg') {
+      font-size: 9px;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 3px;
+      background-color: $color-red;
+      margin-top: 41px;
+
+      @include screen('lg') {
+        width: 22px;
+        height: 2px;
+        margin-top: 30px;
+      }
+
+      @include screen('md') {
+        width: 12px;
+        height: 1px;
+        margin-top: 16px;
+      }
+    }
+
+    #{$b}_bigtext & {
+      &::after {
+        margin-top: 44px;
+
+        @include screen('lg') {
+          margin-top: 33px;
+        }
+
+        @include screen('md') {
+          margin-top: 13px;
+        }
+      }
+    }
+
+    #{$b}_horizontal & {
+      white-space: nowrap;
+      flex-shrink: 0;
+      display: flex;
+      margin-top: 3px;
+
+      &::after {
+        margin-left: 28px;
+        margin-top: 6px;
+      }
+    }
+
+    #{$b}_purple & {
+      &::after {
+        background-color: $color-red-dark;
+      }
+    }
+  }
+
+  &__text {
+    font-family: $font-second;
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: -.04em;
+    margin-top: 54px;
+    line-height: 1.2;
+
+    @include screen('lg') {
+      font-size: 15px;
+      margin-top: 43px;
+    }
+
+    @include screen('md') {
+      margin-top: 17px;
+    }
+
+    #{$b}_bigtext & {
+      font-family: $font-third;
+      font-size: 35px;
+      font-weight: 700;
+      margin-top: 47px;
+
+      @include screen('lg') {
+        font-size: 27px;
+        margin-top: 35px;
+      }
+
+      @include screen('md') {
+        font-size: 15px;
+        margin-top: 15px;
+        line-height: 1.5;
+      }
+    }
+
+    #{$b}_horizontal & {
+      margin-top: 0;
+      margin-left: 34px;
+      flex: 1;
+    }
+  }
+}
+
+/* 3 экран */
+.aizkulises-third {
+  &__point {
+    margin-right: 90px;
+
+    @include screen('xl') {
+      margin-right: 30px;
+    }
+
+    @include screen('md') {
+      margin-right: 50px;
+    }
+  }
+
+  &__maps {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    width: 100%;
+  }
+
+  &__macbook {
+    display: none;
+
+    @include screen('md') {
+      display: block;
+      width: 270px;
+      position: absolute;
+      left: 25px;
+      top: 100%;
+      margin-top: -164px;
+    }
+  }
+
+  &__woodman {
+    position: absolute;
+    bottom: 0;
+    right: -108px;
+
+    @include screen('xl') {
+      right: 113px;
+    }
+
+    @include screen('lg') {
+      width: 229px;
+      right: 87px;
+    }
+
+    @include screen('md') {
+      display: none;
+    }
+  }
+
+  &__iphone {
+    width: 241px;
+    margin-right: 134px;
+    flex-shrink: 0;
+
+    @include screen('lg') {
+      width: 183px;
+    }
+
+    @include screen('lg') {
+      margin-right: 101px;
+    }
+
+    @include screen('md') {
+      width: 67px;
+      margin-right: 41px;
+    }
+  }
+
+  &__text {
+    font-family: $font-third;
+    font-size: 35px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-right: 226px;
+    padding: 50px 0 100px;
+    position: relative;
+    z-index: 3;
+    word-break: break-word;
+
+    @include screen('xl') {
+      font-size: 30px;
+      margin-right: 275px;
+      padding: 50px 0 181px;
+    }
+
+    @include screen('lg') {
+      font-size: 23px;
+      margin-right: 225px;
+      padding-bottom: 154px;
+    }
+
+    @include screen('md') {
+      font-size: 15px;
+      margin-right: 0;
+      padding-top: 57px;
+      line-height: 1.5;
+      padding-bottom: 66px;
+    }
+
+    p:first-child {
+      @include screen('md') {
+        font-size: 27px;
+        line-height: 23px;
+      }
+    }
+
+    p:not(:first-child) {
+      margin-top: 1.2em;
+
+      @include screen('md') {
+        margin-top: 3.1em;
+      }
+    }
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    margin-top: 32px;
+    position: relative;
+
+    @include screen('lg') {
+      margin-top: 25px;
+    }
+
+    @include screen('md') {
+      margin-top: 9px;
+      align-items: flex-start;
+    }
+  }
+
+  &__device {
+    width: 651px;
+
+    @include screen('lg') {
+      width: 491px;
+    }
+
+    @include screen('md') {
+      width: 179px;
+    }
+  }
+
+  &__list {
+    margin-top: 217px;
+
+    @include screen('xl') {
+      margin-top: 168px;
+      margin-left: -17px;
+    }
+
+    @include screen('lg') {
+      margin-top: 92px;
+    }
+
+    @include screen('md') {
+      margin-left: 0;
+      margin-top: 37px;
+    }
+  }
+
+  &__col_left {
+    padding-top: 190px;
+    padding-bottom: 590px;
+    position: relative;
+
+    @include screen('lg') {
+      padding-top: 375px;
+      padding-bottom: 300px;
+    }
+
+    @include screen('md') {
+      width: 100%;
+      flex: 0 auto;
+      padding: 44px 25px 205px;
+      margin: 0 -25px;
+      background-color: $color-purple;
+      z-index: 2;
+
+      .aizkulises-point__heading:after {
+        background-color: $color-red;
+      }
+    }
+  }
+
+  &__screen {
+    box-shadow: 0 11px 76px rgba(72, 20, 16, 0.54);
+    position: absolute;
+    left: 0;
+    top: -435px;
+    width: 526px;
+    z-index: 2;
+
+    @include screen('xl') {
+      left: -100px;
+      top: -321px;
+      width: 387px;
+    }
+
+    @include screen('lg') {
+      left: -75px;
+      top: -244px;
+      width: 293px;
+    }
+
+    @include screen('md') {
+      order: -1;
+      position: static;
+      width: 148px;
+      height: 178px;
+      margin-right: -25px;
+      margin-top: 55px;
+    }
+  }
+
+  &__map {
+    margin-left: 126px;
+    width: 100%;
+    flex-grow: 1;
+    min-width: 50%;
+    margin-right: -160px;
+
+    @include screen('xl') {
+      margin-right: -100px;
+      margin-left: -100px;
+    }
+
+    @include screen('md') {
+      margin-top: 21px;
+      margin-left: -25px;
+      margin-right: -25px;
+    }
+  }
+
+  &__map-point {
+    margin: 74px 14% 0 31.7%;
+
+    @include screen('xl') {
+      margin: 74px 0 0 24.1%;
+    }
+
+    @include screen('lg') {
+      margin-top: 57px;
+      margin-left: 23.1%;
+    }
+
+    @include screen('md') {
+      order: -2;
+      margin-left: 0;
+      margin-top: 0;
+      display: block;
+      flex: 1;
+      margin-right: 26px;
+      display: block;
+      word-break: break-word;
+
+      .aizkulises-point__text {
+        margin-left: 0;
+        margin-top: 16px;
+        line-height: 1.5;
+      }
+
+      .aizkulises-point__heading:after {
+        margin-left: 0;
+        margin-top: 18px;
+      }
+    }
+  }
+}
+
+/* Карта */
+.aizkulises-map {
+  height: 956px;
+  background-color: $color-yellow-light-3;
+  position: relative;
+
+  @include screen('lg') {
+    height: 724px;
+  }
+
+  @include screen('md') {
+    height: 363px;
+  }
+
+  img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 2106px;
+
+    @include screen('lg') {
+      width: 1600px;
+    }
+
+    @include screen('md') {
+      width: 1000px;
+    }
+  }
+}
+
+/* Список с иконками */
+.aizkulises-list {
+  display: block;
+
+  $b: &;
+
+  &__item {
+    position: relative;
+    padding-left: 77px;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    font-family: $font-third;
+    font-size: 35px;
+    font-weight: 700;
+    box-sizing: border-box;
+    padding-top: 14px;
+
+    @include screen('xl') {
+      font-size: 30px;
+    }
+
+    @include screen('lg') {
+      font-size: 23px;
+      padding-left: 63px;
+    }
+
+    @include screen('md') {
+      font-size: 15px;
+      padding-left: 50px;
+      min-height: 34px;
+      padding-top: 0;
+    }
+
+    &:not(:first-child) {
+      margin-top: 45px;
+
+      @include screen('lg') {
+        margin-top: 19px;
+      }
+
+      @include screen('md') {
+        margin-top: 23px;
+      }
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    left: 25px;
+    transform: translate(-50%, -50%);
+    stroke: $color-purple;
+    fill: transparent;
+
+    @include screen('lg') {
+      transform: scale(.8) translate(-50%, -50%);
+    }
+
+    @include screen('md') {
+      transform: translate(-50%,-50%) scale(.5);
+      stroke: $color-yellow-light;
+      left: 15px;
+    }
+  }
+}
+
+/* Блок с фотографиями */
+.aizkulises-photos {
+  display: block;
+  position: relative;
+  margin-top: 195px;
+
+  @include screen('xl') {
+    margin-top: 132px;
+  }
+
+  @include screen('lg') {
+    margin-top: 74px;
+  }
+
+  @include screen('md') {
+    margin-top: 0;
+  }
+
+  &__photos {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__photo {
+    width: 25%;
+    height: 322px;
+    overflow: hidden;
+    position: relative;
+
+    @include screen('xl') {
+      height: 227px;
+    }
+
+    @include screen('lg') {
+      height: 173px;
+    }
+
+    @include screen('md') {
+      width: 33.333%;
+      height: 72px;
+    }
+
+    img {
+      @include fill-img;
+    }
+  }
+
+  &__content {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 78px 0;
+    display: flex;
+    align-items: flex-end;
+    box-sizing: border-box;
+    background-image: linear-gradient(45deg, $color-purple-2 10%, transparent);
+
+    @include screen('xl') {
+      padding: 106px 0;
+    }
+
+    @include screen('lg') {
+      padding: 63px 0;
+    }
+
+    @include screen('md') {
+      background-image: none;
+      position: static;
+      background-color: $color-purple;
+      padding: 39px 0 51px;
+    }
+  }
+
+  &__point {
+    max-width: 40%;
+
+    @include screen('xl') {
+      max-width: 53%;
+    }
+
+    @include screen('lg') {
+      max-width: 50%;
+    }
+
+    @include screen('md') {
+      max-width: 100%;
+    }
+  }
+}
+
+/* 4 секция */
+.aizkulises-fourth {
+  display: block;
+
+  $b: &;
+
+  &__right {
+    @include screen('md') {
+      margin-top: 0;
+    }
+  }
+
+  &__info {
+    position: relative;
+    padding-top: 117px;
+    padding-bottom: 394px;
+
+    @include screen('xl') {
+      padding-top: 89px;
+      padding-bottom: 226px;
+    }
+
+    @include screen('lg') {
+      padding-top: 67px;
+      padding-bottom: 170px;
+    }
+
+    @include screen('md') {
+      margin: 0 -25px;
+      padding: 45px 25px 280px;
+      background-color: $color-purple;
+    }
+
+    &::before {
+      content: '';
+      background-image: linear-gradient(to top, $color-purple 0%, $color-red-dark 100%);
+      position: absolute;
+      right: -160px;
+      top: 0;
+      bottom: 0;
+      left: -1200px;
+
+      @include screen('md') {
+        top: auto;
+        left: 0;
+        right: 0;
+        height: 160px;
+      }
+    }
+  }
+
+  &__house {
+    position: relative;
+    z-index: 3;
+    margin-top: 134px;
+    margin-left: -27px;
+    width: 887px;
+
+    @include screen('xl') {
+      margin-top: 106px;
+    }
+
+    @include screen('lg') {
+      width: 673px;
+      margin-left: -115px;
+      margin-top: 79px;
+    }
+
+    @include screen('md') {
+      margin-left: 0;
+      width: 268px;
+      margin-top: -222px;
+    }
+
+    &_first {
+      @include screen('md') {
+        display: none;
+      }
+    }
+
+    &_second {
+      @include screen('md', min) {
+        display: none;
+      }
+    }
+  }
+
+  &__point {
+    position: relative;
+    z-index: 3;
+
+    .aizkulises-point__text {
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 287px;
+        height: 3px;
+        background-color: $color-red;
+        bottom: 12px;
+        right: 100%;
+        margin-right: 40px;
+
+        @include screen('xl') {
+          bottom: 50%;
+        }
+
+        @include screen('lg') {
+          bottom: 43%;
+          width: 216px;
+          height: 2px;
+          margin-right: 31px;
+        }
+      }
+    }
+  }
+
+  &__filter {
+    margin-top: -242px;
+
+    @include screen('xl') {
+      margin-top: -140px;
+    }
+
+    @include screen('lg') {
+      margin-top: -106px;
+    }
+
+    @include screen('md') {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__screen {
+    font-size: 0;
+    position: relative;
+
+    @include screen('xl') {
+      margin-left: -72px;
+      margin-right: -34px;
+    }
+
+    @include screen('lg') {
+      margin-left: -55px;
+      margin-right: -36px;
+    }
+
+    @include screen('md') {
+      order: 1000;
+      margin-left: 0;
+      margin-right: 0;
+      margin-top: 47px;
+    }
+
+    img {
+      width: 100%;
+      box-shadow: 0 0 93px rgba(21, 9, 18, 0.54);
+      position: relative;
+      z-index: 1;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      left: -1200px;
+      background-image: linear-gradient(5deg, #ff4a3d 0%, $color-red-dark 100%);
+
+      @include screen('md') {
+        display: none;
+      }
+    }
+  }
+
+  &__text {
+    font-family: $font-third;
+    font-size: 35px;
+    font-weight: 700;
+    margin-top: 106px;
+    line-height: 1.2;
+
+    @include screen('xl') {
+      margin-top: 88px;
+    }
+
+    @include screen('lg') {
+      font-size: 27px;
+      margin-top: 65px;
+    }
+
+    @include screen('md') {
+      line-height: 23px;
+      margin-top: 144px;
+    }
+  }
+}
+
+/* 5 секция */
+.aizkulises-five {
+  display: block;
+  padding: 260px 0 195px;
+
+  $b: &;
+
+  @include screen('xl') {
+    padding-top: 185px;
+    padding-bottom: 177px;
+  }
+
+  @include screen('lg') {
+    padding-top: 141px;
+    padding-bottom: 131px;
+  }
+
+  @include screen('md') {
+    padding-top: 54px;
+    padding-bottom: 58px;
+  }
+
+  &__right {
+    @include screen('md') {
+      margin-top: 0;
+    }
+  }
+
+  &__screenshots {
+    width: 100%;
+    padding-bottom: 67.84%;
+    position: relative;
+    margin-bottom: -47.3%;
+    margin-top: -9.2%;
+
+    @include screen('xl') {
+      margin-bottom: -52.7%;
+      margin-top: -4.7%;
+    }
+
+    @include screen('lg') {
+      margin-top: -4.2%;
+    }
+
+    @include screen('md') {
+      margin-top: 41.8%;
+      margin-bottom: -31%;
+      padding-bottom: 112.84%;
+    }
+
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 143.4%;
+
+      @include screen('xl') {
+        height: 185%;
+      }
+    }
+  }
+
+  &__point {
+    position: relative;
+    z-index: 2;
+
+    @include screen('md') {
+      margin-left: 36px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    width: 100%;
+    align-items: flex-end;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__decor {
+    width: 497px;
+    flex-shrink: 0;
+    margin-right: 137px;
+    margin-left: -7px;
+
+    @include screen('xl') {
+      margin-left: -141px;
+      margin-right: 46px;
+    }
+
+    @include screen('lg') {
+      width: 376px;
+      margin-right: 34px;
+      margin-left: -106px;
+    }
+
+    @include screen('md') {
+      display: none;
+    }
+  }
+
+  &__text {
+    font-family: $font-third;
+    font-size: 35px;
+    font-weight: 700;
+    flex: 1;
+    margin-right: 15%;
+    margin-bottom: 179px;
+    line-height: 1.2;
+
+    @include screen('xl') {
+      margin-bottom: 156px;
+      margin-right: 10%;
+    }
+
+    @include screen('lg') {
+      font-size: 27px;
+      margin-bottom: 122px;
+    }
+
+    @include screen('md') {
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+  }
+}
