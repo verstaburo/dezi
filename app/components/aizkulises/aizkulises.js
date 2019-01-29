@@ -9,7 +9,7 @@ export default function aizkulises() {
     let
       siteWidth = 320,
       w = $(this);
-  
+
     if (w.width() >= 768) siteWidth = 1042;
     if (w.width() < 768) siteWidth = 320;
 
