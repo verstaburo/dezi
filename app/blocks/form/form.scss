@@ -1,0 +1,18 @@
+.form {
+  display: block;
+
+  $b: &;
+
+  button[type="submit"] {
+    margin-top: 60px;
+
+    @include screen('lg') {
+      margin-top: 47px;
+    }
+
+    @include screen('md') {
+      margin-top: 33px;
+      width: 100%;
+    }
+  }
+}

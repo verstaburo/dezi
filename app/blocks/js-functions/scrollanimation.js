@@ -6,7 +6,7 @@ const $ = window.$;
 
 export default function scrollanimation() {
   // Стандартные настройки
-  const sr = ScrollReveal({
+  /* const sr = ScrollReveal({
     origin: 'bottom',
     reset: false,
     mobile: false,
@@ -18,39 +18,32 @@ export default function scrollanimation() {
     cleanup: true,
   });
 
-  if ($('.js-sr_1').length) {
-    sr.reveal('.js-sr_1');
+  function makeSr(el, options) {
+    if ($(el).length) {
+      $(el).each(function () {
+        sr.reveal($(this), options);
+      });
+    }
   }
 
-  if ($('.js-sr_2').length) {
-    sr.reveal('.js-sr_2', {
-      delay: 100,
-    });
+  function makeRepeatSr(el, options) {
+    if ($(el).length) {
+      let myDelay = 0;
+
+      $(el).each(function () {
+        sr.reveal($(this), options);
+      });
+
+      myDelay += 50;
+    }
   }
 
-  if ($('.js-sr_3').length) {
-    sr.reveal('.js-sr_3', {
-      delay: 200,
-    });
-  }
-
-  if ($('.js-sr_4').length) {
-    sr.reveal('.js-sr_4', {
-      delay: 300,
-    });
-  }
-
-  if ($('.js-sr_5').length) {
-    sr.reveal('.js-sr_5', {
-      delay: 400,
-    });
-  }
-
-  if ($('.js-sr_6').length) {
-    sr.reveal('.js-sr_6', {
-      origin: 'left',
-    });
-  }
+  makeSr('.js-sr_1', {});
+  makeSr('.js-sr_2', { delay: 100 });
+  makeSr('.js-sr_3', { delay: 200 });
+  makeSr('.js-sr_4', { delay: 300 });
+  makeSr('.js-sr_5', { delay: 400 });
+  makeSr('.js-sr_6', { origin: 'left' });
 
   if ($('.js-sr_7').length) {
     let myDelay = 0;
@@ -66,9 +59,38 @@ export default function scrollanimation() {
     });
   }
 
+  if ($('.js-sr_8').length) {
+    let myDelay = 0;
+
+    $('.js-sr_8').each(function () {
+      sr.reveal($(this), {
+        delay: myDelay,
+        distance: '50px',
+      });
+
+      myDelay += 50;
+    });
+  }
+
+  if ($('.js-sr_9').length) {
+    let myDelay = 0;
+
+    $('.js-sr_9').each(function () {
+      sr.reveal($(this), {
+        delay: myDelay,
+        distance: '0px',
+        scale: 0.9,
+      });
+
+      myDelay += 50;
+    });
+  }
+
   // Показываем элементы, если ScrollReveal не поддерживается
   if (!sr.isSupported()) {
     $(document).find('.js-sr').removeClass('.js-sr');
-  }
+  } */
+
+  $(document).find('.js-sr').removeClass('js-sr');
 }
 /* eslint-enable no-unused-vars */

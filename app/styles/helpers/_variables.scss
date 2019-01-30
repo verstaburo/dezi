@@ -4,18 +4,27 @@
 // Базовые настройки сетки сайта
 // ##########
 $container-width: 100%; // Максимальная ширина контейнера контента
-$container-padding: 36px; // Отступы слева и справа у контейнера
+$container-padding: 26px; // Отступы слева и справа у контейнера
 $grid-container-width: 100%; // Ширина контейнера сетки
-$grid-cols: 12; // Количество колонок в сетке
+$grid-cols: 13; // Количество колонок в сетке
 $grid-gap: 26px; // Расстояние между колонками
 $grid-gap-vertical: 26px; // Расстояние между строками в сетке
 $grid-col-width: $grid-container-width/$grid-cols; // Ширина одной колонки
-$breakpoints: (
+
+/* $breakpoints: (
   'xl': 1920px,
   'lg': 1366px,
   'md': 1024px,
   'sm': 768px,
   'xs': 480px
+); */
+
+$breakpoints: (
+  'xl': 1366px,
+  'lg': 1024px,
+  'md': 768px,
+  'sm': 480px,
+  'xs': 320px
 );
 
 // ##########
@@ -29,11 +38,20 @@ $color-border: #ccc; // Основной цвет границ таблиц, с�
 
 $color-red: #d53b30;
 $color-red-dark: #4d2233;
+
 $color-yellow-light: #f3e2c3;
 $color-yellow-light-2: #f6f1e8;
 $color-yellow-light-3: #f6f2e9;
+$color-yellow-light-4: #f2ecd9;
+
 $color-purple: #261923;
 $color-purple-2: #4a2132;
+
+$color-grey: #777d82;
+$color-grey-dark: #010101;
+$color-grey-dark-2: #111317;
+$color-grey-dark-3: #364246;
+$color-grey-dark-4: #24262b;
 
 // ##########
 // Transitions

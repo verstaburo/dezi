@@ -1,5 +1,8 @@
 /* eslint-disable */
 const $ = window.$;
+const sr = window.sr;
+
+import ScrollReveal from 'scrollreveal';
 
 export default function aizkulises() {
   if ($('.aizkulises').length < 1) return;
@@ -7,16 +10,39 @@ export default function aizkulises() {
   // Масштабирование сайта
   $(window).on('load resize', function () {
     let
-      siteWidth = 320,
-      w = $(this);
+      siteWidth,
+      w = $(this),
+      screenSize = w.width();
 
-    if (w.width() >= 768) siteWidth = 1042;
-    if (w.width() < 768) siteWidth = 320;
+    if (screenSize < 768) siteWidth = 320;
+    if (screenSize >= 768) siteWidth = 1024;
+    if (screenSize >= 1024) siteWidth = 1366;
+    if (screenSize >= 1366) siteWidth = 1920;
 
-    let scale = screen.width /siteWidth
+    let scale = screenSize / siteWidth;
 
-    document.querySelector('meta[name="viewport"]').setAttribute('content', 'width='+siteWidth+', initial-scale='+scale+'');
+    $('html').css({
+      zoom: scale,
+    });
+
+    /* w.scroll(function () {
+      const sT = $(this).scrollTop();
+
+      $('.js-sr').each(function () {
+        const el = $(this);
+        const top = el.offset().top * zoom;
+
+        if (sT > top + w.height()) {
+          el.css({
+            visibility: 'visible',
+          });
+        }
+      });
+    });*/
+
+    // document.querySelector('meta[name="viewport"]').setAttribute('content', 'width='+siteWidth+', initial-scale='+scale+'');
   });
+
 
   // Скролл скриншотов в последней секции
   $(window).scroll(function () {

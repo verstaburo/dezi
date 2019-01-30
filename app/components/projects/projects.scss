@@ -1,0 +1,68 @@
+.projects {
+  display: flex;
+  background-color: $color-grey-dark-2;
+
+  $b: &;
+
+  &__project {
+    width: 25%;
+    height: 651px;
+    overflow: hidden;
+    position: relative;
+
+    @include screen('xl') {
+      height: 459px;
+    }
+
+    @include screen('lg') {
+      height: 348px;
+    }
+
+    @include screen('md') {
+      height: 217px;
+      width: 50%;
+
+      &:nth-child(n + 3) {
+        display: none;
+      }
+    }
+  }
+
+  &__bg {
+    @include fill-img;
+    @include performance;
+
+    transition: transform $ease-main;
+    transform: scale(1.01);
+
+    #{$b}__project:hover & {
+      transform: scale(1.1);
+    }
+  }
+
+  &__text {
+    font-family: $font-second;
+    font-size: 20px;
+    font-weight: 700;
+    transition: transform $ease-main;
+    color: $color-yellow-light-4;
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    top: 48px;
+    text-align: center;
+    line-height: 1.2;
+
+    @include screen('xl') {
+      display: none;
+    }
+
+    #{$b}__project_dark & {
+      color: $color-grey-dark;
+    }
+
+    #{$b}__project:hover & {
+      transform: translate3d(0, 10px, 0);
+    }
+  }
+}

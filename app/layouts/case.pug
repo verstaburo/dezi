@@ -1,0 +1,19 @@
+include _externalIncludes
+include _internalIncludes
+
+doctype html
+html(lang='ru')
+  include head
+  body
+    +header
+    block content
+    +case-form
+    +projects([
+      ['assets/images/projects/project_1.jpg', 'Дизайн логотипа для отеля Redstone'],
+      ['assets/images/projects/project_2.jpg', 'Нейминг, стиль и магазин 4mebeles', true],
+      ['assets/images/projects/project_3.jpg', 'Ребрендинг и поддержка meta'],
+      ['assets/images/projects/project_4.jpg', 'Дизайн интернет-магазина Secret Place', true]
+    ])
+    +footer
+    script(src='assets/scripts/app.min.js')
+    script(src='assets/scripts/main.js')

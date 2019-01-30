@@ -1,0 +1,7 @@
+mixin projects(array)
+  +b.projects&attributes(attributes)
+    each project in array
+      - var darkClass = project[2] ? '_dark' : '';
+      +e.A.project(href="#" class=darkClass || '').js-sr.js-sr_9
+        +e.IMG.bg(src=project[0])
+        +e.P.text!= project[1]

@@ -1,0 +1,178 @@
+.case-form {
+  display: block;
+  background-color: $color-grey-dark-2;
+  padding: 104px 0 115px;
+
+  @include screen('xl') {
+    padding-bottom: 101px;
+  }
+
+  @include screen('lg') {
+    padding-top: 78px;
+    padding-bottom: 76px;
+  }
+
+  @include screen('md') {
+    padding-top: 39px;
+    padding-bottom: 0;
+  }
+
+  $b: &;
+
+  &__heading {
+    color: white;
+    font-family: $font-third;
+    font-size: 35px;
+    font-weight: 700;
+
+    @include screen('lg') {
+      font-size: 27px;
+    }
+
+    @include screen('md') {
+      font-size: 15px;
+    }
+  }
+
+  &__right {
+    margin-top: 17px;
+
+    @include screen('md') {
+      background-color: black;
+      margin-top: 40px;
+      padding-left: 25px;
+      padding-right: 25px;
+      margin-left: -13px;
+      margin-right: -13px;
+      width: auto;
+      padding-bottom: 71px;
+      display: block;
+    }
+  }
+
+  &__grid {
+    margin-top: 90px;
+    justify-content: space-between;
+
+    @include screen('lg') {
+      margin-top: 59px;
+    }
+
+    @include screen('md') {
+      margin-top: 7px;
+      display: block;
+    }
+  }
+
+  &__form {
+
+  }
+
+  &__links {
+    margin-top: -20px;
+
+    @include screen('md') {
+      margin-top: -8px;
+      margin-bottom: 54px;
+    }
+  }
+
+  &__text {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: .17em;
+    color: $color-grey;
+    text-align: left;
+
+    @include screen('lg') {
+      font-size: 11px;
+    }
+
+    @include screen('md') {
+      font-size: 12px;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    &:not(:first-child) {
+      margin-top: 83px;
+
+      @include screen('lg') {
+        margin-top: 63px;
+      }
+
+      @include screen('md') {
+        margin-top: 23px;
+      }
+    }
+  }
+
+  &__link, &__text a {
+    transition: color $ease-main;
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  &__link {
+    fill: $color-grey-dark-4;
+    stroke: transparent;
+    display: inline-flex;
+    margin-top: 20px;
+    align-items: center;
+
+    @include screen('md') {
+      width: 100%;
+      margin-top: 33px;
+    }
+
+    &:not(:last-child) {
+      margin-right: 56px;
+
+      @include screen('lg') {
+        margin-right: 40px;
+      }
+    }
+
+    &_stroke {
+      fill: transparent;
+      stroke: $color-grey-dark-4;
+    }
+  }
+
+  &__icon {
+    height: 17px;
+    width: 17px;
+    margin-right: 10px;
+    flex-shrink: 0;
+
+    @include screen('lg') {
+      width: 13px;
+      height: 13px;
+      margin-right: 9px;
+    }
+
+    @include screen('md') {
+      width: 19px;
+      height: 20px;
+      margin-right: 20px;
+    }
+
+    #{$b}__link_behance & {
+      width: 24px;
+
+      @include screen('lg') {
+        width: 18px;
+      }
+
+      @include screen('md') {
+        width: 19px;
+      }
+    }
+  }
+}
