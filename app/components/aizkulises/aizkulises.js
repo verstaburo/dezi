@@ -2,6 +2,9 @@
 const $ = window.$;
 
 export default function aizkulises() {
+  /*
+  На мобильных устройствах отключаем анимацию
+   */
   let isMobile = false;
 
   if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|ipad|iris|kindle|Android|Silk|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(navigator.userAgent)
@@ -10,8 +13,8 @@ export default function aizkulises() {
   }
 
   /*
-   Масштабирование сайта
-    */
+  Масштабирование сайта
+   */
   let scale = 1;
   const w = $(window);
 
@@ -69,9 +72,10 @@ export default function aizkulises() {
 
     // Общий список классов анимаций
     let classes = '';
-    for (let i = 0; i < 10; i++) { classes += `${baseClass}_${i} ` }
+    for (let i = 0; i < 11; i++) { classes += `${baseClass}_${i} ` }
     for (let i = 0; i < animClasses.length; i++) { classes += `${animClasses[i]} ` }
 
+    // Анимация блоков
     $('.js-sr').each(function () {
       const
         el = $(this),
@@ -96,7 +100,6 @@ export default function aizkulises() {
       }
     });
   });
-
 
   /*
   Не использовать эти скрипты на других страницах

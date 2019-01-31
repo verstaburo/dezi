@@ -13,9 +13,9 @@ mixin aizkulises-col-right()
 mixin aizkulises-device(image, device)
   +b.aizkulises-device&attributes(attributes)
     +e.screen
-      img(src=image)
+      img(src=image alt="")
     +e.device
-      img(src=device)
+      img(src=device alt="")
 
 mixin aizkulises-point(heading, text)
   +b.aizkulises-point&attributes(attributes)
@@ -34,7 +34,7 @@ mixin aizkulises-offer(logo, link, heading, text)
     .container.container_inner.container_flex
       +aizkulises-col-left
         +e.logo.js-sr.js-sr_1
-          img(src=logo)
+          img(src=logo alt="")
         +e.A.link(href=link target="_blank").js-sr.js-sr_2!= link
         +e.H1.heading.js-sr.js-sr_3!= heading
         +e.P.text.js-sr.js-sr_4!= text
@@ -44,7 +44,7 @@ mixin aizkulises-offer(logo, link, heading, text)
 mixin aizkulises-map()
   +b.aizkulises-map&attributes(attributes)
     +e.picture
-      img(src="assets/images/aizkulises/map.png")
+      img(src="assets/images/aizkulises/map.png" alt="")
 
 mixin aizkulises-second()
   +b.SECTION.aizkulises-second&attributes(attributes)
@@ -53,7 +53,7 @@ mixin aizkulises-second()
         +aizkulises-col-left.aizkulises-second__info
           +aizkulises-point('ЗАДАЧА', 'Нашей задачей стало создание яркого, современного и стильного сайта, который доступно рассказал покупателям о всех самых важных аспектах нового проекта.').__point
         +e.flower
-          img(src="assets/images/aizkulises/flower.png").js-sr.js-sr_10
+          img(src="assets/images/aizkulises/flower.png" alt="").js-sr.js-sr_10
       +aizkulises-col-right
 
 mixin aizkulises-third()
@@ -76,12 +76,12 @@ mixin aizkulises-third()
           +e.text.js-sr.js-sr_3
             p Адаптивный дизайн сайта — важная составляющая процесса продаж.
             p Дать возможность пользователям узнать нужную информацию в любой момент — ключевой фактор в принятии такого ответственного решения как покупка квартиры.
-          +e.IMG.woodman(src="assets/images/aizkulises/woodman.png").js-sr.js-sr_6
+          +e.IMG.woodman(src="assets/images/aizkulises/woodman.png" alt="").js-sr.js-sr_6
 
       +e.maps
         +aizkulises-map.__map
         +aizkulises-point('КАРТА', 'Инфраструктура — важная часть жилой среды. Для сайта мы нарисовали карту, указывающую все основные объекты вокруг проекта Aizkulises.')._horizontal._purple.__map-point
-        +e.IMG.screen(src="assets/images/aizkulises/page_3.jpg").js-sr.js-sr_10
+        +e.IMG.screen(src="assets/images/aizkulises/page_3.jpg" alt="").js-sr.js-sr_10
 
 mixin aizkulises-photos(array)
   +b.SECTION.aizkulises-photos&attributes(attributes)
@@ -91,20 +91,20 @@ mixin aizkulises-photos(array)
     +e.photos
       each photo in array
         +e.photo.js-sr.js-sr_7
-          img(src=photo)
+          img(src=photo alt="")
 
 mixin aizkulises-fourth()
   +b.SECTION.aizkulises-fourth&attributes(attributes)
     .container.container_inner.container_flex
       +aizkulises-col-left.aizkulises__col_left_fix
-        +e.IMG.house(src="assets/images/aizkulises/house.png")._first.js-sr.js-sr_10
+        +e.IMG.house(src="assets/images/aizkulises/house.png" alt="")._first.js-sr.js-sr_10
       +aizkulises-col-right.aizkulises__col_right_flex.aizkulises-fourth__right
         +e.info
           +aizkulises-point('ПЛАНИРОВКИ', 'Каждая квартира на сайте снабжена иллюстрацией с планировкой объекта, чтобы покупателям было легче представить масштаб квартиры и приблизительный образ будущего жилья.')._bigtext.__point
-        +e.IMG.house(src="assets/images/aizkulises/house.png")._second
+        +e.IMG.house(src="assets/images/aizkulises/house.png" alt="")._second
         +e.filter
           +e.screen.js-sr.js-sr_1
-            img(src="assets/images/aizkulises/page_5.jpg")
+            img(src="assets/images/aizkulises/page_5.jpg" alt="")
           +e.text.js-sr.js-sr_2 Выбор осуществляется при помощи удобного фильтра, который расположен поверх всех страница сайта.
 
 mixin aizkulises-five()
@@ -115,9 +115,9 @@ mixin aizkulises-five()
         +aizkulises-point('СТРАНИЦЫ', 'Вся необходимая информация поместилась на небольшом количестве страниц. Мы руководствовались соображением о том, что пользователь должен получить только самые важные данные в самые короткие сроки.')._purple.__point
 
     +e.screenshots.js-aizkulises-screenshots
-      img(src="assets/images/aizkulises/screenshots.png")
+      img(src="assets/images/aizkulises/screenshots.png" alt="")
 
     .container.container_inner.container_flex
       +e.info
-        +e.IMG.decor(src="assets/images/aizkulises/decor.png").js-sr.js-sr_1
+        +e.IMG.decor(src="assets/images/aizkulises/decor.png" alt="").js-sr.js-sr_1
         +e.P.text.js-sr.js-sr_2 Дизайн каждой страницы сайта уникален и наполнен приятными деталями и красивыми фотографиями
