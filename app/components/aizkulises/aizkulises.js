@@ -72,8 +72,6 @@ export default function aizkulises() {
     for (let i = 0; i < 10; i++) { classes += `${baseClass}_${i} ` }
     for (let i = 0; i < animClasses.length; i++) { classes += `${animClasses[i]} ` }
 
-    console.log(classes);
-
     $('.js-sr').each(function () {
       const
         el = $(this),
