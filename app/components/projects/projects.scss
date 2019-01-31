@@ -30,7 +30,6 @@
 
   &__bg {
     @include fill-img;
-    @include performance;
 
     transition: transform $ease-main;
     transform: scale(1.01);
