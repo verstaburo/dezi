@@ -3,7 +3,7 @@
   height: 32px;
   border-style: solid;
   border-color: $color-grey-dark-3;
-  border-width: 0 0 1px 0;
+  border-width: 0 0 1px;
   width: 100%;
   box-sizing: border-box;
   font-size: 15px;
@@ -59,6 +59,7 @@
   }
 
   &_required {
+
     &::after {
       content: '*';
       position: absolute;

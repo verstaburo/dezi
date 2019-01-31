@@ -20,9 +20,9 @@
 */
 
 @include font-face('Corbel', normal, 700, 'CorbelBold')
-@include font-face('Montserrat', normal, 500, 'MontserratMedium')
-@include font-face('Montserrat', normal, 700, 'MontserratBold')
-@include font-face('Roboto', normal, 300, 'RobotoLight')
-@include font-face('Roboto', normal, 500, 'RobotoMedium')
-@include font-face('Roboto', normal, 700, 'RobotoBold')
-@include font-face('Roboto', normal, 900, 'RobotoBlack')
+  @include font-face('Montserrat', normal, 500, 'MontserratMedium')
+  @include font-face('Montserrat', normal, 700, 'MontserratBold')
+  @include font-face('Roboto', normal, 300, 'RobotoLight')
+  @include font-face('Roboto', normal, 500, 'RobotoMedium')
+  @include font-face('Roboto', normal, 700, 'RobotoBold')
+  @include font-face('Roboto', normal, 900, 'RobotoBlack')
