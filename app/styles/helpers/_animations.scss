@@ -1,0 +1,78 @@
+@mixin animation {
+  visibility: visible !important;
+  transition: all 0s !important;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+$animationDuration: 1s;
+$animationEasing: cubic-bezier(0.77, 0, 0.175, 1);
+$animationScale: .9;
+
+.animation_fadeIn {
+  animation: fadeIn $animationDuration $animationEasing;
+  @include animation;
+}
+
+.animation_fadeInRight {
+  animation: fadeInRight $animationDuration $animationEasing;
+  @include animation;
+}
+
+.animation_fadeInLeft {
+  animation: fadeInLeft $animationDuration $animationEasing;
+  @include animation;
+}
+
+.animation_scaleIn {
+  animation: scaleIn $animationDuration $animationEasing;
+  @include animation;
+}
+
+@keyframes fadeIn {
+  0% {
+    transform: translate3d(0, 50px, 0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    transform: translate3d(50px, 0, 0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    transform: translate3d(-50px, 0, 0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  0% {
+    transform: scale3d($animationScale, $animationScale, 1);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale3d(1, 1, 1);
+    opacity: 1;
+  }
+}
