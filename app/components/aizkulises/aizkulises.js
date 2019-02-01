@@ -54,8 +54,8 @@ export default function aizkulises() {
         'animation_fadeInLeft'
       ];
 
-    if (isMobile) $('.js-sr').removeClass('js-sr');
-    if (isMobile) return;
+    // if (isMobile) $('.js-sr').removeClass('js-sr');
+    // if (isMobile) return;
 
     function makeDelay(el) {
       let delay = 0;
@@ -109,6 +109,8 @@ export default function aizkulises() {
   /*
   Скролл скриншотов в последней секции
    */
+  if (isMobile) return;
+
   $(window).on('load scroll', function () {
     const
       w = $(this),
