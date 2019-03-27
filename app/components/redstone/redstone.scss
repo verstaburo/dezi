@@ -1,0 +1,90 @@
+.redstone {
+  display: block;
+  width: 100%;
+  background-color: $color-grey-dark-5;
+  color: $color-yellow-light-4;
+
+  $b: &;
+
+  &-lead {
+    display: block;
+    box-sizing: border-box;
+    padding-top: 223px;
+    width: 100%;
+    background-image:
+      url('../images/redstone/bg-grid-red.png'),
+      linear-gradient(-148deg, #030304 0%, $color-grey-dark-5 100%);
+    background-repeat: no-repeat;
+    background-size: auto auto;
+    background-position:
+      -1235px 100%,
+      0 0;
+
+    &__logo {
+      width: 100%;
+      fill: $color-basic;
+      margin-left: -4px;
+      margin-top: 25px;
+
+      &:not(:last-child) {
+        margin-bottom: 136px;
+      }
+    }
+
+    &__image {
+      display: block;
+      font-size: 0;
+      line-height: 0;
+      width: 100%;
+      height: auto;
+      margin-bottom: -134px;
+    }
+
+    #{$b}__col {
+
+      &_left {
+        padding-right: 40px;
+      }
+
+      &_right {
+        padding-right: 40px;
+      }
+    }
+
+    #{$b}__text {
+      max-width: 485px;
+    }
+  }
+
+  &__heading {
+    @include heading-2;
+
+    font-family: $font-4;
+    letter-spacing: -.01em;
+    color: $color-basic;
+
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__text {
+    font-family: $font-second;
+    font-size: 20px;
+    line-height: 1.2;
+    font-weight: 100;
+  }
+
+  &__col {
+    display: block;
+    box-sizing: border-box;
+
+    &_left {
+      width: 41.5%;
+    }
+
+    &_right {
+      flex: 1;
+    }
+  }
+}

@@ -19,13 +19,11 @@ $grid-col-width: $grid-container-width/$grid-cols; // Ширина одной к
   'xs': 480px
 ); */
 
-$breakpoints: (
-  'xl': 1366px,
-  'lg': 1024px,
-  'md': 768px,
-  'sm': 480px,
-  'xs': 320px
-);
+$breakpoints: ('xl': 1366px,
+'lg': 1024px,
+'md': 768px,
+'sm': 480px,
+'xs': 320px);
 
 // ##########
 // Цвета
@@ -52,6 +50,7 @@ $color-grey-dark: #010101;
 $color-grey-dark-2: #111317;
 $color-grey-dark-3: #364246;
 $color-grey-dark-4: #24262b;
+$color-grey-dark-5: #14181b;
 
 // ##########
 // Transitions
@@ -61,6 +60,18 @@ $ease-main: .3s ease;
 // ##########
 // Шрифты
 // ##########
-$font-main: 'Montserrat', Arial, sans-serif; // Основной шрифт сайта
-$font-second: 'Roboto', Arial, sans-serif; // Дополнительный шрифт
-$font-third: 'Corbel', Arial, sans-serif; // Дополнительный шрифт
+$font-main: 'Montserrat',
+Arial,
+sans-serif; // Основной шрифт сайта
+
+$font-second: 'Roboto',
+Arial,
+sans-serif; // Дополнительный шрифт
+
+$font-third: 'Corbel',
+Arial,
+sans-serif; // Дополнительный шрифт
+
+$font-4: 'Journal',
+Arial,
+sans-serif; // Дополнительный шрифт
