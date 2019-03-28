@@ -19,8 +19,8 @@ $grid-col-width: $grid-container-width/$grid-cols; // Ширина одной к
   'xs': 480px
 ); */
 
-$breakpoints: ('xl': 1366px,
-'lg': 1024px,
+$breakpoints: ('xl': 1367px,
+'lg': 1025px,
 'md': 768px,
 'sm': 480px,
 'xs': 320px);
@@ -51,6 +51,7 @@ $color-grey-dark-2: #111317;
 $color-grey-dark-3: #364246;
 $color-grey-dark-4: #24262b;
 $color-grey-dark-5: #14181b;
+$color-grey-dark-6: #030304;
 
 // ##########
 // Transitions

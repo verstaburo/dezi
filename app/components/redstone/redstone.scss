@@ -3,31 +3,462 @@
   width: 100%;
   background-color: $color-grey-dark-5;
   color: $color-yellow-light-4;
+  font-family: $font-second;
+  margin-bottom: -1px;
 
   $b: &;
 
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__section {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  &__heading {
+    @include heading-2;
+
+    display: block;
+    width: 100%;
+    font-family: $font-4;
+    letter-spacing: -.01em;
+    color: $color-basic;
+
+    @include screen('lg') {
+      line-height: 1.2;
+    }
+
+    @include screen('md') {
+      font-size: 30px;
+      letter-spacing: -.02em;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 44px;
+
+      @include screen('lg') {
+        margin-bottom: 34px;
+      }
+
+      @include screen('md') {
+        margin-bottom: 20px;
+      }
+    }
+
+    br {
+      @include screen('lg', min) {
+        display: none;
+      }
+    }
+  }
+
+  &__text {
+    display: block;
+    width: 100%;
+    font-size: 20px;
+    line-height: 1.2;
+    font-weight: 100;
+
+    @include screen('lg') {
+      font-size: 21px;
+    }
+
+    @include screen('md') {
+      font-size: 15px;
+    }
+  }
+
+  &__col {
+    display: block;
+    box-sizing: border-box;
+
+    &_left {
+      width: 41.5%;
+
+      @include screen('xl') {
+        width: 42.2%;
+      }
+
+      @include screen('md') {
+        width: 100%;
+      }
+    }
+
+    &_right {
+      flex: 1;
+
+      @include screen('md') {
+        flex: none;
+        width: 100%;
+      }
+    }
+  }
+
   &-lead {
+    position: relative;
     display: block;
     box-sizing: border-box;
     padding-top: 223px;
+    padding-bottom: 220px;
     width: 100%;
-    background-image:
-      url('../images/redstone/bg-grid-red.png'),
-      linear-gradient(-148deg, #030304 0%, $color-grey-dark-5 100%);
+    background-image: linear-gradient(-148deg, $color-grey-dark-6 0%, $color-grey-dark-5 100%);
     background-repeat: no-repeat;
     background-size: auto auto;
-    background-position:
-      -1235px 100%,
-      0 0;
+    background-position: 0 0;
 
-    &__logo {
+    @include screen('xl') {
+      padding-bottom: 185px;
+    }
+
+    @include screen('lg') {
+      padding-top: 76px;
+      padding-bottom: 160px;
+    }
+
+    @include screen('md') {
+      padding-top: 55px;
+      padding-bottom: 160px;
+    }
+
+    &::before {
+      @include pseudo;
+
+      top: 0;
+      left: 0;
       width: 100%;
-      fill: $color-basic;
+      height: 100%;
+      z-index: 1;
+      background-image: url('../images/redstone/bg-grid-red.png');
+      background-repeat: no-repeat;
+      background-size: auto auto;
+      background-position: -1235px 100%;
+      opacity: .92;
+
+      @include screen('xl') {
+        background-size: 2877px auto;
+        background-position: -970px -660px;
+      }
+
+      @include screen('lg') {
+        background-size: 2158px auto;
+        background-position: -728px -495px;
+      }
+
+      @include screen('md') {
+        background-image: url('../images/redstone/bg-grid-red-mobile.png');
+        background-size: 100% auto;
+        background-position: 0 0;
+      }
+    }
+
+    &__logo-wrapper {
+      display: block;
+      width: calc(100% + 4px);
       margin-left: -4px;
       margin-top: 25px;
 
+      @include screen('xl') {
+        margin-left: 0;
+        width: 100%;
+        margin-top: 5px;
+      }
+
+      @include screen('lg') {
+        margin-top: 20px;
+      }
+
+      @include screen('md') {
+        margin-left: auto;
+        margin-right: auto;
+        width: 90.7%;
+        margin-top: 0;
+      }
+
       &:not(:last-child) {
         margin-bottom: 136px;
+
+        @include screen('xl') {
+          margin-bottom: 115px;
+        }
+
+        @include screen('lg') {
+          margin-bottom: 90px;
+        }
+
+        @include screen('md') {
+          margin-bottom: 75px;
+        }
+      }
+
+      &_left {
+        display: none;
+
+        @include screen('md') {
+          display: block;
+        }
+      }
+
+      &_right {
+        display: block;
+
+        @include screen('md') {
+          display: none;
+        }
+      }
+    }
+
+    &__logo {
+      width: 100%;
+      height: auto;
+      fill: $color-basic;
+    }
+
+    &__image {
+      display: block;
+      font-size: 0;
+      line-height: 0;
+      width: 100%;
+      height: auto;
+      margin-bottom: -350px;
+
+      @include screen('xl') {
+        margin-bottom: -250px;
+      }
+
+      @include screen('md') {
+        margin-top: 45px;
+      }
+    }
+
+    #{$b}__col {
+
+      &_left {
+        padding-right: 40px;
+
+        @include screen('xl') {
+          padding-right: 47px;
+        }
+
+        @include screen('lg') {
+          padding-right: 35px;
+        }
+
+        @include screen('md') {
+          padding-right: 0;
+        }
+      }
+
+      &_right {
+        padding-right: 40px;
+
+        @include screen('xl') {
+          padding-right: 0;
+        }
+      }
+    }
+
+    #{$b}__text {
+      max-width: 485px;
+
+      @include screen('xl') {
+        max-width: 360px;
+      }
+
+      @include screen('lg') {
+        max-width: 275px;
+      }
+
+      @include screen('md') {
+        max-width: none;
+      }
+    }
+
+    #{$b}__section {
+      margin-left: -4px;
+
+      @include screen('xl') {
+        margin-left: 0;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 490px;
+
+        @include screen('xl') {
+          margin-bottom: 255px;
+        }
+
+        @include screen('lg') {
+          margin-bottom: 92px;
+        }
+      }
+    }
+  }
+
+  &-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: 5px;
+    padding-bottom: 20px;
+    width: 100%;
+
+    @include screen('xl') {
+      padding-top: 8px;
+      padding-left: 3px;
+    }
+
+    @include screen('lg') {
+      padding-top: 28px;
+      padding-bottom: 28px;
+    }
+
+    @include screen('md') {
+      padding-top: 25px;
+      padding-bottom: 25px;
+      padding-left: 0;
+    }
+
+    &__item {
+      position: relative;
+      display: inline-block;
+      box-sizing: border-box;
+      font-size: 20px;
+      line-height: 1.2;
+      font-weight: 100;
+      font-family: $font-second;
+      padding-left: 80px;
+      width: 100%;
+
+      @include screen('lg') {
+        padding-left: 84px;
+        font-size: 21px;
+      }
+
+      @include screen('md') {
+        font-size: 15px;
+        padding-left: 62px;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 54px;
+
+        @include screen('lg') {
+          margin-bottom: 58px;
+        }
+
+        @include screen('md') {
+          margin-bottom: 45px;
+        }
+      }
+
+      &:first-child {
+
+        .redstone-list__icon {
+          margin-top: -8px;
+
+          @include screen('md') {
+            margin-top: -6px;
+          }
+        }
+      }
+    }
+
+    &__icon {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translate3d(0, -50%, 0);
+      fill: $color-basic;
+
+      @include screen('md') {
+        transform-origin: 0 50%;
+        transform: translate3d(0, -50%, 0) scale(.77);
+      }
+    }
+  }
+
+  &-secret {
+    position: relative;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 2;
+    padding-top: 28px;
+    padding-bottom: 30px;
+
+    @include screen('lg') {
+      padding-top: 75px;
+      padding-bottom: 15px;
+    }
+
+    @include screen('md') {
+      padding-top: 28px;
+      padding-bottom: 15px;
+    }
+
+    &::before {
+      @include pseudo;
+
+      height: 1268px;
+      width: 100%;
+      top: -262px;
+      left: 0;
+      background-image: linear-gradient(-148deg, $color-grey-dark-6 0%, $color-grey-dark-5 100%);
+      transform: skewY(-13.2deg);
+
+      @include screen('xl') {
+        height: 1238px;
+        top: -226px;
+      }
+
+      @include screen('lg') {
+        height: 925px;
+        top: -120px;
+      }
+
+      @include screen('md') {
+        height: 648px;
+        top: -44px;
+      }
+    }
+
+    &__media {
+      display: block;
+      font-size: 0;
+      line-height: 0;
+      width: 78.125%;
+      height: auto;
+      margin-left: -4px;
+      flex: none;
+
+      @include screen('xl') {
+        margin-left: 0;
+        width: 79.5%;
+      }
+
+      @include screen('md') {
+        width: 100%;
+      }
+
+      &:not(:first-child) {
+        margin-top: 130px;
+
+        @include screen('xl') {
+          margin-top: 165px;
+        }
+
+        @include screen('lg') {
+          margin-top: 128px;
+        }
+
+        @include screen('md') {
+          margin-top: 78px;
+        }
       }
     }
 
@@ -37,54 +468,312 @@
       line-height: 0;
       width: 100%;
       height: auto;
-      margin-bottom: -134px;
+      flex: none;
     }
 
-    #{$b}__col {
+    &__formula-wrapper {
+      display: block;
+      width: 100%;
+
+      @include screen('xl') {
+        margin-left: -4px;
+      }
+
+      @include screen('lg') {
+        margin-left: 0;
+      }
+
+      &:not(:first-child) {
+        margin-top: 132px;
+
+        @include screen('lg') {
+          margin-top: 72px;
+        }
+
+        @include screen('md') {
+          margin-top: 54px;
+        }
+      }
 
       &_left {
-        padding-right: 40px;
+        display: block;
+
+        @include screen('lg') {
+          display: none;
+        }
       }
 
       &_right {
-        padding-right: 40px;
+        display: none;
+
+        @include screen('lg') {
+          display: block;
+        }
       }
     }
 
-    #{$b}__text {
-      max-width: 485px;
+    &__formula {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      @include screen('lg') {
+        justify-content: center;
+        margin-left: -4px;
+      }
+    }
+
+    &__item {
+      font-family: $font-4;
+      font-size: 40px;
+      line-height: 1;
+      letter-spacing: -.01em;
+      font-weight: 400;
+      color: $color-basic;
+
+      @include screen('md') {
+        font-size: 30px;
+      }
+
+      &:not(:last-child) {
+        margin-right: 40px;
+
+        @include screen('md') {
+          margin-right: 31px;
+        }
+      }
+    }
+
+    &__n {
+      display: block;
+      font-size: 0;
+      fill: $color-basic;
+
+      @include screen('md') {
+        height: 30px;
+      }
+    }
+
+    &__logo {
+      width: 94.3%;
+      height: auto;
+      margin-top: -200px;
+
+      @include screen('xl') {
+        margin-right: -16px;
+        margin-top: -180px;
+      }
+
+      @include screen('lg') {
+        margin-right: -14px;
+        margin-top: -140px;
+      }
+
+      @include screen('md') {
+        width: 106%;
+        margin-left: -3%;
+        margin-right: -3%;
+        margin-top: 56px;
+      }
+    }
+
+    #{$b} {
+      &__section {
+        margin-left: -4px;
+
+        @include screen('xl') {
+          margin-left: 0;
+        }
+      }
+
+      &__heading {
+        @include screen('lg') {
+          font-size: 30px;
+        }
+
+        &:not(:last-child) {
+          margin-bottom: 30px;
+
+          @include screen('lg') {
+            margin-bottom: 24px;
+          }
+        }
+      }
+
+      &__col {
+
+        &_left {
+          @include screen('xl') {
+            padding-right: 47px;
+          }
+
+          @include screen('lg') {
+            padding-right: 35px;
+          }
+
+          @include screen('md') {
+            padding-right: 0;
+          }
+        }
+
+        &_right {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-end;
+          padding-left: 40px;
+          padding-right: 0;
+
+          @include screen('xl') {
+            padding-left: 0;
+          }
+        }
+      }
     }
   }
 
-  &__heading {
-    @include heading-2;
-
-    font-family: $font-4;
-    letter-spacing: -.01em;
-    color: $color-basic;
-
-    &:not(:last-child) {
-      margin-bottom: 40px;
-    }
-  }
-
-  &__text {
-    font-family: $font-second;
-    font-size: 20px;
-    line-height: 1.2;
-    font-weight: 100;
-  }
-
-  &__col {
+  &-brand {
+    position: relative;
     display: block;
-    box-sizing: border-box;
+    width: 100%;
+    padding: 65px 0;
 
-    &_left {
-      width: 41.5%;
+    @include screen('xl') {
+      padding: 60px 0 77px;
     }
 
-    &_right {
-      flex: 1;
+    @include screen('lg') {
+      padding: 60px 0;
+    }
+
+    @include screen('md') {
+      padding: 60px 0 47px;
+    }
+
+    &::before {
+      @include pseudo;
+
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('../images/redstone/bg-grid-black.png');
+      background-size: 100% auto;
+      background-position: 0 100%;
+      background-repeat: no-repeat;
+      opacity: .37;
+
+      @include screen('xl') {
+        background-image: url('../images/redstone/bg-grid-black-tablet.png');
+        opacity: 1;
+      }
+
+      @include screen('md') {
+        background-image: url('../images/redstone/bg-grid-black-mobile.png');
+        opacity: .37;
+      }
+    }
+
+    &__media {
+      display: block;
+      width: 100%;
+      height: auto;
+
+      @include screen('md') {
+        display: none;
+      }
+    }
+
+    &__image {
+      display: block;
+      font-size: 0;
+      line-height: 0;
+      width: 100%;
+      height: auto;
+
+      &:not(:last-child) {
+        @include screen('md') {
+          margin-bottom: 9px;
+        }
+      }
+    }
+
+    &__collage {
+      display: none;
+      width: 100%;
+
+      @include screen('md') {
+        display: block;
+        margin-top: 70px;
+      }
+    }
+
+    &__slogan {
+      display: block;
+      box-sizing: border-box;
+      font-size: 47px;
+      line-height: 1.2;
+      font-weight: 100;
+      margin-left: -4px;
+
+      @include screen('xl') {
+        margin-left: 0;
+        font-size: 40px;
+      }
+
+      @include screen('lg') {
+        font-size: 35px;
+      }
+
+      @include screen('md') {
+        padding: 0 11px;
+        font-size: 30px;
+      }
+
+      &:first-child {
+        margin-top: -15px;
+
+        @include screen('xl') {
+          margin-top: -10px;
+        }
+
+        @include screen('lg') {
+          margin-top: -7px;
+        }
+      }
+    }
+
+    #{$b} {
+
+      &__col {
+
+        &_left {
+          width: 37.5%;
+          padding-right: 60px;
+
+          @include screen('xl') {
+            padding-right: 60px;
+            width: 42.2%;
+          }
+
+          @include screen('lg') {
+            padding-right: 35px;
+          }
+
+          @include screen('md') {
+            padding-right: 0;
+            width: 100%;
+          }
+        }
+
+        &_right {
+          padding-right: 40px;
+
+          @include screen('xl') {
+            padding-right: 0;
+          }
+        }
+      }
     }
   }
 }

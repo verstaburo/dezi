@@ -115,7 +115,8 @@
     img {
       width: 100%;
 
-      #{$b}_iphone &, #{$b}_static-phone & {
+      #{$b}_iphone &,
+      #{$b}_static-phone & {
         position: absolute;
         left: 0;
         top: 0;
@@ -411,7 +412,8 @@
       min-height: 290px;
     }
 
-    &::after,  &::before {
+    &::after,
+    &::before {
       content: '';
       position: absolute;
       right: 0;

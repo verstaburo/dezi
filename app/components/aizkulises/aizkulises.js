@@ -25,8 +25,8 @@ export default function aizkulises() {
 
     if (screenSize < 768) siteWidth = 320;
     if (screenSize >= 768) siteWidth = 1024;
-    if (screenSize >= 1024) siteWidth = 1366;
-    if (screenSize >= 1366) siteWidth = 1920;
+    if (screenSize >= 1025) siteWidth = 1366;
+    if (screenSize >= 1367) siteWidth = 1920;
 
     scale = screenSize / siteWidth;
 
@@ -51,7 +51,9 @@ export default function aizkulises() {
         'animation_fadeIn',
         'animation_fadeInRight',
         'animation_scaleIn',
-        'animation_fadeInLeft'
+        'animation_fadeInLeft',
+        'animation_fadeInTop',
+        'animation_fadeInBottom'
       ];
 
     // if (isMobile) $('.js-sr').removeClass('js-sr');
@@ -106,7 +108,10 @@ export default function aizkulises() {
         });
         if (el.hasClass('js-sr_6')) el.addClass(`${animClasses[1]}`);
         if (el.hasClass('js-sr_7') || el.hasClass('js-sr_9')) el.addClass(`${animClasses[2]}`);
-        if (el.hasClass('js-sr_10')) el.addClass(`${animClasses[3]}`);
+        if (el.hasClass('js-sr_10')) el.addClass(`${animClasses[3]}
+        `);
+        if (el.hasClass('js-sr_11')) el.addClass(`${animClasses[4]}
+        `);
 
         setTimeout(() => {
           el.removeClass(`${classes}${baseClass}`).attr('style', '');

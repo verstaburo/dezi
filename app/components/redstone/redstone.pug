@@ -12,13 +12,13 @@ mixin redstone-col-right()
 
 mixin redstone-section(title, tag)
   SECTION.redstone__section&attributes(attributes)
-    h2.redstone__heading!=title
+    h2.redstone__heading.js-sr.js-sr_1!=title
     block
 
 mixin redstone-list(array)
   +b.UL.redstone-list&attributes(attributes)
     each item in array
-      +e.LI.item.js-sr.js-sr_1
+      +e.LI.item.js-sr_8
         +icon(item[0]).__icon(width=item[2] height=item[3])
         != item[1]
 
@@ -26,8 +26,9 @@ mixin redstone-lead()
   +b.SECTION.redstone-lead&attributes(attributes)
     .container.container_inner.container_flex
       +redstone-col-left
-        +redstone-section('Redstone Hotel Logo', 'h1')
-          .redstone__text A new boutique hotel in the centre of Old Town Riga was named Redstone in honour of an unusual and colourful architectural design. Despite the fact that the building is new, it fits perfectly into the historic centre of the city. The agency has developed a logo for the new hotel.
+        +e.logo-wrapper_left(data-slot-id="redstoneLogo" data-slot-res="md")
+        +redstone-section('Redstone <br> Hotel Logo', 'h1')
+          .redstone__text.js-sr.js-sr_2 A new boutique hotel in the centre of Old Town Riga was named Redstone in honour of an unusual and colourful architectural design. Despite the fact that the building is new, it fits perfectly into the historic centre of the city. The agency has developed a logo for the new hotel.
         +redstone-section('Case')
           +redstone-list([
             ['case-star', 'Logo design', '56', '56'],
@@ -35,35 +36,40 @@ mixin redstone-lead()
             ['case-facade', 'Signs on the facade', '47', '47'],
           ]).__list
       +redstone-col-right
-        +icon('redstone-logo').__logo
-        +e.IMG.image(src="assets/images/redstone/build.jpg")
+        +e.logo-wrapper_right(data-slot-id="redstoneLogo" data-slot-res="xl")
+          +icon('redstone-logo')(width="897" height="151" data-target-slot="redstoneLogo").__logo.js-sr_11
+        +e.IMG.image.js-sr_1(src="assets/images/redstone/build.jpg")
 
 mixin redstone-secret()
-  +b.SECTION.redstone-main&attributes(attributes)
+  +b.SECTION.redstone-secret&attributes(attributes)
     .container.container_inner.container_flex
       +redstone-col-left
         +redstone-section('The Secret')
-          .redstone__text The boutique hotel Redstone has 11 rooms, which are differently designed. The sign, which is part of the Redstone inscription, hides in place of the letter N and consists of two inverted 1 digits, personifying 11 hotel rooms, house number 11 and the desire to be the first everywhere and in everything.
-          +e.formula
-            +e.item 1
-            +e.item +
-            +e.item 1
-            +e.item =
-            +e.item
-              +icon('redstone-n').__n
+          .redstone__text.js-sr.js-sr_2 The boutique hotel Redstone has 11 rooms, which are differently designed. The sign, which is part of the Redstone inscription, hides in place of the letter N and consists of two inverted 1 digits, personifying 11 hotel rooms, house number 11 and the desire to be the first everywhere and in everything.
+          +e.formula-wrapper_left(data-slot-id="redstoneFormula" data-slot-res="xl")
+            +e.formula(data-target-slot="redstoneFormula")
+              +e.item.js-sr_9 1
+              +e.item.js-sr_9 +
+              +e.item.js-sr_9 1
+              +e.item.js-sr_9 =
+              +e.item.js-sr_9
+                +icon('redstone-n')(width="36" height="39").__n
       +redstone-col-right
-        +e.IMG.logo(src="assets/images/redstone/n-logo.png")
-      +e.IMG.image(src="assets/images/redstone/yin-yang.jpg")
+        +e.IMG.logo.js-sr_6(src="assets/images/redstone/n-logo.png")
+        +e.formula-wrapper_right(data-slot-id="redstoneFormula" data-slot-res="lg")
+      +e.media
+        +e.IMG.image.js-sr_10(src="assets/images/redstone/yin-yang.jpg")
 
 
 mixin redstone-brand()
   +b.SECTION.redstone-brand&attributes(attributes)
     .container.container_inner.container_flex
       +redstone-col-left
-        +e.slogan The logo is widely used in a variety of media inside the hotel.
+        +e.slogan.js-sr_10 The logo is widely used in a variety of media inside the hotel.
       +redstone-col-right
-        +e.IMG.image(src="assets/images/redstone/collage.jpg")
+        +e.media.js-sr_6
+          +e.IMG.image(src="assets/images/redstone/collage.jpg")
         +e.collage
-          +e.IMG.image(src="assets/images/redstone/collage-1.jpg")
-          +e.IMG.image(src="assets/images/redstone/collage-2.jpg")
-          +e.IMG.image(src="assets/images/redstone/collage-3.jpg")
+          +e.IMG.image.js-sr_7(src="assets/images/redstone/collage-1.jpg")
+          +e.IMG.image.js-sr_7(src="assets/images/redstone/collage-2.jpg")
+          +e.IMG.image.js-sr_7(src="assets/images/redstone/collage-3.jpg")

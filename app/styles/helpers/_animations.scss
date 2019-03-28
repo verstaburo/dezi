@@ -27,6 +27,12 @@ $animationScale: .9;
   @include animation;
 }
 
+.animation_fadeInTop {
+  animation: fadeInTop $animationDuration $animationEasing;
+
+  @include animation;
+}
+
 .animation_scaleIn {
   animation: scaleIn $animationDuration $animationEasing;
 
@@ -63,6 +69,19 @@ $animationScale: .9;
 
   0% {
     transform: translate3d(-50px, 0, 0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInTop {
+
+  0% {
+    transform: translate3d(0, -50px, 0);
     opacity: 0;
   }
 
