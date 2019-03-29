@@ -30,7 +30,7 @@ mixin redstone-lead()
         +redstone-section('Redstone <br> Hotel Logo', 'h1')
           .redstone__text.js-sr.js-sr_2 A new boutique hotel in the centre of Old Town Riga was named Redstone in honour of an unusual and colourful architectural design. Despite the fact that the building is new, it fits perfectly into the historic centre of the city. The agency has developed a logo for the new hotel.
         +redstone-section('Case')
-          +redstone-list([
+          +case-list([
             ['case-star', 'Logo design', '56', '56'],
             ['case-lego', 'Corporate identity', '53', '46'],
             ['case-facade', 'Signs on the facade', '47', '47'],
@@ -38,7 +38,8 @@ mixin redstone-lead()
       +redstone-col-right
         +e.logo-wrapper_right(data-slot-id="redstoneLogo" data-slot-res="xl")
           +icon('redstone-logo')(width="897" height="151" data-target-slot="redstoneLogo").__logo.js-sr_11
-        +e.IMG.image.js-sr_1(src="assets/images/redstone/build.jpg")
+        +e.media
+          +e.IMG.image.js-sr_1(src="assets/images/redstone/build.jpg")
 
 mixin redstone-secret()
   +b.SECTION.redstone-secret&attributes(attributes)

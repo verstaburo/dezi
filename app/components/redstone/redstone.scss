@@ -103,39 +103,32 @@
     display: block;
     box-sizing: border-box;
     padding-top: 223px;
-    padding-bottom: 220px;
     width: 100%;
     background-image: linear-gradient(-148deg, $color-grey-dark-6 0%, $color-grey-dark-5 100%);
     background-repeat: no-repeat;
     background-size: auto auto;
     background-position: 0 0;
 
-    @include screen('xl') {
-      padding-bottom: 185px;
-    }
-
     @include screen('lg') {
       padding-top: 76px;
-      padding-bottom: 160px;
     }
 
     @include screen('md') {
       padding-top: 55px;
-      padding-bottom: 160px;
     }
 
     &::before {
       @include pseudo;
 
-      top: 0;
-      left: 0;
+      bottom: 0;
+      right: 0;
       width: 100%;
       height: 100%;
       z-index: 1;
       background-image: url('../images/redstone/bg-grid-red.png');
       background-repeat: no-repeat;
-      background-size: auto auto;
-      background-position: -1235px 100%;
+      background-size: 3639px 2614px;
+      background-position: -1235px -858px;
       opacity: .92;
 
       @include screen('xl') {
@@ -164,7 +157,6 @@
       @include screen('xl') {
         margin-left: 0;
         width: 100%;
-        margin-top: 5px;
       }
 
       @include screen('lg') {
@@ -179,11 +171,7 @@
       }
 
       &:not(:last-child) {
-        margin-bottom: 136px;
-
-        @include screen('xl') {
-          margin-bottom: 115px;
-        }
+        margin-bottom: 130px;
 
         @include screen('lg') {
           margin-bottom: 90px;
@@ -217,38 +205,47 @@
       fill: $color-basic;
     }
 
+    &__media {
+      position: relative;
+      display: block;
+      width: 100%;
+    }
+
     &__image {
       display: block;
       font-size: 0;
       line-height: 0;
       width: 100%;
       height: auto;
-      margin-bottom: -350px;
-
-      @include screen('xl') {
-        margin-bottom: -250px;
-      }
-
-      @include screen('md') {
-        margin-top: 45px;
-      }
     }
 
     #{$b}__col {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      @include screen('md') {
+        justify-content: flex-start;
+      }
 
       &_left {
         padding-right: 40px;
+        padding-bottom: 33.4vw;
 
         @include screen('xl') {
           padding-right: 47px;
+          padding-bottom: 33.7vw;
         }
 
         @include screen('lg') {
           padding-right: 35px;
+          padding-bottom: 16.8vw;
         }
 
         @include screen('md') {
           padding-right: 0;
+          padding-bottom: 60px;
         }
       }
 
@@ -285,99 +282,50 @@
       }
 
       &:not(:last-child) {
-        margin-bottom: 490px;
+        margin-bottom: 9vw;
 
-        @include screen('xl') {
-          margin-bottom: 255px;
-        }
-
-        @include screen('lg') {
+        @include screen('md') {
           margin-bottom: 92px;
         }
       }
     }
-  }
 
-  &-list {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding-top: 5px;
-    padding-bottom: 20px;
-    width: 100%;
-
-    @include screen('xl') {
-      padding-top: 8px;
-      padding-left: 3px;
-    }
-
-    @include screen('lg') {
-      padding-top: 28px;
-      padding-bottom: 28px;
-    }
-
-    @include screen('md') {
-      padding-top: 25px;
-      padding-bottom: 25px;
-      padding-left: 0;
-    }
-
-    &__item {
-      position: relative;
-      display: inline-block;
-      box-sizing: border-box;
-      font-size: 20px;
-      line-height: 1.2;
-      font-weight: 100;
-      font-family: $font-second;
-      padding-left: 80px;
+    &__list {
+      padding-top: 5px;
+      padding-bottom: 20px;
       width: 100%;
 
+      @include screen('xl') {
+        padding-top: 7px;
+        padding-left: 3px;
+        padding-bottom: 15px;
+      }
+
       @include screen('lg') {
-        padding-left: 84px;
-        font-size: 21px;
+        padding-top: 28px;
       }
 
       @include screen('md') {
-        font-size: 15px;
-        padding-left: 62px;
+        padding-top: 25px;
+        padding-bottom: 10px;
+        padding-left: 0;
       }
 
-      &:not(:last-child) {
-        margin-bottom: 54px;
+      .case-list {
 
-        @include screen('lg') {
-          margin-bottom: 58px;
-        }
+        &__item {
 
-        @include screen('md') {
-          margin-bottom: 45px;
-        }
-      }
+          &:first-child {
 
-      &:first-child {
+            .case-list__icon {
+              margin-top: -8px;
 
-        .redstone-list__icon {
-          margin-top: -8px;
-
-          @include screen('md') {
-            margin-top: -6px;
+              @include screen('md') {
+                margin-top: -6px;
+              }
+            }
           }
         }
-      }
-    }
-
-    &__icon {
-      position: absolute;
-      top: 50%;
-      left: 0;
-      transform: translate3d(0, -50%, 0);
-      fill: $color-basic;
-
-      @include screen('md') {
-        transform-origin: 0 50%;
-        transform: translate3d(0, -50%, 0) scale(.77);
       }
     }
   }
@@ -388,17 +336,25 @@
     width: 100%;
     box-sizing: border-box;
     z-index: 2;
-    padding-top: 28px;
+    padding-top: 54px;
     padding-bottom: 30px;
+    margin-top: -150px;
+
+    @include screen('xl') {
+      padding-top: 88px;
+      margin-top: -122px;
+    }
 
     @include screen('lg') {
       padding-top: 75px;
       padding-bottom: 15px;
+      margin-top: 0;
     }
 
     @include screen('md') {
-      padding-top: 28px;
+      padding-top: 36px;
       padding-bottom: 15px;
+      margin-top: -98px;
     }
 
     &::before {
@@ -406,14 +362,14 @@
 
       height: 1268px;
       width: 100%;
-      top: -262px;
+      top: -234px;
       left: 0;
       background-image: linear-gradient(-148deg, $color-grey-dark-6 0%, $color-grey-dark-5 100%);
       transform: skewY(-13.2deg);
 
       @include screen('xl') {
         height: 1238px;
-        top: -226px;
+        top: -168px;
       }
 
       @include screen('lg') {
@@ -423,7 +379,7 @@
 
       @include screen('md') {
         height: 648px;
-        top: -44px;
+        top: -40px;
       }
     }
 

@@ -1,0 +1,11 @@
+.nla {
+  display: block;
+  width: 100%;
+  background-color: $color-grey-dark-5;
+  color: $color-yellow-light-4;
+  font-family: $font-second;
+  font-weight: 100;
+  line-height: 1.2;
+
+  $b: &;
+}

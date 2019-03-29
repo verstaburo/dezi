@@ -1,0 +1,63 @@
+.case-list {
+  $b: &;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 100;
+  font-family: $font-second;
+
+  @include screen('lg') {
+    font-size: 21px;
+  }
+
+  @include screen('md') {
+    font-size: 15px;
+  }
+
+  &__item {
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    padding-left: 80px;
+    width: 100%;
+
+    @include screen('lg') {
+      padding-left: 84px;
+    }
+
+    @include screen('md') {
+      font-size: 15px;
+      padding-left: 62px;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 54px;
+
+      @include screen('lg') {
+        margin-bottom: 58px;
+      }
+
+      @include screen('md') {
+        margin-bottom: 45px;
+      }
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate3d(0, -50%, 0);
+    fill: $color-basic;
+
+    @include screen('md') {
+      transform-origin: 0 50%;
+      transform: translate3d(0, -50%, 0) scale(.77);
+    }
+  }
+}

@@ -1,0 +1,11 @@
+mixin case-section()
+  +b.SECTION.case-section&attributes(attributes)
+    block
+
+mixin case-section-heading(tag)
+  +e(tag || 'h2').heading&attributes(attributes)
+    block
+
+mixin case-section-text()
+  +e.text&attributes(attributes)
+    block

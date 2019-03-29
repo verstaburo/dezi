@@ -1,0 +1,50 @@
+.case-section {
+  $b: &;
+
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 100;
+
+  @include screen('lg') {
+    font-size: 21px;
+  }
+
+  @include screen('md') {
+    font-size: 15px;
+  }
+
+  &__heading {
+    font-size: 40px;
+    line-height: 1.2;
+    width: 100%;
+    font-family: $font-4;
+    font-weight: 400;
+    letter-spacing: -.01em;
+    color: $color-basic;
+
+    @include screen('md') {
+      font-size: 30px;
+      letter-spacing: -.02em;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 44px;
+
+      @include screen('lg') {
+        margin-bottom: 34px;
+      }
+
+      @include screen('md') {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__text {
+    display: block;
+    width: 100%;
+  }
+}

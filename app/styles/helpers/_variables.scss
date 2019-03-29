@@ -28,14 +28,19 @@ $breakpoints: ('xl': 1367px,
 // ##########
 // Цвета
 // ##########
+$color-black: #000;
+
 $color-basic: white; // Основной цвет текста (применяется к body)
 $color-placeholder: #777; // Основной цвет для placeholder
-$color-input: black; // Основной цвет input, select и textarea
+$color-input: $color-black; // Основной цвет input, select и textarea
 $color-main: white; // Основной фирменный цвет
 $color-border: #ccc; // Основной цвет границ таблиц, секций
 
 $color-red: #d53b30;
 $color-red-dark: #4d2233;
+$color-red-2: #ea2e44;
+$color-red-bright: #df062f;
+$color-red-dark-2: #2d0924;
 
 $color-yellow-light: #f3e2c3;
 $color-yellow-light-2: #f6f1e8;
@@ -45,6 +50,9 @@ $color-yellow-light-4: #f2ecd9;
 $color-purple: #261923;
 $color-purple-2: #4a2132;
 
+$color-green: #1a5f63;
+$color-green-dark: #163d33;
+
 $color-grey: #777d82;
 $color-grey-dark: #010101;
 $color-grey-dark-2: #111317;
@@ -52,6 +60,7 @@ $color-grey-dark-3: #364246;
 $color-grey-dark-4: #24262b;
 $color-grey-dark-5: #14181b;
 $color-grey-dark-6: #030304;
+$color-grey-dark-7: #141f22;
 
 // ##########
 // Transitions
