@@ -3,7 +3,7 @@ mixin nla()
     block
 
 mixin nla-column
-  +e.col&attributes(attributes)
+  .nla__col&attributes(attributes)
     block
 
 mixin nla-lead()
@@ -11,75 +11,84 @@ mixin nla-lead()
     +e.bg
       +e.bg-inner
     .container.container_inner.container_flex
-      +nla-column._left
-        +e.logo
-          +e.IMG.logo-image(src="assets/images/nla/logo-nla.svg" width="144" height="152")
-        +e.A.link(href="https://www.next-level.agency.com") next-level.agency.com
-        +case-section
-          +case-section-heading('h1') Website and logo for the booking agency Next Level Agency
-          +case-section-text Next Level Agency is an international booking agency that organizes concerts, festivals and private events in the entertainment industry. We’ve created a bright, trendy and dynamic website.
-      +nla-column._right
+      +nla-column.nla__col_left
+        +e.logo.js-sr_12
+          +e.IMG.logo-image(src="assets/images/nla/logo-nla.svg")
+        +e.A.link.js-sr_12(href="https://www.next-level.agency.com") next-level.agency.com
+        +case-section.__section
+          +case-section-heading.js-sr_12('h1') Website and logo for the booking agency Next Level Agency
+          +case-section-text.js-sr_12 Next Level Agency is an international booking agency that organizes concerts, festivals and private events in the entertainment industry. We’ve created a bright, trendy and dynamic website.
+      +nla-column.nla__col_right
         +e.media
-          +e.IMG.image(src="assets/images/nla/first-page.jpg")
+          +e.PICTURE.image.js-sr_6
+            source(srcset="assets/images/nla/first-page-mobile.jpg" media="(max-width: 768px)")
+            +e.IMG.image(srcset="assets/images/nla/first-page.jpg")
       block
 
 mixin nla-case()
   +b.nla-case&attributes(attributes)
+    +e.bg
     .container.container_inner.container_flex
-      +nla-column._left
-        +case-section
-          +case-section-heading('h2') Case
+      +nla-column.nla__col_left
+        +case-section.__section
+          +case-section-heading('h2').js-sr_1 Case
           +case-list([
             ['case-star', 'Logo design', '56', '56'],
             ['case-devices', 'Website development ', '60', '34'],
             ['case-lego', 'Corporate identity', '53', '46'],
-          ]).__list
-        +e.media
+          ]).nla-case__list
+        +e.media.js-sr_6
           +e.image(src="assets/images/nla/man.png")
-      +nla-column._right
+      +nla-column.nla__col_right
       block
 
 mixin nla-design()
   +b.nla-design&attributes(attributes)
     .container.container_inner.container_flex
-      +nla-column._left
-        +case-section
-          +case-section-heading() Responsive web design
-          +case-section-text Booking of the artists should be available anywhere in the world 24 hours a day right away as it is not known in which part of the world there will be a concert tomorrow. Responsive website design helps to do that.
-      +nla-column._right
-    +e.media
-      +e.IMG.image(src="assets/images/nla/phones.png")
+      +nla-column.nla__col_left
+        +case-section.__section
+          +case-section-heading().js-sr_1 Responsive web design
+          +case-section-text.js-sr_2 Booking of the artists should be available anywhere in the world 24 hours a day right away as it is not known in which part of the world there will be a concert tomorrow. Responsive website design helps to do that.
+      +nla-column.nla__col_right
+    +e.media.js-sr_3
+      +e.PICTURE.image
+        source(srcset="assets/images/nla/phones-2.png" media="(max-width: 768px)")
+        source(srcset="assets/images/nla/phones-3.png" media="(max-width: 1024px)")
+        source(srcset="assets/images/nla/phones-2.png" media="(max-width: 1366px)")
+        +e.IMG.image(srcset="assets/images/nla/phones.png")
+    +e.bg
     block
 
 mixin nla-logo()
   +b.nla-logo&attributes(attributes)
     .container.container_inner.container_flex
-      +nla-column._left
-        +case-section
-          +case-section-heading() The new logo of the agency
-          +case-section-text The new website of the agency needed a new vision of the company's corporate identity. We have created a new, bright logo that fully reflects the essence of the company's work, which is a bit different from others in everything.
-        +e.logo
+      +nla-column.nla__col_left
+        +case-section.__section
+          +case-section-heading().js-sr_1 The new logo of&nbsp;the&nbsp;agency
+          +case-section-text.js-sr_2 The new website of the agency needed a new vision of the company's corporate identity. We have created a new, bright logo that fully reflects the essence of the company's work, which is a bit different from others in everything.
+        +e.logo.js-sr_3
           +e.IMG.logo-image(src="assets/images/nla/logo-nla.svg")
-      +nla-column._right
-        +e.dude
-          +e.IMG.dude-image(src="assets/images/nla/man-2.png")
+      +nla-column.nla__col_right
+        +e.dude.js-sr_6
+          +e.IMG.dude-image(src="assets/images/nla/man2.png")
     block
 
 mixin nla-portraits()
   +b.nla-portraits&attributes(attributes)
-    +e.list
-      +e.IMG.image(src="assets/images/nla/portrait-1.jpg")
-      +e.IMG.image(src="assets/images/nla/portrait-2.jpg")
-      +e.IMG.image(src="assets/images/nla/portrait-3.jpg")
-      +e.IMG.image(src="assets/images/nla/portrait-4.jpg")
-      +e.IMG.image(src="assets/images/nla/portrait-5.jpg")
-      +e.IMG.image(src="assets/images/nla/portrait-6.jpg")
-      +e.IMG.image(src="assets/images/nla/portrait-7.jpg")
-      +e.IMG.image(src="assets/images/nla/portrait-8.jpg")
+    +e.gallery
+      +e.list
+        +e.item
+          +e.IMG.image.js-sr_13(src="assets/images/nla/portrait-1.jpg")
+          +e.IMG.image.js-sr_13(src="assets/images/nla/portrait-2.jpg")
+          +e.IMG.image.js-sr_13(src="assets/images/nla/portrait-3.jpg")
+          +e.IMG.image.js-sr_13(src="assets/images/nla/portrait-4.jpg")
+        +e.item
+          +e.IMG.image.js-sr_13(src="assets/images/nla/portrait-5.jpg")
+          +e.IMG.image.js-sr_13(src="assets/images/nla/portrait-6.jpg")
+          +e.IMG.image.js-sr_13(src="assets/images/nla/portrait-7.jpg")
+          +e.IMG.image.js-sr_13(src="assets/images/nla/portrait-8.jpg")
     .container.container_inner.container_flex
-      +nla-column._left
-        +case-section
-          +case-section-heading() Portraits of agency managers
-          +case-section-text The customer wanted concise illustrations of the company's employees instead of photos, so we drew every booking manager in the right style.
-      +nla-column._right
+      +case-section.__section
+        +case-section-heading().js-sr_2 Portraits of agency managers
+        +case-section-text.js-sr_3 The customer wanted concise illustrations of the company's employees instead of photos, so we drew every booking manager in the right style.
     block

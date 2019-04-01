@@ -310,23 +310,6 @@
         padding-bottom: 10px;
         padding-left: 0;
       }
-
-      .case-list {
-
-        &__item {
-
-          &:first-child {
-
-            .case-list__icon {
-              margin-top: -8px;
-
-              @include screen('md') {
-                margin-top: -6px;
-              }
-            }
-          }
-        }
-      }
     }
   }
 

@@ -6,6 +6,1062 @@
   font-family: $font-second;
   font-weight: 100;
   line-height: 1.2;
+  margin-bottom: -1px;
 
   $b: &;
+
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__col {
+    display: block;
+    box-sizing: border-box;
+
+    &_left {
+      width: 43.3%;
+      margin-left: -4px;
+
+      @include screen('xl') {
+        margin-left: -2px;
+        width: 45%;
+      }
+
+      @include screen('md') {
+        width: 100%;
+        margin-left: 0;
+      }
+    }
+
+    &_right {
+      position: relative;
+      flex: 1;
+
+      @include screen('md') {
+        flex: none;
+        width: 100%;
+      }
+    }
+  }
+
+  .case-section {
+    display: block;
+    width: 100%;
+    padding-right: 27.6%;
+
+    @include screen('xl') {
+      padding-right: 25.6%;
+    }
+
+    @include screen('lg') {
+      padding-right: 19%;
+    }
+
+    @include screen('md') {
+      padding-right: 0;
+    }
+
+    &__heading {
+      @include screen('lg') {
+        font-size: 35px;
+      }
+
+      @include screen('md') {
+        font-size: 30px;
+      }
+    }
+
+    &__text {
+      @include screen('lg') {
+        font-size: 18px;
+      }
+
+      @include screen('md') {
+        font-size: 15px;
+      }
+    }
+  }
+
+  .case-list {
+    @include screen('lg') {
+      font-size: 18px;
+    }
+
+    @include screen('md') {
+      font-size: 15px;
+    }
+
+    &__item {
+      @include screen('lg') {
+        padding-left: 74px;
+      }
+
+      @include screen('md') {
+        padding-left: 62px;
+      }
+
+      &:not(:last-child) {
+        @include screen('lg') {
+          margin-bottom: 51px;
+        }
+
+        @include screen('md') {
+          margin-bottom: 45px;
+        }
+      }
+    }
+
+    &__icon {
+
+      @include screen('lg') {
+        transform-origin: 0 50%;
+        transform: translate3d(0, -50%, 0) scale(.89);
+      }
+
+      @include screen('md') {
+        transform-origin: 0 50%;
+        transform: translate3d(0, -50%, 0) scale(.77);
+      }
+    }
+  }
+
+  &-lead {
+    position: relative;
+    width: 100%;
+    padding-top: 5.8%;
+    padding-bottom: 17.8%;
+    z-index: 2;
+
+    @include screen('xl') {
+      padding-top: 5.6%;
+    }
+
+    @include screen('lg') {
+      padding-top: 5.6%;
+      padding-bottom: 24%;
+    }
+
+    @include screen('md') {
+      padding-top: 11.5%;
+      padding-bottom: 0;
+      z-index: auto;
+    }
+
+    &__bg {
+      position: absolute;
+      width: 100%;
+      top: 0;
+      left: 0;
+      padding-top: 56.46%;
+      z-index: 1;
+
+      @include screen('xl') {
+        padding-top: 72.7%;
+      }
+
+      @include screen('lg') {
+        padding-top: 77.4%;
+      }
+
+      @include screen('md') {
+        padding-top: 250%;
+      }
+
+      &::before {
+        @include pseudo;
+
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding-top: 7.5%;
+        background-image: linear-gradient(-148deg, $color-black 0%, $color-green 100%);
+        transform-origin: 0 50%;
+        transform: skewY(-9.6deg);
+        opacity: .12;
+        z-index: 3;
+
+        @include screen('xl') {
+          padding-top: 10%;
+          transform: skewY(-8.8deg);
+        }
+
+        @include screen('lg') {
+          padding-top: 10.6%;
+          transform: skewY(-8.8deg);
+        }
+
+        @include screen('md') {
+          padding-top: 31.25%;
+          transform: skewY(-8.8deg);
+        }
+      }
+
+      &::after {
+        @include pseudo;
+
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding-top: 24.3%;
+        transform-origin: 100% 50%;
+        background-image: linear-gradient(-148deg, $color-black 0%, $color-green-dark 100%);
+        transform: skewY(9.2deg);
+        z-index: 2;
+
+        @include screen('xl') {
+          padding-top: 27.5%;
+        }
+
+        @include screen('lg') {
+          padding-top: 27.6%;
+        }
+
+        @include screen('md') {
+          padding-top: 67.5%;
+        }
+      }
+
+      &-inner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform-origin: 100% 50%;
+        transform: skewY(9.2deg);
+        background-image: linear-gradient(-148deg, $color-black 0%, $color-green-dark 100%);
+        z-index: 1;
+      }
+    }
+
+    &__logo {
+      display: block;
+      width: 154px;
+
+      @include screen('lg') {
+        width: 118px;
+        margin-top: -13px;
+      }
+
+      @include screen('md') {
+        margin-top: 0;
+        width: 92px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 72px;
+
+        @include screen('lg') {
+          margin-bottom: 36px;
+        }
+
+        @include screen('md') {
+          margin-bottom: 11px;
+        }
+      }
+
+      &-image {
+        display: block;
+        font-size: 0;
+        line-height: 0;
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    &__media {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      border-radius: 10px;
+      overflow: hidden;
+      z-index: 3;
+
+      @include screen('xl') {
+        width: 127%;
+      }
+
+      @include screen('md') {
+        position: relative;
+        left: auto;
+        right: auto;
+        width: calc(100% + 20px);
+        margin-left: -10px;
+        margin-right: -10px;
+        border-radius: 5px;
+        margin-top: 58px;
+        z-index: auto;
+      }
+    }
+
+    &__image {
+      display: block;
+      font-size: 0;
+      line-height: 0;
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+
+      @include screen('md') {
+        border-radius: 5px;
+      }
+    }
+
+    &__link {
+      display: inline-block;
+      font-size: 19px;
+      font-weight: 500;
+      line-height: 1.2;
+      color: $color-red-2;
+
+      @include screen('lg') {
+        font-size: 14px;
+      }
+
+      @include screen('md') {
+        font-size: 11px;
+        width: 100%;
+        text-align: center;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 90px;
+
+        @include screen('lg') {
+          margin-bottom: 68px;
+        }
+
+        @include screen('md') {
+          margin-bottom: 70px;
+        }
+      }
+    }
+
+    &__section {
+
+      .case-section {
+
+        &__heading {
+          @include screen('md') {
+            width: 100%;
+            box-sizing: border-box;
+            padding-right: 10px;
+          }
+
+          &:not(:last-child) {
+            margin-bottom: 50px;
+
+            @include screen('lg') {
+              margin-bottom: 34px;
+            }
+
+            @include screen('md') {
+              margin-bottom: 23px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &-case {
+    position: relative;
+    width: 100%;
+    margin-top: -15.9%;
+    padding-top: 7.4%;
+    z-index: 1;
+
+    @include screen('xl') {
+      margin-top: -14.3%;
+      padding-top: 10.4%;
+    }
+
+    @include screen('lg') {
+      margin-top: -16.5%;
+      padding-top: 9.8%;
+    }
+
+    @include screen('md') {
+      margin-top: -111%;
+      padding-top: 18.7%;
+      z-index: 2;
+    }
+
+    &::before {
+      @include screen('md') {
+        @include pseudo;
+
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+        padding-top: 100%;
+        background: $color-grey-dark-7;
+        transform-origin: 0 50%;
+        transform: skewY(9deg);
+      }
+    }
+
+    &__bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('../images/nla/bg-first.png');
+      background-repeat: no-repeat;
+      background-position: 0 180.9%;
+      background-size: 35.3% auto;
+
+      @include screen('xl') {
+        background-position: -8.4% 178.9%;
+        background-size: 49.4% auto;
+      }
+
+      @include screen('lg') {
+        background-position: -8.4% 172.9%;
+        background-size: 49.4% auto;
+        z-index: 1;
+      }
+
+      @include screen('md') {
+        background-position: 10% 140.2%;
+        background-size: 103% auto;
+      }
+
+      &::before {
+        @include pseudo;
+
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding-top: 32%;
+        transform-origin: 0 50%;
+        background-image: linear-gradient(-148deg, $color-black 0%, $color-green 100%);
+        opacity: .12;
+        transform: skewY(-9deg);
+        z-index: 2;
+
+        @include screen('xl') {
+          padding-top: 44.6%;
+        }
+
+        @include screen('lg') {
+          padding-top: 46.2%;
+        }
+
+        @include screen('md') {
+          display: none;
+        }
+      }
+
+      &::after {
+        @include pseudo;
+
+        background-color: $color-grey-dark-5;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding-top: 32%;
+        transform-origin: 0 50%;
+        transform: skewY(-9deg);
+        z-index: 1;
+
+        @include screen('xl') {
+          padding-top: 44.6%;
+        }
+
+        @include screen('lg') {
+          padding-top: 46.2%;
+        }
+
+        @include screen('md') {
+          top: 17%;
+          background: $color-grey-dark-7;
+          padding-top: 92.8%;
+        }
+      }
+    }
+
+    &__list {
+      padding-top: 41px;
+
+      @include screen('lg') {
+        padding-top: 16px;
+        margin-left: 1px;
+      }
+
+      @include screen('md') {
+        padding-top: 25px;
+        margin-left: 0;
+      }
+
+      .case-list {
+        &__icon {
+          fill: url('#nla-red');
+
+          &_case-star {
+
+            @include screen('lg') {
+              margin-top: -6px;
+            }
+          }
+        }
+      }
+    }
+
+    &__media {
+      display: block;
+      width: 82%;
+      align-self: flex-end;
+      margin-right: -16%;
+      margin-top: -11%;
+
+      @include screen('xl') {
+        width: 88.1%;
+        margin-top: 110px;
+        margin-right: -13.4%;
+      }
+
+      @include screen('lg') {
+        margin-top: 90px;
+      }
+
+      @include screen('md') {
+        margin-right: 0;
+        width: 100%;
+        margin-top: 52px;
+      }
+    }
+
+    &__image {
+      display: block;
+      font-size: 0;
+      line-height: 0;
+      width: 100%;
+    }
+
+    #{$b} {
+
+      &__col {
+
+        &_left {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-start;
+        }
+      }
+    }
+  }
+
+  &-design {
+    position: relative;
+    width: 100%;
+    margin-top: -2.3%;
+    padding-top: 3.2%;
+    z-index: 1;
+
+    @include screen('xl') {
+      margin-top: -3.3%;
+      padding-top: 6.5%;
+    }
+
+    @include screen('lg') {
+      padding-top: 6.4%;
+    }
+
+    @include screen('md') {
+      margin-top: -20.3%;
+      padding-top: 9.8%;
+      z-index: 3;
+    }
+
+    &::before {
+      @include pseudo;
+
+      top: 0;
+      left: 0;
+      width: 100%;
+      transform-origin: 0 50%;
+      padding-top: 88.75%;
+      background-image: linear-gradient(-148deg, $color-red-bright 0%, $color-red-dark-2 100%);
+      z-index: 2;
+      transform: skewY(-9.1deg);
+
+      @include screen('xl') {
+        padding-top: 101%;
+      }
+
+      @include screen('md') {
+        padding-top: 218%;
+      }
+    }
+
+    &__bg {
+      position: absolute;
+      display: block;
+      width: 100%;
+      top: 52.4%;
+      left: 0;
+      padding-top: 74.6%;
+      background-color: $color-grey-dark-5;
+      transform-origin: 100% 50%;
+      transform: skewY(-13.5deg);
+      overflow: hidden;
+      z-index: 3;
+
+      @include screen('xl') {
+        top: 57.5%;
+        padding-top: 105%;
+        transform: skewY(-13.2deg);
+      }
+
+      @include screen('lg') {
+        top: 56.2%;
+        transform: skewY(-9.1deg);
+      }
+
+      @include screen('md') {
+        top: 70%;
+        padding-top: 224%;
+        transform: skewY(-12.8deg);
+      }
+
+      &::after {
+        @include pseudo;
+
+        top: -7.4%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('../images/nla/bg-second.png');
+        background-size: 100% auto;
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        opacity: .17;
+        transform-origin: 100% 50%;
+        transform: skewY(13.5deg);
+
+        @include screen('xl') {
+          top: -14%;
+          background-image: url('../images/nla/bg-second-2.png');
+          transform: skewY(13.2deg);
+        }
+
+        @include screen('lg') {
+          top: 20.8%;
+          transform: skewY(9.1deg);
+        }
+
+        @include screen('md') {
+          top: -7%;
+          background-size: 300% auto;
+          background-position: 22.5% 0;
+          background-image: url('../images/nla/bg-second.png');
+          transform: skewY(12.8deg);
+          opacity: .32;
+        }
+      }
+    }
+
+    &__media {
+      position: relative;
+      display: block;
+      width: 100%;
+      z-index: 4;
+      overflow: hidden;
+      margin-top: 12px;
+
+      @include screen('xl') {
+        width: 117.6%;
+        margin-left: -4.5%;
+        margin-right: -13.1%;
+        margin-top: 94px;
+      }
+
+      @include screen('lg') {
+        width: 130%;
+        margin-left: 0%;
+        margin-right: -30%;
+        margin-top: 56px;
+      }
+
+      @include screen('md') {
+        width: 213%;
+        margin-left: -45%;
+        margin-right: -68%;
+        margin-top: 39px;
+      }
+    }
+
+    &__image {
+      display: block;
+      font-size: 0;
+      line-height: 0;
+      width: 100%;
+      height: auto;
+
+      img {
+        display: block;
+        font-size: 0;
+        line-height: 0;
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .case-section {
+      @include screen('xl') {
+        padding-right: 19.8%;
+      }
+
+      @include screen('lg') {
+        padding-right: 10.2%;
+      }
+
+      @include screen('md') {
+        padding-right: 0;
+      }
+    }
+
+    &__section {
+
+      .case-section {
+
+        &__heading {
+
+          &:not(:last-child) {
+            margin-bottom: 32px;
+
+            @include screen('xl') {
+              margin-bottom: 34px;
+            }
+
+            @include screen('lg') {
+              margin-bottom: 19px;
+            }
+
+            @include screen('md') {
+              margin-bottom: 24px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &-logo {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin-top: -34.8%;
+    padding-top: 4.1%;
+    z-index: 1;
+
+    @include screen('xl') {
+      margin-top: -33%;
+      padding-top: 6.4%;
+    }
+
+    @include screen('lg') {
+      margin-top: -39.5%;
+      padding-top: 6.4%;
+    }
+
+    @include screen('md') {
+      margin-top: -60.5%;
+      padding-top: 10%;
+      z-index: 4;
+    }
+
+    &__logo {
+      display: block;
+      width: 82.5%;
+      margin-left: -10px;
+
+      @include screen('xl') {
+        width: 108.8%;
+        margin-left: -4%;
+        margin-right: -4.8%;
+      }
+
+      @include screen('md') {
+        width: 94.5%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      &-image {
+        display: block;
+        font-size: 0;
+        line-height: 0;
+        width: 100%;
+      }
+    }
+
+    &__dude {
+      display: block;
+      width: 67.8%;
+      margin-left: 14.5%;
+
+      @include screen('xl') {
+        width: 87.7%;
+        margin-left: 0;
+      }
+
+      @include screen('md') {
+        width: 100%;
+      }
+
+      &-image {
+        display: block;
+        font-size: 0;
+        line-height: 0;
+        width: 100%;
+      }
+    }
+
+    .case-section {
+      @include screen('xl') {
+        padding-right: 20px;
+      }
+
+      @include screen('lg') {
+        padding-right: 0;
+        width: calc(100% + 30px);
+        margin-left: 0;
+        margin-right: -30px;
+      }
+
+      @include screen('md') {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+
+    &__section {
+
+      &:not(:last-child) {
+        margin-bottom: 224px;
+
+        @include screen('lg') {
+          margin-bottom: 104px;
+        }
+
+        @include screen('md') {
+          margin-bottom: 50px;
+        }
+      }
+
+      .case-section {
+
+        &__heading {
+
+          &:not(:last-child) {
+            margin-bottom: 32px;
+
+            @include screen('lg') {
+              margin-bottom: 20px;
+            }
+
+            @include screen('md') {
+              margin-bottom: 24px;
+            }
+          }
+        }
+      }
+    }
+
+    #{$b} {
+
+      &__col {
+
+        &_left {
+          padding-bottom: 21.8%;
+
+          @include screen('xl') {
+            padding-bottom: 27.8%;
+          }
+
+          @include screen('md') {
+            padding-bottom: 86px;
+          }
+        }
+
+        &_right {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          align-items: flex-start;
+
+          @include screen('xl') {
+            align-items: flex-end;
+          }
+        }
+
+      }
+    }
+  }
+
+  &-portraits {
+    position: relative;
+    display: block;
+    width: 100%;
+    z-index: 2;
+    margin-top: -5.7%;
+    padding-bottom: 108px;
+
+    @include screen('xl') {
+      margin-top: -6.2%;
+      padding-bottom: 146px;
+    }
+
+    @include screen('lg') {
+      padding-bottom: 113px;
+    }
+
+    @include screen('md') {
+      margin-top: -12.4%;
+      padding-bottom: 72px;
+      z-index: 5;
+    }
+
+    &__gallery {
+      display: block;
+      width: 100%;
+      overflow: hidden;
+
+      &:not(:last-child) {
+        margin-bottom: 113px;
+
+        @include screen('xl') {
+          margin-bottom: 82px;
+        }
+
+        @include screen('lg') {
+          margin-bottom: 61px;
+        }
+
+        @include screen('md') {
+          margin-bottom: 46px;
+        }
+      }
+    }
+
+    &__list {
+      display: flex;
+      justify-content: flex-start;
+      width: auto;
+      transform: translate3d(-64px, 0, 0);
+
+      @include screen('xl') {
+        transform: translate3d(-62px, 0, 0);
+      }
+
+      @include screen('lg') {
+        transform: translate3d(-48px, 0, 0);
+      }
+
+      @include screen('md') {
+        transform: translate3d(-37px, 0, 0);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+    }
+
+    &__item {
+      display: flex;
+      justify-content: flex-start;
+
+      &:not(:last-child) {
+        margin-right: 10px;
+
+        @include screen('xl') {
+          margin-right: 7px;
+        }
+
+        @include screen('lg') {
+          margin-right: 6px;
+        }
+
+        @include screen('md') {
+          margin-right: 0;
+          margin-bottom: 6px;
+        }
+      }
+    }
+
+    &__image {
+      display: block;
+      font-size: 0;
+      line-height: 0;
+      width: auto;
+      height: 255px;
+
+      @include screen('xl') {
+        height: 214px;
+      }
+
+      @include screen('lg') {
+        height: 160px;
+      }
+
+      @include screen('md') {
+        height: 128px;
+      }
+
+      &:not(:last-child) {
+        margin-right: 10px;
+
+        @include screen('xl') {
+          margin-right: 7px;
+        }
+
+        @include screen('lg') {
+          margin-right: 6px;
+        }
+      }
+    }
+
+    .case-section {
+      padding-right: 0;
+    }
+
+    &__section {
+      max-width: 620px;
+
+      @include screen('lg') {
+        max-width: 554px;
+      }
+
+      .case-section {
+
+        &__heading {
+
+          &:not(:last-child) {
+            margin-bottom: 54px;
+
+            @include screen('xl') {
+              margin-bottom: 56px;
+            }
+
+            @include screen('lg') {
+              margin-bottom: 37px;
+            }
+
+            @include screen('md') {
+              margin-bottom: 24px;
+            }
+          }
+        }
+      }
+    }
+  }
 }

@@ -1,9 +1,19 @@
 import svg4everybody from 'svg4everybody';
+import picturefill from 'picturefill';
 import objectFitImages from 'object-fit-images';
+import './modernizr';
 import './globalOptions';
 import anchor from '../blocks/js-functions/anchor';
-import { freezebuttons } from '../blocks/js-functions/freeze';
-import { selects, sliders, datepicker, inputmask, numberinput } from '../blocks/form-elements/form-elements';
+import {
+  freezebuttons,
+} from '../blocks/js-functions/freeze';
+import {
+  selects,
+  sliders,
+  datepicker,
+  inputmask,
+  numberinput,
+} from '../blocks/form-elements/form-elements';
 import popups from '../blocks/popups/popups';
 import scrollbar from '../blocks/scrollbar/scrollbar';
 import slider from '../blocks/slider/slider';
@@ -20,6 +30,9 @@ import header from '../components/header/header';
 const $ = window.$;
 
 $(() => {
+  if (!window.Modernizr.picture) {
+    picturefill();
+  }
   svg4everybody();
   objectFitImages();
   anchor();

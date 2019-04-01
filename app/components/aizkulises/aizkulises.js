@@ -59,20 +59,23 @@ export default function aizkulises() {
     // if (isMobile) $('.js-sr').removeClass('js-sr');
     // if (isMobile) return;
 
-    function makeDelay(el) {
-      let delay = 0;
+    function makeDelay(el, dl, stp) {
+      let delay = dl || 0;
+      const step = stp || 50;
 
       $(el).each(function () {
         $(this).css({
           animationDelay: `${delay}ms`
         });
-        delay += 50;
+        delay += stp;
       });
     }
 
     makeDelay('.js-sr_7');
     makeDelay('.js-sr_8');
     makeDelay('.js-sr_9');
+    makeDelay('.js-sr_12', 100, 100);
+    makeDelay('.js-sr_13', 50, 100);
 
     // Общий список классов анимаций
     let classes = '';
@@ -93,7 +96,7 @@ export default function aizkulises() {
         scrollMoment = top - wH + momentOffset;
 
       if (sT * scale > scrollMoment && el.hasClass('js-sr')) {
-        if (el.hasClass('js-sr_1') || el.hasClass('js-sr_8')) el.addClass(`${animClasses[0]}`);
+        if (el.hasClass('js-sr_1') || el.hasClass('js-sr_8') || el.hasClass('js-sr_12')) el.addClass(`${animClasses[0]}`);
         if (el.hasClass('js-sr_2')) el.addClass(`${animClasses[0]}`).css({
           animationDelay: '100ms'
         });
@@ -107,7 +110,7 @@ export default function aizkulises() {
           animationDelay: '400ms'
         });
         if (el.hasClass('js-sr_6')) el.addClass(`${animClasses[1]}`);
-        if (el.hasClass('js-sr_7') || el.hasClass('js-sr_9')) el.addClass(`${animClasses[2]}`);
+        if (el.hasClass('js-sr_7') || el.hasClass('js-sr_9') || el.hasClass('js-sr_13')) el.addClass(`${animClasses[2]}`);
         if (el.hasClass('js-sr_10')) el.addClass(`${animClasses[3]}
         `);
         if (el.hasClass('js-sr_11')) el.addClass(`${animClasses[4]}
