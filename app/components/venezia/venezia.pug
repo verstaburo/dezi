@@ -1,0 +1,105 @@
+mixin venezia()
+  +b.venezia&attributes(attributes)
+    block
+
+mixin venezia-column-left()
+  .venezia__col.venezia__col_left&attributes(attributes)
+    block
+
+mixin venezia-column-right()
+  .venezia__col.venezia__col_right&attributes(attributes)
+    block
+
+mixin venezia-lead()
+  +b.SECTION.venezia-lead&attributes(attributes)
+    +e.media.js-sr_11
+      +e.PICTURE.image
+        source(srcset="assets/images/venezia/head-mobile.png" media="(max-width: 767px)")
+        +e.IMG(srcset="assets/images/venezia/head.png")
+    +e.header
+      .container.container_inner.container_flex
+        +e.logo.js-sr_2
+          +icon('venezia-logo').__logo-icon
+        +e.A.link.js-sr_3(href="https://www.venecija.lv") www.venecija.lv
+    +e.content
+      .container.container_inner.container_flex
+        +venezia-column-left
+        +venezia-column-right
+          +case-section.__section
+            +case-section-heading().js-sr_4 Дизайн сайта и каталог для комплекса апартаментов — Венеция
+            +case-section-text.js-sr_5 Венеция — комплекс апартаментов на первой линии Юрмалы. Мы создали функциональный, легкий и яркий веб-сайт, который знакомит потенциальных клиентов с проектом и его особенностями.
+          +case-section.__section
+            +case-section-heading().js-sr_1 Задачи
+            +case-list([
+              ['case-rocket', 'Рассказать о будущем проекта', '33', '33'],
+              ['case-paint', 'Выгодно подать информацию об апартаментах', '31', '31'],
+              ['case-map', 'Рассказать об окрестностях и инфраструктуре', '31', '27'],
+            ]).venezia-lead__list
+
+    block
+
+mixin venezia-site()
+  +b.SECTION.venezia-site&attributes(attributes)
+    +e.bg
+    block
+
+mixin venezia-applique()
+  +b.SECTION.venezia-applique&attributes(attributes)
+    +e.item
+      +e.IMG.image.js-sr_9(src="assets/images/venezia/imac-1.png")
+      +e.IMG.screen.js-sr_1(src="assets/images/venezia/about.png")
+    +e.describe
+      .container.container_inner.container_flex
+        +venezia-column-left
+        +venezia-column-right
+          +case-section.__section
+            +case-section-text.js-sr_2 Основные разделы сайта открываются поверх открытой страницы где бы не находился прльзователь.
+    +e.item
+      +e.IMG.image.js-sr_6(src="assets/images/venezia/imac-2.png")
+
+
+mixin venezia-about()
+  +b.SECTION.venezia-about&attributes(attributes)
+    +venezia-applique
+    +e.bg
+      +e.IMG.bg-image(src="assets/images/venezia/plan.png")
+    .container.container_inner.container_flex
+      +venezia-column-left
+        +case-section.__section
+          +case-section-heading().js-sr_1 Каталог апартаментов
+          +case-section-text.js-sr_2 Мы бережно перерисовали все планы проекта и собрали их в лаконичный и информативный буклет.
+      +venezia-column-right
+    +e.media
+      +e.IMG.image.js-sr_3(src="assets/images/venezia/magazine.png")
+    block
+
+mixin venezia-magazin(img)
+  +b.FIGURE.venezia-magazin&attributes(attributes)
+    +e.IMG.image.js-sr_1(src=img)
+    +e.FIGCAPTION.name.js-sr_2
+      block
+
+mixin venezia-catalog()
+  +b.SECTION.venezia-catalog&attributes(attributes)
+    +e.UL.list
+      +e.LI.item
+        +venezia-magazin('assets/images/venezia/magazine-1.png') Разоврот об интерьере
+      +e.LI.item
+        +venezia-magazin('assets/images/venezia/magazine-2.png') Карта окрестностей со всеми элементами ближайшей инфраструктуры
+      +e.LI.item
+        +venezia-magazin('assets/images/venezia/magazine-3.png') Немного об окрестностях
+      +e.LI.item
+        +venezia-magazin('assets/images/venezia/magazine-4.png') О гармонии и легкости
+    block
+
+mixin venezia-package()
+  +b.SECTION.venezia-package&attributes(attributes)
+    .container.container_inner.container_flex
+      +venezia-column-left
+        +case-section.__section
+          +case-section-heading().js-sr_1 Упаковка
+          +case-section-text.js-sr_2 Каждый каталог вручается потенциальным клиентам в фирменном пакете Venecija.
+      +venezia-column-right
+        +e.media
+          +e.IMG.image.js-sr_6(src="assets/images/venezia/package.png")
+    block

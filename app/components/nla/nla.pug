@@ -7,7 +7,7 @@ mixin nla-column
     block
 
 mixin nla-lead()
-  +b.nla-lead&attributes(attributes)
+  +b.SECTION.nla-lead&attributes(attributes)
     +e.bg
       +e.bg-inner
     .container.container_inner.container_flex
@@ -26,7 +26,7 @@ mixin nla-lead()
       block
 
 mixin nla-case()
-  +b.nla-case&attributes(attributes)
+  +b.SECTION.nla-case&attributes(attributes)
     +e.bg
     .container.container_inner.container_flex
       +nla-column.nla__col_left
@@ -43,24 +43,20 @@ mixin nla-case()
       block
 
 mixin nla-design()
-  +b.nla-design&attributes(attributes)
+  +b.SECTION.nla-design&attributes(attributes)
     .container.container_inner.container_flex
       +nla-column.nla__col_left
         +case-section.__section
           +case-section-heading().js-sr_1 Responsive web design
           +case-section-text.js-sr_2 Booking of the artists should be available anywhere in the world 24 hours a day right away as it is not known in which part of the world there will be a concert tomorrow. Responsive website design helps to do that.
       +nla-column.nla__col_right
-    +e.media.js-sr_3
-      +e.PICTURE.image
-        source(srcset="assets/images/nla/phones-2.png" media="(max-width: 768px)")
-        source(srcset="assets/images/nla/phones-3.png" media="(max-width: 1024px)")
-        source(srcset="assets/images/nla/phones-2.png" media="(max-width: 1366px)")
-        +e.IMG.image(srcset="assets/images/nla/phones.png")
+    +e.media.js-nla-iphones
+      +e.IMG.image(srcset="assets/images/nla/phones.png")
     +e.bg
     block
 
 mixin nla-logo()
-  +b.nla-logo&attributes(attributes)
+  +b.SECTION.nla-logo&attributes(attributes)
     .container.container_inner.container_flex
       +nla-column.nla__col_left
         +case-section.__section
@@ -74,7 +70,7 @@ mixin nla-logo()
     block
 
 mixin nla-portraits()
-  +b.nla-portraits&attributes(attributes)
+  +b.SECTION.nla-portraits&attributes(attributes)
     +e.gallery
       +e.list
         +e.item

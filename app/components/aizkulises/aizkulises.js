@@ -126,33 +126,63 @@ export default function aizkulises() {
   /*
   Не использовать эти скрипты на других страницах
    */
-  if ($('.aizkulises').length < 1) return;
+  if ($('.aizkulises').length > 0) {
 
-  /*
-  Скролл скриншотов в последней секции
-   */
-  if (isMobile) return;
+    /*
+    Скролл скриншотов в последней секции
+     */
+    if (isMobile) return;
 
-  $(window).on('load scroll', function () {
-    const
-      w = $(this),
-      st = w.scrollTop() * scale,
-      block = $(document).find('.js-aizkulises-screenshots'),
-      scrollBlock = block.find('img'),
-      blockTop = block.position('html').top * scale,
-      scrollMoment = blockTop - w.height(),
-      scrollHeight = block.outerHeight(),
-      maxScroll = scrollMoment + scrollHeight,
-      maxTranslate = 23;
+    $(window).on('load scroll', function () {
+      const
+        w = $(this),
+        st = w.scrollTop() * scale,
+        block = $(document).find('.js-aizkulises-screenshots'),
+        scrollBlock = block.find('img'),
+        blockTop = block.position('html').top * scale,
+        scrollMoment = blockTop - w.height(),
+        scrollHeight = block.outerHeight(),
+        maxScroll = scrollMoment + scrollHeight,
+        maxTranslate = 23;
 
-    if (st < scrollMoment) {
-      scrollBlock.attr('style', `transform: translate3d(0, 0, 0)`);
-    } else if ((st >= scrollMoment) && (st < maxScroll)) {
-      const scrollPercent = (st - scrollMoment) / scrollHeight * maxTranslate;
-      scrollBlock.attr('style', `transform: translate3d(-${scrollPercent}%, -${scrollPercent}%, 0)`);
-    } else if (st > maxScroll) {
-      scrollBlock.attr('style', `transform: translate3d(-${maxTranslate}%, -${maxTranslate}%, 0)`);
-    }
-  });
+      if (st < scrollMoment) {
+        scrollBlock.attr('style', `transform: translate3d(0, 0, 0)`);
+      } else if ((st >= scrollMoment) && (st < maxScroll)) {
+        const scrollPercent = (st - scrollMoment) / scrollHeight * maxTranslate;
+        scrollBlock.attr('style', `transform: translate3d(-${scrollPercent}%, -${scrollPercent}%, 0)`);
+      } else if (st > maxScroll) {
+        scrollBlock.attr('style', `transform: translate3d(-${maxTranslate}%, -${maxTranslate}%, 0)`);
+      }
+    });
+  }
+
+  if ($('.nla').length > 0) {
+    /*
+    Скролл скриншотов в последней секции
+     */
+    if (isMobile) return;
+
+    $(window).on('load scroll', function () {
+      const
+        w = $(this),
+        st = w.scrollTop() * scale,
+        block = $(document).find('.js-nla-iphones'),
+        scrollBlock = block.find('img'),
+        blockTop = block.offset().top * scale,
+        scrollMoment = blockTop - w.height(),
+        scrollHeight = block.outerHeight(true),
+        maxScroll = scrollMoment + scrollHeight,
+        maxTranslate = 23;
+
+      if (st < scrollMoment) {
+        scrollBlock.attr('style', `transform: translate3d(0, 0, 0)`);
+      } else if ((st >= scrollMoment) && (st < maxScroll)) {
+        const scrollPercent = (st - scrollMoment) / scrollHeight * maxTranslate;
+        scrollBlock.attr('style', `transform: translate3d(-${scrollPercent}%, -${scrollPercent}%, 0)`);
+      } else if (st > maxScroll) {
+        scrollBlock.attr('style', `transform: translate3d(-${maxTranslate}%, -${maxTranslate}%, 0)`);
+      }
+    });
+  }
 }
 /* eslint-enable */

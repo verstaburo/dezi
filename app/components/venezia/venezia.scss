@@ -1,0 +1,304 @@
+.venezia {
+  $b: &;
+
+  display: block;
+  width: 100%;
+  font-family: $font-second;
+  color: $color-yellow-light-4;
+  background-color: $color-violet;
+  margin-bottom: -1px;
+  background-image: url('../images/venezia/bg-first.png');
+  background-size: contain auto;
+  background-position: 0 -16px;
+  background-repeat: no-repeat;
+
+  @include screen('xl') {
+    background-size: cover 1080px;
+    background-position: 50% -13px;
+  }
+
+  @include screen('lg') {
+    background-size: cover 810px;
+    background-position: 50% -10px;
+  }
+
+  @include screen('md') {
+    background-size: cover 887px;
+    background-position: -407px -143px;
+  }
+
+  &::after {
+    display: block;
+    content: '';
+    width: 100%;
+    height: 670px;
+    background-color: $color-violet-dark;
+
+    @include screen('xl') {
+      height: 440px;
+    }
+
+    @include screen('lg') {
+      height: 330px;
+    }
+
+    @include screen('md') {
+      height: 230px;
+    }
+  }
+
+  .case-section {
+
+    &__heading {
+      font-family: $font-second;
+      font-weight: 100;
+      line-height: 1.2;
+      letter-spacing: -.02em;
+      font-size: 47px;
+      color: $color-pink;
+
+      @include screen('lg') {
+        font-size: 35px;
+      }
+
+      @include screen('md') {
+        font-size: 30px;
+      }
+    }
+
+    &__text {
+      font-weight: 100;
+      line-height: 1.38;
+      font-size: 21px;
+
+      @include screen('lg') {
+        font-size: 18px;
+      }
+
+      @include screen('md') {
+        font-size: 15px;
+      }
+    }
+  }
+
+  .case-list {
+    font-size: 21px;
+    line-height: 1.38;
+
+    @include screen('lg') {
+      font-size: 18px;
+    }
+
+    @include screen('md') {
+      font-size: 15px;
+    }
+
+    &__item {
+      padding-left: 60px;
+
+      @include screen('lg') {
+        padding-left: 74px;
+      }
+
+      @include screen('md') {
+        padding-left: 62px;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 63px;
+
+        @include screen('lg') {
+          margin-bottom: 51px;
+        }
+
+        @include screen('md') {
+          margin-bottom: 45px;
+        }
+      }
+    }
+
+    &__icon {
+      fill: url('#venezia-pink');
+
+      @include screen('lg') {
+        transform-origin: 0 50%;
+        transform: translate3d(0, -50%, 0) scale(.76);
+      }
+    }
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  &-lead {
+    display: block;
+    width: 100%;
+
+    &__media {
+      display: block;
+      position: relative;
+      width: 100%;
+      padding-top: 80.8%;
+      margin-top: -51%;
+      margin-left: -36.9%;
+
+      @include screen('xl') {
+        padding-top: 113%;
+        margin-top: -71%;
+      }
+
+      @include screen('lg') {
+        padding-top: 114%;
+        margin-top: -70%;
+      }
+    }
+
+    &__image {
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      width: 241%;
+      height: auto;
+
+      img {
+        display: block;
+        width: 100%;
+        font-size: 0;
+        line-height: 0;
+      }
+    }
+
+    &__header {
+      display: block;
+      width: 100%;
+
+      &:not(:last-child) {
+        margin-bottom: 134px;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+      }
+    }
+
+    &__logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+      padding-left: 9px;
+      width: 203px;
+      height: 184px;
+      box-shadow: 12px 21px 43px rgba(0, 0, 0, .32);
+      background-image: linear-gradient(-47deg, $color-grey-pink 0%, $color-pink-2 100%);
+
+      @include screen('lg') {
+        padding-left: 6px;
+        width: 153px;
+        height: 139px;
+      }
+
+      @include screen('md') {
+        padding-left: 3px;
+        width: 102px;
+        height: 92px;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 128px;
+
+        @include screen('lg') {
+          margin-bottom: 120px;
+        }
+
+        @include screen('md') {
+          margin-bottom: 60px;
+        }
+      }
+
+      &-icon {
+        width: 164px;
+        height: auto;
+        fill: $color-basic;
+
+        @include screen('lg') {
+          width: 123px;
+        }
+
+        @include screen('md') {
+          width: 82px;
+        }
+      }
+    }
+
+    &__link {
+      position: relative;
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 500;
+      color: $color-basic;
+      line-height: 1.2;
+      letter-spacing: .54em;
+      text-transform: uppercase;
+
+      &::before {
+        @include pseudo;
+
+        bottom: -7px;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-image: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, $color-pink-2 15%, $color-pink-2 85%, rgba(0, 0, 0, 0) 100%);
+      }
+    }
+
+    &__content {
+      display: block;
+      width: 100%;
+    }
+
+    &__section {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      padding-right: 50px;
+
+      &:not(:last-child) {
+        margin-bottom: 168px;
+      }
+
+      .case-section {
+
+        &__heading {
+          &:not(:last-child) {
+            margin-bottom: 51px;
+          }
+        }
+      }
+    }
+
+    &__list {
+      padding-top: 19px;
+    }
+
+    #{$b} {
+
+      &__col {
+
+        &_left {
+          flex: 1;
+        }
+
+        &_right {
+          width: 36.7%;
+        }
+      }
+    }
+  }
+}
