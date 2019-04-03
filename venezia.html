@@ -29,7 +29,8 @@
         <section class="venezia-lead">
             <div class="venezia-lead__media js-sr js-sr_11">
                 <picture class="venezia-lead__image">
-                    <source srcset="assets/images/venezia/head-mobile.png" media="(max-width: 767px)" /><img srcset="assets/images/venezia/head.png" alt="" role="presentation" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></picture>
+                    <source srcset="assets/images/venezia/head-mobile.png" media="(max-width: 767px)" />
+                    <source srcset="assets/images/venezia/head-middle.png" media="(max-width: 1366px)" /><img srcset="assets/images/venezia/head.png" alt="" role="presentation" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></picture>
             </div>
             <div class="venezia-lead__header">
                 <div class="container container_inner container_flex">
@@ -58,22 +59,23 @@
         </section>
         <section class="venezia-site">
             <div class="venezia-site__bg"></div>
-            <section class="venezia-about">
-                <section class="venezia-applique">
-                    <div class="venezia-applique__item"><img class="venezia-applique__image js-sr js-sr_9" src="assets/images/venezia/imac-1.png" alt="" role="presentation" /><img class="venezia-applique__screen js-sr js-sr_1" src="assets/images/venezia/about.png" alt="" role="presentation" /></div>
-                    <div class="venezia-applique__describe">
-                        <div class="container container_inner container_flex">
-                            <div class="venezia__col venezia__col_left"></div>
-                            <div class="venezia__col venezia__col_right">
-                                <section class="case-section venezia-applique__section">
-                                    <div class="case-section__text js-sr js-sr_2">Основные разделы сайта открываются поверх открытой страницы где бы не находился прльзователь.</div>
-                                </section>
-                            </div>
+            <section class="venezia-applique">
+                <div class="venezia-applique__mac venezia-applique__mac_first"><img class="venezia-applique__image js-sr js-sr_10" src="assets/images/venezia/imac-1.png" alt="" role="presentation" />
+                    <div class="venezia-applique__screen js-sr js-sr_14"><img class="venezia-applique__screen-img" src="assets/images/venezia/about.png" alt="" role="presentation" /></div>
+                </div>
+                <div class="venezia-applique__describe">
+                    <div class="container container_inner container_flex">
+                        <div class="venezia__col venezia__col_left"></div>
+                        <div class="venezia__col venezia__col_right">
+                            <section class="case-section venezia-applique__section">
+                                <div class="case-section__text js-sr js-sr_2">Основные разделы сайта открываются поверх открытой страницы где бы не находился пользователь.</div>
+                            </section>
                         </div>
                     </div>
-                    <div class="venezia-applique__item"><img class="venezia-applique__image js-sr js-sr_6" src="assets/images/venezia/imac-2.png" alt="" role="presentation" /></div>
-                </section>
-                <div class="venezia-about__bg"><img class="venezia-about__bg-image" src="assets/images/venezia/plan.png" alt="" role="presentation" /></div>
+                </div>
+                <div class="venezia-applique__mac venezia-applique__mac_second"><img class="venezia-applique__image js-sr js-sr_6" src="assets/images/venezia/imac-2.png" alt="" role="presentation" /></div>
+            </section>
+            <section class="venezia-about">
                 <div class="container container_inner container_flex">
                     <div class="venezia__col venezia__col_left">
                         <section class="case-section venezia-about__section">
@@ -81,34 +83,48 @@
                             <div class="case-section__text js-sr js-sr_2">Мы бережно перерисовали все планы проекта и собрали их в лаконичный и информативный буклет.</div>
                         </section>
                     </div>
-                    <div class="venezia__col venezia__col_right"></div>
+                    <div class="venezia__col venezia__col_right">
+                        <div class="venezia-about__plan js-sr js-sr_6"><img class="venezia-about__plan-image" src="assets/images/venezia/plan.png" alt="" role="presentation" /></div>
+                    </div>
                 </div>
-                <div class="venezia-about__media"><img class="venezia-about__image js-sr js-sr_3" src="assets/images/venezia/magazine.png" alt="" role="presentation" /></div>
             </section>
-            <section class="venezia-catalog">
+            <section class="venezia-book">
+                <div class="venezia-book__media js-sr js-sr_3"><img class="venezia-book__image" src="assets/images/venezia/magazine.png" alt="" role="presentation" /></div>
+            </section>
+        </section>
+        <section class="venezia-catalog">
+            <div class="container container_inner">
                 <ul class="venezia-catalog__list">
-                    <li class="venezia-catalog__item">
-                        <figure class="venezia-magazin"><img class="venezia-magazin__image js-sr js-sr_1" src="assets/images/venezia/magazine-1.png" alt="" role="presentation" />
-                            <figcaption class="venezia-magazin__name js-sr js-sr_2">Разоврот об интерьере</figcaption>
+                    <li class="venezia-catalog__item js-sr js-sr_9">
+                        <figure class="venezia-magazine"><img class="venezia-magazine__image" src="assets/images/venezia/magazine-1.png" alt="" role="presentation" />
+                            <figcaption class="venezia-magazine__name">
+                                <div class="venezia-magazine__text">Разоврот об интерьере</div>
+                            </figcaption>
                         </figure>
                     </li>
-                    <li class="venezia-catalog__item">
-                        <figure class="venezia-magazin"><img class="venezia-magazin__image js-sr js-sr_1" src="assets/images/venezia/magazine-2.png" alt="" role="presentation" />
-                            <figcaption class="venezia-magazin__name js-sr js-sr_2">Карта окрестностей со всеми элементами ближайшей инфраструктуры</figcaption>
+                    <li class="venezia-catalog__item js-sr js-sr_9">
+                        <figure class="venezia-magazine"><img class="venezia-magazine__image" src="assets/images/venezia/magazine-2.png" alt="" role="presentation" />
+                            <figcaption class="venezia-magazine__name">
+                                <div class="venezia-magazine__text">Карта окрестностей со всеми элементами ближайшей инфраструктуры</div>
+                            </figcaption>
                         </figure>
                     </li>
-                    <li class="venezia-catalog__item">
-                        <figure class="venezia-magazin"><img class="venezia-magazin__image js-sr js-sr_1" src="assets/images/venezia/magazine-3.png" alt="" role="presentation" />
-                            <figcaption class="venezia-magazin__name js-sr js-sr_2">Немного об окрестностях</figcaption>
+                    <li class="venezia-catalog__item js-sr js-sr_9">
+                        <figure class="venezia-magazine"><img class="venezia-magazine__image" src="assets/images/venezia/magazine-3.png" alt="" role="presentation" />
+                            <figcaption class="venezia-magazine__name">
+                                <div class="venezia-magazine__text">Немного об окрестностях</div>
+                            </figcaption>
                         </figure>
                     </li>
-                    <li class="venezia-catalog__item">
-                        <figure class="venezia-magazin"><img class="venezia-magazin__image js-sr js-sr_1" src="assets/images/venezia/magazine-4.png" alt="" role="presentation" />
-                            <figcaption class="venezia-magazin__name js-sr js-sr_2">О гармонии и легкости</figcaption>
+                    <li class="venezia-catalog__item js-sr js-sr_9">
+                        <figure class="venezia-magazine"><img class="venezia-magazine__image" src="assets/images/venezia/magazine-4.png" alt="" role="presentation" />
+                            <figcaption class="venezia-magazine__name">
+                                <div class="venezia-magazine__text">О гармонии и легкости</div>
+                            </figcaption>
                         </figure>
                     </li>
                 </ul>
-            </section>
+            </div>
         </section>
         <section class="venezia-package">
             <div class="container container_inner container_flex">
@@ -119,7 +135,7 @@
                     </section>
                 </div>
                 <div class="venezia__col venezia__col_right">
-                    <div class="venezia-package__media"><img class="venezia-package__image js-sr js-sr_6" src="assets/images/venezia/package.png" alt="" role="presentation" /></div>
+                    <div class="venezia-package__media js-sr js-sr_6"><img class="venezia-package__image" src="assets/images/venezia/package.png" alt="" role="presentation" /></div>
                 </div>
             </div>
         </section><svg class="svg-gradients">
