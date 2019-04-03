@@ -8,22 +8,22 @@
   background-color: $color-violet;
   margin-bottom: -1px;
   background-image: url('../images/venezia/bg-first.png');
-  background-size: contain auto;
-  background-position: 0 -16px;
+  background-size: 100% auto;
+  background-position: 0 10.9%;
   background-repeat: no-repeat;
 
   @include screen('xl') {
-    background-size: cover 1080px;
-    background-position: 50% -13px;
+    background-size: auto 1080px;
+    background-position: 50% 12.8%;
   }
 
   @include screen('lg') {
-    background-size: cover 810px;
-    background-position: 50% -10px;
+    background-size: auto 810px;
+    background-position: 50% 12%;
   }
 
   @include screen('md') {
-    background-size: cover 887px;
+    background-size: auto 887px;
     background-position: -407px -143px;
   }
 
@@ -73,6 +73,7 @@
 
       @include screen('lg') {
         font-size: 18px;
+        line-height: 1.46;
       }
 
       @include screen('md') {
@@ -87,6 +88,7 @@
 
     @include screen('lg') {
       font-size: 18px;
+      line-height: 1.46;
     }
 
     @include screen('md') {
@@ -97,18 +99,14 @@
       padding-left: 60px;
 
       @include screen('lg') {
-        padding-left: 74px;
-      }
-
-      @include screen('md') {
-        padding-left: 62px;
+        padding-left: 58px;
       }
 
       &:not(:last-child) {
         margin-bottom: 63px;
 
         @include screen('lg') {
-          margin-bottom: 51px;
+          margin-bottom: 28px;
         }
 
         @include screen('md') {
@@ -133,6 +131,8 @@
   }
 
   &-lead {
+    position: relative;
+    z-index: 2;
     display: block;
     width: 100%;
 
@@ -145,13 +145,14 @@
       margin-left: -36.9%;
 
       @include screen('xl') {
-        padding-top: 113%;
-        margin-top: -71%;
+        padding-top: 114%;
+        margin-top: -72%;
+        margin-left: -67.7%;
       }
 
       @include screen('lg') {
         padding-top: 114%;
-        margin-top: -70%;
+        margin-top: -72%;
       }
     }
 
@@ -162,6 +163,10 @@
       left: 0;
       width: 241%;
       height: auto;
+
+      @include screen('xl') {
+        width: 335%;
+      }
 
       img {
         display: block;
@@ -177,6 +182,10 @@
 
       &:not(:last-child) {
         margin-bottom: 134px;
+
+        @include screen('lg') {
+          margin-bottom: 100px;
+        }
       }
 
       .container {
@@ -213,8 +222,12 @@
       &:not(:last-child) {
         margin-bottom: 128px;
 
+        @include screen('xl') {
+          margin-bottom: 126px;
+        }
+
         @include screen('lg') {
-          margin-bottom: 120px;
+          margin-bottom: 94px;
         }
 
         @include screen('md') {
@@ -247,6 +260,14 @@
       letter-spacing: .54em;
       text-transform: uppercase;
 
+      @include screen('lg') {
+        font-size: 10px;
+      }
+
+      @include screen('md') {
+        font-size: 12px;
+      }
+
       &::before {
         @include pseudo;
 
@@ -255,6 +276,10 @@
         width: 100%;
         height: 1px;
         background-image: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, $color-pink-2 15%, $color-pink-2 85%, rgba(0, 0, 0, 0) 100%);
+
+        @include screen('lg') {
+          bottom: -5px;
+        }
       }
     }
 
@@ -264,20 +289,64 @@
     }
 
     &__section {
+      position: relative;
       display: block;
       width: 100%;
       box-sizing: border-box;
       padding-right: 50px;
 
+      @include screen('xl') {
+        padding-right: 0;
+      }
+
+      &:first-child::before {
+        @include pseudo;
+
+        top: 0;
+        left: -62px;
+        width: 122px;
+        height: 130px;
+        background-image: url('../images/venezia/purple-box-small.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        z-index: 1;
+
+        @include screen('lg') {
+          width: 101px;
+          height: 107px;
+          left: -48px;
+        }
+      }
+
       &:not(:last-child) {
         margin-bottom: 168px;
+
+        @include screen('xl') {
+          margin-bottom: 169px;
+        }
+
+        @include screen('lg') {
+          margin-bottom: 82px;
+        }
       }
 
       .case-section {
 
         &__heading {
+          position: relative;
+          z-index: 2;
+
           &:not(:last-child) {
             margin-bottom: 51px;
+
+            @include screen('xl') {
+              margin-bottom: 50px;
+            }
+
+            @include screen('lg') {
+              margin-bottom: 36px;
+            }
           }
         }
       }
@@ -285,11 +354,16 @@
 
     &__list {
       padding-top: 19px;
+
+      @include screen('lg') {
+        padding-top: 2px;
+      }
     }
 
     #{$b} {
 
       &__col {
+        display: block;
 
         &_left {
           flex: 1;
@@ -297,6 +371,641 @@
 
         &_right {
           width: 36.7%;
+
+          @include screen('xl') {
+            width: 45.6%;
+          }
+        }
+      }
+    }
+  }
+
+  &-site {
+    position: relative;
+    display: block;
+    width: 100%;
+    background-image: linear-gradient(-47deg, $color-dark-pink 0%, $color-violet-3 100%);
+    padding-top: 45.9%;
+    padding-bottom: 23%;
+    margin-top: -31.3%;
+    z-index: 1;
+
+    @include screen('xl') {
+      padding-top: 48.1%;
+      margin-top: -27.8%;
+      padding-bottom: 21%;
+    }
+
+    @include screen('lg') {
+      margin-top: -29%;
+    }
+
+    &::before {
+      @include pseudo;
+
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(40, 24, 93, .77);
+    }
+
+    &::after {
+      @include pseudo;
+
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      background-image: url('../images/venezia/bg-second.png');
+      background-repeat: no-repeat;
+      background-size: 100% auto;
+      background-position: 0 48.1%;
+      opacity: .08;
+
+      @include screen('xl') {
+        background-image: url('../images/venezia/bg-second-2.png');
+        background-size: 100% auto;
+        background-position: 0 61.1%;
+      }
+    }
+
+    &__bg {
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      overflow: hidden;
+      background-image: url('../images/venezia/print.png');
+      background-size: 66.25% auto;
+      background-position: -59% 199px;
+      background-repeat: no-repeat;
+
+      @include screen('xl') {
+        background-size: 93.1% auto;
+        background-position: -694% -14px;
+      }
+
+      &::before,
+      &::after {
+        @include pseudo;
+
+        right: 0;
+        width: 100%;
+        padding-top: 100%;
+        transform-origin: 100% 50%;
+        background-color: $color-violet;
+      }
+
+      &::before {
+        top: 0;
+        transform: skewY(45deg);
+      }
+
+      &::after {
+        bottom: 0;
+        transform: skewY(-45deg);
+      }
+    }
+  }
+
+  &-applique {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+    z-index: 3;
+
+    &__mac {
+      position: relative;
+      display: block;
+      width: 69.375%;
+
+      @include screen('xl') {
+        width: 97.5%;
+      }
+
+      &_first {
+        margin-left: -9.9%;
+
+        @include screen('xl') {
+          margin-left: -34.5%;
+        }
+
+        &::before,
+        &::after {
+          @include pseudo;
+        }
+
+        &::before {
+          right: calc(-5.8vw - 72px);
+          top: 102px;
+          width: 122px;
+          height: 130px;
+          background-image: url('../images/venezia/purple-box-small.png');
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: 0 0;
+
+          @include screen('xl') {
+            right: calc(-8.2vw - 72px);
+          }
+
+          @include screen('lg') {
+            top: 71px;
+            width: 101px;
+            height: 107px;
+            right: calc(-8.2vw - 59px);
+          }
+        }
+
+        &::after {
+          top: 260px;
+          right: -5.8vw;
+          width: 1px;
+          height: 330px;
+          background-color: $color-pink-3;
+
+          @include screen('lg') {
+            top: 194px;
+            width: 2px;
+            right: -8.2vw;
+            height: 248px;
+          }
+        }
+      }
+
+      &_second {
+        position: absolute;
+        top: 0;
+        left: 70.8%;
+
+        @include screen('xl') {
+          left: 79.1%;
+        }
+      }
+    }
+
+    &__image {
+      display: block;
+      font-size: 0;
+      line-height: 0;
+      width: 100%;
+    }
+
+    &__screen {
+      display: block;
+      position: absolute;
+      width: 45.8%;
+      top: -38%;
+      right: 18.4%;
+      z-index: 1;
+
+      @include screen('xl') {
+        width: 45.7%;
+        top: -37.8%;
+        right: 11.9%;
+      }
+
+      &-img {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: auto;
+        font-size: 0;
+        line-height: 0;
+        z-index: 2;
+      }
+    }
+
+    &__describe {
+      display: block;
+      width: 100%;
+      order: 2;
+      margin-top: -4%;
+
+      @include screen('xl') {
+        margin-top: -5.2%;
+      }
+    }
+
+    &__section {
+      max-width: 460px;
+
+      @include screen('md') {
+        max-width: none;
+      }
+    }
+
+    #{$b} {
+
+      &__col {
+        display: block;
+
+        &_left {
+          flex: 1;
+
+          @include screen('md') {
+            flex: none;
+            width: 100%;
+          }
+        }
+
+        &_right {
+          width: 53.25%;
+
+          @include screen('xl') {
+            width: 38.5%;
+          }
+
+          @include screen('md') {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  &-about {
+    position: relative;
+    display: block;
+    width: 100%;
+    z-index: 1;
+    padding-top: 17%;
+
+    @include screen('xl') {
+      padding-top: 6.8%;
+    }
+
+    &__section {
+      position: relative;
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      padding-left: 22.8%;
+      padding-top: 40.1%;
+      padding-right: 8%;
+
+      @include screen('xl') {
+        padding-left: 0;
+        padding-top: 45.5%;
+      }
+
+      &::after {
+        @include pseudo;
+
+        top: calc(100% + 5.1vw);
+        left: 23.3%;
+        width: 1px;
+        height: 90px;
+        background-color: $color-pink-3;
+
+        @include screen('xl') {
+          top: calc(100% + 5vw);
+          left: 0;
+        }
+      }
+
+      .case-section {
+
+        &__heading {
+          &:not(:last-child) {
+            margin-bottom: 59px;
+
+            @include screen('xl') {
+              margin-bottom: 60px;
+            }
+          }
+        }
+      }
+    }
+
+    &__plan {
+      position: relative;
+      width: 100%;
+      padding-top: 87.6%;
+      opacity: .8;
+
+      @include screen('xl') {
+        padding-top: 125.1%;
+      }
+
+      &-image {
+        position: absolute;
+        display: block;
+        font-size: 0;
+        line-height: 0;
+        top: 0;
+        left: 0;
+        height: 100%;
+      }
+    }
+
+
+    #{$b} {
+
+      &__col {
+        display: block;
+        box-sizing: border-box;
+
+        &_left {
+          width: 44%;
+
+          @include screen('xl') {
+            width: 46%;
+          }
+
+          @include screen('md') {
+            width: 100%;
+          }
+        }
+
+        &_right {
+          width: 56%;
+
+          @include screen('xl') {
+            width: 54%;
+          }
+
+          @include screen('md') {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  &-book {
+    position: relative;
+    display: block;
+    width: 100%;
+    z-index: 2;
+    margin-top: -11.6%;
+
+    @include screen('xl') {
+      margin-top: -26%;
+    }
+
+    &__media {
+      display: block;
+      width: 82.3%;
+      margin-left: auto;
+      margin-right: auto;
+
+      @include screen('xl') {
+        width: 92.6%;
+      }
+    }
+
+    &__image {
+      display: block;
+      font-size: 0;
+      line-height: 0;
+      width: 100%;
+      height: auto;
+      transform: translate3d(3.8%, 0, 0);
+
+      @include screen('xl') {
+        transform: translate3d(3.2%, 0, 0);
+      }
+    }
+  }
+
+  &-catalog {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin-top: -15.5%;
+    z-index: 2;
+
+    @include screen('xl') {
+      margin-top: -14.3%;
+    }
+
+    &__list {
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      align-content: flex-start;
+      width: calc(100% + 9px);
+      margin-left: -9px;
+
+      @include screen('xl') {
+        width: 105.2%;
+        margin-left: -3.6%;
+        margin-right: -1.6%;
+      }
+    }
+
+    &__item {
+      display: inline-block;
+      width: 47.4%;
+      margin-bottom: 150px;
+
+      @include screen('xl') {
+        width: 48%;
+        margin-bottom: 120px;
+      }
+
+      &:nth-child(odd) {
+        margin-right: 4%;
+
+        @include screen('xl') {
+          margin-right: 4%;
+        }
+      }
+    }
+  }
+
+  &-magazine {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    &__image {
+      display: block;
+      width: 100%;
+      font-size: 0;
+      line-height: 0;
+      height: auto;
+    }
+
+    &__name {
+      display: block;
+      box-sizing: border-box;
+      width: 100%;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 100;
+      line-height: 1.38;
+      margin-top: -18.8%;
+      padding-left: 3%;
+
+      @include screen('xl') {
+        margin-top: -13.6%;
+      }
+    }
+
+    &__text {
+      display: inline-block;
+      max-width: 400px;
+    }
+  }
+
+  &-package {
+    display: block;
+    width: 100%;
+    position: relative;
+    padding-top: 6.1%;
+    padding-bottom: 190px;
+
+    @include screen('xl') {
+      padding-top: 8.6%;
+    }
+
+    &::after {
+      @include pseudo;
+
+      top: 30.2%;
+      right: -160px;
+      width: 277px;
+      height: 277px;
+      background-image: url('../images/venezia/purple-box.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: 0 0;
+
+      @include screen('xl') {
+        width: 198px;
+        height: 204px;
+        top: 8.4%;
+        right: -114px;
+      }
+    }
+
+    &__section {
+      position: relative;
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      padding-left: 22.8%;
+      padding-top: 38.2%;
+      padding-right: 8%;
+
+      @include screen('xl') {
+        padding-top: 65.7%;
+        padding-left: 0;
+      }
+
+      .case-section {
+
+        &__heading {
+          position: relative;
+          display: block;
+          padding-right: 4vw;
+          box-sizing: border-box;
+
+          @include screen('xl') {}
+
+          &::after {
+            @include pseudo;
+
+            top: 50%;
+            left: 100%;
+            width: 191px;
+            height: 1px;
+            background-color: $color-pink-3;
+            margin-left: -3.4vw;
+
+            @include screen('xl') {
+              margin-top: 3px;
+              margin-left: -9.5vw;
+            }
+          }
+
+          &:not(:last-child) {
+            margin-bottom: 72px;
+          }
+        }
+      }
+    }
+
+    &__media {
+      position: relative;
+      display: block;
+      width: 100%;
+      padding-top: 111.5%;
+      margin-left: -3%;
+
+      @include screen('xl') {
+        padding-top: 142.8%;
+        margin-left: -6.8%;
+      }
+    }
+
+    &__image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: auto;
+      height: 100%;
+    }
+
+    #{$b} {
+
+      &__col {
+        display: block;
+        box-sizing: border-box;
+
+        &_left {
+          width: 44%;
+
+          @include screen('xl') {
+            width: 46%;
+          }
+
+          @include screen('md') {
+            width: 100%;
+          }
+        }
+
+        &_right {
+          position: relative;
+          width: 56%;
+
+          @include screen('xl') {
+            width: 54%;
+          }
+
+          @include screen('md') {
+            width: 100%;
+          }
+
+          &::before {
+            @include pseudo;
+
+            top: 10.8%;
+            left: 3.8%;
+            width: 122px;
+            height: 130px;
+            background-image: url('../images/venezia/purple-box-small.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: 0 0;
+
+            @include screen('xl') {
+              top: 20.8%;
+              left: 3%;
+            }
+          }
         }
       }
     }

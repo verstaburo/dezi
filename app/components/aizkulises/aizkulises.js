@@ -53,7 +53,7 @@ export default function aizkulises() {
         'animation_scaleIn',
         'animation_fadeInLeft',
         'animation_fadeInTop',
-        'animation_fadeInBottom'
+        'animation_fade',
       ];
 
     // if (isMobile) $('.js-sr').removeClass('js-sr');
@@ -65,7 +65,7 @@ export default function aizkulises() {
 
       $(el).each(function () {
         $(this).css({
-          animationDelay: `${delay}ms`
+          animationDelay: `${delay}ms`,
         });
         delay += stp;
       });
@@ -98,16 +98,16 @@ export default function aizkulises() {
       if (sT * scale > scrollMoment && el.hasClass('js-sr')) {
         if (el.hasClass('js-sr_1') || el.hasClass('js-sr_8') || el.hasClass('js-sr_12')) el.addClass(`${animClasses[0]}`);
         if (el.hasClass('js-sr_2')) el.addClass(`${animClasses[0]}`).css({
-          animationDelay: '100ms'
+          animationDelay: '100ms',
         });
         if (el.hasClass('js-sr_3')) el.addClass(`${animClasses[0]}`).css({
-          animationDelay: '200ms'
+          animationDelay: '200ms',
         });
         if (el.hasClass('js-sr_4')) el.addClass(`${animClasses[0]}`).css({
-          animationDelay: '300ms'
+          animationDelay: '300ms',
         });
         if (el.hasClass('js-sr_5')) el.addClass(`${animClasses[0]}`).css({
-          animationDelay: '400ms'
+          animationDelay: '400ms',
         });
         if (el.hasClass('js-sr_6')) el.addClass(`${animClasses[1]}`);
         if (el.hasClass('js-sr_7') || el.hasClass('js-sr_9') || el.hasClass('js-sr_13')) el.addClass(`${animClasses[2]}`);
@@ -115,6 +115,10 @@ export default function aizkulises() {
         `);
         if (el.hasClass('js-sr_11')) el.addClass(`${animClasses[4]}
         `);
+        if (el.hasClass('js-sr_14')) el.addClass(`${animClasses[5]}
+        `).css({
+          animationDelay: '300ms',
+        });
 
         setTimeout(() => {
           el.removeClass(`${classes}${baseClass}`).attr('style', '');

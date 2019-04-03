@@ -113,7 +113,6 @@
     }
 
     &__icon {
-
       @include screen('lg') {
         transform-origin: 0 50%;
         transform: translate3d(0, -50%, 0) scale(.89);
@@ -501,11 +500,11 @@
       }
 
       .case-list {
+
         &__icon {
           fill: url('#nla-red');
 
           &_case-star {
-
             @include screen('lg') {
               margin-top: -6px;
             }
@@ -918,7 +917,6 @@
             align-items: flex-end;
           }
         }
-
       }
     }
   }
