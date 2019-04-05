@@ -107,6 +107,8 @@ mixin venezia-package()
           +case-section-heading().js-sr_1 Упаковка
           +case-section-text.js-sr_2 Каждый каталог вручается потенциальным клиентам в фирменном пакете Venecija.
       +venezia-column-right
-        +e.media.js-sr_15
-          +e.IMG.image(src="assets/images/venezia/package.png")
+        +e.media
+          +e.IMG.image_front(src="assets/images/venezia/package.png")
+          +e.IMG.image_middle.js-sr_animate(src="assets/images/venezia/package-magazine.png")
+          +e.IMG.image_back(src="assets/images/venezia/package-back-handle.png")
     block

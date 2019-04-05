@@ -1272,6 +1272,25 @@
       display: block;
       width: auto;
       height: 100%;
+
+      &_front {
+        z-index: 3;
+      }
+
+      &_middle {
+        z-index: 2;
+        transition: transform .4s ease;
+        transition-delay: .2s;
+        transform: translate3d(0, 25%, 0);
+
+        &.is-animate {
+          transform: translate3d(0, 0, 0);
+        }
+      }
+
+      &_back {
+        z-index: 1;
+      }
     }
 
     #{$b} {

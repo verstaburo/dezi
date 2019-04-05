@@ -21,10 +21,16 @@ export default function venezia() {
         y: -50,
         ease: Power0.easeNone,
       }),
-      TweenMax.fromTo('.venezia-applique__screen', 1, {
-        y: 150,
+      TweenMax.fromTo('.venezia-applique__describe', 1, {
+        y: 50,
       }, {
-        y: -150,
+        y: -50,
+        ease: Power0.easeNone,
+      }),
+      TweenMax.fromTo('.venezia-applique__screen', 1, {
+        y: '15%',
+      }, {
+        y: '-15%',
         ease: Power0.easeNone,
       }),
     ]);
@@ -32,7 +38,7 @@ export default function venezia() {
   const scene = new ScrollMagic
     .Scene({
       triggerElement: '.venezia-applique',
-      duration: $('.venezia-applique').outerHeight(),
+      duration: $(window).height(),
     })
     .setTween(anim)
     .addTo(controller);

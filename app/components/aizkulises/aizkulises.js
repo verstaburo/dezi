@@ -124,6 +124,9 @@ export default function aizkulises() {
         if (el.hasClass('js-sr_15')) el.addClass(`${animClasses[1]}`).css({
           animationDelay: '500ms',
         });
+        if (el.hasClass('js-sr_animate')) {
+          el.addClass('is-animate');
+        }
 
         setTimeout(() => {
           el.removeClass(`${classes}${baseClass}`).attr('style', '');

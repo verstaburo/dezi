@@ -61,4 +61,8 @@ body {
 
 .js-sr {
   visibility: hidden;
+
+  &_animate {
+    visibility: visible;
+  }
 }
