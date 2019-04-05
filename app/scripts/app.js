@@ -25,6 +25,7 @@ import '../blocks/accordion/accordion';
 import '../blocks/dropdown/dropdown';
 import '../blocks/put-block-into-slot/put-block-into-slot';
 import aizkulises from '../components/aizkulises/aizkulises';
+import venezia from '../components/venezia/venezia';
 import header from '../components/header/header';
 
 const $ = window.$;
@@ -51,4 +52,5 @@ $(() => {
 
   aizkulises();
   header();
+  venezia();
 });
