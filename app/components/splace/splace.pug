@@ -1,0 +1,98 @@
+mixin splace()
+  +b.SECTION.splace&attributes(attributes)
+    block
+
+mixin splace-column-left()
+  .splace__col.splace__col_left&attributes(attributes)
+    block
+
+mixin splace-column-right()
+  .splace__col.splace__col_right&attributes(attributes)
+    block
+
+mixin splace-lead()
+  +b.SECTION.splace-lead&attributes(attributes)
+    .container.container_inner.container_flex
+      +splace-column-left
+        +e.header
+          +e.logo
+            +icon('splace-logo').__logo-icon
+          +e.A.link(href="https://secretplacestore.com") secretplacestore.com
+        +case-section.__section
+          +case-section-heading Design of an online store “Secret&nbsp;place”
+          +case-section-text The boutique showroom Secret Place specializes in unusual designer clothing from rare and single-piece brands. The client wanted to create an unusual visual image of the store and emphasize the simplicity and elegance of the collections presented.
+        +e.applique
+          +e.images
+            +e.item_w1
+              +e.IMG.image(src="assets/images/secretplace/lead-woman-1.png")
+            +e.item_w2
+              +e.IMG.image(src="assets/images/secretplace/lead-woman-2.png")
+            +e.item_w3
+              +e.IMG.image(src="assets/images/secretplace/lead-woman-3.png")
+            +e.images-woman(data-slot-id="splace-woman" data-slot-res="md")
+            +e.item_w4
+              +e.IMG.image(src="assets/images/secretplace/lead-woman-4.png")
+        +case-section.__section
+          +case-section-text
+            p The key visual element of the design is the keyhole, borrowed from the logo. There it plays the role of the enclosed area in the letter A. In the case of the site, it became a window into the world of Secret Place.
+            p The viewer as if peeps into a secret place through the keyhole.
+      +splace-column-right
+        +e.woman(data-slot-id="splace-woman" data-slot-res="xl")
+          +e.IMG.woman-image(src="assets/images/secretplace/lead-image.png" data-target-slot="splace-woman")
+    block
+
+mixin splace-about()
+  +b.SECTION.splace-about&attributes(attributes)
+    .container.container_inner.container_flex
+      +splace-column-left
+        +e.describe
+          +case-section.__section
+            +case-section-text
+              p The homepage is filled with several blocks of different meaning. The attention of customers is attracted not only to online products, but also to the real showroom in the centre of Moscow.
+          +e.woman
+            +e.IMG.woman-image(src="assets/images/secretplace/long-woman.png")
+      +splace-column-right
+        +e.page
+          +e.IMG.page-image(src="assets/images/secretplace/site-page.png")
+    block
+
+mixin splace-pages()
+  +b.SECTION.splace-pages&attributes(attributes)
+    .container.container_inner.container_flex
+      +splace-column-left
+        +case-section.__section
+          +case-section-heading All the main pages of the website are made in the same restrained minimalist manner. The emphasis is shifted to the products.
+      +splace-column-right
+    +e.images
+      +e.screen
+        +e.IMG.screen-image(src="assets/images/secretplace/pages.png")
+      +e.car
+        +e.IMG.car-image(src="assets/images/secretplace/car.png")
+    block
+
+mixin splace-design()
+  +b.SECTION.splace-design&attributes(attributes)
+    +e.images
+      +e.woman
+        +e.IMG.woman-image(src="assets/images/secretplace/notebook-woman.png")
+      +e.rock
+        +e.IMG.rock-image(src="assets/images/secretplace/rock-sign.png")
+    .container.container_inner.container_flex
+      +splace-column-left
+        +case-section.__section
+          +case-section-heading We have created graphic elements that would give the design additional depth and multi-level effect.
+      +splace-column-right
+    block
+
+mixin splace-look()
+  +b.SECTION.splace-look&attributes(attributes)
+    +e.images
+      +e.IMG.image(src="assets/images/secretplace/look.png")
+    block
+
+mixin splace-call()
+  +b.SECTION.splace-call&attributes(attributes)
+    .container.container_inner
+      +e.images
+        +e.IMG.image(src="assets/images/secretplace/call.png")
+    block
