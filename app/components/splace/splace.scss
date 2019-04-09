@@ -23,6 +23,14 @@
     display: block;
     margin-left: -4px;
 
+    @include screen('xl') {
+      margin-left: -2px;
+    }
+
+    @include screen('lg') {
+      margin-left: 0;
+    }
+
     &__heading {
       font-size: 40px;
       color: $color-grey-dark-8;
@@ -62,6 +70,10 @@
     display: block;
     width: 100%;
 
+    @include screen('md') {
+      padding-top: 13.7%;
+    }
+
     &__header {
       width: 100%;
       display: flex;
@@ -75,6 +87,10 @@
 
       &:not(:last-child) {
         margin-bottom: 70px;
+
+        @include screen('lg') {
+          margin-bottom: 51px;
+        }
       }
     }
 
@@ -99,6 +115,14 @@
 
       &:not(:last-child) {
         margin-bottom: 67px;
+
+        @include screen('lg') {
+          margin-bottom: 52px;
+        }
+
+        @include screen('md') {
+          margin-bottom: 32px;
+        }
       }
 
       &-icon {
@@ -130,6 +154,18 @@
       display: block;
       width: 100%;
       padding-top: 125%;
+
+      @include screen('xl') {
+        padding-top: 128.5%;
+      }
+
+      @include screen('lg') {
+        padding-top: 108.8%;
+      }
+
+      @include screen('md') {
+        padding-top: 218%;
+      }
     }
 
     &__images {
@@ -137,21 +173,40 @@
       top: 0;
       left: -160px;
       min-height: 100%;
-      width: 100vw;
+      width: calc((10000 / 30) * 1% + 320px);
       display: flex;
       justify-content: flex-start;
       align-items: flex-start;
 
       @include screen('xl') {
+        width: calc((10000 / 40) * 1% + 200px);
         left: -100px;
       }
 
       @include screen('lg') {
+        width: calc((10000 / 42.3) * 1% + 150px);
         left: -75px;
       }
 
       @include screen('md') {
+        display: flex;
+        height: 100%;
+        align-items: flex-end;
+        width: calc(100% + 50px);
         left: -25px;
+      }
+
+      &-woman {
+        display: none;
+
+        @include screen('md') {
+          position: absolute;
+          top: 0;
+          left: 0;
+          display: block;
+          width: 100%;
+          padding-top: 146%;
+        }
       }
     }
 
@@ -165,12 +220,43 @@
         margin-left: -3.64%;
         width: 18.7%;
         margin-right: 5.1%;
+
+        @include screen('xl') {
+          margin-left: -5%;
+          width: 26.2%;
+          margin-top: 11.4%;
+          margin-right: 7.1%;
+        }
+
+        @include screen('lg') {
+          margin-top: 8.4%;
+        }
+
+        @include screen('md') {
+          width: 83.7%;
+          margin-top: 0;
+          margin-left: -40.6%;
+          margin-bottom: 14%;
+        }
       }
 
       &_w2 {
         margin-top: 5.6%;
         margin-right: 7%;
         width: 11.4%;
+
+        @include screen('xl') {
+          width: 16%;
+          margin-top: 8%;
+        }
+
+        @include screen('lg') {
+          margin-top: 5%;
+        }
+
+        @include screen('md') {
+          display: none;
+        }
       }
 
       &_w3 {
@@ -208,9 +294,22 @@
       .case-section {
 
         &__heading {
+          box-sizing: border-box;
+
+          @include screen('lg') {
+            padding-right: 5%;
+          }
 
           &:not(:last-child) {
             margin-bottom: 97px;
+
+            @include screen('lg') {
+              margin-bottom: 55px;
+            }
+
+            @include screen('md') {
+              margin-bottom: 25px;
+            }
           }
         }
       }
@@ -219,6 +318,14 @@
 
         &:not(:last-child) {
           margin-bottom: 22px;
+
+          @include screen('lg') {
+            margin-bottom: 24px;
+          }
+
+          @include screen('md') {
+            margin-bottom: 18px;
+          }
         }
       }
     }
@@ -230,6 +337,20 @@
       padding-top: 135%;
       margin-top: 2.7%;
 
+      @include screen('xl') {
+        padding-top: 193.7%;
+        margin-top: 5.2%;
+      }
+
+      @include screen('lg') {
+        padding-top: 201.8%;
+        margin-top: 5.6%;
+      }
+
+      @include screen('md') {
+        display: none;
+      }
+
       &-image {
         position: absolute;
         display: block;
@@ -240,6 +361,20 @@
         width: auto;
         height: 100%;
         transform: translate3d(-50%, 0, 0);
+
+        @include screen('xl') {
+          left: 55.4%;
+        }
+
+        @include screen('lg') {
+          left: 54%;
+        }
+
+        @include screen('md') {
+          top: 4.6%;
+          left: 17.6%;
+          transform: translate3d(0, 0, 0);
+        }
       }
     }
 
@@ -251,13 +386,31 @@
           padding-top: 12.1%;
           width: 30%;
 
+          @include screen('xl') {
+            padding-top: 11.2%;
+            width: 40%;
+          }
+
+          @include screen('lg') {
+            width: 42.3%;
+          }
+
           @include screen('md') {
+            padding-top: 0;
             width: 100%;
           }
         }
 
         &_right {
           width: 70%;
+
+          @include screen('xl') {
+            width: 60%;
+          }
+
+          @include screen('lg') {
+            width: 57.7%;
+          }
 
           @include screen('md') {
             width: 100%;
@@ -273,6 +426,18 @@
     width: 100%;
     padding-top: 1.35%;
 
+    @include screen('xl') {
+      padding-top: 4.9%;
+    }
+
+    @include screen('lg') {
+      padding-top: 1.9%;
+    }
+
+    @include screen('md') {
+      padding-top: 18.3%;
+    }
+
     &__woman {
       position: absolute;
       top: 0;
@@ -282,6 +447,22 @@
       padding-top: 314%;
       margin-top: -105.4%;
       z-index: 2;
+
+      @include screen('xl') {
+        left: -1.8%;
+        padding-top: 382%;
+        margin-top: -128.3%;
+      }
+
+      @include screen('lg') {
+        padding-top: 382.3%;
+      }
+
+      @include screen('md') {
+        left: 21%;
+        padding-top: 222.2%;
+        margin-top: -82%;
+      }
 
       &-image {
         position: absolute;
@@ -302,6 +483,23 @@
       padding-top: 68.5%;
       padding-bottom: 14.7%;
 
+      @include screen('xl') {
+        margin-top: 128.3%;
+        padding-top: 71.9%;
+        padding-bottom: 25%;
+      }
+
+      @include screen('lg') {
+        padding-top: 65%;
+        padding-bottom: 23%;
+      }
+
+      @include screen('md') {
+        padding-top: 23.4%;
+        margin-top: 82%;
+        margin-bottom: 63%;
+      }
+
       &::before {
         @include pseudo;
 
@@ -311,6 +509,11 @@
         height: 100%;
         z-index: 1;
         background-color: $color-black;
+
+        @include screen('xl') {
+          left: -105px;
+          width: calc(100% + 200px);
+        }
       }
     }
 
@@ -319,6 +522,18 @@
       color: $color-basic;
       padding-right: 2%;
       z-index: 3;
+
+      @include screen('xl') {
+        padding-right: 16%;
+      }
+
+      @include screen('lg') {
+        padding-right: 18%;
+      }
+
+      @include screen('md') {
+        padding-right: 0;
+      }
 
       .case-section {
 
@@ -334,6 +549,19 @@
       margin-right: -3.1%;
       margin-left: 0;
       margin-top: 11.2%;
+
+      @include screen('xl') {
+        width: 110.5%;
+        margin-right: -10.5%;
+        margin-top: 16%;
+      }
+
+      @include screen('md') {
+        width: 112.9%;
+        margin-left: -3%;
+        margin-right: -9.9%;
+        margin-top: 0;
+      }
 
       &-image {
         display: block;
@@ -351,11 +579,28 @@
         &_left {
           width: 36.5%;
           z-index: 1;
+
+          @include screen('xl') {
+            width: 41.1%;
+          }
+
+          @include screen('md') {
+            order: 2;
+            width: 100%;
+          }
         }
 
         &_right {
           width: 63.5%;
           z-index: 2;
+
+          @include screen('xl') {
+            width: 58.9%;
+          }
+
+          @include screen('md') {
+            width: 100%;
+          }
         }
       }
     }
@@ -366,12 +611,43 @@
     width: 100%;
     padding-top: 3.4%;
 
+    @include screen('xl') {
+      padding-top: 7.5%;
+    }
+
+    @include screen('lg') {
+      padding-top: 5.8%;
+    }
+
+    @include screen('md') {
+      padding-top: 17.6%;
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+    }
+
     &__images {
       position: relative;
       display: block;
       padding-top: 88.7%;
       width: 100%;
       margin-top: -16.6%;
+
+      @include screen('xl') {
+        padding-top: 109.8%;
+        margin-top: -7.6%;
+      }
+
+      @include screen('lg') {
+        margin-top: -8.1%;
+      }
+
+      @include screen('md') {
+        padding-top: 195.6%;
+        margin-top: 1.25%;
+      }
     }
 
     &__screen {
@@ -381,6 +657,15 @@
       left: 44.6%;
       transform: translate3d(-50%, 0, 0);
       width: 161.2%;
+
+      @include screen('xl') {
+        left: 37.3%;
+        width: 195.6%;
+      }
+
+      @include screen('md') {
+        width: 357.2%;
+      }
 
       &-image {
         display: block;
@@ -398,6 +683,14 @@
       width: 31.5%;
       z-index: 2;
 
+      @include screen('xl') {
+        width: 40.5%;
+      }
+
+      @include screen('md') {
+        display: none;
+      }
+
       &-image {
         display: block;
         width: 100%;
@@ -412,12 +705,327 @@
 
         &_left {
           width: 40%;
+
+          @include screen('xl') {
+            width: 56.6%;
+          }
+
+          @include screen('md') {
+            width: 100%;
+          }
         }
 
         &_right {
           width: 60%;
+
+          @include screen('xl') {
+            width: 43.4%;
+          }
+
+          @include screen('md') {
+            width: 100%;
+          }
         }
       }
+    }
+  }
+
+  &-design {
+    display: block;
+    width: 100%;
+    margin-top: -7.8%;
+
+    @include screen('xl') {
+      margin-top: 2.2%;
+    }
+
+    @include screen('md') {
+      margin-top: 79.6%;
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    &__images {
+      position: relative;
+      display: block;
+      width: 100%;
+      padding-top: 52%;
+
+      @include screen('xl') {
+        padding-top: 58.9%;
+      }
+
+      @include screen('lg') {
+        padding-top: 61.2%;
+      }
+
+      @include screen('md') {
+        padding-top: 158.6%;
+      }
+    }
+
+    &__woman {
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 2.4%;
+      width: 93.3%;
+
+      @include screen('xl') {
+        width: 108.2%;
+        left: -11.2%;
+      }
+
+      @include screen('md') {
+        width: 211.8%;
+        left: -70.6%;
+      }
+
+      &-image {
+        display: block;
+        width: 100%;
+        font-size: 0;
+        line-height: 0;
+      }
+    }
+
+    &__rock {
+      position: absolute;
+      display: block;
+      bottom: 0;
+      left: 3.9%;
+      width: 39.9%;
+      margin-bottom: 2.5%;
+
+      @include screen('xl') {
+        left: -6%;
+        width: 52%;
+        margin-bottom: 6.4%;
+      }
+
+      @include screen('lg') {
+        margin-bottom: 8.5%;
+      }
+
+      @include screen('md') {
+        bottom: 100%;
+        margin-bottom: -38.4%;
+        width: 93.4%;
+        left: -15.9%;
+      }
+
+      &-image {
+        display: block;
+        font-size: 0;
+        line-height: 0;
+        width: 100%;
+      }
+    }
+
+    #{$b} {
+
+      &__col {
+
+        &_left {
+          width: 54.4%;
+
+          @include screen('xl') {
+            width: 42.8%;
+          }
+
+          @include screen('lg') {
+            width: 49%;
+          }
+
+          @include screen('md') {
+            width: 100%;
+          }
+        }
+
+        &_right {
+          width: 45.6%;
+
+          @include screen('xl') {
+            width: 57.2%;
+          }
+
+          @include screen('lg') {
+            width: 51%;
+          }
+
+          @include screen('md') {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  &-look {
+    display: block;
+    width: 100%;
+    padding-top: 11.7%;
+
+    @include screen('xl') {
+      padding-top: 4.8%;
+    }
+
+    @include screen('lg') {
+      padding-top: 0;
+    }
+
+    @include screen('md') {
+      padding-top: 10%;
+    }
+
+    &__figure {
+      position: relative;
+      display: block;
+      width: 100%;
+      padding-top: 82.3%;
+
+      @include screen('xl') {
+        padding-top: 80%;
+      }
+
+      @include screen('md') {
+        padding-top: 117.8%;
+      }
+    }
+
+    &__images {
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 2.5%;
+      height: 100%;
+
+      @include screen('xl') {
+        left: 2.3%;
+      }
+
+      @include screen('md') {
+        left: -21.6%;
+      }
+    }
+
+    &__image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      display: block;
+      font-size: 0;
+      line-height: 0;
+    }
+
+    &__describe {
+      position: absolute;
+      bottom: 16%;
+      left: 22.15%;
+      display: block;
+      width: 31.25%;
+      color: $color-basic;
+
+      @include screen('xl') {
+        left: 20%;
+        width: 32%;
+        bottom: 13%;
+      }
+
+      @include screen('md') {
+        bottom: 16%;
+        left: 8%;
+        display: block;
+        width: 100%;
+        transform-origin: left bottom;
+        transform: scale(.4);
+      }
+    }
+
+    &__heading {
+      display: block;
+      width: 100%;
+      font-size: 40px;
+      line-height: 1.2;
+      font-family: $font-4;
+      font-weight: 400;
+      letter-spacing: -.04em;
+      word-spacing: .1em;
+
+      @include screen('lg') {
+        font-size: 35px;
+      }
+
+      @include screen('md') {
+        font-size: 30px;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 30px;
+
+        @include screen('lg') {
+          margin-bottom: 20px;
+        }
+      }
+    }
+
+    &__text {
+      display: block;
+      width: 100%;
+      font-size: 20px;
+      line-height: 1.2;
+
+      @include screen('lg') {
+        font-size: 18px;
+      }
+
+      @include screen('md') {
+        font-size: 15px;
+      }
+    }
+  }
+
+  &-call {
+    display: block;
+    width: 100%;
+    margin-top: 11.8%;
+
+    @include screen('xl') {
+      margin-top: 10.8%;
+      padding-bottom: 3.8%;
+    }
+
+    @include screen('md') {
+      margin-top: 20%;
+      padding-bottom: 17%;
+    }
+
+    &__images {
+      display: block;
+      width: 84.75%;
+      margin-left: auto;
+      margin-right: auto;
+
+      @include screen('xl') {
+        width: 91.8%;
+      }
+
+      @include screen('md') {
+        width: 102.2%;
+        margin-left: -1.1%;
+        margin-right: -1.1%;
+      }
+    }
+
+    &__image {
+      display: block;
+      font-size: 0;
+      line-height: 0;
+      width: 100%;
     }
   }
 }
