@@ -36,7 +36,6 @@
       color: $color-grey-dark-8;
       font-weight: 400;
       letter-spacing: -.02em;
-      word-spacing: .1em;
 
       @include screen('lg') {
         font-size: 35px;
@@ -50,10 +49,15 @@
     &__text {
       font-weight: 300;
       font-size: 20px;
-      line-height: 1.2;
+      line-height: 1.62;
+
+      @include screen('xl') {
+        line-height: 1.2;
+      }
 
       @include screen('lg') {
         font-size: 18px;
+        line-height: 1.2;
       }
 
       @include screen('md') {
@@ -153,18 +157,22 @@
       position: relative;
       display: block;
       width: 100%;
-      padding-top: 125%;
+      padding-top: 72.4%;
+      margin-top: 8.2%;
 
       @include screen('xl') {
-        padding-top: 128.5%;
+        margin-top: 23%;
+        padding-top: 105.5%;
       }
 
       @include screen('lg') {
-        padding-top: 108.8%;
+        margin-top: 14%;
+        padding-top: 94.8%;
       }
 
       @include screen('md') {
-        padding-top: 218%;
+        margin-top: 10%;
+        padding-top: 208%;
       }
     }
 
@@ -173,10 +181,10 @@
       top: 0;
       left: -160px;
       min-height: 100%;
-      width: calc((10000 / 30) * 1% + 320px);
+      width: calc((10000 / 45) * 1% + 320px);
       display: flex;
       justify-content: flex-start;
-      align-items: flex-start;
+      align-items: stretch;
 
       @include screen('xl') {
         width: calc((10000 / 40) * 1% + 200px);
@@ -206,61 +214,70 @@
           display: block;
           width: 100%;
           padding-top: 146%;
+          z-index: 1;
         }
       }
     }
 
     &__item {
+      position: relative;
       display: inline-block;
       font-size: 0;
       line-height: 0;
 
       &_w1 {
-        margin-top: 7.9%;
-        margin-left: -3.64%;
-        width: 18.7%;
+        margin-left: 4%;
+        width: 11.1%;
         margin-right: 5.1%;
 
         @include screen('xl') {
-          margin-left: -5%;
-          width: 26.2%;
-          margin-top: 11.4%;
-          margin-right: 7.1%;
-        }
-
-        @include screen('lg') {
-          margin-top: 8.4%;
+          margin-left: 5.4%;
+          width: 15.6%;
+          margin-right: 7.3%;
         }
 
         @include screen('md') {
-          width: 83.7%;
-          margin-top: 0;
-          margin-left: -40.6%;
+          width: 50%;
+          margin-left: -6.3%;
           margin-bottom: 14%;
+          z-index: 2;
         }
       }
 
       &_w2 {
-        margin-top: 5.6%;
         margin-right: 7%;
         width: 11.4%;
 
         @include screen('xl') {
           width: 16%;
-          margin-top: 8%;
         }
 
-        @include screen('lg') {
-          margin-top: 5%;
-        }
+        @include screen('lg') {}
 
         @include screen('md') {
           display: none;
         }
+
+        &::before {
+          @include pseudo;
+
+          top: 11.2%;
+          left: 0;
+          width: 4.5%;
+          height: 100%;
+          z-index: 1;
+          background-image: url('../images/secretplace/plus-line.png');
+          background-size: 100% auto;
+          background-repeat: no-repeat;
+          background-position: 0 0;
+
+          @include screen('xl') {
+            top: 9.8%;
+          }
+        }
       }
 
       &_w3 {
-        margin-top: 5.8%;
         margin-right: 7%;
         width: 11.7%;
 
@@ -270,7 +287,6 @@
       }
 
       &_w4 {
-        margin-top: 5.1%;
         margin-right: 3%;
         width: 10.4%;
         margin-left: auto;
@@ -282,14 +298,57 @@
     }
 
     &__image {
+      position: relative;
       display: block;
       font-size: 0;
       line-height: 0;
       width: 100%;
+
+      #{$b}-lead__item_w1 & {
+        transform: translate3d(0, 16%, 0);
+
+        @include screen('xl') {
+          transform: translate3d(0, 14%, 0);
+        }
+
+        @include screen('md') {
+          transform: translate3d(0, 0, 0);
+        }
+      }
+
+      #{$b}-lead__item_w2 & {
+        transform: translate3d(0, 2%, 0);
+        z-index: 2;
+
+        @include screen('xl') {
+          transform: translate3d(0, 0, 0);
+        }
+      }
+
+      #{$b}-lead__item_w3 & {
+        transform: translate3d(0, 2%, 0);
+
+        @include screen('xl') {
+          transform: translate3d(0, 0, 0);
+        }
+      }
     }
 
     &__section {
       width: 100%;
+
+      &_top {
+        box-sizing: border-box;
+        padding-right: 27%;
+
+        @include screen('xl') {
+          padding-right: 0;
+        }
+
+        @include screen('lg') {
+          padding-right: 0;
+        }
+      }
 
       .case-section {
 
@@ -301,7 +360,11 @@
           }
 
           &:not(:last-child) {
-            margin-bottom: 97px;
+            margin-bottom: 47px;
+
+            @include screen('xl') {
+              margin-bottom: 50px;
+            }
 
             @include screen('lg') {
               margin-bottom: 55px;
@@ -317,9 +380,9 @@
       p {
 
         &:not(:last-child) {
-          margin-bottom: 22px;
+          margin-bottom: 32px;
 
-          @include screen('lg') {
+          @include screen('xl') {
             margin-bottom: 24px;
           }
 
@@ -334,21 +397,52 @@
       position: relative;
       display: block;
       width: 100%;
-      padding-top: 135%;
-      margin-top: 2.7%;
+      padding-top: 171.8%;
+      margin-top: 4%;
+      margin-left: -3.2%;
 
       @include screen('xl') {
+        margin-left: 3.8%;
         padding-top: 193.7%;
-        margin-top: 5.2%;
+        margin-top: 5.6%;
       }
 
       @include screen('lg') {
         padding-top: 201.8%;
-        margin-top: 5.6%;
+        margin-top: 6%;
+        margin-left: -.3%;
       }
 
       @include screen('md') {
-        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        padding-top: 0;
+        margin-top: -2%;
+        margin-left: 17.8%;
+      }
+
+      &-wrapper {
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        width: 91.8%;
+        height: 100%;
+        overflow: hidden;
+
+        @include screen('xl') {
+          width: 103.4%;
+        }
+
+        @include screen('lg') {
+          width: 107.8%;
+        }
+
+        @include screen('md') {
+          width: 78.1%;
+        }
       }
 
       &-image {
@@ -357,23 +451,18 @@
         font-size: 0;
         line-height: 0;
         top: 0;
-        left: 54.8%;
-        width: auto;
-        height: 100%;
-        transform: translate3d(-50%, 0, 0);
+        left: 0;
+        width: 100%;
 
-        @include screen('xl') {
-          left: 55.4%;
-        }
+        &_girl {
+          margin-left: -1px;
+          margin-top: -1px;
+          transition: transform .6s ease;
+          transform: translate3d(0, 5%, 0);
 
-        @include screen('lg') {
-          left: 54%;
-        }
-
-        @include screen('md') {
-          top: 4.6%;
-          left: 17.6%;
-          transform: translate3d(0, 0, 0);
+          &.is-animated {
+            transform: translate3d(0, 0, 0);
+          }
         }
       }
     }
@@ -381,10 +470,12 @@
     #{$b} {
 
       &__col {
+        position: relative;
 
         &_left {
           padding-top: 12.1%;
-          width: 30%;
+          width: 45%;
+          z-index: 2;
 
           @include screen('xl') {
             padding-top: 11.2%;
@@ -402,7 +493,8 @@
         }
 
         &_right {
-          width: 70%;
+          width: 55%;
+          z-index: 1;
 
           @include screen('xl') {
             width: 60%;
@@ -424,10 +516,10 @@
     position: relative;
     display: block;
     width: 100%;
-    padding-top: 1.35%;
+    padding-top: 1.2%;
 
     @include screen('xl') {
-      padding-top: 4.9%;
+      padding-top: 4.7%;
     }
 
     @include screen('lg') {
@@ -480,8 +572,8 @@
       display: block;
       width: 100%;
       margin-top: 105.4%;
-      padding-top: 68.5%;
-      padding-bottom: 14.7%;
+      padding-top: 52.2%;
+      padding-bottom: 21%;
 
       @include screen('xl') {
         margin-top: 128.3%;
@@ -520,7 +612,7 @@
     &__section {
       position: relative;
       color: $color-basic;
-      padding-right: 2%;
+      padding-right: 18%;
       z-index: 3;
 
       @include screen('xl') {
@@ -528,7 +620,7 @@
       }
 
       @include screen('lg') {
-        padding-right: 18%;
+        // padding-right: 18%;
       }
 
       @include screen('md') {
@@ -752,7 +844,7 @@
       position: relative;
       display: block;
       width: 100%;
-      padding-top: 52%;
+      padding-top: 56.2%;
 
       @include screen('xl') {
         padding-top: 58.9%;
@@ -798,7 +890,7 @@
       bottom: 0;
       left: 3.9%;
       width: 39.9%;
-      margin-bottom: 2.5%;
+      margin-bottom: 6.5%;
 
       @include screen('xl') {
         left: -6%;
@@ -822,6 +914,20 @@
         font-size: 0;
         line-height: 0;
         width: 100%;
+      }
+    }
+
+    &__section {
+
+      .case-section {
+
+        &__heading {
+          line-height: 1.4;
+
+          @include screen('xl') {
+            line-height: 1.2;
+          }
+        }
       }
     }
 
@@ -867,7 +973,7 @@
   &-look {
     display: block;
     width: 100%;
-    padding-top: 11.7%;
+    padding-top: 3.7%;
 
     @include screen('xl') {
       padding-top: 4.8%;
@@ -923,68 +1029,59 @@
     }
 
     &__describe {
-      position: absolute;
-      bottom: 16%;
-      left: 22.15%;
       display: block;
-      width: 31.25%;
-      color: $color-basic;
-
-      @include screen('xl') {
-        left: 20%;
-        width: 32%;
-        bottom: 13%;
-      }
+      width: 100%;
+      margin-top: -4.1%;
 
       @include screen('md') {
-        bottom: 16%;
-        left: 8%;
-        display: block;
-        width: 100%;
-        transform-origin: left bottom;
-        transform: scale(.4);
+        margin-top: 0;
       }
     }
 
-    &__heading {
+    &__section {
       display: block;
       width: 100%;
-      font-size: 40px;
-      line-height: 1.2;
-      font-family: $font-4;
-      font-weight: 400;
-      letter-spacing: -.04em;
-      word-spacing: .1em;
+      box-sizing: border-box;
+      padding-right: 20%;
 
       @include screen('lg') {
-        font-size: 35px;
+        padding-right: 0;
       }
 
-      @include screen('md') {
-        font-size: 30px;
-      }
+      .case-section {
 
-      &:not(:last-child) {
-        margin-bottom: 30px;
+        &__heading {
 
-        @include screen('lg') {
-          margin-bottom: 20px;
+          &:not(:last-child) {
+            margin-bottom: 26px;
+
+            @include screen('md') {
+              margin-bottom: 24px;
+            }
+          }
         }
       }
     }
 
-    &__text {
-      display: block;
-      width: 100%;
-      font-size: 20px;
-      line-height: 1.2;
+    #{$b} {
 
-      @include screen('lg') {
-        font-size: 18px;
-      }
+      &__col {
 
-      @include screen('md') {
-        font-size: 15px;
+        &_left {
+          width: 55%;
+
+          @include screen('md') {
+            width: 100%;
+          }
+        }
+
+        &_right {
+          width: 45%;
+
+          @include screen('md') {
+            width: 100%;
+          }
+        }
       }
     }
   }
@@ -992,7 +1089,8 @@
   &-call {
     display: block;
     width: 100%;
-    margin-top: 11.8%;
+    margin-top: 8.6%;
+    padding-bottom: 22%;
 
     @include screen('xl') {
       margin-top: 10.8%;

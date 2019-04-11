@@ -17,28 +17,31 @@ mixin splace-lead()
         +e.header
           +e.logo.js-sr_1
             +icon('splace-logo').__logo-icon
-          +e.A.link.js-sr_2(href="https://secretplacestore.com") secretplacestore.com
-        +case-section.__section
-          +case-section-heading.js-sr_3 Design of an online store “Secret&nbsp;place”
-          +case-section-text.js-sr_4 The boutique showroom Secret Place specializes in unusual designer clothing from rare and single-piece brands. The client wanted to create an unusual visual image of the store and emphasize the simplicity and elegance of the collections presented.
+          +e.A.link.js-sr_10(href="https://secretplacestore.com") secretplacestore.com
+        +case-section.__section_top
+          +case-section-heading.js-sr_14 Дизайн <br> интернет-магазина <br>Secret&nbsp;place
+          +case-section-text.js-sr_17 Бутик-шоурум Secret Place специализируется на&nbsp;необычной дизайнерской одежде редких и&nbsp;штучных брендов. Клиент хотел создать необычный визуальный образ магазина и&nbsp;подчеркнуть простоту и&nbsp;элегантность представленных коллекций.
         +e.applique
-          +e.images
-            +e.item_w1.js-sr_8
-              +e.IMG.image(src="assets/images/secretplace/lead-woman-1.png")
-            +e.item_w2.js-sr_8
-              +e.IMG.image(src="assets/images/secretplace/lead-woman-2.png")
-            +e.item_w3.js-sr_8
-              +e.IMG.image(src="assets/images/secretplace/lead-woman-3.png")
-            +e.images-woman.js-sr_9(data-slot-id="splace-woman" data-slot-res="md")
-            +e.item_w4.js-sr_8
-              +e.IMG.image(src="assets/images/secretplace/lead-woman-4.png")
+          +e.images.js-trigger
+            +e.item_w1
+              +e.IMG.image.js-stag(src="assets/images/secretplace/lead-woman-1.png")
+            +e.item_w2
+              +e.IMG.image.js-stag(src="assets/images/secretplace/lead-woman-2.png")
+            +e.item_w3
+              +e.IMG.image.js-stag(src="assets/images/secretplace/lead-woman-3.png")
+            +e.images-woman(data-slot-id="splace-woman" data-slot-res="md")
+            +e.item_w4
+              +e.IMG.image.js-stag(src="assets/images/secretplace/lead-woman-4.png")
         +case-section.__section
-          +case-section-text.js-sr_1
-            p The key visual element of the design is the keyhole, borrowed from the logo. There it plays the role of the enclosed area in the letter A. In the case of the site, it became a window into the world of Secret Place.
-            p The viewer as if peeps into a secret place through the keyhole.
-      +splace-column-right
-        +e.woman.js-sr_6(data-slot-id="splace-woman" data-slot-res="xl")
-          +e.IMG.woman-image(src="assets/images/secretplace/lead-image.png" data-target-slot="splace-woman")
+          +case-section-text.js-sr_14
+            p Ключевой визуальный элемент дизайна — замочная скважина, позаимствован у логотипа. Там он играет роль внутреннего пространства в букве А. В случае с сайтом он стал окошком в мир Secret Place.
+            p Зритель словно заглядывает в секретное место сквозь замочную скважину.
+      +splace-column-right(data-slot-id="splace-woman" data-slot-res="xl")
+        +e.woman.js-sr_18(data-target-slot="splace-woman")
+          +e.woman-wrapper
+            +e.IMG.woman-image_base(src="assets/images/secretplace/lead-lock.png")
+            +e.IMG.woman-image_girl.js-girl(src="assets/images/secretplace/lead-girl.png")
+            +e.IMG.woman-image_front(src="assets/images/secretplace/lead-bg-lock.png")
     block
 
 mixin splace-about()
@@ -48,7 +51,7 @@ mixin splace-about()
         +e.describe
           +case-section.__section
             +case-section-text.js-sr_1
-              p The homepage is filled with several blocks of different meaning. The attention of customers is attracted not only to online products, but also to the real showroom in the centre of Moscow.
+              p Главная страница наполнена разными по смыслу блоками. Внимание клиентов привлечено не только к товарам в интернете но и к реальному шоуруму в центре Москвы.
           +e.woman.js-sr_6
             +e.IMG.woman-image(src="assets/images/secretplace/long-woman.png")
       +splace-column-right
@@ -62,7 +65,7 @@ mixin splace-pages()
     .container.container_inner.container_flex
       +splace-column-left
         +case-section.__section
-          +case-section-heading.js-sr_1 All the main pages of the website are made in the same restrained minimalist manner. The emphasis is shifted to the products.
+          +case-section-heading.js-sr_1 Все основные страницы сайта выполнены в одинаково сдержанной минималистичной манере. Акцент смещен в сторону продуктов.
       +splace-column-right
     +e.images
       +e.screen.js-splace-pages
@@ -81,7 +84,7 @@ mixin splace-design()
     .container.container_inner.container_flex
       +splace-column-left
         +case-section.__section
-          +case-section-heading.js-sr_2 We have created graphic elements that would give the design additional depth and multi-level effect.
+          +case-section-heading.js-sr_2 Мы создали графические элементы, которые придавали бы дизайну дополнительной глубины и многоуровневости.
       +splace-column-right
     block
 
@@ -92,9 +95,13 @@ mixin splace-look()
         +e.IMG.image_base(src="assets/images/secretplace/look-base.png")
         +e.IMG.image_left(src="assets/images/secretplace/look-left.png")
         +e.IMG.image_right(src="assets/images/secretplace/look-right.png")
-      +e.SECTION.describe
-        +e.H3.heading Купить весь лук
-        +e.text В каждом товаре есть опция покупки целого лука, который видно в галерее фотографий конкретного товара.
+    +e.describe
+      .container.container_inner.container_flex
+        +splace-column-left
+        +splace-column-right
+          +case-section.__section
+            +case-section-heading.js-sr_1 Купить весь лук
+            +case-section-text.js-sr_2 В каждом товаре есть опция покупки целого лука, который видно в галерее фотографий конкретного товара.
     block
 
 mixin splace-call()

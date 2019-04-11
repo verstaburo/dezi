@@ -78,6 +78,7 @@ export default function aizkulises() {
     makeDelay('.js-sr_9');
     makeDelay('.js-sr_12', 100, 100);
     makeDelay('.js-sr_13', 50, 100);
+    // makeDelay('.js-sr_16', 100, 200);
 
     // Общий список классов анимаций
     let classes = '';
@@ -121,6 +122,16 @@ export default function aizkulises() {
         `).css({
           animationDelay: '300ms',
         });
+        // if (el.hasClass('js-sr_16')) el.addClass(`${animClasses[5]}
+        // `);
+        if (el.hasClass('js-sr_17')) el.addClass(`${animClasses[5]}
+        `).css({
+          animationDelay: '400ms',
+        });
+        if (el.hasClass('js-sr_18')) el.addClass(`${animClasses[5]}
+        `).css({
+          animationDelay: '500ms',
+        });
         if (el.hasClass('js-sr_15')) el.addClass(`${animClasses[1]}`).css({
           animationDelay: '500ms',
         });
@@ -132,6 +143,15 @@ export default function aizkulises() {
           el.removeClass(`${classes}${baseClass}`).attr('style', '');
         }, duration + maxDelay);
       }
+
+      // if (sT * scale > scrollMoment && el.hasClass('js-sr')) {
+      //   if (el.hasClass('js-sr_16')) el.addClass(`${animClasses[5]}
+      //   `);
+
+      //   setTimeout(() => {
+      //     el.removeClass(`${classes}${baseClass}`).attr('style', '');
+      //   }, duration + maxDelay);
+      // }
     });
   });
 
