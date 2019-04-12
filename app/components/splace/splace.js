@@ -25,9 +25,9 @@ export default function splace() {
   if ($('.splace').length > 0) {
     const scene = new ScrollMagic
       .Scene({
-        triggerElement: '.js-girl',
+        triggerElement: '.splace-lead__woman',
         duration: 0,
-        offset: $(window).height() * 0.5,
+        triggerHook: 0,
       })
       .setClassToggle('.js-girl',
         'is-animated')
