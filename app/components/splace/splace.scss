@@ -774,6 +774,9 @@
       right: 0;
       width: 31.5%;
       z-index: 2;
+      transform-origin: 50% 50%;
+      animation: rotation 60s linear infinite;
+      animation-delay: 0;
 
       @include screen('xl') {
         width: 40.5%;
@@ -891,6 +894,9 @@
       left: 3.9%;
       width: 39.9%;
       margin-bottom: 6.5%;
+      transform-origin: 50% 50%;
+      animation: rotation 60s linear infinite;
+      animation-delay: 0;
 
       @include screen('xl') {
         left: -6%;
