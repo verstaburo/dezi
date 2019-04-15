@@ -711,6 +711,7 @@
       left: 0;
       width: auto;
       height: 107%;
+      transition: transform 1s ease;
 
       @include screen('xl') {
         top: -18%;
