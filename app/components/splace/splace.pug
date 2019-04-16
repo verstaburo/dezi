@@ -92,9 +92,12 @@ mixin splace-look()
   +b.SECTION.splace-look&attributes(attributes)
     +e.figure
       +e.images
-        +e.IMG.image_base(src="assets/images/secretplace/look-base.png")
-        +e.IMG.image_left(src="assets/images/secretplace/look-left.png")
-        +e.IMG.image_right(src="assets/images/secretplace/look-right.png")
+        +e.IMG.image_base.js-splace-1(src="assets/images/secretplace/look-base.png")
+        +e.IMG.image_mask.js-splace-2(src="assets/images/secretplace/look-mask.png")
+        +e.IMG.image_right.js-splace-6(src="assets/images/secretplace/look-right-shadow.png")
+        +e.IMG.image_right.js-splace-4(src="assets/images/secretplace/look-right.png")
+        +e.IMG.image_left.js-splace-7(src="assets/images/secretplace/look-left-shadow.png")
+        +e.IMG.image_left.js-splace-3(src="assets/images/secretplace/look-left.png")
     +e.describe
       .container.container_inner.container_flex
         +splace-column-left
