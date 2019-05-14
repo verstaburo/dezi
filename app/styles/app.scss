@@ -5,7 +5,6 @@
 @import 'helpers/gradients'; // Градиенты
 @import 'helpers/basics'; // Основные общие стили
 @import 'helpers/text-styles'; // Стили текстов
-@import 'helpers/link-styles'; // Стили ссылок
 @import 'helpers/list-styles'; // Стили списков
 @import 'helpers/animations'; // Анимации
 @import '../blocks/**/*';
@@ -50,6 +49,16 @@ body {
     @include screen('md') {
       padding-left: 25px;
       padding-right: 25px;
+    }
+  }
+
+  &_main {
+    padding-left: 100px;
+    padding-right: 100px;
+
+    @include screen('sm') {
+      padding-left: 23px;
+      padding-right: 23px;
     }
   }
 

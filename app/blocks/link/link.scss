@@ -1,13 +1,16 @@
 .link {
   $b: &;
 
-  @include link;
+  color: $color-form-dark;
+  fill: currentColor;
+  transition:
+    fill $ease-main,
+    color $ease-main,
+    opacity $ease-main,
+    border-color $ease-main;
 
-  &__text {
-
-    #{$b}_dashed & {
-      @include link-dashed;
-    }
+  &:hover {
+    opacity: .5;
   }
 
   &_icon {
@@ -26,10 +29,9 @@
     font-size: 0;
   }
 
-  &.is-disabled {
+  &.is-disabled,
+  &:disabled {
     pointer-events: none;
-    fill: $color-border;
-
-    @include link-disabled;
+    opacity: .2;
   }
 }

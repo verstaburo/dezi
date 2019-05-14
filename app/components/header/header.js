@@ -1,16 +1,23 @@
 /* eslint-disable */
 const $ = window.$;
 
-export function fixHeader () {
-  const header = $('.header');
+function HeaderMenu(elem) {
+  this.el = elem;
+  this.isActive = false;
+  this.el.header = this;
+  this.init = () => {
+    const t = this;
 
-  header.addClass('is-fixed');
-}
-
-export function unfixHeader () {
-  const header = $('.header');
-
-  header.removeClass('is-fixed');
+  }
+  this.open = () => {
+    const t = this;
+    t.isActive = true;
+    t.el
+  };
+  this.close = () => {
+    const t = this;
+    t.isActive = false;
+  };
 }
 
 export default function header() {

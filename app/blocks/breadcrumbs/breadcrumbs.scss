@@ -31,7 +31,7 @@ $breadpadding: 35px;
       pointer-events: none;
 
       &__text {
-        @include link-disabled;
+        opacity: .2;
       }
     }
   }

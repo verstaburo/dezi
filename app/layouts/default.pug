@@ -5,6 +5,9 @@ doctype html
 html(lang='ru')
   include head
   body
+  block header
+    - var hdCls = headerClass || ''
+    +header()(class=hdCls)
     block content
     script(src='assets/scripts/app.min.js')
     script(src='assets/scripts/main.js')

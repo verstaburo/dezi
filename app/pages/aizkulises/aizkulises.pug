@@ -3,6 +3,9 @@ extends ../../layouts/case
 block head
   - var pageTitle = 'Dezi | Aizkulises'
 
+block header
+  - var headerClass = '_light'
+
 block content
   +aizkulises
     +aizkulises-offer('assets/images/aizkulises/logo.svg', 'aizkulises.lv', 'Сайт девелоперского проекта Aizkulises', 'В Риге на улице Aleksandra Čaka 134 был создан новый, стильный девелоперский проект. Фасад дома получил уникальное художественное оформление. Архитекторы проекта черпали вдохновение в занавесе Латвийской национальной оперы, оттуда они позаимствовали узор, ставший визитной карточкой нового здания.')

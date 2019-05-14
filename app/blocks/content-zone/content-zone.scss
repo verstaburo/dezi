@@ -96,18 +96,28 @@
     }
   }
 
-  > ul, > ol {
+  >ul,
+  >ol {
 
     &:not(:last-child) {
       margin-bottom: 10px;
     }
   }
 
-  ul, ol { @include list; }
+  ul,
+  ol {
+    @include list;
+  }
 
-  ul { @include ullist; }
+  ul {
+    @include ullist;
+  }
 
-  ol { @include ollist; }
+  ol {
+    @include ollist;
+  }
 
-  a { @include link; }
+  a {
+    @extend .link;
+  }
 }

@@ -5,7 +5,9 @@ doctype html
 html(lang='ru')
   include head
   body
-    +header
+    block header
+    - var hdCls = headerClass || ''
+    +header()(class=hdCls)
     block content
     +case-form
     +projects([
