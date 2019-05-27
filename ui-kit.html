@@ -22,6 +22,36 @@
 </head>
 
 <body>
+    <header class="header">
+        <div class="header__top">
+            <div class="header__wrapper">
+                <div class="header__logo"><a class="logo" href="./"><svg class="logo__icon"><use xlink:href="assets/images/icon.svg#icon_logo"></use></svg></a></div>
+                <nav class="header__menu"></nav><button class="header__burger js-show-menu" type="button"><span></span></button>
+            </div>
+        </div>
+        <div class="header__bottom">
+            <div class="header__wrapper">
+                <div class="header__left">
+                    <div class="header__titles">
+                        <div class="nav-titles">
+                            <ul class="nav-titles__list">
+                                <li class="nav-titles__item is-active" data-section="about">КТО МЫ ТАКИЕ</li>
+                                <li class="nav-titles__item" data-section="cases">Кейсы</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <ul class="socials header__socials">
+                        <li class="socials__item"><a class="social socials__social" href="#" title="Behance"><svg class="social__icon social__icon_behance-round"><use xlink:href="assets/images/icon.svg#icon_behance-round"></use></svg></a></li>
+                        <li class="socials__item"><a class="social socials__social" href="#" title="Instagramm"><svg class="social__icon social__icon_instagramm-round"><use xlink:href="assets/images/icon.svg#icon_instagramm-round"></use></svg></a></li>
+                        <li class="socials__item"><a class="social socials__social" href="#" title="Facebook"><svg class="social__icon social__icon_facebook-round"><use xlink:href="assets/images/icon.svg#icon_facebook-round"></use></svg></a></li>
+                    </ul>
+                </div>
+                <div class="header__right">
+                    <div class="header__languages"></div>
+                </div>
+            </div>
+        </div>
+    </header>
     <div class="ui-kit">
         <div class="ui-kit__navigation">
             <div class="ui-kit__navigation-burger"></div>
@@ -385,7 +415,6 @@
             <div class="ui-kit__section-content">
                 <div class="container">
                     <p class="ui-kit__description">.link</p><a class="link" href="#"><span class="link__text">Обычная ссылка</span></a>
-                    <p class="ui-kit__description">.link._dashed</p><a class="link link_dashed" href="#"><span class="link__text">Пунктирная ссылка</span></a>
                     <p class="ui-kit__description">.link._icon</p><a class="link link_icon" href="#"><svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_refresh"></use></svg><span class="link__text">Ссылка с иконкой</span></a>
                     <p class="ui-kit__description">.link.is-disabled</p><a class="link is-disabled" href="#"><span class="link__text">Отключенная ссылка</span></a>
                 </div>
@@ -637,6 +666,37 @@
                             <div data-slot-id="slotId" data-slot-res="xs"></div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2>Social</h2>
+                    <p>Блок: blocks/social/social</p>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <div class="container">
+                    <p class="ui-kit__description">.social</p><a class="social" href="#" title="Facebook"><svg class="social__icon social__icon_facebook-round"><use xlink:href="assets/images/icon.svg#icon_facebook-round"></use></svg></a>
+                </div>
+            </div>
+        </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2>Socials</h2>
+                    <p>Блок: blocks/socials/socials</p>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <div class="container">
+                    <p class="ui-kit__description">.socials</p>
+                    <ul class="socials">
+                        <li class="socials__item"><a class="social socials__social" href="#" title="Facebook"><svg class="social__icon social__icon_facebook-round"><use xlink:href="assets/images/icon.svg#icon_facebook-round"></use></svg></a></li>
+                        <li class="socials__item"><a class="social socials__social" href="#" title="Instagramm"><svg class="social__icon social__icon_instagramm-round"><use xlink:href="assets/images/icon.svg#icon_instagramm-round"></use></svg></a></li>
+                        <li class="socials__item"><a class="social socials__social" href="#" title="Behance"><svg class="social__icon social__icon_behance-round"><use xlink:href="assets/images/icon.svg#icon_behance-round"></use></svg></a></li>
+                    </ul>
                 </div>
             </div>
         </section>
