@@ -3,6 +3,9 @@ extends ../../layouts/default
 block head
   - var pageTitle = 'Dezi | Sitemap'
 
+block header
+  - var headerData = getData('headerMain.json')
+
 block content
   +b.sitemap
     .container.container_main

@@ -3,6 +3,9 @@ extends ../../layouts/default
 block head
   - var pageTitle = 'Versta Project Template'
 
+block header
+  - var headerData = getData('headerMain.json')
+
 block content
   +ui-kit
     +e.navigation
@@ -455,6 +458,24 @@ block content
             p(style="font-size: 12px; color: #999;")
               | +put-block-into-slot('slotId', 'xs')
             +put-block-into-slot('slotId', 'xs')
+
+    //- Social
+    +ui-section
+      +ui-section-head
+        h2 Social
+        p Блок: blocks/social/social
+      +ui-section-content
+        +ui-description .social
+        +social('', 'facebook-round')(href="#" title="Facebook")
+
+    //- Social
+    +ui-section
+      +ui-section-head
+        h2 Socials
+        p Блок: blocks/socials/socials
+      +ui-section-content
+        +ui-description .socials
+        +socials([{tag: '', icon: 'facebook-round', name: 'Facebook', cls: ''}, {tag: '', icon: 'instagramm-round', name: 'Instagramm', cls: ''}, {tag: '', icon: 'behance-round', name: 'Behance', cls: ''}])
 
   script
     |

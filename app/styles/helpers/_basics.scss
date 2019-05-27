@@ -23,9 +23,7 @@ button::-moz-focus-inner {
 Стандартный цвет плейсхолдера
 ########## */
 
-input,
-textarea {
-
+input,textarea {
   &::placeholder {
     color: $color-placeholder;
   }
@@ -39,10 +37,7 @@ input:-webkit-autofill {
   -webkit-text-fill-color: $color-input !important; // Поменять цвет на аналогичный цвету input
 }
 
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
+input:-webkit-autofill,input:-webkit-autofill:hover,input:-webkit-autofill:focus,input:-webkit-autofill:active {
   transition: background-color 50000000000s ease-in-out 0s !important; // Убираем желтую заливку для автозаполнения в Chrome
 }
 
@@ -50,8 +45,7 @@ input:-webkit-autofill:active {
 Основные стили
 ########## */
 
-html,
-body {
+html,body {
   margin: 0;
   padding: 0;
   overflow-x: hidden; // Убираем горизонтальный скролл
@@ -62,8 +56,9 @@ body {
 body {
   background-color: $color-main-bg;
   font-family: $font-main; // Задаем основной шрифт
-  font-size: 16px; // Убираем проблему с отступами между inline-элементами
+  font-size: $fz16; // Убираем проблему с отступами между inline-элементами
   color: $color-text;
+  line-height: $lh-default;
 }
 
 img {
@@ -74,27 +69,12 @@ img {
 Сброс стандартных отступов для типографики, списков и таблиц
 ########## */
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-span,
-ul,
-ol,
-li,
-tr,
-td,
-th,
-table {
+h1,h2,h3,h4,h5,h6,p,span,ul,ol,li,tr,td,th,table {
   margin: 0;
   padding: 0;
 }
 
-ul,
-ol {
+ul,ol {
   list-style: none;
 }
 
@@ -113,11 +93,7 @@ a {
 Сброс стилей для активных элементов, добавляем стандарнтый transition
 ########## */
 
-a,
-input,
-button,
-select,
-textarea {
+a,input,button,select,textarea {
   transition: color $ease-main, border-color $ease-main;
 }
 
@@ -125,10 +101,7 @@ button {
   cursor: pointer;
 }
 
-select,
-input,
-textarea,
-button {
+select,input,textarea,button {
   color: $color-input;
   margin: 0;
   padding: 0;

@@ -1,0 +1,6 @@
+mixin nav-titles(data)
+  +b.nav-titles&attributes(attributes)
+    +e.UL.list
+      each item in data
+        +e.LI(class="item " + item.cls, data-section=item.section)!= item.text
+    block

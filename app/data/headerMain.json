@@ -1,0 +1,14 @@
+{
+  "titles": [{
+      "cls": "is-active",
+      "section": "about",
+      "text": "КТО МЫ ТАКИЕ"
+    },
+    {
+      "cls": "",
+      "section": "cases",
+      "text": "Кейсы"
+    }
+  ],
+  "links": []
+}

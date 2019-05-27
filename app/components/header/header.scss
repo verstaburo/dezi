@@ -1,28 +1,74 @@
 .header {
-  display: block;
+  display: flex;
   position: fixed;
+  flex-direction: column;
   top: 0;
   left: 0;
   width: 100%;
+  height: 100%;
   z-index: 100;
-  transition: box-shadow $ease-main, background-color $ease-main;
-
+  pointer-events: none;
+  color: $color-text;
   $b: &;
+
+  &::before {
+    @include pseudo;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 130px;
+    background-color: transparent;
+    transition: background $ease-main;
+
+    @include screen('md') {
+      height: 72px;
+    }
+  }
+
+  &.is-open {
+    &::before {
+      background-color: $color-black;
+    }
+  }
 
   &__top {
     display: block;
     width: 100%;
-    padding: 45px 0 50px;
+    padding: 45px 0 40px;
+    pointer-events: auto;
+
+    @include screen('md') {
+      padding: 23px 0;
+    }
   }
 
   &__bottom {
-    display: block;
+    display: flex;
     width: 100%;
-    pointer-events: none;
+    flex: 1;
+    box-sizing: border-box;
+    padding-bottom: 182px;
+
+    @include screen('xl') {
+      padding-bottom: 120px;
+    }
+
+    @include screen('lg') {
+      padding-bottom: 90px;
+    }
+
+    @include screen('md') {
+      display: none;
+    }
   }
 
   &__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     pointer-events: auto;
+    transform: translate3d(-50%, 0, 0);
   }
 
   &__right {
@@ -32,7 +78,7 @@
   &__wrapper {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    width: 100%;
     box-sizing: border-box;
     padding: 0 47px 0 46px;
 
@@ -48,6 +94,14 @@
     @include screen('md') {
       width: 40px;
     }
+  }
+
+  &__titles {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    flex: 1;
+    margin-bottom: 34px;
   }
 
   &__burger {
@@ -81,13 +135,12 @@
         height: 20px;
       }
 
-      &::before,
-      &::after {
+      &::before,&::after {
         @include pseudo;
 
         top: 0;
         width: 4px;
-        background-color: $color-text;
+        background-color: currentColor;
 
         @include screen('md') {
           width: 3px;
@@ -120,20 +173,21 @@
     flex: 1;
   }
 
-  &_light {
+  .logo {
+    color: currentColor;
+  }
 
-    .logo {
-      color: $color-basic;
-    }
+  .social {
+    color: currentColor;
+  }
+
+  &_light {
+    color: $color-basic;
 
     #{$b} {
-
       &__burger {
-
         span {
-
-          &::before,
-          &::after {
+          &::before,&::after {
             background-color: $color-basic;
           }
         }

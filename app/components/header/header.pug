@@ -1,4 +1,4 @@
-mixin header()
+mixin header(data)
   +b.HEADER.header&attributes(attributes)
     +e.top
       +e.wrapper
@@ -11,7 +11,8 @@ mixin header()
       +e.wrapper
         +e.left
           +e.titles
-          +e.socials
+            +nav-titles(data.titles)
+          +socials([{tag: '', icon: 'behance-round', name: 'Behance', cls: ''}, {tag: '', icon: 'instagramm-round', name: 'Instagramm', cls: ''}, {tag: '', icon: 'facebook-round', name: 'Facebook', cls: ''}]).__socials
         +e.right
           +e.languages
-          +e.links
+          block

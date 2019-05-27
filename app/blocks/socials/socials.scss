@@ -1,5 +1,11 @@
 .socials {
-  display: block;
-  
   $b: &;
+
+  display: block;
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 27px;
+    }
+  }
 }

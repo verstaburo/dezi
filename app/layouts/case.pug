@@ -7,7 +7,7 @@ html(lang='ru')
   body
     block header
     - var hdCls = headerClass || ''
-    +header()(class=hdCls)
+    +header(headerData)(class=hdCls)
     block content
     +case-form
     +projects([

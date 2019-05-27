@@ -9,7 +9,7 @@ $grid-container-width: 100%; // Ширина контейнера сетки
 $grid-cols: 13; // Количество колонок в сетке
 $grid-gap: 26px; // Расстояние между колонками
 $grid-gap-vertical: 26px; // Расстояние между строками в сетке
-$grid-col-width: $grid-container-width/$grid-cols; // Ширина одной колонки
+$grid-col-width: $grid-container-width / $grid-cols; // Ширина одной колонки
 
 /* $breakpoints: (
   'xl': 1920px,
@@ -18,52 +18,40 @@ $grid-col-width: $grid-container-width/$grid-cols; // Ширина одной к
   'sm': 768px,
   'xs': 480px
 ); */
-
-$breakpoints: ('xl': 1367px,
-  'lg': 1025px,
-  'md': 768px,
-  'sm': 480px,
-  'xs': 320px);
+$breakpoints: ('xl': 1367px, 'lg': 1025px, 'md': 768px, 'sm': 480px, 'xs': 320px);
 
 // ##########
 // Цвета
 // ##########
 $color-black: #000;
-
 $color-basic: white; // Основной цвет текста (применяется к body)
 $color-placeholder: #777; // Основной цвет для placeholder
 $color-input: $color-black; // Основной цвет input, select и textarea
 $color-main: white; // Основной фирменный цвет
 $color-border: #ccc; // Основной цвет границ таблиц, секций
-$color-main-bg:#f3f1f1; // Основной бэкграунд сайта
+$color-main-bg: #f3f1f1; // Основной бэкграунд сайта
 $color-titles: #14181e;
 $color-text: #373c43;
 $color-form-dark: #23262c;
 $color-request-bg: #0f0f0f;
-
 $color-red: #d53b30;
 $color-red-dark: #4d2233;
 $color-red-2: #ea2e44;
 $color-red-bright: #df062f;
 $color-red-dark-2: #2d0924;
-
 $color-yellow-light: #f3e2c3;
 $color-yellow-light-2: #f6f1e8;
 $color-yellow-light-3: #f6f2e9;
 $color-yellow-light-4: #f2ecd9;
 $color-yellow: #ffe42e;
 $color-yellow-dark: #ffc822;
-
 $color-orange-pale: #f89b72;
-
 $color-purple: #261923;
 $color-purple-2: #4a2132;
-
 $color-green: #1a5f63;
 $color-green-dark: #163d33;
 $color-green-blue: #00ffc0;
 $color-green-pale: #7aab93;
-
 $color-grey: #777d82;
 $color-grey-dark: #010101;
 $color-grey-dark-2: #111317;
@@ -76,22 +64,18 @@ $color-grey-dark-8: #2b2e33;
 $color-grey-dark-9: #4a4d55;
 $color-grey-light: #859499;
 $color-grey-light-2: #8b8b8b;
-
 $color-pink: #e95866;
 $color-pink-2: #c3424f;
 $color-pink-3: #c4414f;
 $color-pink-4: #ff53b0;
 $color-grey-pink: #683e5e;
 $color-dark-pink: #4c1630;
-
 $color-violet: #231425;
 $color-violet-2: #28185d;
 $color-violet-3: #3f1370;
 $color-pale-violet: #6440a1;
 $color-violet-dark: #100d18;
-
 $color-smoke-white: #e9f0f4;
-
 $color-blue: #1eecf9;
 
 // ##########
@@ -102,22 +86,20 @@ $ease-main: .3s ease;
 // ##########
 // Шрифты
 // ##########
-$font-main: 'Montserrat',
-Arial,
-sans-serif; // Основной шрифт сайта
+$font-main: 'Montserrat', Arial, sans-serif; // Основной шрифт сайта
+$font-second: 'Roboto', Arial, sans-serif; // Дополнительный шрифт
+$font-third: 'Corbel', Arial, sans-serif; // Дополнительный шрифт
+$font-4: 'Journal', Arial, sans-serif; // Дополнительный шрифт
+$font-site: 'ProximaNova', Arial, sans-serif;
 
-$font-second: 'Roboto',
-Arial,
-sans-serif; // Дополнительный шрифт
-
-$font-third: 'Corbel',
-Arial,
-sans-serif; // Дополнительный шрифт
-
-$font-4: 'Journal',
-Arial,
-sans-serif; // Дополнительный шрифт
-
-$font-site: 'ProximaNova',
-Arial,
-sans-serif;
+// ########
+// Шрифты - размеры
+// ########
+$ls-main: .02em;
+$ls-btn: .12em;
+$ls-header: .16em;
+$lh1: 1;
+$lh-default: 1.2;
+$lh-base: 28px; // основа для
+$fz12: 12px;
+$fz16: 16px;

@@ -1,3 +1,6 @@
-mixin socials()
-  +b.socials&attributes(attributes)
+mixin socials(data)
+  +b.UL.socials&attributes(attributes)
+    each item in data
+      +e.LI.item
+        +social(item.tag, item.icon)(href="#" title=item.name class=item.cls + ' __social')
     block

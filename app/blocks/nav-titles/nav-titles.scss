@@ -1,0 +1,56 @@
+.nav-titles {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  writing-mode: vertical-rl;
+  transform-origin: 50% 50%;
+  transform: rotate(180deg);
+  overflow: hidden;
+  $b: &;
+
+  &::before,&::after {
+    display: block;
+    content: '';
+    width: 1px;
+    background-color: currentColor;
+    opacity: .18;
+  }
+
+  &::before {
+    flex: 1;
+    max-height: 115px;
+
+    @include screen('xl') {
+      flex: 1;
+      max-height: none;
+    }
+  }
+
+  &::after {
+    flex: 2;
+
+    @include screen('xl') {
+      flex: 1;
+    }
+  }
+
+  &__list {
+    position: relative;
+    display: inline-block;
+    margin-top: 37px;
+    margin-bottom: 22px;
+  }
+
+  &__item {
+    display: none;
+    text-transform: uppercase;
+    font-size: $fz12;
+    line-height: $lh-default;
+    letter-spacing: $ls-header;
+    font-weight: 700;
+
+    &.is-active {
+      display: inline-block;
+    }
+  }
+}

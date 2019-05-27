@@ -1,5 +1,21 @@
 .social {
-  display: block;
-  
   $b: &;
+
+  display: block;
+  width: 20px;
+  height: 20px;
+  color: $color-black;
+  transition: opacity $ease-main, color $ease-main;
+  font-size: 0;
+  line-height: 0;
+
+  &__icon {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+  }
+
+  &:hover {
+    opacity: .7;
+  }
 }

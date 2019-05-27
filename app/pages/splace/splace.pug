@@ -3,6 +3,9 @@ extends ../../layouts/case
 block head
   - var pageTitle = 'Dezi | Secret Place'
 
+block header
+  - var headerData = getData('headerMain.json')
+
 block content
   +splace
     +splace-lead
