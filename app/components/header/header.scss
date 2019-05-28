@@ -18,8 +18,10 @@
     left: 0;
     width: 100%;
     height: 130px;
-    background-color: transparent;
-    transition: background $ease-main;
+    background-color: $color-black;
+    transition: transform $ease-main;
+    transform-origin: 50% 0 0;
+    transform: scaleY(0);
 
     @include screen('md') {
       height: 72px;
@@ -29,17 +31,25 @@
   &.is-open {
     &::before {
       background-color: $color-black;
+      transform: scaleY(1);
     }
   }
 
   &__top {
+    position: relative;
     display: block;
     width: 100%;
     padding: 45px 0 40px;
     pointer-events: auto;
+    transition: color $ease-main;
+    z-index: 2;
 
     @include screen('md') {
       padding: 23px 0;
+    }
+
+    #{$b}.is-open & {
+      color: $color-basic;
     }
   }
 
@@ -128,11 +138,16 @@
       top: -2px;
       width: 30px;
       height: 30px;
+      transition: top $ease-main;
 
       @include screen('md') {
         top: 0;
-        width: 20px;
-        height: 20px;
+        width: 21px;
+        height: 21px;
+      }
+
+      #{$b}.is-open & {
+        top: 2px;
       }
 
       &::before,&::after {
@@ -141,28 +156,50 @@
         top: 0;
         width: 4px;
         background-color: currentColor;
+        transition: background $ease-main, height $ease-main, transform $ease-main, right $ease-main;
 
         @include screen('md') {
           width: 3px;
         }
+
+        #{$b}.is-open & {
+          background-color: $color-basic;
+        }
       }
 
       &::before {
+        transform-origin: 100% 0 0;
         right: 0;
         height: 38px;
 
         @include screen('md') {
           height: 27px;
         }
+
+        #{$b}.is-open & {
+          transform: rotate(45deg);
+        }
       }
 
       &::after {
+        transform-origin: 0 0 0;
         right: 12px;
         height: 25px;
 
         @include screen('md') {
           right: 8px;
           height: 17px;
+        }
+
+        #{$b}.is-open & {
+          transform: rotate(-45deg);
+          right: 26px;
+          height: 38px;
+
+          @include screen('md') {
+            right: 18px;
+            height: 27px;
+          }
         }
       }
     }

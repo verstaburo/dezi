@@ -15,8 +15,8 @@ button::-moz-focus-inner {
 ########## */
 
 ::selection {
-  background: $color-main;
-  color: white;
+  background: rgba($color-main, .99);
+  color: $color-text;
 }
 
 /* ##########
