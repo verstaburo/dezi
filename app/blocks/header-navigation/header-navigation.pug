@@ -2,5 +2,15 @@ mixin header-navigation(activeIndex)
   - var items = [{link: '/about.html', name: 'О КОМПАНИИ'}, {link: '/services.html', name: 'УСЛУГИ'}, {link: '/cases.html', name: 'КЕЙСЫ'}, {link: '/contacts.html', name: 'КОНТАКТЫ'}];
   +b.header-navigation&attributes(attributes)
     +e.UL.list
+      - for (var i = 0, l = items.length; i < l; i++ ) {
+        - if (i === activeIndex) {
+          +e.LI.item.is-active
+            +link()(href=items[i].link).__link!= items[i].name
+        - } else {
+          +e.LI.item
+            +link()(href=items[i].link).__link!= items[i].name
+        - }
+      - }
     +e.mail
+      +link(href="mailto:info@bsagency.design") INFO@BSAGENCY.DESIGN
     block

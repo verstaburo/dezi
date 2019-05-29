@@ -5,6 +5,7 @@ mixin header(data)
         +e.logo
           +logo()(href="./")
         +e.NAV.menu
+          +header-navigation(data.active)
         +e.BUTTON.burger.js-show-menu(type="button")
           span
     +e.bottom

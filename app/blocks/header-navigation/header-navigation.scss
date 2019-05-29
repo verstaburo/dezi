@@ -1,5 +1,31 @@
 .header-navigation {
-  display: block;
-  
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0 10px;
   $b: &;
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 76px;
+    letter-spacing: $ls-header;
+  }
+
+  &__mail {
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    letter-spacing: $ls-header;
+  }
+
+  .link {
+    color: $color-basic;
+  }
 }
