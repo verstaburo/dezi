@@ -55,7 +55,7 @@ html,body {
 
 body {
   background-color: $color-main-bg;
-  font-family: $font-main; // Задаем основной шрифт
+  font-family: $font-site; // Задаем основной шрифт
   font-size: $fz16; // Убираем проблему с отступами между inline-элементами
   color: $color-text;
   line-height: $lh-default;

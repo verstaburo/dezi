@@ -2,7 +2,6 @@
   display: block;
   background-color: $color-grey-dark-2;
   padding: 71px 0;
-
   $b: &;
 
   @include screen('xl') {

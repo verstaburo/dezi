@@ -28,7 +28,6 @@
   }
 
   .case-section {
-
     &__heading {
       font-family: $font-second;
       font-weight: 100;
@@ -359,7 +358,6 @@
       }
 
       .case-section {
-
         &__heading {
           position: relative;
           z-index: 2;
@@ -392,7 +390,6 @@
     }
 
     #{$b} {
-
       &__col {
         display: block;
 
@@ -508,8 +505,7 @@
         background-position: 66.8% 22px;
       }
 
-      &::before,
-      &::after {
+      &::before,&::after {
         @include pseudo;
 
         right: 0;
@@ -565,8 +561,7 @@
           margin-right: -39.6%;
         }
 
-        &::before,
-        &::after {
+        &::before,&::after {
           @include pseudo;
         }
 
@@ -739,7 +734,6 @@
     }
 
     #{$b} {
-
       &__col {
         display: block;
 
@@ -838,9 +832,7 @@
       }
 
       .case-section {
-
         &__heading {
-
           &:not(:last-child) {
             margin-bottom: 59px;
 
@@ -887,7 +879,6 @@
     }
 
     #{$b} {
-
       &__col {
         display: block;
         box-sizing: border-box;
@@ -1200,7 +1191,6 @@
       }
 
       .case-section {
-
         &__heading {
           position: relative;
           display: block;
@@ -1294,7 +1284,6 @@
     }
 
     #{$b} {
-
       &__col {
         display: block;
         box-sizing: border-box;

@@ -252,7 +252,8 @@
           width: 16%;
         }
 
-        @include screen('lg') {}
+        @include screen('lg') {
+        }
 
         @include screen('md') {
           display: none;
@@ -351,7 +352,6 @@
       }
 
       .case-section {
-
         &__heading {
           box-sizing: border-box;
 
@@ -378,7 +378,6 @@
       }
 
       p {
-
         &:not(:last-child) {
           margin-bottom: 32px;
 
@@ -468,7 +467,6 @@
     }
 
     #{$b} {
-
       &__col {
         position: relative;
 
@@ -628,7 +626,6 @@
       }
 
       .case-section {
-
         &__text {
           letter-spacing: -.04em;
         }
@@ -664,7 +661,6 @@
     }
 
     #{$b} {
-
       &__col {
         position: relative;
 
@@ -796,9 +792,7 @@
     }
 
     #{$b} {
-
       &__col {
-
         &_left {
           width: 40%;
 
@@ -925,9 +919,7 @@
     }
 
     &__section {
-
       .case-section {
-
         &__heading {
           line-height: 1.4;
 
@@ -939,9 +931,7 @@
     }
 
     #{$b} {
-
       &__col {
-
         &_left {
           width: 54.4%;
 
@@ -1057,9 +1047,7 @@
       }
 
       .case-section {
-
         &__heading {
-
           &:not(:last-child) {
             margin-bottom: 26px;
 
@@ -1072,9 +1060,7 @@
     }
 
     #{$b} {
-
       &__col {
-
         &_left {
           width: 55%;
 

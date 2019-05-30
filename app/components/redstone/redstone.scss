@@ -5,7 +5,6 @@
   color: $color-yellow-light-4;
   font-family: $font-second;
   margin-bottom: -1px;
-
   $b: &;
 
   .container {
@@ -517,7 +516,6 @@
     }
 
     #{$b} {
-
       &__section {
         margin-left: -4px;
 
@@ -541,7 +539,6 @@
       }
 
       &__col {
-
         &_left {
           @include screen('xl') {
             padding-right: 47px;
@@ -684,9 +681,7 @@
     }
 
     #{$b} {
-
       &__col {
-
         &_left {
           width: 37.5%;
           padding-right: 60px;

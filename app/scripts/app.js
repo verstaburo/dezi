@@ -50,7 +50,6 @@ $(() => {
   inputmask();
   numberinput();
   maps();
-
   aizkulises();
   header();
   venezia();

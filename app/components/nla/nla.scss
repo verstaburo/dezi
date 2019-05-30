@@ -7,7 +7,6 @@
   font-weight: 100;
   line-height: 1.2;
   margin-bottom: -1px;
-
   $b: &;
 
   .container {
@@ -341,9 +340,7 @@
     }
 
     &__section {
-
       .case-section {
-
         &__heading {
           @include screen('md') {
             width: 100%;
@@ -500,7 +497,6 @@
       }
 
       .case-list {
-
         &__icon {
           fill: url('#nla-red');
 
@@ -545,9 +541,7 @@
     }
 
     #{$b} {
-
       &__col {
-
         &_left {
           display: flex;
           flex-direction: column;
@@ -744,11 +738,8 @@
     }
 
     &__section {
-
       .case-section {
-
         &__heading {
-
           &:not(:last-child) {
             margin-bottom: 32px;
 
@@ -860,7 +851,6 @@
     }
 
     &__section {
-
       &:not(:last-child) {
         margin-bottom: 224px;
 
@@ -874,9 +864,7 @@
       }
 
       .case-section {
-
         &__heading {
-
           &:not(:last-child) {
             margin-bottom: 32px;
 
@@ -893,9 +881,7 @@
     }
 
     #{$b} {
-
       &__col {
-
         &_left {
           padding-bottom: 21.8%;
 
@@ -1055,9 +1041,7 @@
       }
 
       .case-section {
-
         &__heading {
-
           &:not(:last-child) {
             margin-bottom: 54px;
 

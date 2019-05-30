@@ -59,7 +59,6 @@
   }
 
   &_required {
-
     &::after {
       content: '*';
       position: absolute;
@@ -110,9 +109,10 @@
     pointer-events: none;
 
     &:checked {
-
       & + .checkradio__box {
-        &::before { opacity: 1; }
+        &::before {
+          opacity: 1;
+        }
       }
     }
   }
@@ -160,13 +160,21 @@
     cursor: pointer;
     text-align: center;
 
-    &:hover::before, &:hover::after { opacity: .5; }
+    &:hover::before,&:hover::after {
+      opacity: .5;
+    }
 
-    &::before, &::after { transition: opacity $ease-main; }
+    &::before,&::after {
+      transition: opacity $ease-main;
+    }
 
-    &:first-child::before { content: '-'; }
+    &:first-child::before {
+      content: '-';
+    }
 
-    &:last-child::before { content: '+'; }
+    &:last-child::before {
+      content: '+';
+    }
   }
 
   &__input {
@@ -191,16 +199,16 @@
 }
 
 .choices {
-
-  &__inner, &[data-type*='select-one'] &__inner {
+  &__inner,&[data-type*='select-one'] &__inner {
     @extend .select;
 
     transition: border-color $ease-main;
   }
 
   &[data-type*='select-one'] {
-
-    .choices__inner { padding-bottom: 0; }
+    .choices__inner {
+      padding-bottom: 0;
+    }
 
     &::after {
       border-width: 5px 5px 0;
@@ -255,11 +263,14 @@
   }
 
   &.is-open & {
-
-    &__inner { border-color: $color-border; }
+    &__inner {
+      border-color: $color-border;
+    }
 
     &__list {
-      &--dropdown { border-color: $color-border; }
+      &--dropdown {
+        border-color: $color-border;
+      }
     }
   }
 }
@@ -274,7 +285,6 @@
 }
 
 .range .noUi {
-
   &-base {
     height: 2px;
     background-color: $color-border;
@@ -300,7 +310,9 @@
     transition: border-color $ease-main;
     cursor: pointer;
 
-    &:hover { border-color: $color-main; }
+    &:hover {
+      border-color: $color-main;
+    }
   }
 
   &-origin {
@@ -316,7 +328,9 @@
 
 @import '../../node_modules/air-datepicker/dist/css/datepicker.css';
 
-.js-datepicker { cursor: pointer; }
+.js-datepicker {
+  cursor: pointer;
+}
 
 .datepicker {
   color: $color-basic;
@@ -360,7 +374,9 @@
   transition: color $ease-main, background-color $ease-main;
 
   // Цвет стрелок
-  path { stroke: $color-basic; }
+  path {
+    stroke: $color-basic;
+  }
 }
 
 // Шапка календаря
@@ -376,13 +392,15 @@
 
     // Цвет года в шапке
 
-    i { color: rgba($color-basic, .5); }
+    i {
+      color: rgba($color-basic, .5);
+    }
   }
 }
 
 // Цвет ховера по ячейкам в календаре, шапке
 
-.datepicker--cell.-focus-, .datepicker--nav-action:hover, .datepicker--nav-title:hover {
+.datepicker--cell.-focus-,.datepicker--nav-action:hover,.datepicker--nav-title:hover {
   background: rgba($color-border, .3);
 }
 
@@ -413,22 +431,24 @@
 
   // Цвет фона активного месяца/дня
 
-  &.-selected-, &.-selected-.-current- {
+  &.-selected-,&.-selected-.-current- {
     background: $color-main;
   }
 }
 
 // Цвет даты другого месяца/года
 
-.datepicker--cell-day.-other-month-, .datepicker--cell-year.-other-decade- {
+.datepicker--cell-day.-other-month-,.datepicker--cell-year.-other-decade- {
   color: rgba($color-basic, .2);
 
-  &:hover { color: rgba($color-basic, .5); }
+  &:hover {
+    color: rgba($color-basic, .5);
+  }
 }
 
 // Стили при выборе диапазона дат
 
-.datepicker--cell.-range-to-, .datepicker--cell.-range-from- {
+.datepicker--cell.-range-to-,.datepicker--cell.-range-from- {
   border: 0;
   background-color: rgba($color-main, .3);
 
@@ -447,7 +467,7 @@
 
 // Стили ячеек другого месяца, находящихся в диапазоне
 
-.-in-range-.datepicker--cell-day.-other-month-, .-in-range-.datepicker--cell-year.-other-decade- {
+.-in-range-.datepicker--cell-day.-other-month-,.-in-range-.datepicker--cell-year.-other-decade- {
   background-color: rgba($color-main, .1);
   color: rgba($color-main, .3);
 

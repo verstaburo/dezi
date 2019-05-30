@@ -2,11 +2,10 @@
   display: block;
   background-color: $color-red;
   color: white;
-
+  font-family: $font-main;
   $b: &;
 
   &__col {
-
     &_left {
       flex: 1;
       padding-right: 94px;
@@ -81,7 +80,6 @@
   display: block;
   position: relative;
   font-size: 0;
-
   $b: &;
 
   &_static-phone {
@@ -115,8 +113,7 @@
     img {
       width: 100%;
 
-      #{$b}_iphone &,
-      #{$b}_static-phone & {
+      #{$b}_iphone &,#{$b}_static-phone & {
         position: absolute;
         left: 0;
         top: 0;
@@ -412,8 +409,7 @@
       min-height: 290px;
     }
 
-    &::after,
-    &::before {
+    &::after,&::before {
       content: '';
       position: absolute;
       right: 0;
@@ -480,7 +476,6 @@
 
 .aizkulises-point {
   display: block;
-
   $b: &;
 
   &_horizontal {
@@ -522,7 +517,6 @@
     }
 
     #{$b}_bigtext & {
-
       &::after {
         margin-top: 44px;
 
@@ -549,7 +543,6 @@
     }
 
     #{$b}_purple & {
-
       &::after {
         background-color: $color-red-dark;
       }
@@ -602,7 +595,6 @@
 /* 3 экран */
 
 .aizkulises-third {
-
   &__point {
     margin-right: 90px;
 
@@ -914,7 +906,6 @@
 
 .aizkulises-list {
   display: block;
-
   $b: &;
 
   &__item {
@@ -1076,7 +1067,6 @@
 
 .aizkulises-fourth {
   display: block;
-
   $b: &;
 
   &__right {
@@ -1279,7 +1269,6 @@
 .aizkulises-five {
   display: block;
   padding: 260px 0 195px;
-
   $b: &;
 
   @include screen('xl') {

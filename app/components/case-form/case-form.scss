@@ -2,6 +2,7 @@
   display: block;
   background-color: $color-grey-dark-2;
   padding: 104px 0 115px;
+  font-family: $font-main;
 
   @include screen('xl') {
     padding-bottom: 101px;
@@ -107,7 +108,7 @@
     }
   }
 
-  &__link, &__text a {
+  &__link,&__text a {
     transition: color $ease-main;
 
     &:hover {

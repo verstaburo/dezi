@@ -3,11 +3,7 @@
 
   color: $color-form-dark;
   fill: currentColor;
-  transition:
-    fill $ease-main,
-    color $ease-main,
-    opacity $ease-main,
-    border-color $ease-main;
+  transition: fill $ease-main, color $ease-main, opacity $ease-main, border-color $ease-main;
 
   &:hover {
     opacity: .5;
@@ -29,8 +25,7 @@
     font-size: 0;
   }
 
-  &.is-disabled,
-  &:disabled {
+  &.is-disabled,&:disabled {
     pointer-events: none;
     opacity: .2;
   }

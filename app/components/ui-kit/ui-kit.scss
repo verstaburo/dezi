@@ -107,7 +107,7 @@ $ui-kit-color-darkbg: #111;
       height: 100%;
     }
 
-    &+.ui-kit__name {
+    & + .ui-kit__name {
       margin-top: 20px;
     }
   }
@@ -116,7 +116,7 @@ $ui-kit-color-darkbg: #111;
     margin-top: -$grid-gap;
     font-size: 0;
 
-    >* {
+    > * {
       margin-right: $grid-gap;
       margin-top: $grid-gap;
     }
@@ -139,12 +139,7 @@ $ui-kit-color-darkbg: #111;
       margin-bottom: 30px;
       text-align: left;
 
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
+      h1,h2,h3,h4,h5,h6 {
         font-size: 30px;
         font-weight: 600;
         line-height: 1.4;
