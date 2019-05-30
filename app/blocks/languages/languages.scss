@@ -1,0 +1,24 @@
+.languages {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  $b: &;
+
+  &__item {
+    display: inline-block;
+
+    &:not(:last-child) {
+      margin-bottom: 38px;
+    }
+  }
+
+  &__link {
+    text-transform: uppercase;
+    font-size: $fz12;
+    line-height: $lh-default;
+    letter-spacing: $ls-header;
+    font-weight: 700;
+  }
+}

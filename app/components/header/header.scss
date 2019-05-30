@@ -17,14 +17,14 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 120px;
+    height: 130px;
     background-color: $color-black;
     transition: transform $ease-main;
     transform-origin: 50% 0 0;
     transform: scaleY(0);
 
     @include screen('md') {
-      height: 70px;
+      height: 72px;
     }
   }
 
@@ -42,11 +42,11 @@
     pointer-events: auto;
     transition: color $ease-main, height $ease-main;
     z-index: 2;
-    height: 120px;
+    height: 124px;
     box-sizing: border-box;
 
     @include screen('md') {
-      height: 70px;
+      height: 72px;
     }
 
     #{$b}.is-open & {
@@ -80,10 +80,24 @@
     justify-content: space-between;
     pointer-events: auto;
     transform: translate3d(-50%, 0, 0);
+    margin-top: -4px;
+    padding-top: 0;
+    transition: padding-top $ease-main;
+
+    #{$b}.is-open & {
+      padding-top: 20px;
+    }
   }
 
   &__right {
     pointer-events: auto;
+    margin-top: -4px;
+    padding-top: 0;
+    transition: padding-top $ease-main;
+
+    #{$b}.is-open & {
+      padding-top: 20px;
+    }
   }
 
   &__wrapper {
@@ -91,7 +105,7 @@
     justify-content: space-between;
     width: 100%;
     box-sizing: border-box;
-    padding: 0 47px 0 46px;
+    padding: 0 46px;
 
     @include screen('md') {
       padding: 0 25px;
@@ -101,7 +115,7 @@
   &__logo {
     display: block;
     align-self: center;
-    width: 66px;
+    width: 54px;
 
     @include screen('md') {
       width: 40px;
@@ -117,8 +131,8 @@
   }
 
   &__burger {
-    width: 66px;
-    height: 35px;
+    width: 54px;
+    height: 30px;
     position: relative;
     display: block;
     text-align: left;
@@ -127,7 +141,7 @@
 
     @include screen('md') {
       width: 40px;
-      height: 26px;
+      height: 20px;
     }
 
     &:hover {
@@ -180,7 +194,12 @@
         }
 
         #{$b}.is-open & {
-          transform: rotate(45deg);
+          // right: -7px;
+          transform: translate3d(7px, 0, 0) rotate(45deg);
+
+          @include screen('md') {
+            transform: translate3d(5px, 0, 0) rotate(45deg);
+          }
         }
       }
 
@@ -195,12 +214,13 @@
         }
 
         #{$b}.is-open & {
-          transform: rotate(-45deg);
-          right: 26px;
+          transform: translate3d(-7px, 0, 0) rotate(-45deg);
+          // right: 19px;
           height: 38px;
 
           @include screen('md') {
-            right: 18px;
+            transform: translate3d(-5px, 0, 0) rotate(-45deg);
+            // right: 12px;
             height: 27px;
           }
         }
@@ -215,15 +235,32 @@
     pointer-events: none;
     opacity: 0;
     transition: opacity $ease-main;
+    padding: 0 4.6vw;
+    box-sizing: border-box;
+
+    @include screen('xl') {
+      padding: 0;
+    }
 
     #{$b}.is-open & {
       visibility: visible;
       opacity: 1;
       pointer-events: auto;
+      transition-delay: .3s;
+    }
+  }
+
+  &__languages {
+    box-sizing: border-box;
+    padding-top: 18px;
+
+    .link {
+      color: currentColor;
     }
   }
 
   .logo {
+    transition: none;
     color: currentColor;
   }
 

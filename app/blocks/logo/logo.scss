@@ -2,7 +2,6 @@
   display: block;
   width: 28px;
   height: 35px;
-  color: $color-text;
 
   @include screen('md') {
     width: 21px;

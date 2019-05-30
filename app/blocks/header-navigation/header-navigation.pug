@@ -4,8 +4,8 @@ mixin header-navigation(activeIndex)
     +e.UL.list
       - for (var i = 0, l = items.length; i < l; i++ ) {
         - if (i === activeIndex) {
-          +e.LI.item.is-active
-            +link()(href=items[i].link).__link!= items[i].name
+          +e.LI.item
+            +link()(href=items[i].link).__link.is-active!= items[i].name
         - } else {
           +e.LI.item
             +link()(href=items[i].link).__link!= items[i].name
