@@ -1,0 +1,82 @@
+.slider-lead {
+  $b: &;
+
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+
+  &__slide {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    @include screen('xl') {
+    }
+  }
+
+  &__image {
+    font-size: 0;
+    line-height: 0;
+    display: inline-block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    flex: none;
+
+    &_splace {
+      margin-top: -16.8%;
+      width: 72.2%;
+      height: auto;
+
+      @include screen('xl') {
+        width: 85.2%;
+        margin-top: 2.8%;
+        margin-left: -2.8%;
+      }
+    }
+  }
+
+  &__button {
+    position: absolute;
+    cursor: pointer;
+    width: 176px;
+    height: 176px;
+    top: 352px;
+    left: 17.3%;
+    z-index: 4;
+
+    @include screen('xl') {
+      left: 18px;
+    }
+  }
+
+  &__border {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    stroke-width: 2px;
+    stroke: url('#buttons');
+    stroke-dasharray: 2000;
+    fill: none;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+
+    #{$b}__button.is-animated & {
+      animation: dash 4s linear forwards;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    left: calc(50% + 5px);
+    transform: translate3d(-50%, -50%, 0);
+    fill: $color-black;
+    opacity: .46;
+    width: 54px;
+    height: 48px;
+  }
+}

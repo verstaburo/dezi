@@ -39,7 +39,6 @@
     position: relative;
     display: flex;
     width: 100%;
-    pointer-events: auto;
     transition: color $ease-main, height $ease-main;
     z-index: 2;
     height: 124px;
@@ -116,6 +115,7 @@
     display: block;
     align-self: center;
     width: 54px;
+    pointer-events: auto;
 
     @include screen('md') {
       width: 40px;
@@ -138,6 +138,7 @@
     text-align: left;
     transition: opacity $ease-main;
     align-self: center;
+    pointer-events: auto;
 
     @include screen('md') {
       width: 40px;

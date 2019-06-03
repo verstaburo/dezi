@@ -1,0 +1,71 @@
+.section {
+  display: block;
+  width: 100%;
+  $b: &;
+
+  &__column {
+    display: block;
+    box-sizing: border-box;
+  }
+
+  &_lead {
+    margin-bottom: 96px;
+
+    @include screen('xl') {
+      margin-bottom: 116px;
+    }
+
+    @include screen('lg') {
+      margin-bottom: 115px;
+    }
+
+    .text-block__text {
+      box-sizing: border-box;
+      padding-right: 10px;
+
+      @include screen('xl') {
+        padding-right: 10%;
+      }
+    }
+
+    #{$b} {
+      &__column {
+        &_left {
+          padding-top: 216px;
+          padding-left: 13.4%;
+          width: 60%;
+
+          @include screen('xl') {
+            padding-top: 220px;
+            padding-left: 7.7%;
+            width: 63.4%;
+          }
+
+          @include screen('lg') {
+            padding-top: 170px;
+            width: 100%;
+          }
+
+          @include screen('md') {
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 100px;
+          }
+        }
+
+        &_right {
+          width: 40%;
+
+          @include screen('xl') {
+            width: 36.6%;
+          }
+
+          @include screen('lg') {
+            display: none;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

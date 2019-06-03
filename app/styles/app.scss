@@ -66,6 +66,31 @@ body {
     display: flex;
     flex-wrap: wrap;
   }
+
+  &_index {
+    padding-left: 100px;
+    padding-right: 100px;
+
+    @include screen('md') {
+      padding-left: 23px;
+      padding-right: 23px;
+    }
+  }
+
+  &_about {
+    padding-left: 194px;
+    padding-right: 194px;
+
+    @include screen('xl') {
+      padding-left: 100px;
+      padding-right: 100px;
+    }
+
+    @include screen('md') {
+      padding-left: 23px;
+      padding-right: 23px;
+    }
+  }
 }
 
 .js-sr {
@@ -78,4 +103,44 @@ body {
 
 .js-stag {
   opacity: 0;
+}
+
+.hide {
+  display: none;
+
+  &-xl {
+    @include screen('xl') {
+      display: none;
+    }
+  }
+
+  &-lg {
+    @include screen('lg') {
+      display: none;
+    }
+  }
+
+  &-md {
+    @include screen('md') {
+      display: none;
+    }
+  }
+
+  &-from-xl {
+    @include screen('xl', min) {
+      display: none;
+    }
+  }
+
+  &-from-lg {
+    @include screen('lg', min) {
+      display: none;
+    }
+  }
+
+  &-from-md {
+    @include screen('md', min) {
+      display: none;
+    }
+  }
 }

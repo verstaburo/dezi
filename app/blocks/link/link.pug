@@ -8,3 +8,11 @@ mixin link-icon(iconname)
     +icon(iconname).__icon
     +e.SPAN.text
       block
+
+mixin link-round(iconname)
+  +b.A.link&attributes(attributes)._round
+    +e.circle
+      +icon('circle').__border
+      +icon(iconname).__icon
+    +e.SPAN.text
+      block

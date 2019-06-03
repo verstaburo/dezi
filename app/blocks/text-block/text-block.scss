@@ -1,0 +1,93 @@
+.text-block {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  $b: &;
+
+  &__title {
+    display: block;
+    width: 100%;
+    font-size: $fz-title;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -$ls-main;
+    color: $color-titles;
+
+    @include screen('xl') {
+      font-size: $fz-xl-title;
+    }
+
+    @include screen('md') {
+      font-size: $fz-md-title;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 97px;
+
+      @include screen('xl') {
+        margin-bottom: 38px;
+      }
+    }
+  }
+
+  &__text {
+    display: block;
+    width: 100%;
+    font-size: $fz-text;
+    line-height: ($lh-base / $fz-text);
+    font-weight: 300;
+    letter-spacing: $ls-main;
+
+    @include screen('md') {
+      font-size: $fz-md-text;
+      line-height: ($lh-md-base / $fz-md-text);
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 132px;
+
+      @include screen('xl') {
+        margin-bottom: 86px;
+      }
+    }
+  }
+
+  &__links {
+    width: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-left: -6px;
+    margin-right: -6px;
+
+    @include screen('xl') {
+      justify-content: space-between;
+      width: auto;
+      margin-left: -8px;
+      margin-right: -8px;
+    }
+
+    @include screen('md') {
+      width: calc(100% + 3px);
+      margin-left: -3px;
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    font-size: $fz16;
+
+    @include screen('md') {
+      font-size: $fz12;
+    }
+
+    &:not(:last-child) {
+      margin-right: 96px;
+
+      @include screen('xl') {
+        margin-right: 50px;
+      }
+    }
+  }
+}

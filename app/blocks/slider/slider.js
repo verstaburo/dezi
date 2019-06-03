@@ -5,6 +5,8 @@ import * as Swiper from 'swiper/dist/js/swiper';
 const $ = window.$;
 
 export default function slider() {
+  const wW = $(window).width();
+  const bp = window.globalOptions.sizes;
   const mySlider = new Swiper('.js-slider', {
     loop: true,
     speed: 700,
@@ -30,5 +32,40 @@ export default function slider() {
       },
     },
   });
+
+  if ($('.js-slider-lead').length > 0) {
+    const button = $('.js-slider-lead').find('.slider-lead__button');
+    const leadSlider = new Swiper('.js-slider-lead', {
+      loop: true,
+      speed: 500,
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      },
+      slidesPerView: 1,
+      effect: 'fade',
+      fadeEffect: {
+        crossFade: true,
+      },
+      navigation: {
+        nextEl: '.slider-lead__button',
+      },
+      roundLengths: true,
+      on: {
+        init() {
+          $(button).addClass('is-animated');
+        },
+        slideChange() {
+          $(button).removeClass('is-animated');
+          setTimeout(() => {
+            $(button).addClass('is-animated');
+          }, 500);
+        },
+        sliderMove() {
+          $(button).removeClass('is-animated');
+        },
+      },
+    });
+  }
 }
 /* eslint-enable no-unused-vars */

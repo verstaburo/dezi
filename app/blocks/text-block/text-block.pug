@@ -1,0 +1,11 @@
+mixin text-block()
+  +b.text-block&attributes(attributes)
+    block
+
+mixin text-block-title(tag)
+  +e(tag || 'h3').title&attributes(attributes)
+    block
+
+mixin text-block-content()
+  +e.content&attributes(attributes)
+    block

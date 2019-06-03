@@ -9,7 +9,14 @@ mixin slider(pagination, buttons)
       +e.button._prev
       +e.button._next
 
-mixin slide()
-  .swiper-slide
-    +e.slide&attributes(attributes)
+mixin slide(tag)
+  +e(tag || 'div').slide.swiper-slide&attributes(attributes)
+    block
+
+mixin slider-lead()
+  +b.slider-lead&attributes(attributes).swiper-container.js-slider-lead
+    .swiper-wrapper
       block
+    +e.button
+      +icon('circle-stroke').__border
+      +icon('update').__icon

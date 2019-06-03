@@ -4,25 +4,101 @@
   color: $color-form-dark;
   fill: currentColor;
   transition: fill $ease-main, color $ease-main, opacity $ease-main, border-color $ease-main;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: $ls-btn;
 
   &:hover {
     opacity: .5;
   }
 
   &_icon {
-    position: relative;
-    padding-left: 25px;
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
   }
 
   &__icon {
+    margin-right: 23px;
+    width: 15px;
+    height: 15px;
+
+    @include screen('md') {
+      margin-right: 12px;
+      width: 8px;
+      height: 8px;
+    }
+  }
+
+  &__border {
     position: absolute;
-    left: 0;
     top: 0;
-    width: 16px;
-    height: 16px;
-    display: inline-block;
-    vertical-align: middle;
-    font-size: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    // transform: rotate(180deg);
+    fill: url('#buttons');
+  }
+
+  &__circle {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+
+    @include screen('md') {
+      width: 30px;
+      height: 30px;
+    }
+
+    &:not(:last-child) {
+      margin-right: 23px;
+
+      @include screen('md') {
+        margin-right: 12px;
+      }
+    }
+  }
+
+  &_inverse {
+    flex-direction: row-reverse;
+
+    #{$b} {
+      &__icon {
+        margin-right: 0;
+        margin-left: 23px;
+        left: auto;
+        right: 0;
+
+        @include screen('md') {
+          margin-left: 12px;
+        }
+      }
+    }
+  }
+
+  &_round {
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    #{$b} {
+      &__icon {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+  }
+
+  &_arrow {
+    #{$b} {
+      &__icon {
+        transform-origin: 50% 50% 0;
+        transform: rotate(-90deg);
+      }
+    }
   }
 
   &.is-disabled,&:disabled {

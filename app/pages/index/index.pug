@@ -7,3 +7,22 @@ block header
   - var headerData = getData('headerMain.json')
 
 block content
+  +section()._lead
+    .container.container_index.container_flex
+      +e.column_left
+        +text-block
+          +text-block-title('h1') Мы создаем красивый дизайн, который решает важные задачи
+          +text-block-content
+            +e.text Мы — команда, создающая красивые и удобные сайты, мы делаем рекламные материалы и вот уже более 12 лет помогаем компаниям найти свой впечатляющий визуальный образ.
+            +e.links
+              +link-round('arrow')(href="#")._arrow.__link начать новый проект
+              +link-icon('arrow')(href="#")._inverse._arrow.__link ВЫЧИСЛИТЬ НАС ПО IP
+      +e.column_right
+        +slider-lead
+          +slide('a')(href="#")
+            +e.IMG.image_splace(src="assets/images/index/splace-w.png")
+          +slide('a')(href="#")
+            +e.IMG.image_splace(src="assets/images/index/splace-w.png")
+          +slide('a')(href="#")
+            +e.IMG.image_splace(src="assets/images/index/splace-w.png")
+  +section()
