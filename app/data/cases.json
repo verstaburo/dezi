@@ -1,0 +1,120 @@
+[{
+    "grid": {
+      "xxl": "3",
+      "xl": "4",
+      "lg": "6",
+      "md": "12"
+    },
+    "gridColClass": "",
+    "style": "background-color: #070507; color: #f2ecd9;",
+    "href": "redstone.html",
+    "class": "_dark",
+    "project": {
+      "tag": "",
+      "image": "assets/images/cases/case-1.jpg",
+      "name": "Дизайн логотипа для отеля Redstone"
+    }
+  },
+  {
+    "grid": {
+      "xxl": "3",
+      "xl": "4",
+      "lg": "6",
+      "md": "12"
+    },
+    "gridColClass": "",
+    "style": "background-color: #fff; color: #010101;",
+    "href": "#",
+    "class": "",
+    "project": {
+      "tag": "",
+      "image": "assets/images/cases/case-2.jpg",
+      "name": "Нейминг, стиль и магазин 4mebeles"
+    }
+  },
+  {
+    "grid": {
+      "xxl": "3",
+      "xl": "4",
+      "lg": "6",
+      "md": "12"
+    },
+    "gridColClass": "",
+    "style": "background-color: #070507; color: #f2ecd9;",
+    "href": "#",
+    "class": "_dark",
+    "project": {
+      "tag": "",
+      "image": "assets/images/cases/case-3.jpg",
+      "name": "Ребрендинг и поддержка meta"
+    }
+  },
+  {
+    "grid": {
+      "xxl": "3",
+      "xl": "4",
+      "lg": "6",
+      "md": "12"
+    },
+    "gridColClass": "",
+    "style": "background-color: #fff; color: #000;",
+    "href": "splace.html",
+    "class": "",
+    "project": {
+      "tag": "",
+      "image": "assets/images/cases/case-4.jpg",
+      "name": "Дизайн интернет-магазина Secret Place"
+    }
+  },
+  {
+    "grid": {
+      "xxl": "3",
+      "xl": "4",
+      "lg": "6",
+      "md": "12"
+    },
+    "gridColClass": "",
+    "style": "background-color: #031523; color: #fff;",
+    "href": "#",
+    "class": "_dark",
+    "project": {
+      "tag": "",
+      "image": "assets/images/cases/case-5.jpg",
+      "name": "Дизан сайта OTZI"
+    }
+  },
+  {
+    "grid": {
+      "xxl": "3",
+      "xl": "4",
+      "lg": "6",
+      "md": "12"
+    },
+    "gridColClass": "",
+    "style": "background-color: #d1d3d2; color: #0e141a;",
+    "href": "#",
+    "class": "",
+    "project": {
+      "tag": "",
+      "image": "assets/images/cases/case-6.jpg",
+      "name": "Дизан сайта OTZI"
+    }
+  },
+  {
+    "grid": {
+      "xxl": "6",
+      "xl": "8",
+      "lg": "12"
+    },
+    "gridColClass": "",
+    "style": "background-color: #0e141a; color: #f2ecd9;",
+    "href": "#",
+    "class": "_dark _venezia",
+    "project": {
+      "tag": "",
+      "image": "assets/images/cases/case-7.png",
+      "name": "Сайт и каталог для девелоперского проекта Venecija",
+      "special": "true"
+    }
+  }
+]

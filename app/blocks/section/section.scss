@@ -16,7 +16,7 @@
     }
 
     @include screen('lg') {
-      margin-bottom: 115px;
+      margin-bottom: 119px;
     }
 
     .text-block__text {
@@ -25,6 +25,10 @@
 
       @include screen('xl') {
         padding-right: 10%;
+      }
+
+      @include screen('md') {
+        padding-right: 0;
       }
     }
 
@@ -42,14 +46,16 @@
           }
 
           @include screen('lg') {
-            padding-top: 170px;
+            padding-top: 176px;
+            padding-left: 11.5%;
+            padding-right: 8%;
             width: 100%;
           }
 
           @include screen('md') {
             padding-left: 0;
             padding-right: 0;
-            padding-top: 100px;
+            padding-top: 101px;
           }
         }
 

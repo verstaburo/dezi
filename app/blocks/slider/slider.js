@@ -33,6 +33,50 @@ export default function slider() {
     },
   });
 
+  function leadSliderInit(el) {
+    const button = $(el).find('.slider-lead__button');
+    if (el.swiper !== undefined) {
+      if (wW > bp.md) {
+        const leadSlider = new Swiper(el, {
+          loop: true,
+          speed: 500,
+          autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+          },
+          slidesPerView: 1,
+          effect: 'fade',
+          fadeEffect: {
+            crossFade: true,
+          },
+          navigation: {
+            nextEl: button[0],
+          },
+          roundLengths: true,
+          on: {
+            init() {
+              $(button).addClass('is-animated');
+            },
+            update() {
+              $(button).addClass('is-animated');
+            },
+            slideChangeTransitionStart() {
+              $(button).removeClass('is-animated');
+            },
+            slideChangeTransitionEnd() {
+              $(button).addClass('is-animated');
+            },
+            sliderMove() {
+              $(button).removeClass('is-animated');
+            },
+          },
+        });
+      } else {
+        el.swiper.destroy();
+      }
+    }
+  }
+
   if ($('.js-slider-lead').length > 0) {
     const button = $('.js-slider-lead').find('.slider-lead__button');
     const leadSlider = new Swiper('.js-slider-lead', {
@@ -55,11 +99,11 @@ export default function slider() {
         init() {
           $(button).addClass('is-animated');
         },
-        slideChange() {
+        slideChangeTransitionStart() {
           $(button).removeClass('is-animated');
-          setTimeout(() => {
-            $(button).addClass('is-animated');
-          }, 500);
+        },
+        slideChangeTransitionEnd() {
+          $(button).addClass('is-animated');
         },
         sliderMove() {
           $(button).removeClass('is-animated');

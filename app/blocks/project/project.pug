@@ -1,0 +1,10 @@
+mixin project(data)
+  +b(data.tag || 'a').project&attributes(attributes)
+    +e.bg
+      -if (data.special) {
+        +e.IMG.collage(src=data.image class=data.imageCls || '')
+      -} else {
+        +e.IMG.image(src=data.image)
+      -}
+    +e.P.text!= data.name
+    block

@@ -9,7 +9,7 @@ mixin case-form()
     .container.container_inner
       +e.H3.heading.js-sr.js-sr_1 Хотите такой же классный проект?
       +grid.case-form__grid
-        +col({xl: 6, md: 13})
+        +col({xxl: 6, md: 13})
           +form(action="#" method="post").__form.js-sr.js-sr_2
             +inputbox.inputbox_required
               +input(placeholder="Ваше имя" name="name" required)
@@ -19,7 +19,7 @@ mixin case-form()
               +input(placeholder="Если есть что добавить" name="comment")
             +button('button')(type="submit").__button Начать новый проект
 
-        +col({xl: 6, md: 13}).case-form__right
+        +col({xxl: 6, md: 13}).case-form__right
           +e.text.__links
             +case-link('facebook').js-sr.js-sr_8 Facebook
             +case-link('instagram')._stroke.js-sr.js-sr_8 Instagram

@@ -18,7 +18,7 @@ mixin col(col)
   - var classNames = []
 
   if typeof col === 'object'
-    - var knownKeys = ['xl', 'lg', 'md', 'sm', 'xs']
+    - var knownKeys = ['xxl', 'xl', 'lg', 'md', 'sm', 'xs']
 
     each val, key in col
       if knownKeys.indexOf(key) !== -1

@@ -9,7 +9,8 @@ $grid-container-width: 100%; // Ширина контейнера сетки
 $grid-cols: 13; // Количество колонок в сетке
 $grid-gap: 26px; // Расстояние между колонками
 $grid-gap-vertical: 26px; // Расстояние между строками в сетке
-$grid-col-width: $grid-container-width / $grid-cols; // Ширина одной колонки
+$grid-col-width: $grid-container-width / $grid-cols; // Ширина одной
+$grid-col-width-12: $grid-container-width / 12; // Ширина одной колонки
 
 /* $breakpoints: (
   'xl': 1920px,
@@ -18,7 +19,7 @@ $grid-col-width: $grid-container-width / $grid-cols; // Ширина одной 
   'sm': 768px,
   'xs': 480px
 ); */
-$breakpoints: ('xl': 1367px, 'lg': 1025px, 'md': 768px, 'sm': 480px, 'xs': 320px);
+$breakpoints: ('xxl': 1920px, 'xl': 1367px, 'lg': 1025px, 'md': 768px, 'sm': 480px, 'xs': 320px);
 
 // ##########
 // Цвета
@@ -102,9 +103,10 @@ $ls-header: .16em;
 $lh1: 1;
 $lh-default: 1.2;
 $lh-base: 28px; // основа для
-$lh-md-base: 19px;
+$lh-md-base: 20px;
 $fz12: 12px;
 $fz16: 16px;
+$fz18: 18px;
 $fz-text: 20px;
 $fz-md-text: 14px;
 $fz-title: 68px;

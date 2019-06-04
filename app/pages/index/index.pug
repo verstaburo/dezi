@@ -16,7 +16,7 @@ block content
             +e.text Мы — команда, создающая красивые и удобные сайты, мы делаем рекламные материалы и вот уже более 12 лет помогаем компаниям найти свой впечатляющий визуальный образ.
             +e.links
               +link-round('arrow')(href="#")._arrow.__link начать новый проект
-              +link-icon('arrow')(href="#")._inverse._arrow.__link ВЫЧИСЛИТЬ НАС ПО IP
+              +link-icon('arrow')(href="#")._inverse._arrow.__link.hide-md ВЫЧИСЛИТЬ НАС ПО IP
       +e.column_right
         +slider-lead
           +slide('a')(href="#")
@@ -26,3 +26,8 @@ block content
           +slide('a')(href="#")
             +e.IMG.image_splace(src="assets/images/index/splace-w.png")
   +section()
+    .container.container_index.container_flex
+      +grid.grid_12.grid_nogap
+        each item in getData('cases.json')
+          +col(item.grid)(class=item.gridColClass || '')
+            +project(item.project)(href=item.href style=item.style class=item.class)

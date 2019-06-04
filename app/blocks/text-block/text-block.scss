@@ -27,6 +27,14 @@
       @include screen('xl') {
         margin-bottom: 38px;
       }
+
+      @include screen('lg') {
+        margin-bottom: 62px;
+      }
+
+      @include screen('md') {
+        margin-bottom: 37px;
+      }
     }
   }
 
@@ -49,6 +57,14 @@
       @include screen('xl') {
         margin-bottom: 86px;
       }
+
+      @include screen('lg') {
+        margin-bottom: 82px;
+      }
+
+      @include screen('md') {
+        margin-bottom: 38px;
+      }
     }
   }
 
@@ -60,6 +76,7 @@
     flex-wrap: wrap;
     margin-left: -6px;
     margin-right: -6px;
+    margin-top: -10px;
 
     @include screen('xl') {
       justify-content: space-between;
@@ -70,13 +87,16 @@
 
     @include screen('md') {
       width: calc(100% + 3px);
-      margin-left: -3px;
-      margin-right: 0;
+      margin-left: -6px;
+      margin-right: -6px;
     }
   }
 
   &__link {
     font-size: $fz16;
+    line-height: $lh-default;
+    letter-spacing: $ls-btn;
+    margin-top: 10px;
 
     @include screen('md') {
       font-size: $fz12;
@@ -87,6 +107,10 @@
 
       @include screen('xl') {
         margin-right: 50px;
+      }
+
+      @include screen('md') {
+        margin-right: 20px;
       }
     }
   }
