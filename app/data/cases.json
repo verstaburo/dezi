@@ -109,12 +109,199 @@
     "gridColClass": "",
     "style": "background-color: #0e141a; color: #f2ecd9;",
     "href": "#",
-    "class": "_dark _venezia",
+    "class": "_dark _wide _venezia",
     "project": {
       "tag": "",
       "image": "assets/images/cases/case-7.png",
       "name": "Сайт и каталог для девелоперского проекта Venecija",
       "special": "true"
+    }
+  },
+  {
+    "grid": {
+      "xxl": "3",
+      "xl": "4",
+      "lg": "6",
+      "md": "12"
+    },
+    "gridColClass": "",
+    "style": "background-color: #070507; color: #f2ecd9;",
+    "href": "#",
+    "class": "_dark",
+    "project": {
+      "tag": "",
+      "image": "assets/images/cases/case-8.jpg",
+      "name": "Шаблоны сайта 5element.by"
+    }
+  },
+  {
+    "grid": {
+      "xxl": "3",
+      "xl": "4",
+      "lg": "6",
+      "md": "12"
+    },
+    "gridColClass": "",
+    "style": "background-color: #28222e; color: #fdf9f1;",
+    "href": "#",
+    "class": "",
+    "project": {
+      "tag": "",
+      "image": "assets/images/cases/case-9.jpg",
+      "name": "Дизайн упаковок для amber fish"
+    }
+  },
+  {
+    "grid": {
+      "xxl": "3",
+      "xl": "4",
+      "lg": "6",
+      "md": "12"
+    },
+    "gridColClass": "",
+    "style": "background-color: #fff; color: #221c27;",
+    "href": "#",
+    "class": "",
+    "project": {
+      "tag": "",
+      "image": "assets/images/cases/case-10.jpg",
+      "name": "Сайт NMS Laboratorija"
+    }
+  },
+  {
+    "grid": {
+      "xxl": "3",
+      "xl": "4",
+      "lg": "6",
+      "md": "12"
+    },
+    "gridColClass": "",
+    "style": "background-color: #221c27; color: #fffefe;",
+    "href": "#",
+    "class": "_dark",
+    "project": {
+      "tag": "",
+      "image": "assets/images/cases/case-11.jpg",
+      "name": "Сайт Hi-End.tv"
+    }
+  },
+  {
+    "grid": {
+      "xxl": "6",
+      "xl": "8",
+      "lg": "12"
+    },
+    "gridColClass": "",
+    "style": "background-image: linear-gradient(to top, #d8dce8 0%, #fff 100%); color: #28222e;",
+    "href": "#",
+    "class": "_wide _xmlgold",
+    "project": {
+      "tag": "",
+      "image": "assets/images/cases/case-12.png",
+      "name": "Дизайн обменника электронных валют XMLGold",
+      "special": "true"
+    }
+  },
+  {
+    "grid": {
+      "xxl": "3",
+      "xl": "4",
+      "lg": "6",
+      "md": "12"
+    },
+    "gridColClass": "",
+    "style": "background-image: linear-gradient(-139deg, #e44a60 0%, #eda13d 65%, #67e0c8 100%); color: #221c27;",
+    "href": "#",
+    "class": "",
+    "project": {
+      "tag": "",
+      "image": "assets/images/cases/case-13.jpg",
+      "name": "FOMO"
+    }
+  },
+  {
+    "grid": {
+      "xxl": "3",
+      "xl": "4",
+      "lg": "6",
+      "md": "12"
+    },
+    "gridColClass": "",
+    "style": "background-color: #221c27; color: #fffefe;",
+    "href": "#",
+    "class": "_dark",
+    "project": {
+      "tag": "",
+      "image": "assets/images/cases/case-14.jpg",
+      "name": "Escaperoom"
+    }
+  },
+  {
+    "grid": {
+      "xxl": "3",
+      "xl": "4",
+      "lg": "6",
+      "md": "12"
+    },
+    "gridColClass": "",
+    "style": "background-color: #fff; color: #25180d;",
+    "href": "#",
+    "class": "",
+    "project": {
+      "tag": "",
+      "image": "assets/images/cases/case-15.jpg",
+      "name": "Дизайн логотипа ARBO"
+    }
+  },
+  {
+    "grid": {
+      "xxl": "3",
+      "xl": "4",
+      "lg": "6",
+      "md": "12"
+    },
+    "gridColClass": "",
+    "style": "background-color: #28222e; color: #fdf9f1;",
+    "href": "#",
+    "class": "_dark",
+    "project": {
+      "tag": "",
+      "image": "assets/images/cases/case-16.jpg",
+      "name": "Дизайн сайта Next Level Agency"
+    }
+  },
+  {
+    "grid": {
+      "xxl": "3",
+      "xl": "4",
+      "lg": "6",
+      "md": "12"
+    },
+    "gridColClass": "",
+    "style": "background-color: #ecebeb; color: #221c27;",
+    "href": "#",
+    "class": "",
+    "project": {
+      "tag": "",
+      "image": "assets/images/cases/case-17.jpg",
+      "name": "Дизайн приложения Appotime"
+    }
+  },
+  {
+    "grid": {
+      "xxl": "3",
+      "xl": "4",
+      "lg": "6",
+      "md": "12"
+    },
+    "gridColClass": "",
+    "style": "background-image: linear-gradient(-139deg, #c32227 0%, #8e1317 100%); color: #fffefe;",
+    "href": "#",
+    "class": "_dark",
+    "project": {
+      "tag": "",
+      "image": "assets/images/cases/case-18.jpg",
+      "name": "Фирменный стиль Ротекса"
     }
   }
 ]

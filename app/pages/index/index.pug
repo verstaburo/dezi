@@ -7,27 +7,27 @@ block header
   - var headerData = getData('headerMain.json')
 
 block content
-  +section()._lead
+  +section()._lead(data-section="main")
     .container.container_index.container_flex
       +e.column_left
         +text-block
-          +text-block-title('h1') Мы создаем красивый дизайн, который решает важные задачи
-          +text-block-content
+          +text-block-title('h1').js-sr_1 Мы создаем красивый дизайн, который решает важные задачи
+          +text-block-content.js-sr_2
             +e.text Мы — команда, создающая красивые и удобные сайты, мы делаем рекламные материалы и вот уже более 12 лет помогаем компаниям найти свой впечатляющий визуальный образ.
-            +e.links
+            +e.links.js-sr_3
               +link-round('arrow')(href="#")._arrow.__link начать новый проект
               +link-icon('arrow')(href="#")._inverse._arrow.__link.hide-md ВЫЧИСЛИТЬ НАС ПО IP
       +e.column_right
-        +slider-lead
+        +slider-lead.js-sr_6
           +slide('a')(href="#")
             +e.IMG.image_splace(src="assets/images/index/splace-w.png")
           +slide('a')(href="#")
             +e.IMG.image_splace(src="assets/images/index/splace-w.png")
           +slide('a')(href="#")
             +e.IMG.image_splace(src="assets/images/index/splace-w.png")
-  +section()
+  +section()._projects(data-section="cases")
     .container.container_index.container_flex
       +grid.grid_12.grid_nogap
         each item in getData('cases.json')
-          +col(item.grid)(class=item.gridColClass || '')
+          +col(item.grid)(class=(item.gridColClass + ' js-sr js-sr_9') || ' js-sr js-sr_9')
             +project(item.project)(href=item.href style=item.style class=item.class)

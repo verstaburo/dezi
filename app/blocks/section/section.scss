@@ -1,7 +1,12 @@
 .section {
   display: block;
   width: 100%;
+  margin-bottom: 100px;
   $b: &;
+
+  @include screen('md') {
+    margin-bottom: 50px;
+  }
 
   &__column {
     display: block;
@@ -17,6 +22,10 @@
 
     @include screen('lg') {
       margin-bottom: 119px;
+    }
+
+    @include screen('md') {
+      margin-bottom: 50px;
     }
 
     .text-block__text {

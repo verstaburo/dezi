@@ -1,6 +1,6 @@
 mixin project(data)
   +b(data.tag || 'a').project&attributes(attributes)
-    +e.bg
+    +e.DIV.bg
       -if (data.special) {
         +e.IMG.collage(src=data.image class=data.imageCls || '')
       -} else {
