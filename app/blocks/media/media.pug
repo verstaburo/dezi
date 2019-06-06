@@ -1,0 +1,9 @@
+mixin media(data)
+  +b.media&attributes(attributes)
+    if data.title
+      +e.title!= data.title
+    if data.image
+      +e.IMG.image(src=data.image.src)
+    if data.video
+      +e.VIDEO.video(src=data.video.src poster=data.video.poster)
+    block

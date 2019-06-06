@@ -14,10 +14,10 @@ module.exports = () => (
   .pipe(changed('dist/assets/images'))
   .pipe(imagemin([
     pngquant(),
-    mozjpeg({
-      quality: 70,
-      progressive: true,
-    }),
+    // mozjpeg({
+    //   quality: 100,
+    //   progressive: true,
+    // }),
   ], {
     verbose: true,
   }))

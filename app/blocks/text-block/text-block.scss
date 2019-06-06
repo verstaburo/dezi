@@ -21,6 +21,10 @@
       font-size: $fz-md-title;
     }
 
+    body.is-dark & {
+      color: $color-main;
+    }
+
     &:not(:last-child) {
       margin-bottom: 97px;
 

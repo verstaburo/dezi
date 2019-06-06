@@ -91,6 +91,13 @@ body {
       padding-right: 23px;
     }
   }
+
+  &_md0 {
+    @include screen('md') {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
 }
 
 .js-sr {

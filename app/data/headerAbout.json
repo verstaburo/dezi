@@ -1,0 +1,15 @@
+{
+  "titles": [{
+      "cls": "is-active",
+      "section": "about",
+      "text": "О КОМПАНИИ"
+    },
+    {
+      "cls": "",
+      "section": "clients",
+      "text": "Клиенты"
+    }
+  ],
+  "links": [],
+  "active": 0
+}

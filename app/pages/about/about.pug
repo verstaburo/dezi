@@ -1,0 +1,23 @@
+extends ../../layouts/default-dark
+
+block head
+  - var pageTitle = 'Dezi | О компании'
+
+block header
+  - var headerData = getData('headerAbout.json')
+  - var headerClass = '_light'
+
+block content
+  +section()._about(data-section="about")
+    +section-block
+      .container.container_about.container_md0
+        +media({title: 'Be Smart', image: {src: 'assets/images/about/media.jpg'}})
+    +section-block
+      .container.container_about
+        +text-block
+          +text-block-title('h3') BS — Brede & Shilin branding, production and design agency
+          +text-block-content
+            +e.text В 2014 году Евгений Шилин и Ольга Бреде организовали создали студию веб-дизайна. За короткий период компания набрала большую базу клиентов и на сегодняшний день снискала репутацию ответственной, профессиональной и вдумчивой команды. Нам отдают предпочтения не только клиенты, но и партнерские компании, доверяя создание дизайна для их клиентов.
+    +section-block
+      .container.container_about
+  +section()._clients(data-section="clients")

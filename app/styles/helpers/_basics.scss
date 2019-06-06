@@ -59,6 +59,11 @@ body {
   font-size: $fz16; // Убираем проблему с отступами между inline-элементами
   color: $color-text;
   line-height: $lh-default;
+
+  &.is-dark {
+    background-color: $color-titles;
+    color: $color-main;
+  }
 }
 
 img {

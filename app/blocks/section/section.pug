@@ -1,3 +1,7 @@
 mixin section()
-  +b.section&attributes(attributes)
+  +b.SECTION.section&attributes(attributes)
+    block
+
+mixin section-block()
+  +e.SECTION.block&attributes(attributes)
     block
