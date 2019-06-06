@@ -1,6 +1,12 @@
 /* eslint-disable no-unused-vars */
 // http://idangero.us/swiper/#.WcIu5oy0OHs
 import * as Swiper from 'swiper/dist/js/swiper';
+import {
+  TweenMax,
+  TimelineMax,
+  Power0,
+  Power1,
+} from 'gsap/TweenMax';
 
 const $ = window.$;
 
@@ -33,9 +39,18 @@ export default function slider() {
     },
   });
 
-  function leadSliderInit(el) {
+  function leadSliderF(el) {
+    const anim = new TimelineMax();
     const button = $(el).find('.slider-lead__button');
-    if (el.swiper !== undefined) {
+    const border = $(button).find('.slider-lead__border');
+    anim
+      .fromTo(border[0], 4, {
+        strokeDashoffset: 2000,
+      }, {
+        ease: Power1.easeInOut,
+        strokeDashoffset: 0,
+      });
+    if (el.swiper === undefined) {
       if (wW > bp.md) {
         const leadSlider = new Swiper(el, {
           loop: true,
@@ -50,24 +65,24 @@ export default function slider() {
             crossFade: true,
           },
           navigation: {
-            nextEl: button[0],
+            nextEl: button,
           },
           roundLengths: true,
           on: {
             init() {
-              $(button).addClass('is-animated');
+              anim.play(0);
             },
             update() {
-              $(button).addClass('is-animated');
+              anim.play(0);
             },
             slideChangeTransitionStart() {
-              $(button).removeClass('is-animated');
+              anim.pause(4);
             },
             slideChangeTransitionEnd() {
-              $(button).addClass('is-animated');
+              anim.play(0);
             },
             sliderMove() {
-              $(button).removeClass('is-animated');
+              anim.pause(4);
             },
           },
         });
@@ -77,39 +92,13 @@ export default function slider() {
     }
   }
 
-  if ($('.js-slider-lead').length > 0) {
-    const button = $('.js-slider-lead').find('.slider-lead__button');
-    const leadSlider = new Swiper('.js-slider-lead', {
-      loop: true,
-      speed: 500,
-      autoplay: {
-        delay: 4000,
-        disableOnInteraction: false,
-      },
-      slidesPerView: 1,
-      effect: 'fade',
-      fadeEffect: {
-        crossFade: true,
-      },
-      navigation: {
-        nextEl: '.slider-lead__button',
-      },
-      roundLengths: true,
-      on: {
-        init() {
-          $(button).addClass('is-animated');
-        },
-        slideChangeTransitionStart() {
-          $(button).removeClass('is-animated');
-        },
-        slideChangeTransitionEnd() {
-          $(button).addClass('is-animated');
-        },
-        sliderMove() {
-          $(button).removeClass('is-animated');
-        },
-      },
+  function leadSliderInit() {
+    $('.js-slider-lead').each((i, el) => {
+      leadSliderF(el);
     });
   }
+
+  leadSliderInit();
+  $(window).on('resize', leadSliderInit);
 }
 /* eslint-enable no-unused-vars */

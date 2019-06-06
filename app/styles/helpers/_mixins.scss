@@ -5,10 +5,9 @@ div {
   @include ratio(16,9);
 } */
 @mixin ratio($x, $y, $pseudo: false) {
-  $padding: ($y/$x) * 100%;
+  $padding: ($y / $x) * 100%;
 
   @if $pseudo {
-
     &::before {
       @include pseudo($pos: relative);
 
@@ -34,14 +33,7 @@ div {
     font-style: $style;
     font-weight: $weight;
     font-display: auto;
-    src: url($path + $fontname + '.eot');
-    src:
-      url(''+ $path + $fontname + '.eot?#iefix') format('embedded-opentype'),
-      url(''+ $path + $fontname + '.otf') format('opentype'),
-      url(''+ $path + $fontname + '.woff2') format('woff2'),
-      url(''+ $path + $fontname + '.woff') format('woff'),
-      url(''+ $path + $fontname + '.ttf') format('truetype'),
-      url(''+ $path + $fontname + '.svg#'+ $fontname) format('svg');
+    src: url(''+ $path + $fontname + '.woff2') format('woff2'), url(''+ $path + $fontname + '.woff') format('woff');
   }
 }
 
@@ -80,28 +72,28 @@ div::after {
     border-radius: 3px;
   }
 
-  @if $direction==down {
+  @if $direction == down {
     border-left: $size solid transparent;
     border-right: $size solid transparent;
     border-top: $size solid $color;
     margin-top: 0 - round($size / 2.5);
   }
 
-  @else if $direction==up {
+  @else if $direction == up {
     border-left: $size solid transparent;
     border-right: $size solid transparent;
     border-bottom: $size solid $color;
     margin-bottom: 0 - round($size / 2.5);
   }
 
-  @else if $direction==right {
+  @else if $direction == right {
     border-top: $size solid transparent;
     border-bottom: $size solid transparent;
     border-left: $size solid $color;
     margin-right: -$size;
   }
 
-  @else if $direction==left {
+  @else if $direction == left {
     border-top: $size solid transparent;
     border-bottom: $size solid transparent;
     border-right: $size solid $color;
@@ -126,7 +118,7 @@ div {
   @if map_has_key($breakpoints, $width) {
     $width: map_get($breakpoints, $width);
 
-    @if $type==max {
+    @if $type == max {
       $width: $width - 1px;
     }
 
@@ -173,7 +165,6 @@ p {
 }
 */
 @mixin clearfix {
-
   &::after {
     content: '';
     display: table;
