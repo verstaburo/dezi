@@ -4,6 +4,7 @@ import objectFitImages from 'object-fit-images';
 import './modernizr';
 import './globalOptions';
 import anchor from '../blocks/js-functions/anchor';
+import navigation from '../blocks/js-functions/navigation';
 import {
   freezebuttons,
 } from '../blocks/js-functions/freeze';
@@ -38,6 +39,7 @@ $(() => {
   svg4everybody();
   objectFitImages();
   anchor();
+  navigation();
   freezebuttons();
   selects();
   sliders();

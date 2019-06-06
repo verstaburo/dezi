@@ -78,9 +78,10 @@
     flex-direction: column;
     justify-content: space-between;
     pointer-events: auto;
-    transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-10px, 0, 0);
     margin-top: -4px;
     padding-top: 0;
+    width: 20px;
     transition: padding-top $ease-main;
 
     #{$b}.is-open & {
