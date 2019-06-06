@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Dezi | Sitemap</title>
+    <title>Dezi | О компании</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
     <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
@@ -21,15 +21,15 @@
     <script src="assets/scripts/libs/jquery.min.js"></script>
 </head>
 
-<body>
-    <header class="header">
+<body class="is-dark">
+    <header class="header header_light">
         <div class="header__top">
             <div class="header__wrapper">
                 <div class="header__logo"><a class="logo" href="./"><svg class="logo__icon"><use xlink:href="assets/images/icon.svg#icon_logo"></use></svg></a></div>
                 <nav class="header__menu">
                     <div class="header-navigation">
                         <ul class="header-navigation__list">
-                            <li class="header-navigation__item"><a class="link header-navigation__link" href="/about.html"><span class="link__text">О КОМПАНИИ</span></a></li>
+                            <li class="header-navigation__item"><a class="link header-navigation__link is-active" href="/about.html"><span class="link__text">О КОМПАНИИ</span></a></li>
                             <li class="header-navigation__item"><a class="link header-navigation__link" href="/services.html"><span class="link__text">УСЛУГИ</span></a></li>
                             <li class="header-navigation__item"><a class="link header-navigation__link" href="/cases.html"><span class="link__text">КЕЙСЫ</span></a></li>
                             <li class="header-navigation__item"><a class="link header-navigation__link" href="/contacts.html"><span class="link__text">КОНТАКТЫ</span></a></li>
@@ -45,8 +45,8 @@
                     <div class="header__titles">
                         <div class="nav-titles">
                             <ul class="nav-titles__list">
-                                <li class="nav-titles__item is-active" data-section-target="about">КТО МЫ ТАКИЕ</li>
-                                <li class="nav-titles__item" data-section-target="cases">Кейсы</li>
+                                <li class="nav-titles__item is-active" data-section-target="about">О КОМПАНИИ</li>
+                                <li class="nav-titles__item" data-section-target="clients">Клиенты</li>
                             </ul>
                         </div>
                     </div>
@@ -65,11 +65,29 @@
             </div>
         </div>
     </header>
-    <div class="sitemap">
-        <div class="container container_main">
-            <div class="sitemap__list"><a class="link" href="ui-kit.html"><span class="link__text">UI-kit (ui-kit.html)</span></a><a class="link" href="index.html"><span class="link__text">Главная (index.html)</span></a><a class="link" href="about.html"><span class="link__text">О компании (about.html)</span></a><a class="link" href="aizkulises.html"><span class="link__text">Кейс Aizkulises (aizkulises.html)</span></a><a class="link" href="redstone.html"><span class="link__text">Кейс Redstone (redstone.html)</span></a><a class="link" href="nla.html"><span class="link__text">Кейс Next Level Agency (nla.html)</span></a><a class="link" href="venezia.html"><span class="link__text">Кейс Venezia (venezia.html)</span></a><a class="link" href="splace.html"><span class="link__text">Кейс Secret Place (splace.html)</span></a></div>
-        </div>
-    </div><svg class="svg-gradients">
+    <section class="section section_about" data-section="about">
+        <section class="section__block">
+            <div class="container container_about container_md0">
+                <div class="media">
+                    <div class="media__title">Be Smart</div><img class="media__image" src="assets/images/about/media.jpg" alt="" role="presentation" />
+                </div>
+            </div>
+        </section>
+        <section class="section__block">
+            <div class="container container_about">
+                <div class="text-block">
+                    <h3 class="text-block__title">BS — Brede & Shilin branding, production and design agency</h3>
+                    <div class="text-block__content">
+                        <div class="text-block__text">В 2014 году Евгений Шилин и Ольга Бреде организовали создали студию веб-дизайна. За короткий период компания набрала большую базу клиентов и на сегодняшний день снискала репутацию ответственной, профессиональной и вдумчивой команды. Нам отдают предпочтения не только клиенты, но и партнерские компании, доверяя создание дизайна для их клиентов.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section__block">
+            <div class="container container_about"></div>
+        </section>
+    </section>
+    <section class="section section_clients" data-section="clients"></section><svg class="svg-gradients">
         <defs>
             <linearGradient id="nla-red" x1="81%" y1="0%" x2="19%" y2="100%">
                 <stop offset="0%" stop-color="rgb(223,6,47)"></stop>
