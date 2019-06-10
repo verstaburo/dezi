@@ -23,20 +23,22 @@
 
 <body>
     <header class="header">
+        <nav class="header__menu">
+            <div class="container container_about">
+                <div class="header-navigation">
+                    <ul class="header-navigation__list">
+                        <li class="header-navigation__item"><a class="link header-navigation__link" href="/about.html"><span class="link__text">О КОМПАНИИ</span></a></li>
+                        <li class="header-navigation__item"><a class="link header-navigation__link" href="/services.html"><span class="link__text">УСЛУГИ</span></a></li>
+                        <li class="header-navigation__item"><a class="link header-navigation__link" href="/cases.html"><span class="link__text">КЕЙСЫ</span></a></li>
+                        <li class="header-navigation__item"><a class="link header-navigation__link" href="/contacts.html"><span class="link__text">КОНТАКТЫ</span></a></li>
+                    </ul>
+                    <div class="header-navigation__mail"><a class="link" href="mailto:info@bsagency.design"><span class="link__text">INFO@BSAGENCY.DESIGN</span></a></div>
+                </div>
+            </div>
+        </nav>
         <div class="header__top">
             <div class="header__wrapper">
-                <div class="header__logo"><a class="logo" href="./"><svg class="logo__icon"><use xlink:href="assets/images/icon.svg#icon_logo"></use></svg></a></div>
-                <nav class="header__menu">
-                    <div class="header-navigation">
-                        <ul class="header-navigation__list">
-                            <li class="header-navigation__item"><a class="link header-navigation__link" href="/about.html"><span class="link__text">О КОМПАНИИ</span></a></li>
-                            <li class="header-navigation__item"><a class="link header-navigation__link" href="/services.html"><span class="link__text">УСЛУГИ</span></a></li>
-                            <li class="header-navigation__item"><a class="link header-navigation__link" href="/cases.html"><span class="link__text">КЕЙСЫ</span></a></li>
-                            <li class="header-navigation__item"><a class="link header-navigation__link" href="/contacts.html"><span class="link__text">КОНТАКТЫ</span></a></li>
-                        </ul>
-                        <div class="header-navigation__mail"><a class="link" href="mailto:info@bsagency.design"><span class="link__text">INFO@BSAGENCY.DESIGN</span></a></div>
-                    </div>
-                </nav><button class="header__burger js-show-menu" type="button"><span></span></button>
+                <div class="header__logo"><a class="logo" href="./"><svg class="logo__icon"><use xlink:href="assets/images/icon.svg#icon_logo"></use></svg></a></div><button class="header__burger js-show-menu" type="button"><span></span></button>
             </div>
         </div>
         <div class="header__bottom">
@@ -428,10 +430,10 @@
             <div class="ui-kit__section-content">
                 <div class="container">
                     <p class="ui-kit__description">.link</p><a class="link" href="#"><span class="link__text">Обычная ссылка</span></a>
-                    <p class="ui-kit__description">.link._icon</p><a class="link link_icon" href="#"><svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_refresh"></use></svg><span class="link__text">Ссылка с иконкой</span></a>
+                    <p class="ui-kit__description">.link._icon</p><a class="link link_icon" href="#"><span class="link__img"><svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_refresh"></use></svg></span><span class="link__text">Ссылка с иконкой</span></a>
                     <p class="ui-kit__description">.link.is-disabled</p><a class="link is-disabled" href="#"><span class="link__text">Отключенная ссылка</span></a>
-                    <p class="ui-kit__description">.link._round</p><a class="link link_round link_arrow" href="#"><span class="link__circle"><svg class="link__border"><use xlink:href="assets/images/icon.svg#icon_circle"></use></svg><svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_arrow"></use></svg></span><span class="link__text">ссылка с кружком</span></a>
-                    <p class="ui-kit__description">.link._inverse</p><a class="link link_icon link_inverse link_arrow" href="#"><svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_arrow"></use></svg><span class="link__text">иконка в конце</span></a>
+                    <p class="ui-kit__description">.link._round</p><a class="link link_round link_arrow" href="#"><span class="link__circle"><svg class="link__border"><use xlink:href="assets/images/icon.svg#icon_circle"></use></svg><span class="link__img"><svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-long"></use></svg></span></span><span class="link__text">ссылка с кружком</span></a>
+                    <p class="ui-kit__description">.link._inverse</p><a class="link link_icon link_inverse link_arrow" href="#"><span class="link__img"><svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-long"></use></svg></span><span class="link__text">иконка в конце</span></a>
                 </div>
             </div>
         </section>
