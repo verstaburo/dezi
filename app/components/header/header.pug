@@ -1,11 +1,12 @@
 mixin header(data)
   +b.HEADER.header&attributes(attributes)
+    +e.NAV.menu
+      .container.container_about
+        +header-navigation(data.active)
     +e.top
       +e.wrapper
         +e.logo
           +logo()(href="./")
-        +e.NAV.menu
-          +header-navigation(data.active)
         +e.BUTTON.burger.js-show-menu(type="button")
           span
     +e.bottom

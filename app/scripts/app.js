@@ -29,6 +29,7 @@ import aizkulises from '../components/aizkulises/aizkulises';
 import venezia from '../components/venezia/venezia';
 import header from '../components/header/header';
 import splace from '../components/splace/splace';
+import link from '../blocks/link/link';
 
 const $ = window.$;
 
@@ -56,4 +57,5 @@ $(() => {
   header();
   venezia();
   splace();
+  link();
 });

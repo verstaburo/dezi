@@ -65,13 +65,48 @@ export default function navigation() {
   setSectionsSizes();
   setObserversForSections();
 
+  function setNavTitlesSizes(callback) {
+    const titles = $('.nav-titles');
+    const items = $(titles).find('.nav-titles__item');
+    $(items).each((i, el) => {
+      const position = $(el).position().left;
+      $(el).attr('data-width', $(el).outerHeight());
+      if (position) {
+        $(el).css({
+          transform: `translate3d(${position}px, 0, 0)`,
+        });
+      }
+      callback();
+    });
+  }
+
+  function setNavTitlesWidth(activeName) {
+    const titles = $('.nav-titles');
+    const item = activeName ? $(titles).find(`[data-section-target=${activeName}]`) : $(titles).find('is-active');
+    const itemSize = $(item).attr('data-width');
+    const list = $(titles).find('.nav-titles__list');
+    $(list).css({
+      height: `${itemSize}px`,
+    });
+  }
+
+  setNavTitlesSizes(setNavTitlesWidth);
+
+  $(window).on('resize', () => {
+    setNavTitlesSizes(setNavTitlesWidth);
+  });
+
   $(window).on('scroll', () => {
     const sT = $(window).scrollTop();
     const activeSectionName = findActiveSection(sT);
     const sections = $('[data-section-target]');
     const activeSection = $(`[data-section-target=${activeSectionName}]`);
-    $(sections).not(activeSection).removeClass('is-active');
+    $(sections).not(activeSection).removeClass('is-active is-animate');
     $(activeSection).addClass('is-active');
+    setNavTitlesWidth(activeSectionName);
+    setTimeout(() => {
+      $(activeSection).addClass('is-animate');
+    }, 50);
   });
 }
 /* eslint-enable no-restricted-syntax */

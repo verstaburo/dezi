@@ -69,6 +69,8 @@
         }
 
         &_right {
+          position: relative;
+          display: flex;
           width: 40%;
 
           @include screen('xl') {
@@ -81,6 +83,14 @@
           }
         }
       }
+    }
+  }
+
+  &_about {
+    padding-top: 75px;
+
+    @include screen('xl') {
+      padding-top: 85px;
     }
   }
 }

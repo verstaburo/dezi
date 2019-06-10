@@ -4,7 +4,7 @@ const errorHandler = require('gulp-plumber-error-handler');
 const imagemin = require('gulp-imagemin');
 const changed = require('gulp-changed');
 const pngquant = require('imagemin-pngquant');
-const mozjpeg = require('imagemin-mozjpeg');
+// const mozjpeg = require('imagemin-mozjpeg');
 
 module.exports = () => (
   gulp.src('app/static/images/**/*')

@@ -3,9 +3,10 @@ mixin link()
     +e.SPAN.text
       block
 
-mixin link-icon(iconname)
+mixin link-icon(iconname, arrow)
   +b.A.link&attributes(attributes)._icon
-    +icon(iconname).__icon
+    +e.img
+      +icon(iconname).__icon
     +e.SPAN.text
       block
 
@@ -13,6 +14,7 @@ mixin link-round(iconname)
   +b.A.link&attributes(attributes)._round
     +e.circle
       +icon('circle').__border
-      +icon(iconname).__icon
+      +e.img
+        +icon(iconname).__icon
     +e.SPAN.text
       block

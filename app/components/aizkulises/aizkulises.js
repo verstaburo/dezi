@@ -56,6 +56,7 @@ export default function aizkulises() {
         'animation_fadeInLeft',
         'animation_fadeInTop',
         'animation_fade',
+        'animation_fadeIn2',
       ];
 
     // if (isMobile) $('.js-sr').removeClass('js-sr');
@@ -138,6 +139,7 @@ export default function aizkulises() {
         if (el.hasClass('js-sr_animate')) {
           el.addClass('is-animate');
         }
+        if (el.hasClass('js-sr_20')) el.addClass(`${animClasses[6]}`);
 
         setTimeout(() => {
           el.removeClass(`${classes}${baseClass}`).attr('style', '');

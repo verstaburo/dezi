@@ -6,6 +6,7 @@
   $b: &;
 
   @include screen('md') {
+    flex-direction: column;
     justify-content: flex-start;
     flex-wrap: wrap;
   }
@@ -14,8 +15,9 @@
     display: flex;
 
     @include screen('md') {
-      flex-wrap: wrap;
+      flex-direction: column;
       width: 100%;
+      margin-bottom: 40px;
     }
   }
 
@@ -32,11 +34,17 @@
     }
 
     @include screen('md') {
+      padding: 0 23px;
       width: 100%;
+      margin-bottom: 20px;
     }
 
     &:first-child {
       padding-left: 0;
+
+      @include screen('md') {
+        padding-left: 23px;
+      }
     }
 
     &:not(:last-child)::after {
@@ -61,7 +69,13 @@
     align-items: center;
     height: 100%;
 
+    @include screen('md') {
+      height: auto;
+    }
+
     &.is-active {
+      pointer-events: none;
+
       &:hover {
         opacity: 1;
       }
@@ -74,6 +88,14 @@
         right: -3px;
         height: 2px;
         background-color: currentColor;
+
+        @include screen('md') {
+          display: none;
+        }
+      }
+
+      .link__text::after {
+        display: none;
       }
     }
   }
@@ -83,9 +105,11 @@
     justify-content: flex-start;
     align-items: center;
     letter-spacing: $ls-header;
+    box-sizing: border-box;
 
     @include screen('md') {
       width: 100%;
+      padding: 0 23px;
     }
   }
 

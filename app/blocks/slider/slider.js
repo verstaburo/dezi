@@ -44,26 +44,24 @@ export default function slider() {
     const button = $(el).find('.slider-lead__button');
     const border = $(button).find('.slider-lead__border');
     anim
-      .fromTo(border[0], 4, {
+      .fromTo(border[0], 4.3, {
         strokeDashoffset: 2000,
       }, {
         ease: Power1.easeInOut,
         strokeDashoffset: 0,
-      });
+      }, 0);
     if (el.swiper === undefined) {
       if (wW > bp.md) {
         const leadSlider = new Swiper(el, {
           loop: true,
-          speed: 500,
+          speed: 0,
           autoplay: {
             delay: 4000,
             disableOnInteraction: false,
+            waitForTransition: false,
           },
-          slidesPerView: 1,
           effect: 'fade',
-          fadeEffect: {
-            crossFade: true,
-          },
+          slidesPerView: 1,
           navigation: {
             nextEl: button,
           },
@@ -75,20 +73,14 @@ export default function slider() {
             update() {
               anim.play(0);
             },
-            slideChangeTransitionStart() {
-              anim.pause(4);
-            },
-            slideChangeTransitionEnd() {
+            slideChange() {
               anim.play(0);
-            },
-            sliderMove() {
-              anim.pause(4);
             },
           },
         });
-      } else {
-        el.swiper.destroy();
       }
+    } else if (wW <= bp.md) {
+      el.swiper.destroy();
     }
   }
 

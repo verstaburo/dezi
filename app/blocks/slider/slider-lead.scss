@@ -1,39 +1,51 @@
 .slider-lead {
   $b: &;
 
-  position: relative;
-  width: 100%;
-  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
   height: 100%;
+  width: 100%;
+  display: block;
+  overflow: visible;
+
+  .swiper-slide-wrapper {
+    height: 100%;
+  }
 
   &__slide {
     position: relative;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     cursor: pointer;
-
-    @include screen('xl') {
-    }
+    height: 100%;
   }
 
   &__image {
     font-size: 0;
     line-height: 0;
-    display: inline-block;
-    width: auto;
-    height: auto;
+    display: block;
     max-width: 100%;
+    max-height: 100%;
     flex: none;
+    transform: translate3d(40px, 0, 0);
+    opacity: 0;
+    transition: transform .4s ease-out, opacity .4s ease-out;
+
+    .swiper-slide-active &,.swiper-slide-duplicate-active & {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+    }
 
     &_splace {
-      margin-top: -16.8%;
+      margin-top: -13%;
       width: 72.2%;
-      height: auto;
+      max-height: none;
 
       @include screen('xl') {
         width: 85.2%;
-        margin-top: 2.8%;
+        margin-top: 10.8%;
         margin-left: -2.8%;
       }
     }
@@ -47,9 +59,15 @@
     top: 352px;
     left: 17.3%;
     z-index: 4;
+    border-radius: 50%;
+    transition: background-color $ease-main;
 
     @include screen('xl') {
       left: 18px;
+    }
+
+    &:hover {
+      background-color: rgba($color-main, .2);
     }
   }
 

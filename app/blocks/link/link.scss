@@ -8,17 +8,13 @@
   font-weight: 700;
   letter-spacing: $ls-btn;
 
-  &:hover {
-    opacity: .5;
-  }
-
   &_icon {
     display: inline-flex;
     justify-content: flex-start;
     align-items: center;
   }
 
-  &__icon {
+  &__img {
     margin-right: 23px;
     width: 15px;
     height: 15px;
@@ -30,12 +26,18 @@
     }
   }
 
+  &__icon {
+    width: 100%;
+    height: 100%;
+  }
+
   &__border {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    transform: origin 50% 50% 0;
     // transform: rotate(180deg);
     fill: url('#buttons');
   }
@@ -62,15 +64,39 @@
     }
   }
 
+  &__text {
+    position: relative;
+    display: inline-block;
+
+    &::after {
+      @include pseudo;
+
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: currentColor;
+      transform-origin: 0 50% 0;
+      transition: transform $ease-main;
+      transform: scaleX(0);
+
+      @include screen('md') {
+        height: 1px;
+      }
+
+      #{$b}:hover & {
+        transform: scaleX(1);
+      }
+    }
+  }
+
   &_inverse {
     flex-direction: row-reverse;
 
     #{$b} {
-      &__icon {
+      &__img {
         margin-right: 0;
         margin-left: 23px;
-        left: auto;
-        right: 0;
 
         @include screen('md') {
           margin-left: 12px;
@@ -85,18 +111,60 @@
     align-items: center;
 
     #{$b} {
-      &__icon {
+      &__img {
         margin-left: 0;
         margin-right: 0;
+      }
+    }
+
+    &.is-mouse-in #{$b} {
+      &__border {
+        animation: roundBig .3s ease-in-out forwards;
+      }
+    }
+
+    &.is-mouse-out #{$b} {
+      &__border {
+        animation: roundSmall .3s ease-in-out forwards;
       }
     }
   }
 
   &_arrow {
     #{$b} {
+      &__img {
+        position: relative;
+        transition: width $ease-main;
+        width: 15px;
+        height: 13px;
+        overflow: hidden;
+
+        @include screen('md') {
+          width: 8px;
+          height: 7px;
+        }
+      }
+
       &__icon {
-        transform-origin: 50% 50% 0;
-        transform: rotate(-90deg);
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 20px;
+
+        @include screen('md') {
+          width: 11px;
+        }
+      }
+    }
+
+    &:hover #{$b} {
+      &__img {
+        width: 20px;
+
+        @include screen('md') {
+          width: 11px;
+        }
       }
     }
   }
