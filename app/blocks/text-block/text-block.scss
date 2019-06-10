@@ -40,6 +40,40 @@
         margin-bottom: 37px;
       }
     }
+
+    &_big {
+      font-size: $fz-title;
+
+      @include screen('md') {
+        font-size: $fz-md-title;
+      }
+    }
+
+    &_lhdef {
+      line-height: $lh-default;
+
+      @include screen('md') {
+        line-height: 1;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 71px;
+
+        @include screen('lg') {
+          margin-bottom: 78px;
+        }
+
+        @include screen('md') {
+          margin-bottom: 42px;
+        }
+      }
+
+      br:nth-child(2) {
+        @include screen('md') {
+          display: none;
+        }
+      }
+    }
   }
 
   &__text {
@@ -115,6 +149,60 @@
 
       @include screen('md') {
         margin-right: 20px;
+      }
+    }
+  }
+
+  &_about {
+    box-sizing: border-box;
+    padding-left: 144px;
+
+    @include screen('xl') {
+      padding-left: 98px;
+    }
+
+    @include screen('lg') {
+      padding-left: 0;
+    }
+
+    #{$b} {
+      &__content {
+        max-width: 76%;
+
+        @include screen('xl') {
+          max-width: 94.5%;
+        }
+
+        @include screen('lg') {
+          max-width: none;
+        }
+      }
+    }
+  }
+
+  &_clients {
+    box-sizing: border-box;
+    padding-left: 144px;
+
+    @include screen('xl') {
+      padding-left: 0;
+    }
+
+    @include screen('lg') {
+      max-width: none;
+    }
+
+    #{$b} {
+      &__content {
+        max-width: 66.5%;
+
+        @include screen('xl') {
+          max-width: 89.5%;
+        }
+
+        @include screen('lg') {
+          max-width: none;
+        }
       }
     }
   }

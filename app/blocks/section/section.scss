@@ -13,6 +13,23 @@
     box-sizing: border-box;
   }
 
+  &__block {
+    display: block;
+    width: 100%;
+
+    &:not(:last-child) {
+      margin-bottom: 98px;
+
+      @include screen('lg') {
+        margin-bottom: 117px;
+      }
+
+      @include screen('md') {
+        margin-bottom: 43px;
+      }
+    }
+  }
+
   &_lead {
     margin-bottom: 96px;
 
@@ -92,5 +109,8 @@
     @include screen('xl') {
       padding-top: 85px;
     }
+  }
+
+  &_clients {
   }
 }

@@ -78,10 +78,10 @@ body {
   }
 
   &_about {
-    padding-left: 194px;
-    padding-right: 194px;
+    padding-left: 190px;
+    padding-right: 190px;
 
-    @include screen('xl') {
+    @include screen('lg') {
       padding-left: 100px;
       padding-right: 100px;
     }
@@ -92,11 +92,30 @@ body {
     }
   }
 
-  &_md0 {
+  &_media {
+    padding-left: 190px;
+    padding-right: 190px;
+
+    @include screen('xl') {
+      padding-left: 100px;
+      padding-right: 100px;
+    }
+
     @include screen('md') {
       padding-left: 0;
       padding-right: 0;
     }
+  }
+}
+
+.container-inner {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 144px;
+  padding-right: 144px;
+
+  @include screen('xl') {
   }
 }
 
