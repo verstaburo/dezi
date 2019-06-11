@@ -45,7 +45,7 @@ $animationScale: .9;
 }
 
 .animation_fadeIn2 {
-  animation: fadeIn2 2s cubic-bezier(.645, .045, .355, 1);
+  animation: fadeIn 1.6s cubic-bezier(.075, .82, .165, 1);
 
   @include animation;
 }
@@ -53,18 +53,6 @@ $animationScale: .9;
 @keyframes fadeIn {
   0% {
     transform: translate3d(0, 50px, 0);
-    opacity: 0;
-  }
-
-  100% {
-    transform: translate3d(0, 0, 0);
-    opacity: 1;
-  }
-}
-
-@keyframes fadeIn2 {
-  0% {
-    transform: translate3d(0, 100px, 0);
     opacity: 0;
   }
 

@@ -37,18 +37,6 @@
       transform: translate3d(0, 0, 0);
       opacity: 1;
     }
-
-    &_splace {
-      margin-top: -13%;
-      width: 72.2%;
-      max-height: none;
-
-      @include screen('xl') {
-        width: 85.2%;
-        margin-top: 10.8%;
-        margin-left: -2.8%;
-      }
-    }
   }
 
   &__button {
@@ -56,14 +44,16 @@
     cursor: pointer;
     width: 176px;
     height: 176px;
-    top: 352px;
-    left: 17.3%;
+    top: calc(50% + 80px);
+    left: 28.5%;
     z-index: 4;
     border-radius: 50%;
     transition: background-color $ease-main;
+    transform: translate3d(0, -50%, 0);
 
     @include screen('xl') {
-      left: 18px;
+      top: calc(50% + 112px);
+      left: 27.8%;
     }
 
     &:hover {

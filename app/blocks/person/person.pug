@@ -1,0 +1,6 @@
+mixin person(img)
+  +b.person&attributes(attributes)
+    +e.portrait
+      +e.IMG.image(src=img)
+    +e.H4.describe
+      block

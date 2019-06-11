@@ -1,0 +1,6 @@
+mixin companies(data)
+  +b.UL.companies&attributes(attributes)
+    each company in data
+      +e.LI.item
+        +e.IMG.image(src=company.src)
+    block

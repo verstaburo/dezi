@@ -1,0 +1,44 @@
+.companies {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-left: -20px;
+  margin-right: -20px;
+  $b: &;
+
+  @include screen('xl') {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+
+  &__item {
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 0 20px;
+    margin-bottom: 66px;
+    height: 76px;
+
+    @include screen('xl') {
+      padding: 0 10px;
+      width: 33.33%;
+    }
+
+    @include screen('md') {
+      margin-bottom: 24px;
+      height: 28px;
+    }
+  }
+
+  &__image {
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    height: 100%;
+    width: auto;
+
+    @include screen('xl') {
+      max-width: 100%;
+    }
+  }
+}

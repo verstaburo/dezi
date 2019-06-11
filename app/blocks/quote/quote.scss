@@ -1,0 +1,126 @@
+.quote {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  padding-left: 144px;
+  $b: &;
+
+  @include screen('xl') {
+    padding-left: 0;
+  }
+
+  @include screen('md') {
+    flex-wrap: wrap;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 297px;
+  }
+
+  &::before {
+    position: absolute;
+    display: block;
+    font-size: $fz116;
+    color: $color-grey-2;
+    letter-spacing: -$ls-main;
+    font-weight: 700;
+    text-transform: uppercase;
+    transform-origin: 50% 50% 0;
+    transform: rotate(-90deg);
+    z-index: 2;
+
+    @include screen('md') {
+      font-size: $fz58;
+    }
+  }
+
+  &_brede {
+    @include screen('xl') {
+      padding-left: 96px;
+    }
+
+    @include screen('lg') {
+      padding-left: 0;
+    }
+
+    &::before {
+      bottom: calc(100% + 23px);
+      right: 138px;
+      content: 'b';
+    }
+  }
+
+  &_shilin::before {
+    content: 's';
+    transform: rotate(90deg);
+  }
+
+  &__author {
+    z-index: 1;
+
+    @include screen('md') {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      order: 2;
+      width: 100%;
+    }
+
+    &:not(:last-child) {
+      margin-right: 90px;
+
+      @include screen('md') {
+        margin-right: 0;
+      }
+    }
+
+    &:not(:first-child) {
+      margin-left: 172px;
+
+      @include screen('xl') {
+        margin-left: 72px;
+      }
+
+      @include screen('lg') {
+        margin-left: 123px;
+      }
+
+      @include screen('md') {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &__content {
+    font-size: $fz30;
+    line-height: ($lh-base-38 / $fz30);
+    letter-spacing: $ls-main;
+    font-weight: 300;
+    z-index: 2;
+    flex: 1;
+
+    @include screen('md') {
+      font-size: $fz17;
+      line-height: ($lh-base-22 / $fz17);
+      flex: none;
+      width: 100%;
+    }
+
+    #{$b}_brede & {
+      padding-top: 110px;
+
+      p {
+        max-width: 925px;
+
+        @include screen('xl') {
+          max-width: none;
+        }
+      }
+    }
+
+    #{$b}_shilin & {
+      font-weight: 400;
+    }
+  }
+}

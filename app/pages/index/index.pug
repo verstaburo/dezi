@@ -8,7 +8,7 @@ block header
 
 block content
   +section()._lead(data-section="about")
-    .container.container_index.container_flex
+    .container.container_index
       +e.column_left
         +text-block
           +text-block-title('h1').js-sr_1 Мы создаем красивый дизайн, который решает важные задачи
@@ -20,7 +20,7 @@ block content
       +e.column_right
         +slider-lead.js-sr_6
           +slide('a')(href="splace.html")
-            +e.IMG.image_splace(src="assets/images/index/slide-1.png")
+            +e.IMG.image(src="assets/images/index/slide-1.png")
           +slide('a')(href="nla.html")
             +e.IMG.image(src="assets/images/index/slide-2.png")
           +slide('a')(href="splace.html")

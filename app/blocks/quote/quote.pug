@@ -1,0 +1,11 @@
+mixin quote()
+  +b.ARTICLE.quote&attributes(attributes)
+    block
+
+mixin quote-author()
+  +e.author&attributes(attributes)
+    block
+
+mixin quote-content()
+  +e.content&attributes(attributes)
+    block
