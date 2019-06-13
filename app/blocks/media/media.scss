@@ -19,7 +19,7 @@
     font-size: $fz-title;
     letter-spacing: -$ls-main;
     color: currentColor;
-    line-height: .8;
+    line-height: .85;
     font-weight: 700;
 
     @include screen('xl') {
@@ -27,7 +27,7 @@
     }
 
     @include screen('lg') {
-      font-size: 32px;
+      font-size: 38px;
     }
 
     @include screen('md') {

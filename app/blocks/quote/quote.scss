@@ -15,7 +15,15 @@
   }
 
   &:not(:last-child) {
-    margin-bottom: 297px;
+    margin-bottom: 265px;
+
+    @include screen('xl') {
+      margin-bottom: 218px;
+    }
+
+    @include screen('md') {
+      margin-bottom: 106px;
+    }
   }
 
   &::before {
@@ -37,7 +45,7 @@
 
   &_brede {
     @include screen('xl') {
-      padding-left: 96px;
+      padding-left: 100px;
     }
 
     @include screen('lg') {
@@ -48,12 +56,55 @@
       bottom: calc(100% + 23px);
       right: 138px;
       content: 'b';
+
+      @include screen('xl') {
+        bottom: calc(100% - 28px);
+        right: 0;
+      }
+
+      @include screen('lg') {
+        bottom: calc(100% - 17px);
+        right: -118px;
+      }
+
+      @include screen('md') {
+        bottom: calc(100% + 10px);
+        right: -30px;
+      }
     }
   }
 
-  &_shilin::before {
-    content: 's';
-    transform: rotate(90deg);
+  &_shilin {
+    padding-right: 8.4%;
+
+    @include screen('xl') {
+      padding-right: 5.2%;
+    }
+
+    @include screen('lg') {
+      padding-right: 0;
+    }
+
+    &::before {
+      content: 's';
+      top: -77px;
+      left: calc(100% + 129px);
+      transform: rotate(90deg);
+
+      @include screen('xl') {
+        left: calc(100% + 34px);
+      }
+
+      @include screen('lg') {
+        left: -113px;
+        top: -67px;
+      }
+
+      @include screen('md') {
+        left: -39px;
+        top: -66px;
+      }
+    }
   }
 
   &__author {
@@ -70,16 +121,20 @@
     &:not(:last-child) {
       margin-right: 90px;
 
+      @include screen('lg') {
+        margin-right: 93px;
+      }
+
       @include screen('md') {
         margin-right: 0;
       }
     }
 
     &:not(:first-child) {
-      margin-left: 172px;
+      margin-left: 166px;
 
       @include screen('xl') {
-        margin-left: 72px;
+        margin-left: 60px;
       }
 
       @include screen('lg') {
@@ -88,6 +143,17 @@
 
       @include screen('md') {
         margin-left: 0;
+      }
+    }
+
+    #{$b}_brede & {
+      @include screen('lg') {
+        box-sizing: border-box;
+        padding-top: 58px;
+      }
+
+      @include screen('md') {
+        padding-top: 0;
       }
     }
   }
@@ -105,10 +171,19 @@
       line-height: ($lh-base-22 / $fz17);
       flex: none;
       width: 100%;
+      margin-bottom: 35px;
     }
 
     #{$b}_brede & {
       padding-top: 110px;
+
+      @include screen('xl') {
+        padding-top: 93px;
+      }
+
+      @include screen('lg') {
+        padding-top: 0;
+      }
 
       p {
         max-width: 925px;
@@ -121,6 +196,15 @@
 
     #{$b}_shilin & {
       font-weight: 400;
+
+      @include screen('lg') {
+        padding-top: 65px;
+      }
+
+      @include screen('md') {
+        padding-top: 0;
+        margin-bottom: 47px;
+      }
     }
   }
 }

@@ -74,6 +74,18 @@
         }
       }
     }
+
+    #{$b}_clients & {
+      &:not(:last-child) {
+        @include screen('lg') {
+          margin-bottom: 60px;
+        }
+
+        @include screen('md') {
+          margin-bottom: 26px;
+        }
+      }
+    }
   }
 
   &__text {
@@ -194,7 +206,7 @@
 
     #{$b} {
       &__content {
-        max-width: 66.5%;
+        max-width: 64.5%;
 
         @include screen('xl') {
           max-width: 89.5%;
