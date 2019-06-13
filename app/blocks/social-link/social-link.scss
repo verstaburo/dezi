@@ -1,0 +1,38 @@
+.social-link {
+  color: currentColor;
+  font-size: $fz15;
+  letter-spacing: $ls-header;
+  font-weight: 700;
+  $b: &;
+
+  .link {
+    &__img {
+      width: 17px;
+      height: 17px;
+      margin-right: 10px;
+    }
+  }
+
+  &_inst {
+    .link {
+      &__img {
+      }
+    }
+  }
+
+  &_be {
+    .link {
+      &__img {
+        width: 24px;
+        height: 15px;
+      }
+    }
+  }
+
+  &_fb {
+    .link {
+      &__img {
+      }
+    }
+  }
+}

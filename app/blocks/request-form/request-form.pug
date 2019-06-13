@@ -1,0 +1,19 @@
+mixin request-form(title)
+  +b.request-form&attributes(attributes)
+    +e.H3.title!= title
+    +e.content
+      +form(action="#" method="post").__form.js-sr.js-sr_2
+        +inputbox.inputbox_required.inputbox_required_v2
+          +input(placeholder="Ваше имя" name="name" required).input_v2
+        +inputbox.inputbox_required.inputbox_required_v2
+          +input(placeholder="Телефон или почта" name="contact" required).input_v2
+        +inputbox
+          +input(placeholder="ЕСЛИ ЕСТЬ ЧТО ДОБАВИТЬ" name="comment").input_v2
+        block
+      +e.links
+        +e.line
+          +socials-line([{tag: '', icon: 'facebook', name: 'Facebook', cls: '_fb'}, {tag: '', icon: 'instagram', name: 'Instagram', cls: '_inst'}, {tag: '', icon: 'behance', name: 'Behance', cls: '_be'}])
+        +e.line
+          +link(href="mailto:info@bsagency.design").__link INFO@BSAGENCY.DESIGN
+        +e.line
+          +link(href="tel:+37126771436").__link +371 26 77 14 36

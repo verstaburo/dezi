@@ -55,6 +55,42 @@
     }
   }
 
+  &__clients {
+    width: 100%;
+
+    @include screen('xl') {
+      width: 75%;
+    }
+
+    @include screen('lg') {
+      width: 91.5%;
+    }
+
+    @include screen('md') {
+      width: 100%;
+    }
+
+    &:not(:first-child) {
+      margin-top: 129px;
+
+      @include screen('xl') {
+        margin-top: 91px;
+      }
+
+      @include screen('lg') {
+        margin-top: 82px;
+      }
+
+      @include screen('md') {
+        margin-top: 39px;
+      }
+    }
+  }
+
+  &__request {
+    width: 100%;
+  }
+
   &_lead {
     position: relative;
     margin-bottom: 120px;
@@ -200,5 +236,17 @@
   }
 
   &_clients {
+    #{$b} {
+      &__request {
+        box-sizing: border-box;
+        padding-left: 143px;
+        margin-top: -15px;
+
+        @include screen('xl') {
+          margin-top: 0;
+          padding-left: 0;
+        }
+      }
+    }
   }
 }

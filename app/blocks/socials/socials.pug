@@ -4,3 +4,9 @@ mixin socials(data)
       +e.LI.item
         +social(item.tag, item.icon)(href="#" title=item.name class=item.cls + ' __social')
     block
+
+mixin socials-line(data)
+  +b.UL.socials_line&attributes(attributes)
+    each item in data
+      +e.LI.item
+        +social-link(item.icon)(href="#" class=item.cls + ' __social')!= item.name

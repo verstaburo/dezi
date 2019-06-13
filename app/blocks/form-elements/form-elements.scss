@@ -40,6 +40,30 @@
   &[required] {
     padding-right: 30px;
   }
+
+  &_v2 {
+    letter-spacing: $ls-header;
+    font-weight: 400;
+
+    @include screen('lg') {
+      font-size: $fz15;
+      padding-bottom: 21px;
+    }
+
+    @include screen('md') {
+      font-size: $fz9;
+      padding-bottom: 8px;
+    }
+  }
+
+  body.is-dark & {
+    color: $color-form-text-light;
+  }
+
+  .popup & {
+    color: $color-main;
+    border-color: $color-main;
+  }
 }
 
 .inputbox {
@@ -65,7 +89,7 @@
       right: 1px;
       top: 7px;
       color: $color-red;
-      font-size: 20px;
+      font-size: $fz-text;
       font-weight: 500;
 
       @include screen('lg') {
@@ -75,9 +99,23 @@
       }
 
       @include screen('md') {
-        font-size: 8px;
+        font-size: $fz10;
         right: 3px;
         top: 11px;
+      }
+    }
+
+    &_v2 {
+      @include screen('lg') {
+        font-size: $fz-text;
+        right: 1px;
+        top: 7px;
+      }
+    }
+
+    &_white {
+      &::after {
+        color: $color-basic;
       }
     }
   }
@@ -90,6 +128,10 @@
   padding-bottom: 13px;
   min-height: 150px;
   resize: vertical;
+
+  &_v2 {
+    @extend .input_v2;
+  }
 }
 
 .checkradio {

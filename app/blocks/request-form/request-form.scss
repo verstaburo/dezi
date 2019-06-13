@@ -1,0 +1,66 @@
+.request-form {
+  display: block;
+  font-family: $font-site;
+  $b: &;
+
+  body.is-dark &,.popup & {
+    color: $color-basic;
+  }
+
+  input,textarea,select,button {
+    font-family: $font-site;
+  }
+
+  &__title {
+    font-size: $fz35;
+    font-weight: 700;
+    color: currentColor;
+    line-height: $lh-default;
+    margin-bottom: 104px;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  &__form {
+    width: 52.1%;
+    margin-right: 50px;
+
+    @include screen('xl') {
+      margin-right: 0;
+      width: 74.8%;
+    }
+  }
+
+  &__links {
+    display: block;
+    box-sizing: border-box;
+    padding-top: 14px;
+    width: 37%;
+
+    @include screen('xl') {
+      width: 100%;
+    }
+  }
+
+  &__line {
+    width: 100%;
+    font-size: $fz15;
+    letter-spacing: $ls-form-link;
+
+    &:not(:last-child) {
+      margin-bottom: 78px;
+    }
+  }
+
+  &__link {
+    color: currentColor;
+    font-size: $fz15;
+    letter-spacing: $ls-header;
+  }
+}

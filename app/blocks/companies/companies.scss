@@ -8,16 +8,34 @@
   &__item {
     display: inline-block;
     box-sizing: border-box;
-    margin-bottom: 66px;
+    margin-bottom: 48px;
     height: 76px;
+    margin-right: 60px;
 
     @include screen('xl') {
+      padding-right: 20px;
       width: 33.33%;
+      margin-right: 0;
+    }
+
+    @include screen('lg') {
+      margin-bottom: 50px;
     }
 
     @include screen('md') {
-      margin-bottom: 24px;
+      margin-bottom: 18px;
       height: 28px;
+      padding-right: 10px;
+    }
+
+    &:nth-child(6n) {
+      margin-right: 0;
+    }
+
+    &:nth-child(3n) {
+      @include screen('xl') {
+        padding-right: 0;
+      }
     }
   }
 

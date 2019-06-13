@@ -8,4 +8,27 @@
       margin-bottom: 27px;
     }
   }
+
+  &_line {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: -28px;
+
+    @include screen('xl') {
+      justify-content: flex-start;
+    }
+
+    #{$b} {
+      &__item {
+        margin-top: 28px;
+
+        &:not(:last-child) {
+          margin-right: 30px;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
 }

@@ -43,5 +43,7 @@ block content
           +text-block-title('h3')._big._lhdef Клиенты
           +text-block-content
             +e.P.text На сегодняшний день нам посчастливилось поработать для клиентов в 6 странах мира. Создать более 100 больших и маленьких проектов, вот лишь некоторые из наших клиентов:
-        +companies(getData('companies.json'))
+        +companies(getData('companies.json')).__clients
     +section-block
+      .container.container_about
+        +request-form('Присоединяйтесь!').__request
