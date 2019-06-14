@@ -42,17 +42,19 @@
   }
 
   &_v2 {
-    letter-spacing: $ls-header;
+    letter-spacing: $ls-btn;
     font-weight: 400;
 
     @include screen('lg') {
       font-size: $fz15;
       padding-bottom: 21px;
+      height: 32px;
     }
 
     @include screen('md') {
       font-size: $fz9;
       padding-bottom: 8px;
+      height: 20px;
     }
   }
 
@@ -69,9 +71,10 @@
 .inputbox {
   display: block;
   position: relative;
+  $b: &;
 
   & + & {
-    margin-top: 64px;
+    margin-top: 65px;
 
     @include screen('lg') {
       margin-top: 43px;
@@ -91,6 +94,7 @@
       color: $color-red;
       font-size: $fz-text;
       font-weight: 500;
+      font-family: $font-main;
 
       @include screen('lg') {
         font-size: 15px;
@@ -105,11 +109,16 @@
       }
     }
 
-    &_v2 {
+    &_v2::after {
       @include screen('lg') {
         font-size: $fz-text;
         right: 1px;
         top: 7px;
+      }
+
+      @include screen('md') {
+        font-size: $fz10;
+        top: 12px;
       }
     }
 

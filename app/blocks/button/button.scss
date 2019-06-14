@@ -1,6 +1,5 @@
 .button {
   display: inline-block;
-  padding: 0 52px;
   border: 2px solid $color-red;
   vertical-align: middle;
   box-sizing: border-box;
@@ -16,6 +15,7 @@
   text-transform: uppercase;
   letter-spacing: .12em;
   border-radius: 100px;
+  $b: &;
 
   @include screen('lg') {
     font-size: 12px;
@@ -31,13 +31,81 @@
     padding: 0 30px;
   }
 
-  &:disabled, &.is-disabled {
+  &:disabled,&.is-disabled {
     opacity: .5;
     cursor: not-allowed;
+    pointer-events: none;
   }
 
-  &:hover, &.is-active {
+  &:hover,&.is-active {
     background-color: $color-red;
   }
-}
 
+  &__text {
+    display: inline-block;
+    vertical-align: middle;
+    box-sizing: border-box;
+    padding: 0 52px;
+
+    @include screen('lg') {
+      padding: 0 41px;
+    }
+
+    @include screen('md') {
+      padding: 0 30px;
+    }
+
+    #{$b}_gradient & {
+      padding: 0 30px;
+
+      @include screen('md') {
+        padding: 0 20px;
+      }
+    }
+  }
+
+  &_gradient {
+    border: none;
+    padding: 2px;
+    border-color: transparent;
+    border-radius: 30px;
+    box-sizing: border-box;
+    height: 58px;
+    background-clip: content-box, border-box;
+    color: $color-form-dark;
+    background-image: linear-gradient(to left, $color-main-bg 0%, $color-main-bg 50%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%), linear-gradient(-164deg, #13d5d7 0%, #3eefc7 26%, #892a5e 64%, #ed4036 100%);
+    background-repeat: no-repeat;
+    background-size: 200% 100%, contain;
+    transition: background $ease-main, color $ease-main;
+    background-position: 100% 0, 0 0;
+    font-size: $fz16;
+    font-weight: 700;
+    letter-spacing: $ls-btn;
+    line-height: 54px;
+    text-align: center;
+
+    @include screen('md') {
+      font-size: $fz12;
+      line-height: 36px;
+      height: 40px;
+      border-radius: 20px;
+    }
+
+    &:hover {
+      background-position: 0 0, 0 0;
+      color: $color-main;
+    }
+
+    body.is-dark & {
+      background-image: linear-gradient(to left, $color-titles 0%, $color-titles 50%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%), linear-gradient(-164deg, #13d5d7 0%, #3eefc7 26%, #892a5e 64%, #ed4036 100%);
+    }
+
+    .popup & {
+      background-image: linear-gradient(to left, $color-request-bg 0%, $color-request-bg 50%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%), linear-gradient(-164deg, #13d5d7 0%, #3eefc7 26%, #892a5e 64%, #ed4036 100%);
+    }
+
+    body.is-dark &,.popup & {
+      color: $color-main;
+    }
+  }
+}

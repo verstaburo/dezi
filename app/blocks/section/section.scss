@@ -241,10 +241,24 @@
         box-sizing: border-box;
         padding-left: 143px;
         margin-top: -15px;
+        padding-bottom: 240px;
 
         @include screen('xl') {
           margin-top: 0;
+          padding-top: 15px;
           padding-left: 0;
+          padding-bottom: 50px;
+        }
+
+        @include screen('lg') {
+          padding-top: 2px;
+          padding-bottom: 100px;
+        }
+
+        @include screen('md') {
+          padding-top: 0;
+          margin-top: -3px;
+          padding-bottom: 30px;
         }
       }
     }

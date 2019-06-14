@@ -11,12 +11,29 @@
     font-family: $font-site;
   }
 
+  ::placeholder {
+    font-family: $font-site;
+    font-size: inherit;
+    line-height: inherit;
+    letter-spacing: $ls-btn;
+  }
+
   &__title {
     font-size: $fz35;
     font-weight: 700;
     color: currentColor;
     line-height: $lh-default;
     margin-bottom: 104px;
+
+    @include screen('lg') {
+      margin-bottom: 108px;
+    }
+
+    @include screen('md') {
+      font-size: $fz-md-title;
+      letter-spacing: -$ls-main;
+      margin-bottom: 41px;
+    }
   }
 
   &__content {
@@ -33,7 +50,43 @@
 
     @include screen('xl') {
       margin-right: 0;
-      width: 74.8%;
+      width: 74.2%;
+      margin-bottom: 92px;
+    }
+
+    @include screen('lg') {
+      width: 90.5%;
+      margin-bottom: 94px;
+    }
+
+    @include screen('md') {
+      margin-bottom: 46px;
+      width: 100%;
+    }
+  }
+
+  .form {
+    &__button {
+      min-width: 338px;
+
+      @include screen('lg') {
+        margin-top: 65px;
+      }
+
+      @include screen('md') {
+        margin-top: 34px;
+        min-width: 0;
+      }
+    }
+  }
+
+  .inputbox + .inputbox {
+    @include screen('lg') {
+      margin-top: 66px;
+    }
+
+    @include screen('md') {
+      margin-top: 25px;
     }
   }
 
@@ -46,6 +99,10 @@
     @include screen('xl') {
       width: 100%;
     }
+
+    @include screen('md') {
+      padding-top: 0;
+    }
   }
 
   &__line {
@@ -53,8 +110,30 @@
     font-size: $fz15;
     letter-spacing: $ls-form-link;
 
+    @include screen('md') {
+      font-size: $fz12;
+    }
+
     &:not(:last-child) {
       margin-bottom: 78px;
+
+      @include screen('xl') {
+        margin-bottom: 80px;
+      }
+
+      @include screen('lg') {
+        margin-bottom: 83px;
+      }
+
+      @include screen('md') {
+        margin-bottom: 21px;
+      }
+    }
+
+    .socials {
+      @include screen('md') {
+        margin-bottom: 49px;
+      }
     }
   }
 
@@ -62,5 +141,10 @@
     color: currentColor;
     font-size: $fz15;
     letter-spacing: $ls-header;
+
+    @include screen('md') {
+      font-size: $fz12;
+      line-height: 1.35;
+    }
   }
 }
