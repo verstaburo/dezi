@@ -1,7 +1,7 @@
 mixin media(data)
   +b.media&attributes(attributes)
     if data.title
-      +e.title!= data.title
+      +e.title.js-sr_3!= data.title
     if data.image
       +e.IMG.image(src=data.image.src)
     if data.video

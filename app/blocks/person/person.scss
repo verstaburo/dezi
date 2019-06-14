@@ -17,9 +17,16 @@
     font-weight: 700;
     letter-spacing: $ls-main;
     z-index: 3;
+    animation-delay: .4s;
 
     @include screen('md') {
       font-size: $fz31;
+    }
+
+    .quote.is-animate & {
+      animation: fade 1s cubic-bezier(.77, 0, .175, 1);
+
+      @include animation;
     }
   }
 
@@ -79,6 +86,12 @@
       @include screen('md') {
         width: 225px;
         height: 225px;
+      }
+
+      .quote.is-animate & {
+        animation: scaleIn2 1s cubic-bezier(.77, 0, .175, 1);
+
+        @include animation;
       }
 
       #{$b}_brede & {
@@ -146,6 +159,13 @@
     width: 100%;
     height: 100%;
     z-index: 2;
+    animation-delay: .3s;
+
+    .quote.is-animate & {
+      animation: fadeIn 1s cubic-bezier(.77, 0, .175, 1);
+
+      @include animation;
+    }
   }
 
   &__describe {
@@ -161,12 +181,19 @@
     width: 120%;
     top: calc(100% + 24px);
     left: 0;
+    animation-delay: .4s;
 
     @include screen('md') {
       font-size: $fz9;
       line-height: 14px;
       color: currentColor;
       top: calc(100% + 17px);
+    }
+
+    .quote.is-animate & {
+      animation: fadeIn 1s cubic-bezier(.77, 0, .175, 1);
+
+      @include animation;
     }
 
     #{$b}_brede & {

@@ -43,6 +43,12 @@
     }
   }
 
+  &.is-animate::before {
+    animation: fade 1s cubic-bezier(.77, 0, .175, 1);
+
+    @include animation;
+  }
+
   &_brede {
     @include screen('xl') {
       padding-left: 100px;
@@ -165,6 +171,7 @@
     font-weight: 300;
     z-index: 2;
     flex: 1;
+    animation-delay: .1s;
 
     @include screen('md') {
       font-size: $fz17;
@@ -205,6 +212,12 @@
         padding-top: 0;
         margin-bottom: 47px;
       }
+    }
+
+    #{$b}.is-animate & {
+      animation: fadeIn 1s cubic-bezier(.77, 0, .175, 1);
+
+      @include animation;
     }
   }
 }
