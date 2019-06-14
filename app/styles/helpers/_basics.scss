@@ -35,6 +35,10 @@ input,textarea {
 
 input:-webkit-autofill {
   -webkit-text-fill-color: $color-input !important; // Поменять цвет на аналогичный цвету input
+
+  body.is-dark & {
+    -webkit-text-fill-color: $color-main !important;
+  }
 }
 
 input:-webkit-autofill,input:-webkit-autofill:hover,input:-webkit-autofill:focus,input:-webkit-autofill:active {

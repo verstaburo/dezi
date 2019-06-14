@@ -82,6 +82,7 @@
       width: 449px;
       height: 449px;
       border-radius: 50%;
+      z-index: 1;
 
       @include screen('md') {
         width: 225px;
@@ -160,6 +161,7 @@
     height: 100%;
     z-index: 2;
     animation-delay: .3s;
+    transform: translate3d(0, 0, 0);
 
     .quote.is-animate & {
       animation: fadeIn 1s cubic-bezier(.77, 0, .175, 1);
@@ -182,6 +184,7 @@
     top: calc(100% + 24px);
     left: 0;
     animation-delay: .4s;
+    transform: translate3d(0, 0, 0);
 
     @include screen('md') {
       font-size: $fz9;

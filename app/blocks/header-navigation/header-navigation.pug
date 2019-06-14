@@ -1,5 +1,5 @@
 mixin header-navigation(activeIndex)
-  - var items = [{link: '/about.html', name: 'О КОМПАНИИ'}, {link: '/services.html', name: 'УСЛУГИ'}, {link: '/cases.html', name: 'КЕЙСЫ'}, {link: '/contacts.html', name: 'КОНТАКТЫ'}];
+  - var items = [{link: 'about.html', name: 'О КОМПАНИИ'}, {link: 'services.html', name: 'УСЛУГИ'}, {link: 'cases.html', name: 'КЕЙСЫ'}, {link: 'contacts.html', name: 'КОНТАКТЫ'}];
   +b.header-navigation&attributes(attributes)
     +e.UL.list
       - for (var i = 0, l = items.length; i < l; i++ ) {
