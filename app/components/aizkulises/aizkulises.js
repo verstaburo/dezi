@@ -84,7 +84,7 @@ export default function aizkulises() {
 
     // Общий список классов анимаций
     let classes = '';
-    for (let i = 0; i < 11; i++) {
+    for (let i = 0; i < 25; i++) {
       classes += `${baseClass}_${i} `
     }
     for (let i = 0; i < animClasses.length; i++) {

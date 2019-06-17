@@ -110,24 +110,24 @@ $animationScale: .9;
 
 @keyframes scaleIn {
   0% {
-    transform: scale3d($animationScale, $animationScale, 1);
+    transform: scale($animationScale);
     opacity: 0;
   }
 
   100% {
-    transform: scale3d(1, 1, 1);
+    transform: scale(1);
     opacity: 1;
   }
 }
 
 @keyframes scaleIn2 {
   0% {
-    transform: scale3d(.2, .2, 1);
+    transform: scale(.2);
     opacity: 0;
   }
 
   100% {
-    transform: scale3d(1, 1, 1);
+    transform: scale(1);
     opacity: 1;
   }
 }

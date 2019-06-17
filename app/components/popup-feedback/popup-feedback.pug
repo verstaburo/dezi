@@ -1,0 +1,14 @@
+mixin popup-feedback()
+  +popup.popup-feedback__&attributes(attributes)
+    +e.bg
+      +slider-bg().js-bg-slider
+        +slide
+          +e.IMG.image(src="assets/images/index/bg-slide-1.jpg")
+        +slide
+          +e.IMG.image(src="assets/images/index/bg-slide-2.jpg")
+    +popup-close
+    +popup-scrollblock
+      +e.content
+        .container.container_about
+          +request-form-popup('Форма заявки')._request.__form
+            +button('button')(type="submit")._gradient.__button ОТПРАВИТЬ

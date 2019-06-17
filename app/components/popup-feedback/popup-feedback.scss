@@ -1,0 +1,78 @@
+.popup-feedback {
+  position: relative;
+  display: block;
+  $b: &;
+
+  &__bg {
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+
+    @include screen('lg') {
+      display: none;
+    }
+
+    .slider {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__content {
+    position: relative;
+    height: 100%;
+    z-index: 2;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 100px;
+    padding-bottom: 66px;
+    box-sizing: border-box;
+
+    @include screen('xl') {
+      height: auto;
+      min-height: 100%;
+      align-items: flex-start;
+      padding-top: 150px;
+      padding-bottom: 90px;
+    }
+
+    @include screen('md') {
+      padding-top: 100px;
+      padding-bottom: 66px;
+    }
+  }
+
+  &__form {
+    box-sizing: border-box;
+    padding-right: 144px;
+
+    @include screen('xl') {
+      padding-right: 0;
+    }
+  }
+
+  .popup__close {
+    top: 50px;
+    left: 190px;
+    z-index: 3;
+
+    @include screen('lg') {
+      left: 100px;
+    }
+
+    @include screen('md') {
+      top: 23px;
+      left: 50%;
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+}

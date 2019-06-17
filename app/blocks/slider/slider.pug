@@ -13,6 +13,11 @@ mixin slide(tag)
   +e(tag || 'div').slide.swiper-slide&attributes(attributes)
     block
 
+mixin slider-bg()
+  +b.slider_bg&attributes(attributes).swiper-container
+    .swiper-wrapper
+      block
+
 mixin slider-lead()
   +b.slider-lead&attributes(attributes).swiper-container.js-slider-lead
     .swiper-wrapper

@@ -5,3 +5,10 @@ mixin popups()
 mixin popup()
   +b.popup&attributes(attributes)
     block
+
+mixin popup-scrollblock()
+  div.popup__scrollblock.js-scrollbar&attributes(attributes)
+    block
+
+mixin popup-close()
+  button.popup__close.js-popup-close&attributes(attributes)

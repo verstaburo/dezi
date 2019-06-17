@@ -1,0 +1,11 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = 'Dezi | Контакты'
+
+block header
+  - var headerData = getData('headerContacts.json')
+  - var headerClass = ''
+
+block content
+  +section()._contacts(data-section="contacts")

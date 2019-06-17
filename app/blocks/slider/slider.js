@@ -39,6 +39,38 @@ export default function slider() {
     },
   });
 
+  function bgSliderF(el) {
+    if (el.swiper === undefined) {
+      if (wW > bp.lg) {
+        const bgSlider = new Swiper(el, {
+          loop: true,
+          speed: 700,
+          autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+          },
+          slidesPerView: 1,
+          roundLengths: true,
+          observer: true,
+          observeParents: true,
+          effect: 'flip',
+          flipEffect: {
+            rotate: 30,
+            slideShadows: false,
+          },
+        });
+      }
+    } else if (wW <= bp.lg) {
+      el.swiper.destroy();
+    }
+  }
+
+  function bgSliderInit() {
+    $('.js-bg-slider').each((i, el) => {
+      bgSliderF(el);
+    });
+  }
+
   function leadSliderF(el) {
     const anim = new TimelineMax();
     const button = $(el).find('.slider-lead__button');
@@ -51,7 +83,7 @@ export default function slider() {
         strokeDashoffset: 0,
       }, 0);
     if (el.swiper === undefined) {
-      if (wW > bp.md) {
+      if (wW > bp.lg) {
         const leadSlider = new Swiper(el, {
           loop: true,
           speed: 0,
@@ -79,7 +111,7 @@ export default function slider() {
           },
         });
       }
-    } else if (wW <= bp.md) {
+    } else if (wW <= bp.lg) {
       el.swiper.destroy();
     }
   }
@@ -92,5 +124,7 @@ export default function slider() {
 
   leadSliderInit();
   $(window).on('resize', leadSliderInit);
+  bgSliderInit();
+  $(window).on('resize', bgSliderInit);
 }
 /* eslint-enable no-unused-vars */

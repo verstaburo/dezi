@@ -15,7 +15,7 @@ block content
           +text-block-content.js-sr_2
             +e.text Мы — команда, создающая красивые и удобные сайты, мы делаем рекламные материалы и вот уже более 12 лет помогаем компаниям найти свой впечатляющий визуальный образ.
             +e.links.js-sr_3
-              +link-round('arrow-long')(href="#")._arrow.__link начать новый проект
+              +link-round('arrow-long')(href="#feedback")._arrow.__link.js-popup начать новый проект
               +link-icon('arrow-long')(href="#")._inverse._arrow.__link.hide-md ВЫЧИСЛИТЬ НАС ПО IP
       +e.column_right
         +slider-lead.js-sr_6
@@ -31,3 +31,6 @@ block content
         each item in getData('cases.json')
           +col(item.grid)(class=(item.gridColClass + ' js-sr js-sr_20') || ' js-sr js-sr_20')
             +project(item.project)(href=item.href style=item.style class=item.class)
+
+  +popups
+    +popup-feedback#feedback
