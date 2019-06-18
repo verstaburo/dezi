@@ -66,7 +66,68 @@
             </div>
         </div>
     </header>
-    <section class="section section_contacts" data-section="contacts"></section><svg class="svg-gradients">
+    <div class="contacts" data-section="contacts"><a class="marker-button contacts__marker js-open-map" href="#"><svg class="marker-button__border" xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 174 174">
+                <path d="M85,0A85,85,0,1,1,0,85,85,85,0,0,1,85,0Z"></path>
+            </svg><span class="marker-button__img"><svg class="marker-button__icon"><use xlink:href="assets/images/icon.svg#icon_location"></use></svg></span></a>
+        <div class="contacts__map" style="background-image: url('assets/images/contacts/map.jpg')"></div>
+        <div class="contacts__top">
+            <div class="container container_about">
+                <div class="contacts__title"><a class="link link_low contacts__title-link" href="mailto:ask@bsagency.design"><span class="link__text">ask@bsagency.design</span></a></div>
+                <ul class="contacts__links">
+                    <li class="contacts__item"><a class="link contacts__link" href="tel:+37126771436"><span class="link__text">+371 26 77 14 36</span></a></li>
+                    <li class="contacts__item">Telegram:&nbsp;<a class="link contacts__link" href="#"><span class="link__text">@bsagency</span></a></li>
+                </ul>
+                <div class="contacts__buttons"><a class="link link_round link_arrow contacts__button js-popup" href="#feedback"><span class="link__circle"><svg class="link__border"><use xlink:href="assets/images/icon.svg#icon_circle"></use></svg><span class="link__img"><svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-long"></use></svg></span></span><span class="link__text">начать новый проект</span></a></div>
+            </div>
+        </div>
+        <div class="contacts__bottom js-close-map">
+            <div class="container container_about">
+                <div class="contacts__title">РИГА <br> Margrietas&nbsp;38</div>
+                <div class="contacts__buttons"><a class="link link_round link_map contacts__button" href="#"><span class="link__circle"><svg class="link__border"><use xlink:href="assets/images/icon.svg#icon_circle"></use></svg><span class="link__img"><svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_map"></use></svg></span></span><span class="link__text">ОТКРЫТЬ В КАРТАХ</span></a></div>
+            </div>
+        </div>
+    </div>
+    <div class="popups">
+        <div class="popup popup-feedback" id="feedback">
+            <div class="popup-feedback__bg">
+                <div class="slider slider_bg swiper-container js-bg-slider">
+                    <div class="swiper-wrapper">
+                        <div class="slider__slide swiper-slide"><img class="slider__image" src="assets/images/index/bg-slide-1.jpg" alt="" role="presentation" /></div>
+                        <div class="slider__slide swiper-slide"><img class="slider__image" src="assets/images/index/bg-slide-2.jpg" alt="" role="presentation" /></div>
+                    </div>
+                </div>
+            </div><button class="popup__close js-popup-close"></button>
+            <div class="popup__scrollblock js-scrollbar">
+                <div class="popup-feedback__content">
+                    <div class="container container_about">
+                        <div class="request-form request-form_request popup-feedback__form">
+                            <h3 class="request-form__title">Форма заявки</h3>
+                            <div class="request-form__content">
+                                <form class="form request-form__form" action="#" method="post">
+                                    <div class="inputbox inputbox_required inputbox_required_v2 inputbox_required_white"><input class="input input_v2" type="text" placeholder="Ваше имя" name="name" required="required" /></div>
+                                    <div class="inputbox inputbox_required inputbox_required_v2 inputbox_required_white"><input class="input input_v2" type="text" placeholder="Телефон или почта" name="contact" required="required" /></div>
+                                    <div class="inputbox"><input class="input input_v2" type="text" placeholder="ЕСЛИ ЕСТЬ ЧТО ДОБАВИТЬ" name="comment" /></div><button class="button button_gradient form__button" type="submit">
+                                        <div class="button__text">ОТПРАВИТЬ</div>
+                                    </button>
+                                </form>
+                                <div class="request-form__links">
+                                    <div class="request-form__line">
+                                        <ul class="socials socials_line">
+                                            <li class="socials__item"><a class="link link_icon social-link social-link_fb socials__social" href="#"><span class="link__img"><svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_facebook"></use></svg></span><span class="link__text">Facebook</span></a></li>
+                                            <li class="socials__item"><a class="link link_icon social-link social-link_inst socials__social" href="#"><span class="link__img"><svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_instagram"></use></svg></span><span class="link__text">Instagram</span></a></li>
+                                            <li class="socials__item"><a class="link link_icon social-link social-link_be socials__social" href="#"><span class="link__img"><svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_behance"></use></svg></span><span class="link__text">Behance</span></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="request-form__line"><a class="link request-form__link" href="mailto:info@bsagency.design"><span class="link__text">INFO@BSAGENCY.DESIGN</span></a></div>
+                                    <div class="request-form__line"><a class="link request-form__link" href="tel:+37126771436"><span class="link__text">+371 26 77 14 36</span></a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><svg class="svg-gradients">
         <defs>
             <linearGradient id="nla-red" x1="81%" y1="0%" x2="19%" y2="100%">
                 <stop offset="0%" stop-color="rgb(223,6,47)"></stop>
