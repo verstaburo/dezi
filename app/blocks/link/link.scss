@@ -170,6 +170,10 @@
     }
   }
 
+  &_low {
+    text-transform: lowercase;
+  }
+
   &.is-disabled,&:disabled {
     pointer-events: none;
     opacity: .2;

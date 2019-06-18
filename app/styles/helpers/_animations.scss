@@ -175,3 +175,99 @@ $animationScale: .9;
     transform: scale(1);
   }
 }
+
+@keyframes markerMapClose {
+  0% {
+    transform: scale(5);
+    opacity: 0;
+  }
+
+  70% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes mapOpen {
+  0% {
+    clip-path: circle(71px at 77.5% 52.5%);
+  }
+
+  100% {
+    clip-path: circle(100vw at 77.5% 52.5%);
+  }
+}
+
+@keyframes mapClose {
+  0% {
+    clip-path: circle(100vw at 77.5% 52.5%);
+  }
+
+  75% {
+    clip-path: circle(64px at 77.5% 52.5%);
+  }
+
+  100% {
+    clip-path: circle(71px at 77.5% 52.5%);
+  }
+}
+
+@keyframes mapOpenIE {
+  0% {
+    transform: scale(1) translateZ(0);
+  }
+
+  100% {
+    transform: scale(25) translateZ(0);
+  }
+}
+
+@keyframes mapCloseIE {
+  0% {
+    transform: scale(25) translateZ(0);
+  }
+
+  75% {
+    transform: scale(.9) translateZ(0);
+  }
+
+  100% {
+    transform: scale(1) translateZ(0);
+  }
+}
+
+@keyframes iconBigger {
+  0% {
+    transform: scale(1) translateZ(0);
+  }
+
+  70% {
+    transform: scale(1.5) translateY(5px) translateZ(0);
+  }
+
+  80% {
+    transform: scale(1.5) translateY(0) translateZ(0);
+  }
+
+  90% {
+    transform: scale(1.5) translateY(2px) translateZ(0);
+  }
+
+  100% {
+    transform: scale(1.5) translateY(0) translateZ(0);
+  }
+}
+
+@keyframes iconSmaller {
+  0% {
+    transform: scale(1.5) translateZ(0);
+  }
+
+  100% {
+    transform: scale(1) translateZ(0);
+  }
+}

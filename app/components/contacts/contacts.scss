@@ -1,0 +1,168 @@
+.contacts {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: calc(var(--vh, 1vh) * 100);
+  overflow: hidden;
+  $b: &;
+
+  @include screen('md') {
+    min-height: calc(var(--vh, 1vh) * 100);
+    height: auto;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  &__map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color-black, .26);
+    background-position: 77.5% 52.5%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    transition: clip-path .3s ease-in-out;
+    clip-path: circle(71px at 77.5% 52.5%);
+    transition-delay: 0;
+    z-index: 1;
+
+    @include screen('md') {
+      clip-path: circle(210px at 50% 95%);
+
+      .is-firefox & {
+        clip-path: circle(65vw at 50% 95%);
+      }
+    }
+
+    #{$b}__marker:hover ~ & {
+      clip-path: circle(85px at 77.5% 52.5%);
+      transition-delay: .15s;
+
+      &::after {
+        transform: scale(1.2) translateZ(0);
+        transition-delay: .15s;
+      }
+    }
+
+    #{$b}.is-map-open & {
+      animation: mapOpen .6s ease-in-out forwards;
+    }
+
+    #{$b}.is-map-close & {
+      animation: mapClose .6s ease-in-out;
+    }
+
+    .is-ie &,.is-edge & {
+      &::after {
+        position: absolute;
+        display: block;
+        content: '';
+        top: calc(52.5% - 71px);
+        left: calc(77.5% - 71px);
+        width: 142px;
+        height: 142px;
+        border-radius: 50%;
+        box-shadow: 0 0 0 100vw $color-main;
+        box-sizing: border-box;
+        transition: all .3s ease-in;
+        transform-origin: 50% 50% 0;
+        pointer-events: none;
+        z-index: 2;
+      }
+    }
+
+    .is-ie #{$b}.is-map-open &::after,.is-edge #{$b}.is-map-open &::after {
+      animation: mapOpenIE .6s ease-in-out forwards;
+    }
+
+    .is-ie #{$b}.is-map-close &::after,.is-edge #{$b}.is-map-close &::after {
+      animation: mapCloseIE .6s ease-in-out;
+    }
+  }
+
+  &__marker {
+    position: absolute;
+    top: calc(52.5% - 90px);
+    left: calc(77.5% - 90px);
+    z-index: 4;
+
+    @include screen('md') {
+      top: auto;
+      bottom: 52px;
+      left: calc(50% - 55px);
+    }
+  }
+
+  &__top {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    transition: opacity $ease-main;
+    z-index: 2;
+    box-sizing: border-box;
+
+    @include screen('md') {
+      min-height: 100%;
+      height: auto;
+      padding-bottom: 300px;
+    }
+
+    #{$b}.is-map-open & {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .is-firefox & {
+      @include screen('md') {
+        padding-bottom: 70vw;
+      }
+    }
+  }
+
+  &__bottom {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    visibility: visible;
+    cursor: url('../images/contacts/cross-white.cur'), pointer;
+    transition: opacity $ease-main;
+    z-index: 3;
+    color: $color-main;
+    box-sizing: border-box;
+
+    @include screen('md') {
+      padding-bottom: 300px;
+    }
+
+    .is-firefox & {
+      @include screen('md') {
+        padding-bottom: 70vw;
+      }
+    }
+
+    #{$b}.is-map-open & {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    #{$b}__button {
+      color: $color-main;
+    }
+  }
+}

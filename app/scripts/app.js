@@ -3,6 +3,8 @@ import picturefill from 'picturefill';
 import objectFitImages from 'object-fit-images';
 import './modernizr';
 import './globalOptions';
+import '../blocks/js-functions/initParams';
+import browserDetection from '../blocks/js-functions/detectors';
 import anchor from '../blocks/js-functions/anchor';
 import navigation from '../blocks/js-functions/navigation';
 import {
@@ -30,6 +32,8 @@ import venezia from '../components/venezia/venezia';
 import header from '../components/header/header';
 import splace from '../components/splace/splace';
 import link from '../blocks/link/link';
+import markerButton from '../blocks/marker-button/marker-button';
+import contacts from '../components/contacts/contacts';
 
 const $ = window.$;
 
@@ -39,6 +43,7 @@ $(() => {
   }
   svg4everybody();
   objectFitImages();
+  browserDetection();
   anchor();
   navigation();
   freezebuttons();
@@ -58,4 +63,6 @@ $(() => {
   venezia();
   splace();
   link();
+  markerButton();
+  contacts();
 });
