@@ -1,20 +1,20 @@
 mixin contacts()
   +b.contacts&attributes(attributes)
-    +marker-button.__marker.js-open-map(href="#")
+    +marker-button.__marker.js-open-map.js-sr_7(href="#")
     +e.map(style="background-image: url('assets/images/contacts/map.jpg')")
     +e.top
-      .container.container_about
-        +e.title
+      +e.wrapper
+        +e.title.js-sr_1
           +link()(href="mailto:ask@bsagency.design")._low.__title-link ask@bsagency.design
-        +e.UL.links
+        +e.UL.links.js-sr_2
           +e.LI.item
             +link().__link(href="tel:+37126771436") +371 26 77 14 36
           +e.LI.item Telegram:&nbsp;
-            +link().__link(href="#") @bsagency
-        +e.buttons
+            +link()._low.__link(href="#") @bsagency
+        +e.buttons.js-sr_3
           +link-round('arrow-long')._arrow.__button.js-popup(href="#feedback") начать новый проект
     +e.bottom.js-close-map
-      .container.container_about
+      +e.wrapper
         +e.title РИГА <br> Margrietas&nbsp;38
         +e.buttons
           +link-round('map')._map.__button(href="#") ОТКРЫТЬ В КАРТАХ

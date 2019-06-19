@@ -9,13 +9,13 @@ html(lang='ru')
     - var hdCls = headerClass || ''
     +header(headerData)(class=hdCls)
     block content
-    +case-form
+    +case-form(data-section="form")
     +projects([
       ['assets/images/projects/project_1.jpg', 'Дизайн логотипа для отеля Redstone'],
       ['assets/images/projects/project_2.jpg', 'Нейминг, стиль и магазин 4mebeles', true],
       ['assets/images/projects/project_3.jpg', 'Ребрендинг и поддержка meta'],
       ['assets/images/projects/project_4.jpg', 'Дизайн интернет-магазина Secret Place', true]
-    ])
+    ])(data-section="cases")
     +footer
     script(src='assets/scripts/app.min.js')
     script(src='assets/scripts/main.js')

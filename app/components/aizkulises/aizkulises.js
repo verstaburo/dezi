@@ -32,9 +32,15 @@ export default function aizkulises() {
 
     scale = screenSize / siteWidth;
 
-    $('html').css({
-      zoom: scale,
-    });
+    if ($('html').is('.is-ie')) {
+      $('html').css({
+        '-ms-zoom': scale,
+      });
+    } else {
+      $('html').css({
+        zoom: scale,
+      });
+    }
 
     // Если вернемся к стандартному зуму
     // document.querySelector('meta[name="viewport"]').setAttribute('content', 'width='+siteWidth+', initial-scale='+scale+'');
@@ -43,9 +49,9 @@ export default function aizkulises() {
   /*
   Анимации
    */
-  w.on('load scroll resize', function () {
+  function scrollAnimation() {
     const
-      sT = $(this).scrollTop(),
+      sT = $(window).scrollTop(),
       baseClass = 'js-sr',
       duration = 1000,
       maxDelay = 400,
@@ -149,16 +155,15 @@ export default function aizkulises() {
         }, duration + maxDelay);
       }
 
-      // if (sT * scale > scrollMoment && el.hasClass('js-sr')) {
-      //   if (el.hasClass('js-sr_16')) el.addClass(`${animClasses[5]}
-      //   `);
-
       //   setTimeout(() => {
       //     el.removeClass(`${classes}${baseClass}`).attr('style', '');
       //   }, duration + maxDelay);
       // }
     });
-  });
+  }
+  scrollAnimation();
+
+  w.on('load scroll resize', scrollAnimation);
 
   /*
   Не использовать эти скрипты на других страницах

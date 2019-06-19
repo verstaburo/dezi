@@ -4,10 +4,10 @@ block head
   - var pageTitle = 'Dezi | Secret Place'
 
 block header
-  - var headerData = getData('headerMain.json')
+  - var headerData = getData('headerSplace.json')
 
 block content
-  +splace
+  +splace(data-section="splace")
     +splace-lead
     +splace-about
     +splace-pages

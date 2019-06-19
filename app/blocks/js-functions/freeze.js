@@ -3,11 +3,12 @@ const $ = window.$;
 
 export function freeze() {
   const h = $('html');
+  const b = $('body');
 
   if (h.css('position') !== 'fixed') {
     const top = h.scrollTop() ? h.scrollTop() : $('body').scrollTop();
 
-    if (window.innerWidth > h.width()) {
+    if (window.innerHeight < b.height()) {
       h.css('overflow-y', 'scroll');
     }
 

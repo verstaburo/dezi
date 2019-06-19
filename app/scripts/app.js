@@ -32,7 +32,6 @@ import venezia from '../components/venezia/venezia';
 import header from '../components/header/header';
 import splace from '../components/splace/splace';
 import link from '../blocks/link/link';
-import markerButton from '../blocks/marker-button/marker-button';
 import contacts from '../components/contacts/contacts';
 
 const $ = window.$;
@@ -63,6 +62,5 @@ $(() => {
   venezia();
   splace();
   link();
-  markerButton();
   contacts();
 });

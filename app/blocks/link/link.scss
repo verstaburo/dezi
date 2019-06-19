@@ -174,6 +174,29 @@
     text-transform: lowercase;
   }
 
+  &_map {
+    #{$b} {
+      &__img {
+        position: relative;
+        transform-origin: 50% 50% 0;
+        transition: transform $ease-main;
+        width: 20px;
+        height: 18px;
+
+        @include screen('md') {
+          width: 12px;
+          height: 10px;
+        }
+      }
+    }
+
+    &:hover #{$b} {
+      &__img {
+        transform: scale(1.2);
+      }
+    }
+  }
+
   &.is-disabled,&:disabled {
     pointer-events: none;
     opacity: .2;

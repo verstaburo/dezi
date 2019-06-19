@@ -1,0 +1,16 @@
+{
+  "titles": [{
+    "cls": "is-active",
+    "section": "venezia",
+    "text": "Venezia"
+  }, {
+    "cls": "",
+    "section": "form",
+    "text": "Контакты"
+  }, {
+    "cls": "",
+    "section": "cases",
+    "text": "Кейсы"
+  }],
+  "links": []
+}

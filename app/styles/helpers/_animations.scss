@@ -194,25 +194,121 @@ $animationScale: .9;
 
 @keyframes mapOpen {
   0% {
-    clip-path: circle(71px at 77.5% 52.5%);
+    clip-path: circle(71px at 77.5% 45.2%);
   }
 
   100% {
-    clip-path: circle(100vw at 77.5% 52.5%);
+    clip-path: circle(100vw at 77.5% 45.2%);
+  }
+}
+
+@keyframes mapOpenXl {
+  0% {
+    clip-path: circle(71px at 82% 49%);
+  }
+
+  100% {
+    clip-path: circle(100vw at 82% 49%);
+  }
+}
+
+@keyframes mapOpenLg {
+  0% {
+    clip-path: circle(71px at 79.7% 46%);
+  }
+
+  100% {
+    clip-path: circle(100vw at 79.7% 46%);
+  }
+}
+
+@keyframes mapOpenMd {
+  0% {
+    clip-path: circle(210px at 50% 95%);
+  }
+
+  100% {
+    clip-path: circle(200vw at 50% 95%);
+  }
+}
+
+@keyframes mapOpenMdFF {
+  0% {
+    clip-path: circle(65vw at 50% 95%);
+  }
+
+  100% {
+    clip-path: circle(200vw at 50% 95%);
   }
 }
 
 @keyframes mapClose {
   0% {
-    clip-path: circle(100vw at 77.5% 52.5%);
+    clip-path: circle(100vw at 77.5% 45.2%);
   }
 
   75% {
-    clip-path: circle(64px at 77.5% 52.5%);
+    clip-path: circle(64px at 77.5% 45.2%);
   }
 
   100% {
-    clip-path: circle(71px at 77.5% 52.5%);
+    clip-path: circle(71px at 77.5% 45.2%);
+  }
+}
+
+@keyframes mapCloseXl {
+  0% {
+    clip-path: circle(100vw at 82% 49%);
+  }
+
+  75% {
+    clip-path: circle(64px at 82% 49%);
+  }
+
+  100% {
+    clip-path: circle(71px at 82% 49%);
+  }
+}
+
+@keyframes mapCloseLg {
+  0% {
+    clip-path: circle(100vw at 79.7% 46%);
+  }
+
+  75% {
+    clip-path: circle(64px at 79.7% 46%);
+  }
+
+  100% {
+    clip-path: circle(71px at 79.7% 46%);
+  }
+}
+
+@keyframes mapCloseMd {
+  0% {
+    clip-path: circle(200vw at 50% 95%);
+  }
+
+  75% {
+    clip-path: circle(189px at 50% 95%);
+  }
+
+  100% {
+    clip-path: circle(210px at 50% 95%);
+  }
+}
+
+@keyframes mapCloseMdFF {
+  0% {
+    clip-path: circle(200vw at 50% 95%);
+  }
+
+  75% {
+    clip-path: circle(58vw at 50% 95%);
+  }
+
+  100% {
+    clip-path: circle(65vw at 50% 95%);
   }
 }
 
@@ -246,25 +342,25 @@ $animationScale: .9;
   }
 
   70% {
-    transform: scale(1.5) translateY(5px) translateZ(0);
+    transform: scale(2) translateY(5px) translateZ(0);
   }
 
   80% {
-    transform: scale(1.5) translateY(0) translateZ(0);
+    transform: scale(2) translateY(0) translateZ(0);
   }
 
   90% {
-    transform: scale(1.5) translateY(2px) translateZ(0);
+    transform: scale(2) translateY(2px) translateZ(0);
   }
 
   100% {
-    transform: scale(1.5) translateY(0) translateZ(0);
+    transform: scale(2) translateY(0) translateZ(0);
   }
 }
 
 @keyframes iconSmaller {
   0% {
-    transform: scale(1.5) translateZ(0);
+    transform: scale(2) translateZ(0);
   }
 
   100% {

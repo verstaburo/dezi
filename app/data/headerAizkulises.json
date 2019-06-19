@@ -1,0 +1,19 @@
+{
+  "titles": [{
+      "cls": "is-active",
+      "section": "aizkulises",
+      "text": "Aizkulises"
+    },
+    {
+      "cls": "",
+      "section": "form",
+      "text": "Контакты"
+    },
+    {
+      "cls": "",
+      "section": "cases",
+      "text": "Кейсы"
+    }
+  ],
+  "links": []
+}

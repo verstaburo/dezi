@@ -11,11 +11,36 @@
     height: auto;
   }
 
-  .container {
+  .is-ie & {
+    height: 100vh;
+  }
+
+  &__wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 332px;
+    padding-right: 30%;
+    height: 100%;
+
+    @include screen('xl') {
+      padding-left: 192px;
+      padding-right: 26%;
+    }
+
+    @include screen('lg') {
+      padding-left: 168px;
+      padding-right: 32%;
+    }
+
+    @include screen('md') {
+      justify-content: flex-start;
+      padding-left: 23px;
+      padding-right: 23px;
+    }
   }
 
   &__map {
@@ -25,16 +50,27 @@
     width: 100%;
     height: 100%;
     background-color: rgba($color-black, .26);
-    background-position: 77.5% 52.5%;
+    background-position: 77.5% 45.2%;
     background-size: cover;
     background-repeat: no-repeat;
     overflow: hidden;
     transition: clip-path .3s ease-in-out;
-    clip-path: circle(71px at 77.5% 52.5%);
+    clip-path: circle(71px at 77.5% 45.2%);
     transition-delay: 0;
     z-index: 1;
 
+    @include screen('xl') {
+      background-position: 82% 49%;
+      clip-path: circle(71px at 82% 49%);
+    }
+
+    @include screen('lg') {
+      background-position: 79.7% 46%;
+      clip-path: circle(71px at 79.7% 46%);
+    }
+
     @include screen('md') {
+      background-position: 50% 100%;
       clip-path: circle(210px at 50% 95%);
 
       .is-firefox & {
@@ -43,8 +79,28 @@
     }
 
     #{$b}__marker:hover ~ & {
-      clip-path: circle(85px at 77.5% 52.5%);
+      clip-path: circle(85px at 77.5% 45.2%);
       transition-delay: .15s;
+
+      @include screen('xl') {
+        clip-path: circle(85px at 82% 49%);
+      }
+
+      @include screen('lg') {
+        clip-path: circle(85px at 79.7% 46%);
+      }
+
+      @include screen('md') {
+        clip-path: circle(210px at 50% 95%);
+
+        .is-firefox & {
+          clip-path: circle(65vw at 50% 95%);
+        }
+      }
+
+      #{$b}.is-map-close & {
+        transition-delay: .35s;
+      }
 
       &::after {
         transform: scale(1.2) translateZ(0);
@@ -54,10 +110,42 @@
 
     #{$b}.is-map-open & {
       animation: mapOpen .6s ease-in-out forwards;
+
+      @include screen('xl') {
+        animation-name: mapOpenXl;
+      }
+
+      @include screen('lg') {
+        animation-name: mapOpenLg;
+      }
+
+      @include screen('md') {
+        animation-name: mapOpenMd;
+
+        .is-firefox & {
+          animation-name: mapOpenMdFF;
+        }
+      }
     }
 
     #{$b}.is-map-close & {
       animation: mapClose .6s ease-in-out;
+
+      @include screen('xl') {
+        animation-name: mapCloseXl;
+      }
+
+      @include screen('lg') {
+        animation-name: mapCloseLg;
+      }
+
+      @include screen('md') {
+        animation-name: mapCloseMd;
+
+        .is-firefox & {
+          animation-name: mapCloseMdFF;
+        }
+      }
     }
 
     .is-ie &,.is-edge & {
@@ -65,7 +153,7 @@
         position: absolute;
         display: block;
         content: '';
-        top: calc(52.5% - 71px);
+        top: calc(45.2% - 71px);
         left: calc(77.5% - 71px);
         width: 142px;
         height: 142px;
@@ -76,6 +164,25 @@
         transform-origin: 50% 50% 0;
         pointer-events: none;
         z-index: 2;
+
+        @include screen('xl') {
+          box-shadow: 0 0 0 150vw $color-main;
+          top: calc(49% - 71px);
+          left: calc(82% - 71px);
+        }
+
+        @include screen('lg') {
+          top: calc(46% - 71px);
+          left: calc(79.7% - 71px);
+        }
+
+        @include screen('md') {
+          width: 420px;
+          height: 420px;
+          box-shadow: 0 0 0 200vw $color-main;
+          top: calc(100% - 243px);
+          left: calc(50% - 210px);
+        }
       }
     }
 
@@ -90,9 +197,19 @@
 
   &__marker {
     position: absolute;
-    top: calc(52.5% - 90px);
+    top: calc(45.2% - 90px);
     left: calc(77.5% - 90px);
     z-index: 4;
+
+    @include screen('xl') {
+      top: calc(49% - 90px);
+      left: calc(82% - 90px);
+    }
+
+    @include screen('lg') {
+      top: calc(46% - 90px);
+      left: calc(79.7% - 90px);
+    }
 
     @include screen('md') {
       top: auto;
@@ -106,18 +223,34 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    width: 100%;
     height: 100%;
-    transition: opacity $ease-main;
+    transition: opacity .6s ease-in-out, transform .6s ease-in-out;
     z-index: 2;
     box-sizing: border-box;
+    padding-top: 100px;
+    padding-bottom: 211px;
+    color: $color-titles;
+
+    @include screen('xl') {
+      padding-top: 158px;
+      padding-bottom: 200px;
+    }
+
+    @include screen('lg') {
+      padding-top: 172px;
+      padding-bottom: 180px;
+    }
 
     @include screen('md') {
+      padding-top: 105px;
       min-height: 100%;
       height: auto;
-      padding-bottom: 300px;
+      padding-bottom: 285px;
     }
 
     #{$b}.is-map-open & {
+      transition-delay: 0;
       opacity: 0;
       pointer-events: none;
     }
@@ -127,12 +260,18 @@
         padding-bottom: 70vw;
       }
     }
+
+    #{$b}__button {
+      color: $color-text;
+    }
   }
 
   &__bottom {
     position: absolute;
     width: 100%;
     height: 100%;
+    top: 0;
+    left: 0;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -141,13 +280,26 @@
     pointer-events: none;
     visibility: visible;
     cursor: url('../images/contacts/cross-white.cur'), pointer;
-    transition: opacity $ease-main;
+    transition: opacity .6s ease-in-out, transform .6s ease-in-out;
     z-index: 3;
     color: $color-main;
     box-sizing: border-box;
+    padding-top: 100px;
+    padding-bottom: 211px;
+
+    @include screen('xl') {
+      padding-top: 158px;
+      padding-bottom: 200px;
+    }
+
+    @include screen('lg') {
+      padding-top: 172px;
+      padding-bottom: 180px;
+    }
 
     @include screen('md') {
-      padding-bottom: 300px;
+      padding-top: 105px;
+      padding-bottom: 285px;
     }
 
     .is-firefox & {
@@ -163,6 +315,116 @@
 
     #{$b}__button {
       color: $color-main;
+    }
+  }
+
+  &__title {
+    font-size: $fz-title;
+    font-weight: 700;
+    letter-spacing: -$ls-main;
+    margin-bottom: 40px;
+    overflow: hidden;
+    width: 100%;
+
+    @include screen('lg') {
+      font-size: $fz-xl-title;
+      margin-bottom: 47px;
+    }
+
+    @include screen('md') {
+      font-size: $fz-md-title;
+      margin-bottom: 64px;
+    }
+
+    &-link {
+      letter-spacing: -$ls-main;
+      color: currentColor;
+      overflow: hidden;
+    }
+
+    .link__text {
+      @include ellipsis(100%);
+    }
+
+    #{$b}__bottom & {
+      margin-bottom: 0;
+
+      @include screen('md') {
+        margin-bottom: 64px;
+      }
+    }
+  }
+
+  &__links {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    margin-top: -16px;
+    width: 100%;
+
+    @include screen('md') {
+      flex-wrap: wrap;
+      margin-bottom: 62px;
+    }
+
+    .link {
+      color: currentColor;
+      letter-spacing: normal;
+    }
+  }
+
+  &__item {
+    font-size: $fz16;
+    font-weight: 700;
+    margin-top: 16px;
+
+    @include screen('md') {
+      font-size: $fz-md-text;
+      width: 100%;
+    }
+
+    &:first-child {
+      @include screen('md') {
+        order: 2;
+      }
+    }
+
+    &:not(:last-child) {
+      margin-right: 49px;
+
+      @include screen('md') {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__buttons {
+    position: absolute;
+    bottom: 133px;
+    left: 324px;
+
+    @include screen('xl') {
+      left: 186px;
+      bottom: 126px;
+    }
+
+    @include screen('lg') {
+      left: 162px;
+      bottom: 111px;
+    }
+
+    @include screen('md') {
+      position: relative;
+      bottom: auto;
+      left: -4px;
+    }
+  }
+
+  &__button {
+    font-size: $fz16;
+
+    @include screen('md') {
+      font-size: $fz12;
     }
   }
 }

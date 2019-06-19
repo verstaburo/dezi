@@ -1,0 +1,16 @@
+{
+  "titles": [{
+    "cls": "is-active",
+    "section": "splace",
+    "text": "Secret Place"
+  }, {
+    "cls": "",
+    "section": "form",
+    "text": "Контакты"
+  }, {
+    "cls": "",
+    "section": "cases",
+    "text": "Кейсы"
+  }],
+  "links": []
+}
