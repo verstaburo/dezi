@@ -12,7 +12,7 @@ mixin link-icon(iconname, arrow)
 
 mixin link-round(iconname)
   +b.A.link&attributes(attributes)._round
-    +e.circle
+    +e.circle(data-morphing)
       +icon('circle').__border
       +e.img
         +icon(iconname).__icon
