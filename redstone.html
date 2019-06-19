@@ -47,7 +47,8 @@
                     <div class="header__titles">
                         <div class="nav-titles">
                             <ul class="nav-titles__list">
-                                <li class="nav-titles__item is-active" data-section-target="about">КТО МЫ ТАКИЕ</li>
+                                <li class="nav-titles__item is-active" data-section-target="redstone">Redstone</li>
+                                <li class="nav-titles__item" data-section-target="form">Контакты</li>
                                 <li class="nav-titles__item" data-section-target="cases">Кейсы</li>
                             </ul>
                         </div>
@@ -67,7 +68,7 @@
             </div>
         </div>
     </header>
-    <main class="redstone" role="main">
+    <main class="redstone" data-section="redstone" role="main">
         <section class="redstone-lead">
             <div class="container container_inner container_flex">
                 <div class="redstone__col redstone__col_left">
@@ -126,7 +127,7 @@
             </div>
         </section>
     </main>
-    <div class="case-form">
+    <div class="case-form" data-section="form">
         <div class="container container_inner">
             <h3 class="case-form__heading js-sr js-sr js-sr_1">Хотите такой же классный проект?</h3>
             <div class="grid case-form__grid">
@@ -147,7 +148,7 @@
             </div>
         </div>
     </div>
-    <div class="projects"><a class="projects__project js-sr js-sr js-sr_9" href="#"><img class="projects__bg" src="assets/images/projects/project_1.jpg" alt="" role="presentation" />
+    <div class="projects" data-section="cases"><a class="projects__project js-sr js-sr js-sr_9" href="#"><img class="projects__bg" src="assets/images/projects/project_1.jpg" alt="" role="presentation" />
             <p class="projects__text">Дизайн логотипа для отеля Redstone</p>
         </a><a class="projects__project projects__project_dark js-sr js-sr js-sr_9" href="#"><img class="projects__bg" src="assets/images/projects/project_2.jpg" alt="" role="presentation" />
             <p class="projects__text">Нейминг, стиль и магазин 4mebeles</p>
