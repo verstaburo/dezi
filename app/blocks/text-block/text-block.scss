@@ -165,6 +165,40 @@
     }
   }
 
+  &__subtitle {
+    display: block;
+    width: 100%;
+    font-size: $fz16;
+    line-height: $lh-base / $fz16;
+    font-weight: 700;
+    letter-spacing: $ls-header;
+    color: $color-titles;
+
+    @include screen('md') {
+      font-size: $fz12;
+      line-height: $lh-base-14 / $fz12;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    height: 180px;
+
+    li {
+      display: inline-block;
+      margin-right: 56px;
+    }
+  }
+
   &_about {
     box-sizing: border-box;
     padding-left: 144px;
@@ -214,6 +248,34 @@
 
         @include screen('lg') {
           max-width: none;
+        }
+      }
+    }
+  }
+
+  &_services {
+    #{$b} {
+      &__title {
+        &:not(:last-child) {
+          margin-bottom: 40px;
+        }
+      }
+
+      &__text {
+        max-width: 800px;
+
+        &:not(:last-child) {
+          margin-bottom: 84px;
+        }
+
+        p {
+          &:not(:last-child) {
+            margin-bottom: 29px;
+
+            @include screen('md') {
+              margin-bottom: 20px;
+            }
+          }
         }
       }
     }

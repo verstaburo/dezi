@@ -1,7 +1,15 @@
 @mixin list {
-  @include text;
+  font-size: $fz-text;
+  line-height: ($lh-base / $fz-text);
+  font-weight: 300;
+  letter-spacing: $ls-main;
 
-  ul, ol {
+  @include screen('md') {
+    font-size: $fz-md-text;
+    line-height: ($lh-md-base / $fz-md-text);
+  }
+
+  ul,ol {
     padding-top: 5px;
     padding-bottom: 5px;
   }
@@ -13,12 +21,15 @@
 }
 
 @mixin ullist {
-
   li::before {
     position: absolute;
     left: 0;
-    top: 0;
-    content: '•';
+    top: 11px;
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: $color-list-point;
   }
 }
 
@@ -26,7 +37,6 @@
   counter-reset: list1;
 
   li {
-
     &::before {
       position: absolute;
       left: 0;

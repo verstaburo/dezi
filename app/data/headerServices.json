@@ -1,0 +1,23 @@
+{
+  "titles": [{
+      "cls": "is-active",
+      "section": "design",
+      "text": "ГРАФДИЗАЙН"
+    },
+    {
+      "cls": "",
+      "section": "webdesign",
+      "text": "веб-дизайн"
+    }, {
+      "cls": "",
+      "section": "uiapp",
+      "text": "интерфейсы"
+    }, {
+      "cls": "",
+      "section": "services",
+      "text": "услуги"
+    }
+  ],
+  "links": [],
+  "active": 1
+}

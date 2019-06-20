@@ -1,0 +1,8 @@
+mixin anchors(data)
+  +b.UL.anchors&attributes(attributes)
+    each item in data
+      +e.LI.item
+        +e.A.link(href=item.anchor data-section-target=item.section)
+          +icon('circle').__border
+          +e.text!= item.name
+    block

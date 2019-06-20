@@ -3,6 +3,12 @@
 
   &_ul {
     @include ullist;
+
+    margin-top: -7px;
+
+    li {
+      margin-top: 7px;
+    }
   }
 
   &_ol {

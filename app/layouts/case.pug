@@ -8,6 +8,7 @@ html(lang='ru')
     block header
     - var hdCls = headerClass || ''
     +header(headerData)(class=hdCls)
+      block headerAnchors
     block content
     +case-form(data-section="form")
     +projects([

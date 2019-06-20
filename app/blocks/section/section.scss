@@ -8,6 +8,22 @@
     margin-bottom: 50px;
   }
 
+  &_mb153 {
+    margin-bottom: 153px;
+
+    @include screen('md') {
+      margin-bottom: 50px;
+    }
+  }
+
+  &_mb198 {
+    margin-bottom: 198px;
+
+    @include screen('md') {
+      margin-bottom: 50px;
+    }
+  }
+
   &__column {
     display: block;
     box-sizing: border-box;
@@ -262,5 +278,18 @@
         }
       }
     }
+  }
+
+  &_switcher {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    padding-top: 101px;
+  }
+
+  &_gdesign {
+    padding-top: 325px;
   }
 }

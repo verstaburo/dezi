@@ -1,0 +1,49 @@
+.page-switcher {
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  $b: &;
+
+  &__item {
+    display: inline-block;
+
+    &:not(:last-child) {
+      margin-right: 48px;
+
+      @include screen('md') {
+        margin-right: 21px;
+      }
+    }
+  }
+
+  &__link {
+    position: relative;
+    font-size: $fz13;
+    color: $color-titles;
+    line-height: $lh-default;
+
+    @include screen('md') {
+      font-size: $fz9;
+    }
+
+    &::before {
+      @include pseudo;
+
+      top: -4px;
+      bottom: -4px;
+      left: -4px;
+      right: -4px;
+      background-color: $color-titles;
+      opacity: 0;
+      transition: opacity $ease-main, transform $ease-main;
+    }
+
+    &.is-active {
+      color: $color-main;
+
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+}

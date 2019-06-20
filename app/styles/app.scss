@@ -92,6 +92,36 @@ body {
     }
   }
 
+  &_services {
+    padding-left: 332px;
+    padding-right: 190px;
+
+    @include screen('xl') {
+      padding-left: 240px;
+      padding-right: 100px;
+    }
+
+    @include screen('md') {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+
+    &_sp {
+      padding-left: 190px;
+      padding-right: 190px;
+
+      @include screen('xl') {
+        padding-left: 150px;
+        padding-right: 100px;
+      }
+
+      @include screen('md') {
+        padding-left: 25px;
+        padding-right: 25px;
+      }
+    }
+  }
+
   &_media {
     padding-left: 190px;
     padding-right: 190px;

@@ -9,6 +9,7 @@ html(lang='ru')
     - var hdCls = headerClass || ''
 
     +header(headerData)(class=hdCls)
+      block headerAnchors
     block content
     +svg-gradients
     script(src='assets/scripts/app.min.js')
