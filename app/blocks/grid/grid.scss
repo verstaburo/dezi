@@ -23,6 +23,18 @@ $new-breakpoints: map_remove($breakpoints, $default-breakpoit-name);
     width: 100%;
   }
 
+  &_gap100 {
+    margin-left: -50px;
+    margin-right: -50px;
+    margin-top: -128px;
+
+    @include screen('md') {
+      margin-left: -12px;
+      margin-right: -12px;
+      margin-top: -78px;
+    }
+  }
+
   &_sb {
     justify-content: space-between;
   }
@@ -71,6 +83,14 @@ $new-breakpoints: map_remove($breakpoints, $default-breakpoit-name);
 
     #{$b}_nogap & {
       padding: 0;
+    }
+
+    #{$b}_gap100 & {
+      padding: 128px 50px 0;
+
+      @include screen('md') {
+        padding: 78px 12px 0;
+      }
     }
   }
 }

@@ -1,0 +1,5 @@
+mixin collage(bg, icon)
+  +b.collage&attributes(attributes)
+    +e.bg(style='color:' + bg.color +';' class=bg.class)
+    +icon(icon.name)(class="__icon" + icon.class)
+    block

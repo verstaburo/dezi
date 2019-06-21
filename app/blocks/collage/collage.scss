@@ -1,0 +1,161 @@
+.collage {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  $b: &;
+
+  @include screen('md') {
+    width: 35px;
+    height: 35px;
+  }
+
+  &__bg {
+    position: absolute;
+    display: block;
+    z-index: 1;
+
+    &_circle {
+      width: 67px;
+      height: 67px;
+      border-radius: 50%;
+      background-color: currentColor;
+
+      @include screen('md') {
+        width: 34px;
+        height: 34px;
+      }
+    }
+
+    &_triangle {
+      border-color: currentColor;
+      border-style: solid;
+      border-width: 36px 65px;
+
+      @include screen('md') {
+        border-width: 18px 33px;
+      }
+
+      &_right {
+        border-right-width: 0;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+      }
+
+      &_left {
+        border-left-width: 0;
+        border-top-color: transparent;
+        border-left-color: transparent;
+        border-bottom-color: transparent;
+      }
+
+      &_up {
+        border-width: 65px 36px 0;
+        border-left-color: transparent;
+        border-top-color: transparent;
+        border-right-color: transparent;
+
+        @include screen('md') {
+          border-width: 33px 18px 0;
+        }
+      }
+
+      &_down {
+        border-width: 65px 36px 0;
+        border-left-color: transparent;
+        border-bottom-color: transparent;
+        border-right-color: transparent;
+
+        @include screen('md') {
+          border-width: 33px 18px 0;
+        }
+      }
+    }
+
+    &_rhomb {
+      width: 62px;
+      height: 62px;
+      transform-origin: 50% 50% 0;
+      transform: rotate(45deg);
+      background-color: currentColor;
+
+      @include screen('md') {
+        width: 31px;
+        height: 31px;
+      }
+    }
+
+    #{$b}_support & {
+      left: -23px;
+      top: -20px;
+
+      @include screen('md') {
+        left: -12px;
+        top: -10px;
+      }
+    }
+
+    #{$b}_consulting & {
+      left: 30px;
+      top: -20px;
+
+      @include screen('md') {
+        left: 15px;
+        top: -10px;
+      }
+    }
+
+    #{$b}_smm & {
+      left: 48px;
+      top: -2px;
+
+      @include screen('md') {
+        left: 24px;
+        top: 0;
+      }
+    }
+
+    #{$b}_commerce & {
+      left: 8px;
+      top: -13px;
+
+      @include screen('md') {
+        left: 4px;
+        top: -6px;
+      }
+    }
+
+    #{$b}_production & {
+      left: 36px;
+      top: -16px;
+
+      @include screen('md') {
+        left: 18px;
+        top: -8px;
+      }
+    }
+
+    #{$b}_branding & {
+      left: 29px;
+      top: -8px;
+
+      @include screen('md') {
+        left: 15px;
+        top: -4px;
+      }
+    }
+  }
+
+  &__icon {
+    position: relative;
+    flex: none;
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    z-index: 2;
+    transform: translate3d(0, 0, 0);
+  }
+}

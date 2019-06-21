@@ -33,6 +33,7 @@ import header from '../components/header/header';
 import splace from '../components/splace/splace';
 import link from '../blocks/link/link';
 import contacts from '../components/contacts/contacts';
+import anchors from '../blocks/anchors/anchors';
 
 const $ = window.$;
 
@@ -63,4 +64,5 @@ $(() => {
   splace();
   link();
   contacts();
+  anchors();
 });

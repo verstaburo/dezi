@@ -97,13 +97,17 @@ body {
     padding-right: 190px;
 
     @include screen('xl') {
-      padding-left: 240px;
+      padding-left: 244px;
       padding-right: 100px;
     }
 
+    @include screen('lg') {
+      padding-left: 160px;
+    }
+
     @include screen('md') {
-      padding-left: 25px;
-      padding-right: 25px;
+      padding-left: 23px;
+      padding-right: 23px;
     }
 
     &_sp {
@@ -115,9 +119,13 @@ body {
         padding-right: 100px;
       }
 
+      @include screen('lg') {
+        padding-left: 67px;
+      }
+
       @include screen('md') {
-        padding-left: 25px;
-        padding-right: 25px;
+        padding-left: 23px;
+        padding-right: 23px;
       }
     }
   }

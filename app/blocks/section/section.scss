@@ -8,6 +8,14 @@
     margin-bottom: 50px;
   }
 
+  &_mb130 {
+    margin-bottom: 130px;
+
+    @include screen('md') {
+      margin-bottom: 50px;
+    }
+  }
+
   &_mb153 {
     margin-bottom: 153px;
 
@@ -287,9 +295,45 @@
     width: 100%;
     height: auto;
     padding-top: 101px;
+
+    @include screen('lg') {
+      padding-top: 54px;
+    }
+
+    @include screen('md') {
+      padding-top: 76px;
+    }
   }
 
   &_gdesign {
     padding-top: 325px;
+
+    @include screen('xl') {
+      padding-top: 273px;
+    }
+
+    @include screen('lg') {
+      padding-top: 230px;
+    }
+
+    @include screen('md') {
+      padding-top: 175px;
+    }
+  }
+
+  &_request {
+    .request-form {
+      &__title {
+        margin-bottom: 114px;
+
+        @include screen('lg') {
+          margin-bottom: 104px;
+        }
+
+        @include screen('md') {
+          margin-bottom: 43px;
+        }
+      }
+    }
   }
 }

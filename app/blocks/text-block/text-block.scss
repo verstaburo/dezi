@@ -75,6 +75,22 @@
       }
     }
 
+    &_mb40 {
+      &:not(:last-child) {
+        margin-bottom: 40px;
+      }
+    }
+
+    &_mb115 {
+      &:not(:last-child) {
+        margin-bottom: 115px;
+
+        @include screen('md') {
+          margin-bottom: 40px;
+        }
+      }
+    }
+
     #{$b}_clients & {
       &:not(:last-child) {
         @include screen('lg') {
@@ -191,11 +207,27 @@
     align-items: flex-start;
     align-content: flex-start;
     flex-wrap: wrap;
-    height: 180px;
+    height: 172px;
+
+    @include screen('md') {
+      height: auto;
+    }
 
     li {
       display: inline-block;
       margin-right: 56px;
+    }
+  }
+
+  &__collage {
+    margin-bottom: 81px;
+
+    @include screen('lg') {
+      margin-bottom: 84px;
+    }
+
+    @include screen('md') {
+      margin-bottom: 43px;
     }
   }
 
@@ -255,17 +287,15 @@
 
   &_services {
     #{$b} {
-      &__title {
-        &:not(:last-child) {
-          margin-bottom: 40px;
-        }
-      }
-
       &__text {
         max-width: 800px;
 
         &:not(:last-child) {
-          margin-bottom: 84px;
+          margin-bottom: 80px;
+
+          @include screen('md') {
+            margin-bottom: 40px;
+          }
         }
 
         p {
@@ -275,6 +305,40 @@
             @include screen('md') {
               margin-bottom: 20px;
             }
+          }
+        }
+      }
+    }
+  }
+
+  &_features {
+    > #{$b} {
+      &__content {
+        padding-right: 14.4%;
+
+        @include screen('xl') {
+          padding-right: 5%;
+        }
+
+        @include screen('md') {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+
+  &_feature {
+    #{$b} {
+      &__subtitle {
+        &:not(:last-child) {
+          margin-bottom: 27px;
+
+          @include screen('lg') {
+            margin-bottom: 32px;
+          }
+
+          @include screen('md') {
+            margin-bottom: 24px;
           }
         }
       }

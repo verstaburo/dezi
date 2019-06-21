@@ -7,9 +7,11 @@ export default function navigation() {
   window.pageSections = {};
 
   function updateSectionParam(el) {
+    const bParser = window.globalOptions.browserParser;
+    const scale = bParser.isBrowser('firefox', true) ? 1 : window.globalOptions.scale;
     const name = el.getAttribute('data-section');
-    const top = $(el).position().top;
-    const height = $(el).outerHeight(true);
+    const top = $(el).position().top * scale;
+    const height = $(el).outerHeight(true) * scale;
     const bottom = top + height;
     window.pageSections[name] = {
       top,

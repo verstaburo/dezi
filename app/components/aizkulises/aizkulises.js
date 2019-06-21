@@ -31,6 +31,7 @@ export default function aizkulises() {
     if (screenSize >= 1367) siteWidth = 1920;
 
     scale = screenSize / siteWidth;
+    window.globalOptions.scale = scale;
 
     if ($('html').is('.is-ie')) {
       $('html').css({
