@@ -52,6 +52,20 @@
         margin-bottom: 43px;
       }
     }
+
+    &_mb72 {
+      &:not(:last-child) {
+        margin-bottom: 72px;
+
+        @include screen('lg') {
+          margin-bottom: 117px;
+        }
+
+        @include screen('md') {
+          margin-bottom: 43px;
+        }
+      }
+    }
   }
 
   &__quotes {

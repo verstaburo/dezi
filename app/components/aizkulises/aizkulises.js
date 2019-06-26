@@ -256,5 +256,34 @@ export default function aizkulises() {
       }
     });
   }
+
+  if ($('[data-scroll-wrapper]').length > 0) {
+    /*
+    Скролл скриншотов в последней секции
+     */
+    if (isMobile) return;
+
+    $(window).on('load scroll', function () {
+      const
+        w = $(this),
+        st = w.scrollTop() * scale,
+        block = $(document).find('[data-scroll-wrapper]'),
+        scrollBlock = block.find('[data-scroll-block]'),
+        blockTop = scrollBlock.offset().top * scale,
+        scrollMoment = blockTop - w.height(),
+        scrollHeight = scrollBlock.outerHeight(true),
+        maxScroll = scrollBlock.outerWidth(true),
+        maxTranslate = 18;
+
+      if (st < scrollMoment) {
+        scrollBlock.attr('style', `transform: translate3d(0, 0, 0)`);
+      } else if ((st >= scrollMoment) && (st < maxScroll)) {
+        const scrollPercent = (st - scrollMoment) / scrollHeight * maxTranslate;
+        scrollBlock.attr('style', `transform: translate3d(-${scrollPercent}%, 0, 0)`);
+      } else if (st > maxScroll) {
+        scrollBlock.attr('style', `transform: translate3d(${maxTranslate}%, 0, 0)`);
+      }
+    });
+  }
 }
 /* eslint-enable */

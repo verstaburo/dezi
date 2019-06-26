@@ -1,0 +1,33 @@
+.projects-line {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  $b: &;
+
+  &:not(:last-child) {
+    margin-bottom: 140px;
+  }
+
+  &__line {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: auto;
+    height: 320px;
+    box-sizing: border-box;
+    transition: transform .1s ease;
+
+    @include screen('md') {
+      height: 120px;
+    }
+  }
+
+  &__image {
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    flex: none;
+    height: 100%;
+    width: auto;
+  }
+}
