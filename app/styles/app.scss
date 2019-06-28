@@ -112,7 +112,7 @@ body {
 
     &_sp {
       padding-left: 190px;
-      padding-right: 190px;
+      padding-right: 150px;
 
       @include screen('xl') {
         padding-left: 150px;
@@ -120,7 +120,7 @@ body {
       }
 
       @include screen('lg') {
-        padding-left: 67px;
+        padding-left: 100px;
       }
 
       @include screen('md') {

@@ -81,6 +81,16 @@
       }
     }
 
+    &_mb80 {
+      &:not(:last-child) {
+        margin-bottom: 80px;
+
+        @include screen('md') {
+          margin-bottom: 32px;
+        }
+      }
+    }
+
     &_mb115 {
       &:not(:last-child) {
         margin-bottom: 115px;
@@ -96,6 +106,49 @@
 
       &:not(:last-child) {
         margin-bottom: 140px;
+
+        @include screen('lg') {
+          margin-bottom: 147px;
+        }
+
+        @include screen('md') {
+          margin-bottom: 51px;
+        }
+      }
+    }
+
+    &_watch {
+      position: relative;
+      width: 100%;
+
+      @include screen('lg') {
+        margin-left: -30px;
+        margin-right: -30px;
+        width: calc(100% + 60px);
+        font-size: $fz-xl-title;
+      }
+
+      @include screen('md') {
+        margin-left: -5px;
+        margin-right: -8px;
+        width: calc(100% + 13px);
+        font-size: $fz-text;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 140px;
+
+        @include screen('xl') {
+          margin-bottom: 126px;
+        }
+
+        @include screen('lg') {
+          margin-bottom: 112px;
+        }
+
+        @include screen('md') {
+          margin-bottom: 208px;
+        }
       }
     }
 
@@ -111,11 +164,37 @@
       }
     }
 
+    .section_wdesign & {
+      @include screen('lg') {
+        width: calc(100% + 50px);
+        margin-right: -50px;
+      }
+
+      @include screen('md') {
+        width: 100%;
+        margin-right: 0;
+      }
+    }
+
     &-text {
       position: relative;
       display: block;
       width: 100%;
       z-index: 2;
+
+      #{$b}__title_watch & {
+        display: flex;
+        justify-content: flex-start;
+        align-items: baseline;
+
+        @include screen('xl') {
+          justify-content: space-between;
+        }
+
+        @include screen('lg') {
+          justify-content: flex-start;
+        }
+      }
     }
 
     &-bg {
@@ -162,6 +241,53 @@
     }
   }
 
+  &__watch {
+    position: absolute;
+    top: calc(50% + 8px);
+    left: 415px;
+    transform: translate3d(0, -50%, 0);
+
+    @include screen('xl') {
+      left: 36.8%;
+    }
+
+    @include screen('lg') {
+      top: calc(50% + 12px);
+      left: 19%;
+    }
+
+    @include screen('lg') {
+      top: calc(50% + 9px);
+      left: 43px;
+    }
+  }
+
+  &__word {
+    display: inline-block;
+
+    &:not(:last-child) {
+      margin-right: 430px;
+
+      @include screen('xl') {
+        margin-right: 150px;
+      }
+
+      @include screen('lg') {
+        margin-right: 184px;
+      }
+
+      @include screen('lg') {
+        margin-right: 57px;
+      }
+    }
+
+    &_lg-white {
+      @include screen('lg') {
+        color: $color-main;
+      }
+    }
+  }
+
   &__text {
     display: block;
     width: 100%;
@@ -179,6 +305,7 @@
       font-size: $fz-md-title;
       line-height: $lh-base-45 / $fz-md-title;
       font-weight: 300;
+      letter-spacing: -$ls-main;
 
       @include screen('xl') {
         font-size: $fz-text;
@@ -207,6 +334,38 @@
       }
     }
 
+    &_mb55 {
+      &:not(:last-child) {
+        margin-bottom: 55px;
+
+        @include screen('lg') {
+          margin-bottom: 65px;
+        }
+
+        @include screen('md') {
+          margin-bottom: 32px;
+        }
+      }
+    }
+
+    &_mb70 {
+      &:not(:last-child) {
+        margin-bottom: 70px;
+
+        @include screen('xl') {
+          margin-bottom: 36px;
+        }
+
+        @include screen('lg') {
+          margin-bottom: 70px;
+        }
+
+        @include screen('md') {
+          margin-bottom: 40px;
+        }
+      }
+    }
+
     &_mb80 {
       &:not(:last-child) {
         margin-bottom: 80px;
@@ -221,8 +380,12 @@
       &:not(:last-child) {
         margin-bottom: 88px;
 
+        @include screen('lg') {
+          margin-bottom: 93px;
+        }
+
         @include screen('md') {
-          margin-bottom: 40px;
+          margin-bottom: 26px;
         }
       }
     }
@@ -249,6 +412,34 @@
       width: calc(100% + 3px);
       margin-left: -6px;
       margin-right: -6px;
+    }
+
+    &_mt-8 {
+      margin-top: -18px;
+
+      @include screen('xl') {
+        margin-top: -22px;
+      }
+
+      @include screen('lg') {
+        margin-top: -10px;
+      }
+    }
+
+    &_ml-12 {
+      margin-left: -12px;
+      margin-right: -12px;
+
+      @include screen('xl') {
+        margin-left: -8px;
+        margin-right: -8px;
+      }
+
+      @include screen('md') {
+        width: auto;
+        margin-left: -6px;
+        margin-right: -6px;
+      }
     }
   }
 
@@ -296,6 +487,18 @@
     &_mb100 {
       &:not(:last-child) {
         margin-bottom: 100px;
+
+        @include screen('xl') {
+          margin-bottom: 105px;
+        }
+
+        @include screen('lg') {
+          margin-bottom: 52px;
+        }
+
+        @include screen('md') {
+          margin-bottom: 25px;
+        }
       }
     }
   }
@@ -334,6 +537,7 @@
   &__content {
     display: block;
     width: 100%;
+    box-sizing: border-box;
 
     &_grid {
       display: flex;
@@ -341,6 +545,8 @@
       margin-left: -45px;
       margin-right: -45px;
       flex-wrap: wrap;
+      position: relative;
+      z-index: 2;
     }
   }
 
@@ -352,6 +558,35 @@
 
     &_desc {
       width: 61.2%;
+
+      @include screen('xl') {
+        width: 62%;
+      }
+
+      @include screen('lg') {
+        width: 100%;
+        margin-bottom: 60px;
+      }
+
+      @include screen('md') {
+        margin-bottom: 0;
+      }
+    }
+
+    &_ui {
+      width: 39.7%;
+
+      @include screen('xl') {
+        width: 39.6%;
+      }
+
+      @include screen('lg') {
+        width: 49.4%;
+      }
+
+      @include screen('md') {
+        width: 100%;
+      }
     }
 
     &_stretch {
@@ -425,6 +660,26 @@
             @include screen('md') {
               margin-bottom: 20px;
             }
+          }
+        }
+      }
+    }
+
+    &_short {
+      #{$b} {
+        &__content {
+          width: 42%;
+
+          @include screen('xl') {
+            width: 57%;
+          }
+
+          @include screen('lg') {
+            width: 78%;
+          }
+
+          @include screen('md') {
+            width: 100%;
           }
         }
       }

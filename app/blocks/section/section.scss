@@ -8,11 +8,35 @@
     margin-bottom: 50px;
   }
 
+  &_mb90 {
+    margin-bottom: 90px;
+
+    @include screen('xl') {
+      margin-bottom: 30px;
+    }
+
+    @include screen('lg') {
+      margin-bottom: 212px;
+    }
+
+    @include screen('md') {
+      margin-bottom: 123px;
+    }
+  }
+
   &_mb130 {
     margin-bottom: 130px;
 
+    @include screen('xl') {
+      margin-bottom: 188px;
+    }
+
+    @include screen('lg') {
+      margin-bottom: 220px;
+    }
+
     @include screen('md') {
-      margin-bottom: 50px;
+      margin-bottom: 86px;
     }
   }
 
@@ -29,6 +53,54 @@
 
     @include screen('md') {
       margin-bottom: 50px;
+    }
+  }
+
+  &_mb230 {
+    margin-bottom: 230px;
+
+    @include screen('xl') {
+      margin-bottom: 189px;
+    }
+
+    @include screen('lg') {
+      margin-bottom: 136px;
+    }
+
+    @include screen('md') {
+      margin-bottom: 60px;
+    }
+  }
+
+  &_mb236 {
+    margin-bottom: 236px;
+
+    @include screen('xl') {
+      margin-bottom: 188px;
+    }
+
+    @include screen('lg') {
+      margin-bottom: 220px;
+    }
+
+    @include screen('md') {
+      margin-bottom: 86px;
+    }
+  }
+
+  &_mb281 {
+    margin-bottom: 281px;
+
+    @include screen('xl') {
+      margin-bottom: 141px;
+    }
+
+    @include screen('lg') {
+      margin-bottom: 114px;
+    }
+
+    @include screen('md') {
+      margin-bottom: 62px;
     }
   }
 
@@ -57,12 +129,16 @@
       &:not(:last-child) {
         margin-bottom: 72px;
 
+        @include screen('xl') {
+          margin-bottom: 124px;
+        }
+
         @include screen('lg') {
-          margin-bottom: 117px;
+          margin-bottom: 85px;
         }
 
         @include screen('md') {
-          margin-bottom: 43px;
+          margin-bottom: 61px;
         }
       }
     }
@@ -335,17 +411,62 @@
     }
   }
 
+  &_wdesign {
+    .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    #{$b}__phones {
+      position: relative;
+      z-index: 1;
+    }
+  }
+
   &_request {
     .request-form {
       &__title {
         margin-bottom: 114px;
 
-        @include screen('lg') {
+        @include screen('xl') {
           margin-bottom: 104px;
+        }
+
+        @include screen('lg') {
+          margin-bottom: 118px;
         }
 
         @include screen('md') {
           margin-bottom: 43px;
+          line-height: 1;
+        }
+      }
+
+      &__form {
+        @include screen('xl') {
+          margin-bottom: 96px;
+        }
+
+        @include screen('lg') {
+          margin-bottom: 100px;
+          width: 100%;
+        }
+
+        @include screen('md') {
+          margin-bottom: 46px;
+        }
+      }
+    }
+
+    &_sv {
+      .request-form {
+        @include screen('xl') {
+          box-sizing: border-box;
+          padding-right: 4%;
+        }
+
+        @include screen('lg') {
+          padding-right: 0;
         }
       }
     }

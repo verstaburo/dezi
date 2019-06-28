@@ -1,0 +1,70 @@
+.watch {
+  display: block;
+  width: 411px;
+  $b: &;
+
+  @include screen('xl') {
+    width: 307px;
+  }
+
+  @include screen('lg') {
+    width: 314px;
+  }
+
+  @include screen('md') {
+    width: 154px;
+  }
+
+  &__wrapper {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding-top: 134.5%;
+    box-sizing: border-box;
+
+    &::before {
+      @include pseudo;
+
+      top: 73px;
+      left: -174px;
+      width: 658px;
+      height: 658px;
+      border-radius: 50%;
+      z-index: 1;
+      background-color: $color-yellow;
+
+      @include screen('xl') {
+        width: 492px;
+        height: 492px;
+        top: 54px;
+        left: -130px;
+      }
+
+      @include screen('lg') {
+        width: 648px;
+        height: 648px;
+        top: -102px;
+        left: -286px;
+      }
+
+      @include screen('md') {
+        width: 324px;
+        height: 324px;
+        top: -51px;
+        left: -116px;
+      }
+    }
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    z-index: 2;
+  }
+}

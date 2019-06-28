@@ -28,6 +28,14 @@ $new-breakpoints: map_remove($breakpoints, $default-breakpoit-name);
     margin-right: -50px;
     margin-top: -128px;
 
+    @include screen('xl') {
+      margin-top: -120px;
+    }
+
+    @include screen('lg') {
+      margin-top: -126px;
+    }
+
     @include screen('md') {
       margin-left: -12px;
       margin-right: -12px;
@@ -87,6 +95,14 @@ $new-breakpoints: map_remove($breakpoints, $default-breakpoit-name);
 
     #{$b}_gap100 & {
       padding: 128px 50px 0;
+
+      @include screen('xl') {
+        padding: 120px 50px 0;
+      }
+
+      @include screen('lg') {
+        padding: 126px 50px 0;
+      }
 
       @include screen('md') {
         padding: 78px 12px 0;

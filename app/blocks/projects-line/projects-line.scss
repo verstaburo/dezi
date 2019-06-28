@@ -6,6 +6,14 @@
 
   &:not(:last-child) {
     margin-bottom: 140px;
+
+    @include screen('lg') {
+      margin-bottom: 119px;
+    }
+
+    @include screen('md') {
+      margin-bottom: 65px;
+    }
   }
 
   &__line {

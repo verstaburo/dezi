@@ -1,5 +1,149 @@
 .phone-collage {
   display: block;
-  
+  width: 100%;
+  box-sizing: border-box;
+  padding-top: 15.7%;
   $b: &;
+
+  @include screen('xl') {
+    padding-top: 15.5%;
+  }
+
+  @include screen('lg') {
+    padding-top: 17%;
+  }
+
+  @include screen('md') {
+    padding-top: 41.5%;
+  }
+
+  &__list {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    left: -7.9%;
+
+    @include screen('xl') {
+      left: -4.4%;
+    }
+
+    @include screen('lg') {
+      left: -2.6%;
+    }
+
+    @include screen('md') {
+      left: -16.6%;
+    }
+  }
+
+  &__item {
+    position: relative;
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    width: 54.2%;
+    height: auto;
+    flex: none;
+
+    @include screen('xl') {
+      width: 52.5%;
+    }
+
+    @include screen('lg') {
+      width: 51.5%;
+    }
+
+    @include screen('md') {
+      width: 61%;
+    }
+
+    &:nth-child(2) {
+      left: -54.2%;
+
+      @include screen('xl') {
+        left: -52.8%;
+      }
+
+      @include screen('lg') {
+        left: -51.6%;
+      }
+
+      @include screen('md') {
+        left: -60.5%;
+      }
+
+      #{$b}__image {
+        transform: translate3d(46.7%, -24.3%, 0);
+
+        @include screen('xl') {
+          transform: translate3d(46.7%, -24%, 0);
+        }
+      }
+    }
+
+    &:nth-child(3) {
+      left: -108.4%;
+
+      @include screen('xl') {
+        left: -105.7%;
+      }
+
+      @include screen('lg') {
+        left: -103.5%;
+      }
+
+      @include screen('md') {
+        left: -121%;
+      }
+
+      #{$b}__image {
+        transform: translate3d(93.5%, -48%, 0);
+
+        @include screen('xl') {
+          transform: translate3d(93.5%, -47.2%, 0);
+        }
+
+        @include screen('md') {
+          transform: translate3d(93.5%, -48.5%, 0);
+        }
+      }
+    }
+
+    &:nth-child(4) {
+      left: -162.6%;
+
+      @include screen('xl') {
+        left: -158.5%;
+      }
+
+      @include screen('lg') {
+        left: -155%;
+      }
+
+      @include screen('md') {
+        left: -181.3%;
+      }
+
+      #{$b}__image {
+        transform: translate3d(140.4%, -72%, 0);
+
+        @include screen('xl') {
+          transform: translate3d(140.4%, -71%, 0);
+        }
+
+        @include screen('md') {
+          transform: translate3d(140.4%, -73%, 0);
+        }
+      }
+    }
+  }
+
+  &__image {
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    width: 100%;
+  }
 }
