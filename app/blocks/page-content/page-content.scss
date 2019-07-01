@@ -1,5 +1,9 @@
 .page-content {
   display: block;
-  
+  width: 100%;
   $b: &;
+
+  transition: opacity .1s ease-in-out;
+  opacity: 1;
+  visibility: visible;
 }

@@ -34,6 +34,7 @@ import splace from '../components/splace/splace';
 import link from '../blocks/link/link';
 import contacts from '../components/contacts/contacts';
 import anchors from '../blocks/anchors/anchors';
+import pageSwitcher from '../blocks/page-switcher/page-switcher';
 
 const $ = window.$;
 
@@ -65,4 +66,5 @@ $(() => {
   link();
   contacts();
   anchors();
+  pageSwitcher();
 });

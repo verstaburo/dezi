@@ -3,7 +3,7 @@ mixin page-switcher(active)
   - var active2 = active ? 'is-active' : ''
   +b.UL.page-switcher&attributes(attributes)
     +e.LI.item
-      +link().__link(href="services-full.html" class=active1) КРАСИВО С КАРТИНКАМИ
+      +link().__link.js-pageswitch(href="services-full.html" class=active1) КРАСИВО С КАРТИНКАМИ
     +e.LI.item
-      +link().__link(href="services-simple.html" class=active2) СТРОГО ПО ДЕЛУ
+      +link().__link.js-pageswitch(href="services-simple.html" class=active2) СТРОГО ПО ДЕЛУ
     block

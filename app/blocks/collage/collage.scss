@@ -12,6 +12,12 @@
     height: 35px;
   }
 
+  &_support.is-animate {
+    animation: ballJump $animationDuration ease;
+
+    @include animation;
+  }
+
   &__bg {
     position: absolute;
     display: block;
@@ -157,5 +163,12 @@
     max-height: 100%;
     z-index: 2;
     transform: translate3d(0, 0, 0);
+
+    #{$b}.is-animate & {
+      animation: fade $animationDuration $animationEasing;
+      animation-delay: 1s;
+
+      @include animation;
+    }
   }
 }

@@ -63,6 +63,13 @@
         margin-right: 12px;
       }
     }
+
+    #{$b}.is-animate & {
+      animation: fade $animationDuration $animationEasing;
+      animation-delay: .3s;
+
+      @include animation;
+    }
   }
 
   &__text {
@@ -88,6 +95,13 @@
       #{$b}:hover & {
         transform: scaleX(1);
       }
+    }
+
+    #{$b}.is-animate & {
+      animation: fade $animationDuration $animationEasing;
+      animation-delay: 1s;
+
+      @include animation;
     }
   }
 
@@ -166,6 +180,15 @@
         @include screen('md') {
           width: 11px;
         }
+      }
+    }
+
+    &.is-animate #{$b} {
+      &__img {
+        animation: fadeInLeft10 $animationDuration $animationEasing;
+        animation-delay: .4s;
+
+        @include animation;
       }
     }
   }

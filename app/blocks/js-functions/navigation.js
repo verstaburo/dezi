@@ -19,23 +19,6 @@ export default function navigation() {
     };
   }
 
-  function setObserversForSections() {
-    const targets = document.querySelectorAll('[data-section]');
-    const tarLen = targets.length;
-
-    if (tarLen) {
-      for (let i = 0; i < tarLen; i += 1) {
-        const sectionsSizesWatch = new ResizeObserver((entries) => {
-          for (const entry of entries) {
-            updateSectionParam(entry.target);
-          }
-        });
-
-        sectionsSizesWatch.observe(targets[i]);
-      }
-    }
-  }
-
   function setSectionsSizes() {
     const targets = document.querySelectorAll('[data-section]');
     const tarLen = targets.length;
@@ -43,6 +26,21 @@ export default function navigation() {
     if (tarLen) {
       for (let i = 0; i < tarLen; i += 1) {
         updateSectionParam(targets[i]);
+      }
+    }
+  }
+
+  function setObserversForSections() {
+    const targets = document.querySelectorAll('[data-section]');
+    const tarLen = targets.length;
+
+    if (tarLen) {
+      for (let i = 0; i < tarLen; i += 1) {
+        const sectionsSizesWatch = new ResizeObserver(() => {
+          setSectionsSizes();
+        });
+
+        sectionsSizesWatch.observe(targets[i]);
       }
     }
   }
@@ -66,6 +64,11 @@ export default function navigation() {
 
   setSectionsSizes();
   setObserversForSections();
+
+  window.globalFunctions.sectionsInit = () => {
+    setSectionsSizes();
+    setObserversForSections();
+  };
 
   function setNavTitlesSizes(callback) {
     const titles = $('.nav-titles');

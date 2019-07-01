@@ -55,7 +55,7 @@ export default function aizkulises() {
       sT = $(window).scrollTop(),
       baseClass = 'js-sr',
       duration = 1000,
-      maxDelay = 400,
+      maxDelay = 2000,
       animClasses = [
         'animation_fadeIn',
         'animation_fadeInRight',
@@ -164,6 +164,8 @@ export default function aizkulises() {
   }
   scrollAnimation();
 
+  window.globalFunctions.scrollAnimation = scrollAnimation;
+
   w.on('load scroll resize', scrollAnimation);
 
   /*
@@ -257,17 +259,13 @@ export default function aizkulises() {
     });
   }
 
-  if ($('[data-scroll-wrapper]').length > 0) {
-    /*
-    Скролл скриншотов в последней секции
-     */
-    if (isMobile) return;
-
-    $(window).on('load scroll', function () {
+  $(window).on('load scroll', function () {
+    const
+      w = $(this),
+      st = w.scrollTop() * scale,
+      block = $(document).find('[data-scroll-wrapper]');
+    if (block.length > 0) {
       const
-        w = $(this),
-        st = w.scrollTop() * scale,
-        block = $(document).find('[data-scroll-wrapper]'),
         scrollBlock = block.find('[data-scroll-block]'),
         blockTop = scrollBlock.offset().top * scale,
         scrollMoment = blockTop - w.height(),
@@ -283,7 +281,7 @@ export default function aizkulises() {
       } else if (st > maxScroll) {
         scrollBlock.attr('style', `transform: translate3d(${maxTranslate}%, 0, 0)`);
       }
-    });
-  }
+    }
+  });
 }
 /* eslint-enable */

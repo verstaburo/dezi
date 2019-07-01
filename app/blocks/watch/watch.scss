@@ -1,18 +1,21 @@
 .watch {
   display: block;
-  width: 411px;
+  width: 26%; // 411px
   $b: &;
 
   @include screen('xl') {
-    width: 307px;
+    width: 27.5%;
+    // width: 307px;
   }
 
   @include screen('lg') {
-    width: 314px;
+    width: 35.5%;
+    // width: 314px;
   }
 
   @include screen('md') {
-    width: 154px;
+    width: 53.6%;
+    // width: 154px;
   }
 
   &__wrapper {
@@ -25,33 +28,51 @@
     &::before {
       @include pseudo;
 
-      top: 73px;
-      left: -174px;
-      width: 658px;
-      height: 658px;
+      top: 13%;
+      // top: 73px;
+      left: -42.3%; //-174px;
+      width: 161%; //658px
+      padding-top: 161%;
       border-radius: 50%;
       z-index: 1;
       background-color: $color-yellow;
 
       @include screen('xl') {
-        width: 492px;
-        height: 492px;
-        top: 54px;
-        left: -130px;
+        width: 160.2%;
+        padding-top: 160.2%;
+        top: 13%;
+        // width: 492px;
+        // height: 492px;
+        // top: 54px;
+        // left: -130px;
       }
 
       @include screen('lg') {
-        width: 648px;
-        height: 648px;
-        top: -102px;
-        left: -286px;
+        width: 206%;
+        padding-top: 206%;
+        // width: 648px;
+        // height: 648px;
+        left: -91.1%;
+        top: -24.6%;
+        // top: -102px;
+        // left: -286px;
       }
 
       @include screen('md') {
-        width: 324px;
-        height: 324px;
-        top: -51px;
-        left: -116px;
+        width: 210.3%;
+        padding-top: 210.3%;
+        // width: 324px;
+        // height: 324px;
+        // top: -51px;
+        top: -24.6%;
+        left: -75.3%;
+        // left: -116px;
+      }
+
+      #{$b}.is-animate & {
+        animation: watchCircle 1s $animationEasing;
+
+        @include animation;
       }
     }
   }
@@ -66,5 +87,12 @@
     font-size: 0;
     line-height: 0;
     z-index: 2;
+
+    #{$b}.is-animate & {
+      animation: fadeIn 1s $animationEasing;
+      animation-delay: .5s;
+
+      @include animation;
+    }
   }
 }

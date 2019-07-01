@@ -138,6 +138,18 @@
         }
       }
     }
+
+    #{$b}__list.is-animate & {
+      animation: phoneFromLeft $animationDuration $animationEasing;
+
+      @include animation;
+
+      &:nth-child(even) {
+        animation: phoneFromRight $animationDuration $animationEasing;
+
+        @include animation;
+      }
+    }
   }
 
   &__image {

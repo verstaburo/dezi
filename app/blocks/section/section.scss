@@ -9,19 +9,24 @@
   }
 
   &_mb90 {
-    margin-bottom: 90px;
+    margin-bottom: 0;
+    // margin-bottom: 90px;
 
-    @include screen('xl') {
-      margin-bottom: 30px;
-    }
+    // @include screen('xl') {
+    //   margin-bottom: 30px;
+    // }
 
     @include screen('lg') {
-      margin-bottom: 212px;
+      margin-bottom: 39px;
     }
 
     @include screen('md') {
-      margin-bottom: 123px;
+      margin-bottom: 36px;
     }
+
+    // @include screen('md') {
+    //   margin-bottom: 123px;
+    // }
   }
 
   &_mb130 {
