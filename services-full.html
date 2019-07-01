@@ -78,8 +78,8 @@
     <section class="section section_switcher">
         <div class="container container_services">
             <ul class="page-switcher js-sr js-sr_11">
-                <li class="page-switcher__item"><a class="link page-switcher__link is-active" href="services-full.html"><span class="link__text">КРАСИВО С КАРТИНКАМИ</span></a></li>
-                <li class="page-switcher__item"><a class="link page-switcher__link" href="services-simple.html"><span class="link__text">СТРОГО ПО ДЕЛУ</span></a></li>
+                <li class="page-switcher__item"><a class="link page-switcher__link js-pageswitch is-active" href="services-full.html"><span class="link__text">КРАСИВО С КАРТИНКАМИ</span></a></li>
+                <li class="page-switcher__item"><a class="link page-switcher__link js-pageswitch" href="services-simple.html"><span class="link__text">СТРОГО ПО ДЕЛУ</span></a></li>
             </ul>
         </div>
     </section>
@@ -96,7 +96,7 @@
                     </div>
                 </div>
             </section>
-            <div class="projects-line" data-scroll-wrapper="data-scroll-wrapper">
+            <div class="projects-line js-sr js-sr_4" data-scroll-wrapper="data-scroll-wrapper">
                 <div class="projects-line__line" data-scroll-block="data-scroll-block"><img class="projects-line__image" src="assets/images/services/project-1.jpg" alt="" role="presentation" /><img class="projects-line__image" src="assets/images/services/project-2.jpg" alt="" role="presentation" /><img class="projects-line__image" src="assets/images/services/project-3.jpg" alt="" role="presentation" /><img class="projects-line__image" src="assets/images/services/project-1.jpg" alt="" role="presentation" /><img class="projects-line__image" src="assets/images/services/project-2.jpg" alt="" role="presentation" /><img class="projects-line__image" src="assets/images/services/project-3.jpg" alt="" role="presentation" /><img class="projects-line__image" src="assets/images/services/project-1.jpg" alt="" role="presentation" /><img class="projects-line__image" src="assets/images/services/project-2.jpg" alt="" role="presentation" /><img class="projects-line__image" src="assets/images/services/project-3.jpg" alt="" role="presentation" /></div>
             </div>
             <section class="section__block">
@@ -126,7 +126,7 @@
                 </div>
             </div>
             <section class="phone-collage section__phones">
-                <ul class="phone-collage__list">
+                <ul class="phone-collage__list js-sr js-sr_77">
                     <li class="phone-collage__item"><img class="phone-collage__image" src="assets/images/services/iphone-1.png" alt="" role="presentation" /></li>
                     <li class="phone-collage__item"><img class="phone-collage__image" src="assets/images/services/iphone-2.png" alt="" role="presentation" /></li>
                     <li class="phone-collage__item"><img class="phone-collage__image" src="assets/images/services/iphone-3.png" alt="" role="presentation" /></li>
@@ -254,7 +254,48 @@
                 </div>
             </div>
         </div>
-    </section><svg class="svg-gradients">
+    </section>
+    <div class="popups">
+        <div class="popup popup-feedback" id="feedback">
+            <div class="popup-feedback__bg">
+                <div class="slider slider_bg swiper-container js-bg-slider">
+                    <div class="swiper-wrapper">
+                        <div class="slider__slide swiper-slide"><img class="slider__image" src="assets/images/index/bg-slide-1.jpg" alt="" role="presentation" /></div>
+                        <div class="slider__slide swiper-slide"><img class="slider__image" src="assets/images/index/bg-slide-2.jpg" alt="" role="presentation" /></div>
+                    </div>
+                </div>
+            </div><button class="popup__close js-popup-close"></button>
+            <div class="popup__scrollblock js-scrollbar">
+                <div class="popup-feedback__content">
+                    <div class="container container_about">
+                        <div class="request-form request-form_request popup-feedback__form">
+                            <h3 class="request-form__title">Форма заявки</h3>
+                            <div class="request-form__content">
+                                <form class="form request-form__form" action="#" method="post">
+                                    <div class="inputbox inputbox_required inputbox_required_v2 inputbox_required_white"><input class="input input_v2" type="text" placeholder="Ваше имя" name="name" required="required" /></div>
+                                    <div class="inputbox inputbox_required inputbox_required_v2 inputbox_required_white"><input class="input input_v2" type="text" placeholder="Телефон или почта" name="contact" required="required" /></div>
+                                    <div class="inputbox"><input class="input input_v2" type="text" placeholder="ЕСЛИ ЕСТЬ ЧТО ДОБАВИТЬ" name="comment" /></div><button class="button button_gradient form__button" type="submit">
+                                        <div class="button__text">ОТПРАВИТЬ</div>
+                                    </button>
+                                </form>
+                                <div class="request-form__links">
+                                    <div class="request-form__line">
+                                        <ul class="socials socials_line">
+                                            <li class="socials__item"><a class="link link_icon social-link social-link_fb socials__social" href="#"><span class="link__img"><svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_facebook"></use></svg></span><span class="link__text">Facebook</span></a></li>
+                                            <li class="socials__item"><a class="link link_icon social-link social-link_inst socials__social" href="#"><span class="link__img"><svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_instagram"></use></svg></span><span class="link__text">Instagram</span></a></li>
+                                            <li class="socials__item"><a class="link link_icon social-link social-link_be socials__social" href="#"><span class="link__img"><svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_behance"></use></svg></span><span class="link__text">Behance</span></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="request-form__line"><a class="link request-form__link" href="mailto:info@bsagency.design"><span class="link__text">INFO@BSAGENCY.DESIGN</span></a></div>
+                                    <div class="request-form__line"><a class="link request-form__link" href="tel:+37126771436"><span class="link__text">+371 26 77 14 36</span></a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><svg class="svg-gradients">
         <defs>
             <linearGradient id="nla-red" x1="81%" y1="0%" x2="19%" y2="100%">
                 <stop offset="0%" stop-color="rgb(223,6,47)"></stop>
