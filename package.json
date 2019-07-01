@@ -80,6 +80,7 @@
     "run-sequence": "^1.2.2",
     "scrollmagic": "^2.0.6",
     "scrollreveal": "^3.3.6",
+    "seethru": "^4.0.0",
     "stylelint": "^7.13.0",
     "stylelint-config-standard": "^16.0.0",
     "svg4everybody": "^2.1.8",

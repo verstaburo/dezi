@@ -5,6 +5,7 @@
   align-items: center;
   width: 70px;
   height: 70px;
+  transform-origin: 50% 50% 0;
   $b: &;
 
   @include screen('md') {
@@ -13,7 +14,37 @@
   }
 
   &_support.is-animate {
-    animation: ballJump $animationDuration ease;
+    animation: ballJump $animationDuration cubic-bezier(.68, -0.7, .265, 1.55);
+
+    @include animation;
+  }
+
+  &_consulting.is-animate {
+    animation: carGo $animationDuration cubic-bezier(.175, -.885, .32, 1.275);
+
+    @include animation;
+  }
+
+  &_smm.is-animate {
+    animation: radar $animationDuration cubic-bezier(.175, .885, .32, 1.275);
+
+    @include animation;
+  }
+
+  &_commerce.is-animate {
+    animation: fadeInLeft $animationDuration cubic-bezier(.445, .05, .55, .95);
+
+    @include animation;
+  }
+
+  &_production.is-animate {
+    animation: carGo $animationDuration cubic-bezier(.6, -0.28, .735, .045);
+
+    @include animation;
+  }
+
+  &_branding.is-animate {
+    animation: fadeInTop $animationDuration cubic-bezier(.895, .03, .685, .22);
 
     @include animation;
   }

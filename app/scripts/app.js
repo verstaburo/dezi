@@ -35,6 +35,7 @@ import link from '../blocks/link/link';
 import contacts from '../components/contacts/contacts';
 import anchors from '../blocks/anchors/anchors';
 import pageSwitcher from '../blocks/page-switcher/page-switcher';
+import watch from '../blocks/watch/watch';
 
 const $ = window.$;
 
@@ -67,4 +68,5 @@ $(() => {
   contacts();
   anchors();
   pageSwitcher();
+  watch();
 });
