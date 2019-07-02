@@ -1,0 +1,42 @@
+.cross-mouse {
+  $b: &;
+
+  position: fixed;
+  display: block;
+  right: 0;
+  top: 0;
+  width: 30px;
+  height: 30px;
+  opacity: 0;
+  transform: opacity $ease-main;
+  z-index: 300;
+  cursor: none;
+  pointer-events: none;
+  transform-origin: 50% 50% 0;
+
+  &::before,&::after {
+    @include pseudo;
+
+    top: -4px;
+    left: 13px;
+    width: 4px;
+    background-color: $color-basic;
+    border-radius: 2px;
+    height: 38px;
+    transform-origin: 50% 50% 0;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+
+  &.is-animate {
+    animation: mouseTurn .3s ease;
+
+    @include animation;
+  }
+}

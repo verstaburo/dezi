@@ -12,7 +12,7 @@
   }
 
   .is-map-open & {
-    cursor: url('../images/contacts/cross-white.cur'), pointer;
+    pointer-events: none;
   }
 
   &__border {

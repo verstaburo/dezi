@@ -279,7 +279,7 @@
     opacity: 0;
     pointer-events: none;
     visibility: visible;
-    cursor: url('../images/contacts/cross-white.cur'), pointer;
+    cursor: none;
     transition: opacity .6s ease-in-out, transform .6s ease-in-out;
     z-index: 3;
     color: $color-main;
@@ -315,6 +315,7 @@
 
     #{$b}__button {
       color: $color-main;
+      cursor: none;
     }
   }
 

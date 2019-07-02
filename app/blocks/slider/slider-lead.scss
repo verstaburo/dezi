@@ -19,6 +19,7 @@
     align-items: center;
     cursor: pointer;
     height: 100%;
+    transition-timing-function: linear;
   }
 
   &__image {
@@ -66,7 +67,7 @@
     left: 2px;
     stroke-width: 2px;
     stroke: url('#buttons');
-    stroke-dasharray: 2000;
+    stroke-dasharray: 540;
     fill: none;
     width: calc(100% - 4px);
     height: calc(100% - 4px);

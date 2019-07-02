@@ -76,8 +76,8 @@ export default function slider() {
     const button = $(el).find('.slider-lead__button');
     const border = $(button).find('.slider-lead__border');
     anim
-      .fromTo(border[0], 4.3, {
-        strokeDashoffset: 2000,
+      .fromTo(border[0], 4, {
+        strokeDashoffset: 540,
       }, {
         ease: Power1.easeInOut,
         strokeDashoffset: 0,

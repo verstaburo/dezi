@@ -460,3 +460,13 @@ $animationScale: .9;
     opacity: 1;
   }
 }
+
+@keyframes mouseTurn {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(90deg);
+  }
+}
