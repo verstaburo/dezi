@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dezi | Услуги</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+    <link rel="manifest" href="favicons/site.webmanifest">
+    <link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#111317">
+    <link rel="shortcut icon" href="favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#111317">
+    <meta name="msapplication-config" content="favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link href="assets/styles/app.min.css" rel="stylesheet">
+    <script src="assets/scripts/libs/jquery.min.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="header__menu">
+            <div class="container container_about">
+                <div class="header-navigation">
+                    <ul class="header-navigation__list">
+                        <li class="header-navigation__item"><a class="link header-navigation__link" href="about.html"><span class="link__text">О КОМПАНИИ</span></a></li>
+                        <li class="header-navigation__item"><a class="link header-navigation__link is-active" href="services.html"><span class="link__text">УСЛУГИ</span></a></li>
+                        <li class="header-navigation__item"><a class="link header-navigation__link" href="cases.html"><span class="link__text">КЕЙСЫ</span></a></li>
+                        <li class="header-navigation__item"><a class="link header-navigation__link" href="contacts.html"><span class="link__text">КОНТАКТЫ</span></a></li>
+                    </ul>
+                    <div class="header-navigation__mail"><a class="link" href="mailto:info@bsagency.design"><span class="link__text">INFO@BSAGENCY.DESIGN</span></a></div>
+                </div>
+            </div>
+        </nav>
+        <div class="header__top">
+            <div class="header__wrapper">
+                <div class="header__logo"><a class="logo" href="./"><svg class="logo__icon"><use xlink:href="assets/images/icon.svg#icon_logo"></use></svg></a></div><button class="header__burger js-show-menu" type="button"><span></span></button>
+            </div>
+        </div>
+        <div class="header__bottom">
+            <div class="header__wrapper">
+                <div class="header__left">
+                    <div class="header__titles">
+                        <div class="nav-titles">
+                            <ul class="nav-titles__list">
+                                <li class="nav-titles__item is-active" data-section-target="design">ГРАФДИЗАЙН</li>
+                                <li class="nav-titles__item" data-section-target="webdesign">веб-дизайн</li>
+                                <li class="nav-titles__item" data-section-target="uiapp">интерфейсы</li>
+                                <li class="nav-titles__item" data-section-target="services">услуги</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <ul class="socials header__socials">
+                        <li class="socials__item"><a class="social socials__social" href="#" title="Behance"><svg class="social__icon social__icon_behance-round"><use xlink:href="assets/images/icon.svg#icon_behance-round"></use></svg></a></li>
+                        <li class="socials__item"><a class="social socials__social" href="#" title="Instagramm"><svg class="social__icon social__icon_instagramm-round"><use xlink:href="assets/images/icon.svg#icon_instagramm-round"></use></svg></a></li>
+                        <li class="socials__item"><a class="social socials__social" href="#" title="Facebook"><svg class="social__icon social__icon_facebook-round"><use xlink:href="assets/images/icon.svg#icon_facebook-round"></use></svg></a></li>
+                    </ul>
+                </div>
+                <div class="header__right">
+                    <ul class="languages header__languages">
+                        <li class="languages__item"><a class="link languages__link" href="#"><span class="link__text">EN</span></a></li>
+                        <li class="languages__item"><a class="link languages__link" href="#"><span class="link__text">LV</span></a></li>
+                    </ul>
+                    <ul class="anchors header__anchors">
+                        <li class="anchors__item"><a class="anchors__link js-section-anchor is-active" href="#design" data-section-target="design"><svg class="anchors__border"><use xlink:href="assets/images/icon.svg#icon_circle"></use></svg><span class="anchors__text">ГРАФДИЗАЙН</span></a></li>
+                        <li class="anchors__item"><a class="anchors__link js-section-anchor" href="#webdesign" data-section-target="webdesign"><svg class="anchors__border"><use xlink:href="assets/images/icon.svg#icon_circle"></use></svg><span class="anchors__text">веб-дизайн</span></a></li>
+                        <li class="anchors__item"><a class="anchors__link js-section-anchor" href="#uiapp" data-section-target="uiapp"><svg class="anchors__border"><use xlink:href="assets/images/icon.svg#icon_circle"></use></svg><span class="anchors__text">интерфейсы</span></a></li>
+                        <li class="anchors__item"><a class="anchors__link js-section-anchor" href="#services" data-section-target="services"><svg class="anchors__border"><use xlink:href="assets/images/icon.svg#icon_circle"></use></svg><span class="anchors__text">услуги</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="section section_switcher">
+        <div class="container container_services">
+            <ul class="page-switcher js-sr js-sr_11">
+                <li class="page-switcher__item"><a class="link page-switcher__link js-pageswitch is-active" href="services-full.html"><span class="link__text">КРАСИВО С КАРТИНКАМИ</span></a></li>
+                <li class="page-switcher__item"><a class="link page-switcher__link js-pageswitch" href="services-simple.html"><span class="link__text">СТРОГО ПО ДЕЛУ</span></a></li>
+            </ul>
+        </div>
+    </section>
+    <main class="page-content" data-boot-area="data-boot-area" role="main">
+        <section class="section section_gdesign section_mb281" data-section="design">
+            <section class="section__block section__block_mb72">
+                <div class="container container_services">
+                    <div class="text-block text-block_services">
+                        <h3 class="text-block__title text-block__title_big text-block__title_bg js-sr js-sr_77"><span class="text-block__title-text">Графический дизайн</span><span class="text-block__title-bg"></span></h3>
+                        <div class="text-block__content">
+                            <div class="text-block__text text-block__text_mb88 js-sr js-sr_2">Более 12 лет мы разрабатываем фирменные стили, рисуем красивые и запоминающиеся логотипы, помогаем компаниям создавать новый образ, или сопровождаем их в процессе ребрендинга, бережно сохраняя преемственность в получившемся результате.</div>
+                            <div class="text-block__links"><a class="link link_round link_arrow text-block__link js-popup js-sr js-sr_77" href="#feedback"><span class="link__circle" data-morphing="data-morphing"><svg class="link__border"><use xlink:href="assets/images/icon.svg#icon_circle"></use></svg><span class="link__img"><svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-long"></use></svg></span></span><span class="link__text">начать новый проект</span></a></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="projects-line js-sr js-sr_4" data-scroll-wrapper="data-scroll-wrapper">
+                <div class="projects-line__line" data-scroll-block="data-scroll-block"><img class="projects-line__image" src="assets/images/services/project-1.jpg" alt="" role="presentation" /><img class="projects-line__image" src="assets/images/services/project-2.jpg" alt="" role="presentation" /><img class="projects-line__image" src="assets/images/services/project-3.jpg" alt="" role="presentation" /><img class="projects-line__image" src="assets/images/services/project-1.jpg" alt="" role="presentation" /><img class="projects-line__image" src="assets/images/services/project-2.jpg" alt="" role="presentation" /><img class="projects-line__image" src="assets/images/services/project-3.jpg" alt="" role="presentation" /><img class="projects-line__image" src="assets/images/services/project-1.jpg" alt="" role="presentation" /><img class="projects-line__image" src="assets/images/services/project-2.jpg" alt="" role="presentation" /><img class="projects-line__image" src="assets/images/services/project-3.jpg" alt="" role="presentation" /></div>
+            </div>
+            <section class="section__block">
+                <div class="container container_services">
+                    <div class="text-block text-block_services">
+                        <h4 class="text-block__subtitle text-block__subtitle_mb100 js-sr js-sr_1">С ЧЕМ К НАМ ОБРАЩАТЬСЯ?</h4>
+                        <div class="text-block__content text-block__content_grid">
+                            <div class="text-block__col text-block__col_desc">
+                                <div class="text-block__text text-block__text_big text-block__text_mb80 js-sr js-sr_2">Разработка логотипов, фирменных стилей, дизайн выставочных стендов, буклетов, упаковок и любой другой печатной продукции. Оформление графики в интерьерах, навигация внутри и снаружи зданий и все, что связано с графическим образом вашего бизнеса.</div>
+                            </div>
+                            <div class="text-block__col text-block__col_stretch hide-md">
+                                <div class="text-block__links text-block__links_mt-8 js-sr js-sr_3"><a class="link link_round link_arrow text-block__link js-popup" href="#feedback"><span class="link__circle" data-morphing="data-morphing"><svg class="link__border"><use xlink:href="assets/images/icon.svg#icon_circle"></use></svg><span class="link__img"><svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-long"></use></svg></span></span><span class="link__text">ЗАПОЛНИТЬ БРИФ</span></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <section class="section section_wdesign section_mb90" data-section="webdesign">
+            <div class="container container_services">
+                <div class="text-block text-block_services text-block_services_short">
+                    <h3 class="text-block__title text-block__title_big text-block__title_mb80 js-sr js-sr_1">Веб-дизайн и разработка</h3>
+                    <div class="text-block__content">
+                        <div class="text-block__text text-block__text_mb55 js-sr js-sr_2">Более 10 лет, мы развиваемся как студия, которая трепетно относится к образу компании в интернете. Мы прокачали запредельный скилл в веб-дизайне и готовы создавать как презентационные-имиджевые проекты, так и сложные интерфейсные решения, в которых логика и пользовательский опыт это результат сложной и комплексной работы массы специалистов.</div>
+                        <div class="text-block__links js-sr js-sr_3"><a class="link link_round link_arrow text-block__link js-popup" href="#feedback"><span class="link__circle" data-morphing="data-morphing"><svg class="link__border"><use xlink:href="assets/images/icon.svg#icon_circle"></use></svg><span class="link__img"><svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-long"></use></svg></span></span><span class="link__text">начать новый проект</span></a></div>
+                    </div>
+                </div>
+            </div>
+            <section class="phone-collage section__phones">
+                <ul class="phone-collage__list js-sr js-sr_77">
+                    <li class="phone-collage__item"><img class="phone-collage__image" src="assets/images/services/iphone-1.png" alt="" role="presentation" /></li>
+                    <li class="phone-collage__item"><img class="phone-collage__image" src="assets/images/services/iphone-2.png" alt="" role="presentation" /></li>
+                    <li class="phone-collage__item"><img class="phone-collage__image" src="assets/images/services/iphone-3.png" alt="" role="presentation" /></li>
+                    <li class="phone-collage__item"><img class="phone-collage__image" src="assets/images/services/iphone-4.png" alt="" role="presentation" /></li>
+                </ul>
+            </section>
+        </section>
+        <section class="section section_ui section_mb230" data-section="uiapp">
+            <div class="container container_services container_services_sp">
+                <div class="text-block text-block_services">
+                    <h3 class="text-block__title text-block__title_big text-block__title_watch"><span class="text-block__title-text"><span class="text-block__word text-block__word_lg-white js-sr js-sr_77">Интерфейсы</span><span class="text-block__word js-sr js-sr_77">приложения</span></span><span class="watch text-block__watch js-sr js-sr_77"><span class="watch__wrapper"><img class="watch__image" src="assets/images/services/watch.png" alt="" role="presentation" /></span></span></h3>
+                    <div class="text-block__content text-block__content_grid">
+                        <div class="text-block__col text-block__col_stretch"></div>
+                        <div class="text-block__col text-block__col_ui">
+                            <div class="text-block__text text-block__text_mb70 js-sr js-sr_2">
+                                <p>Интерфейсы программ и приложений отличаются неповторимой спецификой и при схожих с веб-дизайном принципах построения логики, несут в себе неповторимую специфику.</p>
+                                <p>Мы предлагаем разработку приложений для iOS и Android а также создание дизайна интерфейсов везде где необходимы наши навыки.</p>
+                            </div>
+                            <div class="text-block__links text-block__links_ml-12 hide-md js-sr js-sr_3"><a class="link link_round link_arrow text-block__link js-popup" href="#feedback"><span class="link__circle" data-morphing="data-morphing"><svg class="link__border"><use xlink:href="assets/images/icon.svg#icon_circle"></use></svg><span class="link__img"><svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-long"></use></svg></span></span><span class="link__text">ПОЛУЧИТЬ СМЕТУ</span></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section section_services section_mb236" data-section="services">
+            <div class="container container_services">
+                <div class="text-block text-block_features">
+                    <div class="text-block__content">
+                        <div class="grid grid_12 grid_gap100">
+                            <div class="grid__col grid__col_xxl_4 grid__col_xl_6 grid__col_lg_12">
+                                <div class="text-block text-block_feature">
+                                    <div class="collage collage_support text-block__collage js-sr js-sr js-sr_77">
+                                        <div class="collage__bg collage__bg_circle" style="color:#00ffc0;"></div><svg class="collage__icon collage__icon_support"><use xlink:href="assets/images/icon.svg#icon_support"></use></svg>
+                                    </div>
+                                    <h4 class="text-block__subtitle js-sr js-sr_2">ПОДДЕРЖКА</h4>
+                                    <div class="text-block__content js-sr js-sr_3">
+                                        <div class="text-block__text">Растущий бизнес нуждается в рекламных материалах и дизайнерских решениях. Сегодня любой динамичный бренд это сплав из основных компетенций компании и упаковки, которая, в свою очередь, соткана как лоскутное одеяло из множества приемов, стилей и инструментов. Мы готовы обеспечить вашу компанию качественной поддержкой по любому направлению.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid__col grid__col_xxl_4 grid__col_xl_6 grid__col_lg_12">
+                                <div class="text-block text-block_feature">
+                                    <div class="collage collage_consulting text-block__collage js-sr js-sr js-sr_77">
+                                        <div class="collage__bg collage__bg_triangle collage__bg_triangle_right" style="color:#1eecf9;"></div><svg class="collage__icon collage__icon_map"><use xlink:href="assets/images/icon.svg#icon_tresure-map"></use></svg>
+                                    </div>
+                                    <h4 class="text-block__subtitle js-sr js-sr_2">КОНСАЛТИНГ</h4>
+                                    <div class="text-block__content js-sr js-sr_3">
+                                        <div class="text-block__text">Компании, которые продолжительное время ведут деятельность без ребрендинга, часто задаются вопросом — насколько актуален существующий бренд? Конкрунтноспособна ли компания и какова ее ценость в глазах клиентов? Мы готовы провести для вас всестороннюю оценку и выдать заключение о том, какие действия необходимы для освежения и поддержания актуальности вашего бренда.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid__col grid__col_xxl_4 grid__col_xl_6 grid__col_lg_12">
+                                <div class="text-block text-block_feature">
+                                    <div class="collage collage_smm text-block__collage js-sr js-sr js-sr_77">
+                                        <div class="collage__bg collage__bg_rhomb" style="color:#ffc822;"></div><svg class="collage__icon collage__icon_communication"><use xlink:href="assets/images/icon.svg#icon_communication"></use></svg>
+                                    </div>
+                                    <h4 class="text-block__subtitle js-sr js-sr_2">СТИЛЬ ДЛЯ СММ</h4>
+                                    <div class="text-block__content js-sr js-sr_3">
+                                        <div class="text-block__text">Фирменный стиль компании — это лишь часть визуальной коммуникации бренда. Сегодня все большую популярность приобретают социальные сети и фокус внимания клиента смещается в сторону СММ. Мы готовы создать неповторимый и качественный визуальный язык для ваших подписчиков и потенциальных клиентов, а также поддержать вашу компанию в медийном пространстве.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid__col grid__col_xxl_4 grid__col_xl_6 grid__col_lg_12">
+                                <div class="text-block text-block_feature">
+                                    <div class="collage collage_commerce text-block__collage js-sr js-sr js-sr_77">
+                                        <div class="collage__bg collage__bg_rhomb" style="color:#f89b72;"></div><svg class="collage__icon collage__icon_commerce"><use xlink:href="assets/images/icon.svg#icon_commerce"></use></svg>
+                                    </div>
+                                    <h4 class="text-block__subtitle js-sr js-sr_2">E-COMMERCE</h4>
+                                    <div class="text-block__content js-sr js-sr_3">
+                                        <div class="text-block__text">Создание интернет-магазина ответственная и комплексная работа, особенно если онлайн направление является лишь частью деятельности компании. Наша команда готова помочь вам на любом из этапов создания интернет-магазина, начиная со стадии идеи мы готовы провести ваш бизнес через сложный процесс и череду новых вызовов, сделав будущий проект эффективным и привлекательным.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid__col grid__col_xxl_4 grid__col_xl_6 grid__col_lg_12">
+                                <div class="text-block text-block_feature">
+                                    <div class="collage collage_production text-block__collage js-sr js-sr js-sr_77">
+                                        <div class="collage__bg collage__bg_circle" style="color:#ff53b0;"></div><svg class="collage__icon collage__icon_spray"><use xlink:href="assets/images/icon.svg#icon_spray"></use></svg>
+                                    </div>
+                                    <h4 class="text-block__subtitle js-sr js-sr_2">ПРОДАКШН</h4>
+                                    <div class="text-block__content js-sr js-sr_3">
+                                        <div class="text-block__text">Большая часть наших клиентов в процессе работы компании сталкивается с необходимостью создания качественного контента, который в современной бизнес среде является основой грамотного маркетинга. Сотрудничая с большим количеством высококлассных авторов и специалистов, мы подберем для вас идеальное решение и ручаемся за результат в области фото, видео, 3D и других видов визуальной коммуникации</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid__col grid__col_xxl_4 grid__col_xl_6 grid__col_lg_12">
+                                <div class="text-block text-block_feature">
+                                    <div class="collage collage_branding text-block__collage js-sr js-sr js-sr_77">
+                                        <div class="collage__bg collage__bg_triangle collage__bg_triangle_down" style="color:#7aab93;"></div><svg class="collage__icon collage__icon_leaf"><use xlink:href="assets/images/icon.svg#icon_leaf"></use></svg>
+                                    </div>
+                                    <h4 class="text-block__subtitle js-sr js-sr_2">БРЕНДИНГ И КОПИРАЙТИНГ</h4>
+                                    <div class="text-block__content js-sr js-sr_3">
+                                        <div class="text-block__text">Предприимчивые люди открывающие новый бизнес часто полны идей и энтузиазма, однако в то же время нередко эти чевства соседствуют с полным непониманием и отсутствием креативных идей в области упаковки бизнеса, начиная с названия и заканчивая форменой одеждой сотрудников. Мы придумаем для вашего предприятие емкое название и напишем сочные, продающие тексты.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <section class="section section_request section_request_sv">
+        <div class="container container_services">
+            <div class="request-form section__request">
+                <h3 class="request-form__title js-sr js-sr js-sr_1">Хотите классный проект?</h3>
+                <div class="request-form__content">
+                    <form class="form request-form__form js-sr js-sr js-sr_2" action="#" method="post">
+                        <div class="inputbox inputbox_required inputbox_required_v2"><input class="input input_v2" type="text" placeholder="Ваше имя" name="name" required="required" /></div>
+                        <div class="inputbox inputbox_required inputbox_required_v2"><input class="input input_v2" type="text" placeholder="Телефон или почта" name="contact" required="required" /></div>
+                        <div class="inputbox"><input class="input input_v2" type="text" placeholder="ЕСЛИ ЕСТЬ ЧТО ДОБАВИТЬ" name="comment" /></div><button class="button button_gradient form__button" type="submit">
+                            <div class="button__text">НАЧАТЬ НОВЫЙ ПРОЕКТ</div>
+                        </button>
+                    </form>
+                    <div class="request-form__links">
+                        <div class="request-form__line js-sr js-sr_12">
+                            <ul class="socials socials_line">
+                                <li class="socials__item"><a class="link link_icon social-link social-link_fb socials__social" href="#"><span class="link__img"><svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_facebook"></use></svg></span><span class="link__text">Facebook</span></a></li>
+                                <li class="socials__item"><a class="link link_icon social-link social-link_inst socials__social" href="#"><span class="link__img"><svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_instagram"></use></svg></span><span class="link__text">Instagram</span></a></li>
+                                <li class="socials__item"><a class="link link_icon social-link social-link_be socials__social" href="#"><span class="link__img"><svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_behance"></use></svg></span><span class="link__text">Behance</span></a></li>
+                            </ul>
+                        </div>
+                        <div class="request-form__line js-sr js-sr_12"><a class="link request-form__link" href="mailto:info@bsagency.design"><span class="link__text">INFO@BSAGENCY.DESIGN</span></a></div>
+                        <div class="request-form__line js-sr js-sr_12"><a class="link request-form__link" href="tel:+37126771436"><span class="link__text">+371 26 77 14 36</span></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="popups">
+        <div class="popup popup-feedback" id="feedback">
+            <div class="popup-feedback__bg">
+                <div class="slider slider_bg swiper-container js-bg-slider">
+                    <div class="swiper-wrapper">
+                        <div class="slider__slide swiper-slide"><img class="slider__image" src="assets/images/index/bg-slide-1.jpg" alt="" role="presentation" /></div>
+                        <div class="slider__slide swiper-slide"><img class="slider__image" src="assets/images/index/bg-slide-2.jpg" alt="" role="presentation" /></div>
+                    </div>
+                </div>
+            </div><button class="popup__close js-popup-close"></button>
+            <div class="popup__scrollblock js-scrollbar">
+                <div class="popup-feedback__content">
+                    <div class="container container_about">
+                        <div class="request-form request-form_request popup-feedback__form">
+                            <h3 class="request-form__title">Форма заявки</h3>
+                            <div class="request-form__content">
+                                <form class="form request-form__form" action="#" method="post">
+                                    <div class="inputbox inputbox_required inputbox_required_v2 inputbox_required_white"><input class="input input_v2" type="text" placeholder="Ваше имя" name="name" required="required" /></div>
+                                    <div class="inputbox inputbox_required inputbox_required_v2 inputbox_required_white"><input class="input input_v2" type="text" placeholder="Телефон или почта" name="contact" required="required" /></div>
+                                    <div class="inputbox"><input class="input input_v2" type="text" placeholder="ЕСЛИ ЕСТЬ ЧТО ДОБАВИТЬ" name="comment" /></div><button class="button button_gradient form__button" type="submit">
+                                        <div class="button__text">ОТПРАВИТЬ</div>
+                                    </button>
+                                </form>
+                                <div class="request-form__links">
+                                    <div class="request-form__line">
+                                        <ul class="socials socials_line">
+                                            <li class="socials__item"><a class="link link_icon social-link social-link_fb socials__social" href="#"><span class="link__img"><svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_facebook"></use></svg></span><span class="link__text">Facebook</span></a></li>
+                                            <li class="socials__item"><a class="link link_icon social-link social-link_inst socials__social" href="#"><span class="link__img"><svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_instagram"></use></svg></span><span class="link__text">Instagram</span></a></li>
+                                            <li class="socials__item"><a class="link link_icon social-link social-link_be socials__social" href="#"><span class="link__img"><svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_behance"></use></svg></span><span class="link__text">Behance</span></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="request-form__line"><a class="link request-form__link" href="mailto:info@bsagency.design"><span class="link__text">INFO@BSAGENCY.DESIGN</span></a></div>
+                                    <div class="request-form__line"><a class="link request-form__link" href="tel:+37126771436"><span class="link__text">+371 26 77 14 36</span></a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><svg class="svg-gradients">
+        <defs>
+            <linearGradient id="nla-red" x1="81%" y1="0%" x2="19%" y2="100%">
+                <stop offset="0%" stop-color="rgb(223,6,47)"></stop>
+                <stop offset="100%" stop-color="rgb(234,46,68)"></stop>
+            </linearGradient>
+            <linearGradient id="venezia-pink" x1="100%" y1="97%" x2="0%" y2="3%">
+                <stop offset="0%" stop-color="rgb(104,62,94)"></stop>
+                <stop offset="100%" stop-color="rgb(195,66,79)"></stop>
+            </linearGradient>
+            <linearGradient id="buttons" x1="27.564%" x2="0%" y1="0%" y2="96.126%">
+                <stop offset="0%" stop-color="rgb(19,213,215)" stop-opacity="1"></stop>
+                <stop offset="26%" stop-color="rgb(62,239,199)" stop-opacity="1"></stop>
+                <stop offset="64%" stop-color="rgb(137,42,94)" stop-opacity="1"></stop>
+                <stop offset="100%" stop-color="rgb(237,64,54)" stop-opacity="1"></stop>
+            </linearGradient>
+        </defs>
+    </svg>
+    <script src="assets/scripts/app.min.js"></script>
+    <script src="assets/scripts/main.js"></script>
+</body>
+
+</html>
