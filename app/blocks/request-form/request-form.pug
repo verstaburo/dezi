@@ -2,12 +2,12 @@ mixin request-form(title)
   +b.request-form&attributes(attributes)
     +e.H3.title.js-sr.js-sr_1!= title
     +e.content
-      +form(action="#" method="post").__form.js-sr.js-sr_2
-        +inputbox.inputbox_required.inputbox_required_v2
+      +form(action="#" method="post" data-validated-form).__form.js-sr.js-sr_2
+        +inputbox('Ваше имя').inputbox_required.inputbox_required_v2
           +input(type="text" placeholder="Ваше имя" name="name" required).input_v2
-        +inputbox.inputbox_required.inputbox_required_v2
+        +inputbox('Телефон или почта').inputbox_required.inputbox_required_v2
           +input(type="text" placeholder="Телефон или почта" name="contact" required).input_v2
-        +inputbox
+        +inputbox('ЕСЛИ ЕСТЬ ЧТО ДОБАВИТЬ')
           +input(type="text" placeholder="ЕСЛИ ЕСТЬ ЧТО ДОБАВИТЬ" name="comment").input_v2
         block
       +e.links
@@ -22,12 +22,12 @@ mixin request-form-popup(title)
   +b.request-form&attributes(attributes)
     +e.H3.title!= title
     +e.content
-      +form(action="#" method="post").__form
-        +inputbox.inputbox_required.inputbox_required_v2.inputbox_required_white
+      +form(action="#" method="post" data-validated-form).__form
+        +inputbox('Ваше имя').inputbox_required.inputbox_required_v2.inputbox_required_white
           +input(type="text" placeholder="Ваше имя" name="name" required).input_v2
-        +inputbox.inputbox_required.inputbox_required_v2.inputbox_required_white
+        +inputbox('Телефон или почта').inputbox_required.inputbox_required_v2.inputbox_required_white
           +input(type="text" placeholder="Телефон или почта" name="contact" required).input_v2
-        +inputbox
+        +inputbox('ЕСЛИ ЕСТЬ ЧТО ДОБАВИТЬ')
           +input(type="text" placeholder="ЕСЛИ ЕСТЬ ЧТО ДОБАВИТЬ" name="comment").input_v2
         block
       +e.links

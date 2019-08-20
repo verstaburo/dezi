@@ -27,6 +27,7 @@ import '../blocks/rating/rating';
 import '../blocks/accordion/accordion';
 import '../blocks/dropdown/dropdown';
 import '../blocks/put-block-into-slot/put-block-into-slot';
+import '../blocks/form/form';
 import aizkulises from '../components/aizkulises/aizkulises';
 import venezia from '../components/venezia/venezia';
 import header from '../components/header/header';
@@ -37,6 +38,7 @@ import anchors from '../blocks/anchors/anchors';
 import pageSwitcher from '../blocks/page-switcher/page-switcher';
 // import watch from '../blocks/watch/watch';
 import watchAnimation from '../pages/services/services';
+import iniLabels from '../blocks/form-elements/labels';
 
 const $ = window.$;
 
@@ -68,6 +70,7 @@ $(() => {
   link();
   contacts();
   anchors();
+  iniLabels();
   // watch();
   watchAnimation();
   pageSwitcher();

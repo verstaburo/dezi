@@ -182,10 +182,19 @@
                         <div class="request-form request-form_request popup-feedback__form">
                             <h3 class="request-form__title">Форма заявки</h3>
                             <div class="request-form__content">
-                                <form class="form request-form__form" action="#" method="post">
-                                    <div class="inputbox inputbox_required inputbox_required_v2 inputbox_required_white"><input class="input input_v2" type="text" placeholder="Ваше имя" name="name" required="required" /></div>
-                                    <div class="inputbox inputbox_required inputbox_required_v2 inputbox_required_white"><input class="input input_v2" type="text" placeholder="Телефон или почта" name="contact" required="required" /></div>
-                                    <div class="inputbox"><input class="input input_v2" type="text" placeholder="ЕСЛИ ЕСТЬ ЧТО ДОБАВИТЬ" name="comment" /></div><button class="button button_gradient form__button" type="submit">
+                                <form class="form request-form__form" action="#" method="post" data-validated-form="data-validated-form">
+                                    <div class="inputbox inputbox_required inputbox_required_v2 inputbox_required_white"><input class="input input_v2" type="text" placeholder="Ваше имя" name="name" required="required" />
+                                        <div class="inputbox__label">Ваше имя</div>
+                                        <div class="inputbox__error"></div>
+                                    </div>
+                                    <div class="inputbox inputbox_required inputbox_required_v2 inputbox_required_white"><input class="input input_v2" type="text" placeholder="Телефон или почта" name="contact" required="required" />
+                                        <div class="inputbox__label">Телефон или почта</div>
+                                        <div class="inputbox__error"></div>
+                                    </div>
+                                    <div class="inputbox"><input class="input input_v2" type="text" placeholder="ЕСЛИ ЕСТЬ ЧТО ДОБАВИТЬ" name="comment" />
+                                        <div class="inputbox__label">ЕСЛИ ЕСТЬ ЧТО ДОБАВИТЬ</div>
+                                        <div class="inputbox__error"></div>
+                                    </div><button class="button button_gradient form__button" type="submit">
                                         <div class="button__text">ОТПРАВИТЬ</div>
                                     </button>
                                 </form>

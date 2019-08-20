@@ -24,18 +24,12 @@
 
   @include screen('md') {
     font-size: 8px;
-    height: 13px;
+    height: 20px;
+    padding-bottom: 3px;
   }
 
   &::placeholder {
-    color: inherit;
-    transition: opacity $ease-main, transform $ease-main;
-    transform: translate3d(0, 0, 0);
-  }
-
-  &:focus::placeholder {
-    opacity: 0;
-    transform: translate3d(0, -10px, 0);
+    color: transparent;
   }
 
   &:hover {
@@ -75,6 +69,10 @@
     &:hover {
       border-color: rgba($color-main, .8);
     }
+  }
+
+  .inputbox.is-error & {
+    border-color: $color-red;
   }
 }
 
@@ -137,6 +135,92 @@
       &::after {
         color: $color-basic;
       }
+    }
+  }
+
+  &__label {
+    position: absolute;
+    top: 3px;
+    left: 0;
+    width: 100%;
+    display: block;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    line-height: 1;
+    letter-spacing: .09em;
+    color: $color-grey;
+    box-sizing: border-box;
+    transition: transform $ease-main, font $ease-main, color $ease-main;
+    transform-origin: 0 50% 0;
+    pointer-events: none;
+
+    @include ellipsis(100%);
+
+    @include screen('lg') {
+      top: 6px;
+      font-size: 11px;
+    }
+
+    @include screen('md') {
+      top: 10px;
+      font-size: 8px;
+    }
+
+    .input_v2 ~ & {
+      letter-spacing: $ls-btn;
+      font-weight: 400;
+
+      @include screen('lg') {
+        top: 5px;
+        font-size: $fz15;
+      }
+
+      @include screen('md') {
+        top: 8px;
+        font-size: $fz9;
+      }
+    }
+
+    .input[required] {
+      padding-right: 30px;
+    }
+
+    body.is-dark & {
+      color: $color-form-text-light;
+    }
+
+    .popup & {
+      color: $color-main;
+    }
+
+    #{$b}.is-top & {
+      transform: scale(0.8) translate3d(0, -200%, 0);
+      font-weight: 700;
+    }
+
+    #{$b}.is-error & {
+      color: $color-red;
+    }
+  }
+
+  &__error {
+    display: none;
+    font-family: $font-site;
+    font-size: 15px;
+    color: $color-red;
+    line-height: 1.2;
+    font-weight: 300;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 5px 0;
+
+    @include screen('md') {
+      font-size: 12px;
+    }
+
+    #{$b}.is-error & {
+      display: block;
     }
   }
 }

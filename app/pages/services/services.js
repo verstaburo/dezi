@@ -26,7 +26,10 @@ export default function watchAnimation() {
       }, 1500);
     });
   }
-  watchAnim();
+
+  if (document.getElementById('watch')) {
+    watchAnim();
+  }
 
   window.globalFunctions.watchAnim = watchAnim;
 }
