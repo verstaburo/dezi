@@ -290,6 +290,7 @@
 
   &__word {
     display: inline-block;
+    opacity: 0;
 
     &:not(:last-child) {
       // margin-right: 430px;
@@ -317,11 +318,9 @@
       @include animation;
 
       &:first-child {
-        animation-delay: .75s;
       }
 
       &:last-child {
-        animation-delay: 1.75s;
       }
     }
 

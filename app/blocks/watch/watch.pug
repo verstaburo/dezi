@@ -1,6 +1,7 @@
 mixin watch()
-  +b.watch&attributes(attributes)
+  +b.watch&attributes(attributes).js-watch-3
     +e.wrapper
-      +e.IMG.image(src="assets/images/services/watch.png")
-      //- +e.VIDEO.video#watch(src="assets/video/watch-animation.mp4" autoplay loop playsinline muted)
+      +e.IMG.image(src="assets/images/services/watch-noscreen.png")
+      +e.video-wrapper(data-watch-base)
+        +e.VIDEO.video#watch(src="assets/video/watch-ru.mp4" autoplay playsinline muted)
     block
