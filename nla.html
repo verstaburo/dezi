@@ -170,10 +170,19 @@
             <h3 class="case-form__heading js-sr js-sr js-sr_1">Хотите такой же классный проект?</h3>
             <div class="grid case-form__grid">
                 <div class="grid__col grid__col_xxl_6 grid__col_md_13">
-                    <form class="form case-form__form js-sr js-sr js-sr_2" action="#" method="post">
-                        <div class="inputbox inputbox_required"><input class="input" placeholder="Ваше имя" name="name" required="required" /></div>
-                        <div class="inputbox inputbox_required"><input class="input" placeholder="Телефон или почта" name="contact" required="required" /></div>
-                        <div class="inputbox"><input class="input" placeholder="Если есть что добавить" name="comment" /></div><button class="button form__button" type="submit">
+                    <form class="form case-form__form js-sr js-sr js-sr_2" action="#" method="post" data-validated-form="data-validated-form">
+                        <div class="inputbox inputbox_required"><input class="input" placeholder="Ваше имя" name="name" required="required" />
+                            <div class="inputbox__label">Ваше имя</div>
+                            <div class="inputbox__error"></div>
+                        </div>
+                        <div class="inputbox inputbox_required"><input class="input" placeholder="Телефон или почта" name="contact" required="required" />
+                            <div class="inputbox__label">Телефон или почта</div>
+                            <div class="inputbox__error"></div>
+                        </div>
+                        <div class="inputbox"><input class="input" placeholder="Если есть что добавить" name="comment" />
+                            <div class="inputbox__label">Если есть что добавить</div>
+                            <div class="inputbox__error"></div>
+                        </div><button class="button form__button" type="submit">
                             <div class="button__text">Начать новый проект</div>
                         </button>
                     </form>
