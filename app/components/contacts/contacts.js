@@ -34,8 +34,12 @@ export default function contacts() {
   });
 
   $(document).on('click', '.js-close-map', (evt) => {
-    evt.preventDefault();
+    const source = evt.target;
     const self = evt.currentTarget;
+    console.log(source);
+    if (!$(source).is('.js-ignore-map') || !$(source).closest('.js-ignore-map').length > 0) {
+      evt.preventDefault();
+    }
     const map = $(self).closest('.contacts');
     removeMouse(() => {
       $(map).removeClass('is-map-open').addClass('is-map-close');

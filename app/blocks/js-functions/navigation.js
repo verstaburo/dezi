@@ -102,7 +102,7 @@ export default function navigation() {
   });
 
   $(window).on('scroll', () => {
-    const sT = $(window).scrollTop();
+    const sT = $(window).scrollTop() + ($(window).height() / 2);
     const activeSectionName = findActiveSection(sT);
     const sections = $('[data-section-target]');
     const activeSection = $(`[data-section-target=${activeSectionName}]`);
