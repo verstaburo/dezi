@@ -1,3 +1,5 @@
+/* eslint-disable no-restricted-syntax */
+import ResizeObserver from 'resize-observer-polyfill';
 import seeThru from 'seethru';
 
 const $ = window.$;
@@ -26,15 +28,42 @@ export default function watch() {
       wtch.watch = watchEl;
     }
   }
-  createWatch();
 
-  $(window).on('resize', () => {
-    const wtch = document.getElementById('watch');
-    if (wtch) {
-      const watchEl = wtch.watch;
-      watchEl.revert();
-      $(wtch).removeClass('is-ready');
+  function setObserversForWatch() {
+    const targets = document.querySelectorAll('[data-watch-base]');
+    const tarLen = targets.length;
+
+    if (tarLen) {
+      for (let i = 0; i < tarLen; i += 1) {
+        const watchSizes = new ResizeObserver(() => {
+          const wtch = document.getElementById('watch');
+          if (wtch) {
+            const watchEl = wtch.watch;
+            watchEl.revert();
+            $(wtch).removeClass('is-ready');
+          }
+          createWatch();
+        });
+
+        watchSizes.observe(targets[i]);
+      }
     }
+  }
+
+  function initWatch() {
     createWatch();
-  });
+    setObserversForWatch();
+  }
+
+  initWatch();
+  // $(window).on('resize', () => {
+  //   const wtch = document.getElementById('watch');
+  //   if (wtch) {
+  //     const watchEl = wtch.watch;
+  //     watchEl.revert();
+  //     $(wtch).removeClass('is-ready');
+  //   }
+  //   createWatch();
+  // });
 }
+/* eslint-enable no-restricted-syntax */
