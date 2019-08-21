@@ -1,0 +1,241 @@
+.portfolio-section {
+  display: block;
+  width: 100%;
+  color: $color-text-3;
+  $b: &;
+
+  &_light-txt {
+    color: $color-text-2;
+  }
+
+  &__wrapper {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+
+    &_blue {
+      background-color: $color-blue-light;
+
+      &_border {
+        border: 1px solid $color-blue-border;
+      }
+    }
+
+    &_white {
+      background-color: $color-main;
+    }
+
+    &_pad {
+      padding: 0 11.4%;
+
+      @include screen('md') {
+        padding: 0;
+      }
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    font-family: $font-site;
+    font-weight: 700;
+    letter-spacing: normal;
+    font-size: $fz17;
+    color: currentColor;
+
+    @include screen('lg') {
+      font-size: $fz12;
+    }
+
+    @include screen('md') {
+      font-size: $fz10;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 67px;
+
+      @include screen('xl') {
+        margin-bottom: 58px;
+      }
+
+      @include screen('lg') {
+        margin-bottom: 41px;
+      }
+
+      @include screen('md') {
+        margin-bottom: 33px;
+      }
+    }
+  }
+
+  &__title {
+    font-family: $font-4;
+    font-size: $fz40;
+    line-height: 1.2;
+    font-weight: 400;
+    letter-spacing: -$ls-port;
+
+    @include screen('lg') {
+      font-size: $fz27;
+    }
+
+    @include screen('md') {
+      font-size: $fz-md-title;
+      letter-spacing: -1 * $ls-main;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 35px;
+
+      @include screen('xl') {
+        margin-bottom: 42px;
+      }
+
+      @include screen('lg') {
+        margin-bottom: 36px;
+      }
+
+      @include screen('md') {
+        margin-bottom: 34px;
+      }
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 95px 0 125px 18.4%;
+
+    @include screen('xl') {
+      padding: 55px 0 63px 16%;
+    }
+
+    @include screen('lg') {
+      padding: 38px 0 44px 16.4%;
+    }
+
+    @include screen('md') {
+      padding: 30px 25px 44px;
+    }
+  }
+
+  &__text-block {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 56px 9.2% 60px 9.2%;
+
+    @include screen('xl') {
+      padding: 62px 8% 57px 8%;
+    }
+
+    @include screen('lg') {
+      padding: 42px 0 53px;
+    }
+
+    &_big-pad {
+      padding: 110px 9.2% 105px 9.2%;
+
+      @include screen('xl') {
+        padding: 61px 0 61px 8%;
+      }
+
+      @include screen('lg') {
+        padding: 68px 0;
+      }
+    }
+  }
+
+  &__text {
+    font-family: $font-site;
+    font-size: $fz17;
+    font-weight: 400;
+
+    @include screen('md') {
+      font-size: $fz-md-text;
+      line-height: ($lh-md-base / $fz-md-text);
+    }
+
+    &_big {
+      font-size: $fz-text;
+      font-weight: 300;
+      line-height: ($lh-base-32 / $fz-text);
+
+      @include screen('lg') {
+        font-size: $fz-md-text;
+        line-height: ($lh-base-22 / $fz-md-text);
+      }
+
+      @include screen('md') {
+        line-height: ($lh-md-base / $fz-md-text);
+      }
+    }
+
+    &_big2 {
+      font-size: $fz-text;
+      font-weight: 300;
+      line-height: ($lh-base-32 / $fz-text);
+
+      @include screen('lg') {
+        font-size: $fz17;
+        line-height: ($lh-base-28 / $fz17);
+      }
+
+      @include screen('md') {
+        line-height: ($lh-md-base / $fz-md-text);
+      }
+    }
+  }
+
+  &__image-wrapper {
+    display: block;
+    width: 100%;
+
+    &_wide {
+      width: 128%;
+      margin-left: -28%;
+      margin-right: 0;
+
+      @include screen('lg') {
+        width: 126%;
+        margin-left: -26%;
+      }
+
+      @include screen('md') {
+        margin-left: 0;
+        width: 100%;
+      }
+    }
+
+    &_fxc {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &_fxce {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      min-height: 100%;
+    }
+  }
+
+  &__image {
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    width: 100%;
+    height: auto;
+
+    &-inner {
+      display: block;
+      font-size: 0;
+      line-height: 0;
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+}

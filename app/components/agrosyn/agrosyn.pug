@@ -1,0 +1,31 @@
+mixin agrosyn()
+  +b.agrosyn&attributes(attributes)
+    +icon('agrosyn-logo').__logo
+    +portfolio-section._light-txt
+      .container.container_portfolio
+        +e.wrapper_blue
+          +grid.grid_12.grid_nogap
+            +col({xxl: 6, md: 12})
+              +e.content
+                +link()._normal.__link(href="https://agrosynergies.com.cy") agrosynergies.com.cy
+                +portfolio-section-title Дизайн сайта и&nbsp;логотипа для агро-корпорации
+                +portfolio-section-text._big AgroSynergies - представляют собой независимый и развивающийся бизнес-проект, объединяющий несколько взаимосвязанных и взаимоподкрепляющих бизнес-направлений.
+            +col({xxl: 6, md: 12})
+              +e.image-wrapper_fxce._wide
+                +e.IMG.image-inner(src="assets/images/agrosync/agro-pages.png")
+        +e.text-block
+          +portfolio-section-text <b>Кейс:</b>  Дизайн основных страниц c адаптацией под различные устройства
+        +e.wrapper_blue._blue_border._pad
+          +portfolio-section-image()(src="assets/images/agrosync/agro-site.jpg")
+        +e.text-block._big-pad
+          +portfolio-section-text._big2 Шаблоны сохранили весь функционал предыдущей версии сайта, но получили свежий графический ораз, а также существенно прибавили в UX.
+        +grid.grid_12.grid_nogap
+          +col({xxl: 6, md: 12})
+            +portfolio-section-image()(src="assets/images/agrosync/agro-img1.jpg")
+          +col({xxl: 6, md: 12})
+            +portfolio-section-image()(src="assets/images/agrosync/agro-img2.jpg")
+        +e.text-block._big-pad
+          +portfolio-section-text._big2 Шаблоны сохранили весь функционал предыдущей версии сайта, но получили свежий графический ораз, а также существенно прибавили в UX.
+    +portfolio-section
+      +portfolio-section-image()(src="assets/images/agrosync/agro-phones.jpg")
+    block

@@ -33,6 +33,8 @@ $color-border: #ccc; // Основной цвет границ таблиц, с�
 $color-main-bg: #f3f1f1; // Основной бэкграунд сайта
 $color-titles: #14181e;
 $color-text: #373c43;
+$color-text-2: #27292d;
+$color-text-3: #0f1219;
 $color-form-dark: #23262c;
 $color-request-bg: #0f0f0f;
 $color-red: #d53b30;
@@ -83,6 +85,8 @@ $color-violet-dark: #100d18;
 $color-smoke-white: #e9f0f4;
 $color-blue: #1eecf9;
 $color-blue-2: #00f0ff;
+$color-blue-light: #e6ecec;
+$color-blue-border: #c9d4d6;
 $color-project-def-dark: #070507;
 $color-dark-border: #5a5a5a;
 $color-brede: #f99f01;
@@ -90,6 +94,7 @@ $color-shilin: #60f;
 $color-form-text-light: #b7bbbe;
 $color-anchor-active: #8a9397;
 $color-list-point: #232323;
+$color-gold: #cda874;
 
 // ##########
 // Transitions
@@ -112,6 +117,7 @@ $ls-main: .02em;
 $ls-btn: .12em;
 $ls-header: .16em;
 $ls-form-link: .36em;
+$ls-port: .04em;
 $lh1: 1;
 $lh-default: 1.2;
 $lh-base: 28px; // основа для
@@ -119,8 +125,10 @@ $lh-md-base: 20px;
 $lh-base-32: 32px;
 $lh-base-38: 38px;
 $lh-base-45: 45px;
+$lh-base-28: 28px;
 $lh-base-22: 22px;
 $lh-base-14: 14px;
+$lh-base-19: 19px;
 $fz9: 9px;
 $fz10: 10px;
 $fz12: 12px;
@@ -129,9 +137,11 @@ $fz15: 15px;
 $fz16: 16px;
 $fz17: 17px;
 $fz18: 18px;
+$fz27: 27px;
 $fz30: 30px;
 $fz35: 35px;
 $fz31: 31px;
+$fz40: 40px;
 $fz58: 58px;
 $fz61: 61px;
 $fz116: 116px;

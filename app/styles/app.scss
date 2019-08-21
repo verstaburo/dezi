@@ -144,6 +144,21 @@ body {
       padding-right: 0;
     }
   }
+
+  &_portfolio {
+    padding-left: 285px;
+    padding-right: 285px;
+
+    @include screen('xl') {
+      padding-left: 100px;
+      padding-right: 100px;
+    }
+
+    @include screen('md') {
+      padding-left: 23px;
+      padding-right: 23px;
+    }
+  }
 }
 
 .js-sr {

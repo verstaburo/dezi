@@ -1,0 +1,86 @@
+.agrosyn {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding-top: 102px;
+  $b: &;
+
+  @include screen('xl') {
+    padding-top: 65px;
+  }
+
+  @include screen('lg') {
+    padding-top: 45px;
+  }
+
+  @include screen('md') {
+    padding-top: 85px;
+  }
+
+  &__logo {
+    display: block;
+    margin: 0 auto;
+    width: 323px;
+    height: 43px;
+    fill: url('#agrosync');
+
+    @include screen('lg') {
+      width: 221px;
+      height: 29px;
+    }
+
+    @include screen('md') {
+      display: none;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 72px;
+
+      @include screen('xl') {
+        margin-bottom: 54px;
+      }
+
+      @include screen('lg') {
+        margin-bottom: 80px;
+      }
+    }
+  }
+
+  .portfolio-section {
+
+    &__content {
+
+      .portfolio-section__title {
+        max-width: 420px;
+
+        @include screen('xl') {
+          max-width: 300px;
+        }
+
+        @include screen('lg') {
+          max-width: 210px;
+        }
+
+        @include screen('md') {
+          max-width: none;
+        }
+      }
+
+      .portfolio-section__text {
+        max-width: 420px;
+
+        @include screen('xl') {
+          max-width: 440px;
+        }
+
+        @include screen('lg') {
+          max-width: 310px;
+        }
+
+        @include screen('md') {
+          max-width: none;
+        }
+      }
+    }
+  }
+}

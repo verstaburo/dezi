@@ -14,6 +14,10 @@
     align-items: center;
   }
 
+  &_normal {
+    text-transform: none;
+  }
+
   &__img {
     display: inline-block;
     margin-right: 23px;

@@ -1,0 +1,15 @@
+mixin portfolio-section()
+  +b.SECTION.portfolio-section&attributes(attributes)
+    block
+
+mixin portfolio-section-title()
+  +e(tag || 'h3').title&attributes(attributes)
+    block
+
+mixin portfolio-section-text()
+  +e.DIV.text&attributes(attributes)
+    block
+
+mixin portfolio-section-image()
+  +e.IMG.image&attributes(attributes)
+    block
