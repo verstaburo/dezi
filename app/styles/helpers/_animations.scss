@@ -210,7 +210,7 @@ $animationScale: .9;
   }
 
   100% {
-    clip-path: circle(100vw at 77.5% 45.2%);
+    clip-path: circle(150vw at 77.5% 45.2%);
   }
 }
 
@@ -220,7 +220,7 @@ $animationScale: .9;
   }
 
   100% {
-    clip-path: circle(100vw at 82% 49%);
+    clip-path: circle(150vw at 82% 49%);
   }
 }
 
@@ -230,7 +230,7 @@ $animationScale: .9;
   }
 
   100% {
-    clip-path: circle(100vw at 79.7% 46%);
+    clip-path: circle(150vw at 79.7% 46%);
   }
 }
 
@@ -256,7 +256,7 @@ $animationScale: .9;
 
 @keyframes mapClose {
   0% {
-    clip-path: circle(100vw at 77.5% 45.2%);
+    clip-path: circle(150vw at 77.5% 45.2%);
   }
 
   75% {
@@ -270,7 +270,7 @@ $animationScale: .9;
 
 @keyframes mapCloseXl {
   0% {
-    clip-path: circle(100vw at 82% 49%);
+    clip-path: circle(150vw at 82% 49%);
   }
 
   75% {
@@ -284,7 +284,7 @@ $animationScale: .9;
 
 @keyframes mapCloseLg {
   0% {
-    clip-path: circle(100vw at 79.7% 46%);
+    clip-path: circle(150vw at 79.7% 46%);
   }
 
   75% {

@@ -1,18 +1,27 @@
 .contacts {
-  position: relative;
+  // position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
   display: flex;
   width: 100%;
-  height: calc(var(--vh, 1vh) * 100);
+  // height: calc(var(--vh, 1vh) * 100);
   overflow: hidden;
   $b: &;
 
   @include screen('md') {
-    min-height: calc(var(--vh, 1vh) * 100);
+    position: relative;
     height: auto;
+    top: auto;
+    left: auto;
+    min-height: calc(var(--vh, 1vh) * 100);
   }
 
   .is-ie & {
-    height: 100vh;
+    @include screen('md') {
+      height: 100vh;
+    }
   }
 
   &__wrapper {
@@ -323,7 +332,7 @@
     font-size: $fz-title;
     font-weight: 700;
     letter-spacing: -$ls-main;
-    margin-bottom: 40px;
+    margin-bottom: 26px;
     overflow: hidden;
     width: 100%;
 

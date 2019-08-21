@@ -37,20 +37,22 @@ export default function contacts() {
     const source = evt.target;
     const self = evt.currentTarget;
     console.log(source);
-    if (!$(source).is('.js-ignore-map') || !$(source).closest('.js-ignore-map').length > 0) {
+    if (!($(source).is('.js-ignore-map') || $(source).closest('.js-ignore-map').length > 0)) {
       evt.preventDefault();
+      const map = $(self).closest('.contacts');
+      removeMouse(() => {
+        $(map).removeClass('is-map-open').addClass('is-map-close');
+        if (!window.globalOptions.headerLight) {
+          $('.header').removeClass('header_light');
+        }
+      });
     }
-    const map = $(self).closest('.contacts');
-    removeMouse(() => {
-      $(map).removeClass('is-map-open').addClass('is-map-close');
-      if (!window.globalOptions.headerLight) {
-        $('.header').removeClass('header_light');
-      }
-    });
   });
 
   $(document).on('mousemove', '.contacts__bottom', (evt) => {
     const mouse = $('.js-mouse')[0];
+    const bParser = window.globalOptions.browserParser;
+    const scale = bParser.isBrowser('firefox', true) ? 1 : window.globalOptions.scale;
     if (mouse) {
       mouse.style.opacity = 1;
       let evtX = evt.clientX;
@@ -59,12 +61,10 @@ export default function contacts() {
         evtX = evt.touches[0].clientX;
         evtY = evt.touches[0].clientY;
       }
-      const x = evtX - 15;
-      const y = evtY - 15;
-      requestAnimationFrame(() => {
-        mouse.style.left = `${x}px`;
-        mouse.style.top = `${y}px`;
-      });
+      const x = (evtX / scale) - 15;
+      const y = (evtY / scale) - 15;
+      mouse.style.left = `${x}px`;
+      mouse.style.top = `${y}px`;
     }
   });
 
