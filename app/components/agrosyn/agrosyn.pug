@@ -1,31 +1,39 @@
 mixin agrosyn()
   +b.agrosyn&attributes(attributes)
-    +icon('agrosyn-logo').__logo
+    +icon('agrosyn-logo').__logo.js-sr_1
     +portfolio-section._light-txt
       .container.container_portfolio
         +e.wrapper_blue
           +grid.grid_12.grid_nogap
             +col({xxl: 6, md: 12})
               +e.content
-                +link()._normal.__link(href="https://agrosynergies.com.cy") agrosynergies.com.cy
-                +portfolio-section-title Дизайн сайта и&nbsp;логотипа для агро-корпорации
-                +portfolio-section-text._big AgroSynergies - представляют собой независимый и развивающийся бизнес-проект, объединяющий несколько взаимосвязанных и взаимоподкрепляющих бизнес-направлений.
+                +link()._normal.__link.js-sr_10(href="https://agrosynergies.com.cy") agrosynergies.com.cy
+                +portfolio-section-title.js-sr_14 Дизайн сайта и&nbsp;логотипа для агро-корпорации
+                +portfolio-section-text._big.js-sr_17 AgroSynergies - представляют собой независимый и развивающийся бизнес-проект, объединяющий несколько взаимосвязанных и взаимоподкрепляющих бизнес-направлений.
             +col({xxl: 6, md: 12})
-              +e.image-wrapper_fxce._wide
-                +e.IMG.image-inner(src="assets/images/agrosync/agro-pages.png")
+              +e.image-wrapper_fxc._fxc_ae._wide
+                +e.IMG.image-inner.js-sr_5(src="assets/images/agrosync/agro-pages.png")
         +e.text-block
-          +portfolio-section-text <b>Кейс:</b>  Дизайн основных страниц c адаптацией под различные устройства
+          +portfolio-section-text.js-sr_3 <b>Кейс:</b>  Дизайн основных страниц c адаптацией под различные устройства
         +e.wrapper_blue._blue_border._pad
-          +portfolio-section-image()(src="assets/images/agrosync/agro-site.jpg")
-        +e.text-block._big-pad
+          +e.PICTURE.picture.js-sr_4
+            source(srcset="assets/images/agrosync/agro-site-md.jpg" media="(max-width: 767px)")
+            +e.IMG(srcset="assets/images/agrosync/agro-site.jpg")
+        +e.text-block._big-pad.js-sr_1
           +portfolio-section-text._big2 Шаблоны сохранили весь функционал предыдущей версии сайта, но получили свежий графический ораз, а также существенно прибавили в UX.
         +grid.grid_12.grid_nogap
           +col({xxl: 6, md: 12})
-            +portfolio-section-image()(src="assets/images/agrosync/agro-img1.jpg")
+            +e.PICTURE.picture.js-sr_10
+              source(srcset="assets/images/agrosync/agro-img1-md.jpg" media="(max-width: 767px)")
+              +e.IMG(srcset="assets/images/agrosync/agro-img1.jpg")
           +col({xxl: 6, md: 12})
-            +portfolio-section-image()(src="assets/images/agrosync/agro-img2.jpg")
-        +e.text-block._big-pad
+            +e.PICTURE.picture.js-sr_6
+              source(srcset="assets/images/agrosync/agro-img2-md.jpg" media="(max-width: 767px)")
+              +e.IMG(srcset="assets/images/agrosync/agro-img2.jpg")
+        +e.text-block._big-pad.js-sr_1
           +portfolio-section-text._big2 Шаблоны сохранили весь функционал предыдущей версии сайта, но получили свежий графический ораз, а также существенно прибавили в UX.
     +portfolio-section
-      +portfolio-section-image()(src="assets/images/agrosync/agro-phones.jpg")
+      +e.PICTURE.picture.js-sr_2
+        source(srcset="assets/images/agrosync/agro-phones-md.jpg" media="(max-width: 767px)")
+        +e.IMG(srcset="assets/images/agrosync/agro-phones.jpg")
     block
