@@ -1,0 +1,32 @@
+mixin arbo()
+  +b.arbo&attributes(attributes)
+    +portfolio-section
+      .container.container_portfolio
+        +e.wrapper_white
+          +grid.grid_12.grid_nogap
+            +col({xxl: 6, md: 12})
+              +e.content
+                +link()._normal.__link.js-sr_10(href="https://arbo.lv") arbo.lv
+                +portfolio-section-title.js-sr_14 Логотип для производителя мебели
+                +portfolio-section-text._big.js-sr_17 Мебель компании ARBO — уникальная ручная работа и неповторимый стиль. Мы разработали для ARBO лаконичный и емкий логотип, который очень похож по стилю на продукцию компании.
+            +col({xxl: 6, md: 12})
+              +e.image-wrapper_fxc
+                +icon('arbo-logo').__arbo-logo.js-sr_1
+        +e.text-block
+          +portfolio-section-text.js-sr_3 <b>Кейс:</b>  Дизайн логотипа адаптированный под разные носители
+        +portfolio-section-image().js-sr_2(src="assets/images/arbo/arbo-img1.jpg")
+        +e.text-block._big-pad.js-sr_1
+          +portfolio-section-text._big2 ARBO —  производитель уникальной дизайнерской мебели, которая создается из дерева и металла, используемого вторично. Часть материала получается из старых домов, таким образом получая новую жизнь.
+        +portfolio-section-image().js-sr_2(src="assets/images/arbo/arbo-img2.jpg")
+        +e.text-block._big-pad.js-sr_1
+          +portfolio-section-text._big2 ARBO —  производитель уникальной дизайнерской мебели, которая создается из дерева и металла, используемого вторично. Часть материала получается из старых домов, таким образом получая новую жизнь.
+        +e.wrapper_white._overhid
+          +e.IMG.image.js-sr_6(src="assets/images/arbo/arbo-img3.jpg")
+        +e.text-block._big-pad.js-sr_1
+          +portfolio-section-text._big2 Мы взяли за основу окружность, как олицетворение ствола дерева. Линии, которые рассекают ствол дерева на части, формируют букву W, а оставшаяся от кольца форма, похожа на букву C. Таким образом мы получили аббревиатуру названия компании. Знак легко может стать шаблоном для фирменного оттиска или трафарета.
+    +portfolio-section
+      +e.image-wrapper
+        +portfolio-section-image().js-sr_2(src="assets/images/arbo/arbo-img-big1.jpg")
+        +portfolio-section-image()(src="assets/images/arbo/arbo-border-logo.svg").__arbo-border-logo.js-sr_14
+    +portfolio-section
+      +portfolio-section-image().js-sr_2(src="assets/images/arbo/arbo-img-big2.jpg")

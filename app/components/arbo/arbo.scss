@@ -1,0 +1,56 @@
+.arbo {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding-top: 103px;
+  $b: &;
+
+  @include screen('xl') {
+    padding-top: 82px;
+  }
+  @include screen('lg') {
+    padding-top: 80px;
+  }
+  @include screen('md') {
+    padding-top: 85px;
+  }
+
+  .portfolio-section {
+
+    &__content {
+      padding-bottom: 154px;
+
+      @include screen('xl') {
+        padding-bottom: 110px;
+      }
+
+      @include screen('lg') {
+        padding-bottom: 55px;
+      }
+
+      @include screen('md') {
+        padding-bottom: 44px;
+      }
+
+      .portfolio-section__title {
+        &:not(:last-child) {
+          @include screen('md') {
+            margin-bottom: 30px;
+          }
+        }
+      }
+    }
+
+    &__text-block {
+      &_big-pad {
+        @include screen('xl') {
+          padding-right: 8%;
+        }
+
+        @include screen('lg') {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+}

@@ -146,13 +146,16 @@ body {
   }
 
   &_portfolio {
-    padding-left: 285px;
-    padding-right: 285px;
+    // padding-left: 285px;
+    // padding-right: 285px;
+    padding-left: 100px;
+    padding-right: 100px;
+    max-width: 1552px;
 
-    @include screen('xl') {
-      padding-left: 100px;
-      padding-right: 100px;
-    }
+    // @include screen('xl') {
+    //   padding-left: 100px;
+    //   padding-right: 100px;
+    // }
 
     @include screen('md') {
       padding-left: 23px;

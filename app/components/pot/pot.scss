@@ -1,0 +1,19 @@
+.pot {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding-top: 103px;
+  $b: &;
+
+  @include screen('xl') {
+    padding-top: 82px;
+  }
+
+  @include screen('lg') {
+    padding-top: 80px;
+  }
+
+  @include screen('md') {
+    padding-top: 85px;
+  }
+}

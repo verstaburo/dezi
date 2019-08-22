@@ -1,0 +1,10 @@
+extends ../../layouts/case
+
+block head
+  - var pageTitle = 'Dezi | Cosy wood'
+
+block header
+  - var headerData = getData('headerAgrosyn.json')
+
+block content
+  +cosywood(data-section="portfolio")

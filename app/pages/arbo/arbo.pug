@@ -1,0 +1,10 @@
+extends ../../layouts/case
+
+block head
+  - var pageTitle = 'Dezi | Arbo'
+
+block header
+  - var headerData = getData('headerAgrosyn.json')
+
+block content
+  +arbo(data-section="portfolio")
