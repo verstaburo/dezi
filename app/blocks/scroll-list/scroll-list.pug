@@ -1,3 +1,4 @@
 mixin scroll-list()
-  +b.scroll-list&attributes(attributes)
-    block
+  +b.scroll-list&attributes(attributes)(data-list-wrapper)
+    +e.content(data-list-inner)
+      block

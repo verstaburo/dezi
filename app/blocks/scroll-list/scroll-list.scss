@@ -1,5 +1,62 @@
 .scroll-list {
   display: block;
-  
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 161px 0;
+  background-color: $color-pot-gray;
   $b: &;
+
+  @include screen('xl') {
+    padding: 111px 0;
+  }
+
+  @include screen('lg') {
+    padding: 80px 0;
+  }
+
+  @include screen('md') {
+    padding: 71px 0;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: flex-start;
+    width: auto;
+    box-sizing: border-box;
+    transition: transform 1s ease-in-out;
+  }
+
+  &__item {
+    display: inline-block;
+    min-width: 26.6vw;
+    width: 26.6vw;
+    box-shadow: 0 7px 38px rgba(0, 0, 0, 0.08);
+
+    @include screen('md') {
+      min-width: 69vw;
+      width: 69vw;
+      box-shadow: 0 4px 19px rgba(0, 0, 0, 0.08);
+    }
+
+    &:not(:last-child) {
+      margin-right: 38px;
+
+      @include screen('xl') {
+        margin-right: 25px;
+      }
+
+      @include screen('lg') {
+        margin-right: 20px;
+      }
+
+      @include screen('md') {
+        margin-right: 17px;
+      }
+    }
+  }
+
+  &__image {
+    width: 100%;
+  }
 }

@@ -16,4 +16,54 @@
   @include screen('md') {
     padding-top: 85px;
   }
+
+  .portfolio-section {
+    &__content {
+      padding-bottom: 92px;
+
+      @include screen('xl') {
+        padding-bottom: 80px;
+      }
+
+      @include screen('lg') {
+        padding-bottom: 56px;
+      }
+
+      @include screen('md') {
+        padding-bottom: 20px;
+      }
+
+      .portfolio-section__title {
+        max-width: 85%;
+
+        @include screen('xl') {
+          max-width: 90%;
+        }
+
+        @include screen('lg') {
+          // max-width: 210px;
+        }
+
+        @include screen('md') {
+          max-width: none;
+        }
+      }
+
+      .portfolio-section__text {
+        max-width: 78%;
+
+        @include screen('xl') {
+          max-width: 90%;
+        }
+
+        @include screen('lg') {
+          // max-width: 310px;
+        }
+
+        @include screen('md') {
+          max-width: none;
+        }
+      }
+    }
+  }
 }

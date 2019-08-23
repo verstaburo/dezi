@@ -10,16 +10,26 @@ mixin pot()
                 +portfolio-section-title.js-sr_14 Лэндинг для токенсейла проекта PROOF OF TOSS
                 +portfolio-section-text._big.js-sr_17 Обравтившись в студию компания уже имела на руках свой яркий и проработанный фирменный стиль и логотип. Мы создали дизайн лендинг страницы для ICO описывающий основные функции проекта и условия покупки токенов.
             +col({xxl: 6, md: 12})
-              +e.image-wrapper_fxc._cw
-                +e.IMG.image-inner.js-sr_6(src="assets/images/pot/pot-img1.png")
+              +e.image-wrapper_fxc._fxc_je._pot
+                +e.PICTURE.picture-inner.js-sr_6
+                  source(srcset="assets/images/pot/pot-img1-md.png" media="(max-width: 767px)")
+                  +e.IMG(srcset="assets/images/pot/pot-img1.png")
         +e.text-block
           +portfolio-section-text.js-sr_3 <b>Кейс:</b> Дизайн лэндинг страницы c адаптацией под различные устройства
         +e.wrapper_white._pot-site
-          +portfolio-section-image().js-sr_2(src="assets/images/pot/pot-img2.jpg")
+          +e.PICTURE.picture.js-sr_2
+            source(srcset="assets/images/pot/pot-img2-md.jpg" media="(max-width: 767px)")
+            +e.IMG(src="assets/images/pot/pot-img2.jpg")
         +e.text-block._big-pad.js-sr_1
           +portfolio-section-text._big2 Лэндинг для токенсейла проекта PROOF OF TOSS разрабатывающего бэттинг на блокчейне. Как и большинство блокчейн проектов Proof of Toss планирует привлекать инвестиции через ICO.
-        +e.wrapper._pot-phones
-          +portfolio-section-image().js-sr_2(src="assets/images/pot/pot-phones.png")
+    +portfolio-section
+      +e.wrapper._pot-phones
+        +portfolio-section-image()._pot-phones.js-sr_11(src="assets/images/pot/pot-phones.png")
+      .container.container_portfolio
         +e.text-block._big-pad.js-sr_1
           +portfolio-section-text._big2 Лэндинг для токенсейла проекта PROOF OF TOSS разрабатывающего бэттинг на блокчейне. Как и большинство блокчейн проектов Proof of Toss планирует привлекать инвестиции через ICO.
     +scroll-list
+      - for (var i = 1; i <= 5; i++) {
+        +e.item
+          +e.IMG.image(src="assets/images/pot/pot-page" + i + ".jpg")
+      -}

@@ -267,19 +267,22 @@ export default function aizkulises() {
     if (block.length > 0) {
       const
         scrollBlock = block.find('[data-scroll-block]'),
-        blockTop = scrollBlock.offset().top * scale,
-        scrollMoment = blockTop - w.height(),
-        scrollHeight = scrollBlock.outerHeight(true),
-        maxScroll = scrollBlock.outerWidth(true),
-        maxTranslate = 18;
+        wHeight = w.height() * scale,
+        blockWidth = (scrollBlock[0].scrollWidth - w.width()) * scale,
+        scrollHeight = block.outerHeight(true) * scale,
+        blockTop = block.offset().top * scale,
+        scrollMoment = blockTop - wHeight,
+        fullHeight = scrollHeight + 2 * wHeight,
+        maxScroll = (blockTop + scrollHeight) - wHeight,
+        maxTranslate = blockWidth / fullHeight;
 
       if (st < scrollMoment) {
         scrollBlock.attr('style', `transform: translate3d(0, 0, 0)`);
       } else if ((st >= scrollMoment) && (st < maxScroll)) {
-        const scrollPercent = (st - scrollMoment) / scrollHeight * maxTranslate;
-        scrollBlock.attr('style', `transform: translate3d(-${scrollPercent}%, 0, 0)`);
+        const scrollPercent = (st - blockTop) * maxTranslate;
+        scrollBlock.attr('style', `transform: translate3d(-${scrollPercent}px, 0, 0)`);
       } else if (st > maxScroll) {
-        scrollBlock.attr('style', `transform: translate3d(${maxTranslate}%, 0, 0)`);
+        scrollBlock.attr('style', `transform: translate3d(-${blockWidth}px, 0, 0)`);
       }
     }
   });

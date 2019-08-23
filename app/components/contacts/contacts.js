@@ -50,10 +50,13 @@ export default function contacts() {
   });
 
   $(document).on('mousemove', '.contacts__bottom', (evt) => {
+    const source = evt.target;
     const mouse = $('.js-mouse')[0];
     const bParser = window.globalOptions.browserParser;
     const scale = bParser.isBrowser('firefox', true) ? 1 : window.globalOptions.scale;
-    if (mouse) {
+    if ($(source).is('.js-ignore-map') || $(source).closest('.js-ignore-map').length > 0) {
+      mouse.style.opacity = '';
+    } else if (mouse) {
       mouse.style.opacity = 1;
       let evtX = evt.clientX;
       let evtY = evt.clientY;

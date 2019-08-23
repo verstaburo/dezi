@@ -23,7 +23,7 @@
     width: auto;
     height: 320px;
     box-sizing: border-box;
-    transition: transform .1s ease;
+    transition: transform 1s ease-in-out;
 
     @include screen('md') {
       height: 120px;

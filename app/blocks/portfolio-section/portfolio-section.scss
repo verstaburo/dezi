@@ -36,6 +36,21 @@
     &_overhid {
       overflow: hidden;
     }
+
+    &_pot-site {
+      @include screen('md') {
+        margin-left: -23px;
+        margin-right: -23px;
+        width: calc(100% + 46px);
+      }
+    }
+
+    &_pot-phones {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      box-sizing: border-box;
+    }
   }
 
   &__link {
@@ -234,6 +249,33 @@
       }
     }
 
+    &_pot {
+      width: 122%;
+      margin-left: -22%;
+      margin-right: 0;
+      box-sizing: border-box;
+      padding-right: 70px;
+
+      @include screen('xl') {
+        width: 115.5%;
+        margin-left: -15.5%;
+        padding-right: 40px;
+      }
+
+      @include screen('lg') {
+        width: 117.5%;
+        margin-left: -17.5%;
+        padding-right: 25px;
+      }
+
+      @include screen('md') {
+        width: 100%;
+        margin-left: 0;
+        padding-right: 13px;
+        padding-bottom: 24px;
+      }
+    }
+
     &_fxc {
       display: flex;
       justify-content: center;
@@ -288,6 +330,26 @@
       max-width: 100%;
       max-height: 100%;
     }
+
+    &_pot-phones {
+      flex: none;
+      max-width: 75%;
+      margin-top: 6%;
+      margin-bottom: 4.5%;
+
+      @include screen('xl') {
+        margin-top: 5.5%;
+      }
+
+      @include screen('md') {
+        max-width: none;
+        width: 144%;
+        margin-top: 12.6%;
+        margin-left: -22%;
+        margin-right: -22%;
+        margin-bottom: 9.5%;
+      }
+    }
   }
 
   &__picture {
@@ -303,6 +365,25 @@
       line-height: 0;
       width: 100%;
       height: auto;
+    }
+
+    &-inner {
+      flex: none;
+      display: block;
+      font-size: 0;
+      line-height: 0;
+      max-width: 100%;
+      max-height: 100%;
+
+      img {
+        display: block;
+        font-size: 0;
+        line-height: 0;
+        width: 100%;
+        max-width: 100%;
+        max-height: 100%;
+        height: auto;
+      }
     }
   }
 
