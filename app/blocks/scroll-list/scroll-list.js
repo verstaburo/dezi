@@ -10,7 +10,8 @@ export default function scrollList() {
       const block = $(document).find('[data-list-wrapper]');
       const scrollBlock = block.find('[data-list-inner]');
       const wHeight = w.height() * scale;
-      const blockWidth = (scrollBlock[0].scrollWidth - w.width()) * scale;
+      const wWidth = $(block).width();
+      const blockWidth = (scrollBlock[0].scrollWidth - wWidth) * scale;
       const scrollHeight = block.outerHeight(true) * scale;
       const blockTop = block.offset().top * scale;
       const scrollMoment = blockTop - wHeight;

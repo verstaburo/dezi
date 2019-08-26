@@ -3,20 +3,20 @@
   width: 100%;
   overflow: hidden;
   box-sizing: border-box;
-  padding: 161px 0;
+  padding: 161px 100px;
   background-color: $color-pot-gray;
   $b: &;
 
   @include screen('xl') {
-    padding: 111px 0;
+    padding: 111px 100px;
   }
 
   @include screen('lg') {
-    padding: 80px 0;
+    padding: 80px 100px;
   }
 
   @include screen('md') {
-    padding: 71px 0;
+    padding: 71px 23px;
   }
 
   &__content {
@@ -57,6 +57,9 @@
   }
 
   &__image {
+    display: block;
+    font-size: 0;
+    line-height: 0;
     width: 100%;
   }
 }
