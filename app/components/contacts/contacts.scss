@@ -11,11 +11,11 @@
   $b: &;
 
   @include screen('md') {
-    position: relative;
-    height: auto;
-    top: auto;
-    left: auto;
-    min-height: calc(var(--vh, 1vh) * 100);
+    // position: relative;
+    // height: auto;
+    // top: auto;
+    // left: auto;
+    // min-height: calc(var(--vh, 1vh) * 100);
   }
 
   .is-ie & {
@@ -46,7 +46,8 @@
     }
 
     @include screen('md') {
-      justify-content: flex-start;
+      // justify-content: flex-start;
+      justify-content: space-between;
       padding-left: 23px;
       padding-right: 23px;
     }
@@ -256,6 +257,11 @@
       min-height: 100%;
       height: auto;
       padding-bottom: 285px;
+
+      @media only screen and (max-height: 550px) {
+        padding-top: 75px;
+        padding-bottom: 255px;
+      }
     }
 
     #{$b}.is-map-open & {
@@ -343,7 +349,8 @@
 
     @include screen('md') {
       font-size: $fz-md-title;
-      margin-bottom: 64px;
+      // margin-bottom: 64px;
+      margin-bottom: 0;
     }
 
     &-link {
@@ -360,7 +367,7 @@
       margin-bottom: 0;
 
       @include screen('md') {
-        margin-bottom: 64px;
+        // margin-bottom: 64px;
       }
     }
   }
@@ -374,7 +381,10 @@
 
     @include screen('md') {
       flex-wrap: wrap;
-      margin-bottom: 62px;
+      margin-top: 10px;
+      margin-bottom: 16px;
+      background-color: transparent;
+      // margin-bottom: 62px;
     }
 
     .link {
@@ -396,6 +406,12 @@
     &:first-child {
       @include screen('md') {
         order: 2;
+      }
+    }
+
+    &:nth-child(2) {
+      @include screen('md') {
+        margin-top: 0;
       }
     }
 
