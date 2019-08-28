@@ -36,10 +36,9 @@ export default function contacts() {
   });
 
   $(document).on('click', '.js-close-map', (evt) => {
-    if (!isTouchDevice) {
+    if (!isTouchDevice()) {
       const source = evt.target;
       const self = evt.currentTarget;
-      console.log('click');
       if (!($(source).is('.js-ignore-map') || $(source).closest('.js-ignore-map').length > 0)) {
         evt.preventDefault();
         const map = $(self).closest('.contacts');
@@ -54,10 +53,9 @@ export default function contacts() {
   });
 
   $(document).on('touchstart', '.js-close-map', (evt) => {
-    if (isTouchDevice) {
+    if (isTouchDevice()) {
       const source = evt.target;
       const self = evt.currentTarget;
-      console.log('touch');
       if (!($(source).is('.js-ignore-map') || $(source).closest('.js-ignore-map').length > 0)) {
         const map = $(self).closest('.contacts');
         removeMouse(() => {

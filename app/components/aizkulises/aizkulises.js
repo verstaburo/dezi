@@ -14,59 +14,40 @@ export default function aizkulises() {
     window.isMobile = isMobile;
   }
 
+  const w = $(window);
+
   /*
   Масштабирование сайта
    */
-  let scale = 1;
-  const w = $(window);
+  // let scale = 1;
+  // const w = $(window);
 
-  function setDevice() {
-    console.log('resize');
-    let
-      zoom = 1,
-      siteWidth,
-      screenSize = w.width();
+  // function setDevice() {
+  //   console.log('resize');
+  //   let
+  //     zoom = 1,
+  //     siteWidth,
+  //     screenSize = w.width();
 
-    $(document).find('meta[name="viewport"]').attr('content', 'width=device-width, initial-scale=1, maximum-scale=1, minimal-ui');
-    $('html').css({
-      zoom: '',
-    });
+  //   if (screenSize < 768) {
+  //     siteWidth = 320;
+  //   } else if (screenSize >= 768 && screenSize < 1025) {
+  //     siteWidth = 1024;
+  //   } else if (screenSize >= 1025 && screenSize < 1367) {
+  //     siteWidth = 1366;
+  //   } else {
+  //     siteWidth = 1920;
+  //   }
+  //   scale = screenSize / siteWidth;
+  //   zoom = scale;
+  //   $('html').css({
+  //     zoom,
+  //   });
+  //   window.globalOptions.scale = zoom;
+  // }
 
-    if (screenSize < 768) {
-      siteWidth = 320;
-      scale = screenSize / siteWidth;
-      $(document).find('meta[name="viewport"]').attr('content', `width=${siteWidth}`);
-    } else if (screenSize >= 768 && screenSize < 1025) {
-      siteWidth = 1024;
-      scale = screenSize / siteWidth;
-      zoom = scale;
-      $('html').css({
-        zoom,
-      });
-    } else if (screenSize >= 1025 && screenSize < 1367) {
-      siteWidth = 1366;
-      scale = screenSize / siteWidth;
-      zoom = scale;
-      $('html').css({
-        zoom,
-      });
-    } else {
-      siteWidth = 1920;
-      scale = screenSize / siteWidth;
-      zoom = scale;
-      $('html').css({
-        zoom,
-      });
-    }
-    window.globalOptions.scale = zoom;
-    // if (window.Modernizr.mq(`(max-width: ${window.globalOptions.sizes.md - 1}px)`)) {
-    //   $(document).find('meta[name="viewport"]').attr('content', 'width=320');
-    // }
-  }
-
-  setDevice();
-
-  $(window).on('resize', setDevice);
+  // setDevice();
+  // $(window).on('resize', setDevice);
 
   // $(window).on('load resize', function () {
   //   let
@@ -104,6 +85,7 @@ export default function aizkulises() {
       baseClass = 'js-sr',
       duration = 1000,
       maxDelay = 2000,
+      scale = window.globalOptions.scale,
       animClasses = [
         'animation_fadeIn',
         'animation_fadeInRight',
@@ -228,6 +210,7 @@ export default function aizkulises() {
 
     $(window).on('load scroll', function () {
       const
+        scale = window.globalOptions.scale,
         w = $(this),
         st = w.scrollTop() * scale,
         block = $(document).find('.js-aizkulises-screenshots'),
@@ -257,6 +240,7 @@ export default function aizkulises() {
 
     $(window).on('load scroll', function () {
       const
+        scale = window.globalOptions.scale,
         w = $(this),
         st = w.scrollTop() * scale,
         block = $(document).find('.js-nla-iphones'),
@@ -286,6 +270,7 @@ export default function aizkulises() {
 
     $(window).on('load scroll', function () {
       const
+        scale = window.globalOptions.scale,
         w = $(this),
         st = w.scrollTop() * scale,
         block = $(document).find('.js-splace-pages'),
@@ -309,6 +294,7 @@ export default function aizkulises() {
 
   $(window).on('load scroll', function () {
     const
+      scale = window.globalOptions.scale,
       w = $(this),
       st = w.scrollTop() * scale,
       block = $(document).find('[data-scroll-wrapper]');
