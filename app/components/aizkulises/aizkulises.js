@@ -108,7 +108,7 @@ export default function aizkulises() {
         $(this).css({
           animationDelay: `${delay}ms`,
         });
-        delay += stp;
+        delay += step;
       });
     }
 
