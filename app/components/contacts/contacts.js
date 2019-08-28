@@ -1,3 +1,5 @@
+import isTouchDevice from 'is-touch-device';
+
 const $ = window.$;
 
 export default function contacts() {
@@ -34,18 +36,37 @@ export default function contacts() {
   });
 
   $(document).on('click', '.js-close-map', (evt) => {
-    const source = evt.target;
-    const self = evt.currentTarget;
-    console.log(source);
-    if (!($(source).is('.js-ignore-map') || $(source).closest('.js-ignore-map').length > 0)) {
-      evt.preventDefault();
-      const map = $(self).closest('.contacts');
-      removeMouse(() => {
-        $(map).removeClass('is-map-open').addClass('is-map-close');
-        if (!window.globalOptions.headerLight) {
-          $('.header').removeClass('header_light');
-        }
-      });
+    if (!isTouchDevice) {
+      const source = evt.target;
+      const self = evt.currentTarget;
+      console.log('click');
+      if (!($(source).is('.js-ignore-map') || $(source).closest('.js-ignore-map').length > 0)) {
+        evt.preventDefault();
+        const map = $(self).closest('.contacts');
+        removeMouse(() => {
+          $(map).removeClass('is-map-open').addClass('is-map-close');
+          if (!window.globalOptions.headerLight) {
+            $('.header').removeClass('header_light');
+          }
+        });
+      }
+    }
+  });
+
+  $(document).on('touchstart', '.js-close-map', (evt) => {
+    if (isTouchDevice) {
+      const source = evt.target;
+      const self = evt.currentTarget;
+      console.log('touch');
+      if (!($(source).is('.js-ignore-map') || $(source).closest('.js-ignore-map').length > 0)) {
+        const map = $(self).closest('.contacts');
+        removeMouse(() => {
+          $(map).removeClass('is-map-open').addClass('is-map-close');
+          if (!window.globalOptions.headerLight) {
+            $('.header').removeClass('header_light');
+          }
+        });
+      }
     }
   });
 

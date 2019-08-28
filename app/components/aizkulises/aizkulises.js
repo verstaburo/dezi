@@ -20,32 +20,80 @@ export default function aizkulises() {
   let scale = 1;
   const w = $(window);
 
-  $(window).on('load resize', function () {
+  function setDevice() {
+    console.log('resize');
     let
+      zoom = 1,
       siteWidth,
       screenSize = w.width();
 
-    if (screenSize < 768) siteWidth = 320;
-    if (screenSize >= 768) siteWidth = 1024;
-    if (screenSize >= 1025) siteWidth = 1366;
-    if (screenSize >= 1367) siteWidth = 1920;
+    $(document).find('meta[name="viewport"]').attr('content', 'width=device-width, initial-scale=1, maximum-scale=1, minimal-ui');
+    $('html').css({
+      zoom: '',
+    });
 
-    scale = screenSize / siteWidth;
-    window.globalOptions.scale = scale;
-
-    if ($('html').is('.is-ie')) {
+    if (screenSize < 768) {
+      siteWidth = 320;
+      scale = screenSize / siteWidth;
+      $(document).find('meta[name="viewport"]').attr('content', `width=${siteWidth}`);
+    } else if (screenSize >= 768 && screenSize < 1025) {
+      siteWidth = 1024;
+      scale = screenSize / siteWidth;
+      zoom = scale;
       $('html').css({
-        '-ms-zoom': scale,
+        zoom,
+      });
+    } else if (screenSize >= 1025 && screenSize < 1367) {
+      siteWidth = 1366;
+      scale = screenSize / siteWidth;
+      zoom = scale;
+      $('html').css({
+        zoom,
       });
     } else {
+      siteWidth = 1920;
+      scale = screenSize / siteWidth;
+      zoom = scale;
       $('html').css({
-        zoom: scale,
+        zoom,
       });
     }
+    window.globalOptions.scale = zoom;
+    // if (window.Modernizr.mq(`(max-width: ${window.globalOptions.sizes.md - 1}px)`)) {
+    //   $(document).find('meta[name="viewport"]').attr('content', 'width=320');
+    // }
+  }
 
-    // Если вернемся к стандартному зуму
-    // document.querySelector('meta[name="viewport"]').setAttribute('content', 'width='+siteWidth+', initial-scale='+scale+'');
-  });
+  setDevice();
+
+  $(window).on('resize', setDevice);
+
+  // $(window).on('load resize', function () {
+  //   let
+  //     siteWidth,
+  //     screenSize = w.width();
+
+  //   if (screenSize < 768) siteWidth = 320;
+  //   if (screenSize >= 768) siteWidth = 1024;
+  //   if (screenSize >= 1025) siteWidth = 1366;
+  //   if (screenSize >= 1367) siteWidth = 1920;
+
+  //   scale = screenSize / siteWidth;
+  //   window.globalOptions.scale = scale;
+
+  //   if ($('html').is('.is-ie')) {
+  //     $('html').css({
+  //       '-ms-zoom': scale,
+  //     });
+  //   } else {
+  //     $('html').css({
+  //       zoom: scale,
+  //     });
+  //   }
+
+  //   // Если вернемся к стандартному зуму
+  //   // document.querySelector('meta[name="viewport"]').setAttribute('content', 'width='+siteWidth+', initial-scale='+scale+'');
+  // });
 
   /*
   Анимации
