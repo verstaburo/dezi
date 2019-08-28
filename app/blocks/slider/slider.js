@@ -124,7 +124,7 @@ export default function slider() {
 
   leadSliderInit();
   $(window).on('resize', leadSliderInit);
-  bgSliderInit();
-  $(window).on('resize', bgSliderInit);
+  // bgSliderInit();
+  // $(window).on('resize', bgSliderInit);
 }
 /* eslint-enable no-unused-vars */

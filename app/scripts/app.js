@@ -40,6 +40,7 @@ import pageSwitcher from '../blocks/page-switcher/page-switcher';
 import watchAnimation from '../pages/services/services';
 import iniLabels from '../blocks/form-elements/labels';
 import scrollList from '../blocks/scroll-list/scroll-list';
+import sliderBg from '../blocks/slider/slider-bg';
 
 const $ = window.$;
 
@@ -76,4 +77,5 @@ $(() => {
   scrollList();
   watchAnimation();
   pageSwitcher();
+  sliderBg();
 });
