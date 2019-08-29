@@ -285,7 +285,9 @@
     @include screen('md') {
       // top: calc(50% + 9px);
       // left: 43px;
-      left: calc(118px + .3%);
+      left: 43px;
+      transform: translate3d(0, 0, 0);
+      // left: calc(118px + .3%);
     }
   }
 
@@ -309,7 +311,7 @@
 
       @include screen('md') {
         // margin-right: 19.5%;
-        margin-right: 57px;
+        margin-right: 55px;
       }
     }
 
