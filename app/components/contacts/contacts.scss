@@ -261,16 +261,12 @@
     }
 
     @include screen('md') {
-      // padding-top: 105px;
+      padding-top: 105px;
       min-height: 100%;
       height: auto;
-      // padding-bottom: 285px;
-      @media only screen and (min-height: 551px) {
-        padding-top: 105px;
-        padding-bottom: 285px;
-      }
+      padding-bottom: 285px;
 
-      @media only screen and (max-height: 550px) {
+      @media only screen and (max-height: 590px) {
         padding-top: 75px;
         padding-bottom: 255px;
       }
@@ -325,12 +321,10 @@
     }
 
     @include screen('md') {
-      @media only screen and (min-height: 551px) {
-        padding-top: 105px;
-        padding-bottom: 285px;
-      }
+      padding-top: 105px;
+      padding-bottom: 285px;
 
-      @media only screen and (max-height: 550px) {
+      @media only screen and (max-height: 590px) {
         padding-top: 75px;
         padding-bottom: 255px;
       }
