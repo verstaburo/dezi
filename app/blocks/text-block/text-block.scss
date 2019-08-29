@@ -139,7 +139,8 @@
       @include screen('md') {
         margin-left: -5px;
         margin-right: -8px;
-        padding-top: 31.8%;
+        // padding-top: 31.8%;
+        padding-top: 87px;
         width: calc(100% + 13px);
         font-size: $fz-text;
       }
@@ -307,8 +308,8 @@
       }
 
       @include screen('md') {
-        margin-right: 19.5%;
-        // margin-right: 57px;
+        // margin-right: 19.5%;
+        margin-right: 57px;
       }
     }
 
@@ -316,12 +317,6 @@
       animation: fadeIn $animationDuration $animationEasing;
 
       @include animation;
-
-      &:first-child {
-      }
-
-      &:last-child {
-      }
     }
 
     &_lg-white {

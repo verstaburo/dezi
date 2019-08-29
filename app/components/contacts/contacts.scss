@@ -16,6 +16,14 @@
     // top: auto;
     // left: auto;
     // min-height: calc(var(--vh, 1vh) * 100);
+
+    @media only screen and (orientation: landscape) {
+      position: relative;
+      height: auto;
+      top: auto;
+      left: auto;
+      min-height: 480px;
+    }
   }
 
   .is-ie & {
@@ -315,6 +323,11 @@
     @include screen('md') {
       padding-top: 105px;
       padding-bottom: 285px;
+
+      @media only screen and (max-height: 550px) {
+        padding-top: 75px;
+        padding-bottom: 255px;
+      }
     }
 
     .is-firefox & {
@@ -335,6 +348,7 @@
   }
 
   &__title {
+    display: inline-block;
     font-size: $fz-title;
     font-weight: 700;
     letter-spacing: -$ls-main;
@@ -350,7 +364,7 @@
     @include screen('md') {
       font-size: $fz-md-title;
       // margin-bottom: 64px;
-      margin-bottom: 0;
+      margin-bottom: 5px;
     }
 
     &-link {
@@ -381,8 +395,8 @@
 
     @include screen('md') {
       flex-wrap: wrap;
-      margin-top: 10px;
-      margin-bottom: 16px;
+      margin-top: 5px;
+      margin-bottom: 11px;
       background-color: transparent;
       // margin-bottom: 62px;
     }
@@ -443,6 +457,7 @@
       position: relative;
       bottom: auto;
       left: -4px;
+      margin-top: 5px;
     }
   }
 
