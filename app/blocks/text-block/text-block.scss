@@ -295,6 +295,12 @@
     display: inline-block;
     opacity: 0;
 
+    &:first-child {
+      @include screen('md') {
+        min-width: 118px;
+      }
+    }
+
     &:not(:last-child) {
       // margin-right: 430px;
       margin-right: 27%;
