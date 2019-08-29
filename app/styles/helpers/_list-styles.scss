@@ -1,22 +1,29 @@
 @mixin list {
-  font-size: $fz-text;
+  // font-size: $fz-text;
   line-height: ($lh-base / $fz-text);
   font-weight: 300;
   letter-spacing: $ls-main;
 
+  @include rule(font-size, (xxl: $fz-text, xl: $fz-text, lg: $fz-text, md: $fz-md-text));
+
   @include screen('md') {
-    font-size: $fz-md-text;
+    // font-size: $fz-md-text;
     line-height: ($lh-md-base / $fz-md-text);
   }
 
   ul,ol {
-    padding-top: 5px;
-    padding-bottom: 5px;
+    // padding-top: 5px;
+    // padding-bottom: 5px;
+
+    @include rule(padding-top, (xxl: 5, xl: 5, lg: 5, md: 5));
+    @include rule(padding-bottom, (xxl: 5, xl: 5, lg: 5, md: 5));
   }
 
   li {
-    padding-left: 20px;
+    // padding-left: 20px;
     position: relative;
+
+    @include rule(padding-left, (xxl: 20, xl: 20, lg: 20, md: 20));
   }
 }
 
@@ -24,12 +31,16 @@
   li::before {
     position: absolute;
     left: 0;
-    top: 11px;
+    // top: 11px;
     content: '';
-    width: 5px;
-    height: 5px;
+    // width: 5px;
+    // height: 5px;
     border-radius: 50%;
     background-color: $color-list-point;
+
+    @include rule(top, (xxl: 11, xl: 11, lg: 11, md: 11));
+    @include rule(width, (xxl: 5, xl: 5, lg: 5, md: 5));
+    @include rule(height, (xxl: 5, xl: 5, lg: 5, md: 5));
   }
 }
 

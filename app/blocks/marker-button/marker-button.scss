@@ -2,14 +2,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 180px;
-  height: 180px;
+  // width: 180px;
+  // height: 180px;
   $b: &;
 
-  @include screen('md') {
-    width: 111px;
-    height: 111px;
-  }
+  @include rule(width, (xxl: 180, xl: 180, lg: 180, md: 111));
+  @include rule(height, (xxl: 180, xl: 180, lg: 180, md: 111));
+
+  // @include screen('md') {
+  //   width: 111px;
+  //   height: 111px;
+  // }
 
   .is-map-open & {
     pointer-events: none;
@@ -23,9 +26,11 @@
     height: 100%;
     fill: none;
     stroke: url('#buttons');
-    stroke-width: 2px;
+    // stroke-width: 2px;
     transition: all .3s ease-in-out;
     pointer-events: none;
+
+    @include rule(stroke-width, (xxl: 2, xl: 2, lg: 2, md: 2));
 
     #{$b}:hover & {
       transform: scale(1.15) translateZ(0);
@@ -46,14 +51,17 @@
 
   &__img {
     display: block;
-    width: 25px;
-    height: 43px;
+    // width: 25px;
+    // height: 43px;
     transform-origin: 50% 100% 0;
 
-    @include screen('md') {
-      width: 32px;
-      height: 56px;
-    }
+    @include rule(width, (xxl: 25, xl: 25, lg: 25, md: 32));
+    @include rule(height, (xxl: 43, xl: 43, lg: 43, md: 56));
+
+    // @include screen('md') {
+    //   width: 32px;
+    //   height: 56px;
+    // }
 
     .is-map-open & {
       animation: iconBigger 1s cubic-bezier(.95, .05, .795, .035) forwards;

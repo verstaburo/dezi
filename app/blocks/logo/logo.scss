@@ -1,12 +1,8 @@
 .logo {
   display: block;
-  width: 28px;
-  height: 35px;
 
-  @include screen('md') {
-    width: 21px;
-    height: 26px;
-  }
+  @include rule(width, (xxl: 28, xl: 28, lg: 28, md: 21));
+  @include rule(height, (xxl: 35, xl: 35, lg: 35, md: 26));
 
   $b: &;
 

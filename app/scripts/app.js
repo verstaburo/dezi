@@ -10,19 +10,19 @@ import navigation from '../blocks/js-functions/navigation';
 import {
   freezebuttons,
 } from '../blocks/js-functions/freeze';
-import {
-  selects,
-  sliders,
-  datepicker,
-  inputmask,
-  numberinput,
-} from '../blocks/form-elements/form-elements';
+// import {
+//   selects,
+//   sliders,
+//   datepicker,
+//   inputmask,
+//   numberinput,
+// } from '../blocks/form-elements/form-elements';
 import popups from '../blocks/popups/popups';
 import scrollbar from '../blocks/scrollbar/scrollbar';
 import slider from '../blocks/slider/slider';
 import tooltips from '../blocks/tooltip/tooltip';
 import tabs from '../blocks/tabs/tabs';
-import maps from '../blocks/map/map';
+// import maps from '../blocks/map/map';
 import '../blocks/rating/rating';
 import '../blocks/accordion/accordion';
 import '../blocks/dropdown/dropdown';
@@ -53,17 +53,17 @@ $(() => {
   anchor();
   navigation();
   freezebuttons();
-  selects();
-  sliders();
+  // selects();
+  // sliders();
   popups();
   scrollbar();
   slider();
   tooltips();
   tabs();
-  datepicker();
-  inputmask();
-  numberinput();
-  maps();
+  // datepicker();
+  // inputmask();
+  // numberinput();
+  // maps();
   aizkulises();
   header();
   venezia();

@@ -1,4 +1,5 @@
 window.globalOptions = window.globalOptions || {};
+window.globalOptions.scale = 1;
 window.globalOptions.animationDuration = 300;
 window.globalOptions.sizes = {
   xxl: 1920,

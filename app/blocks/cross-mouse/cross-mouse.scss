@@ -3,8 +3,8 @@
 
   position: fixed;
   display: block;
-  width: 30px;
-  height: 30px;
+  // width: 30px;
+  // height: 30px;
   opacity: 0;
   transform: opacity $ease-main;
   z-index: 300;
@@ -12,16 +12,25 @@
   pointer-events: none;
   transform-origin: 50% 50% 0;
 
+  @include rule(width, (xxl: 30, xl: 30, lg: 30, md: 30));
+  @include rule(height, (xxl: 30, xl: 30, lg: 30, md: 30));
+
   &::before,&::after {
     @include pseudo;
 
-    top: -4px;
-    left: 13px;
-    width: 4px;
+    // top: -4px;
+    // left: 13px;
+    // width: 4px;
     background-color: $color-basic;
-    border-radius: 2px;
-    height: 38px;
+    // border-radius: 2px;
+    // height: 38px;
     transform-origin: 50% 50% 0;
+
+    @include rule(top, (xxl: -4, xl: -4, lg: -4, md: -4));
+    @include rule(left, (xxl: 13, xl: 13, lg: 13, md: 13));
+    @include rule(width, (xxl: 4, xl: 4, lg: 4, md: 4));
+    @include rule(border-radius, (xxl: 2, xl: 2, lg: 2, md: 2));
+    @include rule(height, (xxl: 38, xl: 38, lg: 38, md: 38));
   }
 
   &::before {

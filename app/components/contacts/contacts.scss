@@ -261,17 +261,15 @@
     }
 
     @include screen('md') {
-      padding-top: 80px;
-      padding-bottom: 260px;
-      // padding-top: 105px;
+      padding-top: 105px;
       min-height: 100%;
       height: auto;
-      // padding-bottom: 285px;
+      padding-bottom: 285px;
 
-      // @media only screen and (max-height: 620px) {
-      //   padding-top: 75px;
-      //   padding-bottom: 255px;
-      // }
+      @media only screen and (max-height: 620px) {
+        padding-top: 75px;
+        padding-bottom: 255px;
+      }
     }
 
     #{$b}.is-map-open & {
@@ -323,13 +321,13 @@
     }
 
     @include screen('md') {
-      padding-top: 80px;
-      padding-bottom: 260px;
+      padding-top: 105px;
+      padding-bottom: 285px;
 
-      // @media only screen and (max-height: 620px) {
-      //   padding-top: 75px;
-      //   padding-bottom: 255px;
-      // }
+      @media only screen and (max-height: 620px) {
+        padding-top: 75px;
+        padding-bottom: 255px;
+      }
     }
 
     .is-firefox & {

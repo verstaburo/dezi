@@ -8,25 +8,30 @@
   &__item {
     display: inline-block;
     box-sizing: border-box;
-    margin-bottom: 48px;
-    height: 76px;
-    margin-right: 60px;
+    // margin-bottom: 48px;
+    // height: 76px;
+    // margin-right: 60px;
+
+    @include rule(margin-bottom, (xxl: 48, xl: 48, lg: 50, md: 18));
+    @include rule(height, (xxl: 76, xl: 76, lg: 76, md: 28));
+    @include rule(margin-right, (xxl: 60, xl: 0));
+    @include rule(padding-right, (xl: 20, lg: 20, md: 10));
 
     @include screen('xl') {
-      padding-right: 20px;
+      // padding-right: 20px;
       width: 33.33%;
-      margin-right: 0;
+      // margin-right: 0;
     }
 
-    @include screen('lg') {
-      margin-bottom: 50px;
-    }
+    // @include screen('lg') {
+    //   // margin-bottom: 50px;
+    // }
 
-    @include screen('md') {
-      margin-bottom: 18px;
-      height: 28px;
-      padding-right: 10px;
-    }
+    // @include screen('md') {
+    //   // margin-bottom: 18px;
+    //   // height: 28px;
+    //   // padding-right: 10px;
+    // }
 
     &:nth-child(6n) {
       margin-right: 0;

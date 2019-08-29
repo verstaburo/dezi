@@ -9,25 +9,31 @@
   cursor: pointer;
   font-family: $font-second;
   font-weight: 900;
-  font-size: 16px;
-  height: 58px;
-  line-height: 54px;
+  // font-size: 16px;
+  // height: 58px;
+  // line-height: 54px;
   text-transform: uppercase;
   letter-spacing: .12em;
-  border-radius: 100px;
+  // border-radius: 100px;
   $b: &;
 
-  @include screen('lg') {
-    font-size: 12px;
-    border-width: 1px;
-    height: 43px;
-    line-height: 41px;
-  }
+  @include rule(border-width, (xxl: 2, xl: 2, lg: 1, md: 1));
+  @include rule(font-size, (xxl: $fz16, xl: $fz16, lg: $fz12, md: $fz12));
+  @include rule(height, (xxl: 58, xl: 58, lg: 43, md: 35));
+  @include rule(line-height, (xxl: 54, xl: 54, lg: 41, md: 33));
+  @include rule(border-radius, (xxl: 100, xl: 100, lg: 100, md: 100));
 
-  @include screen('md') {
-    height: 35px;
-    line-height: 33px;
-  }
+  // @include screen('lg') {
+  //   // font-size: 12px;
+  //   // border-width: 1px;
+  //   // height: 43px;
+  //   // line-height: 41px;
+  // }
+
+  // @include screen('md') {
+  //   // height: 35px;
+  //   // line-height: 33px;
+  // }
 
   &:disabled,&.is-disabled {
     opacity: .5;
@@ -43,32 +49,38 @@
     display: inline-block;
     vertical-align: middle;
     box-sizing: border-box;
-    padding: 0 52px;
+    // padding: 0 52px;
 
-    @include screen('lg') {
-      padding: 0 41px;
-    }
+    @include rule(padding-left, (xxl: 52, xl: 52, lg: 41, md: 30));
+    @include rule(padding-right, (xxl: 52, xl: 52, lg: 41, md: 30));
 
-    @include screen('md') {
-      padding: 0 30px;
-    }
+    // @include screen('lg') {
+    //   padding: 0 41px;
+    // }
+
+    // @include screen('md') {
+    //   padding: 0 30px;
+    // }
 
     #{$b}_gradient & {
-      padding: 0 30px;
+      // padding: 0 30px;
 
-      @include screen('md') {
-        padding: 0 20px;
-      }
+      // @include screen('md') {
+      //   padding: 0 20px;
+      // }
+
+      @include rule(padding-left, (xxl: 30, xl: 30, lg: 30, md: 20));
+      @include rule(padding-right, (xxl: 30, xl: 30, lg: 30, md: 20));
     }
   }
 
   &_gradient {
     border: none;
-    padding: 2px;
+    // padding: 2px;
     border-color: transparent;
-    border-radius: 30px;
+    // border-radius: 30px;
     box-sizing: border-box;
-    height: 58px;
+    // height: 58px;
     background-clip: content-box, border-box;
     color: $color-form-dark;
     background-image: linear-gradient(to left, $color-main-bg 0%, $color-main-bg 50%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%), linear-gradient(-164deg, #13d5d7 0%, #3eefc7 26%, #892a5e 64%, #ed4036 100%);
@@ -76,18 +88,24 @@
     background-size: 200% 100%, contain;
     transition: background $ease-main, color $ease-main;
     background-position: 100% 0, 0 0;
-    font-size: $fz16;
+    // font-size: $fz16;
     font-weight: 700;
     letter-spacing: $ls-btn;
-    line-height: 54px;
+    // line-height: 54px;
     text-align: center;
 
-    @include screen('md') {
-      font-size: $fz12;
-      line-height: 36px;
-      height: 40px;
-      border-radius: 20px;
-    }
+    // @include screen('md') {
+    //   // font-size: $fz12;
+    //   // line-height: 36px;
+    //   // height: 40px;
+    //   // border-radius: 20px;
+    // }
+
+    @include rule(padding, (xxl: 2, xl: 2, lg: 2, md: 2));
+    @include rule(font-size, (xxl: $fz16, xl: $fz16, lg: $fz16, md: $fz12));
+    @include rule(height, (xxl: 58, xl: 58, lg: 58, md: 40));
+    @include rule(line-height, (xxl: 54, xl: 54, lg: 54, md: 36));
+    @include rule(border-radius, (xxl: 30, xl: 30, lg: 30, md: 20));
 
     &:hover {
       background-position: 0 0, 0 0;

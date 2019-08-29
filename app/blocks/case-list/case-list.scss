@@ -6,44 +6,50 @@
   justify-content: flex-start;
   align-items: flex-start;
   width: 100%;
-  font-size: 20px;
+  // font-size: 20px;
   line-height: 1.2;
   font-weight: 100;
   font-family: $font-second;
 
-  @include screen('lg') {
-    font-size: 21px;
-  }
+  // @include screen('lg') {
+  //   font-size: 21px;
+  // }
 
-  @include screen('md') {
-    font-size: 15px;
-  }
+  // @include screen('md') {
+  //   font-size: 15px;
+  // }
+
+  @include rule(font-size, (xxl: 20, xl: 20, lg: 21, md: 15));
 
   &__item {
     position: relative;
     display: inline-block;
     box-sizing: border-box;
-    padding-left: 80px;
+    // padding-left: 80px;
     width: 100%;
 
-    @include screen('lg') {
-      padding-left: 84px;
-    }
+    // @include screen('lg') {
+    //   padding-left: 84px;
+    // }
 
-    @include screen('md') {
-      padding-left: 62px;
-    }
+    // @include screen('md') {
+    //   padding-left: 62px;
+    // }
+
+    @include rule(padding-left, (xxl: 80, xl: 80, lg: 84, md: 62));
 
     &:not(:last-child) {
-      margin-bottom: 54px;
+      // margin-bottom: 54px;
 
-      @include screen('lg') {
-        margin-bottom: 58px;
-      }
+      // @include screen('lg') {
+      //   margin-bottom: 58px;
+      // }
 
-      @include screen('md') {
-        margin-bottom: 45px;
-      }
+      // @include screen('md') {
+      //   margin-bottom: 45px;
+      // }
+
+      @include rule(margin-bottom, (xxl: 54, xl: 54, lg: 58, md: 45));
     }
   }
 
@@ -60,19 +66,23 @@
     }
 
     &_case-star {
-      margin-top: -8px;
+      // margin-top: -8px;
 
-      @include screen('md') {
-        margin-top: -6px;
-      }
+      // @include screen('md') {
+      //   margin-top: -6px;
+      // }
+
+      @include rule(margin-top, (xxl: -8, xl: -8, lg: -8, md: -6));
     }
 
     &_case-devices {
-      margin-left: -7px;
+      // margin-left: -7px;
 
-      @include screen('md') {
-        margin-left: 0;
-      }
+      // @include screen('md') {
+      //   margin-left: 0;
+      // }
+
+      @include rule(margin-left, (xxl: -7, xl: -7, lg: -7, md: 0));
     }
   }
 }

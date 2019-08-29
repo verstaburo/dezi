@@ -16,23 +16,25 @@
     top: 38.8%;
     left: 9%;
     z-index: 2;
-    font-size: $fz-title;
+    // font-size: $fz-title;
     letter-spacing: -$ls-main;
     color: currentColor;
     line-height: .85;
     font-weight: 700;
 
-    @include screen('xl') {
-      font-size: 52px;
-    }
+    @include rule(font-size, (xxl: $fz-title, xl: 52, lg: 38, md: 18));
 
-    @include screen('lg') {
-      font-size: 38px;
-    }
+    // @include screen('xl') {
+    //   font-size: 52px;
+    // }
 
-    @include screen('md') {
-      font-size: 18px;
-    }
+    // @include screen('lg') {
+    //   font-size: 38px;
+    // }
+
+    // @include screen('md') {
+    //   font-size: 18px;
+    // }
   }
 
   &__image {

@@ -17,49 +17,58 @@ body {
 
 .container {
   width: $container-width;
-  padding-left: $container-padding;
-  padding-right: $container-padding;
+  // padding-left: $container-padding;
+  // padding-right: $container-padding;
   margin: 0 auto;
   box-sizing: border-box;
 
-  @include screen('lg') {
-    padding-left: 28px;
-    padding-right: 28px;
-  }
+  @include rule(padding-left, (xxl: $container-padding, xl: $container-padding, lg: 28, md: 7));
+  @include rule(padding-right, (xxl: $container-padding, xl: $container-padding, lg: 28, md: 7));
 
-  @include screen('md') {
-    padding-left: 7px;
-    padding-right: 7px;
-  }
+  // @include screen('lg') {
+  //   padding-left: 28px;
+  //   padding-right: 28px;
+  // }
+
+  // @include screen('md') {
+  //   padding-left: 7px;
+  //   padding-right: 7px;
+  // }
 
   &_inner {
-    padding-left: 160px;
-    padding-right: 160px;
+    // padding-left: 160px;
+    // padding-right: 160px;
 
-    @include screen('xl') {
-      padding-left: 100px;
-      padding-right: 100px;
-    }
+    // @include screen('xl') {
+    //   padding-left: 100px;
+    //   padding-right: 100px;
+    // }
 
-    @include screen('lg') {
-      padding-left: 75px;
-      padding-right: 75px;
-    }
+    // @include screen('lg') {
+    //   padding-left: 75px;
+    //   padding-right: 75px;
+    // }
 
-    @include screen('md') {
-      padding-left: 25px;
-      padding-right: 25px;
-    }
+    // @include screen('md') {
+    //   padding-left: 25px;
+    //   padding-right: 25px;
+    // }
+
+    @include rule(padding-left, (xxl: 160, xl: 100, lg: 75, md: 25));
+    @include rule(padding-right, (xxl: 160, xl: 100, lg: 75, md: 25));
   }
 
   &_main {
-    padding-left: 100px;
-    padding-right: 100px;
+    // padding-left: 100px;
+    // padding-right: 100px;
 
-    @include screen('sm') {
-      padding-left: 23px;
-      padding-right: 23px;
-    }
+    // @include screen('sm') {
+    //   padding-left: 23px;
+    //   padding-right: 23px;
+    // }
+
+    @include rule(padding-left, (xxl: 100, xl: 100, lg: 100, md: 23));
+    @include rule(padding-right, (xxl: 100, xl: 100, lg: 100, md: 23));
   }
 
   &_flex {
@@ -68,99 +77,111 @@ body {
   }
 
   &_index {
-    padding-left: 100px;
-    padding-right: 100px;
+    // padding-left: 100px;
+    // padding-right: 100px;
 
-    @include screen('md') {
-      padding-left: 23px;
-      padding-right: 23px;
-    }
+    // @include screen('md') {
+    //   padding-left: 23px;
+    //   padding-right: 23px;
+    // }
+
+    @include rule(padding-left, (xxl: 100, xl: 100, lg: 100, md: 23));
+    @include rule(padding-right, (xxl: 100, xl: 100, lg: 100, md: 23));
   }
 
   &_about {
-    padding-left: 190px;
-    padding-right: 190px;
+    // padding-left: 190px;
+    // padding-right: 190px;
 
-    @include screen('lg') {
-      padding-left: 100px;
-      padding-right: 100px;
-    }
+    // @include screen('lg') {
+    //   padding-left: 100px;
+    //   padding-right: 100px;
+    // }
 
-    @include screen('md') {
-      padding-left: 23px;
-      padding-right: 23px;
-    }
+    // @include screen('md') {
+    //   padding-left: 23px;
+    //   padding-right: 23px;
+    // }
+
+    @include rule(padding-left, (xxl: 190, xl: 190, lg: 100, md: 23));
+    @include rule(padding-right, (xxl: 190, xl: 190, lg: 100, md: 23));
   }
 
   &_services {
-    padding-left: 332px;
-    padding-right: 190px;
+    // padding-left: 332px;
+    // padding-right: 190px;
 
-    @include screen('xl') {
-      padding-left: 244px;
-      padding-right: 100px;
-    }
+    // @include screen('xl') {
+    //   padding-left: 244px;
+    //   padding-right: 100px;
+    // }
 
-    @include screen('lg') {
-      padding-left: 160px;
-    }
+    // @include screen('lg') {
+    //   padding-left: 160px;
+    // }
 
-    @include screen('md') {
-      padding-left: 23px;
-      padding-right: 23px;
-    }
+    // @include screen('md') {
+    //   padding-left: 23px;
+    //   padding-right: 23px;
+    // }
+
+    @include rule(padding-left, (xxl: 332, xl: 244, lg: 160, md: 23));
+    @include rule(padding-right, (xxl: 190, xl: 100, lg: 100, md: 23));
 
     &_sp {
-      padding-left: 190px;
-      padding-right: 150px;
+      // padding-left: 190px;
+      // padding-right: 150px;
 
-      @include screen('xl') {
-        padding-left: 150px;
-        padding-right: 100px;
-      }
+      // @include screen('xl') {
+      //   padding-left: 150px;
+      //   padding-right: 100px;
+      // }
 
-      @include screen('lg') {
-        padding-left: 100px;
-      }
+      // @include screen('lg') {
+      //   padding-left: 100px;
+      // }
 
-      @include screen('md') {
-        padding-left: 23px;
-        padding-right: 23px;
-      }
+      // @include screen('md') {
+      //   padding-left: 23px;
+      //   padding-right: 23px;
+      // }
+
+      @include rule(padding-left, (xxl: 190, xl: 150, lg: 100, md: 23));
+      @include rule(padding-right, (xxl: 150, xl: 100, lg: 100, md: 23));
     }
   }
 
   &_media {
-    padding-left: 190px;
-    padding-right: 190px;
-
-    @include screen('xl') {
-      padding-left: 100px;
-      padding-right: 100px;
-    }
-
-    @include screen('md') {
-      padding-left: 0;
-      padding-right: 0;
-    }
-  }
-
-  &_portfolio {
-    // padding-left: 285px;
-    // padding-right: 285px;
-    padding-left: 100px;
-    padding-right: 100px;
-    max-width: 1552px;
+    // padding-left: 190px;
+    // padding-right: 190px;
 
     // @include screen('xl') {
     //   padding-left: 100px;
     //   padding-right: 100px;
     // }
 
-    @include screen('md') {
-      padding-left: 23px;
-      padding-right: 23px;
-    }
+    // @include screen('md') {
+    //   padding-left: 0;
+    //   padding-right: 0;
+    // }
+
+    @include rule(padding-left, (xxl: 190, xl: 100, lg: 100, md: 0));
+    @include rule(padding-right, (xxl: 190, xl: 100, lg: 100, md: 0));
+  }
+
+  &_portfolio {
+    // padding-left: 100px;
+    // padding-right: 100px;
+    // max-width: 1552px;
+
+    // @include screen('md') {
+    //   padding-left: 23px;
+    //   padding-right: 23px;
+    // }
+
+    @include rule(padding-left, (xxl: 100, xl: 100, lg: 100, md: 23));
+    @include rule(padding-right, (xxl: 100, xl: 100, lg: 100, md: 23));
+    @include rule(max-width, (xxl: 1552, xl: 1552, lg: 1552, md: 1552));
   }
 }
 

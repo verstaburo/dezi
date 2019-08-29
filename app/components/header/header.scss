@@ -17,11 +17,12 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 130px;
     background-color: $color-black;
     transition: transform $ease-main;
     transform-origin: 50% 0 0;
     transform: scaleY(0);
+
+    @include rule(height, (xxl: 130, xl: 130, lg: 130));
 
     @include screen('md') {
       height: 100%;
@@ -40,17 +41,20 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    padding-top: 45px;
+    // padding-top: 45px;
     width: 100%;
     transition: color $ease-main, height $ease-main;
     z-index: 2;
-    height: 124px;
+    // height: 124px;
     box-sizing: border-box;
 
-    @include screen('md') {
-      padding-top: 22px;
-      height: 72px;
-    }
+    @include rule(padding-top, (xxl: 45, xl: 45, lg: 45, md: 22));
+    @include rule(height, (xxl: 124, xl: 124, lg: 124, md: 72));
+
+    // @include screen('md') {
+    //   padding-top: 22px;
+    //   height: 72px;
+    // }
 
     #{$b}.is-open & {
       color: $color-basic;
@@ -62,7 +66,9 @@
     width: 100%;
     flex: 1;
     box-sizing: border-box;
-    padding-bottom: 45px;
+    // padding-bottom: 45px;
+
+    @include rule(padding-bottom, (xxl: 45, xl: 45, lg: 45, md: 45));
 
     @include screen('md') {
       display: none;
@@ -74,25 +80,46 @@
     flex-direction: column;
     justify-content: space-between;
     pointer-events: auto;
-    transform: translate3d(-10px, 0, 0);
-    margin-top: -4px;
+    // transform: translate3d(-10px, 0, 0);
+    // margin-top: -4px;
     padding-top: 0;
-    width: 20px;
+    // width: 20px;
     transition: padding-top $ease-main;
+    transform: translate3d(-.52vw, 0, 0);
+
+    @include rule(width, (xxl: 20, xl: 20, lg: 20, md: 20));
+    @include rule(margin-top, (xxl: -4, xl: -4, lg: -4, md: -4));
+
+    @include screen('xl') {
+      transform: translate3d(-.73vw, 0, 0);
+    }
+
+    @include screen('lg') {
+      transform: translate3d(-.98vw, 0, 0);
+    }
+
+    @include screen('md') {
+      transform: translate3d(-3.125vw, 0, 0);
+    }
 
     #{$b}.is-open & {
-      padding-top: 20px;
+      // padding-top: 20px;
+      @include rule(padding-top, (xxl: 20, xl: 20, lg: 20, md: 20));
     }
   }
 
   &__right {
     pointer-events: auto;
-    margin-top: -4px;
+    // margin-top: -4px;
     padding-top: 0;
     transition: padding-top $ease-main;
 
+    @include rule(margin-top, (xxl: -4, xl: -4, lg: -4, md: -4));
+
     #{$b}.is-open & {
-      padding-top: 20px;
+      // padding-top: 20px;
+
+      @include rule(padding-top, (xxl: 20, xl: 20, lg: 20, md: 20));
     }
   }
 
@@ -101,22 +128,27 @@
     justify-content: space-between;
     width: 100%;
     box-sizing: border-box;
-    padding: 0 46px;
+    padding: 0;
+    // padding: 0 46px;
+    @include rule(padding-left, (xxl: 46, xl: 46, lg: 46, md: 25));
+    @include rule(padding-right, (xxl: 46, xl: 46, lg: 46, md: 25));
 
-    @include screen('md') {
-      padding: 0 25px;
-    }
+    // @include screen('md') {
+    //   padding: 0 25px;
+    // }
   }
 
   &__logo {
     display: block;
     align-self: center;
-    width: 54px;
+    // width: 54px;
     pointer-events: auto;
 
-    @include screen('md') {
-      width: 40px;
-    }
+    @include rule(width, (xxl: 54, xl: 54, lg: 54, md: 40));
+
+    // @include screen('md') {
+    //   width: 40px;
+    // }
   }
 
   &__titles {
@@ -124,12 +156,14 @@
     justify-content: center;
     position: relative;
     flex: 1;
-    margin-bottom: 34px;
+    // margin-bottom: 34px;
+
+    @include rule(margin-bottom, (xxl: 34, xl: 34, lg: 34, md: 34));
   }
 
   &__burger {
-    width: 54px;
-    height: 30px;
+    // width: 54px;
+    // height: 30px;
     position: relative;
     display: block;
     text-align: left;
@@ -137,10 +171,13 @@
     align-self: center;
     pointer-events: auto;
 
-    @include screen('md') {
-      width: 40px;
-      height: 20px;
-    }
+    @include rule(width, (xxl: 54, xl: 54, lg: 54, md: 40));
+    @include rule(height, (xxl: 30, xl: 30, lg: 30, md: 20));
+
+    // @include screen('md') {
+    //   width: 40px;
+    //   height: 20px;
+    // }
 
     &:hover {
       opacity: .6;
@@ -150,31 +187,38 @@
       position: absolute;
       display: inline-block;
       right: 0;
-      top: -2px;
-      width: 30px;
-      height: 30px;
+      // top: -2px;
+      // width: 30px;
+      // height: 30px;
       transition: top $ease-main;
 
-      @include screen('md') {
-        width: 21px;
-        height: 21px;
-      }
+      @include rule(top, (xxl: -2, xl: -2, lg: -2, md: -2));
+      @include rule(width, (xxl: 30, xl: 30, lg: 30, md: 21));
+      @include rule(height, (xxl: 30, xl: 30, lg: 30, md: 21));
+
+      // @include screen('md') {
+      //   width: 21px;
+      //   height: 21px;
+      // }
 
       #{$b}.is-open & {
-        top: 2px;
+        @include rule(top, (xxl: 2, xl: 2, lg: 2, md: 2));
+        // top: 2px;
       }
 
       &::before,&::after {
         @include pseudo;
 
         top: 0;
-        width: 4px;
+        // width: 4px;
         background-color: currentColor;
         transition: background $ease-main, height $ease-main, transform $ease-main, right $ease-main;
 
-        @include screen('md') {
-          width: 3px;
-        }
+        @include rule(width, (xxl: 4, xl: 4, lg: 4, md: 3));
+
+        // @include screen('md') {
+        //   width: 3px;
+        // }
 
         #{$b}.is-open & {
           background-color: $color-basic;
@@ -184,42 +228,68 @@
       &::before {
         transform-origin: 100% 0 0;
         right: 0;
-        height: 38px;
+        // height: 38px;
 
-        @include screen('md') {
-          height: 27px;
-        }
+        @include rule(height, (xxl: 38, xl: 38, lg: 38, md: 27));
+
+        // @include screen('md') {
+        //   height: 27px;
+        // }
 
         #{$b}.is-open & {
           // right: -7px;
-          transform: translate3d(7px, 0, 0) rotate(45deg);
+          transform: translate3d(.36vw, 0, 0) rotate(45deg);
+
+          @include screen('xl') {
+            transform: translate3d(.51vw, 0, 0) rotate(45deg);
+          }
+
+          @include screen('lg') {
+            transform: translate3d(.68vw, 0, 0) rotate(45deg);
+          }
 
           @include screen('md') {
-            transform: translate3d(5px, 0, 0) rotate(45deg);
+            transform: translate3d(1.56vw, 0, 0) rotate(45deg);
           }
         }
       }
 
       &::after {
         transform-origin: 0 0 0;
-        right: 12px;
-        height: 25px;
+        // right: 12px;
+        // height: 25px;
 
-        @include screen('md') {
-          right: 8px;
-          height: 17px;
-        }
+        @include rule(height, (xxl: 25, xl: 25, lg: 25, md: 17));
+        @include rule(right, (xxl: 12, xl: 12, lg: 12, md: 8));
+
+        // @include screen('md') {
+        //   right: 8px;
+        //   height: 17px;
+        // }
 
         #{$b}.is-open & {
-          transform: translate3d(-7px, 0, 0) rotate(-45deg);
+          transform: translate3d(-.36vw, 0, 0) rotate(-45deg);
           // right: 19px;
-          height: 38px;
+          // height: 38px;
+          @include rule(height, (xxl: 38, xl: 38, lg: 38, md: 27));
+
+          @include screen('xl') {
+            transform: translate3d(-.51vw, 0, 0) rotate(-45deg);
+          }
+
+          @include screen('lg') {
+            transform: translate3d(-.68vw, 0, 0) rotate(-45deg);
+          }
 
           @include screen('md') {
-            transform: translate3d(-5px, 0, 0) rotate(-45deg);
-            // right: 12px;
-            height: 27px;
+            transform: translate3d(-1.56vw, 0, 0) rotate(-45deg);
           }
+
+          // @include screen('md') {
+          //   transform: translate3d(-5px, 0, 0) rotate(-45deg);
+          //   // right: 12px;
+          //   // height: 27px;
+          // }
         }
       }
     }
@@ -230,7 +300,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 124px;
+    // height: 124px;
     display: flex;
     visibility: hidden;
     pointer-events: none;
@@ -238,15 +308,17 @@
     transition: opacity $ease-main;
     // padding: 0 4.6vw;
     box-sizing: border-box;
+    padding: 0;
 
-    @include screen('xl') {
-      padding: 0;
-    }
+    @include rule(height, (xxl: 124, xl: 124, lg: 124));
+    @include rule(padding-top, (md: 80));
+    @include rule(padding-bottom, (md: 80));
 
     @include screen('md') {
-      padding-top: 80px;
-      padding-bottom: 80px;
+      // padding-top: 80px;
+      // padding-bottom: 80px;
       height: 100%;
+      max-height: 100%;
     }
 
     #{$b}.is-open & {
@@ -263,14 +335,16 @@
 
   &__languages {
     box-sizing: border-box;
-    padding-top: 18px;
+    // padding-top: 18px;
+    @include rule(padding-top, (xxl: 18, xl: 18, lg: 18, md: 18));
 
     .link {
       color: currentColor;
     }
 
     &:not(:last-child) {
-      margin-bottom: 74px;
+      // margin-bottom: 74px;
+      @include rule(margin-bottom, (xxl: 74, xl: 74, lg: 74, md: 74));
     }
   }
 

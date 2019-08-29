@@ -60,9 +60,11 @@ html,body {
 body {
   background-color: $color-main-bg;
   font-family: $font-site; // Задаем основной шрифт
-  font-size: $fz16; // Убираем проблему с отступами между inline-элементами
+  // font-size: $fz16; // Убираем проблему с отступами между inline-элементами
   color: $color-text;
   line-height: $lh-default;
+
+  @include rule(font-size, (xxl: $fz16, xl: $fz16, lg: $fz16, md: $fz16));
 
   &.is-dark {
     background-color: $color-titles;

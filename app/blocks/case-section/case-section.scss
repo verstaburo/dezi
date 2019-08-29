@@ -4,20 +4,22 @@
   display: block;
   width: 100%;
   box-sizing: border-box;
-  font-size: 20px;
+  // font-size: 20px;
   line-height: 1.2;
   font-weight: 100;
 
-  @include screen('lg') {
-    font-size: 21px;
-  }
+  // @include screen('lg') {
+  //   font-size: 21px;
+  // }
 
-  @include screen('md') {
-    font-size: 15px;
-  }
+  // @include screen('md') {
+  //   font-size: 15px;
+  // }
+
+  @include rule(font-size, (xxl: 20, xl: 20, lg: 21, md: 15));
 
   &__heading {
-    font-size: 40px;
+    // font-size: 40px;
     line-height: 1.2;
     width: 100%;
     font-family: $font-4;
@@ -26,20 +28,23 @@
     color: $color-basic;
 
     @include screen('md') {
-      font-size: 30px;
+      // font-size: 30px;
       letter-spacing: -.02em;
     }
 
+    @include rule(font-size, (xxl: 40, xl: 40, lg: 40, md: 30));
+
     &:not(:last-child) {
-      margin-bottom: 44px;
+      // margin-bottom: 44px;
 
-      @include screen('lg') {
-        margin-bottom: 34px;
-      }
+      // @include screen('lg') {
+      //   margin-bottom: 34px;
+      // }
 
-      @include screen('md') {
-        margin-bottom: 20px;
-      }
+      // @include screen('md') {
+      //   margin-bottom: 20px;
+      // }
+      @include rule(margin-bottom, (xxl: 44, xl: 44, lg: 34, md: 20));
     }
   }
 
