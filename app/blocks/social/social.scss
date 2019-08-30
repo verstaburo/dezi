@@ -2,12 +2,15 @@
   $b: &;
 
   display: block;
-  width: 20px;
-  height: 20px;
+  // width: 20px;
+  // height: 20px;
   color: $color-black;
   transition: opacity $ease-main, color $ease-main;
   font-size: 0;
   line-height: 0;
+
+  @include rule(width, (xxl: 20, xl: 20, lg: 20, md: 20));
+  @include rule(height, (xxl: 20, xl: 20, lg: 20, md: 20));
 
   &__icon {
     width: 100%;

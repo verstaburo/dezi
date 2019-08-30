@@ -2,47 +2,54 @@
   display: block;
   box-sizing: border-box;
   width: 100%;
-  padding-top: 102px;
+  // padding-top: 102px;
+  @include rule(margin-bottom, (xxl: -1, xl: -1, lg: -1, md: -1));
   $b: &;
 
-  @include screen('xl') {
-    padding-top: 65px;
-  }
+  @include rule(padding-top, (xxl: 102, xl: 65, lg: 45, md: 85));
 
-  @include screen('lg') {
-    padding-top: 45px;
-  }
+  // @include screen('xl') {
+  //   padding-top: 65px;
+  // }
 
-  @include screen('md') {
-    padding-top: 85px;
-  }
+  // @include screen('lg') {
+  //   padding-top: 45px;
+  // }
+
+  // @include screen('md') {
+  //   padding-top: 85px;
+  // }
 
   &__logo {
     display: block;
     margin: 0 auto;
-    width: 323px;
-    height: 43px;
+    // width: 323px;
+    // height: 43px;
     fill: url('#agrosync');
 
-    @include screen('lg') {
-      width: 221px;
-      height: 29px;
-    }
+    @include rule(width, (xxl: 323, xl: 323, lg: 221, md: 221));
+    @include rule(height, (xxl: 43, xl: 43, lg: 29, md: 29));
+
+    // @include screen('lg') {
+    //   width: 221px;
+    //   height: 29px;
+    // }
 
     @include screen('md') {
       display: none;
     }
 
     &:not(:last-child) {
-      margin-bottom: 72px;
+      // margin-bottom: 72px;
+      @include rule(margin-bottom, (xxl: 72, xl: 54, lg: 80, md: 80));
 
-      @include screen('xl') {
-        margin-bottom: 54px;
-      }
+      // @include screen('xl') {
+      //   margin-bottom: 54px;
+      // }
 
-      @include screen('lg') {
-        margin-bottom: 80px;
-      }
+      // @include screen('lg') {
+      //   margin-bottom: 80px;
+      // }
     }
   }
 
@@ -51,15 +58,16 @@
     &__content {
 
       .portfolio-section__title {
-        max-width: 420px;
+        // max-width: 420px;
+        @include rule(max-width, (xxl: 420, xl: 300, lg: 210));
 
-        @include screen('xl') {
-          max-width: 300px;
-        }
+        // @include screen('xl') {
+        //   max-width: 300px;
+        // }
 
-        @include screen('lg') {
-          max-width: 210px;
-        }
+        // @include screen('lg') {
+        //   max-width: 210px;
+        // }
 
         @include screen('md') {
           max-width: none;
@@ -67,15 +75,17 @@
       }
 
       .portfolio-section__text {
-        max-width: 420px;
+        // max-width: 420px;
 
-        @include screen('xl') {
-          max-width: 440px;
-        }
+        @include rule(max-width, (xxl: 420, xl: 440, lg: 310));
 
-        @include screen('lg') {
-          max-width: 310px;
-        }
+        // @include screen('xl') {
+        //   max-width: 440px;
+        // }
+
+        // @include screen('lg') {
+        //   max-width: 310px;
+        // }
 
         @include screen('md') {
           max-width: none;

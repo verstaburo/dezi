@@ -42,17 +42,20 @@
   &__button {
     position: absolute;
     cursor: pointer;
-    width: 176px;
-    height: 176px;
-    top: calc(50% + 80px);
+    // width: 176px;
+    // height: 176px;
+    top: calc(50% + ((80 / 1920) * 100vw));
     left: 28.5%;
     z-index: 4;
     border-radius: 50%;
     transition: background-color $ease-main;
     transform: translate3d(0, -50%, 0);
 
+    @include rule(width, (xxl: 176, xl: 176, lg: 176, md: 176));
+    @include rule(height, (xxl: 176, xl: 176, lg: 176, md: 176));
+
     @include screen('xl') {
-      top: calc(50% + 112px);
+      top: calc(50% + ((112 / 1366) * 100vw));
       left: 27.8%;
     }
 
@@ -63,14 +66,23 @@
 
   &__border {
     position: absolute;
-    top: 2px;
-    left: 2px;
-    stroke-width: 2px;
+    // top: 2px;
+    // left: 2px;
+    // stroke-width: 2px;
     stroke: url('#buttons');
     stroke-dasharray: 540;
     fill: none;
-    width: calc(100% - 4px);
-    height: calc(100% - 4px);
+    width: calc(100% - ((4 / 1920) * 100vw));
+    height: calc(100% - ((4 / 1920) * 100vw));
+
+    @include rule(top, (xxl: 2, xl: 2, lg: 2, md: 2));
+    @include rule(left, (xxl: 2, xl: 2, lg: 2, md: 2));
+    @include rule(stroke-width, (xxl: 2, xl: 2, lg: 2, md: 2));
+
+    @include screen('xl') {
+      width: calc(100% - ((4 / 1366) * 100vw));
+      height: calc(100% - ((4 / 1366) * 100vw));
+    }
 
     #{$b}__button.is-animated & {
       animation: dash 4s linear forwards;
@@ -80,11 +92,18 @@
   &__icon {
     position: absolute;
     top: 50%;
-    left: calc(50% + 5px);
+    left: calc(50% + ((5 / 1920) * 100vw));
     transform: translate3d(-50%, -50%, 0);
     fill: $color-black;
     opacity: .46;
-    width: 54px;
-    height: 48px;
+    // width: 54px;
+    // height: 48px;
+
+    @include rule(width, (xxl: 54, xl: 54, lg: 54, md: 54));
+    @include rule(height, (xxl: 48, xl: 48, lg: 48, md: 48));
+
+    @include screen('xl') {
+      left: calc(50% + ((5 / 1366) * 100vw));
+    }
   }
 }

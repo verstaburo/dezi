@@ -2,48 +2,53 @@
   display: block;
   box-sizing: border-box;
   width: 100%;
-  padding-top: 103px;
+  // padding-top: 103px;
+  @include rule(margin-bottom, (xxl: -1, xl: -1, lg: -1, md: -1));
   $b: &;
 
-  @include screen('xl') {
-    padding-top: 82px;
-  }
+  @include rule(padding-top, (xxl: 103, xl: 82, lg: 80, md: 85));
 
-  @include screen('lg') {
-    padding-top: 80px;
-  }
+  // @include screen('xl') {
+  //   padding-top: 82px;
+  // }
 
-  @include screen('md') {
-    padding-top: 85px;
-  }
+  // @include screen('lg') {
+  //   padding-top: 80px;
+  // }
+
+  // @include screen('md') {
+  //   padding-top: 85px;
+  // }
 
   .portfolio-section {
     &__content {
-      padding-bottom: 154px;
+      // padding-bottom: 154px;
+      @include rule(padding-bottom, (xxl: 154, xl: 110, lg: 55, md: 44));
 
-      @include screen('xl') {
-        padding-bottom: 110px;
-      }
+      // @include screen('xl') {
+      //   padding-bottom: 110px;
+      // }
 
-      @include screen('lg') {
-        padding-bottom: 55px;
-      }
+      // @include screen('lg') {
+      //   padding-bottom: 55px;
+      // }
 
-      @include screen('md') {
-        padding-bottom: 44px;
-      }
+      // @include screen('md') {
+      //   padding-bottom: 44px;
+      // }
 
       .portfolio-section__title {
         &:not(:last-child) {
           @include screen('md') {
-            margin-bottom: 30px;
+            // margin-bottom: 30px;
+            @include rule(margin-bottom, (md: 30));
           }
         }
       }
 
       .portfolio-section__text {
         @include screen('lg') {
-          max-width: 300px;
+          max-width: calc((300 / 1024) * 100vw);
         }
 
         @include screen('md') {

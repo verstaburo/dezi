@@ -1,20 +1,24 @@
 .case-form {
   display: block;
   background-color: $color-grey-dark-2;
-  padding: 104px 0 115px;
+  padding: 0;
+  // padding: 104px 0 115px;
   font-family: $font-main;
 
-  @include screen('xl') {
-    padding-bottom: 101px;
-  }
+  @include rule(padding-top, (xxl: 104, xl: 104, lg: 78, md: 39));
+  @include rule(padding-bottom, (xxl: 115, xl: 101, lg: 76));
 
-  @include screen('lg') {
-    padding-top: 78px;
-    padding-bottom: 76px;
-  }
+  // @include screen('xl') {
+  //   padding-bottom: 101px;
+  // }
+
+  // @include screen('lg') {
+  //   padding-top: 78px;
+  //   padding-bottom: 76px;
+  // }
 
   @include screen('md') {
-    padding-top: 39px;
+    // padding-top: 39px;
     padding-bottom: 0;
   }
 
@@ -23,59 +27,68 @@
   &__heading {
     color: white;
     font-family: $font-third;
-    font-size: 35px;
+    // font-size: 35px;
     font-weight: 700;
 
-    @include screen('lg') {
-      font-size: 27px;
-    }
+    @include rule(font-size, (xxl: 35, xl: 35, lg: 27, md: 15));
 
-    @include screen('md') {
-      font-size: 15px;
-    }
+    // @include screen('lg') {
+    //   font-size: 27px;
+    // }
+
+    // @include screen('md') {
+    //   font-size: 15px;
+    // }
   }
 
   &__right {
-    margin-top: 17px;
+    // margin-top: 17px;
+
+    @include rule(margin-top, (xxl: 17, xl: 17, lg: 17, md: 40));
 
     @include screen('md') {
       background-color: black;
-      margin-top: 40px;
-      padding-left: 25px;
-      padding-right: 25px;
-      margin-left: -13px;
-      margin-right: -13px;
+      // margin-top: 40px;
+      padding-left: calc((25 / 320) * 100vw);
+      padding-right: calc((25 / 320) * 100vw);
+      margin-left: calc((-13 / 320) * 100vw);
+      margin-right: calc((-13 / 320) * 100vw);
       width: auto;
-      padding-bottom: 71px;
+      padding-bottom: calc((71 / 320) * 100vw);
       display: block;
     }
   }
 
   &__grid {
-    margin-top: 90px;
+    // margin-top: 90px;
     justify-content: space-between;
 
-    @include screen('lg') {
-      margin-top: 59px;
-    }
+    @include rule(margin-top, (xxl: 90, xl: 90, lg: 59, md: 7));
+
+    // @include screen('lg') {
+    //   margin-top: 59px;
+    // }
 
     @include screen('md') {
-      margin-top: 7px;
+      // margin-top: 7px;
       display: block;
     }
   }
 
   &__links {
-    margin-top: -20px;
+    // margin-top: -20px;
 
-    @include screen('md') {
-      margin-top: -8px;
-      margin-bottom: 54px;
-    }
+    @include rule(margin-top, (xxl: -20, xl: -20, lg: -20, md: -8));
+    @include rule(margin-bottom, (md: 54));
+
+    // @include screen('md') {
+    //   margin-top: -8px;
+    //   margin-bottom: 54px;
+    // }
   }
 
   &__text {
-    font-size: 15px;
+    // font-size: 15px;
     font-weight: 500;
     line-height: 1;
     text-transform: uppercase;
@@ -83,28 +96,31 @@
     color: $color-grey;
     text-align: left;
 
-    @include screen('lg') {
-      font-size: 11px;
-    }
+    @include rule(font-size, (xxl: 15, xl: 15, lg: 11, md: 12));
 
-    @include screen('md') {
-      font-size: 12px;
-    }
+    // @include screen('lg') {
+    //   font-size: 11px;
+    // }
+
+    // @include screen('md') {
+    //   font-size: 12px;
+    // }
 
     a {
       color: inherit;
     }
 
     &:not(:first-child) {
-      margin-top: 83px;
+      @include rule(margin-top, (xxl: 83, xl: 83, lg: 63, md: 23));
+      // margin-top: 83px;
 
-      @include screen('lg') {
-        margin-top: 63px;
-      }
+      // @include screen('lg') {
+      //   margin-top: 63px;
+      // }
 
-      @include screen('md') {
-        margin-top: 23px;
-      }
+      // @include screen('md') {
+      //   margin-top: 23px;
+      // }
     }
   }
 
@@ -120,20 +136,23 @@
     fill: $color-grey-dark-4;
     stroke: transparent;
     display: inline-flex;
-    margin-top: 20px;
+    // margin-top: 20px;
     align-items: center;
+
+    @include rule(margin-top, (xxl: 20, xl: 20, lg: 20, md: 33));
 
     @include screen('md') {
       width: 100%;
-      margin-top: 33px;
+      // margin-top: 33px;
     }
 
     &:not(:last-child) {
-      margin-right: 56px;
+      // margin-right: 56px;
+      @include rule(margin-right, (xxl: 56, xl: 56, lg: 40, md: 40));
 
-      @include screen('lg') {
-        margin-right: 40px;
-      }
+      // @include screen('lg') {
+      //   margin-right: 40px;
+      // }
     }
 
     &_stroke {
@@ -143,33 +162,38 @@
   }
 
   &__icon {
-    height: 17px;
-    width: 17px;
-    margin-right: 10px;
+    // height: 17px;
+    // width: 17px;
+    // margin-right: 10px;
     flex-shrink: 0;
 
-    @include screen('lg') {
-      width: 13px;
-      height: 13px;
-      margin-right: 9px;
-    }
+    @include rule(width, (xxl: 17, xl: 17, lg: 13, md: 20));
+    @include rule(height, (xxl: 17, xl: 17, lg: 13, md: 20));
+    @include rule(margin-right, (xxl: 10, xl: 10, lg: 9, md: 20));
 
-    @include screen('md') {
-      width: 19px;
-      height: 20px;
-      margin-right: 20px;
-    }
+    // @include screen('lg') {
+    //   width: 13px;
+    //   height: 13px;
+    //   margin-right: 9px;
+    // }
+
+    // @include screen('md') {
+    //   width: 19px;
+    //   height: 20px;
+    //   margin-right: 20px;
+    // }
 
     #{$b}__link_behance & {
-      width: 24px;
+      @include rule(width, (xxl: 24, xl: 24, lg: 18, md: 20));
+      // width: 24px;
 
-      @include screen('lg') {
-        width: 18px;
-      }
+      // @include screen('lg') {
+      //   width: 18px;
+      // }
 
-      @include screen('md') {
-        width: 19px;
-      }
+      // @include screen('md') {
+      //   width: 19px;
+      // }
     }
   }
 }

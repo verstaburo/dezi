@@ -19,20 +19,23 @@
   }
 
   &__title {
-    font-size: $fz35;
+    // font-size: $fz35;
     font-weight: 700;
     color: currentColor;
     line-height: $lh-default;
-    margin-bottom: 100px;
+    // margin-bottom: 100px;
 
-    @include screen('lg') {
-      margin-bottom: 104px;
-    }
+    @include rule(font-size, (xxl: $fz35, xl: $fz35, lg: $fz35, md: $fz-md-title));
+    @include rule(margin-bottom, (xxl: 100, xl: 100, lg: 104, md: 43));
+
+    // @include screen('lg') {
+    //   margin-bottom: 104px;
+    // }
 
     @include screen('md') {
-      font-size: $fz-md-title;
+      // font-size: $fz-md-title;
       letter-spacing: -$ls-main;
-      margin-bottom: 43px;
+      // margin-bottom: 43px;
     }
   }
 
@@ -46,60 +49,58 @@
 
   &__form {
     width: 52.1%;
-    margin-right: 50px;
+    margin-right: calc((50 / 1920) * 100vw);
+
+    @include rule(margin-bottom, (xl: 92, lg: 94, md: 46));
 
     @include screen('xl') {
       margin-right: 0;
       width: 74.2%;
-      margin-bottom: 92px;
+      // margin-bottom: 92px;
     }
 
     @include screen('lg') {
       width: 90.5%;
-      margin-bottom: 94px;
+      // margin-bottom: 94px;
     }
 
     @include screen('md') {
-      margin-bottom: 46px;
+      // margin-bottom: 46px;
       width: 100%;
     }
   }
 
   .form {
     &__button {
-      min-width: 338px;
+      // min-width: 338px;
+      @include rule(min-width, (xxl: 338, xl: 338, lg: 338));
+      @include rule(margin-top, (lg: 63, md: 35));
 
-      @include screen('lg') {
-        margin-top: 63px;
-      }
+      // @include screen('lg') {
+      //   // margin-top: 63px;
+      // }
 
       @include screen('md') {
-        margin-top: 35px;
+        // margin-top: 35px;
         min-width: 0;
       }
     }
   }
 
   .inputbox + .inputbox {
-    margin-top: 61px;
-
-    @include screen('lg') {
-      margin-top: 63px;
-    }
-
-    @include screen('md') {
-      margin-top: 26px;
-    }
+    @include rule(margin-top, (xxl: 61, xl: 61, lg: 63, md: 26));
   }
 
   &__links {
     display: block;
     box-sizing: border-box;
-    padding-top: 17px;
+    // padding-top: 17px;
     width: 37%;
 
+    @include rule(padding-top, (xxl: 17, xl: 14, lg: 14));
+
     @include screen('xl') {
-      padding-top: 14px;
+      // padding-top: 14px;
       width: 100%;
     }
 
@@ -110,43 +111,48 @@
 
   &__line {
     width: 100%;
-    font-size: $fz15;
+    // font-size: $fz15;
     letter-spacing: $ls-form-link;
 
-    @include screen('md') {
-      font-size: $fz12;
-    }
+    @include rule(font-size, (xxl: $fz15, xl: $fz15, lg: $fz15, md: $fz12));
+
+    // @include screen('md') {
+    //   font-size: $fz12;
+    // }
 
     &:not(:last-child) {
-      margin-bottom: 78px;
+      @include rule(margin-bottom, (xxl: 78, xl: 80, lg: 83, md: 21));
+      // margin-bottom: 78px;
 
-      @include screen('xl') {
-        margin-bottom: 80px;
-      }
+      // @include screen('xl') {
+      //   margin-bottom: 80px;
+      // }
 
-      @include screen('lg') {
-        margin-bottom: 83px;
-      }
+      // @include screen('lg') {
+      //   margin-bottom: 83px;
+      // }
 
-      @include screen('md') {
-        margin-bottom: 21px;
-      }
+      // @include screen('md') {
+      //   margin-bottom: 21px;
+      // }
     }
 
     .socials {
       @include screen('md') {
-        margin-bottom: 49px;
+        margin-bottom: calc((49 / 320) * 100vw);
       }
     }
   }
 
   &__link {
     color: currentColor;
-    font-size: $fz15;
+    // font-size: $fz15;
     letter-spacing: $ls-header;
 
+    @include rule(font-size, (xxl: $fz15, xl: $fz15, lg: $fz15, md: $fz12));
+
     @include screen('md') {
-      font-size: $fz12;
+      // font-size: $fz12;
       line-height: 1.35;
     }
   }
@@ -156,15 +162,16 @@
       &__title {
         opacity: 0;
         visibility: visible;
-        margin-bottom: 116px;
+        // margin-bottom: 116px;
+        @include rule(margin-bottom, (xxl: 116, xl: 116, lg: 104, md: 43));
 
-        @include screen('lg') {
-          margin-bottom: 104px;
-        }
+        // @include screen('lg') {
+        //   margin-bottom: 104px;
+        // }
 
-        @include screen('md') {
-          margin-bottom: 43px;
-        }
+        // @include screen('md') {
+        //   margin-bottom: 43px;
+        // }
 
         .popup.is-animate & {
           animation: fadeIn 1s cubic-bezier(.77, 0, .175, 1);
@@ -225,15 +232,16 @@
     }
 
     .form__button {
-      margin-top: 114px;
+      // margin-top: 114px;
+      @include rule(margin-top, (xxl: 114, xl: 114, lg: 63, md: 35));
 
-      @include screen('lg') {
-        margin-top: 63px;
-      }
+      // @include screen('lg') {
+      //   margin-top: 63px;
+      // }
 
-      @include screen('md') {
-        margin-top: 35px;
-      }
+      // @include screen('md') {
+      //   margin-top: 35px;
+      // }
     }
   }
 }

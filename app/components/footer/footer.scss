@@ -1,20 +1,24 @@
 .footer {
   display: block;
   background-color: $color-grey-dark-2;
-  padding: 71px 0;
+  padding: 0;
+  // padding: 71px 0;
   $b: &;
 
-  @include screen('xl') {
-    padding: 40px 0;
-  }
+  @include rule(padding-top, (xxl: 71, xl: 40, lg: 30, md: 31));
+  @include rule(padding-bottom, (xxl: 71, xl: 40, lg: 30, md: 31));
 
-  @include screen('lg') {
-    padding: 30px 0;
-  }
+  // @include screen('xl') {
+  //   padding: 40px 0;
+  // }
 
-  @include screen('md') {
-    padding: 31px 0;
-  }
+  // @include screen('lg') {
+  //   padding: 30px 0;
+  // }
+
+  // @include screen('md') {
+  //   padding: 31px 0;
+  // }
 
   &__container {
     display: flex;
@@ -26,34 +30,39 @@
     fill: white;
 
     svg {
-      width: 29px;
-      height: 36px;
+      // width: 29px;
+      // height: 36px;
 
-      @include screen('lg') {
-        width: 22px;
-        height: 27px;
-      }
+      @include rule(width, (xxl: 29, xl: 29, lg: 22, md: 11));
+      @include rule(height, (xxl: 36, xl: 36, lg: 27, md: 14));
 
-      @include screen('md') {
-        width: 11px;
-        height: 14px;
-      }
+      // @include screen('lg') {
+      //   width: 22px;
+      //   height: 27px;
+      // }
+
+      // @include screen('md') {
+      //   width: 11px;
+      //   height: 14px;
+      // }
     }
   }
 
   &__copyright {
     font-family: $font-second;
-    font-size: 11px;
+    // font-size: 11px;
     font-weight: 300;
     text-transform: uppercase;
     letter-spacing: 1.5em;
 
-    @include screen('lg') {
-      font-size: 8px;
-    }
+    @include rule(font-size, (xxl: 11, xl: 11, lg: 8, md: 4));
 
-    @include screen('md') {
-      font-size: 4px;
-    }
+    // @include screen('lg') {
+    //   font-size: 8px;
+    // }
+
+    // @include screen('md') {
+    //   font-size: 4px;
+    // }
   }
 }

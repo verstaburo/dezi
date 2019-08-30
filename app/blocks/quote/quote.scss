@@ -3,7 +3,7 @@
   display: flex;
   justify-content: flex-start;
   box-sizing: border-box;
-  padding-left: 144px;
+  padding-left: calc((144 / 1920) * 100vw);
   $b: &;
 
   @include screen('xl') {
@@ -15,21 +15,22 @@
   }
 
   &:not(:last-child) {
-    margin-bottom: 265px;
+    // margin-bottom: 265px;
+    @include rule(margin-bottom, (xxl: 265, xl: 218, lg: 218, md: 106));
 
-    @include screen('xl') {
-      margin-bottom: 218px;
-    }
+    // @include screen('xl') {
+    //   margin-bottom: 218px;
+    // }
 
-    @include screen('md') {
-      margin-bottom: 106px;
-    }
+    // @include screen('md') {
+    //   margin-bottom: 106px;
+    // }
   }
 
   &::before {
     position: absolute;
     display: block;
-    font-size: $fz116;
+    // font-size: $fz116;
     color: $color-grey-2;
     letter-spacing: -$ls-main;
     font-weight: 700;
@@ -38,9 +39,11 @@
     transform: rotate(-90deg);
     z-index: 2;
 
-    @include screen('md') {
-      font-size: $fz58;
-    }
+    @include rule(font-size, (xxl: $fz116, xl: $fz116, lg: $fz116, md: $fz58));
+
+    // @include screen('md') {
+    //   font-size: $fz58;
+    // }
   }
 
   &.is-animate::before {
@@ -51,7 +54,7 @@
 
   &_brede {
     @include screen('xl') {
-      padding-left: 100px;
+      padding-left: calc((100 / 1366) * 100vw);
     }
 
     @include screen('lg') {
@@ -59,23 +62,25 @@
     }
 
     &::before {
-      bottom: calc(100% + 23px);
-      right: 138px;
+      bottom: calc(100% + ((23 / 1920) * 100vw));
+      // right: 138px;
       content: 'b';
 
+      @include rule(right, (xxl: 138, xl: 0, lg: -118, md: -30));
+
       @include screen('xl') {
-        bottom: calc(100% - 28px);
+        bottom: calc(100% - ((28 / 1366) * 100vw));
         right: 0;
       }
 
       @include screen('lg') {
-        bottom: calc(100% - 17px);
-        right: -118px;
+        bottom: calc(100% - ((17 / 1024) * 100vw));
+        // right: -118px;
       }
 
       @include screen('md') {
-        bottom: calc(100% + 10px);
-        right: -30px;
+        bottom: calc(100% + ((10 / 320) * 100vw));
+        // right: -30px;
       }
     }
   }
@@ -93,23 +98,26 @@
 
     &::before {
       content: 's';
-      top: -77px;
-      left: calc(100% + 129px);
+      // top: -77px;
+      left: calc(100% + ((129 / 1920) * 100vw));
       transform: rotate(90deg);
 
       @include screen('xl') {
-        left: calc(100% + 34px);
+        left: calc(100% + ((34 / 1366) * 100vw));
       }
 
-      @include screen('lg') {
-        left: -113px;
-        top: -67px;
-      }
+      @include rule(top, (xxl: -77, xl: -77, lg: -67, md: -66));
+      @include rule(left, (lg: -113, md: -39));
 
-      @include screen('md') {
-        left: -39px;
-        top: -66px;
-      }
+      // @include screen('lg') {
+      //   left: -113px;
+      //   // top: -67px;
+      // }
+
+      // @include screen('md') {
+      //   left: -39px;
+      //   // top: -66px;
+      // }
     }
   }
 
@@ -125,37 +133,39 @@
     }
 
     &:not(:last-child) {
-      margin-right: 90px;
+      @include rule(margin-right, (xxl: 90, xl: 90, lg: 93, md: 0));
+      // margin-right: 90px;
 
-      @include screen('lg') {
-        margin-right: 93px;
-      }
+      // @include screen('lg') {
+      //   margin-right: 93px;
+      // }
 
-      @include screen('md') {
-        margin-right: 0;
-      }
+      // @include screen('md') {
+      //   margin-right: 0;
+      // }
     }
 
     &:not(:first-child) {
-      margin-left: 166px;
+      @include rule(margin-left, (xxl: 166, xl: 60, lg: 123, md: 0));
+      // margin-left: 166px;
 
-      @include screen('xl') {
-        margin-left: 60px;
-      }
+      // @include screen('xl') {
+      //   margin-left: 60px;
+      // }
 
-      @include screen('lg') {
-        margin-left: 123px;
-      }
+      // @include screen('lg') {
+      //   margin-left: 123px;
+      // }
 
-      @include screen('md') {
-        margin-left: 0;
-      }
+      // @include screen('md') {
+      //   margin-left: 0;
+      // }
     }
 
     #{$b}_brede & {
       @include screen('lg') {
         box-sizing: border-box;
-        padding-top: 58px;
+        padding-top: calc((58 / 1024) * 100vw);
       }
 
       @include screen('md') {
@@ -165,7 +175,7 @@
   }
 
   &__content {
-    font-size: $fz30;
+    // font-size: $fz30;
     line-height: ($lh-base-38 / $fz30);
     letter-spacing: $ls-main;
     font-weight: 300;
@@ -173,27 +183,30 @@
     flex: 1;
     animation-delay: .1s;
 
+    @include rule(font-size, (xxl: $fz30, xl: $fz30, lg: $fz30, md: $fz17));
+
     @include screen('md') {
-      font-size: $fz17;
+      // font-size: $fz17;
       line-height: ($lh-base-22 / $fz17);
       flex: none;
       width: 100%;
-      margin-bottom: 35px;
+      margin-bottom: calc((35 / 320) * 100vw);
     }
 
     #{$b}_brede & {
-      padding-top: 110px;
+      // padding-top: 110px;
+      @include rule(padding-top, (xxl: 110, xl: 93));
 
-      @include screen('xl') {
-        padding-top: 93px;
-      }
+      // @include screen('xl') {
+      //   padding-top: 93px;
+      // }
 
       @include screen('lg') {
         padding-top: 0;
       }
 
       p {
-        max-width: 925px;
+        max-width: calc((925 / 1920) * 100vw);
 
         @include screen('xl') {
           max-width: none;
@@ -205,12 +218,12 @@
       font-weight: 400;
 
       @include screen('lg') {
-        padding-top: 65px;
+        padding-top: calc((65 / 1024) * 100vw);
       }
 
       @include screen('md') {
         padding-top: 0;
-        margin-bottom: 47px;
+        margin-bottom: calc((47 / 320) * 100vw);
       }
     }
 

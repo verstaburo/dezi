@@ -122,21 +122,27 @@
     width: 100%;
     box-sizing: border-box;
     z-index: 2;
-    padding: 47px 20px;
+    // padding: 47px 20px;
     text-align: center;
-    font-size: $fz18;
+    // font-size: $fz18;
     font-weight: 700;
     line-height: $lh-default;
     transition: transform $ease-main;
 
-    @include screen('lg') {
-      padding-top: 52px;
-    }
+    @include rule(font-size, (xxl: $fz18, xl: $fz18, lg: $fz18, md: $fz12));
+    @include rule(padding-top, (xxl: 47, xl: 47, lg: 52, md: 33));
+    @include rule(padding-bottom, (xxl: 47, xl: 47, lg: 47, md: 33));
+    @include rule(padding-left, (xxl: 20, xl: 20, lg: 20, md: 15));
+    @include rule(padding-right, (xxl: 20, xl: 20, lg: 20, md: 15));
 
-    @include screen('md') {
-      padding: 33px 15px;
-      font-size: $fz12;
-    }
+    // @include screen('lg') {
+    //   padding-top: 52px;
+    // }
+
+    // @include screen('md') {
+    //   padding: 33px 15px;
+    //   // font-size: $fz12;
+    // }
 
     #{$b}:hover & {
       transform: translate3d(0, 10px, 0);
