@@ -70,7 +70,7 @@
 
       @include screen('xl') {
         bottom: calc(100% - ((28 / 1366) * 100vw));
-        right: 0;
+        // right: 0;
       }
 
       @include screen('lg') {
@@ -176,7 +176,7 @@
 
   &__content {
     // font-size: $fz30;
-    line-height: ($lh-base-38 / $fz30);
+    line-height: 1.27;
     letter-spacing: $ls-main;
     font-weight: 300;
     z-index: 2;
@@ -184,6 +184,14 @@
     animation-delay: .1s;
 
     @include rule(font-size, (xxl: $fz30, xl: $fz30, lg: $fz30, md: $fz17));
+
+    @include screen('xl') {
+      line-height: 1.3;
+    }
+
+    @include screen('lg') {
+      line-height: 1.27;
+    }
 
     @include screen('md') {
       // font-size: $fz17;

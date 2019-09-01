@@ -176,6 +176,11 @@
           margin-bottom: 208px;
         }
       }
+
+      #{$b}__title-text {
+        position: relative;
+        z-index: 2;
+      }
     }
 
     #{$b}_clients & {
@@ -290,26 +295,31 @@
     position: absolute;
     top: 0;
     // top: calc(50% + 8px);
-    left: calc(415px + 13%);
-    transform: translate3d(-50%, 0, 0);
+    // left: calc(415px + 13%);
+    left: 21.5625vw;
+    z-index: 1;
+    // transform: translate3d(-50%, 0, 0);
     // transform: translate3d(0, -50%, 0);
 
     @include screen('xl') {
-      left: calc(415px + 13.4%);
+      // left: calc(415px + 13.4%);
+      left: 30.0146vw;
       // left: 36.8%;
     }
 
     @include screen('lg') {
       // top: calc(50% + 12px);
-      left: calc(296px + 3.2%);
+      // left: calc(296px + 3.2%);
+      left: 16.2vw;
       // left: 19%;
     }
 
     @include screen('md') {
       // top: calc(50% + 9px);
       // left: 43px;
-      left: 43px;
-      transform: translate3d(0, 0, 0);
+      left: 12.8125vw;
+      // left: 43px;
+      // transform: translate3d(0, 0, 0);
       // left: calc(118px + .3%);
     }
   }

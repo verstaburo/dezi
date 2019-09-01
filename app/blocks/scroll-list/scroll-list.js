@@ -4,16 +4,15 @@ export default function scrollList() {
   const trig = $(document).find('[data-list-wrapper]');
   if (trig.length > 0) {
     $(window).on('load scroll', () => {
-      const scale = window.globalOptions.scale;
       const w = $(window);
-      const st = w.scrollTop() * scale;
+      const st = w.scrollTop();
       const block = $(document).find('[data-list-wrapper]');
       const scrollBlock = block.find('[data-list-inner]');
-      const wHeight = w.height() * scale;
+      const wHeight = w.height();
       const wWidth = $(block).width();
-      const blockWidth = (scrollBlock[0].scrollWidth - wWidth) * scale;
-      const scrollHeight = block.outerHeight(true) * scale;
-      const blockTop = block.offset().top * scale;
+      const blockWidth = (scrollBlock[0].scrollWidth - wWidth);
+      const scrollHeight = block.outerHeight(true);
+      const blockTop = block.offset().top;
       const scrollMoment = blockTop - wHeight;
       const fullHeight = scrollHeight + wHeight;
       const maxScroll = (blockTop + scrollHeight) - wHeight;

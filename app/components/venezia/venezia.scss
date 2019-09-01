@@ -777,7 +777,7 @@
 
     &__section {
       // max-width: 460px;
-      @include rule(margin-bottom, (xxl: 460, xl: 460, lg: 460));
+      @include rule(max-width, (xxl: 460, xl: 460, lg: 460));
 
       @include screen('md') {
         max-width: none;

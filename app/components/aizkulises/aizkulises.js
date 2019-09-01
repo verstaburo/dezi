@@ -85,7 +85,6 @@ export default function aizkulises() {
       baseClass = 'js-sr',
       duration = 1000,
       maxDelay = 2000,
-      scale = window.globalOptions.scale,
       animClasses = [
         'animation_fadeIn',
         'animation_fadeInRight',
@@ -132,12 +131,12 @@ export default function aizkulises() {
     $('.js-sr').each(function () {
       const
         el = $(this),
-        top = el.offset().top * scale,
+        top = el.offset().top,
         wH = w.height(),
         momentOffset = wH * 0.1,
         scrollMoment = top - wH + momentOffset;
 
-      if (sT * scale > scrollMoment && el.hasClass('js-sr')) {
+      if (sT > scrollMoment && el.hasClass('js-sr')) {
         if (el.hasClass('js-sr_1') || el.hasClass('js-sr_8') || el.hasClass('js-sr_12')) el.addClass(`${animClasses[0]}`);
         if (el.hasClass('js-sr_2')) el.addClass(`${animClasses[0]}`).css({
           animationDelay: '100ms',
@@ -210,12 +209,11 @@ export default function aizkulises() {
 
     $(window).on('load scroll', function () {
       const
-        scale = window.globalOptions.scale,
         w = $(this),
-        st = w.scrollTop() * scale,
+        st = w.scrollTop(),
         block = $(document).find('.js-aizkulises-screenshots'),
         scrollBlock = block.find('img'),
-        blockTop = block.position('html').top * scale,
+        blockTop = block.position('html').top,
         scrollMoment = blockTop - w.height(),
         scrollHeight = block.outerHeight(),
         maxScroll = scrollMoment + scrollHeight,
@@ -240,12 +238,11 @@ export default function aizkulises() {
 
     $(window).on('load scroll', function () {
       const
-        scale = window.globalOptions.scale,
         w = $(this),
-        st = w.scrollTop() * scale,
+        st = w.scrollTop(),
         block = $(document).find('.js-nla-iphones'),
         scrollBlock = block.find('img'),
-        blockTop = block.offset().top * scale,
+        blockTop = block.offset().top,
         scrollMoment = blockTop - w.height(),
         scrollHeight = block.outerHeight(true),
         maxScroll = scrollMoment + scrollHeight,
@@ -270,12 +267,11 @@ export default function aizkulises() {
 
     $(window).on('load scroll', function () {
       const
-        scale = window.globalOptions.scale,
         w = $(this),
-        st = w.scrollTop() * scale,
+        st = w.scrollTop(),
         block = $(document).find('.js-splace-pages'),
         scrollBlock = block.find('img'),
-        blockTop = block.offset().top * scale,
+        blockTop = block.offset().top,
         scrollMoment = blockTop - w.height(),
         scrollHeight = block.outerHeight(true),
         maxScroll = scrollMoment + scrollHeight,
@@ -294,17 +290,16 @@ export default function aizkulises() {
 
   $(window).on('load scroll', function () {
     const
-      scale = window.globalOptions.scale,
       w = $(this),
-      st = w.scrollTop() * scale,
+      st = w.scrollTop(),
       block = $(document).find('[data-scroll-wrapper]');
     if (block.length > 0) {
       const
         scrollBlock = block.find('[data-scroll-block]'),
-        wHeight = w.height() * scale,
-        blockWidth = (scrollBlock[0].scrollWidth - w.width()) * scale,
-        scrollHeight = block.outerHeight(true) * scale,
-        blockTop = block.offset().top * scale,
+        wHeight = w.height(),
+        blockWidth = (scrollBlock[0].scrollWidth - w.width()),
+        scrollHeight = block.outerHeight(true),
+        blockTop = block.offset().top,
         scrollMoment = blockTop - wHeight,
         fullHeight = scrollHeight + 2 * wHeight,
         maxScroll = (blockTop + scrollHeight) - wHeight,

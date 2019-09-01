@@ -17,20 +17,20 @@
     // left: auto;
     // min-height: calc(var(--vh, 1vh) * 100);
 
-    @media only screen and (orientation: landscape) {
-      position: relative;
-      height: auto;
-      top: auto;
-      left: auto;
-      min-height: 480px;
-    }
+    // @media only screen and (orientation: landscape) {
+    //   position: relative;
+    //   height: auto;
+    //   top: auto;
+    //   left: auto;
+    //   min-height: 480px;
+    // }
   }
 
-  .is-ie & {
-    @include screen('md') {
-      height: 100vh;
-    }
-  }
+  // .is-ie & {
+  //   @include screen('md') {
+  //     height: 100vh;
+  //   }
+  // }
 
   &__wrapper {
     display: flex;
@@ -39,25 +39,30 @@
     align-items: flex-start;
     width: 100%;
     box-sizing: border-box;
-    padding-left: 332px;
+    // padding-left: 332px;
     padding-right: 30%;
     height: 100%;
 
+    @include rule(padding-left, (xxl: 332, xl: 192, lg: 168, md: 23));
+
     @include screen('xl') {
-      padding-left: 192px;
+      // padding-left: 192px;
       padding-right: 26%;
     }
 
     @include screen('lg') {
-      padding-left: 168px;
+      // padding-left: 168px;
       padding-right: 32%;
     }
 
+    @include rule(padding-right, (md: 23));
+
     @include screen('md') {
       // justify-content: flex-start;
-      justify-content: space-around;
-      padding-left: 23px;
-      padding-right: 23px;
+      justify-content: space-between;
+      // justify-content: space-around;
+      // padding-left: 23px;
+      // padding-right: 23px;
     }
   }
 
@@ -73,47 +78,55 @@
     background-repeat: no-repeat;
     overflow: hidden;
     transition: clip-path .3s ease-in-out;
-    clip-path: circle(71px at 77.5% 45.2%);
+    clip-path: circle(3.698vw at 77.5% 45.2%);
+    // clip-path: circle(71px at 77.5% 45.2%);
     transition-delay: 0;
     z-index: 1;
 
     @include screen('xl') {
       background-position: 82% 49%;
-      clip-path: circle(71px at 82% 49%);
+      clip-path: circle(5.197vw at 82% 49%);
+      // clip-path: circle(71px at 82% 49%);
     }
 
     @include screen('lg') {
       background-position: 79.7% 46%;
-      clip-path: circle(71px at 79.7% 46%);
+      clip-path: circle(6.934vw at 79.7% 46%);
+      // clip-path: circle(71px at 79.7% 46%);
     }
 
     @include screen('md') {
       background-position: 50% 100%;
-      clip-path: circle(210px at 50% 95%);
+      // clip-path: circle(210px at 50% 95%);
+      clip-path: circle(65.625vw at 50% 95%);
 
-      .is-firefox & {
-        clip-path: circle(65vw at 50% 95%);
-      }
+      // .is-firefox & {
+      //   clip-path: circle(65vw at 50% 95%);
+      // }
     }
 
     #{$b}__marker:hover ~ & {
-      clip-path: circle(85px at 77.5% 45.2%);
+      // clip-path: circle(85px at 77.5% 45.2%);
+      clip-path: circle(4.427vw at 77.5% 45.2%);
       transition-delay: .15s;
 
       @include screen('xl') {
-        clip-path: circle(85px at 82% 49%);
+        // clip-path: circle(85px at 82% 49%);
+        clip-path: circle(6.223vw at 82% 49%);
       }
 
       @include screen('lg') {
-        clip-path: circle(85px at 79.7% 46%);
+        // clip-path: circle(85px at 79.7% 46%);
+        clip-path: circle(8.301vw at 79.7% 46%);
       }
 
       @include screen('md') {
-        clip-path: circle(210px at 50% 95%);
+        // clip-path: circle(210px at 50% 95%);
+        clip-path: circle(65.625vw at 50% 95%);
 
-        .is-firefox & {
-          clip-path: circle(65vw at 50% 95%);
-        }
+        // .is-firefox & {
+        //   clip-path: circle(65vw at 50% 95%);
+        // }
       }
 
       #{$b}.is-map-close & {
@@ -140,9 +153,9 @@
       @include screen('md') {
         animation-name: mapOpenMd;
 
-        .is-firefox & {
-          animation-name: mapOpenMdFF;
-        }
+        // .is-firefox & {
+        //   animation-name: mapOpenMdFF;
+        // }
       }
     }
 
@@ -171,10 +184,10 @@
         position: absolute;
         display: block;
         content: '';
-        top: calc(45.2% - 71px);
-        left: calc(77.5% - 71px);
-        width: 142px;
-        height: 142px;
+        top: calc(45.2% - ((71 / 1920) * 100vw));
+        left: calc(77.5% - ((71 / 1920) * 100vw));
+        // width: 142px;
+        // height: 142px;
         border-radius: 50%;
         box-shadow: 0 0 0 100vw $color-main;
         box-sizing: border-box;
@@ -183,23 +196,26 @@
         pointer-events: none;
         z-index: 2;
 
+        @include rule(width, (xxl: 142, xl: 142, lg: 142, md: 420));
+        @include rule(height, (xxl: 142, xl: 142, lg: 142, md: 420));
+
         @include screen('xl') {
           box-shadow: 0 0 0 150vw $color-main;
-          top: calc(49% - 71px);
-          left: calc(82% - 71px);
+          top: calc(49% - ((71 / 1366) * 100vw));
+          left: calc(82% - ((71 / 1366) * 100vw));
         }
 
         @include screen('lg') {
-          top: calc(46% - 71px);
-          left: calc(79.7% - 71px);
+          top: calc(46% - ((71 / 1024) * 100vw));
+          left: calc(79.7% - ((71 / 1024) * 100vw));
         }
 
         @include screen('md') {
-          width: 420px;
-          height: 420px;
+          // width: 420px;
+          // height: 420px;
           box-shadow: 0 0 0 200vw $color-main;
-          top: calc(100% - 243px);
-          left: calc(50% - 210px);
+          top: calc(100% - ((243 / 320) * 100vw));
+          left: calc(50% - ((210 / 320) * 100vw));
         }
       }
     }
@@ -215,24 +231,24 @@
 
   &__marker {
     position: absolute;
-    top: calc(45.2% - 90px);
-    left: calc(77.5% - 90px);
+    top: calc(45.2% - ((90 / 1920) * 100vw));
+    left: calc(77.5% - ((90 / 1920) * 100vw));
     z-index: 4;
 
     @include screen('xl') {
-      top: calc(49% - 90px);
-      left: calc(82% - 90px);
+      top: calc(49% - ((90 / 1366) * 100vw));
+      left: calc(82% - ((90 / 1366) * 100vw));
     }
 
     @include screen('lg') {
-      top: calc(46% - 90px);
-      left: calc(79.7% - 90px);
+      top: calc(46% - ((90 / 1024) * 100vw));
+      left: calc(79.7% - ((90 / 1024) * 100vw));
     }
 
     @include screen('md') {
       top: auto;
-      bottom: 52px;
-      left: calc(50% - 55px);
+      bottom: calc((52 / 320) * 100vw);
+      left: calc(50% - ((55 / 320) * 100vw));
     }
   }
 
@@ -246,29 +262,32 @@
     transition: opacity .6s ease-in-out, transform .6s ease-in-out;
     z-index: 2;
     box-sizing: border-box;
-    padding-top: 100px;
-    padding-bottom: 211px;
+    // padding-top: 100px;
+    // padding-bottom: 211px;
     color: $color-titles;
 
-    @include screen('xl') {
-      padding-top: 158px;
-      padding-bottom: 200px;
-    }
+    @include rule(padding-top, (xxl: 100, xl: 158, lg: 172, md: 105));
+    @include rule(padding-bottom, (xxl: 211, xl: 200, lg: 180, md: 285));
 
-    @include screen('lg') {
-      padding-top: 172px;
-      padding-bottom: 180px;
-    }
+    // @include screen('xl') {
+    //   padding-top: 158px;
+    //   padding-bottom: 200px;
+    // }
+
+    // @include screen('lg') {
+    //   padding-top: 172px;
+    //   padding-bottom: 180px;
+    // }
 
     @include screen('md') {
-      padding-top: 105px;
+      // padding-top: 105px;
       min-height: 100%;
       height: auto;
-      padding-bottom: 285px;
+      // padding-bottom: 285px;
 
-      @media only screen and (max-height: 620px) {
-        padding-top: 75px;
-        padding-bottom: 255px;
+      @media only screen and (max-height: 580px) {
+        padding-top: calc((75 / 320) * 100vw);
+        padding-bottom: calc((255 / 320) * 100vw);
       }
     }
 
@@ -278,11 +297,11 @@
       pointer-events: none;
     }
 
-    .is-firefox & {
-      @include screen('md') {
-        padding-bottom: 70vw;
-      }
-    }
+    // .is-firefox & {
+    //   @include screen('md') {
+    //     padding-bottom: 70vw;
+    //   }
+    // }
 
     #{$b}__button {
       color: $color-text;
@@ -307,34 +326,36 @@
     z-index: 3;
     color: $color-main;
     box-sizing: border-box;
-    padding-top: 100px;
-    padding-bottom: 211px;
+    // padding-top: 100px;
+    // padding-bottom: 211px;
+    @include rule(padding-top, (xxl: 100, xl: 158, lg: 172, md: 105));
+    @include rule(padding-bottom, (xxl: 211, xl: 200, lg: 180, md: 285));
 
-    @include screen('xl') {
-      padding-top: 158px;
-      padding-bottom: 200px;
-    }
+    // @include screen('xl') {
+    //   padding-top: 158px;
+    //   padding-bottom: 200px;
+    // }
 
-    @include screen('lg') {
-      padding-top: 172px;
-      padding-bottom: 180px;
-    }
+    // @include screen('lg') {
+    //   padding-top: 172px;
+    //   padding-bottom: 180px;
+    // }
 
     @include screen('md') {
-      padding-top: 105px;
-      padding-bottom: 285px;
+    //   padding-top: 105px;
+    //   padding-bottom: 285px;
 
-      @media only screen and (max-height: 620px) {
-        padding-top: 75px;
-        padding-bottom: 255px;
+      @media only screen and (max-height: 580px) {
+        padding-top: calc((75 / 320) * 100vw);
+        padding-bottom: calc((255 / 320) * 100vw);
       }
     }
 
-    .is-firefox & {
-      @include screen('md') {
-        padding-bottom: 70vw;
-      }
-    }
+    // .is-firefox & {
+    //   @include screen('md') {
+    //     padding-bottom: 70vw;
+    //   }
+    // }
 
     #{$b}.is-map-open & {
       opacity: 1;
@@ -349,23 +370,26 @@
 
   &__title {
     display: inline-block;
-    font-size: $fz-title;
+    // font-size: $fz-title;
     font-weight: 700;
     letter-spacing: -$ls-main;
-    margin-bottom: 26px;
+    // margin-bottom: 26px;
     overflow: hidden;
+    line-height: 1;
     width: 100%;
 
-    @include screen('lg') {
-      font-size: $fz-xl-title;
-      margin-bottom: 47px;
-    }
+    @include rule(font-size, (xxl: $fz-title, xl: $fz-title, lg: $fz-xl-title, md: $fz-md-title));
+    @include rule(margin-bottom, (xxl: 26, xl: 26, lg: 47, md: 5));
 
-    @include screen('md') {
-      font-size: $fz-md-title;
-      // margin-bottom: 64px;
-      margin-bottom: 5px;
-    }
+    // @include screen('lg') {
+    //   // font-size: $fz-xl-title;
+    //   // margin-bottom: 47px;
+    // }
+
+    // @include screen('md') {
+    //   // font-size: $fz-md-title;
+    //   // margin-bottom: 5px;
+    // }
 
     &-link {
       letter-spacing: -$ls-main;
@@ -390,13 +414,16 @@
     display: flex;
     justify-content: flex-start;
     align-items: baseline;
-    margin-top: -16px;
+    // margin-top: -16px;
     width: 100%;
+
+    @include rule(margin-top, (xxl: -16, xl: -16, lg: -16, md: 5));
+    @include rule(margin-bottom, (md: 1));
 
     @include screen('md') {
       flex-wrap: wrap;
-      margin-top: 5px;
-      margin-bottom: 11px;
+      // margin-top: 5px;
+      // margin-bottom: 11px;
       background-color: transparent;
       // margin-bottom: 62px;
     }
@@ -408,12 +435,15 @@
   }
 
   &__item {
-    font-size: $fz16;
+    // font-size: $fz16;
     font-weight: 700;
-    margin-top: 16px;
+    // margin-top: 16px;
+
+    @include rule(font-size, (xxl: $fz16, xl: $fz16, lg: $fz16, md: $fz-md-text));
+    @include rule(margin-top, (xxl: 16, xl: 16, lg: 16, md: 16));
 
     @include screen('md') {
-      font-size: $fz-md-text;
+      // font-size: $fz-md-text;
       width: 100%;
     }
 
@@ -430,7 +460,9 @@
     }
 
     &:not(:last-child) {
-      margin-right: 49px;
+      // margin-right: 49px;
+
+      @include rule(margin-right, (xxl: 49, xl: 49, lg: 49));
 
       @include screen('md') {
         margin-right: 0;
@@ -440,32 +472,38 @@
 
   &__buttons {
     position: absolute;
-    bottom: 133px;
-    left: 324px;
+    // bottom: 133px;
+    // left: 324px;
 
-    @include screen('xl') {
-      left: 186px;
-      bottom: 126px;
-    }
+    @include rule(left, (xxl: 324, xl: 186, lg: 169, md: -4));
+    @include rule(bottom, (xxl: 133, xl: 126, lg: 111));
+    @include rule(margin-top, (md: 5));
 
-    @include screen('lg') {
-      left: 162px;
-      bottom: 111px;
-    }
+    // @include screen('xl') {
+    //   left: 186px;
+    //   bottom: 126px;
+    // }
+
+    // @include screen('lg') {
+    //   left: 162px;
+    //   bottom: 111px;
+    // }
 
     @include screen('md') {
       position: relative;
       bottom: auto;
-      left: -4px;
-      margin-top: 5px;
+      // left: -4px;
+      // margin-top: 5px;
     }
   }
 
   &__button {
-    font-size: $fz16;
+    // font-size: $fz16;
 
-    @include screen('md') {
-      font-size: $fz12;
-    }
+    @include rule(font-size, (xxl: $fz16, xl: $fz16, lg: $fz16, md: $fz12));
+
+    // @include screen('md') {
+    //   font-size: $fz12;
+    // }
   }
 }
