@@ -253,22 +253,22 @@ $animationScale: .9;
 @keyframes mapOpenMd {
 
   0% {
-    clip-path: circle(65.625vw at 50% 95%);
+    clip-path: circle(var(--mmap) at 50% 95%);
   }
 
   100% {
-    clip-path: circle(200vw at 50% 95%);
+    clip-path: circle(var(--mapheight) at 50% 95%);
   }
 }
 
-@keyframes mapOpenMdFF {
+@keyframes mapOpenMdLand {
 
   0% {
-    clip-path: circle(65vw at 50% 95%);
+    clip-path: circle(33.6vw at 95% 50%);
   }
 
   100% {
-    clip-path: circle(200vw at 50% 95%);
+    clip-path: circle(200vw at 95% 50%);
   }
 }
 
@@ -320,30 +320,29 @@ $animationScale: .9;
 @keyframes mapCloseMd {
 
   0% {
-    clip-path: circle(200vw at 50% 95%);
+    clip-path: circle(var(--mapheight) at 50% 95%);
   }
 
   75% {
-    clip-path: circle(59.0625vw at 50% 95%);
+    clip-path: circle(var(--mmapclose) at 50% 95%);
   }
 
   100% {
-    clip-path: circle(65.625vw at 50% 95%);
+    clip-path: circle(var(--mmap) at 50% 95%);
   }
 }
 
-@keyframes mapCloseMdFF {
-
+@keyframes mapCloseMdLand {
   0% {
-    clip-path: circle(200vw at 50% 95%);
+    clip-path: circle(200vw at 95% 50%);
   }
 
   75% {
-    clip-path: circle(58vw at 50% 95%);
+    clip-path: circle(30.24vw at 95% 50%);
   }
 
   100% {
-    clip-path: circle(65vw at 50% 95%);
+    clip-path: circle(33.6vw at 95% 50%);
   }
 }
 

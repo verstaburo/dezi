@@ -128,6 +128,12 @@ div {
   }
 }
 
+@mixin screenOrientation($orientation: portrait) {
+  @media only screen and (orientation: $orientation) {
+    @content;
+  }
+}
+
 /*
 Быстренько подрубаем аппаратное ускорение для анимирующихся элементов.
 Пример использования:

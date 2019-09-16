@@ -17,20 +17,14 @@
     // left: auto;
     // min-height: calc(var(--vh, 1vh) * 100);
 
-    // @media only screen and (orientation: landscape) {
+    // @include screenOrientation(landscape) {
     //   position: relative;
     //   height: auto;
     //   top: auto;
     //   left: auto;
-    //   min-height: 480px;
+    //   min-height: 150vw;
     // }
   }
-
-  // .is-ie & {
-  //   @include screen('md') {
-  //     height: 100vh;
-  //   }
-  // }
 
   &__wrapper {
     display: flex;
@@ -98,11 +92,13 @@
     @include screen('md') {
       background-position: 50% 100%;
       // clip-path: circle(210px at 50% 95%);
-      clip-path: circle(65.625vw at 50% 95%);
+      // clip-path: circle(65.625vw at 50% 95%);
+      clip-path: circle(var(--mmap, 33.6vh) at 50% 95%);
 
-      // .is-firefox & {
-      //   clip-path: circle(65vw at 50% 95%);
-      // }
+      @include screenOrientation(landscape) {
+        background-position: 100% 50%;
+        clip-path: circle(33.6vw at 95% 50%);
+      }
     }
 
     #{$b}__marker:hover ~ & {
@@ -122,11 +118,12 @@
 
       @include screen('md') {
         // clip-path: circle(210px at 50% 95%);
-        clip-path: circle(65.625vw at 50% 95%);
+        // clip-path: circle(65.625vw at 50% 95%);
+        clip-path: circle(var(--mmap, 33.6vh) at 50% 95%);
 
-        // .is-firefox & {
-        //   clip-path: circle(65vw at 50% 95%);
-        // }
+        @include screenOrientation(landscape) {
+          clip-path: circle(33.6vw at 95% 50%);
+        }
       }
 
       #{$b}.is-map-close & {
@@ -153,9 +150,9 @@
       @include screen('md') {
         animation-name: mapOpenMd;
 
-        // .is-firefox & {
-        //   animation-name: mapOpenMdFF;
-        // }
+        @include screenOrientation(landscape) {
+          animation-name: mapOpenMdLand;
+        }
       }
     }
 
@@ -173,8 +170,8 @@
       @include screen('md') {
         animation-name: mapCloseMd;
 
-        .is-firefox & {
-          animation-name: mapCloseMdFF;
+        @include screenOrientation(landscape) {
+          animation-name: mapCloseMdLand;
         }
       }
     }
@@ -214,9 +211,13 @@
         @include screen('md') {
           // width: 420px;
           // height: 420px;
+          width: calc((var(--vh, 1vh) * (42000 / 625)));
+          height: calc((var(--vh, 1vh) * (42000 / 625)));
           box-shadow: 0 0 0 200vw $color-main;
-          top: calc(100% - ((243 / 320) * 100vw));
-          left: calc(50% - ((210 / 320) * 100vw));
+          // top: calc(100% - ((243 / 320) * 100vw));
+          // left: calc(50% - ((210 / 320) * 100vw));
+          top: calc(100% - ((24300 / 625) * (var(--vh, 1vh))));
+          left: calc(50% - ((21000 / 625) * (var(--vh, 1vh))));
         }
       }
     }
@@ -248,8 +249,17 @@
 
     @include screen('md') {
       top: auto;
-      bottom: calc((52 / 320) * 100vw);
-      left: calc(50% - ((55 / 320) * 100vw));
+      // bottom: calc((52 / 320) * 100vw);
+      // left: calc(50% - ((55 / 320) * 100vw));
+      bottom: var(--markerposy);
+      left: calc(50% - var(--markerposx));
+
+      @include screenOrientation(landscape) {
+        left: auto;
+        right: calc((52 / 320) * 100 * var(--vh, 1vh));
+        top: calc(50% - ((55 / 320) * 100 * var(--vh, 1vh)));
+        bottom: auto;
+      }
     }
   }
 
@@ -284,12 +294,19 @@
       // padding-top: 105px;
       min-height: 100%;
       height: auto;
+      padding-top: var(--mpt);
+      padding-bottom: var(--mpb);
       // padding-bottom: 285px;
 
-      @media only screen and (max-height: 580px) {
-        padding-top: calc((75 / 320) * 100vw);
-        padding-bottom: calc((255 / 320) * 100vw);
+      @include screenOrientation(landscape) {
+        padding-top: var(--mptland);
+        padding-bottom: var(--mpbland);
       }
+
+      // @media only screen and (max-height: 580px) {
+      //   padding-top: calc((75 / 320) * 100vw);
+      //   padding-bottom: calc((255 / 320) * 100vw);
+      // }
     }
 
     #{$b}.is-map-open & {
@@ -343,10 +360,17 @@
     // }
 
     @include screen('md') {
-      @media only screen and (max-height: 580px) {
-        padding-top: calc((75 / 320) * 100vw);
-        padding-bottom: calc((255 / 320) * 100vw);
+      padding-top: var(--mpt);
+      padding-bottom: var(--mpb);
+
+      @include screenOrientation(landscape) {
+        padding-top: var(--mptland);
+        padding-bottom: var(--mpbland);
       }
+      // @media only screen and (max-height: 580px) {
+      //   padding-top: calc((75 / 320) * 100vw);
+      //   padding-bottom: calc((255 / 320) * 100vw);
+      // }
     }
 
     // .is-firefox & {
@@ -384,10 +408,15 @@
     //   // margin-bottom: 47px;
     // }
 
-    // @include screen('md') {
-    //   // font-size: $fz-md-title;
-    //   // margin-bottom: 5px;
-    // }
+    @include screen('md') {
+      // font-size: $fz-md-title;
+      margin-bottom: calc(var(--vh, 1vh) * (500 / 625));
+
+      @include screenOrientation(landscape) {
+        margin-bottom: calc(var(--vh, 1vh) * (500 / 320));
+        font-size: calc(var(--vh, 1vh) * (2500 / 320));
+      }
+    }
 
     &-link {
       letter-spacing: -$ls-main;
@@ -424,6 +453,11 @@
       // margin-bottom: 11px;
       background-color: transparent;
       // margin-bottom: 62px;
+      margin-bottom: calc(var(--vh, 1vh) * (500 / 625));
+
+      @include screenOrientation(landscape) {
+        margin-bottom: calc(var(--vh, 1vh) * (500 / 320));
+      }
     }
 
     .link {
@@ -443,6 +477,12 @@
     @include screen('md') {
       // font-size: $fz-md-text;
       width: 100%;
+      margin-top: calc(var(--vh, 1vh) * (1600 / 625));
+
+      @include screenOrientation(landscape) {
+        margin-top: calc(var(--vh, 1vh) * (1600 / 320));
+        font-size: calc(var(--vh, 1vh) * (1400 / 320));
+      }
     }
 
     &:first-child {
@@ -475,7 +515,6 @@
 
     @include rule(left, (xxl: 324, xl: 186, lg: 169, md: -4));
     @include rule(bottom, (xxl: 133, xl: 126, lg: 111));
-    @include rule(margin-top, (md: 5));
 
     // @include screen('xl') {
     //   left: 186px;
@@ -492,6 +531,11 @@
       bottom: auto;
       // left: -4px;
       // margin-top: 5px;
+      margin-top: calc(var(--vh, 1vh) * (500 / 625));
+
+      @include screenOrientation(landscape) {
+        margin-top: calc(var(--vh, 1vh) * (500 / 320));
+      }
     }
   }
 
@@ -500,8 +544,10 @@
 
     @include rule(font-size, (xxl: $fz16, xl: $fz16, lg: $fz16, md: $fz12));
 
-    // @include screen('md') {
-    //   font-size: $fz12;
-    // }
+    @include screen('md') {
+      @include screenOrientation(landscape) {
+        font-size: calc(var(--vh, 1vh) * (1200 / 320));
+      }
+    }
   }
 }

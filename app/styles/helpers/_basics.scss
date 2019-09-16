@@ -1,3 +1,15 @@
+:root {
+  --mmap: calc(var(--vh, 1vh) * 33.6);
+  --mmapclose: calc(var(--vh, 1vh) * 30.24);
+  --mapheight: calc(var(--vh, 1vh) * 150);
+  --markerposy: calc(var(--vh, 1vh) * 8.32);
+  --markerposx: calc(var(--vh, 1vh) * 8.8);
+  --mpt: calc(var(--vh, 1vh) * 16.8);
+  --mpb: calc(var(--vh, 1vh) * 45.6);
+  --mptland: calc(var(--vh, 1vh) * 31.25);
+  --mpbland: calc(var(--vh, 1vh) * 15.625);
+}
+
 /* ##########
 Убираем outline
 ########## */
