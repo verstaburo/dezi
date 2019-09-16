@@ -9,9 +9,14 @@
   @include rule(width, (xxl: 180, xl: 180, lg: 180, md: 111));
   @include rule(height, (xxl: 180, xl: 180, lg: 180, md: 111));
 
-  @include screenOrientation(landscape) {
-    width: calc(var(--vh, 1vh) * (11100 / 320));
-    height: calc(var(--vh, 1vh) * (11100 / 320));
+  @include screen('md') {
+    width: calc(var(--vh, 1vh) * (11100 / 625));
+    height: calc(var(--vh, 1vh) * (11100 / 625));
+
+    @include screenOrientation(landscape) {
+      width: calc(var(--vh, 1vh) * (11100 / 320));
+      height: calc(var(--vh, 1vh) * (11100 / 320));
+    }
   }
 
   // @include screen('md') {
@@ -64,8 +69,9 @@
     @include rule(height, (xxl: 43, xl: 43, lg: 43, md: 56));
 
     @include screen('md') {
-      //   width: 32px;
-      //   height: 56px;
+      width: calc(var(--vh, 1vh) * (3200 / 625));
+      height: calc(var(--vh, 1vh) * (5600 / 625));
+
       @include screenOrientation(landscape) {
         width: calc(var(--vh, 1vh) * (3200 / 320));
         height: calc(var(--vh, 1vh) * (5600 / 320));

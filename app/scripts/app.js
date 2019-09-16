@@ -1,3 +1,4 @@
+import find from 'array.prototype.find';
 import svg4everybody from 'svg4everybody';
 import picturefill from 'picturefill';
 import objectFitImages from 'object-fit-images';
@@ -45,6 +46,7 @@ import textareaAutosize from '../blocks/form-elements/form-elements';
 const $ = window.$;
 
 $(() => {
+  find.shim();
   if (!window.Modernizr.picture) {
     picturefill();
   }
