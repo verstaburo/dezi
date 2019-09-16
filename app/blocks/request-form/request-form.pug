@@ -8,7 +8,8 @@ mixin request-form(title)
         +inputbox('Телефон или почта').inputbox_required.inputbox_required_v2
           +input(type="text" placeholder="Телефон или почта" name="contact" required).input_v2
         +inputbox('ЕСЛИ ЕСТЬ ЧТО ДОБАВИТЬ')
-          +input(type="text" placeholder="ЕСЛИ ЕСТЬ ЧТО ДОБАВИТЬ" name="comment").input_v2
+          +textarea(placeholder="ЕСЛИ ЕСТЬ ЧТО ДОБАВИТЬ" name="comment").textarea_v2
+          //- +input(type="text" placeholder="ЕСЛИ ЕСТЬ ЧТО ДОБАВИТЬ" name="comment").input_v2
         block
       +e.links
         +e.line.js-sr_12
@@ -28,7 +29,8 @@ mixin request-form-popup(title)
         +inputbox('Телефон или почта').inputbox_required.inputbox_required_v2.inputbox_required_white
           +input(type="text" placeholder="Телефон или почта" name="contact" required).input_v2
         +inputbox('ЕСЛИ ЕСТЬ ЧТО ДОБАВИТЬ')
-          +input(type="text" placeholder="ЕСЛИ ЕСТЬ ЧТО ДОБАВИТЬ" name="comment").input_v2
+          +textarea(placeholder="ЕСЛИ ЕСТЬ ЧТО ДОБАВИТЬ" name="comment").textarea_v2
+          //- +input(type="text" placeholder="ЕСЛИ ЕСТЬ ЧТО ДОБАВИТЬ" name="comment").input_v2
         block
       +e.links
         +e.line

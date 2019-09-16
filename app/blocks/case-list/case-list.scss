@@ -66,13 +66,34 @@
     }
 
     &_case-star {
-      // margin-top: -8px;
-
-      // @include screen('md') {
-      //   margin-top: -6px;
-      // }
-
+      @include rule(width, (xxl: 56, xl: 56, lg: 56, md:  56));
+      @include rule(height, (xxl: 56, xl: 56, lg: 56, md: 56));
       @include rule(margin-top, (xxl: -8, xl: -8, lg: -8, md: -6));
+    }
+
+    &_case-lego {
+      @include rule(width, (xxl: 53, xl: 53, lg: 53, md: 53));
+      @include rule(height, (xxl: 46, xl: 46, lg: 46, md: 46));
+    }
+
+    &_case-facade {
+      @include rule(width, (xxl: 47, xl: 47, lg: 47, md: 47));
+      @include rule(height, (xxl: 47, xl: 47, lg: 47, md: 47));
+    }
+
+    &_case-rocket {
+      @include rule(width, (xxl: 33, xl: 33, lg: 33, md: 33));
+      @include rule(height, (xxl: 33, xl: 33, lg: 33, md: 33));
+    }
+
+    &_case-paint {
+      @include rule(width, (xxl: 31, xl: 31, lg: 31, md: 31));
+      @include rule(height, (xxl: 31, xl: 31, lg: 31, md: 31));
+    }
+
+    &_case-map {
+      @include rule(width, (xxl: 31, xl: 31, lg: 31, md: 31));
+      @include rule(height, (xxl: 27, xl: 27, lg: 27, md: 27));
     }
 
     &_case-devices {
@@ -82,6 +103,8 @@
       //   margin-left: 0;
       // }
 
+      @include rule(width, (xxl: 60, xl: 60, lg: 60, md: 60));
+      @include rule(height, (xxl: 34, xl: 34, lg: 34, md: 34));
       @include rule(margin-left, (xxl: -7, xl: -7, lg: -7, md: 0));
     }
   }

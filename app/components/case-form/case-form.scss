@@ -44,7 +44,7 @@
   &__right {
     // margin-top: 17px;
 
-    @include rule(margin-top, (xxl: 17, xl: 17, lg: 17, md: 40));
+    @include rule(margin-top, (xxl: 12, xl: 12, lg: 17, md: 40));
 
     @include screen('md') {
       background-color: black;
@@ -63,7 +63,7 @@
     // margin-top: 90px;
     justify-content: space-between;
 
-    @include rule(margin-top, (xxl: 90, xl: 90, lg: 59, md: 7));
+    @include rule(margin-top, (xxl: 94, xl: 94, lg: 59, md: 7));
 
     // @include screen('lg') {
     //   margin-top: 59px;
@@ -195,5 +195,9 @@
       //   width: 19px;
       // }
     }
+  }
+
+  .inputbox + .inputbox {
+    @include rule(margin-top, (xxl: 70, xl: 72, lg: 46, md: 13));
   }
 }

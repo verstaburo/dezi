@@ -1,5 +1,6 @@
 .input {
   // padding: 0 0 21px;
+  display: block;
   padding: 0;
   // height: 32px;
   border-bottom-style: solid;
@@ -18,8 +19,9 @@
   color: $color-grey;
   transition: border $ease-main;
 
-  @include rule(padding-bottom, (xxl: 21, xl: 21, lg: 9, md: 3));
-  @include rule(height, (xxl: 32, xl: 32, lg: 32, md: 20));
+  @include rule(padding-top, (xxl: 0, xl: 0, lg: 0, md: 6));
+  @include rule(padding-bottom, (xxl: 16, xl: 16, lg: 9, md: 3));
+  @include rule(height, (xxl: 30, xl: 30, lg: 30, md: 25));
   @include rule(border-bottom-width, (xxl: 1, xl: 1, lg: 1, md: 1));
   @include rule(font-size, (xxl: 15, xl: 15, lg: 11, md: 8));
 
@@ -51,13 +53,14 @@
   &_v2 {
     letter-spacing: $ls-btn;
     font-weight: 400;
+    box-sizing: border-box;
     // padding-top: 4px;
     // height: 40px;
     // padding-bottom: 21px;
 
-    @include rule(padding-top, (xxl: 4, xl: 4, lg: 4, md: 4));
-    @include rule(padding-bottom, (xxl: 21, xl: 21, lg: 21, md: 8));
-    @include rule(height, (xxl: 40, xl: 40, lg: 40, md: 20));
+    @include rule(padding-top, (xxl: 6, xl: 6, lg: 6, md: 6));
+    @include rule(padding-bottom, (xxl: 18, xl: 18, lg: 18, md: 6));
+    @include rule(height, (xxl: 40, xl: 40, lg: 40, md: 25));
     @include rule(font-size, (xxl: $fz15, xl: $fz15, lg: $fz15, md: $fz9));
 
     // @include screen('lg') {
@@ -92,6 +95,8 @@
 .inputbox {
   display: block;
   position: relative;
+  font-size: 0;
+  line-height: 0;
   $b: &;
 
   & + & {
@@ -108,6 +113,7 @@
   }
 
   &_required {
+
     &::after {
       content: '*';
       position: absolute;
@@ -119,7 +125,7 @@
       font-family: $font-main;
 
       @include rule(right, (xxl: 1, xl: 1, lg: 2, md: 3));
-      @include rule(top, (xxl: 7, xl: 7, lg: 9, md: 11));
+      @include rule(top, (xxl: 18, xl: 18, lg: 18, md: 18));
       @include rule(font-size, (xxl: $fz-text, xl: $fz-text, lg: $fz15, md: $fz10));
 
       // @include screen('lg') {
@@ -139,8 +145,8 @@
       // top: 10px;
       // right: 1px;
 
-      @include rule(top, (xxl: 10, xl: 10, lg: 10, md: 12));
-      @include rule(right, (xxl: 1, xl: 1, lg: 1, md: 1));
+      @include rule(top, (xxl: 22, xl: 20, lg: 20, md: 15));
+      @include rule(right, (xxl: 2, xl: 2, lg: 2, md: 1));
       @include rule(font-size, (xxl: $fz-text, xl: $fz-text, lg: $fz-text, md: $fz10));
 
       // @include screen('lg') {
@@ -154,6 +160,7 @@
     }
 
     &_white {
+
       &::after {
         color: $color-basic;
       }
@@ -177,9 +184,8 @@
     transform-origin: 0 50% 0;
     pointer-events: none;
 
-    @include rule(top, (xxl: 3, xl: 3, lg: 6, md: 10));
+    @include rule(top, (xxl: 0, xl: 0, lg: 6, md: 10));
     @include rule(font-size, (xxl: 15, xl: 15, lg: 11, md: 8));
-
     @include ellipsis(100%);
 
     // @include screen('lg') {
@@ -196,7 +202,7 @@
       letter-spacing: $ls-btn;
       font-weight: 400;
 
-      @include rule(top, (xxl: 3, xl: 3, lg: 5, md: 8));
+      @include rule(top, (xxl: 5, xl: 5, lg: 5, md: 6));
       @include rule(font-size, (xxl: $fz15, xl: $fz15, lg: $fz15, md: $fz9));
 
       // @include screen('lg') {
@@ -224,7 +230,7 @@
     }
 
     #{$b}.is-top & {
-      transform: scale(0.8) translate3d(0, -200%, 0);
+      transform: scale(.8) translate3d(0, -200%, 0);
       font-weight: 700;
     }
 
@@ -261,10 +267,12 @@
 .textarea {
   @extend .input;
 
+  display: block;
+  box-sizing: border-box;
   // padding-top: 13px;
   // padding-bottom: 13px;
   // min-height: 150px;
-  resize: vertical;
+  resize: none;
 
   &_v2 {
     @extend .input_v2;

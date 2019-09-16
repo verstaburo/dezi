@@ -16,7 +16,7 @@ mixin case-form()
             +inputbox('Телефон или почта').inputbox_required
               +input(placeholder="Телефон или почта" name="contact" required)
             +inputbox('Если есть что добавить')
-              +input(placeholder="Если есть что добавить" name="comment")
+              +textarea(placeholder="ЕСЛИ ЕСТЬ ЧТО ДОБАВИТЬ" name="comment")
             +button('button')(type="submit").__button Начать новый проект
         +col({xxl: 6, md: 13}).case-form__right
           +e.text.__links

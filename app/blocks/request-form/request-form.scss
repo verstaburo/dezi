@@ -71,6 +71,7 @@
   }
 
   .form {
+
     &__button {
       // min-width: 338px;
       @include rule(min-width, (xxl: 338, xl: 338, lg: 338));
@@ -158,7 +159,9 @@
   }
 
   &_request {
+
     #{$b} {
+
       &__title {
         opacity: 0;
         visibility: visible;
@@ -203,6 +206,7 @@
         }
 
         &:nth-child(1) {
+
           .popup.is-animate & {
             animation: fadeIn 1s cubic-bezier(.77, 0, .175, 1);
             animation-delay: .2s;
@@ -212,6 +216,7 @@
         }
 
         &:nth-child(2) {
+
           .popup.is-animate & {
             animation: fadeIn 1s cubic-bezier(.77, 0, .175, 1);
             animation-delay: .3s;
@@ -221,6 +226,7 @@
         }
 
         &:nth-child(3) {
+
           .popup.is-animate & {
             animation: fadeIn 1s cubic-bezier(.77, 0, .175, 1);
             animation-delay: .4s;

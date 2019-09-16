@@ -134,6 +134,7 @@
     }
 
     &_mb72 {
+
       &:not(:last-child) {
         // margin-bottom: 72px;
         @include rule(margin-bottom, (xxl: 72, xl: 124, lg: 85, md: 61));
@@ -248,7 +249,9 @@
     }
 
     #{$b} {
+
       &__column {
+
         &_left {
           position: relative;
           // padding-top: 216px;
@@ -322,6 +325,7 @@
     // }
 
     #{$b} {
+
       &__block {
         position: relative;
         z-index: 2;
@@ -375,7 +379,9 @@
   }
 
   &_clients {
+
     #{$b} {
+
       &__request {
         box-sizing: border-box;
         padding-left: calc((143 / 1920) * 100vw);
@@ -444,6 +450,7 @@
   }
 
   &_wdesign {
+
     .container {
       position: relative;
       z-index: 2;
@@ -456,10 +463,12 @@
   }
 
   &_request {
+
     .request-form {
+
       &__title {
         // margin-bottom: 114px;
-        @include rule(margin-bottom, (xxl: 114, xl: 104, lg: 118, md: 43));
+        @include rule(margin-bottom, (xxl: 114, xl: 116, lg: 118, md: 42));
 
         @include screen('xl') {
           // margin-bottom: 104px;
@@ -493,6 +502,7 @@
     }
 
     &_sv {
+
       .request-form {
         @include screen('xl') {
           box-sizing: border-box;

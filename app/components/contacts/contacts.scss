@@ -180,6 +180,7 @@
     }
 
     .is-ie &,.is-edge & {
+
       &::after {
         position: absolute;
         display: block;
@@ -342,9 +343,6 @@
     // }
 
     @include screen('md') {
-    //   padding-top: 105px;
-    //   padding-bottom: 285px;
-
       @media only screen and (max-height: 580px) {
         padding-top: calc((75 / 320) * 100vw);
         padding-bottom: calc((255 / 320) * 100vw);

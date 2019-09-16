@@ -272,9 +272,6 @@
           width: 16%;
         }
 
-        @include screen('lg') {
-        }
-
         @include screen('md') {
           display: none;
         }
@@ -372,6 +369,7 @@
       }
 
       .case-section {
+
         &__heading {
           box-sizing: border-box;
 
@@ -399,8 +397,8 @@
       }
 
       p {
+
         &:not(:last-child) {
-          // margin-bottom: 32px;
           @include rule(margin-bottom, (xxl: 32, xl: 24, lg: 24, md: 18));
 
           // @include screen('xl') {
@@ -496,6 +494,7 @@
     }
 
     #{$b} {
+
       &__col {
         position: relative;
 
@@ -661,6 +660,7 @@
       }
 
       .case-section {
+
         &__text {
           letter-spacing: -.04em;
         }
@@ -696,6 +696,7 @@
     }
 
     #{$b} {
+
       &__col {
         position: relative;
 
@@ -828,7 +829,9 @@
     }
 
     #{$b} {
+
       &__col {
+
         &_left {
           width: 40%;
 
@@ -955,7 +958,9 @@
     }
 
     &__section {
+
       .case-section {
+
         &__heading {
           line-height: 1.4;
 
@@ -967,7 +972,9 @@
     }
 
     #{$b} {
+
       &__col {
+
         &_left {
           width: 54.4%;
 
@@ -1083,7 +1090,9 @@
       }
 
       .case-section {
+
         &__heading {
+
           &:not(:last-child) {
             @include rule(margin-bottom, (xxl: 26, xl: 26, lg: 26, md: 24));
             // margin-bottom: 26px;
@@ -1097,7 +1106,9 @@
     }
 
     #{$b} {
+
       &__col {
+
         &_left {
           width: 55%;
 

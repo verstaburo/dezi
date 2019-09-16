@@ -51,6 +51,7 @@ $animationScale: .9;
 }
 
 @keyframes fadeIn {
+
   0% {
     transform: translate3d(0, 50px, 0);
     opacity: 0;
@@ -63,6 +64,7 @@ $animationScale: .9;
 }
 
 @keyframes fadeInRight {
+
   0% {
     transform: translate3d(50px, 0, 0);
     opacity: 0;
@@ -75,6 +77,7 @@ $animationScale: .9;
 }
 
 @keyframes fadeInLeft {
+
   0% {
     transform: translate3d(-50px, 0, 0);
     opacity: 0;
@@ -87,6 +90,7 @@ $animationScale: .9;
 }
 
 @keyframes fadeInLeft10 {
+
   0% {
     transform: translate3d(-10px, 0, 0);
     opacity: 0;
@@ -99,6 +103,7 @@ $animationScale: .9;
 }
 
 @keyframes fadeInTop {
+
   0% {
     transform: translate3d(0, -50px, 0);
     opacity: 0;
@@ -111,6 +116,7 @@ $animationScale: .9;
 }
 
 @keyframes fade {
+
   0% {
     opacity: 0;
   }
@@ -121,6 +127,7 @@ $animationScale: .9;
 }
 
 @keyframes scaleIn {
+
   0% {
     transform: scale($animationScale);
     opacity: 0;
@@ -133,6 +140,7 @@ $animationScale: .9;
 }
 
 @keyframes scaleIn2 {
+
   0% {
     transform: scale(.2);
     opacity: 0;
@@ -145,6 +153,7 @@ $animationScale: .9;
 }
 
 @keyframes rotation {
+
   0% {
     transform: rotate(0);
   }
@@ -155,6 +164,7 @@ $animationScale: .9;
 }
 
 @keyframes dash {
+
   0% {
     stroke-dashoffset: 2000;
   }
@@ -165,6 +175,7 @@ $animationScale: .9;
 }
 
 @keyframes roundBig {
+
   75% {
     transform: scale(1.3);
   }
@@ -175,6 +186,7 @@ $animationScale: .9;
 }
 
 @keyframes roundSmall {
+
   0% {
     transform: scale(1.2);
   }
@@ -189,6 +201,7 @@ $animationScale: .9;
 }
 
 @keyframes markerMapClose {
+
   0% {
     transform: scale(5);
     opacity: 0;
@@ -205,6 +218,7 @@ $animationScale: .9;
 }
 
 @keyframes mapOpen {
+
   0% {
     clip-path: circle(3.698vw at 77.5% 45.2%);
   }
@@ -215,6 +229,7 @@ $animationScale: .9;
 }
 
 @keyframes mapOpenXl {
+
   0% {
     clip-path: circle(5.197vw at 82% 49%);
   }
@@ -225,6 +240,7 @@ $animationScale: .9;
 }
 
 @keyframes mapOpenLg {
+
   0% {
     clip-path: circle(6.934vw at 79.7% 46%);
   }
@@ -235,6 +251,7 @@ $animationScale: .9;
 }
 
 @keyframes mapOpenMd {
+
   0% {
     clip-path: circle(65.625vw at 50% 95%);
   }
@@ -245,6 +262,7 @@ $animationScale: .9;
 }
 
 @keyframes mapOpenMdFF {
+
   0% {
     clip-path: circle(65vw at 50% 95%);
   }
@@ -255,6 +273,7 @@ $animationScale: .9;
 }
 
 @keyframes mapClose {
+
   0% {
     clip-path: circle(150vw at 77.5% 45.2%);
   }
@@ -269,6 +288,7 @@ $animationScale: .9;
 }
 
 @keyframes mapCloseXl {
+
   0% {
     clip-path: circle(150vw at 82% 49%);
   }
@@ -283,6 +303,7 @@ $animationScale: .9;
 }
 
 @keyframes mapCloseLg {
+
   0% {
     clip-path: circle(150vw at 79.7% 46%);
   }
@@ -297,6 +318,7 @@ $animationScale: .9;
 }
 
 @keyframes mapCloseMd {
+
   0% {
     clip-path: circle(200vw at 50% 95%);
   }
@@ -311,6 +333,7 @@ $animationScale: .9;
 }
 
 @keyframes mapCloseMdFF {
+
   0% {
     clip-path: circle(200vw at 50% 95%);
   }
@@ -325,6 +348,7 @@ $animationScale: .9;
 }
 
 @keyframes mapOpenIE {
+
   0% {
     transform: scale(1) translateZ(0);
   }
@@ -335,6 +359,7 @@ $animationScale: .9;
 }
 
 @keyframes mapCloseIE {
+
   0% {
     transform: scale(25) translateZ(0);
   }
@@ -349,6 +374,7 @@ $animationScale: .9;
 }
 
 @keyframes iconBigger {
+
   0% {
     transform: scale(1) translateZ(0);
   }
@@ -371,6 +397,7 @@ $animationScale: .9;
 }
 
 @keyframes iconSmaller {
+
   0% {
     transform: scale(2) translateZ(0);
   }
@@ -381,6 +408,7 @@ $animationScale: .9;
 }
 
 @keyframes phoneFromLeft {
+
   0% {
     transform: translate3d(-50px, -45px, 0);
     opacity: 0;
@@ -393,6 +421,7 @@ $animationScale: .9;
 }
 
 @keyframes phoneFromRight {
+
   0% {
     transform: translate3d(50px, 45px, 0);
     opacity: 0;
@@ -405,6 +434,7 @@ $animationScale: .9;
 }
 
 @keyframes watchCircle {
+
   0% {
     opacity: 0;
   }
@@ -421,6 +451,7 @@ $animationScale: .9;
 }
 
 @keyframes ballJump {
+
   0% {
     transform: translate3d(30px, -60px, 0);
     opacity: 0;
@@ -433,6 +464,7 @@ $animationScale: .9;
 }
 
 @keyframes carGo {
+
   0% {
     transform: scale(0);
     opacity: 0;
@@ -445,6 +477,7 @@ $animationScale: .9;
 }
 
 @keyframes radar {
+
   0% {
     transform: rotate(-180deg);
     opacity: 0;
@@ -462,6 +495,7 @@ $animationScale: .9;
 }
 
 @keyframes mouseTurn {
+
   0% {
     transform: rotate(0);
   }

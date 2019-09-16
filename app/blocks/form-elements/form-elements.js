@@ -1,3 +1,6 @@
+// https://www.jacklmoore.com/autosize/
+import autosize from 'autosize';
+
 // // https://github.com/jshjohnson/Choices
 // import Choices from 'choices.js';
 
@@ -10,7 +13,7 @@
 // https://github.com/RobinHerbots/Inputmask
 // import Inputmask from 'inputmask';
 
-// const $ = window.$;
+const $ = window.$;
 
 // export function selects() {
 //   /* eslint-disable no-unused-vars */
@@ -81,3 +84,6 @@
 //     if ($(this).val() < 0) $(this).val(0);
 //   });
 // }
+export default function textareaAutosize() {
+  autosize($('.textarea'));
+}

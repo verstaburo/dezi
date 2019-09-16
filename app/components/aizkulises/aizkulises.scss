@@ -8,6 +8,7 @@
   @include rule(margin-bottom, (xxl: -1, xl: -1, lg: -1, md: -1));
 
   &__col {
+
     &_left {
       flex: 1;
       // padding-right: 94px;
@@ -309,14 +310,6 @@
 
     @include rule(top, (xxl: 108, xl: 155, lg: 118));
 
-    // @include screen('xl') {
-    //   top: 155px;
-    // }
-
-    // @include screen('lg') {
-    //   top: 118px;
-    // }
-
     @include screen('md') {
       display: none;
     }
@@ -330,14 +323,6 @@
 
     @include rule(height, (xxl: 49, xl: 49, lg: 34, md: 17));
 
-    // @include screen('lg') {
-    //   height: 34px;
-    // }
-
-    // @include screen('md') {
-    //   height: 17px;
-    // }
-
     img {
       // width: 515px;
       position: absolute;
@@ -345,43 +330,19 @@
       top: 0;
 
       @include rule(width, (xxl: 515, xl: 515, lg: 390, md: 195));
-
-      // @include screen('lg') {
-      //   width: 390px;
-      // }
-
-      // @include screen('md') {
-      //   width: 195px;
-      // }
     }
   }
 
   &__link {
     color: $color-yellow-light-2;
     font-family: $font-second;
-    // font-size: 19px;
     font-weight: 500;
     line-height: 1;
-    // margin-top: 86px;
     display: block;
     transition: opacity $ease-main;
 
     @include rule(font-size, (xxl: 19, xl: 19, lg: 16, md: 15));
     @include rule(margin-top, (xxl: 86, xl: 102, lg: 63, md: 39));
-
-    // @include screen('xl') {
-    //   margin-top: 102px;
-    // }
-
-    // @include screen('lg') {
-    //   // font-size: 16px;
-    //   margin-top: 63px;
-    // }
-
-    // @include screen('md') {
-    //   // font-size: 15px;
-    //   margin-top: 39px;
-    // }
 
     &:hover {
       opacity: .5;
@@ -390,52 +351,27 @@
 
   &__heading {
     font-family: $font-third;
-    // font-size: 40px;
     font-weight: 700;
     letter-spacing: -.03em;
     line-height: 1.2;
-    // margin-top: 70px;
 
     @include rule(font-size, (xxl: 40, xl: 40, lg: 30, md: 30));
     @include rule(margin-top, (xxl: 70, xl: 37, lg: 25, md: 33));
 
-    // @include screen('xl') {
-    //   margin-top: 37px;
-    // }
-
-    // @include screen('lg') {
-    //   // font-size: 30px;
-    //   margin-top: 25px;
-    // }
-
     @include screen('md') {
-      // margin-top: 33px;
       line-height: (25 / 30);
     }
   }
 
   &__text {
     font-family: $font-third;
-    // font-size: 20px;
     font-weight: 700;
     line-height: 1.2;
-    // margin-top: 45px;
 
     @include rule(font-size, (xxl: 20, xl: 20, lg: 18, md: 15));
     @include rule(margin-top, (xxl: 45, xl: 69, lg: 36, md: 43));
 
-    // @include screen('xl') {
-    //   margin-top: 69px;
-    // }
-
-    // @include screen('lg') {
-    //   // font-size: 18px;
-    //   margin-top: 36px;
-    // }
-
     @include screen('md') {
-      // margin-top: 43px;
-      // font-size: 15px;
       line-height: (20 / 15);
       margin-right: calc((80 / 320) * 100vw);
     }
@@ -462,11 +398,8 @@
   }
 
   &__info {
-    // min-height: 384px;
     display: flex;
     align-items: center;
-    // padding-top: 42px;
-    // padding-bottom: 42px;
     position: relative;
     box-sizing: border-box;
 
@@ -474,19 +407,12 @@
     @include rule(padding-bottom, (xxl: 42, xl: 42, lg: 20, md: 20));
     @include rule(min-height, (xxl: 384, xl: 384, lg: 290, md: 290));
 
-    // @include screen('lg') {
-    //   padding-top: 20px;
-    //   padding-bottom: 20px;
-    //   min-height: 290px;
-    // }
-
     &::after,&::before {
       content: '';
       position: absolute;
       right: 0;
       top: 0;
       bottom: 0;
-      // left: -200px;
 
       @include rule(left, (xxl: -200, xl: -200, lg: -200, md: -200));
     }
@@ -508,35 +434,17 @@
 
   &__flower {
     width: 100%;
-    // height: 1139px;
     position: relative;
 
     @include rule(height, (xxl: 1139, xl: 1139, lg: 863, md: 863));
 
-    // @include screen('lg') {
-    //   height: 863px;
-    // }
-
     img {
-      // width: 429px;
-      // left: -62px;
-      // top: -97px;
       position: absolute;
       z-index: 1;
 
       @include rule(width, (xxl: 429, xl: 429, lg: 325, md: 325));
       @include rule(left, (xxl: -62, xl: -161, lg: -121, md: -121));
       @include rule(top, (xxl: -97, xl: -97, lg: -71, md: -71));
-
-      // @include screen('xl') {
-      //   left: -161px;
-      // }
-
-      // @include screen('lg') {
-      //   width: 325px;
-      //   left: -121px;
-      //   top: -71px;
-      // }
     }
 
     &::after {
@@ -545,8 +453,8 @@
       right: 0;
       top: 0;
       bottom: 0;
-      // left: -200px;
       background-image: linear-gradient(to top, $color-purple 0%, $color-red-dark 100%);
+
       @include rule(left, (xxl: -200, xl: -200, lg: -200, md: -200));
     }
   }
@@ -573,47 +481,20 @@
 
     @include rule(font-size, (xxl: 12, xl: 12, lg: 9, md: 9));
 
-    // @include screen('lg') {
-    //   font-size: 9px;
-    // }
-
     &::after {
       content: '';
       display: block;
-      // width: 28px;
-      // height: 3px;
       background-color: $color-red;
-      // margin-top: 41px;
 
       @include rule(width, (xxl: 28, xl: 28, lg: 22, md: 12));
       @include rule(height, (xxl: 3, xl: 3, lg: 2, md: 1));
       @include rule(margin-top, (xxl: 41, xl: 41, lg: 30, md: 16));
-
-      // @include screen('lg') {
-      //   width: 22px;
-      //   height: 2px;
-      //   margin-top: 30px;
-      // }
-
-      // @include screen('md') {
-      //   width: 12px;
-      //   height: 1px;
-      //   margin-top: 16px;
-      // }
     }
 
     #{$b}_bigtext & {
+
       &::after {
-        // margin-top: 44px;
         @include rule(margin-top, (xxl: 44, xl: 44, lg: 33, md: 13));
-
-        // @include screen('lg') {
-        //   margin-top: 33px;
-        // }
-
-        // @include screen('md') {
-        //   margin-top: 13px;
-        // }
       }
     }
 
@@ -635,6 +516,7 @@
     }
 
     #{$b}_purple & {
+
       &::after {
         background-color: $color-red-dark;
       }
@@ -663,28 +545,18 @@
 
     #{$b}_bigtext & {
       font-family: $font-third;
-      // font-size: 35px;
       font-weight: 700;
-      // margin-top: 47px;
 
       @include rule(font-size, (xxl: 35, xl: 35, lg: 27, md: 15));
       @include rule(margin-top, (xxl: 47, xl: 47, lg: 35, md: 15));
 
-      // @include screen('lg') {
-      //   font-size: 27px;
-      //   margin-top: 35px;
-      // }
-
       @include screen('md') {
-        // font-size: 15px;
-        // margin-top: 15px;
         line-height: 1.5;
       }
     }
 
     #{$b}_horizontal & {
       margin-top: 0;
-      // margin-left: 34px;
       flex: 1;
 
       @include rule(margin-left, (xxl: 34, xl: 34, lg: 34, md: 34));
@@ -695,18 +567,9 @@
 /* 3 экран */
 
 .aizkulises-third {
+
   &__point {
-    // margin-right: 90px;
-
     @include rule(margin-right, (xxl: 90, xl: 30, lg: 30, md: 50));
-
-    // @include screen('xl') {
-    //   margin-right: 30px;
-    // }
-
-    // @include screen('md') {
-    //   margin-right: 50px;
-    // }
   }
 
   &__maps {
@@ -732,17 +595,11 @@
   &__woodman {
     position: absolute;
     bottom: 0;
-    // right: -108px;
 
     @include rule(right, (xxl: -108, xl: 113, lg: 87, md: 87));
 
-    @include screen('xl') {
-      // right: 113px;
-    }
-
     @include screen('lg') {
       width: calc((229 / 1024) * 100vw);
-      // right: 87px;
     }
 
     @include screen('md') {
@@ -751,34 +608,16 @@
   }
 
   &__iphone {
-    // width: 241px;
-    // margin-right: 134px;
     flex-shrink: 0;
 
     @include rule(margin-right, (xxl: 134, xl: 134, lg: 101, md: 41));
     @include rule(width, (xxl: 241, xl: 241, lg: 183, md: 67));
-
-    // @include screen('lg') {
-    //   width: 183px;
-    // }
-
-    // @include screen('lg') {
-    //   margin-right: 101px;
-    // }
-
-    // @include screen('md') {
-    //   width: 67px;
-    //   margin-right: 41px;
-    // }
   }
 
   &__text {
     font-family: $font-third;
-    // font-size: 35px;
     font-weight: 700;
     line-height: 1.2;
-    // margin-right: 226px;
-    // padding: 50px 0 100px;
     padding: 0;
     position: relative;
     z-index: 3;
@@ -789,24 +628,9 @@
     @include rule(padding-top, (xxl: 50, xl: 50, lg: 50, md: 57));
     @include rule(padding-bottom, (xxl: 100, xl: 181, lg: 154, md: 66));
 
-    // @include screen('xl') {
-    //   // font-size: 30px;
-    //   // margin-right: 275px;
-    //   // padding: 50px 0 181px;
-    // }
-
-    // @include screen('lg') {
-    //   // font-size: 23px;
-    //   // margin-right: 225px;
-    //   // padding-bottom: 154px;
-    // }
-
     @include screen('md') {
-      // font-size: 15px;
       margin-right: 0;
-      // padding-top: 57px;
       line-height: 1.5;
-      // padding-bottom: 66px;
     }
 
     p:first-child {
@@ -828,59 +652,29 @@
   &__info {
     display: flex;
     align-items: center;
-    // margin-top: 32px;
     position: relative;
 
     @include rule(margin-top, (xxl: 32, xl: 32, lg: 25, md: 9));
 
-    // @include screen('lg') {
-    //   margin-top: 25px;
-    // }
-
     @include screen('md') {
-      // margin-top: 9px;
       align-items: flex-start;
     }
   }
 
   &__device {
-    // width: 651px;
-
     @include rule(width, (xxl: 651, xl: 651, lg: 491, md: 179));
-
-    // @include screen('lg') {
-    //   width: 491px;
-    // }
-
-    // @include screen('md') {
-    //   width: 179px;
-    // }
   }
 
   &__list {
-    // margin-top: 217px;
-
     @include rule(margin-top, (xxl: 217, xl: 168, lg: 92, md: 37));
     @include rule(margin-left, (xl: -17, lg: -17));
 
-    // @include screen('xl') {
-    //   margin-top: 168px;
-    //   margin-left: -17px;
-    // }
-
-    // @include screen('lg') {
-    //   margin-top: 92px;
-    // }
-
     @include screen('md') {
       margin-left: 0;
-      // margin-top: 37px;
     }
   }
 
   &__col_left {
-    // padding-top: 190px;
-    // padding-bottom: 590px;
     position: relative;
 
     @include rule(padding-top, (xxl: 190, xl: 190, lg: 375, md: 44));
@@ -890,16 +684,9 @@
     @include rule(margin-left, (md: -25));
     @include rule(margin-right, (md: -25));
 
-    // @include screen('lg') {
-    //   padding-top: 375px;
-    //   padding-bottom: 300px;
-    // }
-
     @include screen('md') {
       width: 100%;
       flex: 0 auto;
-      // padding: 44px 25px 205px;
-      // margin: 0 -25px;
       background-color: $color-purple;
       z-index: 2;
 
@@ -910,12 +697,9 @@
   }
 
   &__screen {
-    // box-shadow: 0 11px 76px rgba(72, 20, 16, .54);
     box-shadow: 0 .573vw 3.958vw rgba(72, 20, 16, .54);
     position: absolute;
     left: 0;
-    // top: -435px;
-    // width: 526px;
     z-index: 2;
 
     @include rule(width, (xxl: 526, xl: 387, lg: 293, md: 148));
@@ -927,50 +711,27 @@
 
     @include screen('xl') {
       box-shadow: 0 .805vw 5.563vw rgba(72, 20, 16, .54);
-      // left: -100px;
-      // top: -321px;
-      // width: 387px;
     }
 
     @include screen('lg') {
       box-shadow: 0 1.074vw 7.422vw rgba(72, 20, 16, .54);
-      // left: -75px;
-      // top: -244px;
-      // width: 293px;
     }
 
     @include screen('md') {
       order: -1;
       position: static;
       box-shadow: 0 3.4375vw 23.75vw rgba(72, 20, 16, .54);
-      // width: 148px;
-      // height: 178px;
-      // margin-right: -25px;
-      // margin-top: 55px;
     }
   }
 
   &__map {
-    // margin-left: 126px;
     width: 100%;
     flex-grow: 1;
     min-width: 50%;
-    // margin-right: -160px;
 
     @include rule(margin-left, (xxl: 126, xl: -100, lg: -100, md: -25));
     @include rule(margin-right, (xxl: -160, xl: -100, lg: -100, md: -25));
     @include rule(margin-top, (md: 21));
-
-    // @include screen('xl') {
-    //   margin-right: -100px;
-    //   margin-left: -100px;
-    // }
-
-    // @include screen('md') {
-    //   margin-top: 21px;
-    //   margin-left: -25px;
-    //   margin-right: -25px;
-    // }
   }
 
   &__map-point {
@@ -981,7 +742,6 @@
     }
 
     @include screen('lg') {
-      // margin-top: 57px;
       margin-left: 23.1%;
     }
 
@@ -1002,7 +762,6 @@
 
       .aizkulises-point__text {
         margin-left: 0;
-        // margin-top: 16px;
         line-height: 1.5;
 
         @include rule(margin-top, (xxl: 16, xl: 16, lg: 16, md: 16));
@@ -1010,7 +769,6 @@
 
       .aizkulises-point__heading::after {
         margin-left: 0;
-        // margin-top: 18px;
 
         @include rule(margin-top, (xxl: 18, xl: 18, lg: 18, md: 18));
       }
@@ -1021,36 +779,18 @@
 /* Карта */
 
 .aizkulises-map {
-  // height: 956px;
   background-color: $color-yellow-light-3;
   position: relative;
 
   @include rule(height, (xxl: 956, xl: 956, lg: 724, md: 363));
-
-  // @include screen('lg') {
-  //   height: 724px;
-  // }
-
-  // @include screen('md') {
-  //   height: 363px;
-  // }
 
   img {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    // width: 2106px;
 
     @include rule(width, (xxl: 2106, xl: 2106, lg: 1600, md: 1000));
-
-    // @include screen('lg') {
-    //   width: 1600px;
-    // }
-
-    // @include screen('md') {
-    //   width: 1000px;
-    // }
   }
 }
 
@@ -1062,55 +802,29 @@
 
   &__item {
     position: relative;
-    // padding-left: 77px;
-    // min-height: 60px;
     display: flex;
     align-items: center;
     font-family: $font-third;
-    // font-size: 35px;
     font-weight: 700;
     box-sizing: border-box;
-    // padding-top: 14px;
 
     @include rule(font-size, (xxl: 35, xl: 30, lg: 23, md: 15));
     @include rule(padding-top, (xxl: 14, xl: 14, lg: 14));
     @include rule(padding-left, (xxl: 77, xl: 77, lg: 63, md: 50));
     @include rule(min-height, (xxl: 60, xl: 60, lg: 60, md: 34));
 
-    // @include screen('xl') {
-    //   font-size: 30px;
-    // }
-
-    // @include screen('lg') {
-    //   // font-size: 23px;
-    //   // padding-left: 63px;
-    // }
-
     @include screen('md') {
-      // font-size: 15px;
-      // padding-left: 50px;
-      // min-height: 34px;
       padding-top: 0;
     }
 
     &:not(:first-child) {
-      // margin-top: 45px;
       @include rule(margin-top, (xxl: 45, xl: 45, lg: 19, md: 23));
-
-      // @include screen('lg') {
-      //   margin-top: 19px;
-      // }
-
-      // @include screen('md') {
-      //   margin-top: 23px;
-      // }
     }
   }
 
   &__icon {
     position: absolute;
     top: 50%;
-    // left: 25px;
     transform: translate(-50%, -50%);
     stroke: $color-purple;
     fill: transparent;
@@ -1124,7 +838,29 @@
     @include screen('md') {
       transform: translate(-50%, -50%) scale(.5);
       stroke: $color-yellow-light;
-      // left: 15px;
+    }
+
+    &_aizkulises_icon {
+
+      &_1 {
+        @include rule(width, (xxl: 56, xl: 56, lg: 56, md: 56));
+        @include rule(height, (xxl: 56, xl: 56, lg: 56, md: 56));
+      }
+
+      &_2 {
+        @include rule(width, (xxl: 61, xl: 61, lg: 61, md: 61));
+        @include rule(height, (xxl: 34, xl: 34, lg: 34, md: 34));
+      }
+
+      &_3 {
+        @include rule(width, (xxl: 52, xl: 52, lg: 52, md: 52));
+        @include rule(height, (xxl: 50, xl: 50, lg: 50, md: 50));
+      }
+
+      &_4 {
+        @include rule(width, (xxl: 48, xl: 48, lg: 48, md: 48));
+        @include rule(height, (xxl: 52, xl: 52, lg: 52, md: 52));
+      }
     }
   }
 }
@@ -1134,15 +870,6 @@
 .aizkulises-photos {
   display: block;
   position: relative;
-  // margin-top: 195px;
-
-  // @include screen('xl') {
-  //   margin-top: 132px;
-  // }
-
-  // @include screen('lg') {
-  //   margin-top: 74px;
-  // }
 
   @include rule(margin-top, (xxl: 195, xl: 132, lg: 74));
 
@@ -1157,23 +884,13 @@
 
   &__photo {
     width: 25%;
-    // height: 322px;
     overflow: hidden;
     position: relative;
 
     @include rule(height, (xxl: 322, xl: 227, lg: 173, md: 72));
 
-    // @include screen('xl') {
-    //   height: 227px;
-    // }
-
-    // @include screen('lg') {
-    //   height: 173px;
-    // }
-
     @include screen('md') {
       width: 33.333%;
-      // height: 72px;
     }
 
     img {
@@ -1189,7 +906,6 @@
     width: 100%;
     height: 100%;
     padding: 0;
-    // padding: 78px 0;
     display: flex;
     align-items: flex-end;
     box-sizing: border-box;
@@ -1198,19 +914,10 @@
     @include rule(padding-top, (xxl: 78, xl: 106, lg: 63, md: 39));
     @include rule(padding-bottom, (xxl: 78, xl: 106, lg: 63, md: 51));
 
-    // @include screen('xl') {
-    //   padding: 106px 0;
-    // }
-
-    // @include screen('lg') {
-    //   padding: 63px 0;
-    // }
-
     @include screen('md') {
       background-image: none;
       position: static;
       background-color: $color-purple;
-      // padding: 39px 0 51px;
     }
   }
 
@@ -1245,8 +952,6 @@
 
   &__info {
     position: relative;
-    // padding-top: 117px;
-    // padding-bottom: 394px;
 
     @include rule(padding-top, (xxl: 117, xl: 89, lg: 67, md: 45));
     @include rule(padding-bottom, (xxl: 394, xl: 226, lg: 170, md: 280));
@@ -1255,19 +960,7 @@
     @include rule(margin-left, (md: -25));
     @include rule(margin-right, (md: -25));
 
-    // @include screen('xl') {
-    //   padding-top: 89px;
-    //   padding-bottom: 226px;
-    // }
-
-    // @include screen('lg') {
-    //   padding-top: 67px;
-    //   padding-bottom: 170px;
-    // }
-
     @include screen('md') {
-      // margin: 0 -25px;
-      // padding: 45px 25px 280px;
       background-color: $color-purple;
     }
 
@@ -1275,10 +968,8 @@
       content: '';
       background-image: linear-gradient(to top, $color-purple 0%, $color-red-dark 100%);
       position: absolute;
-      // right: -160px;
       top: 0;
       bottom: 0;
-      // left: -1200px;
 
       @include rule(right, (xxl: -160, xl: -160, lg: -160));
       @include rule(left, (xxl: -1200, xl: -1200, lg: -1200));
@@ -1295,28 +986,13 @@
   &__house {
     position: relative;
     z-index: 3;
-    // margin-top: 134px;
-    // margin-left: -27px;
-    // width: 887px;
 
     @include rule(margin-top, (xxl: 134, xl: 106, lg: 79, md: -222));
     @include rule(margin-left, (xxl: -27, xl: -27, lg: -115));
     @include rule(width, (xxl: 887, xl: 887, lg: 673, md: 268));
 
-    // @include screen('xl') {
-    //   // margin-top: 106px;
-    // }
-
-    // @include screen('lg') {
-    //   // width: 673px;
-    //   // margin-left: -115px;
-    //   // margin-top: 79px;
-    // }
-
     @include screen('md') {
       margin-left: 0;
-      // width: 268px;
-      // margin-top: -222px;
     }
 
     &_first {
@@ -1342,12 +1018,9 @@
       &::after {
         content: '';
         position: absolute;
-        // width: 287px;
-        // height: 3px;
         background-color: $color-red;
         bottom: calc((12 / 1920) * 100vw);
         right: 100%;
-        // margin-right: 40px;
 
         @include rule(width, (xxl: 287, xl: 287, lg: 216, md: 216));
         @include rule(height, (xxl: 3, xl: 3, lg: 2, md: 2));
@@ -1359,26 +1032,13 @@
 
         @include screen('lg') {
           bottom: 43%;
-          // width: 216px;
-          // height: 2px;
-          // margin-right: 31px;
         }
       }
     }
   }
 
   &__filter {
-    // margin-top: -242px;
-
     @include rule(margin-top, (xxl: -242, xl: -140, lg: -106, md: -106));
-
-    // @include screen('xl') {
-    //   margin-top: -140px;
-    // }
-
-    // @include screen('lg') {
-    //   margin-top: -106px;
-    // }
 
     @include screen('md') {
       display: flex;
@@ -1389,16 +1049,6 @@
   &__screen {
     font-size: 0;
     position: relative;
-
-    // @include screen('xl') {
-    //   margin-left: -72px;
-    //   margin-right: -34px;
-    // }
-
-    // @include screen('lg') {
-    //   margin-left: -55px;
-    //   margin-right: -36px;
-    // }
 
     @include rule(margin-left, (xl: -72, lg: -55));
     @include rule(margin-right, (xl: -34, lg: -36));
@@ -1412,7 +1062,6 @@
 
     img {
       width: 100%;
-      // box-shadow: 0 0 93px rgba(21, 9, 18, .54);
       box-shadow: 0 0 4.843vw rgba(21, 9, 18, .54);
       position: relative;
       z-index: 1;
@@ -1420,9 +1069,11 @@
       @include screen('xl') {
         box-shadow: 0 0 6.808vw rgba(21, 9, 18, .54);
       }
+
       @include screen('lg') {
         box-shadow: 0 0 9.082vw rgba(21, 9, 18, .54);
       }
+
       @include screen('md') {
         box-shadow: 0 0 29.0625vw rgba(21, 9, 18, .54);
       }
@@ -1434,7 +1085,6 @@
       right: 0;
       bottom: 0;
       top: 0;
-      // left: -1200px;
       background-image: linear-gradient(5deg, #ff4a3d 0%, $color-red-dark 100%);
 
       @include rule(left, (xxl: -1200, xl: -1200, lg: -1200, md: -1200));
@@ -1447,26 +1097,14 @@
 
   &__text {
     font-family: $font-third;
-    // font-size: 35px;
     font-weight: 700;
-    // margin-top: 106px;
     line-height: 1.2;
 
     @include rule(font-size, (xxl: 35, xl: 35, lg: 27, md: 23));
     @include rule(margin-top, (xxl: 106, xl: 88, lg: 65, md: 144));
 
-    // @include screen('xl') {
-    //   margin-top: 88px;
-    // }
-
-    // @include screen('lg') {
-    //   font-size: 27px;
-    //   margin-top: 65px;
-    // }
-
     @include screen('md') {
       line-height: 23px;
-      // margin-top: 144px;
     }
   }
 }
@@ -1475,27 +1113,11 @@
 
 .aizkulises-five {
   display: block;
-  // padding: 260px 0 195px;
   padding: 0;
   $b: &;
 
   @include rule(padding-top, (xxl: 260, xl: 185, lg: 141, md: 54));
   @include rule(padding-bottom, (xxl: 195, xl: 177, lg: 131, md: 58));
-
-  // @include screen('xl') {
-  //   padding-top: 185px;
-  //   padding-bottom: 177px;
-  // }
-
-  // @include screen('lg') {
-  //   padding-top: 141px;
-  //   padding-bottom: 131px;
-  // }
-
-  // @include screen('md') {
-  //   padding-top: 54px;
-  //   padding-bottom: 58px;
-  // }
 
   &__right {
     @include screen('md') {
@@ -1556,25 +1178,11 @@
   }
 
   &__decor {
-    // width: 497px;
     flex-shrink: 0;
-    // margin-right: 137px;
-    // margin-left: -7px;
 
     @include rule(width, (xxl: 497, xl: 497, lg: 376, md: 376));
     @include rule(margin-left, (xxl: -7, xl: -141, lg: -106, md: -106));
     @include rule(margin-right, (xxl: 137, xl: 46, lg: 34, md: 34));
-
-    // @include screen('xl') {
-    //   margin-left: -141px;
-    //   margin-right: 46px;
-    // }
-
-    // @include screen('lg') {
-    //   width: 376px;
-    //   margin-right: 34px;
-    //   margin-left: -106px;
-    // }
 
     @include screen('md') {
       display: none;
@@ -1583,25 +1191,17 @@
 
   &__text {
     font-family: $font-third;
-    // font-size: 35px;
     font-weight: 700;
     flex: 1;
     margin-right: 15%;
-    // margin-bottom: 179px;
     line-height: 1.2;
 
     @include rule(font-size, (xxl: 35, xl: 35, lg: 27, md: 27));
     @include rule(margin-bottom, (xxl: 179, xl: 156, lg: 122));
 
     @include screen('xl') {
-      // margin-bottom: 156px;
       margin-right: 10%;
     }
-
-    // @include screen('lg') {
-    //   font-size: 27px;
-    //   margin-bottom: 122px;
-    // }
 
     @include screen('md') {
       margin-right: 0;

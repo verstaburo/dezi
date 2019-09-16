@@ -40,6 +40,7 @@ import pageSwitcher from '../blocks/page-switcher/page-switcher';
 import watchAnimation from '../pages/services/services';
 import iniLabels from '../blocks/form-elements/labels';
 import scrollList from '../blocks/scroll-list/scroll-list';
+import textareaAutosize from '../blocks/form-elements/form-elements';
 
 const $ = window.$;
 
@@ -73,6 +74,7 @@ $(() => {
   anchors();
   iniLabels();
   // watch();
+  textareaAutosize();
   scrollList();
   watchAnimation();
   pageSwitcher();
