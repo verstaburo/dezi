@@ -11,17 +11,17 @@ export default function scrollList() {
       const wHeight = w.height();
       const wWidth = $(block).width();
       const blockWidth = (scrollBlock[0].scrollWidth - wWidth);
-      const scrollHeight = block.outerHeight(true);
+      // const scrollHeight = block.outerHeight(true);
       const blockTop = block.offset().top;
-      const scrollMoment = blockTop - wHeight;
-      const fullHeight = scrollHeight + wHeight;
-      const maxScroll = (blockTop + scrollHeight) - wHeight;
+      const scrollMoment = blockTop - (wHeight / 2);
+      const fullHeight = wHeight;
+      const maxScroll = blockTop + (wHeight / 2);
       const maxTranslate = blockWidth / fullHeight;
 
       if (st < scrollMoment) {
         scrollBlock.attr('style', 'transform: translate3d(0, 0, 0)');
       } else if ((st >= scrollMoment) && (st < maxScroll)) {
-        const scrollPercent = (st - blockTop) * maxTranslate;
+        const scrollPercent = (st - scrollMoment) * maxTranslate;
         scrollBlock.attr('style', `transform: translate3d(-${scrollPercent}px, 0, 0)`);
       } else if (st > maxScroll) {
         scrollBlock.attr('style', `transform: translate3d(-${blockWidth}px, 0, 0)`);

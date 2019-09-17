@@ -17,66 +17,6 @@ export default function aizkulises() {
   const w = $(window);
 
   /*
-  Масштабирование сайта
-   */
-  // let scale = 1;
-  // const w = $(window);
-
-  // function setDevice() {
-  //   console.log('resize');
-  //   let
-  //     zoom = 1,
-  //     siteWidth,
-  //     screenSize = w.width();
-
-  //   if (screenSize < 768) {
-  //     siteWidth = 320;
-  //   } else if (screenSize >= 768 && screenSize < 1025) {
-  //     siteWidth = 1024;
-  //   } else if (screenSize >= 1025 && screenSize < 1367) {
-  //     siteWidth = 1366;
-  //   } else {
-  //     siteWidth = 1920;
-  //   }
-  //   scale = screenSize / siteWidth;
-  //   zoom = scale;
-  //   $('html').css({
-  //     zoom,
-  //   });
-  //   window.globalOptions.scale = zoom;
-  // }
-
-  // setDevice();
-  // $(window).on('resize', setDevice);
-
-  // $(window).on('load resize', function () {
-  //   let
-  //     siteWidth,
-  //     screenSize = w.width();
-
-  //   if (screenSize < 768) siteWidth = 320;
-  //   if (screenSize >= 768) siteWidth = 1024;
-  //   if (screenSize >= 1025) siteWidth = 1366;
-  //   if (screenSize >= 1367) siteWidth = 1920;
-
-  //   scale = screenSize / siteWidth;
-  //   window.globalOptions.scale = scale;
-
-  //   if ($('html').is('.is-ie')) {
-  //     $('html').css({
-  //       '-ms-zoom': scale,
-  //     });
-  //   } else {
-  //     $('html').css({
-  //       zoom: scale,
-  //     });
-  //   }
-
-  //   // Если вернемся к стандартному зуму
-  //   // document.querySelector('meta[name="viewport"]').setAttribute('content', 'width='+siteWidth+', initial-scale='+scale+'');
-  // });
-
-  /*
   Анимации
    */
   function scrollAnimation() {
@@ -95,9 +35,6 @@ export default function aizkulises() {
         'animation_fadeIn2',
         'is-animate',
       ];
-
-    // if (isMobile) $('.js-sr').removeClass('js-sr');
-    // if (isMobile) return;
 
     function makeDelay(el, dl, stp) {
       let delay = dl || 0;
@@ -184,11 +121,6 @@ export default function aizkulises() {
           el.removeClass(`${classes}${baseClass}`).attr('style', '');
         }, duration + maxDelay);
       }
-
-      //   setTimeout(() => {
-      //     el.removeClass(`${classes}${baseClass}`).attr('style', '');
-      //   }, duration + maxDelay);
-      // }
     });
   }
   scrollAnimation();
@@ -298,17 +230,16 @@ export default function aizkulises() {
         scrollBlock = block.find('[data-scroll-block]'),
         wHeight = w.height(),
         blockWidth = (scrollBlock[0].scrollWidth - w.width()),
-        scrollHeight = block.outerHeight(true),
         blockTop = block.offset().top,
         scrollMoment = blockTop - wHeight,
-        fullHeight = scrollHeight + 2 * wHeight,
-        maxScroll = (blockTop + scrollHeight) - wHeight,
+        fullHeight = 2 * wHeight,
+        maxScroll = blockTop + wHeight,
         maxTranslate = blockWidth / fullHeight;
 
       if (st < scrollMoment) {
         scrollBlock.attr('style', `transform: translate3d(0, 0, 0)`);
       } else if ((st >= scrollMoment) && (st < maxScroll)) {
-        const scrollPercent = (st - blockTop) * maxTranslate;
+        const scrollPercent = (st - scrollMoment) * maxTranslate;
         scrollBlock.attr('style', `transform: translate3d(-${scrollPercent}px, 0, 0)`);
       } else if (st > maxScroll) {
         scrollBlock.attr('style', `transform: translate3d(-${blockWidth}px, 0, 0)`);
