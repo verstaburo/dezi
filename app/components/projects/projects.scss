@@ -5,20 +5,22 @@
 
   &__project {
     width: 25%;
-    height: 651px;
+    // height: 651px;
     overflow: hidden;
     position: relative;
 
+    @include rule(height, (xxl: 651, xl: 459, lg: 348, md: 217));
+
     @include screen('xl') {
-      height: 459px;
+      // height: 459px;
     }
 
     @include screen('lg') {
-      height: 348px;
+      // height: 348px;
     }
 
     @include screen('md') {
-      height: 217px;
+      // height: 217px;
       width: 50%;
 
       &:nth-child(n + 3) {
@@ -40,16 +42,21 @@
 
   &__text {
     font-family: $font-second;
-    font-size: 20px;
+    // font-size: 20px;
     font-weight: 700;
     transition: transform $ease-main;
     color: $color-yellow-light-4;
     position: absolute;
-    left: 20px;
-    right: 20px;
-    top: 48px;
+    // left: 20px;
+    // right: 20px;
+    // top: 48px;
     text-align: center;
     line-height: 1.2;
+
+    @include rule(left, (xxl: 20, xl: 20, lg: 20, md: 20));
+    @include rule(right, (xxl: 20, xl: 20, lg: 20, md: 20));
+    @include rule(top, (xxl: 48, xl: 48, lg: 48, md: 48));
+    @include rule(font-size, (xxl: 20, xl: 20, lg: 20, md: 20));
 
     @include screen('xl') {
       display: none;

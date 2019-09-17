@@ -7,62 +7,71 @@
   color: $color-grey-dark-8;
   font-family: $font-second;
   font-weight: 300;
-  font-size: 20px;
+  // font-size: 20px;
   line-height: 1.2;
-  margin-bottom: -1px;
+  // margin-bottom: -1px;
 
-  @include screen('lg') {
-    font-size: 18px;
-  }
+  @include rule(margin-bottom, (xxl: -1, xl: -1, lg: -1, md: -1));
+  @include rule(font-size, (xxl: 20, xl: 20, lg: 18, md: 15));
 
-  @include screen('md') {
-    font-size: 15px;
-  }
+  // @include screen('lg') {
+  //   font-size: 18px;
+  // }
+
+  // @include screen('md') {
+  //   font-size: 15px;
+  // }
 
   .case-section {
     display: block;
-    margin-left: -4px;
+    // margin-left: -4px;
 
-    @include screen('xl') {
-      margin-left: -2px;
-    }
+    @include rule(margin-left, (xxl: -4, xl: -2));
+
+    // @include screen('xl') {
+    //   margin-left: -2px;
+    // }
 
     @include screen('lg') {
       margin-left: 0;
     }
 
     &__heading {
-      font-size: 40px;
+      // font-size: 40px;
       color: $color-grey-dark-8;
       font-weight: 400;
       letter-spacing: -.02em;
 
-      @include screen('lg') {
-        font-size: 35px;
-      }
+      @include rule(font-size, (xxl: 40, xl: 40, lg: 35, md: 30));
 
-      @include screen('md') {
-        font-size: 30px;
-      }
+      // @include screen('lg') {
+      //   font-size: 35px;
+      // }
+
+      // @include screen('md') {
+      //   font-size: 30px;
+      // }
     }
 
     &__text {
       font-weight: 300;
-      font-size: 20px;
+      // font-size: 20px;
       line-height: 1.62;
+
+      @include rule(font-size, (xxl: 20, xl: 20, lg: 18, md: 15));
 
       @include screen('xl') {
         line-height: 1.2;
       }
 
       @include screen('lg') {
-        font-size: 18px;
+        // font-size: 18px;
         line-height: 1.2;
       }
 
-      @include screen('md') {
-        font-size: 15px;
-      }
+      // @include screen('md') {
+      //   // font-size: 15px;
+      // }
     }
   }
 
@@ -90,43 +99,50 @@
       }
 
       &:not(:last-child) {
-        margin-bottom: 70px;
+        // margin-bottom: 70px;
+        @include rule(margin-bottom, (xxl: 70, xl: 70, lg: 51, md: 51));
 
-        @include screen('lg') {
-          margin-bottom: 51px;
-        }
+        // @include screen('lg') {
+        //   margin-bottom: 51px;
+        // }
       }
     }
 
     &__logo {
       display: block;
-      width: 213px;
-      height: 73px;
+      // width: 213px;
+      // height: 73px;
       fill: $color-grey-dark-9;
-      margin-left: -11px;
+      // margin-left: -11px;
 
-      @include screen('lg') {
-        width: 160px;
-        height: 55px;
-        margin-left: -8px;
-      }
+      @include rule(width, (xxl: 213, xl: 213, lg: 160, md: 148));
+      @include rule(height, (xxl: 73, xl: 73, lg: 55, md: 51));
+      @include rule(margin-left, (xxl: -11, xl: -11, lg: -8));
+
+      // @include screen('lg') {
+      //   width: 160px;
+      //   height: 55px;
+      //   margin-left: -8px;
+      // }
 
       @include screen('md') {
-        width: 148px;
-        height: 51px;
+        // width: 148px;
+        // height: 51px;
         margin-left: 0;
       }
 
       &:not(:last-child) {
-        margin-bottom: 67px;
+        // margin-bottom: 67px;
 
-        @include screen('lg') {
-          margin-bottom: 52px;
-        }
+        @include rule(margin-bottom, (xxl: 67, xl: 67, lg: 52, md: 32));
 
-        @include screen('md') {
-          margin-bottom: 32px;
-        }
+        // @include screen('lg') {
+        //   margin-bottom: 52px;
+        // }
+
+        // @include screen('md') {
+        //   margin-bottom: 32px;
+        // }
       }
 
       &-icon {
@@ -138,19 +154,21 @@
 
     &__link {
       display: inline-block;
-      font-size: 19px;
+      // font-size: 19px;
       font-weight: 500;
       color: $color-grey-light;
       line-height: 1.2;
       cursor: pointer;
 
-      @include screen('lg') {
-        font-size: 14px;
-      }
+      @include rule(font-size, (xxl: 19, xl: 19, lg: 14, md: 11));
 
-      @include screen('md') {
-        font-size: 11px;
-      }
+      // @include screen('lg') {
+      //   font-size: 14px;
+      // }
+
+      // @include screen('md') {
+      //   font-size: 11px;
+      // }
     }
 
     &__applique {
@@ -179,29 +197,31 @@
     &__images {
       position: absolute;
       top: 0;
-      left: -160px;
+      // left: -160px;
       min-height: 100%;
-      width: calc((10000 / 45) * 1% + 320px);
+      width: calc((10000 / 45) * 1% + ((320 / 1920) * 100vw));
       display: flex;
       justify-content: flex-start;
       align-items: stretch;
 
+      @include rule(left, (xxl: -160, xl: -100, lg: -75, md: -25));
+
       @include screen('xl') {
-        width: calc((10000 / 40) * 1% + 200px);
-        left: -100px;
+        width: calc((10000 / 40) * 1% + ((200 / 1366) * 100vw));
+        // left: -100px;
       }
 
       @include screen('lg') {
-        width: calc((10000 / 42.3) * 1% + 150px);
-        left: -75px;
+        width: calc((10000 / 42.3) * 1% + ((150 / 1024) * 100vw));
+        // left: -75px;
       }
 
       @include screen('md') {
         display: flex;
         height: 100%;
         align-items: flex-end;
-        width: calc(100% + 50px);
-        left: -25px;
+        width: calc(100% + ((50 / 320) * 100vw));
+        // left: -25px;
       }
 
       &-woman {
@@ -250,9 +270,6 @@
 
         @include screen('xl') {
           width: 16%;
-        }
-
-        @include screen('lg') {
         }
 
         @include screen('md') {
@@ -352,6 +369,7 @@
       }
 
       .case-section {
+
         &__heading {
           box-sizing: border-box;
 
@@ -360,34 +378,36 @@
           }
 
           &:not(:last-child) {
-            margin-bottom: 47px;
+            // margin-bottom: 47px;
+            @include rule(margin-bottom, (xxl: 47, xl: 50, lg: 55, md: 25));
 
-            @include screen('xl') {
-              margin-bottom: 50px;
-            }
+            // @include screen('xl') {
+            //   margin-bottom: 50px;
+            // }
 
-            @include screen('lg') {
-              margin-bottom: 55px;
-            }
+            // @include screen('lg') {
+            //   margin-bottom: 55px;
+            // }
 
-            @include screen('md') {
-              margin-bottom: 25px;
-            }
+            // @include screen('md') {
+            //   margin-bottom: 25px;
+            // }
           }
         }
       }
 
       p {
+
         &:not(:last-child) {
-          margin-bottom: 32px;
+          @include rule(margin-bottom, (xxl: 32, xl: 24, lg: 24, md: 18));
 
-          @include screen('xl') {
-            margin-bottom: 24px;
-          }
+          // @include screen('xl') {
+          //   margin-bottom: 24px;
+          // }
 
-          @include screen('md') {
-            margin-bottom: 18px;
-          }
+          // @include screen('md') {
+          //   margin-bottom: 18px;
+          // }
         }
       }
     }
@@ -453,11 +473,18 @@
         left: 0;
         width: 100%;
 
+        // &_front {
+        //   box-shadow: 10px 10px 0 0 $color-smoke-white;
+        // }
+
         &_girl {
-          margin-left: -1px;
-          margin-top: -1px;
+          // margin-left: -1px;
+          // margin-top: -1px;
           transition: transform .6s ease;
           transform: translate3d(0, 0, 0);
+
+          // @include rule(margin-left, (xxl: -2, xl: -2, lg: -2, md: -2));
+          // @include rule(margin-top, (xxl: -2, xl: -2, lg: -2, md: -2));
 
           &.is-animated {
             transform: translate3d(0, 5%, 0);
@@ -467,6 +494,7 @@
     }
 
     #{$b} {
+
       &__col {
         position: relative;
 
@@ -594,15 +622,21 @@
         @include pseudo;
 
         top: 0;
-        left: -165px;
-        width: calc(100% + 300px);
+        // left: -165px;
+        width: 50vw;
         height: 100%;
         z-index: 1;
         background-color: $color-black;
 
-        @include screen('xl') {
-          left: -105px;
-          width: calc(100% + 200px);
+        @include rule(left, (xxl: -165, xl: -105, lg: -105, md: -50));
+
+        // @include screen('xl') {
+        //   // left: -105px;
+        //   // width: calc(100% + 200px);
+        // }
+
+        @include screen('md') {
+          width: 120vw;
         }
       }
     }
@@ -626,6 +660,7 @@
       }
 
       .case-section {
+
         &__text {
           letter-spacing: -.04em;
         }
@@ -661,6 +696,7 @@
     }
 
     #{$b} {
+
       &__col {
         position: relative;
 
@@ -793,7 +829,9 @@
     }
 
     #{$b} {
+
       &__col {
+
         &_left {
           width: 40%;
 
@@ -920,7 +958,9 @@
     }
 
     &__section {
+
       .case-section {
+
         &__heading {
           line-height: 1.4;
 
@@ -932,7 +972,9 @@
     }
 
     #{$b} {
+
       &__col {
+
         &_left {
           width: 54.4%;
 
@@ -1048,20 +1090,25 @@
       }
 
       .case-section {
-        &__heading {
-          &:not(:last-child) {
-            margin-bottom: 26px;
 
-            @include screen('md') {
-              margin-bottom: 24px;
-            }
+        &__heading {
+
+          &:not(:last-child) {
+            @include rule(margin-bottom, (xxl: 26, xl: 26, lg: 26, md: 24));
+            // margin-bottom: 26px;
+
+            // @include screen('md') {
+            //   margin-bottom: 24px;
+            // }
           }
         }
       }
     }
 
     #{$b} {
+
       &__col {
+
         &_left {
           width: 55%;
 

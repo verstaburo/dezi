@@ -4,11 +4,11 @@
 // Базовые настройки сетки сайта
 // ##########
 $container-width: 100%; // Максимальная ширина контейнера контента
-$container-padding: 26px; // Отступы слева и справа у контейнера
+$container-padding: 26; // Отступы слева и справа у контейнера
 $grid-container-width: 100%; // Ширина контейнера сетки
 $grid-cols: 13; // Количество колонок в сетке
-$grid-gap: 26px; // Расстояние между колонками
-$grid-gap-vertical: 26px; // Расстояние между строками в сетке
+$grid-gap: 13; // Расстояние между колонками (половинка)
+$grid-gap-vertical: 26; // Расстояние между строками в сетке
 $grid-col-width: $grid-container-width / $grid-cols; // Ширина одной
 $grid-col-width-12: $grid-container-width / 12; // Ширина одной колонки
 
@@ -122,33 +122,33 @@ $ls-form-link: .36em;
 $ls-port: .04em;
 $lh1: 1;
 $lh-default: 1.2;
-$lh-base: 28px; // основа для
-$lh-md-base: 20px;
-$lh-base-32: 32px;
-$lh-base-38: 38px;
-$lh-base-45: 45px;
-$lh-base-28: 28px;
-$lh-base-22: 22px;
-$lh-base-14: 14px;
-$lh-base-19: 19px;
-$fz9: 9px;
-$fz10: 10px;
-$fz12: 12px;
-$fz13: 13px;
-$fz15: 15px;
-$fz16: 16px;
-$fz17: 17px;
-$fz18: 18px;
-$fz27: 27px;
-$fz30: 30px;
-$fz35: 35px;
-$fz31: 31px;
-$fz40: 40px;
-$fz58: 58px;
-$fz61: 61px;
-$fz116: 116px;
-$fz-text: 20px;
-$fz-md-text: 14px;
-$fz-title: 68px;
-$fz-xl-title: 50px;
-$fz-md-title: 25px;
+$lh-base: 28; // основа для
+$lh-md-base: 20;
+$lh-base-32: 32;
+$lh-base-38: 38;
+$lh-base-45: 45;
+$lh-base-28: 28;
+$lh-base-22: 22;
+$lh-base-14: 14;
+$lh-base-19: 19;
+$fz9: 9;
+$fz10: 10;
+$fz12: 12;
+$fz13: 13;
+$fz15: 15;
+$fz16: 16;
+$fz17: 17;
+$fz18: 18;
+$fz27: 27;
+$fz30: 30;
+$fz35: 35;
+$fz31: 31;
+$fz40: 40;
+$fz58: 58;
+$fz61: 61;
+$fz116: 116;
+$fz-text: 20;
+$fz-md-text: 14;
+$fz-title: 68;
+$fz-xl-title: 50;
+$fz-md-title: 25;

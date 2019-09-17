@@ -128,6 +128,12 @@ div {
   }
 }
 
+@mixin screenOrientation($orientation: portrait) {
+  @media only screen and (orientation: $orientation) {
+    @content;
+  }
+}
+
 /*
 Быстренько подрубаем аппаратное ускорение для анимирующихся элементов.
 Пример использования:
@@ -240,4 +246,38 @@ div {
   width: 0;
   min-width: 100%;
   min-height: 100%;
+}
+/*
+Миксин для адаптивных свойств
+Пример: @include rule(width, (xl: 100px, lg: 200px));
+*/
+$xxl: 1920;
+$xl: 1366;
+$lg: 1024;
+$md: 320;
+
+@mixin rule($name, $pointsAndValues) {
+  @each $breakpoint, $value in $pointsAndValues {
+    @if $breakpoint == xxl {
+      #{$name}: calc((#{$value} / #{$xxl}) * 100vw);
+    }
+
+    @if $breakpoint == xl {
+      @include screen('#{$breakpoint}') {
+        #{$name}: calc((#{$value} / #{$xl}) * 100vw);
+      }
+    }
+
+    @if $breakpoint == lg {
+      @include screen('#{$breakpoint}') {
+        #{$name}: calc((#{$value} / #{$lg}) * 100vw);
+      }
+    }
+
+    @if $breakpoint == md {
+      @include screen('#{$breakpoint}') {
+        #{$name}: calc((#{$value} / #{$md}) * 100vw);
+      }
+    }
+  }
 }

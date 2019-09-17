@@ -3,15 +3,18 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  width: 70px;
-  height: 70px;
+  // width: 70px;
+  // height: 70px;
   transform-origin: 50% 50% 0;
   $b: &;
 
-  @include screen('md') {
-    width: 35px;
-    height: 35px;
-  }
+  @include rule(width, (xxl: 70, xl: 70, lg: 70, md: 35));
+  @include rule(height, (xxl: 70, xl: 70, lg: 70, md: 35));
+
+  // @include screen('md') {
+  //   width: 35px;
+  //   height: 35px;
+  // }
 
   &_support.is-animate {
     animation: ballJump $animationDuration cubic-bezier(.68, -0.7, .265, 1.55);
@@ -55,25 +58,33 @@
     z-index: 1;
 
     &_circle {
-      width: 67px;
-      height: 67px;
+      // width: 67px;
+      // height: 67px;
       border-radius: 50%;
       background-color: currentColor;
 
-      @include screen('md') {
-        width: 34px;
-        height: 34px;
-      }
+      // @include screen('md') {
+      //   width: 34px;
+      //   height: 34px;
+      // }
+
+      @include rule(width, (xxl: 67, xl: 67, lg: 67, md: 34));
+      @include rule(height, (xxl: 67, xl: 67, lg: 67, md: 34));
     }
 
     &_triangle {
       border-color: currentColor;
       border-style: solid;
-      border-width: 36px 65px;
+      // border-width: 36px 65px;
 
-      @include screen('md') {
-        border-width: 18px 33px;
-      }
+      @include rule(border-top-width, (xxl: 36, xl:36, lg: 36, md: 18));
+      @include rule(border-bottom-width, (xxl: 36, xl: 36, lg: 36, md: 18));
+      @include rule(border-left-width, (xxl: 65, xl: 65, lg: 65, md: 33));
+      @include rule(border-right-width, (xxl: 65, xl: 65, lg: 65, md: 33));
+
+      // @include screen('md') {
+      //   border-width: 18px 33px;
+      // }
 
       &_right {
         border-right-width: 0;
@@ -90,99 +101,129 @@
       }
 
       &_up {
-        border-width: 65px 36px 0;
+        // border-width: 65px 36px 0;
         border-left-color: transparent;
         border-top-color: transparent;
         border-right-color: transparent;
 
-        @include screen('md') {
-          border-width: 33px 18px 0;
-        }
+        // @include screen('md') {
+        //   border-width: 33px 18px 0;
+        // }
+
+        @include rule(border-top-width, (xxl: 65, xl: 65, lg: 65, md: 33));
+        @include rule(border-bottom-width, (xxl: 0, xl: 0, lg: 0, md: 0));
+        @include rule(border-left-width, (xxl: 36, xl: 36, lg: 36, md: 18));
+        @include rule(border-right-width, (xxl: 36, xl: 36, lg: 36, md: 18));
       }
 
       &_down {
-        border-width: 65px 36px 0;
+        // border-width: 65px 36px 0;
         border-left-color: transparent;
         border-bottom-color: transparent;
         border-right-color: transparent;
 
-        @include screen('md') {
-          border-width: 33px 18px 0;
-        }
+        // @include screen('md') {
+        //   border-width: 33px 18px 0;
+        // }
+
+        @include rule(border-top-width, (xxl: 65, xl: 65, lg: 65, md: 33));
+        @include rule(border-bottom-width, (xxl: 0, xl: 0, lg: 0, md: 0));
+        @include rule(border-left-width, (xxl: 36, xl: 36, lg: 36, md: 18));
+        @include rule(border-right-width, (xxl: 36, xl: 36, lg: 36, md: 18));
       }
     }
 
     &_rhomb {
-      width: 62px;
-      height: 62px;
+      // width: 62px;
+      // height: 62px;
       transform-origin: 50% 50% 0;
       transform: rotate(45deg);
       background-color: currentColor;
 
-      @include screen('md') {
-        width: 31px;
-        height: 31px;
-      }
+      @include rule(width, (xxl: 62, xl: 62, lg: 62, md: 31));
+      @include rule(height, (xxl: 62, xl: 62, lg: 62, md: 31));
+
+      // @include screen('md') {
+      //   width: 31px;
+      //   height: 31px;
+      // }
     }
 
     #{$b}_support & {
-      left: -23px;
-      top: -20px;
+      // left: -23px;
+      // top: -20px;
 
-      @include screen('md') {
-        left: -12px;
-        top: -10px;
-      }
+      // @include screen('md') {
+      //   left: -12px;
+      //   top: -10px;
+      // }
+
+      @include rule(left, (xxl: -23, xl: -23, lg: -23, md: -12));
+      @include rule(top, (xxl: -20, xl: -20, lg: -20, md: -10));
     }
 
     #{$b}_consulting & {
-      left: 30px;
-      top: -20px;
+      // left: 30px;
+      // top: -20px;
 
-      @include screen('md') {
-        left: 15px;
-        top: -10px;
-      }
+      // @include screen('md') {
+      //   left: 15px;
+      //   top: -10px;
+      // }
+      @include rule(left, (xxl: 30, xl: 30, lg: 30, md: 15));
+      @include rule(top, (xxl: -20, xl: -20, lg: -20, md: -10));
     }
 
     #{$b}_smm & {
-      left: 48px;
-      top: -2px;
+      // left: 48px;
+      // top: -2px;
 
-      @include screen('md') {
-        left: 24px;
-        top: 0;
-      }
+      // @include screen('md') {
+      //   left: 24px;
+      //   top: 0;
+      // }
+
+      @include rule(left, (xxl: 48, xl: 48, lg: 48, md: 24));
+      @include rule(top, (xxl: -2, xl: -2, lg: -2, md: 0));
     }
 
     #{$b}_commerce & {
-      left: 8px;
-      top: -13px;
+      // left: 8px;
+      // top: -13px;
 
-      @include screen('md') {
-        left: 4px;
-        top: -6px;
-      }
+      // @include screen('md') {
+      //   left: 4px;
+      //   top: -6px;
+      // }
+
+      @include rule(left, (xxl: 8, xl: 8, lg: 8, md: 4));
+      @include rule(top, (xxl: -13, xl: -13, lg: -13, md: -6));
     }
 
     #{$b}_production & {
-      left: 36px;
-      top: -16px;
+      // left: 36px;
+      // top: -16px;
 
-      @include screen('md') {
-        left: 18px;
-        top: -8px;
-      }
+      // @include screen('md') {
+      //   left: 18px;
+      //   top: -8px;
+      // }
+
+      @include rule(left, (xxl: 36, xl: 36, lg: 36, md: 18));
+      @include rule(top, (xxl: -16, xl: -16, lg: -16, md: -8));
     }
 
     #{$b}_branding & {
-      left: 29px;
-      top: -8px;
+      // left: 29px;
+      // top: -8px;
 
-      @include screen('md') {
-        left: 15px;
-        top: -4px;
-      }
+      // @include screen('md') {
+      //   left: 15px;
+      //   top: -4px;
+      // }
+
+      @include rule(left, (xxl: 29, xl: 29, lg: 29, md: 15));
+      @include rule(top, (xxl: -8, xl: -8, lg: -8, md: -4));
     }
   }
 

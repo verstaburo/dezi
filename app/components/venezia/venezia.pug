@@ -32,9 +32,9 @@ mixin venezia-lead()
           +case-section.__section
             +case-section-heading().js-sr_1 Задачи
             +case-list([
-              ['case-rocket', 'Рассказать о будущем проекта', '33', '33'],
-              ['case-paint', 'Выгодно подать информацию об апартаментах', '31', '31'],
-              ['case-map', 'Рассказать об окрестностях и инфраструктуре', '31', '27'],
+              ['case-rocket', 'Рассказать о будущем проекта', '', ''],
+              ['case-paint', 'Выгодно подать информацию об апартаментах', '', ''],
+              ['case-map', 'Рассказать об окрестностях и инфраструктуре', '', ''],
             ]).venezia-lead__list
 
     block
@@ -109,6 +109,6 @@ mixin venezia-package()
       +venezia-column-right
         +e.media
           +e.IMG.image_front(src="assets/images/venezia/package.png")
-          +e.IMG.image_middle.js-sr_animate(src="assets/images/venezia/package-magazine.png")
+          +e.IMG.image_middle.js-venezia-catalog(src="assets/images/venezia/package-magazine.png")
           +e.IMG.image_back(src="assets/images/venezia/package-back-handle.png")
     block

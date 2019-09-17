@@ -4,14 +4,15 @@
   $b: &;
 
   &__button {
-    margin-top: 60px;
+    // margin-top: 60px;
+    @include rule(margin-top, (xxl: 60, xl: 60, lg: 47, md: 33));
 
-    @include screen('lg') {
-      margin-top: 47px;
-    }
+    // @include screen('lg') {
+    //   margin-top: 47px;
+    // }
 
     @include screen('md') {
-      margin-top: 33px;
+      // margin-top: 33px;
       width: 100%;
     }
   }

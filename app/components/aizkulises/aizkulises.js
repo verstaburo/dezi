@@ -14,38 +14,7 @@ export default function aizkulises() {
     window.isMobile = isMobile;
   }
 
-  /*
-  Масштабирование сайта
-   */
-  let scale = 1;
   const w = $(window);
-
-  $(window).on('load resize', function () {
-    let
-      siteWidth,
-      screenSize = w.width();
-
-    if (screenSize < 768) siteWidth = 320;
-    if (screenSize >= 768) siteWidth = 1024;
-    if (screenSize >= 1025) siteWidth = 1366;
-    if (screenSize >= 1367) siteWidth = 1920;
-
-    scale = screenSize / siteWidth;
-    window.globalOptions.scale = scale;
-
-    if ($('html').is('.is-ie')) {
-      $('html').css({
-        '-ms-zoom': scale,
-      });
-    } else {
-      $('html').css({
-        zoom: scale,
-      });
-    }
-
-    // Если вернемся к стандартному зуму
-    // document.querySelector('meta[name="viewport"]').setAttribute('content', 'width='+siteWidth+', initial-scale='+scale+'');
-  });
 
   /*
   Анимации
@@ -67,9 +36,6 @@ export default function aizkulises() {
         'is-animate',
       ];
 
-    // if (isMobile) $('.js-sr').removeClass('js-sr');
-    // if (isMobile) return;
-
     function makeDelay(el, dl, stp) {
       let delay = dl || 0;
       const step = stp || 50;
@@ -78,7 +44,7 @@ export default function aizkulises() {
         $(this).css({
           animationDelay: `${delay}ms`,
         });
-        delay += stp;
+        delay += step;
       });
     }
 
@@ -102,12 +68,12 @@ export default function aizkulises() {
     $('.js-sr').each(function () {
       const
         el = $(this),
-        top = el.offset().top * scale,
+        top = el.offset().top,
         wH = w.height(),
         momentOffset = wH * 0.1,
         scrollMoment = top - wH + momentOffset;
 
-      if (sT * scale > scrollMoment && el.hasClass('js-sr')) {
+      if (sT > scrollMoment && el.hasClass('js-sr')) {
         if (el.hasClass('js-sr_1') || el.hasClass('js-sr_8') || el.hasClass('js-sr_12')) el.addClass(`${animClasses[0]}`);
         if (el.hasClass('js-sr_2')) el.addClass(`${animClasses[0]}`).css({
           animationDelay: '100ms',
@@ -155,11 +121,6 @@ export default function aizkulises() {
           el.removeClass(`${classes}${baseClass}`).attr('style', '');
         }, duration + maxDelay);
       }
-
-      //   setTimeout(() => {
-      //     el.removeClass(`${classes}${baseClass}`).attr('style', '');
-      //   }, duration + maxDelay);
-      // }
     });
   }
   scrollAnimation();
@@ -181,10 +142,10 @@ export default function aizkulises() {
     $(window).on('load scroll', function () {
       const
         w = $(this),
-        st = w.scrollTop() * scale,
+        st = w.scrollTop(),
         block = $(document).find('.js-aizkulises-screenshots'),
         scrollBlock = block.find('img'),
-        blockTop = block.position('html').top * scale,
+        blockTop = block.position('html').top,
         scrollMoment = blockTop - w.height(),
         scrollHeight = block.outerHeight(),
         maxScroll = scrollMoment + scrollHeight,
@@ -210,10 +171,10 @@ export default function aizkulises() {
     $(window).on('load scroll', function () {
       const
         w = $(this),
-        st = w.scrollTop() * scale,
+        st = w.scrollTop(),
         block = $(document).find('.js-nla-iphones'),
         scrollBlock = block.find('img'),
-        blockTop = block.offset().top * scale,
+        blockTop = block.offset().top,
         scrollMoment = blockTop - w.height(),
         scrollHeight = block.outerHeight(true),
         maxScroll = scrollMoment + scrollHeight,
@@ -239,10 +200,10 @@ export default function aizkulises() {
     $(window).on('load scroll', function () {
       const
         w = $(this),
-        st = w.scrollTop() * scale,
+        st = w.scrollTop(),
         block = $(document).find('.js-splace-pages'),
         scrollBlock = block.find('img'),
-        blockTop = block.offset().top * scale,
+        blockTop = block.offset().top,
         scrollMoment = blockTop - w.height(),
         scrollHeight = block.outerHeight(true),
         maxScroll = scrollMoment + scrollHeight,
@@ -262,24 +223,23 @@ export default function aizkulises() {
   $(window).on('load scroll', function () {
     const
       w = $(this),
-      st = w.scrollTop() * scale,
+      st = w.scrollTop(),
       block = $(document).find('[data-scroll-wrapper]');
     if (block.length > 0) {
       const
         scrollBlock = block.find('[data-scroll-block]'),
-        wHeight = w.height() * scale,
-        blockWidth = (scrollBlock[0].scrollWidth - w.width()) * scale,
-        scrollHeight = block.outerHeight(true) * scale,
-        blockTop = block.offset().top * scale,
+        wHeight = w.height(),
+        blockWidth = (scrollBlock[0].scrollWidth - w.width()),
+        blockTop = block.offset().top,
         scrollMoment = blockTop - wHeight,
-        fullHeight = scrollHeight + 2 * wHeight,
-        maxScroll = (blockTop + scrollHeight) - wHeight,
+        fullHeight = 2 * wHeight,
+        maxScroll = blockTop + wHeight,
         maxTranslate = blockWidth / fullHeight;
 
       if (st < scrollMoment) {
         scrollBlock.attr('style', `transform: translate3d(0, 0, 0)`);
       } else if ((st >= scrollMoment) && (st < maxScroll)) {
-        const scrollPercent = (st - blockTop) * maxTranslate;
+        const scrollPercent = (st - scrollMoment) * maxTranslate;
         scrollBlock.attr('style', `transform: translate3d(-${scrollPercent}px, 0, 0)`);
       } else if (st > maxScroll) {
         scrollBlock.attr('style', `transform: translate3d(-${blockWidth}px, 0, 0)`);

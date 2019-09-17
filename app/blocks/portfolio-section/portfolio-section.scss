@@ -18,6 +18,8 @@
 
       &_border {
         border: 1px solid $color-blue-border;
+
+        @include rule(border-width, (xxl: 1, xl: 1, lg: 1, md: 1));
       }
     }
 
@@ -38,10 +40,13 @@
     }
 
     &_pot-site {
+      @include rule(margin-left, (md: -23));
+      @include rule(margin-right, (md: -23));
+
       @include screen('md') {
-        margin-left: -23px;
-        margin-right: -23px;
-        width: calc(100% + 46px);
+        // margin-left: -23px;
+        // margin-right: -23px;
+        width: calc(100% + ((46 / 320) * 100vw));
       }
     }
 
@@ -58,64 +63,70 @@
     font-family: $font-site;
     font-weight: 700;
     letter-spacing: normal;
-    font-size: $fz17;
+    // font-size: $fz17;
     color: currentColor;
 
-    @include screen('lg') {
-      font-size: $fz12;
-    }
+    @include rule(font-size, (xxl: $fz17, xl: $fz17, lg: $fz12, md: $fz10));
 
-    @include screen('md') {
-      font-size: $fz10;
-    }
+    // @include screen('lg') {
+    //   font-size: $fz12;
+    // }
+
+    // @include screen('md') {
+    //   font-size: $fz10;
+    // }
 
     &:not(:last-child) {
-      margin-bottom: 67px;
+      // margin-bottom: 67px;
+      @include rule(margin-bottom, (xxl: 67, xl: 58, lg: 41, md: 33));
 
-      @include screen('xl') {
-        margin-bottom: 58px;
-      }
+      // @include screen('xl') {
+      //   margin-bottom: 58px;
+      // }
 
-      @include screen('lg') {
-        margin-bottom: 41px;
-      }
+      // @include screen('lg') {
+      //   margin-bottom: 41px;
+      // }
 
-      @include screen('md') {
-        margin-bottom: 33px;
-      }
+      // @include screen('md') {
+      //   margin-bottom: 33px;
+      // }
     }
   }
 
   &__title {
     font-family: $font-4;
-    font-size: $fz40;
+    // font-size: $fz40;
     line-height: 1.2;
     font-weight: 400;
     letter-spacing: -$ls-port;
 
-    @include screen('lg') {
-      font-size: $fz27;
-    }
+    @include rule(font-size, (xxl: $fz40, xl: $fz40, lg: $fz27, md: $fz-md-title));
+
+    // @include screen('lg') {
+    //   font-size: $fz27;
+    // }
 
     @include screen('md') {
-      font-size: $fz-md-title;
+      // font-size: $fz-md-title;
       letter-spacing: -1 * $ls-main;
     }
 
     &:not(:last-child) {
-      margin-bottom: 31px;
+      @include rule(margin-bottom, (xxl: 31, xl: 42, lg: 36, md: 34));
+      // margin-bottom: 31px;
 
-      @include screen('xl') {
-        margin-bottom: 42px;
-      }
+      // @include screen('xl') {
+      //   margin-bottom: 42px;
+      // }
 
-      @include screen('lg') {
-        margin-bottom: 36px;
-      }
+      // @include screen('lg') {
+      //   margin-bottom: 36px;
+      // }
 
-      @include screen('md') {
-        margin-bottom: 34px;
-      }
+      // @include screen('md') {
+      //   margin-bottom: 34px;
+      // }
     }
   }
 
@@ -125,73 +136,77 @@
     display: block;
     width: 100%;
     box-sizing: border-box;
-    padding: 95px 0 125px 18.4%;
+    padding-left: 18.4%;
+
+    @include rule(padding-top, (xxl: 95, xl: 55, lg: 38, md: 30));
+    @include rule(padding-bottom, (xxl: 125, xl: 63, lg: 44, md: 21));
+    @include rule(padding-right, (xxl: 0, xl: 0, lg: 0, md: 25));
 
     @include screen('xl') {
-      padding: 55px 0 63px 16%;
+      padding-left: 16%;
     }
 
     @include screen('lg') {
-      padding: 38px 0 44px 16.4%;
+      padding-left: 16.4%;
     }
 
-    @include screen('md') {
-      padding: 30px 25px 21px;
-    }
+    @include rule(padding-left, (md: 21));
   }
 
   &__text-block {
     display: block;
     width: 100%;
     box-sizing: border-box;
-    padding: 56px 9.2% 60px 9.2%;
+    padding: 0 9.2%;
 
     @include screen('xl') {
-      padding: 62px 8% 57px 8%;
+      padding: 0 8%;
     }
 
     @include screen('lg') {
-      padding: 42px 0 53px;
+      padding: 0;
     }
 
-    @include screen('md') {
-      padding: 32px 0;
-    }
+    @include rule(padding-top, (xxl: 56, xl: 62, lg: 42, md: 32));
+    @include rule(padding-bottom, (xxl: 60, xl: 57, lg: 53, md: 32));
 
     &_big-pad {
-      padding: 105px 9.2%;
+      padding: 0 9.2%;
 
       @include screen('xl') {
-        padding: 61px 0 61px 8%;
+        padding: 0 0 0 8%;
       }
 
       @include screen('lg') {
-        padding: 68px 0;
+        padding: 0;
       }
 
-      @include screen('md') {
-        padding: 38px 0;
-      }
+      @include rule(padding-top, (xxl: 105, xl: 61, lg: 68, md: 38));
+      @include rule(padding-bottom, (xxl: 105, xl: 61, lg: 68, md: 38));
     }
   }
 
   &__text {
     font-family: $font-site;
-    font-size: $fz17;
+    // font-size: $fz17;
     font-weight: 400;
 
     @include screen('md') {
-      font-size: $fz-md-text;
+      // font-size: $fz-md-text;
       line-height: ($lh-md-base / $fz-md-text);
     }
 
+    @include rule(font-size, (xxl: $fz17, xl: $fz17, lg: $fz17, md: $fz-md-text));
+
     &_big {
-      font-size: $fz-text;
+      // font-size: $fz-text;
       font-weight: 300;
       line-height: ($lh-base-32 / $fz-text);
 
+      @include rule(font-size, (xxl: $fz-text, xl: $fz-text, lg: $fz-md-text, md: $fz-md-text));
+
       @include screen('lg') {
-        font-size: $fz-md-text;
+        // font-size: $fz-md-text;
         line-height: ($lh-base-22 / $fz-md-text);
       }
 
@@ -201,17 +216,19 @@
     }
 
     &_big2 {
-      font-size: $fz-text;
+      // font-size: $fz-text;
       font-weight: 300;
       line-height: ($lh-base-32 / $fz-text);
 
+      @include rule(font-size, (xxl: $fz-text, xl: $fz-text, lg: $fz17, md: $fz-md-text));
+
       @include screen('lg') {
-        font-size: $fz17;
+        // font-size: $fz17;
         line-height: ($lh-base-28 / $fz17);
       }
 
       @include screen('md') {
-        font-size: $fz-md-text;
+        // font-size: $fz-md-text;
         line-height: ($lh-md-base / $fz-md-text);
       }
     }
@@ -254,25 +271,28 @@
       margin-left: -22%;
       margin-right: 0;
       box-sizing: border-box;
-      padding-right: 70px;
+      // padding-right: 70px;
+
+      @include rule(padding-right, (xxl: 70, xl: 40, lg: 25, md: 13));
+      @include rule(padding-bottom, (md: 24));
 
       @include screen('xl') {
         width: 115.5%;
         margin-left: -15.5%;
-        padding-right: 40px;
+        // padding-right: 40px;
       }
 
       @include screen('lg') {
         width: 117.5%;
         margin-left: -17.5%;
-        padding-right: 25px;
+        // padding-right: 25px;
       }
 
       @include screen('md') {
         width: 100%;
         margin-left: 0;
-        padding-right: 13px;
-        padding-bottom: 24px;
+        // padding-right: 13px;
+        // padding-bottom: 24px;
       }
     }
 
@@ -391,25 +411,29 @@
     display: block;
     font-size: 0;
     line-height: 0;
-    width: 466px;
-    height: 119px;
+    // width: 466px;
+    // height: 119px;
     fill: $color-arbo-logo;
 
-    @include screen('xl') {
-      width: 372px;
-      height: 96px;
-    }
+    @include rule(width, (xxl: 466, xl: 372, lg: 265, md: 205));
+    @include rule(height, (xxl: 119, xl: 96, lg: 68, md: 53));
+    @include rule(margin-bottom, (md: 50));
 
-    @include screen('lg') {
-      width: 265px;
-      height: 68px;
-    }
+    // @include screen('xl') {
+    //   width: 372px;
+    //   height: 96px;
+    // }
 
-    @include screen('md') {
-      width: 205px;
-      height: 53px;
-      margin-bottom: 50px;
-    }
+    // @include screen('lg') {
+    //   width: 265px;
+    //   height: 68px;
+    // }
+
+    // @include screen('md') {
+    //   width: 205px;
+    //   height: 53px;
+    //   margin-bottom: 50px;
+    // }
   }
 
   &__arbo-border-logo {
@@ -426,20 +450,25 @@
 
   &__cw-logo {
     width: 100%;
-    margin: 0 20px;
-    max-width: 475px;
+    // margin: 0 20px;
+    // max-width: 475px;
 
-    @include screen('xl') {
-      max-width: 400px;
-    }
+    @include rule(margin-left, (xxl: 20, xl: 20, lg: 20, md: 0));
+    @include rule(margin-right, (xxl: 20, xl: 20, lg: 20, md: 0));
+    @include rule(max-width, (xxl: 475, xl: 400, lg: 291, md: 206));
+    @include rule(margin-bottom, (md: 50));
 
-    @include screen('lg') {
-      max-width: 291px;
-    }
+    // @include screen('xl') {
+    //   max-width: 400px;
+    // }
 
-    @include screen('md') {
-      max-width: 206px;
-      margin-bottom: 50px;
-    }
+    // @include screen('lg') {
+    //   max-width: 291px;
+    // }
+
+    // @include screen('md') {
+    //   max-width: 206px;
+    //   margin-bottom: 50px;
+    // }
   }
 }

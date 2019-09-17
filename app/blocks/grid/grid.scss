@@ -7,9 +7,13 @@ $new-breakpoints: map_remove($breakpoints, $default-breakpoit-name);
   display: block; // fallback для старых браузеров
   display: flex;
   flex-wrap: wrap;
-  margin-left: -$grid-gap / 2;
-  margin-right: -$grid-gap / 2;
-  margin-top: -$grid-gap-vertical;
+  // margin-left: -$grid-gap / 2;
+  // margin-right: -$grid-gap / 2;
+  // margin-top: -$grid-gap-vertical;
+
+  @include rule(margin-left, (xxl: -$grid-gap, xl: -$grid-gap, lg: -$grid-gap, md: -$grid-gap));
+  @include rule(margin-right, (xxl: -$grid-gap, xl: -$grid-gap, lg: -$grid-gap, md: -$grid-gap));
+  @include rule(margin-top, (xxl: -$grid-gap-vertical, xl: -$grid-gap-vertical, lg: -$grid-gap-vertical, md: -$grid-gap-vertical));
   $b: &;
 
   .grid {
@@ -24,23 +28,27 @@ $new-breakpoints: map_remove($breakpoints, $default-breakpoit-name);
   }
 
   &_gap100 {
-    margin-left: -50px;
-    margin-right: -50px;
-    margin-top: -128px;
+    // margin-left: -50px;
+    // margin-right: -50px;
+    // margin-top: -128px;
 
-    @include screen('xl') {
-      margin-top: -120px;
-    }
+    @include rule(margin-left, (xxl: -50, xl: -50, lg: -50, md: -12));
+    @include rule(margin-right, (xxl: -50, xl: -50, lg: -50, md: -12));
+    @include rule(margin-top, (xxl: -128, xl: -120, lg: -126, md: -78));
 
-    @include screen('lg') {
-      margin-top: -126px;
-    }
+    // @include screen('xl') {
+    //   margin-top: -120px;
+    // }
 
-    @include screen('md') {
-      margin-left: -12px;
-      margin-right: -12px;
-      margin-top: -78px;
-    }
+    // @include screen('lg') {
+    //   margin-top: -126px;
+    // }
+
+    // @include screen('md') {
+    //   margin-left: -12px;
+    //   margin-right: -12px;
+    //   margin-top: -78px;
+    // }
   }
 
   &_sb {
@@ -50,9 +58,12 @@ $new-breakpoints: map_remove($breakpoints, $default-breakpoit-name);
   &__col {
     display: inline-block; // fallback для старых браузеров
     box-sizing: border-box;
-    padding: $grid-gap-vertical $grid-gap / 2 0;
+    // padding: $grid-gap-vertical $grid-gap / 2 0;
     margin: 0;
 
+    @include rule(padding-left, (xxl: $grid-gap, xl: $grid-gap, lg: $grid-gap, md: $grid-gap));
+    @include rule(padding-right, (xxl: $grid-gap, xl: $grid-gap, lg: $grid-gap, md: $grid-gap));
+    @include rule(padding-top, (xxl: $grid-gap-vertical, xl: $grid-gap-vertical, lg: $grid-gap-vertical, md: $grid-gap-vertical));
     @include text;
 
     @for $i from 1 through 15 {
@@ -94,19 +105,9 @@ $new-breakpoints: map_remove($breakpoints, $default-breakpoit-name);
     }
 
     #{$b}_gap100 & {
-      padding: 128px 50px 0;
-
-      @include screen('xl') {
-        padding: 120px 50px 0;
-      }
-
-      @include screen('lg') {
-        padding: 126px 50px 0;
-      }
-
-      @include screen('md') {
-        padding: 78px 12px 0;
-      }
+      @include rule(padding-left, (xxl: 50, xl: 50, lg: 50, md: 12));
+      @include rule(padding-right, (xxl: 50, xl: 50, lg: 50, md: 12));
+      @include rule(padding-top, (xxl: 128, xl: 120, lg: 126, md: 78));
     }
   }
 }

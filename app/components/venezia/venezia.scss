@@ -6,57 +6,64 @@
   font-family: $font-second;
   color: $color-yellow-light-4;
   background-color: $color-violet;
-  margin-bottom: -1px;
+  // margin-bottom: -1px;
   background-image: url('../images/venezia/bg-first.png');
   background-size: 100% auto;
   background-position: 0 10.9%;
   background-repeat: no-repeat;
 
+  @include rule(margin-bottom, (xxl: -1, xl: -1, lg: -1, md: -1));
+
   @include screen('xl') {
-    background-size: auto 1080px;
+    background-size: auto 79.0629vw;
     background-position: 50% 12.8%;
   }
 
   @include screen('lg') {
-    background-size: auto 810px;
+    background-size: auto 79.1015vw;
     background-position: 50% 12%;
   }
 
   @include screen('md') {
-    background-size: auto 887px;
-    background-position: -407px -143px;
+    background-size: auto 277.1875vw;
+    background-position: -127.1875vw -44.6875vw;
   }
 
   .case-section {
+
     &__heading {
       font-family: $font-second;
       font-weight: 100;
       line-height: 1.2;
       letter-spacing: -.02em;
-      font-size: 47px;
+      // font-size: 47px;
       color: $color-pink;
 
-      @include screen('lg') {
-        font-size: 35px;
-      }
+      @include rule(font-size, (xxl: 47, xl: 47, lg: 35, md: 30));
 
-      @include screen('md') {
-        font-size: 30px;
-      }
+      // @include screen('lg') {
+      //   font-size: 35px;
+      // }
+
+      // @include screen('md') {
+      //   font-size: 30px;
+      // }
     }
 
     &__text {
       font-weight: 100;
       line-height: 1.38;
-      font-size: 21px;
+      // font-size: 21px;
+
+      @include rule(font-size, (xxl: 21, xl: 21, lg: 18, md: 15));
 
       @include screen('lg') {
-        font-size: 18px;
+        // font-size: 18px;
         line-height: 1.46;
       }
 
       @include screen('md') {
-        font-size: 15px;
+        // font-size: 15px;
         line-height: 1.3;
         letter-spacing: -.004em;
       }
@@ -64,40 +71,44 @@
   }
 
   .case-list {
-    font-size: 21px;
+    // font-size: 21px;
     line-height: 1.38;
 
+    @include rule(font-size, (xxl: 21, xl: 21, lg: 18, md: 15));
+
     @include screen('lg') {
-      font-size: 18px;
+      // font-size: 18px;
       line-height: 1.46;
     }
 
     @include screen('md') {
-      font-size: 15px;
+      // font-size: 15px;
       line-height: 1.3;
     }
 
     &__item {
-      padding-left: 60px;
+      // padding-left: 60px;
+      @include rule(padding-left, (xxl: 60, xl: 60, lg: 58, md: 46));
 
-      @include screen('lg') {
-        padding-left: 58px;
-      }
+      // @include screen('lg') {
+      //   padding-left: 58px;
+      // }
 
-      @include screen('md') {
-        padding-left: 46px;
-      }
+      // @include screen('md') {
+      //   padding-left: 46px;
+      // }
 
       &:not(:last-child) {
-        margin-bottom: 63px;
+        // margin-bottom: 63px;
+        @include rule(margin-bottom, (xxl: 63, xl: 63, lg: 28, md: 36));
 
-        @include screen('lg') {
-          margin-bottom: 28px;
-        }
+        // @include screen('lg') {
+        //   margin-bottom: 28px;
+        // }
 
-        @include screen('md') {
-          margin-bottom: 36px;
-        }
+        // @include screen('md') {
+        //   margin-bottom: 36px;
+        // }
       }
     }
 
@@ -127,7 +138,7 @@
       flex-direction: column;
       justify-content: flex-start;
       align-items: flex-start;
-      padding-top: 47px;
+      padding-top: calc((18 / 320) * 100vw);
     }
 
     &__media {
@@ -150,9 +161,10 @@
       }
 
       @include screen('md') {
-        margin-top: 0;
-        padding-top: 283.8%;
-        margin-left: -105.8%;
+        margin-top: calc((-100 / 320) * 100vw);
+        padding-top: 155%;
+        margin-left: 0;
+        margin-right: 0;
         order: 2;
       }
     }
@@ -170,7 +182,10 @@
       }
 
       @include screen('md') {
-        width: 401.4%;
+        width: 225%;
+        top: 0;
+        left: 50%;
+        transform: translate3d(-50%, 0, 0);
       }
 
       img {
@@ -186,15 +201,16 @@
       width: 100%;
 
       &:not(:last-child) {
-        margin-bottom: 134px;
+        // margin-bottom: 134px;
+        @include rule(margin-bottom, (xxl: 134, xl: 134, lg: 100, md: 64));
 
-        @include screen('lg') {
-          margin-bottom: 100px;
-        }
+        // @include screen('lg') {
+        //   margin-bottom: 100px;
+        // }
 
-        @include screen('md') {
-          margin-bottom: 64px;
-        }
+        // @include screen('md') {
+        //   margin-bottom: 64px;
+        // }
       }
 
       .container {
@@ -210,85 +226,104 @@
       justify-content: center;
       align-items: center;
       box-sizing: border-box;
-      padding-left: 9px;
-      width: 203px;
-      height: 184px;
-      box-shadow: 12px 21px 43px rgba(0, 0, 0, .32);
+      // padding-left: 9px;
+      // width: 203px;
+      // height: 184px;
+      // box-shadow: 12px 21px 43px rgba(0, 0, 0, .32);
+      box-shadow: .625vw 1.0937vw 2.2396vw rgba(0, 0, 0, .32);
       background-image: linear-gradient(-47deg, $color-grey-pink 0%, $color-pink-2 100%);
 
+      @include rule(width, (xxl: 203, xl: 203, lg: 153, md: 102));
+      @include rule(height, (xxl: 184, xl: 184, lg: 139, md: 92));
+      @include rule(padding-left, (xxl: 9, xl: 9, lg: 6, md: 3));
+
+      @include screen('xl') {
+        box-shadow: .8785vw 1.5373vw 3.1478vw rgba(0, 0, 0, .32);
+      }
+
       @include screen('lg') {
-        padding-left: 6px;
-        width: 153px;
-        height: 139px;
+        box-shadow: 1.1718vw  2.0508vw 4.1992vw rgba(0, 0, 0, .32);
+        // padding-left: 6px;
+        // width: 153px;
+        // height: 139px;
       }
 
       @include screen('md') {
-        padding-left: 3px;
-        width: 102px;
-        height: 92px;
+        box-shadow: 3.75vw 6.5625vw 13.4375vw rgba(0, 0, 0, .32);
+        // padding-left: 3px;
+        // width: 102px;
+        // height: 92px;
       }
 
       &:not(:last-child) {
-        margin-bottom: 128px;
+        // margin-bottom: 128px;
+        @include rule(margin-bottom, (xxl: 128, xl: 126, lg: 94, md: 24));
 
-        @include screen('xl') {
-          margin-bottom: 126px;
-        }
+        // @include screen('xl') {
+        //   margin-bottom: 126px;
+        // }
 
-        @include screen('lg') {
-          margin-bottom: 94px;
-        }
+        // @include screen('lg') {
+        //   margin-bottom: 94px;
+        // }
 
-        @include screen('md') {
-          margin-bottom: 42px;
-        }
+        // @include screen('md') {
+        //   margin-bottom: 42px;
+        // }
       }
 
       &-icon {
-        width: 164px;
+        // width: 164px;
         height: auto;
         fill: $color-basic;
 
-        @include screen('lg') {
-          width: 123px;
-        }
+        @include rule(width, (xxl: 164, xl: 164, lg: 123, md: 82));
 
-        @include screen('md') {
-          width: 82px;
-        }
+        // @include screen('lg') {
+        //   width: 123px;
+        // }
+
+        // @include screen('md') {
+        //   width: 82px;
+        // }
       }
     }
 
     &__link {
       position: relative;
       display: inline-block;
-      font-size: 14px;
+      // font-size: 14px;
       font-weight: 500;
       color: $color-basic;
       line-height: 1.2;
       letter-spacing: .54em;
       text-transform: uppercase;
 
-      @include screen('lg') {
-        font-size: 10px;
-      }
+      @include rule(font-size, (xxl: 14, xl: 14, lg: 10, md: 11));
+
+      // @include screen('lg') {
+      //   font-size: 10px;
+      // }
 
       @include screen('md') {
-        font-size: 12px;
+        letter-spacing: .5em;
       }
 
       &::before {
         @include pseudo;
 
-        bottom: -7px;
+        // bottom: -7px;
         left: 0;
         width: 100%;
         height: 1px;
         background-image: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, $color-pink-2 15%, $color-pink-2 85%, rgba(0, 0, 0, 0) 100%);
 
-        @include screen('lg') {
-          bottom: -5px;
-        }
+        @include rule(bottom, (xxl: -7, xl: -7, lg: -5, md: -5));
+        @include rule(height, (xxl: 1, xl: 1, lg: 1, md: 1));
+
+        // @include screen('lg') {
+        //   bottom: -5px;
+        // }
       }
     }
 
@@ -306,7 +341,7 @@
       display: block;
       width: 100%;
       box-sizing: border-box;
-      padding-right: 50px;
+      padding-right: calc((50 / 1920) * 100vw);
 
       @include screen('xl') {
         padding-right: 0;
@@ -316,80 +351,90 @@
         @include pseudo;
 
         top: 0;
-        left: -62px;
-        width: 122px;
-        height: 130px;
+        // left: -62px;
+        // width: 122px;
+        // height: 130px;
         background-image: url('../images/venezia/purple-box-small.png');
         background-size: contain;
         background-repeat: no-repeat;
         background-position: 0 0;
         z-index: 1;
 
-        @include screen('lg') {
-          width: 101px;
-          height: 107px;
-          left: -48px;
-        }
+        @include rule(width, (xxl: 122, xl: 122, lg: 101, md: 96));
+        @include rule(height, (xxl: 130, xl: 130, lg: 107, md: 99));
+        @include rule(left, (xxl: -62, xl: -62, lg: -48, md: 200));
+
+        // @include screen('lg') {
+        //   width: 101px;
+        //   height: 107px;
+        //   left: -48px;
+        // }
 
         @include screen('md') {
-          width: 96px;
-          height: 99px;
-          left: -13px;
-          top: auto;
-          bottom: 100%;
-          margin-bottom: 24px;
+          // width: 96px;
+          // height: 99px;
+          // left: -13px;
+          // top: auto;
+          // bottom: 100%;
+          margin-top: calc((38 / 320) * 100vw);
         }
       }
 
       &:not(:last-child) {
-        margin-bottom: 168px;
+        // margin-bottom: 168px;
+        @include rule(margin-bottom, (xxl: 168, xl: 169, lg: 82, md: 44));
 
-        @include screen('xl') {
-          margin-bottom: 169px;
-        }
+        // @include screen('xl') {
+        //   margin-bottom: 169px;
+        // }
 
-        @include screen('lg') {
-          margin-bottom: 82px;
-        }
+        // @include screen('lg') {
+        //   margin-bottom: 82px;
+        // }
 
-        @include screen('md') {
-          margin-bottom: 62px;
-        }
+        // @include screen('md') {
+        //   margin-bottom: 62px;
+        // }
       }
 
       .case-section {
+
         &__heading {
           position: relative;
           z-index: 2;
 
           &:not(:last-child) {
-            margin-bottom: 51px;
+            // margin-bottom: 51px;
+            @include rule(margin-bottom, (xxl: 51, xl: 50, lg: 36, md: 37));
 
-            @include screen('xl') {
-              margin-bottom: 50px;
-            }
+            // @include screen('xl') {
+            //   margin-bottom: 50px;
+            // }
 
-            @include screen('lg') {
-              margin-bottom: 36px;
-            }
+            // @include screen('lg') {
+            //   margin-bottom: 36px;
+            // }
 
-            @include screen('md') {
-              margin-bottom: 37px;
-            }
+            // @include screen('md') {
+            //   margin-bottom: 37px;
+            // }
           }
         }
       }
     }
 
     &__list {
-      padding-top: 19px;
+      // padding-top: 19px;
 
-      @include screen('lg') {
-        padding-top: 2px;
-      }
+      @include rule(padding-top, (xxl: 19, xl: 19, lg: 2, md: 2));
+
+      // @include screen('lg') {
+      //   padding-top: 2px;
+      // }
     }
 
     #{$b} {
+
       &__col {
         display: block;
 
@@ -439,8 +484,8 @@
     }
 
     @include screen('md') {
-      margin-top: 9.8%;
-      padding-top: 98.8%;
+      margin-top: 17.8%;
+      padding-top: 25.5%;
       padding-bottom: 0;
     }
 
@@ -477,7 +522,7 @@
       @include screen('lg') {
         background-image: url('../images/venezia/bg-second.png');
         background-size: 213% auto;
-        background-position: 38% 80.5%;
+        background-position: 38% 50.5%;
       }
     }
 
@@ -492,17 +537,21 @@
       overflow: hidden;
       background-image: url('../images/venezia/print.png');
       background-size: 66.25% auto;
-      background-position: -59% 199px;
+      background-position: -59% 10.36458vw;
       background-repeat: no-repeat;
 
       @include screen('xl') {
         background-size: 93.1% auto;
-        background-position: -694% -14px;
+        background-position: -694% -1.0249vw;
+      }
+
+      @include screen('lg') {
+        background-position: -694% -1.3672vw;
       }
 
       @include screen('md') {
-        background-size: 198.75% auto;
-        background-position: 66.8% 22px;
+        background-size: 181% auto;
+        background-position: -155.68vw -90.125vw;
       }
 
       &::before,&::after {
@@ -546,7 +595,7 @@
       }
 
       @include screen('md') {
-        width: 208.1%;
+        width: 76.8%;
       }
 
       &_first {
@@ -557,8 +606,8 @@
         }
 
         @include screen('md') {
-          margin-left: -68.2%;
-          margin-right: -39.6%;
+          margin-left: -16.3%;
+          // margin-right: -39.6%;
         }
 
         &::before,&::after {
@@ -566,52 +615,60 @@
         }
 
         &::before {
-          right: calc(-5.8vw - 72px);
-          top: 102px;
-          width: 122px;
-          height: 130px;
+          right: calc(-5.8vw - ((72 / 1920) * 100vw));
+          // top: 102px;
+          // width: 122px;
+          // height: 130px;
           background-image: url('../images/venezia/purple-box-small.png');
           background-repeat: no-repeat;
           background-size: contain;
           background-position: 0 0;
 
+          @include rule(top, (xxl: 102, xl: 102, lg: 71, md: 0));
+          @include rule(width, (xxl: 122, xl: 122, lg: 101, md: 103));
+          @include rule(height, (xxl: 130, xl: 130, lg: 107, md: 105));
+
           @include screen('xl') {
-            right: calc(-8.2vw - 72px);
+            right: calc(-8.2vw - ((72 / 1366) * 100vw));
           }
 
           @include screen('lg') {
-            top: 71px;
-            width: 101px;
-            height: 107px;
-            right: calc(-8.2vw - 59px);
+            // top: 71px;
+            // width: 101px;
+            // height: 107px;
+            right: calc(-8.2vw - ((59 / 1024) * 100vw));
           }
 
           @include screen('md') {
-            width: 103px;
-            height: 105px;
+            // width: 103px;
+            // height: 105px;
             bottom: 100%;
             top: auto;
-            margin-bottom: 171px;
-            right: 17%;
+            margin-bottom: calc((5/320) * 100vw);
+            right: calc((-185 / 320) * 100vw);
           }
         }
 
         &::after {
-          top: 260px;
+          // top: 260px;
           right: -5.8vw;
-          width: 1px;
-          height: 330px;
+          // width: 1px;
+          // height: 330px;
           background-color: $color-pink-3;
+
+          @include rule(top, (xxl: 260, xl: 260, lg: 194, md: 194));
+          @include rule(width, (xxl: 1, xl: 1, lg: 1, md: 1));
+          @include rule(height, (xxl: 330, xl: 330, lg: 248, md: 248));
 
           @include screen('xl') {
             right: -8.2vw;
           }
 
           @include screen('lg') {
-            top: 194px;
-            width: 2px;
+            // top: 194px;
+            // width: 2px;
             right: -8.2vw;
-            height: 248px;
+            // height: 248px;
           }
 
           @include screen('md') {
@@ -630,14 +687,18 @@
         }
 
         @include screen('md') {
-          position: relative;
-          top: auto;
-          left: auto;
-          margin-left: 25px;
-          margin-right: calc(-108.1% - 25px);
-          margin-top: 52px;
-          order: 2;
+          left: 73.1%;
         }
+
+        // @include screen('md') {
+        //   position: relative;
+        //   top: auto;
+        //   left: auto;
+        //   margin-left: calc((25 / 320) * 100vw);
+        //   margin-right: calc(-108.1% - ((25 / 320) * 100vw));
+        //   margin-top: calc((52 / 320) * 100vw);
+        //   order: 2;
+        // }
       }
     }
 
@@ -692,7 +753,7 @@
       }
 
       @include screen('md') {
-        right: 22.9%;
+        right: 22.8%;
       }
 
       &-img {
@@ -721,12 +782,13 @@
       }
 
       @include screen('md') {
-        margin-top: 41%;
+        margin-top: 22.8%;
       }
     }
 
     &__section {
-      max-width: 460px;
+      // max-width: 460px;
+      @include rule(max-width, (xxl: 460, xl: 460, lg: 460));
 
       @include screen('md') {
         max-width: none;
@@ -734,6 +796,7 @@
     }
 
     #{$b} {
+
       &__col {
         display: block;
 
@@ -782,7 +845,7 @@
 
     @include screen('md') {
       padding-top: 0;
-      margin-top: -55%;
+      margin-top: 6%;
     }
 
     &__section {
@@ -800,7 +863,7 @@
       }
 
       @include screen('md') {
-        padding-top: 0;
+        padding-top: 4.6%;
         padding-right: 0;
       }
 
@@ -809,9 +872,12 @@
 
         top: calc(100% + 5.1vw);
         left: 23.3%;
-        width: 1px;
-        height: 90px;
+        // width: 1px;
+        // height: 90px;
         background-color: $color-pink-3;
+
+        @include rule(width, (xxl: 1, xl: 1, lg: 2, md: 1));
+        @include rule(height, (xxl: 90, xl: 90, lg: 68, md: 57));
 
         @include screen('xl') {
           top: calc(100% + 5vw);
@@ -820,33 +886,36 @@
 
         @include screen('lg') {
           top: calc(100% + 4vw);
-          width: 2px;
-          height: 68px;
+          // width: 2px;
+          // height: 68px;
         }
 
         @include screen('md') {
-          top: calc(100% + 44px);
-          width: 1px;
-          height: 57px;
+          top: calc(100% + ((44 / 320) * 100vw));
+          // width: 1px;
+          // height: 57px;
         }
       }
 
       .case-section {
+
         &__heading {
+
           &:not(:last-child) {
-            margin-bottom: 59px;
+            // margin-bottom: 59px;
+            @include rule(margin-bottom, (xxl: 59, xl: 60, lg: 42, md: 38));
 
-            @include screen('xl') {
-              margin-bottom: 60px;
-            }
+            // @include screen('xl') {
+            //   margin-bottom: 60px;
+            // }
 
-            @include screen('lg') {
-              margin-bottom: 42px;
-            }
+            // @include screen('lg') {
+            //   margin-bottom: 42px;
+            // }
 
-            @include screen('md') {
-              margin-bottom: 38px;
-            }
+            // @include screen('md') {
+            //   margin-bottom: 38px;
+            // }
           }
         }
       }
@@ -863,8 +932,8 @@
       }
 
       @include screen('md') {
-        padding-top: 145.9%;
-        margin-left: 67px;
+        padding-top: 108.25%;
+        margin-left: calc((46 / 320) * 100vw);
       }
 
       &-image {
@@ -879,6 +948,7 @@
     }
 
     #{$b} {
+
       &__col {
         display: block;
         box-sizing: border-box;
@@ -927,7 +997,7 @@
     }
 
     @include screen('md') {
-      margin-top: 76px;
+      margin-top: calc((76 / 320) * 100vw);
     }
 
     &__media {
@@ -943,9 +1013,9 @@
       @include screen('md') {
         position: relative;
         padding-top: 100%;
-        width: 246%;
-        margin-left: -83.6%;
-        margin-right: -62.4%;
+        width: 123%;
+        margin-left: -9%;
+        margin-right: -14%;
       }
     }
 
@@ -987,7 +1057,7 @@
     }
 
     @include screen('md') {
-      padding-top: 94.2%;
+      padding-top: 8.5%;
     }
 
     &__list {
@@ -995,7 +1065,7 @@
       justify-content: flex-start;
       flex-wrap: wrap;
       align-content: flex-start;
-      width: calc(100% + 9px);
+      width: calc(100% + ((9 / 1920) * 100vw));
       margin-left: -9px;
 
       @include screen('xl') {
@@ -1014,20 +1084,21 @@
     &__item {
       display: inline-block;
       width: 47.4%;
-      margin-bottom: 150px;
+      // margin-bottom: 150px;
+      @include rule(margin-bottom, (xxl: 150, xl: 120, lg: 84, md: 79));
 
       @include screen('xl') {
         width: 48%;
-        margin-bottom: 120px;
+        // margin-bottom: 120px;
       }
 
-      @include screen('lg') {
-        margin-bottom: 84px;
-      }
+      // @include screen('lg') {
+      //   // margin-bottom: 84px;
+      // }
 
       @include screen('md') {
         width: 100%;
-        margin-bottom: 79px;
+        // margin-bottom: 79px;
       }
 
       &:nth-child(odd) {
@@ -1063,33 +1134,36 @@
       box-sizing: border-box;
       width: 100%;
       text-align: center;
-      font-size: 16px;
+      // font-size: 16px;
       font-weight: 100;
       line-height: 1.38;
       margin-top: -18.8%;
       padding-left: 3%;
+
+      @include rule(font-size, (xxl: 16, xl: 16, lg: 18, md: 15));
 
       @include screen('xl') {
         margin-top: -13.6%;
       }
 
       @include screen('lg') {
-        font-size: 18px;
+        // font-size: 18px;
         line-height: 1.2;
         margin-top: -14.4%;
       }
 
       @include screen('md') {
-        font-size: 15px;
-        padding-left: 25px;
-        padding-right: 18px;
+        // font-size: 15px;
+        padding-left: calc((25 / 320) * 100vw);
+        padding-right: calc((18 / 320) * 100vw);
         margin-top: -16.4%;
       }
     }
 
     &__text {
       display: inline-block;
-      max-width: 400px;
+      // max-width: 400px;
+      @include rule(max-width, (xxl: 400, xl: 400, lg: 400));
 
       @include screen('md') {
         max-width: 89%;
@@ -1102,7 +1176,8 @@
     width: 100%;
     position: relative;
     padding-top: 6.1%;
-    padding-bottom: 190px;
+    // padding-bottom: 190px;
+    @include rule(padding-bottom, (xxl: 190, xl: 190, lg: 142, md: 75));
 
     @include screen('xl') {
       padding-top: 8.6%;
@@ -1110,12 +1185,12 @@
 
     @include screen('lg') {
       padding-top: 9.2%;
-      padding-bottom: 142px;
+      // padding-bottom: 142px;
     }
 
     @include screen('md') {
       padding-top: 9%;
-      padding-bottom: 93px;
+      // padding-bottom: 93px;
     }
 
     &::before {
@@ -1124,8 +1199,8 @@
 
         top: 1.5%;
         right: 9%;
-        width: 61px;
-        height: 65px;
+        width: calc((61 / 320) * 100vw);
+        height: calc((65 / 320) * 100vw);
         background-image: url('../images/venezia/purple-box-small.png');
         background-repeat: no-repeat;
         background-size: contain;
@@ -1137,26 +1212,30 @@
       @include pseudo;
 
       top: 30.2%;
-      right: -160px;
-      width: 277px;
-      height: 277px;
+      // right: -160px;
+      // width: 277px;
+      // height: 277px;
       background-image: url('../images/venezia/purple-box.png');
       background-repeat: no-repeat;
       background-size: contain;
       background-position: 0 0;
 
+      @include rule(right, (xxl: -160, xl: -114, lg: -114, md: -84));
+      @include rule(width, (xxl: 277, xl: 198, lg: 198, md: 139));
+      @include rule(height, (xxl: 277, xl: 204, lg: 204, md: 139));
+
       @include screen('xl') {
-        width: 198px;
-        height: 204px;
+        // width: 198px;
+        // height: 204px;
         top: 8.4%;
-        right: -114px;
+        // right: -114px;
       }
 
       @include screen('md') {
-        width: 139px;
-        height: 139px;
+        // width: 139px;
+        // height: 139px;
         top: 15%;
-        right: -84px;
+        // right: -84px;
       }
     }
 
@@ -1183,14 +1262,15 @@
           @include pseudo;
 
           left: 0;
-          width: 1px;
+          width: calc((1 / 320) * 100vw);
           background-color: $color-pink-3;
-          top: calc(100% + 44px);
-          height: 57px;
+          top: calc(100% + ((44 / 320) * 100vw));
+          height: calc((57 / 320) * 100vw);
         }
       }
 
       .case-section {
+
         &__heading {
           position: relative;
           display: block;
@@ -1202,20 +1282,24 @@
 
             top: 50%;
             left: 100%;
-            width: 191px;
-            height: 1px;
+            // width: 191px;
+            // height: 1px;
             background-color: $color-pink-3;
             margin-left: -3.4vw;
 
+            @include rule(margin-top, (xl: 3, lg: 3, md: 3));
+            @include rule(width, (xxl: 191, xl: 191, lg: 144, md: 144));
+            @include rule(height, (xxl: 1, xl: 1, lg: 2, md: 2));
+
             @include screen('xl') {
-              margin-top: 3px;
+              // margin-top: 3px;
               margin-left: -9.5vw;
             }
 
-            @include screen('lg') {
-              width: 144px;
-              height: 2px;
-            }
+            // @include screen('lg') {
+            //   // width: 144px;
+            //   // height: 2px;
+            // }
 
             @include screen('md') {
               display: none;
@@ -1223,15 +1307,16 @@
           }
 
           &:not(:last-child) {
-            margin-bottom: 72px;
+            // margin-bottom: 72px;
+            @include rule(margin-bottom, (xxl: 72, xl: 72, lg: 52, md: 38));
 
-            @include screen('lg') {
-              margin-bottom: 52px;
-            }
+            // @include screen('lg') {
+            //   margin-bottom: 52px;
+            // }
 
-            @include screen('md') {
-              margin-bottom: 38px;
-            }
+            // @include screen('md') {
+            //   margin-bottom: 38px;
+            // }
           }
         }
       }
@@ -1250,8 +1335,8 @@
       }
 
       @include screen('md') {
-        padding-top: 185%;
-        margin-left: -40%;
+        padding-top: 137.5%;
+        margin-left: -17.5%;
       }
     }
 
@@ -1284,6 +1369,7 @@
     }
 
     #{$b} {
+
       &__col {
         display: block;
         box-sizing: border-box;
@@ -1310,7 +1396,7 @@
 
           @include screen('md') {
             width: 100%;
-            margin-top: 68px;
+            margin-top: calc((67 / 320) * 100vw);
           }
 
           &::before {
@@ -1318,12 +1404,15 @@
 
             top: 10.8%;
             left: 3.8%;
-            width: 122px;
-            height: 130px;
+            // width: 122px;
+            // height: 130px;
             background-image: url('../images/venezia/purple-box-small.png');
             background-repeat: no-repeat;
             background-size: contain;
             background-position: 0 0;
+
+            @include rule(width, (xxl: 122, xl: 122, lg: 122, md: 122));
+            @include rule(height, (xxl: 130, xl: 130, lg: 130, md: 130));
 
             @include screen('xl') {
               top: 20.8%;

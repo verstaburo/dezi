@@ -6,44 +6,50 @@
   justify-content: flex-start;
   align-items: flex-start;
   width: 100%;
-  font-size: 20px;
+  // font-size: 20px;
   line-height: 1.2;
   font-weight: 100;
   font-family: $font-second;
 
-  @include screen('lg') {
-    font-size: 21px;
-  }
+  // @include screen('lg') {
+  //   font-size: 21px;
+  // }
 
-  @include screen('md') {
-    font-size: 15px;
-  }
+  // @include screen('md') {
+  //   font-size: 15px;
+  // }
+
+  @include rule(font-size, (xxl: 20, xl: 20, lg: 21, md: 15));
 
   &__item {
     position: relative;
     display: inline-block;
     box-sizing: border-box;
-    padding-left: 80px;
+    // padding-left: 80px;
     width: 100%;
 
-    @include screen('lg') {
-      padding-left: 84px;
-    }
+    // @include screen('lg') {
+    //   padding-left: 84px;
+    // }
 
-    @include screen('md') {
-      padding-left: 62px;
-    }
+    // @include screen('md') {
+    //   padding-left: 62px;
+    // }
+
+    @include rule(padding-left, (xxl: 80, xl: 80, lg: 84, md: 62));
 
     &:not(:last-child) {
-      margin-bottom: 54px;
+      // margin-bottom: 54px;
 
-      @include screen('lg') {
-        margin-bottom: 58px;
-      }
+      // @include screen('lg') {
+      //   margin-bottom: 58px;
+      // }
 
-      @include screen('md') {
-        margin-bottom: 45px;
-      }
+      // @include screen('md') {
+      //   margin-bottom: 45px;
+      // }
+
+      @include rule(margin-bottom, (xxl: 54, xl: 54, lg: 58, md: 45));
     }
   }
 
@@ -60,19 +66,46 @@
     }
 
     &_case-star {
-      margin-top: -8px;
+      @include rule(width, (xxl: 56, xl: 56, lg: 56, md:  56));
+      @include rule(height, (xxl: 56, xl: 56, lg: 56, md: 56));
+      @include rule(margin-top, (xxl: -8, xl: -8, lg: -8, md: -6));
+    }
 
-      @include screen('md') {
-        margin-top: -6px;
-      }
+    &_case-lego {
+      @include rule(width, (xxl: 53, xl: 53, lg: 53, md: 53));
+      @include rule(height, (xxl: 46, xl: 46, lg: 46, md: 46));
+    }
+
+    &_case-facade {
+      @include rule(width, (xxl: 47, xl: 47, lg: 47, md: 47));
+      @include rule(height, (xxl: 47, xl: 47, lg: 47, md: 47));
+    }
+
+    &_case-rocket {
+      @include rule(width, (xxl: 33, xl: 33, lg: 33, md: 33));
+      @include rule(height, (xxl: 33, xl: 33, lg: 33, md: 33));
+    }
+
+    &_case-paint {
+      @include rule(width, (xxl: 31, xl: 31, lg: 31, md: 31));
+      @include rule(height, (xxl: 31, xl: 31, lg: 31, md: 31));
+    }
+
+    &_case-map {
+      @include rule(width, (xxl: 31, xl: 31, lg: 31, md: 31));
+      @include rule(height, (xxl: 27, xl: 27, lg: 27, md: 27));
     }
 
     &_case-devices {
-      margin-left: -7px;
+      // margin-left: -7px;
 
-      @include screen('md') {
-        margin-left: 0;
-      }
+      // @include screen('md') {
+      //   margin-left: 0;
+      // }
+
+      @include rule(width, (xxl: 60, xl: 60, lg: 60, md: 60));
+      @include rule(height, (xxl: 34, xl: 34, lg: 34, md: 34));
+      @include rule(margin-left, (xxl: -7, xl: -7, lg: -7, md: 0));
     }
   }
 }

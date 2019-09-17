@@ -33,27 +33,30 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding-top: 100px;
-    padding-bottom: 66px;
+    // padding-top: 100px;
+    // padding-bottom: 66px;
     box-sizing: border-box;
+
+    @include rule(padding-top, (xxl: 100, xl: 150, lg: 150, md: 100));
+    @include rule(padding-bottom, (xxl: 66, xl: 90, lg: 90, md: 66));
 
     @include screen('xl') {
       height: auto;
       min-height: 100%;
       align-items: flex-start;
-      padding-top: 150px;
-      padding-bottom: 90px;
+      // padding-top: 150px;
+      // padding-bottom: 90px;
     }
 
-    @include screen('md') {
-      padding-top: 100px;
-      padding-bottom: 66px;
-    }
+    // @include screen('md') {
+    //   padding-top: 100px;
+    //   padding-bottom: 66px;
+    // }
   }
 
   &__form {
     box-sizing: border-box;
-    padding-right: 144px;
+    padding-right: calc((144 / 1920) * 100vw);
 
     @include screen('xl') {
       padding-right: 0;
@@ -61,16 +64,19 @@
   }
 
   .popup__close {
-    top: 50px;
-    left: 190px;
+    // top: 50px;
+    // left: 190px;
     z-index: 3;
 
-    @include screen('lg') {
-      left: 100px;
-    }
+    @include rule(top, (xxl: 50, xl: 50, lg: 50, md: 23));
+    @include rule(left, (xxl: 190, xl: 190, lg: 100));
+
+    // @include screen('lg') {
+    //   left: 100px;
+    // }
 
     @include screen('md') {
-      top: 23px;
+      // top: 23px;
       left: 50%;
       transform: translate3d(-50%, 0, 0);
     }

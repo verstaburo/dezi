@@ -6,20 +6,25 @@
   transform-origin: 50% 50%;
   transform: rotate(180deg);
   overflow: hidden;
-  width: 20px;
+  // width: 20px;
   $b: &;
+
+  @include rule(width, (xxl: 20, xl: 20, lg: 20, md: 20));
 
   &::before,&::after {
     display: block;
     content: '';
-    width: 1px;
+    // width: 1px;
     background-color: currentColor;
     opacity: .18;
+
+    @include rule(width, (xxl: 1, xl: 1, lg: 1, md: 1));
   }
 
   &::before {
     flex: 1;
-    max-height: 115px;
+    // max-height: 115px;
+    max-height: 6vw;
 
     @include screen('xl') {
       flex: 1;
@@ -42,24 +47,31 @@
     justify-content: flex-start;
     align-items: flex-start;
     align-self: flex-start;
-    margin-top: 37px;
-    margin-bottom: 22px;
-    width: 20px;
+    // margin-top: 37px;
+    // margin-bottom: 22px;
+    // width: 20px;
     overflow: hidden;
     transition: height $ease-main;
+
+    @include rule(margin-top, (xxl: 37, xl: 37, lg: 37, md: 37));
+    @include rule(margin-bottom, (xxl: 22, xl: 22, lg: 22, md: 22));
+    @include rule(width, (xxl: 20, xl: 20, lg: 20, md: 20));
   }
 
   &__item {
     display: inline-block;
     pointer-events: none;
     text-transform: uppercase;
-    font-size: $fz12;
-    line-height: 20px;
+    // font-size: $fz12;
+    // line-height: 20px;
     letter-spacing: $ls-header;
     font-weight: 700;
     opacity: 0;
     transition: opacity $ease-main;
     white-space: nowrap;
+
+    @include rule(font-size, (xxl: $fz12, xl: $fz12, lg: $fz12, md: $fz12));
+    @include rule(line-height, (xxl: 20, xl: 20, lg: 20, md: 20));
 
     &.is-active {
       opacity: 1;

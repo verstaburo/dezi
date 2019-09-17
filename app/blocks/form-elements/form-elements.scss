@@ -1,12 +1,14 @@
 .input {
-  padding: 0 0 21px;
-  height: 32px;
-  border-style: solid;
-  border-color: $color-grey-dark-3;
-  border-width: 0 0 1px;
+  // padding: 0 0 21px;
+  display: block;
+  padding: 0;
+  // height: 32px;
+  border-bottom-style: solid;
+  border-bottom-color: $color-grey-dark-3;
+  // border-bottom-width: 0;
   width: 100%;
   box-sizing: border-box;
-  font-size: 15px;
+  // font-size: 15px;
   font-weight: 500;
   text-transform: uppercase;
   line-height: 1;
@@ -17,16 +19,22 @@
   color: $color-grey;
   transition: border $ease-main;
 
-  @include screen('lg') {
-    font-size: 11px;
-    padding-bottom: 9px;
-  }
+  @include rule(padding-top, (xxl: 0, xl: 0, lg: 0, md: 6));
+  @include rule(padding-bottom, (xxl: 16, xl: 16, lg: 9, md: 3));
+  @include rule(height, (xxl: 30, xl: 30, lg: 30, md: 25));
+  @include rule(border-bottom-width, (xxl: 1, xl: 1, lg: 1, md: 1));
+  @include rule(font-size, (xxl: 15, xl: 15, lg: 11, md: 8));
 
-  @include screen('md') {
-    font-size: 8px;
-    height: 20px;
-    padding-bottom: 3px;
-  }
+  // @include screen('lg') {
+  //   font-size: 11px;
+  //   // padding-bottom: 9px;
+  // }
+
+  // @include screen('md') {
+  //   font-size: 8px;
+  //   // height: 20px;
+  //   // padding-bottom: 3px;
+  // }
 
   &::placeholder {
     color: transparent;
@@ -37,25 +45,33 @@
   }
 
   &[required] {
-    padding-right: 30px;
+    // padding-right: 30px;
+
+    @include rule(padding-right, (xxl: 30, xl: 30, lg: 30, md: 30));
   }
 
   &_v2 {
     letter-spacing: $ls-btn;
     font-weight: 400;
-    padding-top: 4px;
-    height: 40px;
-    padding-bottom: 21px;
+    box-sizing: border-box;
+    // padding-top: 4px;
+    // height: 40px;
+    // padding-bottom: 21px;
 
-    @include screen('lg') {
-      font-size: $fz15;
-    }
+    @include rule(padding-top, (xxl: 6, xl: 6, lg: 6, md: 6));
+    @include rule(padding-bottom, (xxl: 18, xl: 18, lg: 18, md: 6));
+    @include rule(height, (xxl: 40, xl: 40, lg: 40, md: 25));
+    @include rule(font-size, (xxl: $fz15, xl: $fz15, lg: $fz15, md: $fz9));
 
-    @include screen('md') {
-      font-size: $fz9;
-      padding-bottom: 8px;
-      height: 20px;
-    }
+    // @include screen('lg') {
+    //   font-size: $fz15;
+    // }
+
+    // @include screen('md') {
+    //   font-size: $fz9;
+    //   // padding-bottom: 8px;
+    //   // height: 20px;
+    // }
   }
 
   body.is-dark & {
@@ -79,59 +95,72 @@
 .inputbox {
   display: block;
   position: relative;
+  font-size: 0;
+  line-height: 0;
   $b: &;
 
   & + & {
-    margin-top: 65px;
+    // margin-top: 65px;
+    @include rule(margin-top, (xxl: 65, xl: 65, lg: 43, md: 13));
 
-    @include screen('lg') {
-      margin-top: 43px;
-    }
+    // @include screen('lg') {
+    //   margin-top: 43px;
+    // }
 
-    @include screen('md') {
-      margin-top: 13px;
-    }
+    // @include screen('md') {
+    //   margin-top: 13px;
+    // }
   }
 
   &_required {
+
     &::after {
       content: '*';
       position: absolute;
-      right: 1px;
-      top: 7px;
+      // right: 1px;
+      // top: 7px;
       color: $color-red;
-      font-size: $fz-text;
+      // font-size: $fz-text;
       font-weight: 500;
       font-family: $font-main;
 
-      @include screen('lg') {
-        font-size: 15px;
-        right: 2px;
-        top: 9px;
-      }
+      @include rule(right, (xxl: 1, xl: 1, lg: 2, md: 3));
+      @include rule(top, (xxl: 18, xl: 18, lg: 18, md: 18));
+      @include rule(font-size, (xxl: $fz-text, xl: $fz-text, lg: $fz15, md: $fz10));
 
-      @include screen('md') {
-        font-size: $fz10;
-        right: 3px;
-        top: 11px;
-      }
+      // @include screen('lg') {
+      //   font-size: 15px;
+      //   right: 2px;
+      //   top: 9px;
+      // }
+
+      // @include screen('md') {
+      //   font-size: $fz10;
+      //   right: 3px;
+      //   top: 11px;
+      // }
     }
 
     &_v2::after {
-      top: 10px;
-      right: 1px;
+      // top: 10px;
+      // right: 1px;
 
-      @include screen('lg') {
-        font-size: $fz-text;
-      }
+      @include rule(top, (xxl: 22, xl: 20, lg: 20, md: 15));
+      @include rule(right, (xxl: 2, xl: 2, lg: 2, md: 1));
+      @include rule(font-size, (xxl: $fz-text, xl: $fz-text, lg: $fz-text, md: $fz10));
 
-      @include screen('md') {
-        font-size: $fz10;
-        top: 12px;
-      }
+      // @include screen('lg') {
+      //   font-size: $fz-text;
+      // }
+
+      // @include screen('md') {
+      //   font-size: $fz10;
+      //   top: 12px;
+      // }
     }
 
     &_white {
+
       &::after {
         color: $color-basic;
       }
@@ -140,11 +169,11 @@
 
   &__label {
     position: absolute;
-    top: 3px;
+    // top: 3px;
     left: 0;
     width: 100%;
     display: block;
-    font-size: 15px;
+    // font-size: 15px;
     font-weight: 500;
     text-transform: uppercase;
     line-height: 1;
@@ -155,35 +184,41 @@
     transform-origin: 0 50% 0;
     pointer-events: none;
 
+    @include rule(top, (xxl: 0, xl: 0, lg: 6, md: 10));
+    @include rule(font-size, (xxl: 15, xl: 15, lg: 11, md: 8));
     @include ellipsis(100%);
 
-    @include screen('lg') {
-      top: 6px;
-      font-size: 11px;
-    }
+    // @include screen('lg') {
+    //   // top: 6px;
+    //   // font-size: 11px;
+    // }
 
-    @include screen('md') {
-      top: 10px;
-      font-size: 8px;
-    }
+    // @include screen('md') {
+    //   // top: 10px;
+    //   // font-size: 8px;
+    // }
 
     .input_v2 ~ & {
       letter-spacing: $ls-btn;
       font-weight: 400;
 
-      @include screen('lg') {
-        top: 5px;
-        font-size: $fz15;
-      }
+      @include rule(top, (xxl: 5, xl: 5, lg: 5, md: 6));
+      @include rule(font-size, (xxl: $fz15, xl: $fz15, lg: $fz15, md: $fz9));
 
-      @include screen('md') {
-        top: 8px;
-        font-size: $fz9;
-      }
+      // @include screen('lg') {
+      //   top: 5px;
+      //   font-size: $fz15;
+      // }
+
+      // @include screen('md') {
+      //   top: 8px;
+      //   font-size: $fz9;
+      // }
     }
 
     .input[required] {
-      padding-right: 30px;
+      // padding-right: 30px;
+      @include rule(padding-right, (xxl: 30, xl: 30, lg: 30, md: 30));
     }
 
     body.is-dark & {
@@ -195,7 +230,7 @@
     }
 
     #{$b}.is-top & {
-      transform: scale(0.8) translate3d(0, -200%, 0);
+      transform: scale(.8) translate3d(0, -200%, 0);
       font-weight: 700;
     }
 
@@ -207,17 +242,21 @@
   &__error {
     display: none;
     font-family: $font-site;
-    font-size: 15px;
+    // font-size: 15px;
     color: $color-red;
     line-height: 1.2;
     font-weight: 300;
     box-sizing: border-box;
     width: 100%;
-    padding: 5px 0;
+    // padding: 5px 0;
 
-    @include screen('md') {
-      font-size: 12px;
-    }
+    @include rule(font-size, (xxl: $fz15, xl: $fz15, lg: $fz15, md: $fz12));
+    @include rule(padding-top, (xxl: 5, xl: 5, lg: 5, md: 5));
+    @include rule(padding-bottom, (xxl: 5, xl: 5, lg: 5, md: 5));
+
+    // @include screen('md') {
+    //   font-size: 12px;
+    // }
 
     #{$b}.is-error & {
       display: block;
@@ -228,412 +267,414 @@
 .textarea {
   @extend .input;
 
-  padding-top: 13px;
-  padding-bottom: 13px;
-  min-height: 150px;
-  resize: vertical;
+  display: block;
+  box-sizing: border-box;
+  // padding-top: 13px;
+  // padding-bottom: 13px;
+  // min-height: 150px;
+  resize: none;
 
   &_v2 {
     @extend .input_v2;
   }
 }
 
-.checkradio {
-  position: relative;
-  padding-left: 25px;
-  display: inline-block;
-  cursor: pointer;
-
-  &__input {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 0;
-    height: 0;
-    visibility: hidden;
-    opacity: 0;
-    pointer-events: none;
-
-    &:checked {
-      & + .checkradio__box {
-        &::before {
-          opacity: 1;
-        }
-      }
-    }
-  }
-
-  &__box {
-    position: absolute;
-    width: 15px;
-    height: 15px;
-    border: 1px solid $color-border;
-    left: 0;
-    top: 2px;
-
-    &::before {
-      content: '';
-      width: 9px;
-      height: 9px;
-      background-color: $color-main;
-      display: block;
-      opacity: 0;
-      transition: opacity $ease-main;
-
-      @include center-image;
-    }
-  }
-
-  &__content {
-    @include text;
-  }
-}
-
-// #####
-// Блок выбора количества
-// #####
-
-.input-numberbox {
-  display: table;
-  width: 100%;
-
-  &__button {
-    border: 1px solid $color-border;
-    width: 40px;
-    display: table-cell;
-    font-size: 18px;
-    font-family: monospace;
-    cursor: pointer;
-    text-align: center;
-
-    &:hover::before,&:hover::after {
-      opacity: .5;
-    }
-
-    &::before,&::after {
-      transition: opacity $ease-main;
-    }
-
-    &:first-child::before {
-      content: '-';
-    }
-
-    &:last-child::before {
-      content: '+';
-    }
-  }
-
-  &__input {
-    flex: 1;
-    border-left: 0;
-    border-right: 0;
-    text-align: center;
-    display: table-cell;
-  }
-}
-
-// #####
-// Кастомные селекты
-// #####
-
-@import '../../../node_modules/choices.js/assets/styles/scss/choices.scss';
-
-.select {
-  appearance: none;
-
-  @extend .input;
-}
-
-.choices {
-  &__inner,&[data-type*='select-one'] &__inner {
-    @extend .select;
-
-    transition: border-color $ease-main;
-  }
-
-  &[data-type*='select-one'] {
-    .choices__inner {
-      padding-bottom: 0;
-    }
-
-    &::after {
-      border-width: 5px 5px 0;
-      top: 0;
-      bottom: 0;
-      right: 10px;
-      margin: auto;
-      transform: rotate(0) translate3d(0, 0, 0);
-      transition: transform $ease-main;
-      border-color: #333 transparent transparent;
-    }
-
-    &.is-open::after {
-      transform: rotate(180deg) translate3d(0, 0, 0);
-      border-color: #333 transparent transparent;
-      margin: auto;
-    }
-  }
-
-  &__list {
-    border-color: $color-border;
-
-    &--single {
-      display: table;
-      box-sizing: border-box;
-      height: 100%;
-      padding: 0;
-      padding-right: 20px;
-
-      .choices__item {
-        display: table-cell;
-        vertical-align: middle;
-      }
-    }
-
-    &--dropdown {
-      box-sizing: border-box;
-
-      .choices__item {
-        padding: 10px;
-
-        &--selectable {
-          transition: opacity $ease-main;
-
-          &.is-highlighted {
-            opacity: .5;
-            background-color: white;
-          }
-        }
-      }
-    }
-  }
-
-  &.is-open & {
-    &__inner {
-      border-color: $color-border;
-    }
-
-    &__list {
-      &--dropdown {
-        border-color: $color-border;
-      }
-    }
-  }
-}
-
-// #####
-// Range-слайдер
-// #####
-
-.range {
-  display: inline-block;
-  width: 100%;
-}
-
-.range .noUi {
-  &-base {
-    height: 2px;
-    background-color: $color-border;
-    position: relative;
-    margin: 8px 0; // margin нужен, чтобы handler не налезал на другие элементы
-  }
-
-  &-connect {
-    height: 100%;
-    position: absolute;
-    background-color: $color-main;
-  }
-
-  &-handle {
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    top: 50%;
-    border: 1px solid $color-border;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    background-color: white;
-    transition: border-color $ease-main;
-    cursor: pointer;
-
-    &:hover {
-      border-color: $color-main;
-    }
-  }
-
-  &-origin {
-    position: absolute;
-    top: 0;
-    height: 100%;
-  }
-}
-
-// #####
-// Календарь
-// #####
-
-@import '../../node_modules/air-datepicker/dist/css/datepicker.css';
-
-.js-datepicker {
-  cursor: pointer;
-}
-
-.datepicker {
-  color: $color-basic;
-  font-size: 14px;
-  width: 250px;
-  background: white;
-  border: 1px solid $color-border;
-  box-shadow: 0 2px 4px rgba($color-basic, .15);
-  border-radius: 0;
-  transition: opacity $ease-main, transform $ease-main, left 0s $ease-main;
-  font-family: $font-main;
-
-  &.-from-bottom- {
-    transform: translateY(8px);
-  }
-
-  &.active {
-    opacity: 1;
-    transform: translate(0);
-    transition: opacity $ease-main, transform $ease-main, left 0 0;
-  }
-}
-
-// Стрелочка сверху над блоком
-
-.datepicker--pointer {
-  border-top-color: $color-border;
-  border-right-color: $color-border;
-}
-
-// Цвет дней недели
-
-.datepicker--day-name {
-  color: $color-main;
-}
-
-// Ячейка со стрелкой
-
-.datepicker--nav-action {
-  border-radius: 0;
-  transition: color $ease-main, background-color $ease-main;
-
-  // Цвет стрелок
-  path {
-    stroke: $color-basic;
-  }
-}
-
-// Шапка календаря
-
-.datepicker--nav {
-  border-color: $color-border;
-
-  // Ячейка с заголовком месяца/года
-
-  &-title {
-    border-radius: 0;
-    transition: color $ease-main, background-color $ease-main;
-
-    // Цвет года в шапке
-
-    i {
-      color: rgba($color-basic, .5);
-    }
-  }
-}
-
-// Цвет ховера по ячейкам в календаре, шапке
-
-.datepicker--cell.-focus-,.datepicker--nav-action:hover,.datepicker--nav-title:hover {
-  background: rgba($color-border, .3);
-}
-
-// Стиль ячейки
-
-.datepicker--cell {
-  border-radius: 0;
-  transition: color $ease-main, background-color $ease-main;
-
-  // Цвет сегодняшнего даты/месяца
-
-  &.-current- {
-    color: $color-main;
-    background: rgba($color-main, .1);
-  }
-
-  // Ховер по активной дате
-
-  &.-selected-.-focus- {
-    background: rgba($color-main, .8);
-  }
-
-  // Неактивная ячейка
-
-  &.-disabled- {
-    color: rgba($color-basic, .3);
-  }
-
-  // Цвет фона активного месяца/дня
-
-  &.-selected-,&.-selected-.-current- {
-    background: $color-main;
-  }
-}
-
-// Цвет даты другого месяца/года
-
-.datepicker--cell-day.-other-month-,.datepicker--cell-year.-other-decade- {
-  color: rgba($color-basic, .2);
-
-  &:hover {
-    color: rgba($color-basic, .5);
-  }
-}
-
-// Стили при выборе диапазона дат
-
-.datepicker--cell.-range-to-,.datepicker--cell.-range-from- {
-  border: 0;
-  background-color: rgba($color-main, .3);
-
-  &.-selected- {
-    background-color: $color-main;
-  }
-}
-
-.datepicker--cell.-range-from- {
-  border-radius: 3px 0 0 3px;
-}
-
-.datepicker--cell.-range-to- {
-  border-radius: 0 3px 3px 0;
-}
-
-// Стили ячеек другого месяца, находящихся в диапазоне
-
-.-in-range-.datepicker--cell-day.-other-month-,.-in-range-.datepicker--cell-year.-other-decade- {
-  background-color: rgba($color-main, .1);
-  color: rgba($color-main, .3);
-
-  &.-focus- {
-    background-color: rgba($color-main, .2);
-  }
-}
-
-// Стили промежуточных ячеек в диапазоне
-
-.datepicker--cell.-in-range- {
-  background: rgba($color-main, .2);
-  color: $color-main;
-  border-radius: 0;
-
-  &.-current- {
-    color: $color-basic;
-  }
-
-  &.-focus- {
-    background: rgba($color-main, .3);
-  }
-}
+// .checkradio {
+//   position: relative;
+//   padding-left: 25px;
+//   display: inline-block;
+//   cursor: pointer;
+
+//   &__input {
+//     position: absolute;
+//     left: 0;
+//     top: 0;
+//     width: 0;
+//     height: 0;
+//     visibility: hidden;
+//     opacity: 0;
+//     pointer-events: none;
+
+//     &:checked {
+//       & + .checkradio__box {
+//         &::before {
+//           opacity: 1;
+//         }
+//       }
+//     }
+//   }
+
+//   &__box {
+//     position: absolute;
+//     width: 15px;
+//     height: 15px;
+//     border: 1px solid $color-border;
+//     left: 0;
+//     top: 2px;
+
+//     &::before {
+//       content: '';
+//       width: 9px;
+//       height: 9px;
+//       background-color: $color-main;
+//       display: block;
+//       opacity: 0;
+//       transition: opacity $ease-main;
+
+//       @include center-image;
+//     }
+//   }
+
+//   &__content {
+//     @include text;
+//   }
+// }
+
+// // #####
+// // Блок выбора количества
+// // #####
+
+// .input-numberbox {
+//   display: table;
+//   width: 100%;
+
+//   &__button {
+//     border: 1px solid $color-border;
+//     width: 40px;
+//     display: table-cell;
+//     font-size: 18px;
+//     font-family: monospace;
+//     cursor: pointer;
+//     text-align: center;
+
+//     &:hover::before,&:hover::after {
+//       opacity: .5;
+//     }
+
+//     &::before,&::after {
+//       transition: opacity $ease-main;
+//     }
+
+//     &:first-child::before {
+//       content: '-';
+//     }
+
+//     &:last-child::before {
+//       content: '+';
+//     }
+//   }
+
+//   &__input {
+//     flex: 1;
+//     border-left: 0;
+//     border-right: 0;
+//     text-align: center;
+//     display: table-cell;
+//   }
+// }
+
+// // #####
+// // Кастомные селекты
+// // #####
+
+// @import '../../../node_modules/choices.js/assets/styles/scss/choices.scss';
+
+// .select {
+//   appearance: none;
+
+//   @extend .input;
+// }
+
+// .choices {
+//   &__inner,&[data-type*='select-one'] &__inner {
+//     @extend .select;
+
+//     transition: border-color $ease-main;
+//   }
+
+//   &[data-type*='select-one'] {
+//     .choices__inner {
+//       padding-bottom: 0;
+//     }
+
+//     &::after {
+//       border-width: 5px 5px 0;
+//       top: 0;
+//       bottom: 0;
+//       right: 10px;
+//       margin: auto;
+//       transform: rotate(0) translate3d(0, 0, 0);
+//       transition: transform $ease-main;
+//       border-color: #333 transparent transparent;
+//     }
+
+//     &.is-open::after {
+//       transform: rotate(180deg) translate3d(0, 0, 0);
+//       border-color: #333 transparent transparent;
+//       margin: auto;
+//     }
+//   }
+
+//   &__list {
+//     border-color: $color-border;
+
+//     &--single {
+//       display: table;
+//       box-sizing: border-box;
+//       height: 100%;
+//       padding: 0;
+//       padding-right: 20px;
+
+//       .choices__item {
+//         display: table-cell;
+//         vertical-align: middle;
+//       }
+//     }
+
+//     &--dropdown {
+//       box-sizing: border-box;
+
+//       .choices__item {
+//         padding: 10px;
+
+//         &--selectable {
+//           transition: opacity $ease-main;
+
+//           &.is-highlighted {
+//             opacity: .5;
+//             background-color: white;
+//           }
+//         }
+//       }
+//     }
+//   }
+
+//   &.is-open & {
+//     &__inner {
+//       border-color: $color-border;
+//     }
+
+//     &__list {
+//       &--dropdown {
+//         border-color: $color-border;
+//       }
+//     }
+//   }
+// }
+
+// // #####
+// // Range-слайдер
+// // #####
+
+// .range {
+//   display: inline-block;
+//   width: 100%;
+// }
+
+// .range .noUi {
+//   &-base {
+//     height: 2px;
+//     background-color: $color-border;
+//     position: relative;
+//     margin: 8px 0; // margin нужен, чтобы handler не налезал на другие элементы
+//   }
+
+//   &-connect {
+//     height: 100%;
+//     position: absolute;
+//     background-color: $color-main;
+//   }
+
+//   &-handle {
+//     position: absolute;
+//     width: 16px;
+//     height: 16px;
+//     top: 50%;
+//     border: 1px solid $color-border;
+//     transform: translate(-50%, -50%);
+//     border-radius: 50%;
+//     background-color: white;
+//     transition: border-color $ease-main;
+//     cursor: pointer;
+
+//     &:hover {
+//       border-color: $color-main;
+//     }
+//   }
+
+//   &-origin {
+//     position: absolute;
+//     top: 0;
+//     height: 100%;
+//   }
+// }
+
+// // #####
+// // Календарь
+// // #####
+
+// @import '../../node_modules/air-datepicker/dist/css/datepicker.css';
+
+// .js-datepicker {
+//   cursor: pointer;
+// }
+
+// .datepicker {
+//   color: $color-basic;
+//   font-size: 14px;
+//   width: 250px;
+//   background: white;
+//   border: 1px solid $color-border;
+//   box-shadow: 0 2px 4px rgba($color-basic, .15);
+//   border-radius: 0;
+//   transition: opacity $ease-main, transform $ease-main, left 0s $ease-main;
+//   font-family: $font-main;
+
+//   &.-from-bottom- {
+//     transform: translateY(8px);
+//   }
+
+//   &.active {
+//     opacity: 1;
+//     transform: translate(0);
+//     transition: opacity $ease-main, transform $ease-main, left 0 0;
+//   }
+// }
+
+// // Стрелочка сверху над блоком
+
+// .datepicker--pointer {
+//   border-top-color: $color-border;
+//   border-right-color: $color-border;
+// }
+
+// // Цвет дней недели
+
+// .datepicker--day-name {
+//   color: $color-main;
+// }
+
+// // Ячейка со стрелкой
+
+// .datepicker--nav-action {
+//   border-radius: 0;
+//   transition: color $ease-main, background-color $ease-main;
+
+//   // Цвет стрелок
+//   path {
+//     stroke: $color-basic;
+//   }
+// }
+
+// // Шапка календаря
+
+// .datepicker--nav {
+//   border-color: $color-border;
+
+//   // Ячейка с заголовком месяца/года
+
+//   &-title {
+//     border-radius: 0;
+//     transition: color $ease-main, background-color $ease-main;
+
+//     // Цвет года в шапке
+
+//     i {
+//       color: rgba($color-basic, .5);
+//     }
+//   }
+// }
+
+// // Цвет ховера по ячейкам в календаре, шапке
+
+// .datepicker--cell.-focus-,.datepicker--nav-action:hover,.datepicker--nav-title:hover {
+//   background: rgba($color-border, .3);
+// }
+
+// // Стиль ячейки
+
+// .datepicker--cell {
+//   border-radius: 0;
+//   transition: color $ease-main, background-color $ease-main;
+
+//   // Цвет сегодняшнего даты/месяца
+
+//   &.-current- {
+//     color: $color-main;
+//     background: rgba($color-main, .1);
+//   }
+
+//   // Ховер по активной дате
+
+//   &.-selected-.-focus- {
+//     background: rgba($color-main, .8);
+//   }
+
+//   // Неактивная ячейка
+
+//   &.-disabled- {
+//     color: rgba($color-basic, .3);
+//   }
+
+//   // Цвет фона активного месяца/дня
+
+//   &.-selected-,&.-selected-.-current- {
+//     background: $color-main;
+//   }
+// }
+
+// // Цвет даты другого месяца/года
+
+// .datepicker--cell-day.-other-month-,.datepicker--cell-year.-other-decade- {
+//   color: rgba($color-basic, .2);
+
+//   &:hover {
+//     color: rgba($color-basic, .5);
+//   }
+// }
+
+// // Стили при выборе диапазона дат
+
+// .datepicker--cell.-range-to-,.datepicker--cell.-range-from- {
+//   border: 0;
+//   background-color: rgba($color-main, .3);
+
+//   &.-selected- {
+//     background-color: $color-main;
+//   }
+// }
+
+// .datepicker--cell.-range-from- {
+//   border-radius: 3px 0 0 3px;
+// }
+
+// .datepicker--cell.-range-to- {
+//   border-radius: 0 3px 3px 0;
+// }
+
+// // Стили ячеек другого месяца, находящихся в диапазоне
+
+// .-in-range-.datepicker--cell-day.-other-month-,.-in-range-.datepicker--cell-year.-other-decade- {
+//   background-color: rgba($color-main, .1);
+//   color: rgba($color-main, .3);
+
+//   &.-focus- {
+//     background-color: rgba($color-main, .2);
+//   }
+// }
+
+// // Стили промежуточных ячеек в диапазоне
+
+// .datepicker--cell.-in-range- {
+//   background: rgba($color-main, .2);
+//   color: $color-main;
+//   border-radius: 0;
+
+//   &.-current- {
+//     color: $color-basic;
+//   }
+
+//   &.-focus- {
+//     background: rgba($color-main, .3);
+//   }
+// }

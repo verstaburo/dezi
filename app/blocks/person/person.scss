@@ -1,27 +1,31 @@
 .person {
   position: relative;
   display: inline-block;
-  margin-bottom: 120px;
+  // margin-bottom: 120px;
   $b: &;
 
-  @include screen('md') {
-    margin-bottom: 50px;
-  }
+  // @include screen('md') {
+  //   margin-bottom: 50px;
+  // }
+
+  @include rule(margin-bottom, (xxl: 120, xl: 120, lg: 120, md: 50));
 
   &::before {
     display: block;
     position: absolute;
     color: $color-titles;
-    font-size: $fz61;
+    // font-size: $fz61;
     line-height: .4;
     font-weight: 700;
     letter-spacing: $ls-main;
     z-index: 3;
     animation-delay: .4s;
 
-    @include screen('md') {
-      font-size: $fz31;
-    }
+    // @include screen('md') {
+    //   font-size: $fz31;
+    // }
+
+    @include rule(font-size, (xxl: $fz61, xl: $fz61, lg: $fz61, md: $fz31));
 
     .quote.is-animate & {
       animation: fade 1s cubic-bezier(.77, 0, .175, 1);
@@ -31,63 +35,90 @@
   }
 
   &_brede::before {
-    top: 13px;
-    left: calc(100% - 2px);
+    // top: 13px;
+    // left: calc(100% - 2px);
+    left: calc(100% - ((2 / 1920) * 100vw));
     content: '\00AB';
+
+    @include rule(top, (xxl: 13, xl: 13));
+
+    @include screen('xl') {
+      left: calc(100% - ((2 / 1366) * 100vw));
+    }
 
     @include screen('lg') {
       top: auto;
-      bottom: calc(100% + 30px);
-      left: calc(100% - 4px);
+      // bottom: calc(100% + 30px);
+      // left: calc(100% - 4px);
+      bottom: calc(100% + ((30 / 1024) * 100vw));
+      left: calc(100% - ((4 / 1024) * 100vw));
     }
 
+    @include rule(top, (md: -2));
+
     @include screen('md') {
-      top: -2px;
+      // top: -2px;
       bottom: auto;
       left: auto;
-      right: calc(100% + 65px);
+      // right: calc(100% + 65px);
+      right: calc(100% + ((65 / 320) * 100vw));
     }
   }
 
   &_shilin::before {
-    top: 96px;
-    right: calc(100% + 39px);
+    // top: 96px;
+    // right: calc(100% + 39px);
+    right: calc(100% + ((39 / 1920) * 100vw));
     content: ' \00BB';
 
+    @include rule(top, (xxl: 96, xl: 23, lg: 23, md: 47));
+
     @include screen('xl') {
-      top: 23px;
-      right: calc(100% + 4px);
+      // top: 23px;
+      // right: calc(100% + 4px);
+      right: calc(100% + ((4 / 1366) * 100vw));
+    }
+
+    @include screen('lg') {
+      right: calc(100% + ((4 / 1024) * 100vw));
     }
 
     @include screen('md') {
-      top: 47px;
-      left: calc(100% + 4px);
+      // top: 47px;
+      // left: calc(100% + 4px);
+      left: calc(100% + ((4 / 320) * 100vw));
       right: auto;
     }
   }
 
   &__portrait {
     position: relative;
-    width: 200px;
-    height: 200px;
+    // width: 200px;
+    // height: 200px;
 
-    @include screen('md') {
-      width: 100px;
-      height: 100px;
-    }
+    @include rule(width, (xxl: 200, xl: 200, lg: 200, md: 100));
+    @include rule(height, (xxl: 200, xl: 200, lg: 200, md: 100));
+
+    // @include screen('md') {
+    //   width: 100px;
+    //   height: 100px;
+    // }
 
     &::before {
       @include pseudo;
 
-      width: 449px;
-      height: 449px;
+      // width: 449px;
+      // height: 449px;
       border-radius: 50%;
       z-index: 1;
 
-      @include screen('md') {
-        width: 225px;
-        height: 225px;
-      }
+      @include rule(width, (xxl: 449, xl: 449, lg: 449, md: 225));
+      @include rule(height, (xxl: 449, xl: 449, lg: 449, md: 225));
+
+      // @include screen('md') {
+      //   width: 225px;
+      //   height: 225px;
+      // }
 
       .quote.is-animate & {
         animation: scaleIn2 1s cubic-bezier(.77, 0, .175, 1);
@@ -96,59 +127,75 @@
       }
 
       #{$b}_brede & {
-        width: 491px;
-        height: 491px;
-        bottom: 56px;
-        right: -147px;
+        // width: 491px;
+        // height: 491px;
+        // bottom: 56px;
+        // right: -147px;
         background-color: $color-brede;
 
-        @include screen('md') {
-          width: 246px;
-          height: 246px;
-          right: 28px;
-          bottom: -3px;
-        }
+        @include rule(width, (xxl: 491, xl: 491, lg: 491, md: 246));
+        @include rule(height, (xxl: 491, xl: 491, lg: 491, md: 246));
+        @include rule(bottom, (xxl: 56, xl: 56, lg: 56, md: -3));
+        @include rule(right, (xxl: -147, xl: -147, lg: -147, md: 28));
+
+        // @include screen('md') {
+        //   width: 246px;
+        //   height: 246px;
+        //   right: 28px;
+        //   bottom: -3px;
+        // }
       }
 
       #{$b}_shilin & {
         background-color: $color-shilin;
-        right: 84px;
-        top: -110px;
+        // right: 84px;
+        // top: -110px;
+
+        @include rule(top, (xxl: -110, xl: -110, lg: -110, md: -54));
+        @include rule(right, (xxl: 84, xl: 84, lg: 84));
+        @include rule(left, (md: 39));
 
         @include screen('md') {
-          width: 225px;
-          height: 225px;
-          left: 39px;
+          // width: 225px;
+          // height: 225px;
+          // left: 39px;
           right: auto;
-          top: -54px;
+          // top: -54px;
         }
       }
     }
 
     #{$b}_brede & {
-      width: 220px;
-      height: 207px;
-      margin-left: -19px;
+      // width: 220px;
+      // height: 207px;
+      // margin-left: -19px;
 
-      @include screen('lg') {
-        margin-left: -15px;
-      }
+      @include rule(width, (xxl: 220, xl: 220, lg: 220, md: 111));
+      @include rule(height, (xxl: 207, xl: 207, lg: 207, md: 104));
+      @include rule(margin-left, (xxl: -19, xl: -19, lg: -15, md: 0));
 
-      @include screen('md') {
-        width: 111px;
-        height: 104px;
-        margin-left: 0;
-      }
+      // @include screen('lg') {
+      //   margin-left: -15px;
+      // }
+
+      // @include screen('md') {
+      //   width: 111px;
+      //   height: 104px;
+      //   margin-left: 0;
+      // }
     }
 
     #{$b}_shilin & {
-      width: 208px;
-      height: 216px;
+      // width: 208px;
+      // height: 216px;
 
-      @include screen('md') {
-        width: 104px;
-        height: 108px;
-      }
+      @include rule(width, (xxl: 208, xl: 208, lg: 208, md: 104));
+      @include rule(height, (xxl: 216, xl: 216, lg: 216, md: 108));
+
+      // @include screen('md') {
+      //   width: 104px;
+      //   height: 108px;
+      // }
     }
   }
 
@@ -174,23 +221,35 @@
     position: absolute;
     display: block;
     box-sizing: border-box;
-    font-size: $fz-md-text;
+    // font-size: $fz-md-text;
     color: $color-grey-light-3;
     font-weight: 300;
-    line-height: 20px;
+    // line-height: 20px;
     letter-spacing: $ls-main;
     z-index: 2;
     width: 120%;
-    top: calc(100% + 24px);
+    top: calc(100% + ((24 / 1920) * 100vw));
     left: 0;
     animation-delay: .4s;
     transform: translate3d(0, 0, 0);
 
+    @include rule(font-size, (xxl: $fz-md-text, xl: $fz-md-text, lg: $fz-md-text, md: $fz9));
+    @include rule(line-height, (xxl: 20, xl: 20, lg: 20, md: 14));
+
+    @include screen('xl') {
+      top: calc(100% + ((24 / 1366) * 100vw));
+    }
+
+    @include screen('lg') {
+      top: calc(100% + ((24 / 1024) * 100vw));
+    }
+
     @include screen('md') {
-      font-size: $fz9;
-      line-height: 14px;
+      // font-size: $fz9;
+      // line-height: 14px;
       color: currentColor;
-      top: calc(100% + 17px);
+      // top: calc(100% + 17px);
+      top: calc(100% + ((17 / 320) * 100vw));
     }
 
     .quote.is-animate & {
@@ -200,32 +259,49 @@
     }
 
     #{$b}_brede & {
-      top: calc(100% + 52px);
+      // top: calc(100% + 52px);
+      top: calc(100% + ((52 / 1920) * 100vw));
       left: 0;
 
+      @include screen('xl') {
+        top: calc(100% + ((52 / 1366) * 100vw));
+      }
+
       @include screen('lg') {
-        top: calc(100% + 55px);
+        // top: calc(100% + 55px);
+        top: calc(100% + ((55 / 1024) * 100vw));
       }
 
       @include screen('md') {
-        top: calc(100% + 17px);
+        // top: calc(100% + 17px);
+        top: calc(100% + ((17 / 320) * 100vw));
       }
     }
 
     #{$b}_shilin & {
-      top: calc(100% + 24px);
-      left: 109px;
+      // top: calc(100% + 24px);
+      top: calc(100% + ((24 / 1920) * 100vw));
+      // left: 109px;
+      left: calc((109 / 1920) * 100vw);
+
+      @include screen('xl') {
+        top: calc(100% + ((24 / 1366) * 100vw));
+        left: calc((109 / 1366) * 100vw);
+      }
 
       @include screen('lg') {
         left: auto;
         right: 0;
         text-align: right;
-        top: calc(100% + 28px);
+        // top: calc(100% + 28px);
+        top: calc(100% + ((28 / 1024) * 100vw));
       }
 
       @include screen('md') {
-        top: 3px;
-        right: calc(100% - 15px);
+        // top: 3px;
+        top: calc((3 / 320) * 100vw);
+        // right: calc(100% - 15px);
+        right: calc(100% - ((15 / 320) * 100vw));
       }
     }
   }

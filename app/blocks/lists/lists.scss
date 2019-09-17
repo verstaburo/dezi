@@ -4,10 +4,12 @@
   &_ul {
     @include ullist;
 
-    margin-top: -6px;
+    // margin-top: -6px;
+    @include rule(margin-top, (xxl: -6, xl: -6, lg: -6, md: -6));
 
     li {
-      margin-top: 6px;
+      // margin-top: 6px;
+      @include rule(margin-top, (xxl: 6, xl: 6, lg: 6, md: 6));
     }
   }
 

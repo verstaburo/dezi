@@ -1,3 +1,5 @@
+import isTouchDevice from 'is-touch-device';
+
 const $ = window.$;
 
 export default function contacts() {
@@ -34,26 +36,41 @@ export default function contacts() {
   });
 
   $(document).on('click', '.js-close-map', (evt) => {
-    const source = evt.target;
-    const self = evt.currentTarget;
-    console.log(source);
-    if (!($(source).is('.js-ignore-map') || $(source).closest('.js-ignore-map').length > 0)) {
-      evt.preventDefault();
-      const map = $(self).closest('.contacts');
-      removeMouse(() => {
-        $(map).removeClass('is-map-open').addClass('is-map-close');
-        if (!window.globalOptions.headerLight) {
-          $('.header').removeClass('header_light');
-        }
-      });
+    if (!isTouchDevice()) {
+      const source = evt.target;
+      const self = evt.currentTarget;
+      if (!($(source).is('.js-ignore-map') || $(source).closest('.js-ignore-map').length > 0)) {
+        evt.preventDefault();
+        const map = $(self).closest('.contacts');
+        removeMouse(() => {
+          $(map).removeClass('is-map-open').addClass('is-map-close');
+          if (!window.globalOptions.headerLight) {
+            $('.header').removeClass('header_light');
+          }
+        });
+      }
+    }
+  });
+
+  $(document).on('touchstart', '.js-close-map', (evt) => {
+    if (isTouchDevice()) {
+      const source = evt.target;
+      const self = evt.currentTarget;
+      if (!($(source).is('.js-ignore-map') || $(source).closest('.js-ignore-map').length > 0)) {
+        const map = $(self).closest('.contacts');
+        removeMouse(() => {
+          $(map).removeClass('is-map-open').addClass('is-map-close');
+          if (!window.globalOptions.headerLight) {
+            $('.header').removeClass('header_light');
+          }
+        });
+      }
     }
   });
 
   $(document).on('mousemove', '.contacts__bottom', (evt) => {
     const source = evt.target;
     const mouse = $('.js-mouse')[0];
-    const bParser = window.globalOptions.browserParser;
-    const scale = bParser.isBrowser('firefox', true) ? 1 : window.globalOptions.scale;
     if ($(source).is('.js-ignore-map') || $(source).closest('.js-ignore-map').length > 0) {
       mouse.style.opacity = '';
     } else if (mouse) {
@@ -64,8 +81,8 @@ export default function contacts() {
         evtX = evt.touches[0].clientX;
         evtY = evt.touches[0].clientY;
       }
-      const x = (evtX / scale) - 15;
-      const y = (evtY / scale) - 15;
+      const x = evtX - 15;
+      const y = evtY - 15;
       mouse.style.left = `${x}px`;
       mouse.style.top = `${y}px`;
     }

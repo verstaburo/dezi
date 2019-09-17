@@ -5,7 +5,8 @@
 
   &__item {
     &:not(:last-child) {
-      margin-bottom: 27px;
+      // margin-bottom: 27px;
+      @include rule(margin-bottom, (xxl: 27, xl: 27, lg: 27, md: 27));
     }
   }
 
@@ -14,7 +15,9 @@
     justify-content: space-between;
     align-items: flex-start;
     width: 100%;
-    margin-top: -19px;
+    // margin-top: -19px;
+
+    @include rule(margin-top, (xxl: -19, xl: -19, lg: -19, md: -19));
 
     @include screen('xl') {
       justify-content: flex-start;
@@ -27,14 +30,17 @@
     #{$b} {
       &__item {
         margin-top: 19px;
+        @include rule(magin-top, (xxl: 19, xl: 19, lg: 19, md: 19));
 
         &:not(:last-child) {
-          margin-right: 30px;
+          // margin-right: 30px;
           margin-bottom: 0;
 
-          @include screen('xl') {
-            margin-right: 70px;
-          }
+          @include rule(margin-right, (xxl: 30, xl: 70, lg: 70, md: 70));
+
+          // @include screen('xl') {
+          //   margin-right: 70px;
+          // }
         }
       }
     }

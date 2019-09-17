@@ -44,6 +44,18 @@ export default function venezia() {
       .setTween(anim)
       .addTo(controller);
   }
+
+  if ($('.js-venezia-catalog').length > 0) {
+    const scene = new ScrollMagic
+      .Scene({
+        triggerElement: '.venezia-package__media',
+        duration: 0,
+        triggerHook: 50,
+      })
+      .setClassToggle('.js-venezia-catalog',
+        'is-animate')
+      .addTo(controller);
+  }
 }
 
 /* eslint-enable */

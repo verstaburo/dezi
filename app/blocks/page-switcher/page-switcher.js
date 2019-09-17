@@ -42,7 +42,7 @@ export default function pageSwitcher() {
     window.globalFunctions.appendAll(targetBlock, content);
     window.globalFunctions.sectionsInit();
     window.globalFunctions.scrollAnimation();
-    if (document.getElementById('watch')) {
+    if (document.querySelectorAll('.js-watch-3').length) {
       window.globalFunctions.watchAnim();
     }
   }

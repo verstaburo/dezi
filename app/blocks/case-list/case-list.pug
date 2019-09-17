@@ -2,5 +2,5 @@ mixin case-list(array)
   +b.UL.case-list&attributes(attributes)
     each item in array
       +e.LI.item.js-sr_8
-        +icon(item[0]).__icon(class="_" + item[0] width=item[2] height=item[3])
+        +icon(item[0]).__icon(class="_" + item[0])
         != item[1]

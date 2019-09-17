@@ -5,15 +5,16 @@
   $b: &;
 
   &:not(:last-child) {
-    margin-bottom: 140px;
+    // margin-bottom: 140px;
+    @include rule(margin-bottom, (xxl: 140, xl: 140, lg: 119, md: 65));
 
-    @include screen('lg') {
-      margin-bottom: 119px;
-    }
+    // @include screen('lg') {
+    //   margin-bottom: 119px;
+    // }
 
-    @include screen('md') {
-      margin-bottom: 65px;
-    }
+    // @include screen('md') {
+    //   margin-bottom: 65px;
+    // }
   }
 
   &__line {
@@ -21,13 +22,15 @@
     justify-content: flex-start;
     align-items: flex-start;
     width: auto;
-    height: 320px;
+    // height: 320px;
     box-sizing: border-box;
     transition: transform 1s ease-in-out;
 
-    @include screen('md') {
-      height: 120px;
-    }
+    @include rule(height, (xxl: 320, xl: 320, lg: 320, md: 120));
+
+    // @include screen('md') {
+    //   height: 120px;
+    // }
   }
 
   &__image {

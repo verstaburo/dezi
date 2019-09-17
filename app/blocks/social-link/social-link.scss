@@ -1,53 +1,48 @@
 .social-link {
   color: currentColor;
-  font-size: $fz15;
+  // font-size: $fz15;
   letter-spacing: $ls-header;
   font-weight: 700;
   $b: &;
 
+  @include rule(font-size, (xxl: $fz15, xl: $fz15, lg: $fz15, md: $fz12));
+
   @include screen('md') {
-    font-size: $fz12;
+    // font-size: $fz12;
     line-height: 1.35;
   }
 
   .link {
     &__img {
-      width: 17px;
-      height: 17px;
-      margin-right: 10px;
+      // width: 17px;
+      // height: 17px;
+      // margin-right: 10px;
 
-      @include screen('md') {
-        width: 13px;
-        height: 13px;
-        margin-right: 13px;
-      }
-    }
-  }
+      @include rule(width, (xxl: 17, xl: 17, lg: 17, md: 13));
+      @include rule(height, (xxl: 17, xl: 17, lg: 17, md: 13));
+      @include rule(margin-right, (xxl: 10, xl: 10, lg: 10, md: 13));
 
-  &_inst {
-    .link {
-      &__img {
-      }
+      // @include screen('md') {
+      //   width: 13px;
+      //   height: 13px;
+      //   margin-right: 13px;
+      // }
     }
   }
 
   &_be {
     .link {
       &__img {
-        width: 24px;
-        height: 15px;
+        // width: 24px;
+        // height: 15px;
 
-        @include screen('md') {
-          width: 14px;
-          height: 14px;
-        }
-      }
-    }
-  }
+        @include rule(width, (xxl: 24, xl: 24, lg: 24, md: 14));
+        @include rule(height, (xxl: 15, xl: 15, lg: 15, md: 14));
 
-  &_fb {
-    .link {
-      &__img {
+        // @include screen('md') {
+        //   width: 14px;
+        //   height: 14px;
+        // }
       }
     }
   }

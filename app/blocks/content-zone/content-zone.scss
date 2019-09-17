@@ -1,7 +1,8 @@
 .content-zone {
   h1 {
     &:not(:last-child) {
-      margin-bottom: 10px;
+      @include rule(margin-bottom, (xxl: 10, xl: 10, lg: 10, md: 10));
+      // margin-bottom: 10px;
     }
 
     @include heading-1;
@@ -9,7 +10,8 @@
 
   h2 {
     &:not(:last-child) {
-      margin-bottom: 10px;
+      @include rule(margin-bottom, (xxl: 10, xl: 10, lg: 10, md: 10));
+      // margin-bottom: 10px;
     }
 
     @include heading-2;
@@ -17,7 +19,8 @@
 
   h3 {
     &:not(:last-child) {
-      margin-bottom: 10px;
+      @include rule(margin-bottom, (xxl: 10, xl: 10, lg: 10, md: 10));
+      // margin-bottom: 10px;
     }
 
     @include heading-3;
@@ -25,7 +28,8 @@
 
   h4 {
     &:not(:last-child) {
-      margin-bottom: 10px;
+      @include rule(margin-bottom, (xxl: 10, xl: 10, lg: 10, md: 10));
+      // margin-bottom: 10px;
     }
 
     @include heading-4;
@@ -33,7 +37,8 @@
 
   h5 {
     &:not(:last-child) {
-      margin-bottom: 10px;
+      @include rule(margin-bottom, (xxl: 10, xl: 10, lg: 10, md: 10));
+      // margin-bottom: 10px;
     }
 
     @include heading-5;
@@ -41,7 +46,8 @@
 
   h6 {
     &:not(:last-child) {
-      margin-bottom: 10px;
+      @include rule(margin-bottom, (xxl: 10, xl: 10, lg: 10, md: 10));
+      // margin-bottom: 10px;
     }
 
     @include heading-6;
@@ -49,7 +55,8 @@
 
   p {
     &:not(:last-child) {
-      margin-bottom: 10px;
+      @include rule(margin-bottom, (xxl: 10, xl: 10, lg: 10, md: 10));
+      // margin-bottom: 10px;
     }
 
     small {
@@ -63,16 +70,20 @@
 
   blockquote {
     margin: 0;
-    padding-left: 40px;
+    // padding-left: 40px;
     border-left: 2px solid black;
     display: block;
 
+    @include rule(padding-left, (xxl: 40, xl: 40, lg: 40, md: 40));
+
     &:not(:first-child) {
-      margin-top: 30px;
+      // margin-top: 30px;
+      @include rule(margin-top, (xxl: 30, xl: 30, lg: 30, md: 30));
     }
 
     &:not(:last-child) {
-      margin-bottom: 30px;
+      // margin-bottom: 30px;
+      @include rule(margin-bottom, (xxl: 30, xl: 30, lg: 30, md: 30));
     }
   }
 
@@ -80,17 +91,20 @@
     max-width: 100%;
 
     &:not(:first-child) {
-      margin-top: 30px;
+      // margin-top: 30px;
+      @include rule(margin-top, (xxl: 30, xl: 30, lg: 30, md: 30));
     }
 
     &:not(:last-child) {
-      margin-bottom: 30px;
+      // margin-bottom: 30px;
+      @include rule(margin-bottom, (xxl: 30, xl: 30, lg: 30, md: 30));
     }
   }
 
   > ul,> ol {
     &:not(:last-child) {
-      margin-bottom: 10px;
+      // margin-bottom: 10px;
+      @include rule(margin-bottom, (xxl: 10, xl: 10, lg: 10, md: 10));
     }
   }
 
