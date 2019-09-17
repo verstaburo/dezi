@@ -162,19 +162,7 @@
       }
 
       &:not(:last-child) {
-        margin-bottom: 140px;
-
-        @include screen('xl') {
-          margin-bottom: 126px;
-        }
-
-        @include screen('lg') {
-          margin-bottom: 112px;
-        }
-
-        @include screen('md') {
-          margin-bottom: 208px;
-        }
+        @include rule(margin-bottom, (xxl: 140, xl: 126px, lg: 112, md: 208));
       }
 
       #{$b}__title-text {
@@ -184,16 +172,9 @@
     }
 
     #{$b}_clients & {
+
       &:not(:last-child) {
-
         @include rule(margin-bottom, (lg: 60, md: 26));
-        // @include screen('lg') {
-        //   margin-bottom: 60px;
-        // }
-
-        // @include screen('md') {
-        //   margin-bottom: 26px;
-        // }
       }
     }
 
@@ -217,8 +198,6 @@
 
       #{$b}__title_watch & {
         display: flex;
-        justify-content: flex-start;
-        align-items: baseline;
       }
 
       #{$b}__title_bg.is-animate & {
@@ -231,16 +210,11 @@
     &-bg {
       position: absolute;
       top: 0;
-      // left: -74px;
       width: 100%;
       height: 100%;
       z-index: 1;
 
       @include rule(left, (xxl: -74, xl: -74, lg: -74, md: -33));
-
-      // @include screen('md') {
-      //   left: -33px;
-      // }
 
       &::before,&::after {
         @include pseudo;
@@ -248,17 +222,10 @@
         top: 50%;
         left: 0;
         transform: translate3d(0, -50%, 0);
-        // width: 186px;
-        // height: 186px;
         border-radius: 50%;
 
         @include rule(width, (xxl: 186, xl: 186, lg: 186, md: 92));
         @include rule(height, (xxl: 186, xl: 186, lg: 186, md: 92));
-
-        // @include screen('md') {
-        //   width: 92px;
-        //   height: 92px;
-        // }
       }
 
       &::before {
@@ -275,10 +242,18 @@
       &::after {
         background-color: $color-yellow-2;
         mix-blend-mode: multiply;
-        transform: translate3d(124px, -50%, 0);
+        transform: translate3d(6.46vw, -50%, 0);
+
+        @include screen('xl') {
+          transform: translate3d(9.1vw, -50%, 0);
+        }
+
+        @include screen('lg') {
+          transform: translate3d(12.4vw, -50%, 0);
+        }
 
         @include screen('md') {
-          transform: translate3d(62px, -50%, 0);
+          transform: translate3d(19.375vw, -50%, 0);
         }
 
         #{$b}__title_bg.is-animate & {
@@ -292,67 +267,17 @@
   }
 
   &__watch {
-    position: absolute;
-    top: 0;
-    // top: calc(50% + 8px);
-    // left: calc(415px + 13%);
-    left: 21.5625vw;
     z-index: 1;
-    // transform: translate3d(-50%, 0, 0);
-    // transform: translate3d(0, -50%, 0);
 
-    @include screen('xl') {
-      // left: calc(415px + 13.4%);
-      left: 30.0146vw;
-      // left: 36.8%;
-    }
-
-    @include screen('lg') {
-      // top: calc(50% + 12px);
-      // left: calc(296px + 3.2%);
-      left: 16.2vw;
-      // left: 19%;
-    }
-
-    @include screen('md') {
-      // top: calc(50% + 9px);
-      // left: 43px;
-      left: 12.8125vw;
-      // left: 43px;
-      // transform: translate3d(0, 0, 0);
-      // left: calc(118px + .3%);
-    }
+    @include rule(width, (xxl: 430, xl: 322, lg: 186, md: 55));
+    @include rule(min-width, (xxl: 430, xl: 322, lg: 186, md: 55));
   }
 
   &__word {
+    position: relative;
     display: inline-block;
     opacity: 0;
-
-    &:first-child {
-      @include screen('md') {
-        min-width: 118px;
-      }
-    }
-
-    &:not(:last-child) {
-      // margin-right: 430px;
-      margin-right: 27%;
-
-      @include screen('xl') {
-        margin-right: 28.8%;
-        // margin-right: 150px;
-      }
-
-      @include screen('lg') {
-        margin-right: 20.8%;
-        // margin-right: 184px;
-      }
-
-      @include screen('md') {
-        // margin-right: 19.5%;
-        margin-right: 55px;
-      }
-    }
+    z-index: 2;
 
     &.is-animate {
       animation: fadeIn $animationDuration $animationEasing;

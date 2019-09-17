@@ -1,29 +1,48 @@
 .watch {
-  display: block;
-  width: 26%; // 411px
+  position: relative;
+  display: inline-block;
+  // width: 26%; // 411px
   $b: &;
 
   @include screen('xl') {
-    width: 27.5%;
+    // width: 27.5%;
     // width: 307px;
   }
 
   @include screen('lg') {
-    width: 35.5%;
+    // width: 35.5%;
     // width: 314px;
   }
 
   @include screen('md') {
     // width: 53.6%;
-    width: 154px;
+    // width: 154px;
   }
 
   &__wrapper {
-    position: relative;
+    position: absolute;
     display: block;
-    width: 100%;
-    padding-top: 134.5%;
     box-sizing: border-box;
+    left: .6vw;
+    top: -12vw;
+
+    @include rule(width, (xxl: 411, xl: 307, lg: 314, md: 154));
+    @include rule(height, (xxl: 553, xl: 413, lg: 423, md: 207));
+
+    @include screen('xl') {
+      left: .6vw;
+      top: -11.8vw;
+    }
+
+    @include screen('lg') {
+      left: -12.7vw;
+      top: -16.8vw;
+    }
+
+    @include screen('md') {
+      left: -23.5vw;
+      top: -26.5vw;
+    }
 
     &::before {
       @include pseudo;
