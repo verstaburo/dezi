@@ -65,11 +65,11 @@ export default function slider() {
     }
   }
 
-  function bgSliderInit() {
-    $('.js-bg-slider').each((i, el) => {
-      bgSliderF(el);
-    });
-  }
+  // function bgSliderInit() {
+  //   $('.js-bg-slider').each((i, el) => {
+  //     bgSliderF(el);
+  //   });
+  // }
 
   function leadSliderF(el) {
     const anim = new TimelineMax();

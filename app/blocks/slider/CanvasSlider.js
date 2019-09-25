@@ -89,15 +89,17 @@ export default class CanvasSlider {
     const h = sizes.h;
     that.renderer.setSize(w, h);
     that.camera.aspect = w / h;
-    that.material.uniforms.uvRate1.value.y = h / w;
+    that.material.uniforms.uvRate1.value.y = (w / h > 1) ? h / w : w / h;
     // calculate scene
     const dist = that.camera.position.z - that.plane.position.z;
     const height = 1;
     that.camera.fov = 2 * (180 / Math.PI) * Math.atan(height / (2 * dist));
 
-    // if(w/h>1) {
-    that.plane.scale.x = w / h;
-    // }
+    if (w / h > 1) {
+      that.plane.scale.x = w / h;
+    } else {
+      that.plane.scale.y = h / w;
+    }
     that.camera.updateProjectionMatrix();
   }
   resizeObserver() {
@@ -130,9 +132,9 @@ export default class CanvasSlider {
     that.resize();
     that.resizeObserver();
     that.animate();
-    // setInterval(() => {
-    //   that.animation();
-    // }, 3000);
+    setInterval(() => {
+      that.animation();
+    }, 3000);
   }
   play() {
     const that = this;
