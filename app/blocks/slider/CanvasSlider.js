@@ -26,6 +26,10 @@ export default class CanvasSlider {
       0.001, 100,
     );
     this.camera.position.set(0, 0, 1);
+    this.currIndex = 0;
+    this.maxIndex = this.images.length - 1;
+    this.currSlider = this.images[this.currIndex];
+    this.nextSlider = this.images[this.currIndex + 1];
     this.material = new THREE.ShaderMaterial({
       side: THREE.DoubleSide,
       uniforms: {
@@ -49,10 +53,10 @@ export default class CanvasSlider {
           value: new THREE.Vector2(1, 1),
         },
         texture1: {
-          value: THREE.ImageUtils.loadTexture(this.images[0]),
+          value: THREE.ImageUtils.loadTexture(this.currSlider),
         },
         texture2: {
-          value: THREE.ImageUtils.loadTexture(this.images[1]),
+          value: THREE.ImageUtils.loadTexture(this.nextSlider),
         },
       },
       // wireframe: true,
@@ -63,6 +67,7 @@ export default class CanvasSlider {
     this.scene.add(this.plane);
     this.time = 0;
     this.animate = this.animate.bind(this);
+    this.animation = this.animation.bind(this);
     this.isPlay = false;
     this.tl = new TimelineMax();
   }
@@ -89,17 +94,18 @@ export default class CanvasSlider {
     const h = sizes.h;
     that.renderer.setSize(w, h);
     that.camera.aspect = w / h;
-    that.material.uniforms.uvRate1.value.y = (w / h > 1) ? h / w : w / h;
+    that.material.uniforms.uvRate1.value.y = h / w;
+    that.material.uniforms.pixels.value = new THREE.Vector2(w, h);
     // calculate scene
     const dist = that.camera.position.z - that.plane.position.z;
     const height = 1;
     that.camera.fov = 2 * (180 / Math.PI) * Math.atan(height / (2 * dist));
 
-    if (w / h > 1) {
-      that.plane.scale.x = w / h;
-    } else {
-      that.plane.scale.y = h / w;
-    }
+    // if (w / h > 1) {
+    that.plane.scale.x = w / h;
+    // } else {
+    //   that.plane.scale.y = h / w;
+    // }
     that.camera.updateProjectionMatrix();
   }
   resizeObserver() {
@@ -112,7 +118,6 @@ export default class CanvasSlider {
         const sliderSizesWatch = new ResizeObserver(() => {
           that.resize();
         });
-
         sliderSizesWatch.observe(targets[i]);
       }
     }
@@ -122,10 +127,13 @@ export default class CanvasSlider {
     that.renderer.render(that.scene, that.camera);
   }
   animate() {
-    this.time += 0.05;
-    this.material.uniforms.time.value = this.time;
     requestAnimationFrame(this.animate);
-    this.render();
+    if (this.isPlay) {
+      this.time += 0.05;
+      this.speed += 1;
+      this.material.uniforms.time.value = this.time;
+      this.render();
+    }
   }
   init() {
     const that = this;
@@ -134,7 +142,8 @@ export default class CanvasSlider {
     that.animate();
     setInterval(() => {
       that.animation();
-    }, 3000);
+    }, 4000);
+    (that.el)[0].wglslider = that;
   }
   play() {
     const that = this;
@@ -147,17 +156,31 @@ export default class CanvasSlider {
   animation() {
     const that = this;
     const tl = that.tl;
-    console.log('play');
+    const index = that.currIndex;
+    const maxIndex = that.maxIndex;
+    const nextIndex = ((index + 1) > maxIndex) ? 0 : index + 1;
+    const nextNextIndex = (nextIndex + 1 > maxIndex) ? 0 : nextIndex + 1;
+    that.currIndex = nextIndex;
+    that.currSlider = that.images[nextIndex];
+    that.nextSlider = that.images[nextNextIndex];
+    const start = that.material.uniforms.progress.value;
+    const val = (start === 0) ? 1 : 0;
+    console.log(index);
     if (that.isPlay) {
+      console.log('play');
+      console.log(that.material.uniforms.time.value);
+      // that.stop();
       tl.to(that.material.uniforms.progress, 1, {
-        value: 0,
+        value: val,
+        onComplete() {
+          // that.play();
+          if (val === 0) {
+            that.material.uniforms.texture2.value = THREE.ImageUtils.loadTexture(that.nextSlider);
+          } else {
+            that.material.uniforms.texture1.value = THREE.ImageUtils.loadTexture(that.nextSlider);
+          }
+        },
       });
-      that.stop();
-    } else {
-      tl.to(that.material.uniforms.progress, 1, {
-        value: 1,
-      });
-      that.play();
     }
   }
 }

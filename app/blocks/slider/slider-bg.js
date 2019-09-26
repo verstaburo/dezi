@@ -11,6 +11,7 @@ export default function sliderBg() {
       if (images.length > 1) {
         const slider = new CanvasSlider(el);
         slider.init();
+        slider.play();
       }
     });
   }

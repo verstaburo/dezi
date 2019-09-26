@@ -22,7 +22,7 @@ float tri(float p){
 void main(){
   vec2 uv=gl_FragCoord.xy/pixels.xy;
   
-  float p=fract(progress);
+  float p=progress;
   
   float delayValue=p*7.-uv.y*2.+uv.x-2.;
   
