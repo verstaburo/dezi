@@ -68,6 +68,7 @@ export default class CanvasSlider {
     this.time = 0;
     this.animate = this.animate.bind(this);
     this.animation = this.animation.bind(this);
+    this.resize = this.resize.bind(this);
     this.isPlay = false;
     this.tl = new TimelineMax();
   }
@@ -89,7 +90,7 @@ export default class CanvasSlider {
   }
   resize() {
     const that = this;
-    const sizes = that.updateSizes();
+    const sizes = this.updateSizes();
     const w = sizes.w;
     const h = sizes.h;
     that.renderer.setSize(w, h);
@@ -137,9 +138,11 @@ export default class CanvasSlider {
   }
   init() {
     const that = this;
+    const resize = this.resize;
     that.resize();
     that.resizeObserver();
     that.animate();
+    $(window).on('resize', resize);
     setInterval(() => {
       that.animation();
     }, 4000);
@@ -165,10 +168,7 @@ export default class CanvasSlider {
     that.nextSlider = that.images[nextNextIndex];
     const start = that.material.uniforms.progress.value;
     const val = (start === 0) ? 1 : 0;
-    console.log(index);
     if (that.isPlay) {
-      console.log('play');
-      console.log(that.material.uniforms.time.value);
       // that.stop();
       tl.to(that.material.uniforms.progress, 1, {
         value: val,

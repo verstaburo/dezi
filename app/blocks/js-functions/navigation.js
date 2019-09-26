@@ -96,6 +96,7 @@ export default function navigation() {
   setNavTitlesSizes(setNavTitlesWidth);
 
   $(window).on('resize', () => {
+    setSectionsSizes();
     setNavTitlesSizes(setNavTitlesWidth);
   });
 

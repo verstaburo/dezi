@@ -10,6 +10,13 @@ const $ = window.$;
 
 export default function popups() {
   const fancyOpts = {
+    beforeShow() {
+      $(this.src).find('.js-bg-slider').each((i, el) => {
+        if (el.wglslider !== undefined) {
+          el.wglslider.play();
+        }
+      });
+    },
     afterLoad() {
       freeze();
       $(this.src).addClass('is-animate');
@@ -30,6 +37,11 @@ export default function popups() {
         if (el.swiper !== undefined) {
           el.swiper.update();
           el.swiper.autoplay.stop();
+        }
+      });
+      $(this.src).find('.js-bg-slider').each((i, el) => {
+        if (el.wglslider !== undefined) {
+          el.wglslider.stop();
         }
       });
     },
