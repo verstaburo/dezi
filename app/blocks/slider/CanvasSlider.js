@@ -60,6 +60,8 @@ export default class CanvasSlider {
         },
       },
       // wireframe: true,
+      depthWrite: false,
+      needsUpdate: true,
       vertexShader: vertex,
       fragmentShader: fragment,
     });
@@ -95,18 +97,28 @@ export default class CanvasSlider {
     const h = sizes.h;
     that.renderer.setSize(w, h);
     that.camera.aspect = w / h;
-    that.material.uniforms.uvRate1.value.y = h / w;
+
+    // that.material.uniforms.uvRate1.value.y = h / w;
     that.material.uniforms.pixels.value = new THREE.Vector2(w, h);
     // calculate scene
     const dist = that.camera.position.z - that.plane.position.z;
     const height = 1;
     that.camera.fov = 2 * (180 / Math.PI) * Math.atan(height / (2 * dist));
 
-    // if (w / h > 1) {
-    that.plane.scale.x = w / h;
-    // } else {
-    //   that.plane.scale.y = h / w;
-    // }
+    if (w / h > 1) {
+      that.plane.scale.x = w / h; // w / h;
+      // that.material.uniforms.uvRate1.value.x = 1;
+      // that.material.uniforms.uvRate1.value.y = h / w;
+      // } else {
+      //   that.plane.scale.y = h / w;
+      //   that.plane.scale.x = 1;
+      that.material.uniforms.uvRate1.value.y = h / w;
+      //   // that.material.uniforms.uvRate1.value.y = 1;
+      // }
+    } else {
+      that.plane.scale.y = h / w;
+      that.material.uniforms.uvRate1.value.x = w / h;
+    }
     that.camera.updateProjectionMatrix();
   }
   resizeObserver() {
