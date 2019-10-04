@@ -1,114 +1,38 @@
 .section {
   display: block;
   width: 100%;
-  // margin-bottom: 100px;
   $b: &;
 
   @include rule(margin-bottom, (xxl: 100, xl: 100, lg: 100, md: 50));
-
-  // @include screen('md') {
-  //   margin-bottom: 50px;
-  // }
 
   &_mb90 {
     margin-bottom: 0;
 
     @include rule(margin-bottom, (lg: 39, md: 36));
-    // @include screen('lg') {
-    //   margin-bottom: 39px;
-    // }
-
-    // @include screen('md') {
-    //   margin-bottom: 36px;
-    // }
   }
 
   &_mb130 {
-    // margin-bottom: 130px;
-
-    // @include screen('xl') {
-    //   margin-bottom: 188px;
-    // }
-
-    // @include screen('lg') {
-    //   margin-bottom: 220px;
-    // }
-
-    // @include screen('md') {
-    //   margin-bottom: 86px;
-    // }
-
     @include rule(margin-bottom, (xxl: 130, xl: 188, lg: 220, md: 86));
   }
 
   &_mb153 {
-    // margin-bottom: 153px;
     @include rule(margin-bottom, (xxl: 153, xl: 153, lg: 153, md: 50));
-
-    // @include screen('md') {
-    //   margin-bottom: 50px;
-    // }
   }
 
   &_mb198 {
-    // margin-bottom: 198px;
-
-    // @include screen('md') {
-    //   margin-bottom: 50px;
-    // }
-
     @include rule(margin-bottom, (xxl: 198, xl: 198, lg: 198, md: 50));
   }
 
   &_mb230 {
-    // margin-bottom: 230px;
     @include rule(margin-bottom, (xxl: 230, xl: 189, lg: 136, md: 60));
-
-    // @include screen('xl') {
-    //   margin-bottom: 189px;
-    // }
-
-    // @include screen('lg') {
-    //   margin-bottom: 136px;
-    // }
-
-    // @include screen('md') {
-    //   margin-bottom: 60px;
-    // }
   }
 
   &_mb236 {
-    // margin-bottom: 236px;
     @include rule(margin-bottom, (xxl: 236, xl: 188, lg: 220, md: 86));
-
-    // @include screen('xl') {
-    //   margin-bottom: 188px;
-    // }
-
-    // @include screen('lg') {
-    //   margin-bottom: 220px;
-    // }
-
-    // @include screen('md') {
-    //   margin-bottom: 86px;
-    // }
   }
 
   &_mb281 {
-    // margin-bottom: 281px;
     @include rule(margin-bottom, (xxl: 281, xl: 141, lg: 114, md: 62));
-
-    // @include screen('xl') {
-    //   margin-bottom: 141px;
-    // }
-
-    // @include screen('lg') {
-    //   margin-bottom: 114px;
-    // }
-
-    // @include screen('md') {
-    //   margin-bottom: 62px;
-    // }
   }
 
   &__column {
@@ -121,35 +45,13 @@
     width: 100%;
 
     &:not(:last-child) {
-      // margin-bottom: 98px;
       @include rule(margin-bottom, (xxl: 98, xl: 98, lg: 117, md: 43));
-
-      // @include screen('lg') {
-      //   margin-bottom: 117px;
-      // }
-
-      // @include screen('md') {
-      //   margin-bottom: 43px;
-      // }
     }
 
     &_mb72 {
 
       &:not(:last-child) {
-        // margin-bottom: 72px;
         @include rule(margin-bottom, (xxl: 72, xl: 124, lg: 85, md: 61));
-
-        // @include screen('xl') {
-        //   margin-bottom: 124px;
-        // }
-
-        // @include screen('lg') {
-        //   margin-bottom: 85px;
-        // }
-
-        // @include screen('md') {
-        //   margin-bottom: 61px;
-        // }
       }
     }
   }
@@ -197,20 +99,7 @@
     }
 
     &:not(:first-child) {
-      // margin-top: 129px;
       @include rule(margin-top, (xxl: 129, xl: 91, lg: 82, md: 39));
-
-      // @include screen('xl') {
-      //   margin-top: 91px;
-      // }
-
-      // @include screen('lg') {
-      //   margin-top: 82px;
-      // }
-
-      // @include screen('md') {
-      //   margin-top: 39px;
-      // }
     }
   }
 
@@ -220,20 +109,9 @@
 
   &_lead {
     position: relative;
-    // margin-bottom: 120px;
+    z-index: 2;
+
     @include rule(margin-bottom, (xxl: 140, xl: 146, lg: 119, md: 50));
-
-    // @include screen('xl') {
-    //   margin-bottom: 146px;
-    // }
-
-    // @include screen('lg') {
-    //   margin-bottom: 119px;
-    // }
-
-    // @include screen('md') {
-    //   margin-bottom: 50px;
-    // }
 
     .text-block__text {
       box-sizing: border-box;
@@ -305,24 +183,14 @@
     }
   }
 
+  &_projects {
+    position: relative;
+    z-index: 3;
+  }
+
   &_about {
-    // padding-top: 75px;
-    // margin-bottom: 180px;
     @include rule(padding-top, (xxl: 75, xl: 85, lg: 85, md: 85));
     @include rule(margin-bottom, (xxl: 180, xl: 192, lg: 132, md: 72));
-
-    // @include screen('xl') {
-    //   padding-top: 85px;
-    //   margin-bottom: 192px;
-    // }
-
-    // @include screen('lg') {
-    //   margin-bottom: 132px;
-    // }
-
-    // @include screen('md') {
-    //   margin-bottom: 72px;
-    // }
 
     #{$b} {
 
@@ -339,17 +207,8 @@
 
   &_aborder {
     position: relative;
-    // padding-top: 141px;
 
     @include rule(padding-top, (xxl: 141, xl: 88, lg: 88, md: 40));
-
-    // @include screen('xl') {
-    //   padding-top: 88px;
-    // }
-
-    // @include screen('md') {
-    //   padding-top: 40px;
-    // }
 
     &::before {
       @include pseudo;
@@ -386,27 +245,18 @@
         box-sizing: border-box;
         padding-left: calc((143 / 1920) * 100vw);
         margin-top: calc((-15 / 1920) * 100vw);
-        // padding-bottom: 240px;
 
         @include rule(padding-bottom, (xxl: 240, xl: 50, lg: 100, md: 30));
         @include rule(padding-top, (xl: 15, lg: 2));
 
         @include screen('xl') {
           margin-top: 0;
-          // padding-top: 15px;
           padding-left: 0;
-          // padding-bottom: 50px;
         }
-
-        // @include screen('lg') {
-        //   // padding-top: 2px;
-        //   // padding-bottom: 100px;
-        // }
 
         @include screen('md') {
           padding-top: 0;
           margin-top: calc((-3 / 320) * 100vw);
-          // padding-bottom: 30px;
         }
       }
     }
@@ -418,35 +268,12 @@
     left: 0;
     width: 100%;
     height: auto;
-    // padding-top: 101px;
 
     @include rule(padding-top, (xxl: 101, xl: 101, lg: 54, md: 76));
-
-    // @include screen('lg') {
-    //   padding-top: 54px;
-    // }
-
-    // @include screen('md') {
-    //   padding-top: 76px;
-    // }
   }
 
   &_gdesign {
-    // padding-top: 325px;
-
     @include rule(padding-top, (xxl: 325, xl: 273, lg: 230, md: 175));
-
-    // @include screen('xl') {
-    //   padding-top: 273px;
-    // }
-
-    // @include screen('lg') {
-    //   padding-top: 230px;
-    // }
-
-    // @include screen('md') {
-    //   padding-top: 175px;
-    // }
   }
 
   &_wdesign {

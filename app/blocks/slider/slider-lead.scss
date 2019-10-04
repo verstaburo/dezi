@@ -7,6 +7,11 @@
   height: 100%;
   width: 100%;
   display: block;
+  overflow: visible !important;
+
+  @include screen('lg') {
+    display: none;
+  }
 
   .swiper-slide-wrapper {
     height: 100%;
@@ -14,20 +19,21 @@
 
   &__slide {
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: block;
     cursor: pointer;
     height: 100%;
     transition-timing-function: linear;
   }
 
   &__image {
+    position: absolute;
+    top: 0;
+    right: 0;
     font-size: 0;
     line-height: 0;
     display: block;
-    max-width: 100%;
-    max-height: 100%;
+    width: 40vw;
+    height: auto;
     flex: none;
     transform: translate3d(40px, 0, 0);
     opacity: 0;
