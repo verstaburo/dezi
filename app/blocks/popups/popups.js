@@ -9,10 +9,14 @@ import {
 const $ = window.$;
 
 export default function popups() {
+  const bp = window.globalOptions.sizes;
+
   const fancyOpts = {
     beforeShow() {
       $(this.src).find('.js-bg-slider').each((i, el) => {
-        if (el.wglslider !== undefined) {
+        const wW = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+
+        if (el.wglslider !== undefined && wW >= bp.md) {
           el.wglslider.play();
         }
       });

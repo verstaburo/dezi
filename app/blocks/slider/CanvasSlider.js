@@ -175,12 +175,12 @@ export default class CanvasSlider {
     const maxIndex = that.maxIndex;
     const nextIndex = ((index + 1) > maxIndex) ? 0 : index + 1;
     const nextNextIndex = (nextIndex + 1 > maxIndex) ? 0 : nextIndex + 1;
-    that.currIndex = nextIndex;
-    that.currSlider = that.images[nextIndex];
-    that.nextSlider = that.images[nextNextIndex];
     const start = that.material.uniforms.progress.value;
     const val = (start === 0) ? 1 : 0;
     if (that.isPlay) {
+      that.currIndex = nextIndex;
+      that.currSlider = that.images[nextIndex];
+      that.nextSlider = that.images[nextNextIndex];
       // that.stop();
       tl.to(that.material.uniforms.progress, 1, {
         value: val,
