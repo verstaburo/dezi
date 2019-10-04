@@ -163,6 +163,16 @@ $animationScale: .9;
   }
 }
 
+@keyframes rotation-inverse {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 @keyframes dash {
 
   0% {

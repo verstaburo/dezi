@@ -109,5 +109,17 @@ $new-breakpoints: map_remove($breakpoints, $default-breakpoit-name);
       @include rule(padding-right, (xxl: 50, xl: 50, lg: 50, md: 12));
       @include rule(padding-top, (xxl: 128, xl: 120, lg: 126, md: 78));
     }
+
+    &.xxl-order-1 {
+      @include screen('xl', min) {
+        order: 1;
+      }
+    }
+
+    &.xxl-order-2 {
+      @include screen('xl', min) {
+        order: 2;
+      }
+    }
   }
 }

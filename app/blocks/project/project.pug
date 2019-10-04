@@ -1,10 +1,26 @@
 mixin project(data)
-  +b(data.tag || 'a').project&attributes(attributes)
+  +b(data.tag || 'a').project&attributes(attributes)(data-video-container)
     +e.DIV.bg
-      -if (data.special) {
+      if data.special
         +e.IMG.collage(src=data.image class=data.imageCls || '')
-      -} else {
+      else if data.aizkulises
+        +e.bg-wrapper
+          +e.media
+            +e.VIDEO.video.js-video(src=data.aizkulises.video loop="loop" muted="muted" preload="metadata" playsinline="playsinline" poster=data.aizkulises.poster)
+              source(src=data.aizkulises.video type="media/mp4")
+          +e.IMG.image_video(src=data.image)
+      else if data.agrosyn
+        +e.media
+          +e.VIDEO.video.js-video(src=data.agrosyn.video loop="loop" muted="muted" preload="metadata" playsinline="playsinline" poster=data.agrosyn.poster)
+            source(src=data.agrosyn.video type="media/mp4")
         +e.IMG.image(src=data.image)
-      -}
+      else if data.splace
+        +e.arm
+          +e.IMG.arm-image(src=data.splace.image1)
+        +e.car
+          +e.IMG.car-image(src=data.splace.image2)
+        +e.IMG.image(src=data.image)
+      else
+        +e.IMG.image(src=data.image)
     +e.P.text!= data.name
     block
