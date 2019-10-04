@@ -72,16 +72,16 @@ export default function slider() {
   }
 
   function leadSliderF(el) {
-    const anim = new TimelineMax();
-    const button = $(el).find('.slider-lead__button');
-    const border = $(button).find('.slider-lead__border');
-    anim
-      .fromTo(border[0], 4, {
-        strokeDashoffset: 540,
-      }, {
-        ease: Power1.easeInOut,
-        strokeDashoffset: 0,
-      }, 0);
+    // const anim = new TimelineMax();
+    // const button = $(el).find('.slider-lead__button');
+    // const border = $(button).find('.slider-lead__border');
+    // anim
+    //   .fromTo(border[0], 4, {
+    //     strokeDashoffset: 540,
+    //   }, {
+    //     ease: Power1.easeInOut,
+    //     strokeDashoffset: 0,
+    //   }, 0);
     if (el.swiper === undefined) {
       if (wW > bp.lg) {
         const leadSlider = new Swiper(el, {
@@ -94,21 +94,21 @@ export default function slider() {
           },
           effect: 'fade',
           slidesPerView: 1,
-          navigation: {
-            nextEl: button,
-          },
+          // navigation: {
+          //   nextEl: button,
+          // },
           roundLengths: true,
-          on: {
-            init() {
-              anim.play(0);
-            },
-            update() {
-              anim.play(0);
-            },
-            slideChange() {
-              anim.play(0);
-            },
-          },
+          // on: {
+          //   init() {
+          //     anim.play(0);
+          //   },
+          //   update() {
+          //     anim.play(0);
+          //   },
+          //   slideChange() {
+          //     anim.play(0);
+          //   },
+          // },
         });
       }
     } else if (wW <= bp.lg) {

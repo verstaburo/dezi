@@ -42,6 +42,7 @@ import watchAnimation from '../pages/services/services';
 import iniLabels from '../blocks/form-elements/labels';
 import scrollList from '../blocks/scroll-list/scroll-list';
 import textareaAutosize from '../blocks/form-elements/form-elements';
+import bgvideo from '../blocks/project/project';
 
 const $ = window.$;
 
@@ -80,4 +81,5 @@ $(() => {
   scrollList();
   watchAnimation();
   pageSwitcher();
+  bgvideo();
 });

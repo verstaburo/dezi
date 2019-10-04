@@ -221,7 +221,7 @@
   &_lead {
     position: relative;
     // margin-bottom: 120px;
-    @include rule(margin-bottom, (xxl: 120, xl: 146, lg: 119, md: 50));
+    @include rule(margin-bottom, (xxl: 140, xl: 146, lg: 119, md: 50));
 
     // @include screen('xl') {
     //   margin-bottom: 146px;
