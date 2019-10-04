@@ -14,9 +14,8 @@ mixin slide(tag)
     block
 
 mixin slider-bg()
-  +b.slider_bg&attributes(attributes).swiper-container
-    .swiper-wrapper
-      block
+  +b.slider-bg&attributes(attributes)
+    block
 
 mixin slider-lead()
   +b.slider-lead&attributes(attributes).swiper-container.js-slider-lead

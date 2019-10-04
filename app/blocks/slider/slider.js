@@ -65,11 +65,11 @@ export default function slider() {
     }
   }
 
-  function bgSliderInit() {
-    $('.js-bg-slider').each((i, el) => {
-      bgSliderF(el);
-    });
-  }
+  // function bgSliderInit() {
+  //   $('.js-bg-slider').each((i, el) => {
+  //     bgSliderF(el);
+  //   });
+  // }
 
   function leadSliderF(el) {
     // const anim = new TimelineMax();
@@ -124,7 +124,7 @@ export default function slider() {
 
   leadSliderInit();
   $(window).on('resize', leadSliderInit);
-  bgSliderInit();
-  $(window).on('resize', bgSliderInit);
+  // bgSliderInit();
+  // $(window).on('resize', bgSliderInit);
 }
 /* eslint-enable no-unused-vars */

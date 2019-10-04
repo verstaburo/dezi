@@ -41,6 +41,7 @@ import pageSwitcher from '../blocks/page-switcher/page-switcher';
 import watchAnimation from '../pages/services/services';
 import iniLabels from '../blocks/form-elements/labels';
 import scrollList from '../blocks/scroll-list/scroll-list';
+import sliderBg from '../blocks/slider/slider-bg';
 import textareaAutosize from '../blocks/form-elements/form-elements';
 import bgvideo from '../blocks/project/project';
 
@@ -81,5 +82,6 @@ $(() => {
   scrollList();
   watchAnimation();
   pageSwitcher();
+  sliderBg();
   bgvideo();
 });
