@@ -85,6 +85,15 @@
     &:hover {
       border-color: rgba($color-main, .8);
     }
+
+    &_v2 {
+      color: $color-main;
+      border-color: $color-main;
+
+      &:hover {
+        border-color: rgba($color-main, .8);
+      }
+    }
   }
 
   .inputbox.is-error & {

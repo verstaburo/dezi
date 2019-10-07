@@ -513,3 +513,9 @@ $animationScale: .9;
     transform: rotate(90deg);
   }
 }
+
+@keyframes autofill {
+  to {
+    background: transparent;
+  }
+}

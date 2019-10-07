@@ -36,6 +36,7 @@ button::-moz-focus-inner {
 ########## */
 
 input,textarea {
+
   &::placeholder {
     color: $color-placeholder;
   }
@@ -47,14 +48,42 @@ input,textarea {
 
 input:-webkit-autofill {
   -webkit-text-fill-color: $color-input !important; // Поменять цвет на аналогичный цвету input
+  background-color: transparent !important;
+
+  .case-form & {
+    -webkit-text-fill-color: $color-grey !important;
+  }
 
   body.is-dark & {
+    -webkit-text-fill-color: $color-form-text-light !important;
+  }
+
+  .popup & {
     -webkit-text-fill-color: $color-main !important;
   }
 }
 
+input:-internal-autofill-selected {
+  background-color: transparent !important;
+
+  .popup & {
+    background-color: rgba(0, 0, 0, .01) !important;
+  }
+}
+
+input:-internal-autofill-previewed {
+  background-color: transparent !important;
+
+  .popup & {
+    background-color: rgba(0, 0, 0, .01) !important;
+  }
+}
+
 input:-webkit-autofill,input:-webkit-autofill:hover,input:-webkit-autofill:focus,input:-webkit-autofill:active {
-  transition: background-color 50000000000s ease-in-out 0s !important; // Убираем желтую заливку для автозаполнения в Chrome
+  // transition-delay: 5000000000s;
+  // transition: background-color 50000000000s ease-in-out 0s !important; // Убираем желтую заливку для автозаполнения в Chrome
+  animation-name: autofill;
+  animation-fill-mode: both;
 }
 
 /* ##########
@@ -132,4 +161,5 @@ select,input,textarea,button {
   border-radius: 0; // Убираем авто-закругление углов на iOS
   background-color: transparent;
   font-family: $font-main;
+  -webkit-apearance: none;
 }
