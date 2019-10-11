@@ -1,4 +1,6 @@
 /* eslint-disable no-unused-vars */
+/* eslint-disable no-useless-escape */
+/* eslint-disable no-control-regex */
 import $ from 'jquery';
 import 'parsleyjs';
 
@@ -31,6 +33,24 @@ Parsley.addMessages('en', {
 
 Parsley.setLocale('en');
 
+Parsley.addValidator(
+    'mailphone',
+    (value, refOrValue) => {
+      const expForMail = /^((([a-zA-Z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-zA-Z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-zA-Z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-zA-Z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-zA-Z]|\d|-|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-zA-Z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-zA-Z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-zA-Z]|\d|-|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-zA-Z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))$/;
+      const expForPhone = /^\+[0-9]?[0-9](\s|\S)\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+      if (!value) {
+        return true; // Builtin validators all accept empty strings, except `required` of course
+      }
+      let result;
+      if (value.indexOf('@') > 0) {
+        result = expForMail.test(value);
+      } else {
+        result = expForPhone.test(value);
+      }
+      return result;
+    }, 256)
+  .addMessage('en', 'mailphone', 'Enter the correct email or phone in the format +x xxx xxx xxxx');
+
 $('[data-validated-form]').parsley({
   trigger: 'submit',
   errorClass: 'is-error',
@@ -43,5 +63,6 @@ $('[data-validated-form]').parsley({
     return $(el.element).closest('.inputbox').find('.inputbox__error');
   },
 });
-
+/* eslint-enable no-control-regex */
+/* eslint-enable no-useless-escape */
 /* eslint-enable no-unused-vars */

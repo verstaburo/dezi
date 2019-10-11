@@ -14,7 +14,7 @@ mixin case-form()
             +inputbox('Ваше имя').inputbox_required
               +input(placeholder="Ваше имя" name="name" required)
             +inputbox('Телефон или почта').inputbox_required
-              +input(placeholder="Телефон или почта" name="contact" required)
+              +input(placeholder="Телефон или почта" name="contact" required data-parsley-mailphone)
             +inputbox('Если есть что добавить')
               +textarea(placeholder="ЕСЛИ ЕСТЬ ЧТО ДОБАВИТЬ" name="comment")
             +button('button')(type="submit").__button Начать новый проект
