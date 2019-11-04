@@ -43,9 +43,9 @@ Parsley.addValidator(
       }
       let result;
       if (value.indexOf('@') > 0) {
-        result = expForMail.test(value);
+        result = expForMail.test(value.toLowerCase());
       } else {
-        result = expForPhone.test(value);
+        result = expForPhone.test(value.toLowerCase());
       }
       return result;
     }, 256)

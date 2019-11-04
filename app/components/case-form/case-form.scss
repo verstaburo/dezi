@@ -197,6 +197,10 @@
     }
   }
 
+  .input, .textarea {
+    color: $color-basic;
+  }
+
   .inputbox + .inputbox {
     @include rule(margin-top, (xxl: 70, xl: 72, lg: 46, md: 13));
   }
