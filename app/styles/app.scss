@@ -76,6 +76,13 @@ body {
     flex-wrap: wrap;
   }
 
+  &_fxc {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+  }
+
   &_index {
     // padding-left: 100px;
     // padding-right: 100px;
@@ -182,6 +189,28 @@ body {
     @include rule(padding-left, (xxl: 100, xl: 100, lg: 100, md: 23));
     @include rule(padding-right, (xxl: 100, xl: 100, lg: 100, md: 23));
     @include rule(max-width, (xxl: 1552, xl: 1552, lg: 1552, md: 1552));
+  }
+
+  &_mebeles {
+    @include rule(padding-left, (xxl: 100, xl: 100, lg: 76, md: 24));
+    @include rule(padding-right, (xxl: 100, xl: 100, lg: 76, md: 24));
+    @include rule(max-width, (xxl: 1816));
+
+    width: 100%;
+
+    @include screen('xl') {
+      max-width: none;
+    }
+  }
+
+  &_mebeles-inner {
+    @include rule(padding-left, (xxl: 100, xl: 100, lg: 100, md: 24));
+    @include rule(padding-right, (xxl: 100, xl: 100, lg: 100, md: 24));
+    @include rule(max-width, (xxl: 1464, xl: 1225, lg: 968));
+
+    @include screen('md') {
+      max-width: none;
+    }
   }
 }
 

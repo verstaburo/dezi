@@ -1,0 +1,16 @@
+extends ../../layouts/case
+
+block head
+  - var pageTitle = 'Dezi | 4mebeles'
+
+block header
+  - var headerClass = '_light'
+  - var headerData = getData('headerAgrosyn.json')
+
+block content
+  +mebeles(data-section="portfolio")
+    +mebeles-about
+    +mebeles-logo
+    +mebeles-slider
+    +mebeles-mobile
+  +svg-gradients

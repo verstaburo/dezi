@@ -1,0 +1,340 @@
+.mebeles {
+  display: block;
+  background-color: $color-mebeles-bg;
+  $b: &;
+
+  @include rule(padding-bottom, (xxl: 250, xl: 235, lg: 161, md: 85));
+  @include rule(margin-bottom, (xxl: -10, xl: -10, lg: -10, md: -10));
+}
+
+.mebeles-line {
+  display: block;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(to right, $color-mebeles-logo-green 0%, $color-mebeles-logo-green 28%, $color-mebeles-logo-yellow 28%, $color-mebeles-logo-yellow 46.1%, $color-basic 46.1%, $color-basic 81.9%, $color-mebeles-logo-red 81.9%, $color-mebeles-logo-red 100%);
+
+  @include rule(width, (xxl: 129, xl: 129, lg: 118, md: 64));
+  @include rule(height, (xxl: 3, xl: 3, lg: 2, md: 2));
+
+  &_vertical {
+    background-image: linear-gradient(to bottom, $color-mebeles-logo-green 0%, $color-mebeles-logo-green 28%, $color-mebeles-logo-yellow 28%, $color-mebeles-logo-yellow 46.1%, $color-basic 46.1%, $color-basic 81.9%, $color-mebeles-logo-red 81.9%, $color-mebeles-logo-red 100%);
+
+    @include rule(height, (xxl: 75, xl: 75, lg: 56, md: 33));
+    @include rule(width, (xxl: 2, xl: 2, lg: 2, md: 2));
+  }
+}
+
+.mebeles-about {
+  position: relative;
+  display: block;
+  width: 100%;
+  z-index: 1;
+
+  @include screen('lg') {
+    z-index: 2;
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 35.1%;
+    overflow: hidden;
+
+    @include screen('xl') {
+      padding-top: 48.25%;
+    }
+
+    @include screen('lg') {
+      padding-top: 48.26%;
+    }
+
+    @include screen('md') {
+      padding-top: 105.625%;
+    }
+
+    &-image {
+      position: absolute;
+      display: block;
+      font-size: 0;
+      line-height: 0;
+      top: 0;
+      left: 50%;
+      transform: translate3d(-50%, 0, 0);
+
+      @include rule(width, (xxl: 1920, xl: 1878, lg: 1408, md: 960));
+    }
+  }
+
+  &__head {
+    position: relative;
+    z-index: 3;
+    box-sizing: border-box;
+    width: 100%;
+
+    @include rule(padding-top, (xxl: 108, xl: 108, lg: 81, md: 33));
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    display: block;
+
+    @include rule(padding-top, (xxl: 192, xl: 0));
+    @include rule(margin-top, (xxl: 0, xl: -80, lg: -35, md: 5));
+  }
+
+  &__describe {
+    position: relative;
+    display: block;
+    width: 100%;
+    z-index: 2;
+
+    @include rule(max-width, (xxl: 205, xl: 400, lg: 380));
+
+    @include screen('md') {
+      max-width: none;
+    }
+  }
+
+  &__logo {
+    display: inline-block;
+    text-decoration: none;
+
+    &-image {
+      @include rule(width, (xxl: 395, xl: 395, lg: 296, md: 176));
+    }
+
+    &:not(:last-child) {
+      @include rule(margin-bottom, (xxl: 39, xl: 39, lg: 28, md: 13));
+    }
+  }
+
+  &__title {
+    font-family: $font-second;
+    font-weight: 900;
+    color: $color-mebeles-slogan;
+    line-height: 1.2;
+    letter-spacing: .64em;
+
+    @include rule(font-size, (xxl: 9, xl: 9, lg: 7, md: 5));
+
+    &:not(:first-child) {
+      @include rule(margin-top, (xxl: 46, xl: 46, lg: 35, md: 19));
+    }
+  }
+
+  &__collage {
+    position: relative;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    z-index: 1;
+
+    @include rule(padding-top, (xxl: 255, xl: 292, lg: 360, md: 120));
+    @include rule(padding-bottom, (xxl: 470, xl: 0));
+    @include rule(margin-top, (xxl: -650, xl: -238, lg: -290, md: -78));
+  }
+
+  &__back {
+    position: absolute;
+    display: block;
+    width: 100%;
+    top: 0;
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
+    z-index: 1;
+
+    @include rule(width, (xxl: 1920, xl: 1461, lg: 1024, md: 320));
+
+    &-image {
+      display: block;
+      font-size: 0;
+      line-height: 0;
+      width: 100%;
+    }
+  }
+
+  &__mid {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 2;
+
+    &-image {
+      display: block;
+      font-size: 0;
+      line-height: 0;
+      flex: none;
+
+      @include rule(width, (xxl: 1260, xl: 1024, lg: 943, md: 293));
+    }
+  }
+}
+
+.mebeles-logo {
+  display: block;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+
+  @include rule(margin-top, (xxl: -462, xl: -25, lg: -44, md: 23));
+  @include rule(margin-bottom, (xxl: 454, xl: 298, lg: 235, md: 98));
+
+  @include screen('lg') {
+    z-index: 1;
+  }
+
+  &__content {
+    display: block;
+    width: 100%;
+  }
+
+  &__describe {
+    @include rule(max-width, (xxl: 475, xl: 374, lg: 374));
+
+    @include screen('md') {
+      max-width: none;
+    }
+  }
+
+  &__collage {
+    display: block;
+    width: 100%;
+    position: relative;
+
+    @include rule(padding-left, (xxl: 80, xl: 96, lg: 42, md: 8));
+    @include rule(margin-top, (xxl: -516, xl: -352, lg: -50, md: 65));
+  }
+
+  &__back {
+    position: absolute;
+    display: block;
+    width: auto;
+    height: auto;
+
+    @include rule(top, (xxl: 193, xl: 90, lg: -406, md: -132));
+    @include rule(right, (xxl: -227, xl: -227, lg: -243, md: -81));
+  }
+
+  &__point {
+    display: block;
+    font-size: 0;
+    line-height: 0;
+
+    @include rule(width, (xxl: 551, xl: 551, lg: 551, md: 162));
+  }
+
+  &__front {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  &__image {
+    display: block;
+    font-size: 0;
+    line-height: 0;
+
+    @include rule(width, (xxl: 1748, xl: 1170, lg: 940, md: 303));
+  }
+}
+
+.mebeles-slider {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding-top: 62.1%;
+  overflow: hidden;
+
+  @include rule(margin-bottom, (xxl: 172, xl: 55, lg: 80, md: 32));
+
+  &__container {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  &__slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    width: 100%;
+    height: auto;
+    animation: slider 12s linear infinite;
+    animation-fill-mode: forwards;
+    z-index: 1;
+
+    &_1 {
+      transform-origin: 50.1% 59.4% 0;
+      transform: scale(1);
+      animation-delay: 0s;
+    }
+
+    &_2 {
+      transform-origin: 42.1875% 54.69% 0;
+      transform: scale(0);
+      animation-delay: 3s;
+    }
+
+    &_3 {
+      transform-origin: 45.625% 54.69% 0;
+      transform: scale(0);
+      animation-delay: 6s;
+    }
+
+    &_4 {
+      transform-origin: 53% 59.4% 0;
+      transform: scale(0);
+      animation-delay: 9s;
+    }
+  }
+}
+
+.mebeles-mobile {
+  display: block;
+  width: 100%;
+
+  &__content {
+    display: block;
+    width: 100%;
+
+    @include rule(margin-bottom, (xxl: 38, xl: 125, lg: 96, md: 65));
+  }
+
+  &__describe {
+    box-sizing: border-box;
+
+    @include rule(padding-left, (xxl: 50, xl: 75, lg: 0));
+    @include rule(max-width, (xxl: 900, xl: 925, lg: 640));
+
+    @include screen('md') {
+      max-width: none;
+    }
+  }
+
+  &__phones {
+    position: relative;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    text-align: right;
+
+    @include rule(right, (xl: -10, lg: -10, md: -10));
+  }
+
+  &__image {
+    display: inline-block;
+    font-size: 0;
+    line-height: 0;
+
+    @include rule(width, (xxl: 1580, xl: 1241, lg: 930, md: 317));
+  }
+}

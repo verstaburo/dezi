@@ -1,0 +1,71 @@
+mixin mebeles()
+  +b.mebeles&attributes(attributes)
+    block
+
+mixin mebeles-about()
+  +b.SECTION.mebeles-about&attributes(attributes)
+    +e.bg
+      +e.IMG.bg-image(src="assets/images/4mebeles/top-bg.jpg")
+    +e.head
+      .container.container_mebeles-inner.container_fxc
+        +e.A.logo(href="#")
+          +e.IMG.logo-image(src="assets/images/4mebeles/4mebeles-logo.svg" alt="4mebeles")
+        +mebeles-line._vertical.__line
+        +e.title ДИЗАЙН САЙТА И ЛОГОТИП
+    +e.content
+      .container.container_mebeles
+        +e.describe
+          +case-section._mebeles
+            +case-section-heading('h3') 00
+              +mebeles-line.__line
+            +case-section-text С самого начала мы старались сделать главную страницу сайта не похожей на мебельные магазины.
+      +e.collage
+        +e.PICTURE.back
+          +e.SOURCE(srcset="assets/images/4mebeles/about-bg.png" media="(min-width: 1025px")
+          +e.SOURCE(srcset="assets/images/4mebeles/about-bg-tablet.png" media="(min-width: 768px")
+          +e.SOURCE(srcset="assets/images/4mebeles/about-bg-mobile.png" media="(min-width: 300px")
+          +e.IMG.back-image(srcset="assets/images/4mebeles/about-bg.jpg")
+        +e.mid
+          +e.IMG.mid-image(src="assets/images/4mebeles/site.png")
+    block
+
+mixin mebeles-logo()
+  +b.SECTION.mebeles-logo&attributes(attributes)
+    +e.content
+      .container.container_mebeles-inner
+        +case-section._mebeles._mebeles_v2.__describe
+          +case-section-heading('h3') 01
+            +mebeles-line.__line
+          +case-section-text Мы создали логотип компании. Знак олицетворяет 4 основных направления создания мебели — это гостиная, спальня, прихожая и кухня.
+    +e.collage
+      +e.back
+        +e.IMG.point(src="assets/images/4mebeles/logo-point.png")
+      +e.front
+        +e.IMG.image(src="assets/images/4mebeles/chair-logo.png")
+    block
+
+
+mixin mebeles-slider()
+  +b.SECTION.mebeles-slider&attributes(attributes)
+    +e.container
+      +e.IMG.slide_1(src="assets/images/4mebeles/slide1.jpg")
+      +e.IMG.slide_2(src="assets/images/4mebeles/slide2.jpg")
+      +e.IMG.slide_3(src="assets/images/4mebeles/slide3.jpg")
+      +e.IMG.slide_4(src="assets/images/4mebeles/slide4.jpg")
+    block
+
+mixin mebeles-mobile()
+  +b.SECTION.mebeles-mobile&attributes(attributes)
+    +e.content
+      .container.container_mebeles-inner
+        +case-section._mebeles._mebeles_v3.__describe
+          +case-section-heading('h3') 02
+            +mebeles-line.__line
+          +case-section-text Магазин удобно открывается и полностью функционален на мобильных устройствах.
+    +e.phones
+      +e.IMG.image(src="assets/images/4mebeles/phones.png")
+    block
+
+mixin mebeles-line()
+  +b.mebeles-line&attributes(attributes)
+    block
