@@ -44,6 +44,18 @@ $animationScale: .9;
   @include animation;
 }
 
+.animation_scaleXIn {
+  animation: scaleXIn $animationDuration $animationEasing;
+
+  @include animation;
+}
+
+.animation_scaleYIn {
+  animation: scaleYIn $animationDuration $animationEasing;
+
+  @include animation;
+}
+
 .animation_fadeIn2 {
   animation: fadeIn 1.6s cubic-bezier(.075, .82, .165, 1);
 
@@ -148,6 +160,30 @@ $animationScale: .9;
 
   100% {
     transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleXIn {
+  0% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleYIn {
+  0% {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scaleY(1);
     opacity: 1;
   }
 }
@@ -520,28 +556,28 @@ $animationScale: .9;
   }
 }
 
-@keyframes slider {
+// @keyframes slider {
 
-  0% {
-    transform: scale(0);
-    z-index: 3;
-  }
+//   0% {
+//     transform: scale(0);
+//     z-index: 3;
+//   }
 
-  25% {
-    transform: scale(1);
-    z-index: 2;
-  }
+//   25% {
+//     transform: scale(1);
+//     z-index: 2;
+//   }
 
-  50% {
-    transform: scale(1);
-    z-index: 1;
-  }
+//   50% {
+//     transform: scale(1);
+//     z-index: 1;
+//   }
 
-  50.1% {
-    transform: scale(0);
-  }
+//   50.1% {
+//     transform: scale(0);
+//   }
 
-  75% {
-    transform: scale(0);
-  }
-}
+//   75% {
+//     transform: scale(0);
+//   }
+// }

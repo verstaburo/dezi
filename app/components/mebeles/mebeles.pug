@@ -4,21 +4,21 @@ mixin mebeles()
 
 mixin mebeles-about()
   +b.SECTION.mebeles-about&attributes(attributes)
-    +e.bg
+    +e.bg.js-sr_21
       +e.IMG.bg-image(src="assets/images/4mebeles/top-bg.jpg")
     +e.head
       .container.container_mebeles-inner.container_fxc
-        +e.A.logo(href="#")
+        +e.A.logo.js-sr_11(href="#")
           +e.IMG.logo-image(src="assets/images/4mebeles/4mebeles-logo.svg" alt="4mebeles")
-        +mebeles-line._vertical.__line
-        +e.title ДИЗАЙН САЙТА И ЛОГОТИП
+        +mebeles-line._vertical.__line.js-sr_25
+        +e.title.js-sr_4 ДИЗАЙН САЙТА И ЛОГОТИП
     +e.content
       .container.container_mebeles
         +e.describe
           +case-section._mebeles
-            +case-section-heading('h3') 00
-              +mebeles-line.__line
-            +case-section-text С самого начала мы старались сделать главную страницу сайта не похожей на мебельные магазины.
+            +case-section-heading('h3').js-sr_5 00
+              +mebeles-line.__line.js-sr_26
+            +case-section-text.js-sr_27 С самого начала мы старались сделать главную страницу сайта не похожей на мебельные магазины.
       +e.collage
         +e.PICTURE.back
           +e.SOURCE(srcset="assets/images/4mebeles/about-bg.png" media="(min-width: 1025px")
@@ -26,7 +26,7 @@ mixin mebeles-about()
           +e.SOURCE(srcset="assets/images/4mebeles/about-bg-mobile.png" media="(min-width: 300px")
           +e.IMG.back-image(srcset="assets/images/4mebeles/about-bg.jpg")
         +e.mid
-          +e.IMG.mid-image(src="assets/images/4mebeles/site.png")
+          +e.IMG.mid-image.js-sr_28(src="assets/images/4mebeles/site.png")
     block
 
 mixin mebeles-logo()
@@ -34,13 +34,13 @@ mixin mebeles-logo()
     +e.content
       .container.container_mebeles-inner
         +case-section._mebeles._mebeles_v2.__describe
-          +case-section-heading('h3') 01
-            +mebeles-line.__line
-          +case-section-text Мы создали логотип компании. Знак олицетворяет 4 основных направления создания мебели — это гостиная, спальня, прихожая и кухня.
+          +case-section-heading('h3').js-sr_1 01
+            +mebeles-line.__line.js-sr_24
+          +case-section-text.js-sr_14 Мы создали логотип компании. Знак олицетворяет 4 основных направления создания мебели — это гостиная, спальня, прихожая и кухня.
     +e.collage
       +e.back
         +e.IMG.point(src="assets/images/4mebeles/logo-point.png")
-      +e.front
+      +e.front.js-sr_5
         +e.IMG.image(src="assets/images/4mebeles/chair-logo.png")
     block
 
@@ -51,13 +51,13 @@ mixin mebeles-slider()
       +e.SVG.slide(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 1192")
         defs
           clipPath#a
-            rect.clip-path.clip-path_1.is-scale(width="2087.41" height="1310" fill="none")
+            rect.clip-path.clip-path_1.is-scale(width="1920" height="1192" fill="none")
           clipPath#b
-            rect.clip-path.clip-path_2(x="69" y="43.19" width="2017" height="1265.81" fill="none")
+            rect.clip-path.clip-path_2(width="1920" height="1192" fill="none")
           clipPath#c
-            rect.clip-path.clip-path_3(x="46" y="40.82" width="2110" height="1324.18" fill="none")
+            rect.clip-path.clip-path_3(width="1920" height="1192" fill="none")
           clipPath#d
-            rect.clip-path.clip-path_4(x="155" y="44.96" width="2105" height="1321.04" fill="none")
+            rect.clip-path.clip-path_4(width="1920" height="1192" fill="none")
         g.path-image.path-image_1.is-shown(clip-path="url(#a)")
           image(width="1920" height="1192" xlink:href="assets/images/4mebeles/slide1.jpg")
         g.path-image.path-image_2(clip-path="url(#b)")
@@ -66,11 +66,6 @@ mixin mebeles-slider()
           image(width="1920" height="1192" xlink:href="assets/images/4mebeles/slide3.jpg")
         g.path-image.path-image_4(clip-path="url(#d)")
           image(width="1920" height="1192" xlink:href="assets/images/4mebeles/slide4.jpg")
-        //- image(width="325" height="325" transform="translate(797 433)" xlink:href="data:image/png;base64,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")
-      //- +e.IMG.slide_1(src="assets/images/4mebeles/slide1.jpg")
-      //- +e.IMG.slide_2(src="assets/images/4mebeles/slide2.jpg")
-      //- +e.IMG.slide_3(src="assets/images/4mebeles/slide3.jpg")
-      //- +e.IMG.slide_4(src="assets/images/4mebeles/slide4.jpg")
     block
 
 mixin mebeles-mobile()
@@ -78,10 +73,10 @@ mixin mebeles-mobile()
     +e.content
       .container.container_mebeles-inner
         +case-section._mebeles._mebeles_v3.__describe
-          +case-section-heading('h3') 02
-            +mebeles-line.__line
-          +case-section-text Магазин удобно открывается и полностью функционален на мобильных устройствах.
-    +e.phones
+          +case-section-heading('h3').js-sr_1 02
+            +mebeles-line.__line.js-sr_24
+          +case-section-text.js-sr_14 Магазин удобно открывается и полностью функционален на мобильных устройствах.
+    +e.phones.js-sr_29
       +e.IMG.image(src="assets/images/4mebeles/phones.png")
     block
 

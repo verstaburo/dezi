@@ -34,6 +34,8 @@ export default function aizkulises() {
         'animation_fade',
         'animation_fadeIn2',
         'is-animate',
+        'animation_scaleXIn',
+        'animation_scaleYIn',
       ];
 
     function makeDelay(el, dl, stp) {
@@ -115,7 +117,28 @@ export default function aizkulises() {
         }
         if (el.hasClass('js-sr_20')) el.addClass(`${animClasses[6]}`);
         if (el.hasClass('js-sr_21')) el.addClass(`${animClasses[5]}`);
+        if (el.hasClass('js-sr_22')) el.addClass(`${animClasses[8]}`);
+        if (el.hasClass('js-sr_23')) el.addClass(`${animClasses[9]}`);
+        if (el.hasClass('js-sr_24')) el.addClass(`${animClasses[8]}`).css({
+          animationDelay: '200ms',
+        });
+        if (el.hasClass('js-sr_25')) el.addClass(`${animClasses[9]}`).css({
+          animationDelay: '200ms',
+        });
+        if (el.hasClass('js-sr_26')) el.addClass(`${animClasses[8]}`).css({
+          animationDelay: '600ms',
+        });
+        if (el.hasClass('js-sr_27')) el.addClass(`${animClasses[5]}`).css({
+          animationDelay: '900ms',
+        });
+        if (el.hasClass('js-sr_28')) el.addClass(`${animClasses[0]}`).css({
+          animationDelay: '1100ms',
+        });
+        if (el.hasClass('js-sr_29')) el.addClass(`${animClasses[4]}`).css({
+          animationDelay: '400ms',
+        });
         if (el.hasClass('js-sr_77')) el.addClass(`${animClasses[7]}`);
+
 
         setTimeout(() => {
           el.removeClass(`${classes}${baseClass}`).attr('style', '');

@@ -11,11 +11,13 @@
   display: block;
   background-repeat: no-repeat;
   background-image: linear-gradient(to right, $color-mebeles-logo-green 0%, $color-mebeles-logo-green 28%, $color-mebeles-logo-yellow 28%, $color-mebeles-logo-yellow 46.1%, $color-basic 46.1%, $color-basic 81.9%, $color-mebeles-logo-red 81.9%, $color-mebeles-logo-red 100%);
+  transform-origin: 0 50% 0;
 
   @include rule(width, (xxl: 129, xl: 129, lg: 118, md: 64));
   @include rule(height, (xxl: 3, xl: 3, lg: 2, md: 2));
 
   &_vertical {
+    transform-origin: 50% 0% 0;
     background-image: linear-gradient(to bottom, $color-mebeles-logo-green 0%, $color-mebeles-logo-green 28%, $color-mebeles-logo-yellow 28%, $color-mebeles-logo-yellow 46.1%, $color-basic 46.1%, $color-basic 81.9%, $color-mebeles-logo-red 81.9%, $color-mebeles-logo-red 100%);
 
     @include rule(height, (xxl: 75, xl: 75, lg: 56, md: 33));
@@ -294,7 +296,7 @@
       }
 
       &.is-scale {
-        transform: scale(1.5);
+        transform: scale(1.2);
       }
     }
 
