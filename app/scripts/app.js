@@ -44,6 +44,7 @@ import scrollList from '../blocks/scroll-list/scroll-list';
 import sliderBg from '../blocks/slider/slider-bg';
 import textareaAutosize from '../blocks/form-elements/form-elements';
 import bgvideo from '../blocks/project/project';
+import mebelesSlider from '../components/mebeles/mebeles-slider';
 
 const $ = window.$;
 
@@ -84,4 +85,5 @@ $(() => {
   pageSwitcher();
   sliderBg();
   bgvideo();
+  mebelesSlider();
 });

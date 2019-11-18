@@ -268,9 +268,44 @@
     line-height: 0;
     width: 100%;
     height: auto;
-    animation: slider 12s linear infinite;
-    animation-fill-mode: forwards;
+    // animation: slider 12s linear infinite;
+    // animation-fill-mode: forwards;
     z-index: 1;
+
+    .clip-path {
+      transition: transform 1.2s linear .5s;
+      transform-origin: 50% 50%;
+      transform: scale(0);
+
+      &_1 {
+        transform-origin: 50.1% 59.4% 0;
+      }
+
+      &_2 {
+        transform-origin: 42.1875% 54.69% 0;
+      }
+
+      &_3 {
+        transform-origin: 45.625% 54.69% 0;
+      }
+
+      &_4 {
+        transform-origin: 53% 59.4% 0;
+      }
+
+      &.is-scale {
+        transform: scale(1.5);
+      }
+    }
+
+    .path-image {
+      // transition: opacity 1s linear;
+      opacity: 0;
+
+      &.is-shown {
+        opacity: 1;
+      }
+    }
 
     &_1 {
       transform-origin: 50.1% 59.4% 0;
