@@ -46,25 +46,49 @@ mixin mebeles-logo()
 
 
 mixin mebeles-slider()
-  +b.SECTION.mebeles-slider&attributes(attributes)
-    +e.container
-      +e.SVG.slide(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 1192")
+  +b.SECTION.mebeles-slider__&attributes(attributes).swiper(data-stopscroll)
+    +e.container.swiper-wrapper(data-scrollsvg)
+      +e.SVG.slide_1(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 1192" preserveAspectRatio="xMidYMid slice" data-slide)
         defs
           clipPath#a
-            rect.clip-path.clip-path_1.is-scale(width="1920" height="1192" fill="none")
-          clipPath#b
-            rect.clip-path.clip-path_2(width="1920" height="1192" fill="none")
-          clipPath#c
-            rect.clip-path.clip-path_3(width="1920" height="1192" fill="none")
-          clipPath#d
-            rect.clip-path.clip-path_4(width="1920" height="1192" fill="none")
-        g.path-image.path-image_1.is-shown(clip-path="url(#a)")
+            circle.clip-path(cx="960" cy="596" r="1133" fill="none" data-clippath="1")
+        g.path-image(clip-path="url(#a)" data-clipimage="1")
           image(width="1920" height="1192" xlink:href="assets/images/4mebeles/slide1.jpg")
-        g.path-image.path-image_2(clip-path="url(#b)")
+      +e.SVG.slide_2(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 1192" preserveAspectRatio="xMidYMid slice" data-slide)
+        defs
+          clipPath#b
+            circle.clip-path(cx="960" cy="596" r="1133" fill="none" data-clippath="2")
+        g.path-image(clip-path="url(#b)" data-clipimage="2")
           image(width="1920" height="1192" xlink:href="assets/images/4mebeles/slide2.jpg")
-        g.path-image.path-image_3(clip-path="url(#c)")
+      +e.SVG.slide_3(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 1192" preserveAspectRatio="xMidYMid slice" data-slide)
+        defs
+          clipPath#c
+            circle.clip-path(cx="960" cy="596" r="1133" fill="none" data-clippath="3")
+        g.path-image(clip-path="url(#c)" data-clipimage="3")
           image(width="1920" height="1192" xlink:href="assets/images/4mebeles/slide3.jpg")
-        g.path-image.path-image_4(clip-path="url(#d)")
+      +e.SVG.slide_4(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 1192" preserveAspectRatio="xMidYMid slice" data-slide)
+        defs
+          clipPath#d
+            circle.clip-path(cx="960" cy="596" r="1133" fill="none" data-clippath="4")
+        g.path-image(clip-path="url(#d)" data-clipimage="4")
+          image(width="1920" height="1192" xlink:href="assets/images/4mebeles/slide4.jpg")
+      //- +e.SVG.slide_1(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 1192" preserveAspectRatio="xMidYMid slice" data-scrollsvg)
+        defs
+          clipPath#a
+            circle.clip-path.clip-path_1.is-scale(cx="960" cy="596" r="1133" fill="none" data-clippath="1")
+          clipPath#b
+            circle.clip-path.clip-path_2(cx="960" cy="596" r="1133" fill="none" data-clippath="2")
+          clipPath#c
+            circle.clip-path.clip-path_3(cx="960" cy="596" r="1133" fill="none" data-clippath="3")
+          clipPath#d
+            circle.clip-path.clip-path_4(cx="960" cy="596" r="1133" fill="none" data-clippath="4")
+        g.path-image.path-image_1.is-curr(clip-path="url(#a)" data-clipimage="1")
+          image(width="1920" height="1192" xlink:href="assets/images/4mebeles/slide1.jpg")
+        g.path-image.path-image_2(clip-path="url(#b)" data-clipimage="2")
+          image(width="1920" height="1192" xlink:href="assets/images/4mebeles/slide2.jpg")
+        g.path-image.path-image_3(clip-path="url(#c)" data-clipimage="3")
+          image(width="1920" height="1192" xlink:href="assets/images/4mebeles/slide3.jpg")
+        g.path-image.path-image_4(clip-path="url(#d)" data-clipimage="4")
           image(width="1920" height="1192" xlink:href="assets/images/4mebeles/slide4.jpg")
     block
 
