@@ -67,6 +67,7 @@
     "is-touch-device": "^1.0.1",
     "jade-get-data": "^1.0.1",
     "jquery": "^3.2.1",
+    "jquery-scrollify": "^1.0.20",
     "jquery.scrollbar": "^0.2.11",
     "leaflet": "^1.6.0",
     "normalize.css": "^6.0.0",

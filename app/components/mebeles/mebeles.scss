@@ -1,11 +1,40 @@
 .mebeles {
+  position: relative;
   display: block;
   background-color: $color-mebeles-bg;
   overflow: hidden;
   $b: &;
 
-  @include rule(padding-bottom, (xxl: 250, xl: 235, lg: 161, md: 85));
   @include rule(margin-bottom, (xxl: -10, xl: -10, lg: -10, md: -10));
+
+  & ~ .case-form, & ~ .footer, & ~ .projects {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+  }
+
+  &__wall {
+    position: relative;
+    display: block;
+    z-index: 2;
+    background-color: $color-mebeles-bg;
+  }
+
+  &__window {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100vh;
+    z-index: 2;
+  }
 }
 
 .mebeles-line {
@@ -184,7 +213,7 @@
   z-index: 2;
 
   @include rule(margin-top, (xxl: -462, xl: -25, lg: -44, md: 23));
-  @include rule(margin-bottom, (xxl: 454, xl: 298, lg: 235, md: 98));
+  @include rule(padding-bottom, (xxl: 454, xl: 298, lg: 235, md: 98));
 
   @include screen('lg') {
     z-index: 1;
@@ -246,7 +275,11 @@
 }
 
 .mebeles-slider {
-  position: relative;
+  // position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
   display: block;
   width: 100%;
   height: 100vh;
@@ -425,7 +458,8 @@
   display: block;
   width: 100%;
 
-  @include rule(margin-top, (xxl: 172, xl: 55, lg: 80, md: 32));
+  @include rule(padding-top, (xxl: 172, xl: 55, lg: 80, md: 32));
+  @include rule(padding-bottom, (xxl: 250, xl: 235, lg: 161, md: 85));
 
   &__content {
     display: block;

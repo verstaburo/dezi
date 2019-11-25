@@ -9,8 +9,13 @@ block header
 
 block content
   +mebeles(data-section="portfolio")
-    +mebeles-about
-    +mebeles-logo
-    +mebeles-slider
-    +mebeles-mobile
+    +mebeles-slider.__screen
+    +e.wall(data-scrolly-section data-scrolly-simple)
+      +mebeles-about
+      +mebeles-logo
+    +e.window(data-scrolly-section data-scrolly-slide)
+    +e.window(data-scrolly-section data-scrolly-slide)
+    +e.window(data-scrolly-section data-scrolly-slide)
+    +e.wall(data-scrolly-section data-scrolly-simple)
+      +mebeles-mobile
   +svg-gradients

@@ -1,9 +1,12 @@
 // http://idangero.us/swiper/#.WcIu5oy0OHs
-import * as Swiper from 'swiper/dist/js/swiper';
-// import SvgSlider from './svgSlider';
+// import * as Swiper from 'swiper/dist/js/swiper';
+/* eslint-disable no-unused-vars */
+import $ from 'jquery';
+import scrollify from 'jquery-scrollify';
+import SvgSlider from './svgSlider';
 import {
   // freeze,
-  unfreeze,
+  // unfreeze,
 } from '../../blocks/js-functions/freeze';
 
 // const $ = window.$;
@@ -11,107 +14,35 @@ import {
 export default function mebelesSlider() {
   const stopsection = document.querySelector('[data-stopscroll]');
   if (stopsection) {
-    const sz = stopsection.getBoundingClientRect();
-    const sT = window.pageYOffset;
-    const elBottom = sz.bottom + sT;
-    let start = 0;
-    if (sT > elBottom) {
-      start = stopsection.querySelectorAll('[data-slide]').length - 1;
-      stopsection.classList.add('is-toup');
-    } else {
-      stopsection.classList.add('is-todown');
-    }
-    const slider = new Swiper(stopsection, {
-      direction: 'vertical',
-      speed: 300,
-      initialSlide: start,
-      effect: 'fade',
-      keyboard: {
-        enabled: true,
-        onlyInViewport: true,
+    const slider = new SvgSlider(document.querySelector('[data-scrollsvg]'));
+    slider.init();
+
+    $.scrollify({
+      section: '[data-scrolly-section]',
+      scrollSpeed: 600,
+      standardScrollElements: '[data-scrolly-simple]',
+      setHeights: false,
+      updateHash: false,
+      afterRender() {
+        window.mebelesBefore = $.scrollify.currentIndex();
       },
-      mousewheel: {
-        releaseOnEdges: true,
-        // invert: true,
-      },
-      slideClass: 'mebeles-slider__slide',
-      slideActiveClass: 'is-active',
-      slideNextClass: 'is-next',
-      slidePrevClass: 'is-prev',
-      on: {
-        slideNextTransitionStart() {
-          const sw = this;
-          const el = sw.el;
-          el.classList.remove('is-toup');
-          el.classList.add('is-todown');
-        },
-        slidePrevTransitionStart() {
-          const sw = this;
-          const el = sw.el;
-          el.classList.remove('is-todown');
-          el.classList.add('is-toup');
-        },
-        reachEnd() {
-          console.log('end');
-          const sw = this;
-          const el = sw.el;
-          unfreeze();
-          setTimeout(() => {
-            el.classList.remove('is-todown');
-            el.classList.add('is-toup');
-          }, 600);
-        },
-        reachBeginning() {
-          console.log('start');
-          const sw = this;
-          const el = sw.el;
-          unfreeze();
-          setTimeout(() => {
-            el.classList.remove('is-toup');
-            el.classList.add('is-todown');
-          }, 600);
-        },
+      before(i, sections) {
+        const current = i;
+        const direction = (current - window.mebelesBefore) > 0 ? 'down' : 'up';
+        console.log('after');
+        console.log(i);
+        console.log(sections[i]);
+        console.log(direction);
+        if (sections[i].is('[data-scrolly-slide]')) {
+          if (direction === 'down') {
+            slider.next();
+          } else {
+            slider.prev();
+          }
+        }
+        window.mebelesBefore = current;
       },
     });
-    console.log(slider);
-
-    // $(window).on('scroll', () => {
-    //   const sT = window.pageYOffset;
-    //   const wH = window.innerHeight;
-    //   const ssSizes = stopsection.getBoundingClientRect();
-    //   const t = ssSizes.top;
-    //   const b = ssSizes.bottom;
-    //   const direction = sT - window.scrollPosition > 0 ? 'down' : 'up';
-    //   window.scrollPosition = sT;
-    //   const top = ssSizes.top + sT;
-    //   const bottom = ssSizes.bottom + sT;
-    //   console.log(direction);
-    //   console.log(`t: ${t}, b: ${b}, sT: ${sT}, top: ${top}, bottom: ${bottom}`);
-    //   if (t <= 0 && b <= wH) {
-    //     stopsection.scrollIntoView(true);
-    //     if ((slider.isBeginning && direction === 'down')
-    //  || (slider.isEnd && direction === 'up')) {
-    //       freeze();
-    //     } else {
-    //       unfreeze();
-    //     }
-    //   } else {
-    //     unfreeze();
-    //   }
-    //   // if (direction === 'down' && (t > (-1 * wH) && t < (wH / 2))) {
-    //   //   stopsection.scrollIntoView(true);
-    //   //   if (slider.isBeginning) {
-    //   //     console.log('freeze down');
-    //   //     freeze();
-    //   //   }
-    //   // } else if (direction === 'up' && (b < wH && b > (-0.5 * wH))) {
-    //   //   stopsection.scrollIntoView(true);
-    //   //   if (slider.isEnd) {
-    //   //     console.log('freeze up');
-    //   //     freeze();
-    //   //   }
-    //   // }
-    // });
   }
   // const stopsection = document.querySelector('[data-stopscroll]');
   // window.mebel = {};
@@ -172,3 +103,4 @@ export default function mebelesSlider() {
   //   });
   // }
 }
+/* eslint-enable no-unused-vars */
