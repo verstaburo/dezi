@@ -13,18 +13,20 @@ import {
 const $ = window.$;
 
 export default function mebelesSlider() {
-  function sliderNavigation(slider, direction, siblings) {
+  function sliderNavigation(slider, direction) {
     if (direction === 'up') {
       if (slider.isStart) {
         window.scrollState = 'MANUAL_SCROLL';
         unfreeze();
-      } else {
-        slider.prev();
+        return;
       }
-    } else if (slider.isEnd) {
-      window.scrollState = 'MANUAL_SCROLL';
-      unfreeze();
+      slider.prev();
     } else {
+      if (slider.isEnd) {
+        window.scrollState = 'MANUAL_SCROLL';
+        unfreeze();
+        return;
+      }
       slider.next();
     }
   }

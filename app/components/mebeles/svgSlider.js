@@ -51,6 +51,8 @@ export default class SvgSlider {
     if (!t.isTransition) {
       t.transition(t.current + 1);
       t.isStart = false;
+      console.log(t.current + 1);
+      console.log(t.total);
       t.isEnd = (t.current + 1) === t.total;
     }
   }
