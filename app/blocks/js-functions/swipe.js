@@ -1,3 +1,4 @@
+import isTouchDevice from 'is-touch-device';
 /* eslint-disable */
 /**
  * Object.assign() polyfill
@@ -65,16 +66,13 @@ export default function swipe(el, options) {
   let dir; // направление свайпа (horizontal, vertical)
   let swipeType; // тип свайпа (up, down, left, right)
   let dist; // дистанция, пройденная указателем
-  let isMouse = false; // поддержка мыши (не используется для тач-событий)
-  let isMouseDown = false; // указание на активное нажатие мыши (не используется для тач-событий)
   let startX = 0; // начало координат по оси X (pageX)
   let distX = 0; // дистанция, пройденная указателем по оси X
   let startY = 0; // начало координат по оси Y (pageY)
   let distY = 0; // дистанция, пройденная указателем по оси Y
   let startTime = 0; // время начала касания
   const support = { // поддерживаемые браузером типы событий
-    pointer: !!('PointerEvent' in window || ('msPointerEnabled' in window.navigator)),
-    touch: !!(typeof window.orientation !== 'undefined' || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || 'ontouchstart' in window || navigator.msMaxTouchPoints || 'maxTouchPoints' in window.navigator > 1 || 'msMaxTouchPoints' in window.navigator > 1),
+    touch: isTouchDevice(),
   };
 
   /**
@@ -82,38 +80,13 @@ export default function swipe(el, options) {
    * @returns {Object} - возвращает объект с доступными событиями.
    */
   const getSupportedEvents = function () {
-    let events = {};
-    switch (true) {
-      case support.pointer:
-        events = {
-          type: 'pointer',
-          start: 'pointerdown',
-          move: 'pointermove',
-          end: 'pointerup',
-          cancel: 'pointercancel',
-          leave: 'pointerleave',
-        };
-        break;
-      case support.touch:
-        events = {
-          type: 'touch',
-          start: 'touchstart',
-          move: 'touchmove',
-          end: 'touchend',
-          cancel: 'touchcancel',
-        };
-        break;
-      default:
-        events = {
-          type: 'mouse',
-          start: 'mousedown',
-          move: 'mousemove',
-          end: 'mouseup',
-          leave: 'mouseleave',
-        };
-        break;
-    }
-    return events;
+    return {
+      type: 'touch',
+      start: 'touchstart',
+      move: 'touchmove',
+      end: 'touchend',
+      cancel: 'touchcancel',
+    };
   };
 
 
@@ -140,8 +113,7 @@ export default function swipe(el, options) {
     startX = event.pageX;
     startY = event.pageY;
     startTime = new Date().getTime();
-    if (isMouse) isMouseDown = true; // поддержка мыши
-    e.preventDefault();
+    // e.preventDefault();
   };
 
   /**
@@ -149,13 +121,12 @@ export default function swipe(el, options) {
    * @param e {Event} - получает событие.
    */
   const checkMove = function (e) {
-    if (isMouse && !isMouseDown) return; // выход из функции, если мышь перестала быть активна
     const event = eventsUnify(e);
     distX = event.pageX - startX;
     distY = event.pageY - startY;
     if (Math.abs(distX) > Math.abs(distY)) dir = (distX < 0) ? 'left' : 'right';
     else dir = (distY < 0) ? 'up' : 'down';
-    e.preventDefault();
+    // e.preventDefault();
   };
 
   /**
@@ -163,9 +134,6 @@ export default function swipe(el, options) {
    * @param e {Event} - получает событие.
    */
   const checkEnd = function (e) {
-    if (isMouse && !isMouseDown) { // выход из функции и сброс проверки нажатия мыши
-      return;
-    }
     const endTime = new Date().getTime();
     const time = endTime - startTime;
     if (time >= settings.minTime && time <= settings.maxTime) { // проверка времени жеста
@@ -191,14 +159,11 @@ export default function swipe(el, options) {
       });
       el.dispatchEvent(swipeEvent);
     }
-    e.preventDefault();
+    // e.preventDefault();
   };
 
   // добавление поддерживаемых событий
   const events = getSupportedEvents();
-
-  // проверка наличия мыши
-  if ((support.pointer && !support.touch) || events.type === 'mouse') isMouse = true;
 
   // добавление обработчиков на элемент
   el.addEventListener(events.start, checkStart);
