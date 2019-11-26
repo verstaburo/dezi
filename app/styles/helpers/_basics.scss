@@ -96,6 +96,7 @@ html,body {
   overflow-x: hidden; // Убираем горизонтальный скролл
   width: 100%;
   min-height: 100%;
+  overscroll-behavior: none;
 }
 
 body {
