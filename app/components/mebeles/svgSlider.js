@@ -1,18 +1,21 @@
 export default class SvgSlider {
-  constructor(el) {
+  constructor(el, screen) {
     this.el = el;
+    this.screen = screen || el;
     this.slides = this.el.querySelectorAll('[data-slide]');
     this.total = this.slides.length;
     this.current = 0;
     this.previous = ((this.current - 1) + this.total) % this.total;
     this.nxt = ((this.current + 1) + this.total) % this.total;
     this.isTransition = false;
+    this.isStart = true;
     this.isEnd = false;
   }
   init() {
     const t = this;
     t.el.svgslider = t;
-    const elSizes = t.el.getBoundingClientRect();
+    console.log(t.screen);
+    const elSizes = t.screen.getBoundingClientRect();
     const sT = window.pageYOffset;
     const elBottom = elSizes.bottom + sT;
     if (sT > elBottom) {
@@ -20,6 +23,10 @@ export default class SvgSlider {
       t.current = t.total - 1;
       t.previous = ((t.current - 1) + t.total) % t.total;
       t.nxt = ((t.current + 1) + t.total) % t.total;
+      t.slides[t.current].classList.add('is-active');
+      t.isStart = false;
+      t.isEnd = true;
+    } else {
       t.slides[t.current].classList.add('is-active');
     }
   }
@@ -36,9 +43,6 @@ export default class SvgSlider {
       t.isTransition = false;
       t.slides[t.nxt].classList.remove('is-prev');
       t.slides[t.previous].classList.remove('is-prev');
-      if (t.nxt === 0 || t.previous === (t.total - 1)) {
-        t.isEnd = true;
-      }
     }, 600);
   }
   next() {
@@ -46,6 +50,8 @@ export default class SvgSlider {
     console.log('next');
     if (!t.isTransition) {
       t.transition(t.current + 1);
+      t.isStart = false;
+      t.isEnd = (t.current + 1) === t.total;
     }
   }
   prev() {
@@ -53,6 +59,8 @@ export default class SvgSlider {
     console.log('prev');
     if (!t.isTransition) {
       t.transition(t.current - 1);
+      t.isStart = (t.current - 1) === -1;
+      t.isEnd = false;
     }
   }
 }
