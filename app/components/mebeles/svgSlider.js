@@ -14,7 +14,6 @@ export default class SvgSlider {
   init() {
     const t = this;
     t.el.svgslider = t;
-    console.log(t.screen);
     const elSizes = t.screen.getBoundingClientRect();
     const sT = window.pageYOffset;
     const elBottom = elSizes.bottom + sT;
@@ -47,18 +46,14 @@ export default class SvgSlider {
   }
   next() {
     const t = this;
-    console.log('next');
     if (!t.isTransition) {
       t.transition(t.current + 1);
       t.isStart = false;
-      console.log(t.current + 1);
-      console.log(t.total);
       t.isEnd = (t.current + 1) === t.total;
     }
   }
   prev() {
     const t = this;
-    console.log('prev');
     if (!t.isTransition) {
       t.transition(t.current - 1);
       t.isStart = (t.current - 1) === -1;
