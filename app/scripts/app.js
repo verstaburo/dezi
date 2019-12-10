@@ -45,6 +45,7 @@ import sliderBg from '../blocks/slider/slider-bg';
 import textareaAutosize from '../blocks/form-elements/form-elements';
 import bgvideo from '../blocks/project/project';
 import mebelesSlider from '../components/mebeles/mebeles-slider';
+import mebelesBgMove from '../components/mebeles/mebeles-bgtransit';
 
 const $ = window.$;
 
@@ -86,4 +87,5 @@ $(() => {
   sliderBg();
   bgvideo();
   mebelesSlider();
+  mebelesBgMove();
 });

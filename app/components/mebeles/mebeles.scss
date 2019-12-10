@@ -177,7 +177,8 @@
     transform: translate3d(-50%, 0, 0);
     z-index: 1;
 
-    @include rule(width, (xxl: 1920, xl: 1461, lg: 1024, md: 320));
+    // @include rule(width, (xxl: 1920, xl: 1461, lg: 1024, md: 320));
+    @include rule(width, (xxl: 1920, xl: 1559, lg: 1435, md: 469));
 
     &-image {
       display: block;
