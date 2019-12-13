@@ -17,17 +17,17 @@ export default function mebelesBgMove() {
     const anim = new TimelineMax()
       .add([
         TweenMax.fromTo('.mebeles-about__back-image', 1, {
-          y: '5%',
+          y: '-15%',
         }, {
-          y: '-5%',
+          y: '0%',
           ease: Power0.easeNone,
         }),
       ]);
 
     const scene = new ScrollMagic
       .Scene({
-        triggerElement: '.mebeles-about__collage',
-        duration: $('.mebeles-about__collage').height(),
+        triggerElement: '.mebeles-about',
+        duration: $(window).height(),
       })
       .setTween(anim)
       .addTo(controller);

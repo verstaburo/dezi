@@ -160,7 +160,6 @@
     position: relative;
     display: block;
     width: 100%;
-    overflow: hidden;
     z-index: 1;
 
     @include rule(padding-top, (xxl: 255, xl: 292, lg: 360, md: 120));

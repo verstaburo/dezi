@@ -20,11 +20,8 @@ mixin mebeles-about()
               +mebeles-line.__line.js-sr_26
             +case-section-text.js-sr_27 С самого начала мы старались сделать главную страницу сайта не похожей на мебельные магазины.
       +e.collage
-        +e.PICTURE.back
-          //- +e.SOURCE(srcset="assets/images/4mebeles/about-bg.png" media="(min-width: 1025px")
-          //- +e.SOURCE(srcset="assets/images/4mebeles/about-bg-tablet.png" media="(min-width: 768px")
-          //- +e.SOURCE(srcset="assets/images/4mebeles/about-bg-mobile.png" media="(min-width: 300px")
-          +e.IMG.back-image(srcset="assets/images/4mebeles/about-bg.png")
+        +e.back
+          +e.IMG.back-image(src="assets/images/4mebeles/about-bg.png")
         +e.mid
           +e.IMG.mid-image.js-sr_28(src="assets/images/4mebeles/site.png")
     block
