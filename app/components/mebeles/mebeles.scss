@@ -167,7 +167,7 @@
     @include rule(margin-top, (xxl: -650, xl: -238, lg: -290, md: -78));
   }
 
-  &__back {
+  &__back, &__front {
     position: absolute;
     display: block;
     width: 100%;
@@ -185,6 +185,10 @@
       line-height: 0;
       width: 100%;
     }
+  }
+
+  &__front {
+    z-index: 3;
   }
 
   &__mid {
@@ -245,6 +249,10 @@
     display: block;
     width: auto;
     height: auto;
+
+    // @include screen('xl') {
+    //   display: block;
+    // }
 
     @include rule(top, (xxl: 193, xl: 90, lg: -406, md: -132));
     @include rule(right, (xxl: -227, xl: -227, lg: -243, md: -81));

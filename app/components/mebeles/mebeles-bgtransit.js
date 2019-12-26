@@ -16,10 +16,16 @@ export default function mebelesBgMove() {
   if ($('.mebeles-about').length > 0) {
     const anim = new TimelineMax()
       .add([
-        TweenMax.fromTo('.mebeles-about__back-image', 1, {
-          y: '-15%',
+        TweenMax.fromTo('.mebeles-about__front-image', 1, {
+          y: '20%',
         }, {
-          y: '0%',
+          y: '-20%',
+          ease: Power0.easeNone,
+        }),
+        TweenMax.fromTo('.mebeles-about__back-image', 1, {
+          y: '5%',
+        }, {
+          y: '-5%',
           ease: Power0.easeNone,
         }),
       ]);
@@ -27,7 +33,7 @@ export default function mebelesBgMove() {
     const scene = new ScrollMagic
       .Scene({
         triggerElement: '.mebeles-about',
-        duration: $(window).height(),
+        duration: $('.mebeles-about').height(),
       })
       .setTween(anim)
       .addTo(controller);

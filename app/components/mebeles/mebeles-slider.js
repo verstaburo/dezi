@@ -6,7 +6,7 @@ export default function mebelesSlider() {
   $(window).on('scroll', (evt) => {
     const sT = $(window).scrollTop();
     const screen = $('[data-scrolly-window]');
-    if (screen.lenght > 0) {
+    if (screen.length > 0) {
       const scrTop = $(screen).offset().top;
       const scrHeight = $(screen).height();
       const scrPart = scrHeight / 4;
