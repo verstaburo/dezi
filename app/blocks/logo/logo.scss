@@ -10,5 +10,113 @@
     width: 100%;
     height: 100%;
     fill: currentColor;
+
+    #logo-line {
+      fill: none;
+      stroke: currentColor;
+
+      @include screen('lg', min) {
+        stroke-dasharray: 0 100;
+      }
+
+      .is-animated & {
+        animation: logoDraw .3s ease-out forwards;
+        animation-delay: .3s;
+      }
+
+      .is-open & {
+        stroke-dasharray: 110 100;
+      }
+    }
+  }
+
+  &__text {
+    text-transform: uppercase;
+    line-height: 1.33;
+    letter-spacing: .1em;
+    font-weight: 800;
+    white-space: nowrap;
+    margin-top: -2px;
+    display: inline-block;
+
+    @include rule(font-size, (xxl: 15, xl: 15, lg: 15, md: 15));
+
+    @include screen('lg') {
+      display: none;
+    }
+  }
+
+  &__image {
+    display: block;
+
+    @include rule(width, (xxl: 28, xl: 28, lg: 28, md: 21));
+    @include rule(height, (xxl: 35, xl: 35, lg: 35, md: 26));
+  }
+
+  &_anima {
+    position: relative;
+    display: inline-block;
+    height: auto;
+    width: auto;
+
+    #{$b} {
+
+      &__text {
+        @include screen('lg', min) {
+          transition: opacity $ease-main, transform $ease-main;
+        }
+
+        .is-open & {
+          opacity: 0;
+        }
+
+        .is-animated & {
+          @include screen('lg', min) {
+            opacity: 0;
+            transform: translate3d(0, -20px, 0);
+          }
+        }
+      }
+
+      &__icon {
+        @include screen('lg', min) {
+          transform: rotate(-10deg);
+        }
+
+        .is-animated & {
+          animation: logoTurn .2s cubic-bezier(.5, 0, .5, 3) forwards;
+          animation-delay: .5s;
+        }
+
+        .is-open & {
+          transform: rotate(0deg);
+        }
+      }
+
+      &__image {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate3d(0, -50%, 0);
+        opacity: 0;
+        transition: opacity $ease-main;
+
+        @include screen('lg') {
+          position: static;
+          top: auto;
+          left: auto;
+          transform: translate3d(0, 0, 0);
+          opacity: 1;
+        }
+
+        .is-open & {
+          opacity: 1;
+        }
+
+        .is-animated & {
+          opacity: 1;
+        }
+      }
+    }
   }
 }

@@ -18,3 +18,25 @@ mixin header(data)
         +e.right
           +languages.__languages
           block
+
+
+mixin header-main(data)
+  +b.HEADER.header&attributes(attributes)
+    +e.NAV.menu
+      .container.container_about
+        +header-navigation(data.active)
+    +e.top
+      +e.wrapper
+        +e.logo
+          +logo-animate().js-logo-animate(href="./")
+        +e.BUTTON.burger.js-show-menu(type="button")
+          span
+    +e.bottom
+      +e.wrapper
+        +e.left
+          +e.titles
+            +nav-titles(data.titles)
+          +socials([{tag: '', icon: 'behance-round', name: 'Behance', cls: ''}, {tag: '', icon: 'instagramm-round', name: 'Instagramm', cls: ''}, {tag: '', icon: 'facebook-round', name: 'Facebook', cls: ''}]).__socials
+        +e.right
+          +languages.__languages
+          block

@@ -7,9 +7,14 @@ html(lang='ru')
   body
     block header
     - var hdCls = headerClass || ''
+    - var isMain = headerMain || false
 
-    +header(headerData)(class=hdCls)
-      block headerAnchors
+    if isMain
+      +header-main(headerData)(class=hdCls)
+        block headerAnchors
+    else
+      +header(headerData)(class=hdCls)
+        block headerAnchors
     block content
     +svg-gradients
     script(src='assets/scripts/app.min.js')

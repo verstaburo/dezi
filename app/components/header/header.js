@@ -34,4 +34,13 @@ export default function header() {
     const header = new HeaderMenu(el);
     header.init();
   });
+
+  $(window).on('scroll', () => {
+    const sT = $(window).scrollTop();
+    if (sT > 0) {
+      $('.header').addClass('is-animated');
+    } else {
+      $('.header').removeClass('is-animated');
+    }
+  });
 };

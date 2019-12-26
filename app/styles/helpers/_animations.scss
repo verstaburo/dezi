@@ -556,6 +556,27 @@ $animationScale: .9;
   }
 }
 
+@keyframes logoDraw {
+  from {
+    stroke-dasharray: 0 100;
+  }
+
+  to {
+    stroke-dasharray: 110 100;
+  }
+}
+
+@keyframes logoTurn {
+
+  from {
+    transform: rotate(-10deg);
+  }
+
+  to {
+    transform: rotate(0);
+  }
+}
+
 // @keyframes slider {
 
 //   0% {

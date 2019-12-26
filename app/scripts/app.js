@@ -46,6 +46,7 @@ import textareaAutosize from '../blocks/form-elements/form-elements';
 import bgvideo from '../blocks/project/project';
 import mebelesSlider from '../components/mebeles/mebeles-slider';
 import mebelesBgMove from '../components/mebeles/mebeles-bgtransit';
+import logoChangeWords from '../blocks/logo/logo';
 
 const $ = window.$;
 
@@ -88,4 +89,5 @@ $(() => {
   bgvideo();
   mebelesSlider();
   mebelesBgMove();
+  logoChangeWords();
 });
