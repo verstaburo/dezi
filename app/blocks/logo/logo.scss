@@ -31,6 +31,9 @@
   }
 
   &__text {
+    position: absolute;
+    left: 0;
+    top: 0;
     text-transform: uppercase;
     line-height: 1.33;
     letter-spacing: .1em;
@@ -55,9 +58,6 @@
 
   &_anima {
     position: relative;
-    display: inline-block;
-    height: auto;
-    width: auto;
 
     #{$b} {
 
@@ -94,18 +94,10 @@
       }
 
       &__image {
-        position: absolute;
-        top: 50%;
-        left: 0;
-        transform: translate3d(0, -50%, 0);
         opacity: 0;
         transition: opacity $ease-main;
 
         @include screen('lg') {
-          position: static;
-          top: auto;
-          left: auto;
-          transform: translate3d(0, 0, 0);
           opacity: 1;
         }
 

@@ -2,7 +2,7 @@ const $ = window.$;
 
 export default function logoChangeWords() {
   let lastX = 0;
-  let isFree = true;
+  // let isFree = true;
   let lastWord = 0;
   const words = $('.js-logo-slogan').length > 0 ? $('.js-logo-slogan [data-words]').attr('data-words').split(',') : [];
 
@@ -13,15 +13,15 @@ export default function logoChangeWords() {
 
     if (wLen > 1) {
       lastWord = (lastWord + 1 + wLen) % wLen;
-      if (Math.abs(lastX - newX) > 0 && isFree) {
-        isFree = false;
+      if (Math.abs(lastX - newX) > 50) {
+        lastX = newX;
+        // isFree = false;
         $(wordContainer).text(words[lastWord]);
-        setTimeout(() => {
-          isFree = true;
-        }, 100);
+        // setTimeout(() => {
+        //   isFree = true;
+        // }, 100);
       }
     }
-    lastX = newX;
   }
 
   if ($('.js-logo-slogan').length > 0) {

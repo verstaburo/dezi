@@ -141,14 +141,9 @@
   &__logo {
     display: block;
     align-self: center;
-    // width: 54px;
     pointer-events: auto;
 
     @include rule(width, (xxl: 54, xl: 54, lg: 54, md: 40));
-
-    // @include screen('md') {
-    //   width: 40px;
-    // }
   }
 
   &__titles {
@@ -361,9 +356,12 @@
     color: $color-basic;
 
     #{$b} {
+
       &__burger {
+
         span {
-          &::before,&::after {
+
+          &::before, &::after {
             background-color: $color-basic;
           }
         }
