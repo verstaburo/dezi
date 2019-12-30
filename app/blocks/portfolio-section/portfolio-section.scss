@@ -184,6 +184,11 @@
         @include grid-row(3, 4);
       }
     }
+
+    #{$b}__image {
+      box-sizing: border-box;
+      border: 1px solid $color-blue-border;
+    }
   }
 
   &__link {
