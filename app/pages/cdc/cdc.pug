@@ -1,0 +1,11 @@
+extends ../../layouts/case
+
+block head
+  - var pageTitle = 'Dezi | Certified Diamond Coin'
+
+block header
+  - var headerClass = '_light'
+  - var headerData = getData('headerAgrosyn.json')
+
+block content
+  +b.cdc

@@ -1,0 +1,42 @@
+mixin 5element()
+  +b.element5&attributes(attributes)
+    +e.IMG.logo.hide-md(src="assets/images/5element/5element-logo.svg").js-sr_11
+    +portfolio-section
+      .container.container_portfolio
+        +e.wrapper._5el._5el_dark._css-grid
+          +e.column_left
+            +e.content_5el
+              +link()._normal.__link.js-sr_10(href="https://5element.by") 5element.by
+              +portfolio-section-title._mgb42.js-sr_14 Шаблоны интернет&#8209;магазина 5&nbsp;Элемент
+              +portfolio-section-text._big.js-sr_17 Крупнейший ритейлер электроники и бытовой техники в Беларуси обратился в студию за дизайн&#8209;шаблонами онлайн версии магазина.
+          +e.column_right
+            +e.image-wrapper._5el.js-sr_21
+              +e.IMG.image(src="assets/images/5element/image-1.png")
+        +e.text-block._xl-pl0._xl-mw60p
+          +portfolio-section-text.js-sr_3 <b>Кейс:</b> Дизайн шаблонов основных страниц
+        +e.wrapper_5el._5el_dark
+          +portfolio-section-image()._5el.js-sr_4(src="assets/images/5element/image-2.jpg")
+    +portfolio-section
+      .container.container_portfolio
+        +e.text-block._xl-pl0._xl-mw60p._big-pad2.js-sr_1
+          +portfolio-section-text._big3 Шаблоны сохранили весь функционал предыдущей версии сайта, но получили свежий графический ораз, а также существенно прибавили в UX.
+        +e.wrapper_5el-screens
+          +e.screen_1
+            +portfolio-section-image.js-sr_2(src="assets/images/5element/screen-1.jpg")
+          +e.screen_2
+            +portfolio-section-image.js-sr_2(src="assets/images/5element/screen-3.jpg")
+          +e.screen_3
+            +portfolio-section-image.js-sr_2(src="assets/images/5element/screen-2.jpg")
+    +portfolio-section
+      .container.container_portfolio
+        +e.text-block._xl-pl0._xl-mw60p._big-pad2.js-sr_1
+          +portfolio-section-text._big3 Превью карточки товара имеет целую кучу требований по индикации и цен, акций и прочих сопуствующим продукту параметров. Мы собрали их в аккуратные и лаконичные блоки.
+        +e.wrapper_5el._5el_dark2
+          +portfolio-section-image.js-sr_2(src="assets/images/5element/products.jpg")
+    +portfolio-section
+      .container.container_portfolio
+        +e.text-block._xl-pl0._xl-mw60p._5el-spec.js-sr_1
+          +portfolio-section-text._big3 В помощь фирменному супер&#8209;герою мы нарисовали тематический паттерн, чтобы мостить всякие разные пространства.
+      +e.wrapper_5el
+        +5el-collage
+    block

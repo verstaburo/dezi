@@ -1,0 +1,20 @@
+.element5 {
+  display: block;
+  width: 100%;
+
+  $b: &;
+
+  @include rule(padding-top, (xxl: 69, xl: 42, lg: 40, md: 85));
+
+  &__logo {
+    display: block;
+    height: auto;
+    margin: 0 auto;
+
+    @include rule(width, (xxl: 252, xl: 252, lg: 170, md: 170));
+
+    &:not(:last-child) {
+      @include rule(margin-bottom, (xxl: 79, xl: 50, lg: 67, md: 50));
+    }
+  }
+}

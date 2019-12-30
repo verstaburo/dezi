@@ -30,6 +30,7 @@
   }
 
   &.is-open {
+
     &::before {
       background-color: $color-black;
       transform: scaleY(1);
