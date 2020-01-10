@@ -1,0 +1,55 @@
+.cdc-video {
+  position: relative;
+  display: block;
+  width: 100%;
+  $b: &;
+
+  &__media {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding-top: 56.25%;
+
+    #{$b}_tablet & {
+      padding-top: 52%;
+    }
+  }
+
+  &__video {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__border {
+    display: block;
+    position: absolute;
+    width: 101.8%;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    // box-shadow: -25px 37px 54px rgba(0, 0, 0, .35);
+    box-shadow: -1.3vw 1.9vw 2.8vw rgba(0, 0, 0, .35);
+    border-radius: 2.2% / 3.8%;
+
+    @include screen('xl') {
+      box-shadow: -1.8vw 2.7vw 3.9vw rgba(0, 0, 0, .35);
+    }
+
+    @include screen('lg') {
+      box-shadow: -2.5vw 3.7vw 5.4vw rgba(0, 0, 0, .35);
+    }
+
+    @include screen('md') {
+      box-shadow: -3.9vw 5.8vw 8.4vw rgba(0, 0, 0, .35);
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+  }
+}

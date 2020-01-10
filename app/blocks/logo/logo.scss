@@ -24,7 +24,7 @@
         animation-delay: .3s;
       }
 
-      .is-open & {
+      .is-open &, .fancybox-active & {
         stroke-dasharray: 110 100;
       }
     }
@@ -67,8 +67,9 @@
           transition: opacity $ease-main, transform $ease-main;
         }
 
-        .is-open & {
+        .is-open &, .fancybox-active & {
           opacity: 0;
+          pointer-events: none;
         }
 
         .is-animated & {
@@ -89,7 +90,7 @@
           animation-delay: .5s;
         }
 
-        .is-open & {
+        .is-open &, .fancybox-active & {
           transform: rotate(0deg);
         }
       }
@@ -102,7 +103,7 @@
           opacity: 1;
         }
 
-        .is-open & {
+        .is-open &, .fancybox-active & {
           opacity: 1;
         }
 

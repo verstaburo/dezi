@@ -1,0 +1,112 @@
+.cdc-lead {
+  position: relative;
+  display: block;
+  width: 100%;
+  $b: &;
+
+  @include rule(padding-top, (xxl: 132, xl: 87, lg: 43, md: 77));
+  @include rule(padding-bottom, (xxl: 300, xl: 150, lg: 117, md: 79));
+
+  &__bg {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
+    z-index: 1;
+
+    @include rule(width, (xxl: 1920, xl: 1418, lg: 1033, md: 505));
+
+    &::before {
+      @include pseudo;
+
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 3;
+      background-image: linear-gradient(-176deg, rgba(31, 30, 30, 0) 0%, rgba(31, 30, 30, .36) 27%, $color-cdc-bg 75%);
+    }
+
+    &-video {
+      position: relative;
+      width: 100%;
+      z-index: 2;
+    }
+  }
+
+  &__top, &__bottom {
+    display: block;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    box-sizing: border-box;
+  }
+
+  &__middle {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    width: 100%;
+    z-index: 4;
+    box-sizing: border-box;
+  }
+
+  &__bottom {
+    @include rule(margin-top, (xxl: 30, xl: 38, lg: 56, md: 43));
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      @include screen('lg') {
+        align-items: flex-start;
+      }
+
+      @include screen('md') {
+        position: relative;
+      }
+    }
+  }
+
+  &__video-wrapper {
+    display: block;
+    // @include rule(width, (xxl: 1259, xl: 1083, lg: 794, md: 328));
+    @include rule(width, (xxl: 1336, xl: 1150, lg: 862, md: 348));
+    @include rule(margin-right, (xxl: -87, xl: -168, lg: -115, md: -55));
+    @include rule(margin-top, (xxl: -141, xl: -83, lg: -52, md: 10));
+  }
+
+  &__head {
+    box-sizing: border-box;
+
+    @include rule(padding-left, (xl: 45, lg: 95, md: 0));
+  }
+
+  &__title {
+    box-sizing: border-box;
+
+    @include rule(padding-left, (xl: 45, lg: 0));
+    @include rule(margin-top, (xxl: 132, xl: 40, lg: 86, md: 30));
+    @include rule(max-width, (xxl: 946, xl: 995, lg: 676, md: 220));
+  }
+
+  &__describe {
+    @include rule(max-width, (xxl: 265, xl: 265, lg: 265, md: 250));
+  }
+
+  &__caption {
+    @include rule(margin-bottom, (xxl: 13, xl: 13, lg: 0));
+    @include rule(margin-top, (lg: 70, md: -5));
+
+    @include screen('md') {
+      position: absolute;
+      top: 0;
+
+      @include rule(right, (md: 23));
+    }
+  }
+}

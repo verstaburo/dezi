@@ -1,0 +1,10 @@
+.cdc {
+  display: block;
+  background-color: $color-cdc-bg;
+  color: $color-main;
+  font-family: $font-cdc;
+  font-weight: 400;
+  width: 100%;
+
+  $b: &;
+}

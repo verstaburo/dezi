@@ -212,6 +212,24 @@ body {
       max-width: none;
     }
   }
+
+  &_cdc {
+    @include rule(padding-left, (xxl: 100, xl: 100, lg: 100, md: 24));
+    @include rule(padding-right, (xxl: 100, xl: 100, lg: 100, md: 24));
+    @include rule(max-width, (xxl: 1803));
+
+    @include screen('xl') {
+      max-width: none;
+    }
+
+    &_small {
+      @include rule(max-width, (xxl: 1552));
+
+      @include screen('xl') {
+        max-width: none;
+      }
+    }
+  }
 }
 
 .js-sr {

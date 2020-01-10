@@ -1,0 +1,105 @@
+.cdc-text {
+  display: block;
+  width: 100%;
+  font-weight: 400;
+  letter-spacing: $ls-main;
+  line-height: 1.2;
+
+  @include rule(font-size, (xxl: $fz15, xl: $fz15, lg: $fz15, md: $fz-md-text));
+
+  @include screen('md') {
+    line-height: 1.35;
+  }
+
+  &_proximag {
+    font-family: $font-site;
+  }
+
+  &_gray {
+    color: $color-cdc-gray-text;
+  }
+
+  &_tac {
+    text-align: center;
+  }
+
+  &_tar {
+    text-align: right;
+  }
+
+  &_deco {
+    position: relative;
+
+    @include rule(padding-top, (xxl: 66, xl: 66, lg: 70, md: 32));
+
+    &::before {
+      @include pseudo;
+
+      top: 0;
+      left: 0;
+      height: 1px;
+      background-color: $color-cdc-ironstone;
+
+      @include rule(width, (xxl: 29, xl: 29, lg: 29, md: 15));
+    }
+
+    &_bottom {
+      padding-top: 0;
+
+      @include rule(padding-bottom, (xxl: 66, xl: 66, lg: 66, md: 32));
+
+      &::before {
+        top: auto;
+        bottom: 0;
+      }
+    }
+  }
+
+  &_fz19 {
+    line-height: 1.84;
+
+    @include rule(font-size, (xxl: $fz19, xl: $fz19, lg: $fz19, md: $fz9));
+
+    @include screen('md') {
+      line-height: 1.94;
+    }
+
+    a {
+      position: relative;
+      display: inline-block;
+      white-space: nowrap;
+      text-decoration: none;
+      color: currentColor;
+      cursor: pointer;
+
+      &::before {
+        @include pseudo;
+
+        left: 0;
+        height: 1px;
+        background-color: currentColor;
+        transition: width $ease-main;
+        will-change: width;
+
+        @include rule(bottom, (xxl: 2, xl: 2, lg: 2, md: 0));
+        @include rule(width, (xxl: 29, xl: 29, lg: 29, md: 15));
+      }
+
+      &:hover::before {
+        width: 100%;
+      }
+    }
+  }
+
+  &_md-fz10 {
+    line-height: 1.2;
+
+    @include rule(font-size, (md: 10));
+  }
+
+  &_md-fz7 {
+    line-height: 1.2;
+
+    @include rule(font-size, (md: 7));
+  }
+}

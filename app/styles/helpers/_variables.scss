@@ -107,6 +107,11 @@ $color-mebeles-logo-red: #e7474b;
 $color-5element-bg-dark: #0f1317;
 $color-5element-bg-dark2: #242529;
 $color-5element-gradient-bg: radial-gradient(circle 21640px at center, #d72c25 0%, #9c112f 100%);
+$color-cdc-bg: #1f1e1e;
+$color-cdc-ironstone: #875345;
+$color-cdc-gray-text: #404040;
+$color-cdc-white-smoke: #efefef;
+$color-cdc-black-rus: #131416;
 
 // ##########
 // Transitions
@@ -116,12 +121,13 @@ $ease-main: .3s ease;
 // ##########
 // Шрифты
 // ##########
-$font-main: 'Montserrat', Arial, sans-serif; // Основной шрифт сайта
-$font-second: 'Roboto', Arial, sans-serif; // Дополнительный шрифт
-$font-third: 'Corbel', Arial, sans-serif; // Дополнительный шрифт
-$font-4: 'Journal', Arial, sans-serif; // Дополнительный шрифт
+$font-main: 'Montserrat', 'ProximaNova', Arial, sans-serif; // Основной шрифт сайта
+$font-second: 'Roboto', 'ProximaNova', Arial, sans-serif; // Дополнительный шрифт
+$font-third: 'Corbel', 'ProximaNova', Arial, sans-serif; // Дополнительный шрифт
+$font-4: 'Journal', 'ProximaNova', Arial, sans-serif; // Дополнительный шрифт
 $font-site: 'ProximaNova', Arial, sans-serif;
-$font-mebeles: 'Pragmatica', Arial, sans-serif; // Шрифт для 4mebeles
+$font-mebeles: 'Pragmatica', 'ProximaNova', Arial, sans-serif; // Шрифт для 4mebeles
+$font-cdc: 'Cabin', 'ProximaNova', Arial, sans-serif; // Шрифт для 4mebeles
 
 // ########
 // Шрифты - размеры
@@ -150,6 +156,7 @@ $fz15: 15;
 $fz16: 16;
 $fz17: 17;
 $fz18: 18;
+$fz19: 19;
 $fz27: 27;
 $fz30: 30;
 $fz35: 35;

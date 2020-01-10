@@ -1,0 +1,13 @@
+.cdc-title {
+  display: block;
+  width: 100%;
+  line-height: .97;
+  font-weight: 400;
+  $b: &;
+
+  @include rule(font-size, (xxl: 155, xl: 122, lg: 87, md: 30));
+
+  @include screen('md') {
+    line-height: .9;
+  }
+}
