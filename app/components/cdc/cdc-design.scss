@@ -2,4 +2,6 @@
   display: block;
   width: 100%;
   $b: &;
+
+  @include rule(padding-top, (xxl: 276, xl: 104, lg: 489, md: 200));
 }

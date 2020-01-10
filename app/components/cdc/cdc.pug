@@ -32,7 +32,7 @@ mixin cdc-video(video, poster, tablet)
 mixin cdc-lead()
   +b.cdc-lead&attributes(attributes)
     +e.bg
-      +cdc-video('assets/video/cdc-bg.mp4', 'assets/images/cdc/top-bg.jpg').__bg-video
+      +cdc-video('assets/video/cdc-bg.mp4', 'assets/images/cdc/poster-bg.jpg').__bg-video
     +e.top
       .container.container_cdc.container_cdc_small
         +cdc-text._proxima._fz19.__head
@@ -56,18 +56,18 @@ mixin cdc-details()
         +cdc-text._fz25.__describe Cdiamondcoin OU team has developed a hybrid solution to improve the transparency and reliability of the diamond market, as well as a solution for the cryptocurrency market, offering a stable cryptocurrency backed by diamonds.
         +e.grid
           +e.column
-            +cdc-text._proxima Landing has some tiny interactive details which allows to show token basic advantages
+            +cdc-text._proxima.__info Landing has some tiny interactive details which allows to show token basic advantages
           +e.column.hide-md
-            +cdc-text._proxima._tac Ful HD
+            +cdc-text._proxima Ful HD
           +e.column
-            +cdc-text._proxima._tar Advantages
-        +cdc-video('assets/video/cdc-details.mp4')._white.__video
+            +cdc-text._proxima._tar._md-fz10 Advantages
+        +cdc-video('assets/video/cdc-details.mp4', 'assets/images/cdc/poster-2.jpg')._white._detail.__video
       +e.bottom
         +e.phone_1
           +e.IMG.image(src="assets/images/cdc/phone2.png")
         +e.phone_2
           +e.IMG.image(src="assets/images/cdc/phone1.png")
-          +cdc-text._proxima.__caption
+          +cdc-text._proxima._md-fz10.__caption
             span.hide-md Mobile
             span 640
 

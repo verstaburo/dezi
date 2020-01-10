@@ -57,6 +57,7 @@
 
   &_fz19 {
     line-height: 1.84;
+    letter-spacing: normal;
 
     @include rule(font-size, (xxl: $fz19, xl: $fz19, lg: $fz19, md: $fz9));
 
@@ -88,6 +89,17 @@
       &:hover::before {
         width: 100%;
       }
+    }
+  }
+
+  &_fz25 {
+    line-height: 1.36;
+    letter-spacing: normal;
+
+    @include rule(font-size, (xxl: $fz-md-title, xl: $fz-md-title, lg: $fz-md-title, md: $fz-text));
+
+    @include screen('md') {
+      line-height: 1.2;
     }
   }
 
