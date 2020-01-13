@@ -137,6 +137,15 @@ export default function aizkulises() {
         if (el.hasClass('js-sr_29')) el.addClass(`${animClasses[4]}`).css({
           animationDelay: '400ms',
         });
+        if (el.hasClass('js-sr_30')) el.addClass(`${animClasses[3]}`).css({
+          animationDelay: '200ms',
+        });
+        if (el.hasClass('js-sr_31')) el.addClass(`${animClasses[1]}`).css({
+          animationDelay: '300ms',
+        });
+        if (el.hasClass('js-sr_32')) el.addClass(`${animClasses[1]}`).css({
+          animationDelay: '400ms',
+        });
         if (el.hasClass('js-sr_77')) el.addClass(`${animClasses[7]}`);
 
 

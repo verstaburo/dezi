@@ -31,43 +31,43 @@ mixin cdc-video(video, poster, tablet)
 
 mixin cdc-lead()
   +b.cdc-lead&attributes(attributes)
-    +e.bg
+    +e.bg.js-sr_21
       +cdc-video('assets/video/cdc-bg.mp4', 'assets/images/cdc/poster-bg.jpg').__bg-video
     +e.top
       .container.container_cdc.container_cdc_small
-        +cdc-text._proxima._fz19.__head
+        +cdc-text._proxima._fz19.__head.js-sr_10
           p ICO Landing page and whitepaper
           p
             a(href="https://www.cdiamondcoin.com" target="_blank") cdiamondcoin.com
-        +cdc-title('h1')._md-small.__title Certified Diamond Coin <span>ICO&nbsp;landing page</span>
+        +cdc-title('h1')._md-small.__title.js-sr_2 Certified Diamond Coin <span>ICO&nbsp;landing page</span>
     +e.middle
-      +e.video-wrapper
+      +e.video-wrapper.js-sr_15
         +cdc-video('assets/video/cdc-lead.mp4', 'assets/images/cdc/poster-1.jpg', true)._tablet.__video
     +e.bottom
       .container.container_cdc.container_cdc_small
-        +cdc-text._deco.__describe The main task of landing page is to familiarize potential investors with ICO and to inform them about important features of the new project.
-        +cdc-text._gray._proxima._tar._md-fz10.__caption First Screen
+        +cdc-text._deco.__describe.js-sr_1 The main task of landing page is to familiarize potential investors with ICO and to inform them about important features of the new project.
+        +cdc-text._gray._proxima._tar._md-fz10.__caption.js-sr_2 First Screen
     block
 
 mixin cdc-details()
   +b.cdc-details&attributes(attributes)
     .container.container_cdc.container_cdc_small
       +e.top
-        +cdc-text._fz25.__describe Cdiamondcoin OU team has developed a hybrid solution to improve the transparency and reliability of the diamond market, as well as a solution for the cryptocurrency market, offering a stable cryptocurrency backed by diamonds.
-        +e.grid
+        +cdc-text._fz25.__describe.js-sr_1 Cdiamondcoin OU team has developed a hybrid solution to improve the transparency and reliability of the diamond market, as well as a solution for the cryptocurrency market, offering a stable cryptocurrency backed by diamonds.
+        +e.grid.js-sr_2
           +e.column
             +cdc-text._proxima.__info Landing has some tiny interactive details which allows to show token basic advantages
           +e.column.hide-md
             +cdc-text._proxima Ful HD
           +e.column
             +cdc-text._proxima._tar._md-fz10 Advantages
-        +cdc-video('assets/video/cdc-details.mp4', 'assets/images/cdc/poster-2.jpg')._white._detail.__video
+        +cdc-video('assets/video/cdc-details.mp4', 'assets/images/cdc/poster-2.jpg')._white._detail.__video.js-sr_30
       +e.bottom
         +e.phone_1
-          +e.IMG.image(src="assets/images/cdc/phone2.png")
+          +e.IMG.image.js-sr_31(src="assets/images/cdc/phone2.png")
         +e.phone_2
-          +e.IMG.image(src="assets/images/cdc/phone1.png")
-          +cdc-text._proxima._md-fz10.__caption
+          +e.IMG.image.js-sr_32(src="assets/images/cdc/phone1.png")
+          +cdc-text._proxima._md-fz10.__caption.js-sr_2
             span.hide-md Mobile
             span 640
 
@@ -77,30 +77,30 @@ mixin cdc-design()
   +b.cdc-design&attributes(attributes)
     +e.head
       .container.container_cdc.container_cdc_small
-        +cdc-text._md-fz10._proxima._deco._deco_bottom.__text Smart Contract <br> Sertificate
-        +cdc-text._md-fz10._proxima.__text The important details are presented in an understandable and clear manner.
-    +e.describe
+        +cdc-text._md-fz10._proxima._deco._deco_bottom.__text.js-sr_1 Smart Contract <br> Sertificate
+        +cdc-text._md-fz10._proxima.__text.js-sr_3 The important details are presented in an understandable and clear manner.
+    +e.describe.js-sr_1
       .container.container_cdc.container_cdc_small
         +cdc-text._fz25 We created not only a graphic layout, but also animated it so that each element of the page was dynamic and impressive.
         +cdc-text._gray._proxima._tar.hide-md After Effects
-    +e.media
+    +e.media.js-sr_2
       .container.container_cdc
         +cdc-video('assets/video/cdc-landing.mp4', 'assets/images/cdc/poster-3.jpg')._design.__video
     +e.colors
       .container.container_cdc.container_cdc_small
-        +e.colors-desc
+        +e.colors-desc.js-sr_3
           +cdc-text._gray._proxima._md-fz10 Color Scheme
       .container.container_cdc
         +e.grid
-          +e.block._full._gradient
+          +e.block._full._gradient.js-sr_30
             +cdc-text._md-fz7.__block-describe
               +e.desc-title Basic Gradient
               +e.desc-text Rose <svg class="cdc-design__arrow"><use xlink:href="assets/images/icon.svg#icon_arrow-long2"></svg> Ironstone
-          +e.block_half._dark
+          +e.block_half._dark.js-sr_31
             +cdc-text._md-fz7.__block-describe
               +e.desc-title Text and dark elements
               +e.desc-text Black Russian
-          +e.block_half._light
+          +e.block_half._light.js-sr_32
             +cdc-text._md-fz7.__block-describe
               +e.desc-title Text and buttons
               +e.desc-text White Smoke
@@ -110,14 +110,14 @@ mixin cdc-roadmap()
   +b.cdc-roadmap&attributes(attributes)
     .container.container_cdc
       +e.grid
-        +cdc-title('h3').__head
+        +cdc-title('h3').__head.js-sr_1
           p Sounds
           p like a plan
-        +cdc-text._proxima._tar._md-fz10.__describe Interactive roadmap
-        +e.device_tablet
+        +cdc-text._proxima._tar._md-fz10.__describe.js-sr_6 Interactive roadmap
+        +e.device_tablet.js-sr_30
           +e.IMG.image(src="assets/images/cdc/tablet-line.png")
           +cdc-text._md-fz10._gray.__caption 1024 Tablet
-        +e.device_mobile
+        +e.device_mobile.js-sr_31
           +cdc-text._md-fz7._gray.__caption 640 Mobile
           +e.IMG.image(src="assets/images/cdc/phone3.png")
     block
@@ -126,22 +126,22 @@ mixin cdc-documentation()
   +b.cdc-documentation&attributes(attributes)
     .container.container_cdc
       +e.grid
-        +e.bg
+        +e.bg.js-sr_10
           +e.IMG.bg-image(src="assets/images/cdc/pages.png")
         +e.describe
-          +cdc-text._fz25.__text Every ICO has it’s own whitepaper. We have created simple yet stylish document with all the important information about the project
-          +cdc-title.__title Whitepaper
-          +cdc-text._md-fz10._gray.__subtitle Testimonial
+          +cdc-text._fz25.__text.js-sr_1 Every ICO has it’s own whitepaper. We have created simple yet stylish document with all the important information about the project
+          +cdc-title.__title.js-sr_2 Whitepaper
+          +cdc-text._md-fz10._gray.__subtitle.js-sr_3 Testimonial
           +cdc-qoute.__quote
     block
 
 mixin cdc-qoute()
   +b.cdc-quote&attributes(attributes)
-    +e.describe Throughout the project, BSagency has been paying due attention to our needs and we have been pleasantly surprised by the timing of the work and the excellent, creative approach that has permeated the entire project process. Thank you for the excellent design!
+    +e.describe.js-sr_3 Throughout the project, BSagency has been paying due attention to our needs and we have been pleasantly surprised by the timing of the work and the excellent, creative approach that has permeated the entire project process. Thank you for the excellent design!
     +e.author
-      +e.avatar
+      +e.avatar.js-sr_17
         +e.IMG.image(src="assets/images/cdc/ava.jpg")
-      +e.info
+      +e.info.js-sr_32
         +e.name Igor Nikitin
         +e.position cdiamondcoin CEO
     block
