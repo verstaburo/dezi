@@ -39,7 +39,7 @@ mixin cdc-lead()
           p ICO Landing page and whitepaper
           p
             a(href="https://www.cdiamondcoin.com" target="_blank") cdiamondcoin.com
-        +cdc-title('h1').__title Certified Diamond Coin <span>ICO&nbsp;landing page</span>
+        +cdc-title('h1')._md-small.__title Certified Diamond Coin <span>ICO&nbsp;landing page</span>
     +e.middle
       +e.video-wrapper
         +cdc-video('assets/video/cdc-lead.mp4', 'assets/images/cdc/poster-1.jpg', true)._tablet.__video
@@ -115,7 +115,7 @@ mixin cdc-roadmap()
           p like a plan
         +cdc-text._proxima._tar._md-fz10.__describe Interactive roadmap
         +e.device_tablet
-          +e.IMG.image(src="assets/images/cdc/tablet-line.jpg")
+          +e.IMG.image(src="assets/images/cdc/tablet-line.png")
           +cdc-text._md-fz10._gray.__caption 1024 Tablet
         +e.device_mobile
           +cdc-text._md-fz7._gray.__caption 640 Mobile
@@ -126,7 +126,8 @@ mixin cdc-documentation()
   +b.cdc-documentation&attributes(attributes)
     .container.container_cdc
       +e.grid
-        +e.IMG.bg(src="assets/images/cdc/pages.png")
+        +e.bg
+          +e.IMG.bg-image(src="assets/images/cdc/pages.png")
         +e.describe
           +cdc-text._fz25.__text Every ICO has it’s own whitepaper. We have created simple yet stylish document with all the important information about the project
           +cdc-title.__title Whitepaper

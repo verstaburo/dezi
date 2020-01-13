@@ -2,4 +2,71 @@
   display: block;
   width: 100%;
   $b: &;
+
+  &__describe {
+    display: block;
+    width: 100%;
+    font-weight: 400;
+    line-height: 1.55;
+
+    @include rule(font-size, (xxl: $fz-text, xl: $fz-text, lg: $fz-text, md: $fz-md-text));
+    @include rule(max-width, (xxl: 625, xl: 625, lg: 440));
+
+    @include screen('md') {
+      line-height: 1.4;
+      max-width: none;
+    }
+  }
+
+  &__author {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    &:not(:first-child) {
+      @include rule(margin-top, (xxl: 46, xl: 74, lg: 46, md: 24));
+    }
+  }
+
+  &__avatar {
+    position: relative;
+    display: block;
+    border-radius: 50%;
+    overflow: hidden;
+
+    @include rule(min-width, (xxl: 116, xl: 116, lg: 119, md: 56));
+    @include rule(width, (xxl: 116, xl: 116, lg: 119, md: 56));
+    @include rule(height, (xxl: 116, xl: 116, lg: 119, md: 56));
+
+    &:not(:last-child) {
+      @include rule(margin-right, (xxl: 27, xl: 27, lg: 27, md: 13));
+    }
+  }
+
+  &__image {
+    display: block;
+    line-height: 0;
+    font-size: 0;
+
+    @include fill-img;
+  }
+
+  &__info {
+    display: block;
+    flex: 1;
+    font-weight: 400;
+    line-height: 2.5;
+
+    @include rule(font-size, (xxl: $fz-text, xl: $fz-text, lg: $fz-text, md: $fz-md-text));
+
+    @include screen('md') {
+      line-height: 1.6;
+    }
+  }
+
+  &__position {
+    line-height: 1;
+
+    @include rule(font-size, (xxl: $fz16, xl: $fz16, lg: $fz16, md: $fz10));
+  }
 }

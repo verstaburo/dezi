@@ -5,9 +5,18 @@
   font-weight: 400;
   $b: &;
 
-  @include rule(font-size, (xxl: 155, xl: 122, lg: 87, md: 30));
+  @include rule(font-size, (xxl: 155, xl: 122, lg: 87, md: 42));
 
-  @include screen('md') {
-    line-height: .9;
+  p {
+    display: inline-block;
+    white-space: nowrap;
+  }
+
+  &_md-small {
+    @include rule(font-size, (xxl: 155, xl: 122, lg: 87, md: 30));
+
+    @include screen('md') {
+      line-height: .9;
+    }
   }
 }

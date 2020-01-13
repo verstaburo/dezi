@@ -2,4 +2,89 @@
   display: block;
   width: 100%;
   $b: &;
+
+  @include rule(margin-top, (xxl: 256, xl: 180, lg: 120, md: 82));
+
+  &__grid {
+    @include display-grid;
+    @include grid-template-columns(46.875% 53.125%);
+    @include grid-template-rows(auto);
+
+    @include screen('xl') {
+      @include grid-template-columns(45.7% 54.3%);
+    }
+
+    @include screen('lg') {
+      @include grid-template-columns(43.7% 56.3%);
+    }
+
+    @include screen('md') {
+      @include grid-template-columns(100%);
+      @include grid-template-rows(97.9vw auto);
+    }
+  }
+
+  &__bg {
+    position: relative;
+    display: block;
+
+    &-image {
+      position: absolute;
+      display: block;
+      font-size: 0;
+      line-height: 0;
+
+      @include rule(width, (xxl: 1476, xl: 1259, lg: 802, md: 394));
+      @include rule(top, (xxl: -430, xl: -186, lg: -168, md: 0));
+      @include rule(right, (xxl: 57, xl: 70, lg: 55, md: 56));
+    }
+  }
+
+  &__describe {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  &__title {
+    @include screen('md') {
+      order: 0;
+    }
+
+    &:not(:first-child) {
+      @include rule(margin-top, (xxl: 125, xl: 100, lg: 105, md: 0));
+    }
+  }
+
+  &__text {
+    @include rule(max-width, (xxl: 545, xl: 545, lg: 456));
+
+    @include screen('md') {
+      order: 1;
+      margin-top: 13.75vw;
+      max-width: none;
+    }
+  }
+
+  &__subtitle {
+    @include screen('md') {
+      order: 2;
+    }
+
+    &:not(:first-child) {
+      @include rule(margin-top, (xxl: 213, xl: 298, lg: 166, md: 109));
+    }
+  }
+
+  &__quote {
+    @include screen('md') {
+      order: 3;
+    }
+
+    &:not(:first-child) {
+      @include rule(margin-top, (xxl: 70, xl: 89, lg: 84, md: 37));
+    }
+  }
 }

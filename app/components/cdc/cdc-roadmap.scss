@@ -25,12 +25,19 @@
       @include grid-row(3, 4);
       @include grid-column(2, 3);
     }
+
+    @include rule(padding-top, (md: 41));
   }
 
   &__describe {
+    box-sizing: border-box;
+
     @include grid-row(1, 2);
     @include grid-column(2, 3);
     @include grid-align-self(center);
+    @include rule(padding-right, (xxl: 254, xl: 214, lg: 0));
+    @include rule(padding-bottom, (xxl: 64, xl: 0, lg: 0, md: 0));
+    @include rule(padding-top, (xl: 35, lg: 28, md: 0));
 
     @include screen('lg') {
       @include grid-align-self(start);
@@ -43,6 +50,8 @@
   }
 
   &__device {
+    position: relative;
+    box-sizing: border-box;
 
     &_tablet {
       @include grid-row(2, 3);
@@ -56,6 +65,75 @@
       @include screen('md') {
         @include grid-row(3, 4);
         @include grid-column(1, 2);
+      }
+
+      @include rule(left, (xxl: 594, xl: 418, lg: 310, md: 0));
+      @include rule(margin-top, (xxl: -494, xl: -425, lg: -312, md: 5));
+    }
+  }
+
+  &__image {
+    display: block;
+    font-size: 0;
+    line-height: 0;
+
+    #{$b}__device_tablet & {
+      @include rule(width, (xxl: 2347, xl: 1894, lg: 1325, md: 439));
+      @include rule(margin-left, (xxl: -994, xl: -927, lg: -626, md: -162));
+      @include rule(margin-top, (xxl: -49, xl: -28, lg: -9, md: 37));
+    }
+
+    #{$b}__device_mobile & {
+      box-shadow: -1.3vw 1.9vw 2.8vw rgba(0, 0, 0, .35);
+      border-radius: 7.6% / 3.8%;
+
+      @include rule(width, (xxl: 398, xl: 320, lg: 224, md: 108));
+
+      @include screen('xl') {
+        box-shadow: -1.8vw 2.7vw 3.9vw rgba(0, 0, 0, .35);
+      }
+
+      @include screen('lg') {
+        box-shadow: -2.5vw 3.7vw 5.4vw rgba(0, 0, 0, .35);
+      }
+
+      @include screen('md') {
+        box-shadow: -3.9vw 5.8vw 8.4vw rgba(0, 0, 0, .35);
+      }
+    }
+  }
+
+  &__caption {
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 100%;
+
+    @include screen('md') {
+      position: absolute;
+      width: auto;
+    }
+
+    #{$b}__device_tablet & {
+      @include rule(padding-left, (xxl: 268, xl: 94, lg: 84, md: 0));
+      @include rule(margin-top, (xxl: -6, xl: 9, lg: -3, md: 0));
+
+      @include screen('md') {
+        top: 12.2vw;
+        left: 0;
+      }
+    }
+
+    #{$b}__device_mobile & {
+      box-sizing: border-box;
+
+      @include rule(margin-bottom, (xxl: 52, xl: 47, lg: 47, md: 0));
+      @include rule(padding-left, (xl: 88, lg: 0));
+
+      @include screen('md') {
+        top: 0;
+        left: 100%;
       }
     }
   }
