@@ -77,30 +77,31 @@ mixin cdc-design()
   +b.cdc-design&attributes(attributes)
     +e.head
       .container.container_cdc.container_cdc_small
-        +cdc-text._md-fz10._proxima._deco._deco_bottom Smart Contract Sertificate
-        +cdc-text._md-fz10._proxima The important details are presented in an understandable and clear manner.
+        +cdc-text._md-fz10._proxima._deco._deco_bottom.__text Smart Contract <br> Sertificate
+        +cdc-text._md-fz10._proxima.__text The important details are presented in an understandable and clear manner.
     +e.describe
       .container.container_cdc.container_cdc_small
         +cdc-text._fz25 We created not only a graphic layout, but also animated it so that each element of the page was dynamic and impressive.
         +cdc-text._gray._proxima._tar.hide-md After Effects
     +e.media
       .container.container_cdc
-        +cdc-video('assets/video/cdc-landing.mp4', 'assets/images/cdc/poster-3.jpg').__video
+        +cdc-video('assets/video/cdc-landing.mp4', 'assets/images/cdc/poster-3.jpg')._design.__video
     +e.colors
       .container.container_cdc.container_cdc_small
-        +cdc-text._gray._proxima._tar Color Scheme
+        +e.colors-desc
+          +cdc-text._gray._proxima._md-fz10 Color Scheme
       .container.container_cdc
         +e.grid
           +e.block._full._gradient
-            +cdc-text._md-fz7.__describe
+            +cdc-text._md-fz7.__block-describe
               +e.desc-title Basic Gradient
-              +e.desc-text Rose <svg class="cdc-design__arrow"><use xlink:href="assets/images/icon.svg#icon_arrow-long"></svg> Ironstone
+              +e.desc-text Rose <svg class="cdc-design__arrow"><use xlink:href="assets/images/icon.svg#icon_arrow-long2"></svg> Ironstone
           +e.block_half._dark
-            +cdc-text._md-fz7.__describe
+            +cdc-text._md-fz7.__block-describe
               +e.desc-title Text and dark elements
               +e.desc-text Black Russian
           +e.block_half._light
-            +cdc-text._md-fz7.__describe
+            +cdc-text._md-fz7.__block-describe
               +e.desc-title Text and buttons
               +e.desc-text White Smoke
     block
@@ -112,7 +113,7 @@ mixin cdc-roadmap()
         +cdc-title('h3').__head
           p Sounds
           p like a plan
-        +cdc-text._proxima._tar.__describe Interactive roadmap
+        +cdc-text._proxima._tar._md-fz10.__describe Interactive roadmap
         +e.device_tablet
           +e.IMG.image(src="assets/images/cdc/tablet-line.jpg")
           +cdc-text._md-fz10._gray.__caption 1024 Tablet

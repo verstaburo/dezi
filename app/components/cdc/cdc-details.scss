@@ -117,15 +117,15 @@
   &__phone {
     display: block;
 
-    @include rule(width, (xxl: 394, xl: 300, lg: 307, md: 122));
-    @include rule(margin-bottom, (xxl: -736, xl: -540, lg: -512, md: -190));
+    @include rule(width, (xxl: 398, xl: 300, lg: 307, md: 122));
+    @include rule(margin-bottom, (xxl: -734, xl: -540, lg: -512, md: -190));
 
     &_1 {
-      @include rule(margin-right, (xxl: 136, xl: 87, lg: 70, md: 20));
+      @include rule(margin-right, (xxl: 132, xl: 87, lg: 70, md: 20));
     }
 
     &_2 {
-      @include rule(margin-right, (xxl: -152, xl: 0));
+      @include rule(margin-right, (xxl: -154, xl: 0));
 
       transform: translateY(-23.17vw);
 

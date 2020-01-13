@@ -46,7 +46,7 @@
     &_bottom {
       padding-top: 0;
 
-      @include rule(padding-bottom, (xxl: 66, xl: 66, lg: 66, md: 32));
+      @include rule(padding-bottom, (xxl: 54, xl: 54, lg: 55, md: 20));
 
       &::before {
         top: auto;
