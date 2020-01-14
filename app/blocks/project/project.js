@@ -28,19 +28,10 @@ export default function bgvideo() {
             $(el).removeClass('is-play');
           }
         }
-      } else if (container.length > 0 && $(el)[0].readyState !== 4) {
-        if (wW >= breakpoints.md) {
-          $(container).addClass('is-loading');
-        } else if ($(el).hasClass('is-play')) {
-          $(container).addClass('is-loading');
-        }
-      } else if (container.length > 0 && $(el)[0].readyState === 4) {
-        if (wW >= breakpoints.md) {
-          $(container).removeClass('is-loading').addClass('is-loaded');
-        } else if ($(el).hasClass('is-play')) {
-          $(container).removeClass('is-loading').addClass('is-loaded');
-          $(el)[0].play();
-        }
+      } else if (container.length > 0 && $(el)[0].readyState !== 4 && wW >= breakpoints.md) {
+        $(container).addClass('is-loading');
+      } else if (container.length > 0 && $(el)[0].readyState === 4 && wW >= breakpoints.md) {
+        $(container).removeClass('is-loading').addClass('is-loaded');
       }
     });
   }
@@ -65,16 +56,28 @@ export default function bgvideo() {
       if ($(video).hasClass('is-play')) {
         $(video).removeClass('is-play');
         video.pause();
-      } else if ($(video)[0].readyState !== 4) {
-        $(container).addClass('is-loading');
-        // video.play();
-        $(video).addClass('is-play');
       } else {
-        $(container).removeClass('is-loading').addClass('is-loaded');
         video.play();
         $(video).addClass('is-play');
+        if ($(video)[0].readyState !== 4) {
+          $(container).addClass('is-loading');
+        } else {
+          $(container).removeClass('is-loading').addClass('is-loaded');
+        }
       }
     }
+  });
+
+  $('.js-video').on('waiting', (evt) => {
+    const video = evt.currentTarget;
+    const container = $(video).closest('[data-video-container]');
+    $(container).removeClass('is-loaded').addClass('is-loading');
+  });
+
+  $('.js-video').on('playing', (evt) => {
+    const video = evt.currentTarget;
+    const container = $(video).closest('[data-video-container]');
+    $(container).addClass('is-loaded').removeClass('is-loading');
   });
 
   $(window).on('resize', videoActivation);
