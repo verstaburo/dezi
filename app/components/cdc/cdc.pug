@@ -15,24 +15,32 @@ mixin cdc-text(tag)
   +b(tag || 'div').cdc-text&attributes(attributes)
     block
 
-mixin cdc-video(video, poster, tablet)
+mixin cdc-video(video, poster, tablet, bg)
   +b.cdc-video&attributes(attributes)
     if tablet
-      +e.media
-        +e.VIDEO.video.js-video(src=video loop="loop" muted="muted" preload="metadata" playsinline="playsinline" poster=poster)
+      +e.media(data-video-container)
+        +e.VIDEO.video.js-video(src=video loop="loop" muted="muted" preload="auto" playsinline="playsinline" poster=poster)
           source(src=video type="media/mp4")
+        +e.play
+        +e.preloader
       +e.border
         +e.IMG.image(src="assets/images/cdc/tablet-border.png")
-    else
+    else if bg
       +e.media
-        +e.VIDEO.video.js-video(src=video loop="loop" muted="muted" preload="metadata" playsinline="playsinline" poster=poster)
+        +e.VIDEO.video.js-video(src=video loop="loop" muted="muted" preload="auto" playsinline="playsinline" poster=poster)
           source(src=video type="media/mp4")
+    else
+      +e.media(data-video-container)
+        +e.VIDEO.video.js-video(src=video loop="loop" muted="muted" preload="auto" playsinline="playsinline" poster=poster)
+          source(src=video type="media/mp4")
+        +e.play
+        +e.preloader
     block
 
 mixin cdc-lead()
   +b.cdc-lead&attributes(attributes)
     +e.bg.js-sr_21
-      +cdc-video('assets/video/cdc-bg.mp4', 'assets/images/cdc/poster-bg.jpg').__bg-video
+      +cdc-video('assets/video/cdc-bg.mp4', 'assets/images/cdc/poster-bg.jpg', false, true).__bg-video
     +e.top
       .container.container_cdc.container_cdc_small
         +cdc-text._proxima._fz19.__head.js-sr_10
@@ -61,12 +69,12 @@ mixin cdc-details()
             +cdc-text._proxima Ful HD
           +e.column
             +cdc-text._proxima._tar._md-fz10 Advantages
-        +cdc-video('assets/video/cdc-details.mp4', 'assets/images/cdc/poster-2.jpg')._white._detail.__video.js-sr_30
+        +cdc-video('assets/video/cdc-details.mp4', 'assets/images/cdc/poster-2.jpg')._white._detail.__video.js-sr_21
       +e.bottom
         +e.phone_1
-          +e.IMG.image.js-sr_31(src="assets/images/cdc/phone2.png")
+          +e.IMG.image.js-sr_21(src="assets/images/cdc/phone2.png")
         +e.phone_2
-          +e.IMG.image.js-sr_32(src="assets/images/cdc/phone1.png")
+          +e.IMG.image.js-sr_21(src="assets/images/cdc/phone1.png")
           +cdc-text._proxima._md-fz10.__caption.js-sr_2
             span.hide-md Mobile
             span 640
@@ -83,7 +91,7 @@ mixin cdc-design()
       .container.container_cdc.container_cdc_small
         +cdc-text._fz25 We created not only a graphic layout, but also animated it so that each element of the page was dynamic and impressive.
         +cdc-text._gray._proxima._tar.hide-md After Effects
-    +e.media.js-sr_14
+    +e.media.js-sr_21
       .container.container_cdc
         +cdc-video('assets/video/cdc-landing.mp4', 'assets/images/cdc/poster-3.jpg')._design.__video
     +e.colors
@@ -91,16 +99,16 @@ mixin cdc-design()
         +e.colors-desc.js-sr_3
           +cdc-text._gray._proxima._md-fz10 Color Scheme
       .container.container_cdc
-        +e.grid
-          +e.block._full._gradient.js-sr_30
+        +e.grid.js-sr_4
+          +e.block._full._gradient
             +cdc-text._md-fz7.__block-describe
               +e.desc-title Basic Gradient
               +e.desc-text Rose <svg class="cdc-design__arrow"><use xlink:href="assets/images/icon.svg#icon_arrow-long2"></svg> Ironstone
-          +e.block_half._dark.js-sr_31
+          +e.block_half._dark
             +cdc-text._md-fz7.__block-describe
               +e.desc-title Text and dark elements
               +e.desc-text Black Russian
-          +e.block_half._light.js-sr_32
+          +e.block_half._light
             +cdc-text._md-fz7.__block-describe
               +e.desc-title Text and buttons
               +e.desc-text White Smoke
@@ -117,7 +125,7 @@ mixin cdc-roadmap()
         +e.device_tablet.js-sr_30
           +e.IMG.image(src="assets/images/cdc/tablet-line.png")
           +cdc-text._md-fz10._gray.__caption 1024 Tablet
-        +e.device_mobile.js-sr_31
+        +e.device_mobile.js-sr_21
           +cdc-text._md-fz7._gray.__caption 640 Mobile
           +e.IMG.image(src="assets/images/cdc/phone3.png")
     block

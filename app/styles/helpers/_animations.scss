@@ -550,6 +550,17 @@ $animationScale: .9;
   }
 }
 
+@keyframes preloadRotation {
+
+  0% {
+    transform: translate3d(-50%, -50%, 0) rotate(0);
+  }
+
+  100% {
+    transform: translate3d(-50%, -50%, 0) rotate(360deg);
+  }
+}
+
 @keyframes autofill {
   to {
     background: transparent;
