@@ -9,7 +9,7 @@ export default function bgvideo() {
     const wH = $(window).height();
     $('.js-video').each((i, el) => {
       const container = $(el).closest('[data-video-container]');
-      if (container.length === 0 || $(container).hasClass('is-loaded')) {
+      if (container.length === 0 || ($(container).hasClass('is-loaded') && wW >= breakpoints.md)) {
         if (wW < breakpoints.md) {
           $(el).removeAttr('autoplay');
           $(el)[0].pause();
@@ -29,22 +29,23 @@ export default function bgvideo() {
           }
         }
       } else if (container.length > 0 && $(el)[0].readyState !== 4) {
-        $(container).addClass('is-loading');
+        if (wW >= breakpoints.md) {
+          $(container).addClass('is-loading');
+        } else if ($(el).hasClass('is-play')) {
+          $(container).addClass('is-loading');
+        }
       } else if (container.length > 0 && $(el)[0].readyState === 4) {
-        $(container).removeClass('is-loading').addClass('is-loaded');
+        if (wW >= breakpoints.md) {
+          $(container).removeClass('is-loading').addClass('is-loaded');
+        } else if ($(el).hasClass('is-play')) {
+          $(container).removeClass('is-loading').addClass('is-loaded');
+          $(el)[0].play();
+        }
       }
     });
   }
 
   videoActivation();
-
-  // $('.js-video').on('loadstart, progress', (evt) => {
-  //   const self = evt.currentTarget;
-  //   const wrapper = $(self).closest('[data-video-container]');
-  //   if (wrapper.length > 0) {
-  //     $(wrapper).addClass('is-loading');
-  //   }
-  // });
 
   $('.js-video').on('canplaythrough', (evt) => {
     const self = evt.currentTarget;
@@ -59,11 +60,17 @@ export default function bgvideo() {
   $(document).on('click', '.js-video', (evt) => {
     const video = evt.currentTarget;
     const wW = $(window).width();
+    const container = $(video).closest('[data-video-container]');
     if (wW < breakpoints.md) {
       if ($(video).hasClass('is-play')) {
         $(video).removeClass('is-play');
         video.pause();
+      } else if ($(video)[0].readyState !== 4) {
+        $(container).addClass('is-loading');
+        // video.play();
+        $(video).addClass('is-play');
       } else {
+        $(container).removeClass('is-loading').addClass('is-loaded');
         video.play();
         $(video).addClass('is-play');
       }
