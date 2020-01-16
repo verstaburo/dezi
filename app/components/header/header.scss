@@ -202,6 +202,16 @@
     //   height: 20px;
     // }
 
+    &::before {
+      @include pseudo;
+      @include rule(width, (xxl: 60, xl: 60, lg: 60, md: 60));
+      @include rule(height, (xxl: 60, xl: 60, lg: 60, md: 50));
+
+      top: 50%;
+      left: 0;
+      transform: translate3d(0, -50%, 0);
+    }
+
     &:hover {
       opacity: .6;
     }
@@ -377,7 +387,7 @@
     }
 
     @include rule(width, (md: 15));
-    @include rule(height, (md: 15));
+    @include rule(height, (md: 18));
   }
 
   &_light {

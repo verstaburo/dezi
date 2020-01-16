@@ -10,7 +10,7 @@
 
     &:not(:last-child) {
       // margin-bottom: 27px;
-      @include rule(margin-bottom, (xxl: 27, xl: 27, lg: 27, md: 14));
+      @include rule(margin-bottom, (xxl: 27, xl: 27, lg: 27, md: 11));
     }
   }
 
