@@ -26,6 +26,7 @@
 
     @include screen('md') {
       height: 100%;
+      background-color: $color-titles;
     }
   }
 
@@ -34,6 +35,10 @@
     &::before {
       background-color: $color-black;
       transform: scaleY(1);
+
+      @include screen('md') {
+        background-color: $color-titles;
+      }
     }
   }
 
@@ -72,7 +77,28 @@
     @include rule(padding-bottom, (xxl: 45, xl: 45, lg: 45, md: 45));
 
     @include screen('md') {
-      display: none;
+      pointer-events: none;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity $ease-main;
+      // display: none;
+    }
+
+    #{$b}.is-open & {
+      @include screen('md') {
+        visibility: visible;
+        pointer-events: auto;
+        color: $color-basic;
+        opacity: 1;
+      }
+    }
+
+    #{$b}__wrapper {
+      @include screen('md') {
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-start;
+      }
     }
   }
 
@@ -100,12 +126,13 @@
     }
 
     @include screen('md') {
-      transform: translate3d(-3.125vw, 0, 0);
+      transform: translate3d(0, 0, 0);
+      order: 2;
     }
 
     #{$b}.is-open & {
       // padding-top: 20px;
-      @include rule(padding-top, (xxl: 20, xl: 20, lg: 20, md: 20));
+      @include rule(padding-top, (xxl: 20, xl: 20, lg: 20, md: 45));
     }
   }
 
@@ -130,13 +157,9 @@
     width: 100%;
     box-sizing: border-box;
     padding: 0;
-    // padding: 0 46px;
+
     @include rule(padding-left, (xxl: 46, xl: 46, lg: 46, md: 25));
     @include rule(padding-right, (xxl: 46, xl: 46, lg: 46, md: 25));
-
-    // @include screen('md') {
-    //   padding: 0 25px;
-    // }
   }
 
   &__logo {
@@ -155,6 +178,10 @@
     // margin-bottom: 34px;
 
     @include rule(margin-bottom, (xxl: 34, xl: 34, lg: 34, md: 34));
+
+    @include screen('md') {
+      display: none;
+    }
   }
 
   &__burger {
@@ -212,10 +239,6 @@
 
         @include rule(width, (xxl: 4, xl: 4, lg: 4, md: 3));
 
-        // @include screen('md') {
-        //   width: 3px;
-        // }
-
         #{$b}.is-open & {
           background-color: $color-basic;
         }
@@ -224,16 +247,10 @@
       &::before {
         transform-origin: 100% 0 0;
         right: 0;
-        // height: 38px;
 
         @include rule(height, (xxl: 38, xl: 38, lg: 38, md: 27));
 
-        // @include screen('md') {
-        //   height: 27px;
-        // }
-
         #{$b}.is-open & {
-          // right: -7px;
           transform: translate3d(.36vw, 0, 0) rotate(45deg);
 
           @include screen('xl') {
@@ -258,15 +275,8 @@
         @include rule(height, (xxl: 25, xl: 25, lg: 25, md: 17));
         @include rule(right, (xxl: 12, xl: 12, lg: 12, md: 8));
 
-        // @include screen('md') {
-        //   right: 8px;
-        //   height: 17px;
-        // }
-
         #{$b}.is-open & {
           transform: translate3d(-.36vw, 0, 0) rotate(-45deg);
-          // right: 19px;
-          // height: 38px;
           @include rule(height, (xxl: 38, xl: 38, lg: 38, md: 27));
 
           @include screen('xl') {
@@ -280,12 +290,6 @@
           @include screen('md') {
             transform: translate3d(-1.56vw, 0, 0) rotate(-45deg);
           }
-
-          // @include screen('md') {
-          //   transform: translate3d(-5px, 0, 0) rotate(-45deg);
-          //   // right: 12px;
-          //   // height: 27px;
-          // }
         }
       }
     }
@@ -307,14 +311,13 @@
     padding: 0;
 
     @include rule(height, (xxl: 124, xl: 124, lg: 124));
-    @include rule(padding-top, (md: 80));
-    @include rule(padding-bottom, (md: 80));
 
     @include screen('md') {
       // padding-top: 80px;
       // padding-bottom: 80px;
       height: 100%;
       max-height: 100%;
+      overflow: auto;
     }
 
     #{$b}.is-open & {
@@ -326,13 +329,24 @@
 
     .container {
       display: flex;
+      box-sizing: border-box;
+
+      @include rule(padding-top, (md: 80));
+      @include rule(padding-bottom, (md: 32));
+
+      @include screen('md') {
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+        overflow: auto;
+      }
     }
   }
 
   &__languages {
     box-sizing: border-box;
     // padding-top: 18px;
-    @include rule(padding-top, (xxl: 18, xl: 18, lg: 18, md: 18));
+    @include rule(padding-top, (xxl: 18, xl: 18, lg: 18, md: 25));
 
     .link {
       color: currentColor;
@@ -340,7 +354,7 @@
 
     &:not(:last-child) {
       // margin-bottom: 74px;
-      @include rule(margin-bottom, (xxl: 74, xl: 74, lg: 74, md: 74));
+      @include rule(margin-bottom, (xxl: 74, xl: 74, lg: 74, md: 0));
     }
   }
 
@@ -349,8 +363,21 @@
     color: currentColor;
   }
 
+  &__socials {
+    @include screen('md') {
+      text-align: right;
+    }
+  }
+
   .social {
     color: currentColor;
+
+    @include screen('md') {
+      display: inline-block;
+    }
+
+    @include rule(width, (md: 15));
+    @include rule(height, (md: 15));
   }
 
   &_light {

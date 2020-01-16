@@ -4,9 +4,13 @@
   display: block;
 
   &__item {
+    @include screen('md') {
+      text-align: right;
+    }
+
     &:not(:last-child) {
       // margin-bottom: 27px;
-      @include rule(margin-bottom, (xxl: 27, xl: 27, lg: 27, md: 27));
+      @include rule(margin-bottom, (xxl: 27, xl: 27, lg: 27, md: 14));
     }
   }
 
@@ -28,9 +32,15 @@
     }
 
     #{$b} {
+
       &__item {
         margin-top: 19px;
+
         @include rule(magin-top, (xxl: 19, xl: 19, lg: 19, md: 19));
+
+        @include screen('md') {
+          text-align: left;
+        }
 
         &:not(:last-child) {
           // margin-right: 30px;

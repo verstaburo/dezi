@@ -8,6 +8,10 @@
 
   @include rule(margin-right, (xxl: -12, xl: -12, lg: -12, md: -12));
 
+  @include screen('md') {
+    display: none;
+  }
+
   &__item {
     display: inline-block;
 

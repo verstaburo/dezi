@@ -6,12 +6,16 @@
   width: 100%;
   $b: &;
 
+  @include screen('md') {
+    align-items: flex-end;
+  }
+
   &__item {
     display: inline-block;
 
     &:not(:last-child) {
       // margin-bottom: 38px;
-      @include rule(margin-bottom, (xxl: 38, xl: 38, lg: 38, md: 38));
+      @include rule(margin-bottom, (xxl: 38, xl: 38, lg: 38, md: 20));
     }
   }
 
@@ -22,6 +26,12 @@
     letter-spacing: $ls-header;
     font-weight: 700;
 
-    @include rule(font-size, (xxl: $fz12, xl: $fz12, lg: $fz12, md: $fz12));
+    @include rule(font-size, (xxl: $fz12, xl: $fz12, lg: $fz12, md: $fz13));
+  }
+
+  .link {
+    @include screen('md') {
+      letter-spacing: -$ls-main;
+    }
   }
 }
