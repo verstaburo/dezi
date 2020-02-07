@@ -8,6 +8,10 @@
   --mpb: calc(var(--vh, 1vh) * 45.6);
   --mptland: calc(var(--vh, 1vh) * 31.25);
   --mpbland: calc(var(--vh, 1vh) * 15.625);
+  --scale: calc((var(--vh, 1vh) * 100) / 1920);
+  --scalexl: calc((var(--vh, 1vh) * 100) / 1366);
+  --scalelg: calc((var(--vh, 1vh) * 100) / 1024);
+  --scalemd: calc((var(--vh, 1vh) * 100) / 320);
 }
 
 /* ##########

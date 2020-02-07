@@ -1,0 +1,16 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = 'Dezi | Тест'
+
+block header
+  - var headerData = getData('headerMain.json')
+  - var headerMain = true
+
+block content
+  +b.MAIN.page
+    +user-trap
+
+block scriptsbefore
+  script(src='assets/scripts/libs/blotter.min.js')
+  script(src='assets/scripts/libs/channelSplitMaterial.js')

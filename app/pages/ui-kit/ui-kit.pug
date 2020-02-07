@@ -506,6 +506,15 @@ block content
             +project({tag: '', image: 'assets/images/cases/case-1.jpg', name: 'Дизайн логотипа для отеля Redstone' })(style="background-color: #070507; color: #f2ecd9;")._dark
           +col({xxl: 6, xl: 8, lg: 12 })
             +project({tag: '', image: 'assets/images/cases/case-7.png', name: 'Сайт и каталог для девелоперского проекта Venecija', special: true })(style="background-color: #0e141a; color: #f2ecd9;")._dark
+
+    //- User-trap
+    +ui-section
+      +ui-section-head
+        h2 user-trap
+        p Блок: blocks/user-trap/user-trap
+      +user-trap
+
+
   script
     |
     | $('.ui-kit__section').each(function (i) {
@@ -520,3 +529,7 @@ block content
     |   $('.ui-kit__navigation__list').append(li);
     |   $(this).attr('id', id);
     | });
+
+block scriptsbefore
+  script(src='assets/scripts/libs/blotter.min.js')
+  script(src='assets/scripts/libs/channelSplitMaterial.js')

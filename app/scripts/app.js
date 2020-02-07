@@ -47,6 +47,7 @@ import bgvideo from '../blocks/project/project';
 import mebelesSlider from '../components/mebeles/mebeles-slider';
 import mebelesBgMove from '../components/mebeles/mebeles-bgtransit';
 import logoChangeWords from '../blocks/logo/logo';
+import UserTrap from '../blocks/user-trap/user-trap';
 
 const $ = window.$;
 
@@ -90,4 +91,5 @@ $(() => {
   mebelesSlider();
   mebelesBgMove();
   logoChangeWords();
+  UserTrap();
 });
