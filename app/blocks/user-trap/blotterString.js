@@ -114,10 +114,10 @@ export default class BlotterString {
   }
   _setInitialCenter() {
     const t = this;
-    const dW = $(t.container).width();
-    const dH = $(t.container).height();
-    const c = $(t.el).width();
-    const d = $(t.el).height();
+    const dW = $(t.el).width();
+    const dH = $(t.el).height();
+    const c = $(t.container).width();
+    const d = $(t.container).height();
     const examplePosition = $(t.el).offset();
     const exX = (examplePosition.left + (c / 2)) / dW;
     const exY = (examplePosition.top + (d / 2)) / dH;
@@ -125,35 +125,32 @@ export default class BlotterString {
   }
   _handleMousemove(evt) {
     const t = this;
-    const dW = $(t.container).width();
-    const dH = $(t.container).height();
+    const dW = $(t.el).width();
+    const dH = $(t.el).height();
     const d = evt.pageX / dW;
     const e = evt.pageY / dH;
     t._handleNewCenter(d, e);
   }
   _handleTouchMove(evt) {
     const t = this;
-    const dW = $(t.container).width();
-    const dH = $(t.container).height();
+    const dW = $(t.el).width();
+    const dH = $(t.el).height();
     const d = evt.originalEvent.touches[0].pageX / dW;
     const e = evt.originalEvent.touches[0].pageY / dH;
     t._handleNewCenter(d, e);
   }
   _handleNewCenter(x, y) {
     const t = this;
-    const e = $(t.container).width();
-    const f = $(t.container).height();
-    $.each(t.scopes, (ix, g) => {
-      const el = g;
-      const h = $(g.domElement);
-      const i = h.offset();
-      const j = (i.left + (h.width() / 2)) / e;
-      const k = (i.top + (h.height() / 2)) / f;
-      const l = a(j, k, x, y);
-      const m = Math.min(0.2, b(j, k, x, y));
-      el.material.uniforms.uRotation.value = l;
-      el.material.uniforms.uOffset.value = m;
-    });
+    const e = $(t.el).width();
+    const f = $(t.el).height();
+    const h = $(t.container);
+    const i = h.offset();
+    const j = (i.left + (h.width() / 2)) / e;
+    const k = (i.top + (h.height() / 2)) / f;
+    const l = a(j, k, x, y);
+    const m = Math.min(0.1, b(j, k, x, y));
+    t.material.uniforms.uRotation.value = l;
+    t.material.uniforms.uOffset.value = m;
   }
   update() {
     const t = this;

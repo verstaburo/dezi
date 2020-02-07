@@ -1,5 +1,7 @@
 .user-trap {
   display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100vh;
   $b: &;
@@ -7,9 +9,8 @@
   &__wrapper {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
-    width: 100%;
     transform: scale(var(--scale));
 
     @include screen('xl') {
