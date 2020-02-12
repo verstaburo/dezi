@@ -20,8 +20,8 @@ export default class BlotterString {
     this.fontSizes = {
       md: 25,
       lg: 60,
-      xl: 100,
-      xxl: 100,
+      xl: 80,
+      xxl: 120,
     };
     this.onRender = this.onRender.bind(this);
     this.getOption = this.getOption.bind(this);
@@ -47,8 +47,28 @@ export default class BlotterString {
     const t = this;
     t.blotter.on('ready', () => {
       t._setListeners();
+      const str = t.strings;
+      let fullLength = 0;
+      const strings = [0];
+      const containers = [];
+      for (let s = 0; s < str.length; s += 1) {
+        const wrap = document.createElement('div');
+        wrap.classList.add('b-string');
+        const strl = str[s].length;
+        const strLast = (fullLength + strl);
+        fullLength += strl;
+        strings.push(strLast);
+        containers.push(wrap);
+      }
       $.each(t.scopes, (i, scope) => {
-        $(t.container).append(scope.domElement);
+        for (let k = 0; k < strings.length; k += 1) {
+          if (i <= strings[k] && i >= strings[k - 1]) {
+            $(containers[k - 1]).append(scope.domElement);
+          }
+        }
+      });
+      $.each(containers, (i, wr) => {
+        $(t.container).append(wr);
       });
       t._setInitialCenter();
     });
@@ -78,9 +98,9 @@ export default class BlotterString {
     scale = wW / siteWidth;
     const finalSize = scale * fontSize;
     const option = {
-      family: '"ProximaNova", Arial, sans-serif',
+      family: '"Archivo", "ProximaNova", Arial, sans-serif',
       size: finalSize,
-      weight: 700,
+      weight: 400,
       fill: '#000000',
       paddingLeft: finalSize,
       paddingRight: finalSize,
@@ -99,6 +119,9 @@ export default class BlotterString {
     t.blotter.needsUpdate = true;
     t.scopes = $.map(t.blotterTexts, (txt) => {
       const scope = t.blotter.forText(txt);
+      if (txt.value === ' ') {
+        scope.domElement.classList.add('b-spaceword');
+      }
       return scope;
     });
     t.onRender();
@@ -106,51 +129,73 @@ export default class BlotterString {
   _blotterTexts() {
     const t = this;
     const texts = [];
+    const textParam = [];
     $(t.el).find('.user-trap__string').each((i, el) => {
-      const text = new Blotter.Text($(el).text(), t.getOption());
-      texts.push(text);
+      const str = $(el).text();
+      const strlength = str.length;
+      const words = str.split(' ');
+      const wordsCount = words.length;
+      const wordsLengths = [];
+      let spaceCoords = 0;
+      for (let w = 0; w < (wordsCount - 1); w += 1) {
+        spaceCoords += w.length;
+        wordsLengths.push(spaceCoords);
+      }
+      const strInfo = {
+        length: strlength,
+        spacesIndexes: wordsLengths,
+      };
+      for (let k = 0; k < strlength; k += 1) {
+        const text = new Blotter.Text(str[k], t.getOption());
+        texts.push(text);
+      }
+      textParam.push(strInfo);
     });
+    t.strings = textParam;
     return texts;
   }
   _setInitialCenter() {
     const t = this;
-    const dW = $(t.el).width();
-    const dH = $(t.el).height();
-    const c = $(t.container).width();
-    const d = $(t.container).height();
+    const cW = $(t.container).width();
+    const cH = $(t.container).height();
+    const eW = $(t.el).width();
+    const eH = $(t.el).height();
     const examplePosition = $(t.el).offset();
-    const exX = (examplePosition.left + (c / 2)) / dW;
-    const exY = (examplePosition.top + (d / 2)) / dH;
+    const exX = (examplePosition.left + (eW / 2)) / cW;
+    const exY = (examplePosition.top + (eH / 2)) / cH;
     t._handleNewCenter(exX, exY);
   }
   _handleMousemove(evt) {
     const t = this;
-    const dW = $(t.el).width();
-    const dH = $(t.el).height();
-    const d = evt.pageX / dW;
-    const e = evt.pageY / dH;
+    const cW = $(t.container).width();
+    const cH = $(t.container).height();
+    const d = evt.pageX / cW;
+    const e = evt.pageY / cH;
     t._handleNewCenter(d, e);
   }
   _handleTouchMove(evt) {
     const t = this;
-    const dW = $(t.el).width();
-    const dH = $(t.el).height();
-    const d = evt.originalEvent.touches[0].pageX / dW;
-    const e = evt.originalEvent.touches[0].pageY / dH;
+    const cW = $(t.container).width();
+    const cH = $(t.container).height();
+    const d = evt.originalEvent.touches[0].pageX / cW;
+    const e = evt.originalEvent.touches[0].pageY / cH;
     t._handleNewCenter(d, e);
   }
   _handleNewCenter(x, y) {
     const t = this;
-    const e = $(t.el).width();
-    const f = $(t.el).height();
-    const h = $(t.container);
-    const i = h.offset();
-    const j = (i.left + (h.width() / 2)) / e;
-    const k = (i.top + (h.height() / 2)) / f;
-    const l = a(j, k, x, y);
-    const m = Math.min(0.1, b(j, k, x, y));
-    t.material.uniforms.uRotation.value = l;
-    t.material.uniforms.uOffset.value = m;
+    const cW = $(t.container).width();
+    const cH = $(t.container).height();
+    $.each(t.scopes, (ix, g) => {
+      const scope = g;
+      const el = $(g.domElement);
+      const ePar = el.offset();
+      const eW = (ePar.left + (el.width() / 2)) / cW;
+      const eH = (ePar.top + (el.height() / 2)) / cH;
+      const l = a(eW, eH, x, y);
+      const m = Math.min(0.1, b(eW, eH, x, y));
+      scope.material.uniforms.uRotation.value = l;
+      scope.material.uniforms.uOffset.value = m;
+    });
   }
   update() {
     const t = this;
@@ -169,7 +214,8 @@ export default class BlotterString {
     });
     bt.needsUpdate = true;
     bt.start();
-    setTimeout(bt.start, 200);
+    // t._prepareBlotter();
+    // t.onRender();
   }
 }
 // /* eslint-enable */
