@@ -20,7 +20,7 @@ export default class BlotterString {
     this.fontSizes = {
       md: 24,
       lg: 60,
-      xl: 80,
+      xl: 86,
       xxl: 120,
     };
     this.onRender = this.onRender.bind(this);
@@ -98,14 +98,12 @@ export default class BlotterString {
     scale = wW / siteWidth;
     const finalSize = scale * fontSize;
     const option = {
-      family: '"Archivo", "ProximaNova", Arial Black, sans-serif',
+      family: '"Archivo", Arial Black, sans-serif',
       size: finalSize,
       weight: 400,
       fill: '#000000',
       paddingLeft: finalSize,
       paddingRight: finalSize,
-      paddingTop: (finalSize / 4),
-      paddingBottom: (finalSize / 4),
     };
     return option;
   }
@@ -194,7 +192,7 @@ export default class BlotterString {
       const eW = (ePar.left + (el.width() / 2)) / cW;
       const eH = (ePar.top + (el.height() / 2)) / cH;
       const l = a(eW, eH, x, y);
-      const m = Math.min(0.2, b(eW, eH, x, y));
+      const m = Math.min(0.11, b(eW, eH, x, y));
       scope.material.uniforms.uRotation.value = l;
       scope.material.uniforms.uOffset.value = m;
     });
