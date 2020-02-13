@@ -28,18 +28,18 @@
     // }
 
     .b-canvas {
-      @include rule(margin-left, (xxl: -240, xl: -160, lg: -120, md: -50));
+      @include rule(margin-left, (xxl: (-240 * 1.02), xl: (-160 * 1.02), lg: (-120 * 1.02), md: (-48 * 1.02)));
     }
 
     .b-spaceword {
-      @include rule(margin-left, (xxl: -180, xl: -120, lg: -90, md: -37));
+      @include rule(margin-left, (xxl: (-180 * 1.02), xl: (-120 * 1.02), lg: (-90 * 1.02), md: (-36 * 1.02)));
     }
 
     .b-string {
-      @include rule(margin-right, (xxl: -240, xl: -160, lg: -120, md: -50));
+      @include rule(margin-right, (xxl: (-240 * 1.02), xl: (-160 * 1.02), lg: (-120 * 1.02), md: (-48 * 1.02)));
 
       &:not(:first-child) {
-        @include rule(margin-top, (xxl: -60, xl: -40, lg: -30, md: -12));
+        @include rule(margin-top, (xxl: (-120 * 1.1), xl: (-80 * 1.1), lg: (-60 * 1.1), md: (-24 * 1.1)));
       }
     }
   }
