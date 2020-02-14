@@ -42,6 +42,9 @@ export default class BlotterString {
     $(document).on('mousemove', t._handleMousemove);
     $(document).on('touchmove', t._handleTouchMove);
     $(window).on('resize', t.update);
+    t.blotter.on('update', () => {
+      $(t.el).removeClass('is-loading');
+    });
   }
   onRender() {
     const t = this;
@@ -109,6 +112,7 @@ export default class BlotterString {
   }
   _prepareBlotter() {
     const t = this;
+    $(t.el).addClass('is-loading');
     t.blotterTexts = t._blotterTexts();
     t.material = new Blotter.ChannelSplitMaterial();
     t.material.needsUpdate = true;
@@ -132,21 +136,21 @@ export default class BlotterString {
     const textParam = [];
     $(t.el).find('.user-trap__string').each((i, el) => {
       const str = $(el).text();
-      const strlength = str.length;
+      // const strlength = str.length;
       const words = str.split(' ');
       const wordsCount = words.length;
-      const wordsLengths = [];
-      let spaceCoords = 0;
-      for (let w = 0; w < (wordsCount - 1); w += 1) {
-        spaceCoords += w.length;
-        wordsLengths.push(spaceCoords);
-      }
+      // const wordsLengths = [];
+      // let spaceCoords = 0;
+      // for (let w = 0; w < (wordsCount - 1); w += 1) {
+      //   spaceCoords += w.length;
+      //   wordsLengths.push(spaceCoords);
+      // }
       const strInfo = {
-        length: strlength,
-        spacesIndexes: wordsLengths,
+        length: wordsCount,
+        // spacesIndexes: wordsLengths,
       };
-      for (let k = 0; k < strlength; k += 1) {
-        const text = new Blotter.Text(str[k], t.getOption());
+      for (let k = 0; k < wordsCount; k += 1) {
+        const text = new Blotter.Text(words[k], t.getOption());
         texts.push(text);
       }
       textParam.push(strInfo);
@@ -192,13 +196,14 @@ export default class BlotterString {
       const eW = (ePar.left + (el.width() / 2)) / cW;
       const eH = (ePar.top + (el.height() / 2)) / cH;
       const l = a(eW, eH, x, y);
-      const m = Math.min(0.11, b(eW, eH, x, y));
+      const m = Math.min(0.15, b(eW, eH, x, y));
       scope.material.uniforms.uRotation.value = l;
       scope.material.uniforms.uOffset.value = m;
     });
   }
   update() {
     const t = this;
+    $(t.el).addClass('is-loading');
     const bt = t.blotter;
     bt.stop();
     $.each(t.scopes, (i, scope) => {
@@ -207,15 +212,12 @@ export default class BlotterString {
       const mt = scope.material;
       text.properties = t.getOption();
       text.needsUpdate = true;
-      // $(t.container).append(scope.domElement);
       mt.needsUpdate = true;
       scp.needsUpdate = true;
       scope.render();
     });
     bt.needsUpdate = true;
     bt.start();
-    // t._prepareBlotter();
-    // t.onRender();
   }
 }
 // /* eslint-enable */
