@@ -8,24 +8,42 @@
   position: relative;
   $b: &;
 
+  &__loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    display: block;
+    border-radius: 50%;
+    box-sizing: border-box;
+    z-index: 3;
+    border-style: solid;
+    border-color: $color-black;
+    border-top-color: $color-grey;
+    opacity: 0;
+    pointer-events: none;
+    touch-action: none;
+
+    @include rule(border-width, (xxl: 10, xl: 10, lg: 6, md: 5));
+    @include rule(width, (xxl: 100, xl: 100, lg: 60, md: 50));
+    @include rule(height, (xxl: 100, xl: 100, lg: 60, md: 50));
+
+    .is-loading & {
+      opacity: 1;
+      animation: preloadRotation 1s linear infinite;
+    }
+  }
+
   &__wrapper {
     display: flex;
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
-    // transform: scale(var(--scale));
+    transition: opacity $ease-main;
 
-    // @include screen('xl') {
-    //   transform: scale(var(--scalexl));
-    // }
-
-    // @include screen('lg') {
-    //   transform: scale(var(--scalelg));
-    // }
-
-    // @include screen('md') {
-    //   transform: scale(var(--scalemd));
-    // }
+    #{$b}.is-loading & {
+      opacity: 0;
+    }
 
     .b-canvas {
 
@@ -34,12 +52,7 @@
       }
     }
 
-    // .b-spaceword {
-    //   @include rule(margin-left, (xxl: (-180 * 1.03), xl: (-129 * 1.03), lg: (-90 * 1.03), md: (-36 * 1.03)));
-    // }
-
     .b-string {
-      // @include rule(margin-right, (xxl: (-240 * 1.03), xl: (-172 * 1.03), lg: (-120 * 1.03), md: (-48 * 1.03)));
 
       &:not(:first-child) {
         @include rule(margin-top, (xxl: (-60 * 1.3), xl: (-43 * 1.3), lg: (-30 * 1.3), md: (-12 * 1.3)));
@@ -47,11 +60,25 @@
     }
   }
 
-  &__string {
+  &__text {
     position: absolute;
     opacity: 0;
     pointer-events: none;
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 50%;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    font-family: $font-archivo;
+    line-height: 1;
+    transform: translate3d(-50%, -50%, 0);
+
+    @include rule(font-size, (xxl: 120, xl: 86, lg: 60, md: 24));
+  }
+
+  &__string {
+    display: inline-block;
+    white-space: nowrap;
   }
 }
