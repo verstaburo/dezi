@@ -1,0 +1,23 @@
+.lavkin-lead {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  $b: &;
+
+  @include rule(padding-top, (xxl2: 200, xl: 200, lg: 146, md2: 90));
+  @include rule(padding-bottom, (xxl2: 240, xl: 244, lg: 178, md2: 113));
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__logo {
+    display: block;
+    box-sizing: border-box;
+    flex: none;
+
+    @include rule(width, (xxl2: 376, xl: 376, lg: 376, md2: 272));
+  }
+}

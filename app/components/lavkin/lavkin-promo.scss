@@ -1,0 +1,116 @@
+.lavkin-promo {
+  position: relative;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  $b: &;
+
+  &__collage {
+    position: relative;
+    display: block;
+    width: 100%;
+    z-index: 1;
+  }
+
+  &__bg {
+    position: relative;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    padding-top: 66.7%;
+    z-index: 1;
+
+    @include rule(margin-left, (md2: -30));
+    @include rule(margin-right, (md2: -30));
+
+    @include screen('xl') {
+      padding-top: 66%;
+    }
+
+    @include screen('md') {
+      padding-top: 202.5%;
+      width: 100vw;
+    }
+
+    #{$b}_pattern & {
+      padding-top: 71.6%;
+
+      @include screen('md') {
+        padding-top: 130.5%;
+      }
+    }
+  }
+
+  &__image {
+    @include fill-img;
+
+    z-index: 1;
+  }
+
+  &__pattern {
+    position: absolute;
+    display: block;
+    width: 100vw;
+    left: 50%;
+    bottom: 100%;
+    transform: translate3d(-50%, 24.9%, 0);
+    z-index: 2;
+
+    @include screen('xl') {
+      transform: translate3d(-50%, 20.6%, 0);
+    }
+
+    @include screen('md') {
+      width: 189.6vw;
+      transform: translate3d(-50%, 50%, 0);
+    }
+  }
+
+  &__content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    z-index: 3;
+
+    @include rule(padding-top, (xxl2: 102, xl: 98, lg: 72, md2: 63));
+    @include rule(padding-bottom, (xxl2: 102, xl: 98, lg: 72, md2: 63));
+    @include rule(padding-left, (xxl2: 98, xl: 90, lg: 66, md2: 0));
+    @include rule(padding-right, (xxl2: 98, xl: 90, lg: 66, md2: 0));
+
+    #{$b}_pattern & {
+      @include rule(padding-top, (xxl2: 188, xl: 188, lg: 138, md2: 0));
+      @include rule(padding-bottom, (xxl2: 188, xl: 188, lg: 138, md2: 75));
+      @include rule(padding-left, (xxl2: 117, xl: 111, lg: 81, md2: 0));
+      @include rule(padding-right, (xxl2: 117, xl: 111, lg: 81, md2: 0));
+
+      @include screen('md') {
+        position: relative;
+        top: auto;
+        left: auto;
+        height: auto;
+      }
+    }
+  }
+
+  &__theme, &__title {
+    display: block;
+    width: 100%;
+
+    @include rule(max-width, (xxl2: 815, xl: 815, lg: 815, md2: 280));
+
+    #{$b}_pattern & {
+      @include rule(max-width, (xxl2: 560, xl: 560, lg: 560, md2: 274));
+    }
+  }
+
+  &__theme {
+
+    &:not(:last-child) {
+      @include rule(margin-bottom, (xxl2: 80, xl: 80, lg: 58, md2: 64));
+    }
+  }
+}

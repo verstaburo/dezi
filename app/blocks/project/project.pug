@@ -6,12 +6,12 @@ mixin project(data)
       else if data.aizkulises
         +e.bg-wrapper
           +e.media
-            +e.VIDEO.video.js-video(src=data.aizkulises.video loop="loop" muted="muted" preload="metadata" playsinline="playsinline" poster=data.aizkulises.poster)
+            +e.VIDEO.video.js-video(src=data.aizkulises.video autoplay loop="loop" muted="muted" preload="auto" playsinline="playsinline" poster=data.aizkulises.poster)
               source(src=data.aizkulises.video type="media/mp4")
           +e.IMG.image_video(src=data.image)
       else if data.agrosyn
         +e.media
-          +e.VIDEO.video.js-video(src=data.agrosyn.video loop="loop" muted="muted" preload="metadata" playsinline="playsinline" poster=data.agrosyn.poster)
+          +e.VIDEO.video.js-video(src=data.agrosyn.video autoplay loop="loop" muted="muted" preload="auto" playsinline="playsinline" poster=data.agrosyn.poster)
             source(src=data.agrosyn.video type="media/mp4")
         +e.IMG.image(src=data.image)
       else if data.splace

@@ -1,0 +1,60 @@
+.lavkin-about {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  $b: &;
+
+  &:not(:last-child) {
+    @include rule(margin-bottom, (xxl2: 135, xl: 135, lg: 135, md2: 45));
+  }
+
+  &__promo {
+
+    &:not(:last-child) {
+      @include rule(margin-bottom, (xxl2: 98, xl: 150, lg: 98, md2: 54));
+    }
+  }
+
+  &__describe {
+    display: block;
+    width: 100%;
+
+    @include rule(max-width, (xxl2: 950, xl: 950));
+
+    @include screen('lg') {
+      max-width: none;
+    }
+
+    &:not(:last-child) {
+      @include rule(margin-bottom, (xxl2: 160, xl: 194, lg: 142, md2: 72));
+    }
+  }
+
+  &__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:not(:last-child) {
+      @include rule(margin-bottom, (xxl2: 100, xl: 100, lg: 100, md2: 60));
+    }
+  }
+
+  &__logo-layout {
+    display: block;
+    line-height: 0;
+    flex: none;
+
+    @include rule(width, (xxl2: 658, xl: 618, lg: 450, md2: 302));
+  }
+
+  &__slogan {
+    position: relative;
+    left: 50%;
+    display: block;
+    width: 100vw;
+    transform: translate3d(-50%, 0, 0);
+
+    @include rule(width, (xxl2: 1440, xl: 1440, md2: 381));
+  }
+}

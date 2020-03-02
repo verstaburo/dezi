@@ -9,24 +9,18 @@ export default function bgvideo() {
     const wH = $(window).height();
     $('.js-video').each((i, el) => {
       const container = $(el).closest('[data-video-container]');
-      if (container.length === 0 || ($(container).hasClass('is-loaded') && wW >= breakpoints.md)) {
-        if (wW < breakpoints.md) {
-          $(el).removeAttr('autoplay');
+      if (container.length === 0 || $(container).hasClass('is-loaded')) {
+        const top = $(el).offset().top;
+        const vH = $(el).outerHeight();
+        const bottom = top + vH;
+        $(el).attr('preload', 'auto');
+        $(el).attr('autoplay', 'autoplay');
+        if ((bottom >= sT && bottom <= (sT + wH)) || (top >= sT && (top <= (sT + wH)))) {
+          $(el)[0].play();
+          $(el).addClass('is-play');
+        } else {
           $(el)[0].pause();
           $(el).removeClass('is-play');
-        } else {
-          const top = $(el).offset().top;
-          const vH = $(el).outerHeight();
-          const bottom = top + vH;
-          $(el).attr('preload', 'auto');
-          $(el).attr('autoplay', 'autoplay');
-          if ((bottom >= sT && bottom <= (sT + wH)) || (top >= sT && (top <= (sT + wH)))) {
-            $(el)[0].play();
-            $(el).addClass('is-play');
-          } else {
-            $(el)[0].pause();
-            $(el).removeClass('is-play');
-          }
         }
       } else if (container.length > 0 && $(el)[0].readyState !== 4 && wW >= breakpoints.md) {
         $(container).addClass('is-loading');

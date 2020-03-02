@@ -1,0 +1,22 @@
+.lavkin-title {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  line-height: 1;
+  font-weight: 700;
+  $b: &;
+
+  @include rule(font-size, (xxl2: $fz-title, xl: $fz-title, lg: $fz48, md2: $fz30));
+
+  &:not(:last-child) {
+    @include rule(margin-bottom, (xxl2: 40, xl: 40, lg: 40, md2: 37));
+  }
+
+  &_small {
+    @include rule(font-size, (xxl2: $fz48, xl: $fz48, lg: $fz48, md2: $fz30));
+
+    &:not(:last-child) {
+      @include rule(margin-bottom, (xxl2: 62, xl: 62, lg: 62, md2: 40));
+    }
+  }
+}

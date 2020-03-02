@@ -255,14 +255,20 @@ div {
 Пример: @include rule(width, (xl: 100px, lg: 200px));
 */
 $xxl: 1920;
+$xxl2: 1440;
 $xl: 1366;
 $lg: 1024;
 $md: 320;
+$md2: 375;
 
 @mixin rule($name, $pointsAndValues) {
   @each $breakpoint, $value in $pointsAndValues {
     @if $breakpoint == xxl {
       #{$name}: calc((#{$value} / #{$xxl}) * 100vw);
+    }
+
+    @if $breakpoint == xxl2 {
+      #{$name}: calc((#{$value} / #{$xxl2}) * 100vw);
     }
 
     @if $breakpoint == xl {
@@ -280,6 +286,12 @@ $md: 320;
     @if $breakpoint == md {
       @include screen('#{$breakpoint}') {
         #{$name}: calc((#{$value} / #{$md}) * 100vw);
+      }
+    }
+
+    @if $breakpoint == md2 {
+      @include screen('md') {
+        #{$name}: calc((#{$value} / #{$md2}) * 100vw);
       }
     }
   }

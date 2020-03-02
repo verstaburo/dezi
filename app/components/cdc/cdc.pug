@@ -19,21 +19,21 @@ mixin cdc-video(video, poster, tablet, bg)
   +b.cdc-video&attributes(attributes)
     if tablet
       +e.media(data-video-container)
-        +e.VIDEO.video.js-video(src=video loop="loop" muted="muted" preload="auto" playsinline="playsinline" poster=poster)
+        +e.VIDEO.video.js-video(src=video playsinline autoplay loop muted preload="auto" poster=poster)
           source(src=video type="media/mp4")
-        +e.play
+        //- +e.play
         +e.preloader
       +e.border
         +e.IMG.image(src="assets/images/cdc/tablet-border.png")
     else if bg
       +e.media
-        +e.VIDEO.video.js-video(src=video loop="loop" muted="muted" preload="auto" playsinline="playsinline" poster=poster)
+        +e.VIDEO.video.js-video(src=video playsinline autoplay loop muted preload="auto" poster=poster)
           source(src=video type="media/mp4")
     else
       +e.media(data-video-container)
-        +e.VIDEO.video.js-video(src=video loop="loop" muted="muted" preload="auto" playsinline="playsinline" poster=poster)
+        +e.VIDEO.video.js-video(src=video playsinline autoplay loop muted preload="auto" poster=poster)
           source(src=video type="media/mp4")
-        +e.play
+        //- +e.play
         +e.preloader
     block
 

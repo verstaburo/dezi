@@ -1,0 +1,44 @@
+.lavkin-text {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  line-height: (36 / 30);
+  $b: &;
+
+  @include rule(font-size, (xxl2: $fz30, xl: $fz30, lg: $fz30, md2: $fz15));
+
+  @include screen('md') {
+    line-height: 1.35;
+  }
+
+  &_fz20 {
+    line-height: (28 / 20);
+
+    @include rule(font-size, (xxl2: $fz-text, xl: $fz-text, lg: $fz-text, md2: $fz15));
+
+    @include screen('md') {
+      line-height: 1.57;
+    }
+  }
+
+  &_only-fz20 {
+    @include rule(font-size, (xxl2: $fz-text, xl: $fz-text, lg: $fz-text, md2: $fz-text));
+
+    line-height: (28 / 20);
+  }
+
+  &_mob-fz20 {
+    @include rule(font-size, (xxl2: $fz30, xl: $fz30, lg: $fz30, md2: $fz-text));
+
+    @include screen('md') {
+      line-height: (28 / 20);
+    }
+  }
+
+  p {
+
+    &:not(:last-child) {
+      @include rule(margin-bottom, (xxl2: 35, xl: 35, lg: 35, md2: 28));
+    }
+  }
+}

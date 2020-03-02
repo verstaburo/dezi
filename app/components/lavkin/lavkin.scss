@@ -1,0 +1,12 @@
+.lavkin {
+  display: block;
+  width: 100%;
+  background-color: $color-lavkin-bg;
+  font-family: $font-site;
+  color: $color-basic;
+  margin-bottom: -10px;
+
+  $b: &;
+
+  @include rule(padding-bottom, (xxl2: 526, xl: 349, lg: 349, md2: 162));
+}
