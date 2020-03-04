@@ -1,0 +1,633 @@
+@keyframes lvkLogoCOut {
+
+  from {
+    stroke-dasharray: 0 354;
+  }
+
+  to {
+    stroke-dasharray: 354 354;
+  }
+}
+
+@keyframes lvkLogoCIn {
+
+  from {
+    stroke-dasharray: 0 330;
+  }
+
+  to {
+    stroke-dasharray: 330 330;
+  }
+}
+
+@keyframes lvkLogoHat {
+
+  from {
+    stroke-dasharray: 0 360;
+  }
+
+  to {
+    stroke-dasharray: 360 360;
+  }
+}
+
+@keyframes lvkLogo30 {
+
+  from {
+    stroke-dasharray: 0 30;
+  }
+
+  to {
+    stroke-dasharray: 30 30;
+  }
+}
+
+@keyframes lvkLogo5 {
+
+  from {
+    stroke-dasharray: 0 5;
+  }
+
+  to {
+    stroke-dasharray: 5 5;
+  }
+}
+
+@keyframes lvkLogo10 {
+
+  from {
+    stroke-dasharray: 0 10;
+  }
+
+  to {
+    stroke-dasharray: 10 10;
+  }
+}
+
+@keyframes lvkLogo13 {
+
+  from {
+    stroke-dasharray: 0 13;
+  }
+
+  to {
+    stroke-dasharray: 13 13;
+  }
+}
+
+@keyframes lvkLogo16 {
+
+  from {
+    stroke-dasharray: 0 16;
+  }
+
+  to {
+    stroke-dasharray: 16 16;
+  }
+}
+
+@keyframes lvkLogo20 {
+
+  from {
+    stroke-dasharray: 0 20;
+  }
+
+  to {
+    stroke-dasharray: 20 20;
+  }
+}
+
+@keyframes lvkLogo23 {
+
+  from {
+    stroke-dasharray: 0 23;
+  }
+
+  to {
+    stroke-dasharray: 23 23;
+  }
+}
+
+@keyframes lvkLogo26 {
+
+  from {
+    stroke-dasharray: 0 26;
+  }
+
+  to {
+    stroke-dasharray: 26 26;
+  }
+}
+
+@keyframes lvkLogo32 {
+
+  from {
+    stroke-dasharray: 0 32;
+  }
+
+  to {
+    stroke-dasharray: 32 32;
+  }
+}
+
+@keyframes lvkLogoSwing {
+
+  0% {
+    transform: rotate(0);
+  }
+
+  50% {
+    transform: rotate(-5deg);
+  }
+
+  100% {
+    transform: rotate(0);
+  }
+}
+
+.lavkin-logo {
+  $b: &;
+
+  &.js-sr {
+    visibility: visible;
+  }
+
+  &__circle-out-line {
+    animation-duration: 1.1s;
+    animation-delay: .15s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+
+    #{$b}.js-sr & {
+      stroke-dasharray: 0 354;
+    }
+
+    #{$b}.is-animate & {
+      animation-name: lvkLogoCOut;
+    }
+  }
+
+  &__circle-inner {
+    animation-duration: 1.1s;
+    animation-delay: .15s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+    // animation-name: lvkLogoCIn;
+
+    #{$b}.js-sr & {
+      stroke-dasharray: 0 330;
+    }
+
+    #{$b}.is-animate & {
+      animation-name: lvkLogoCIn;
+    }
+  }
+
+  &__hat {
+    animation-duration: 1s;
+    animation-delay: .27s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+
+    #{$b}.js-sr & {
+      stroke-dasharray: 0 360;
+    }
+
+    #{$b}.is-animate & {
+      animation-name: lvkLogoHat;
+    }
+  }
+
+  &__ear {
+    animation-duration: .9s;
+    animation-delay: .34s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+
+    #{$b}.js-sr & {
+      stroke-dasharray: 0 30;
+    }
+
+    #{$b}.is-animate & {
+      animation-name: lvkLogo30;
+    }
+  }
+
+  &__mouth-line {
+    animation-duration: .2s;
+    animation-delay: 1.1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+
+    #{$b}.js-sr & {
+      stroke-dasharray: 0 13;
+    }
+
+    #{$b}.is-animate & {
+      animation-name: lvkLogo13;
+    }
+  }
+
+  &__text {
+    transform-origin: 50% 100% 0;
+    transition: transform .54s ease-in;
+    transition-delay: 1.33s;
+
+    #{$b}.js-sr & {
+      transform: translate3d(0, 100%, 0);
+    }
+
+    #{$b}.is-animate & {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  &__face {
+    transform-origin: 50% 25% 0;
+    transition: transform .2s ease-in;
+    transition-delay: .5s;
+
+    #{$b}.js-sr & {
+      transform: scale(0);
+    }
+
+    #{$b}.is-animate & {
+      transform: scale(1);
+    }
+  }
+
+  &__left-shoulder-line {
+    animation-duration: .25s;
+    animation-delay: .75s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+
+    #{$b}.js-sr & {
+      stroke-dasharray: 0 20;
+    }
+
+    #{$b}.is-animate & {
+      animation-name: lvkLogo20;
+    }
+  }
+
+  &__right-shoulder {
+    animation-duration: .22s;
+    animation-delay: .83s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+
+    #{$b}.js-sr & {
+      stroke-dasharray: 0 20;
+    }
+
+    #{$b}.is-animate & {
+      animation-name: lvkLogo20;
+    }
+  }
+
+  &__left-top-hill-1 {
+    animation-duration: .1s;
+    animation-delay: .95s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+
+    #{$b}.js-sr & {
+      stroke-dasharray: 0 5;
+    }
+
+    #{$b}.is-animate & {
+      animation-name: lvkLogo5;
+    }
+  }
+
+  &__left-top-hill-2 {
+    animation-duration: .25s;
+    animation-delay: .95s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+
+    #{$b}.js-sr & {
+      stroke-dasharray: 0 10;
+    }
+
+    #{$b}.is-animate & {
+      animation-name: lvkLogo10;
+    }
+  }
+
+  &__left-top-hill-3 {
+    animation-duration: .2s;
+    animation-delay: 1.02s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+
+    #{$b}.js-sr & {
+      stroke-dasharray: 0 10;
+    }
+
+    #{$b}.is-animate & {
+      animation-name: lvkLogo10;
+    }
+  }
+
+  &__left-top-hill-4 {
+    animation-duration: .2s;
+    animation-delay: 1.06s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+
+    #{$b}.js-sr & {
+      stroke-dasharray: 0 16;
+    }
+
+    #{$b}.is-animate & {
+      animation-name: lvkLogo16;
+    }
+  }
+
+  &__left-top-hill-5 {
+    animation-duration: .23s;
+    animation-delay: 1.13s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+
+    #{$b}.js-sr & {
+      stroke-dasharray: 0 20;
+    }
+
+    #{$b}.is-animate & {
+      animation-name: lvkLogo20;
+    }
+  }
+
+  &__left-bottom-hill-1 {
+    animation-duration: .24s;
+    animation-delay: 1.27s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+
+    #{$b}.js-sr & {
+      stroke-dasharray: 0 30;
+    }
+
+    #{$b}.is-animate & {
+      animation-name: lvkLogo30;
+    }
+  }
+
+  &__left-bottom-hill-2 {
+    animation-duration: .26s;
+    animation-delay: 1.2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+
+    #{$b}.js-sr & {
+      stroke-dasharray: 0 30;
+    }
+
+    #{$b}.is-animate & {
+      animation-name: lvkLogo30;
+    }
+  }
+
+  &__left-bottom-hill-3 {
+    animation-duration: .22s;
+    animation-delay: 1.1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+
+    #{$b}.js-sr & {
+      stroke-dasharray: 0 30;
+    }
+
+    #{$b}.is-animate & {
+      animation-name: lvkLogo30;
+    }
+  }
+
+  &__left-bottom-hill-4 {
+    animation-duration: .25s;
+    animation-delay: 1.02s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+
+    #{$b}.js-sr & {
+      stroke-dasharray: 0 26;
+    }
+
+    #{$b}.is-animate & {
+      animation-name: lvkLogo26;
+    }
+  }
+
+  &__left-bottom-hill-5 {
+    animation-duration: .27s;
+    animation-delay: .85s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+
+    #{$b}.js-sr & {
+      stroke-dasharray: 0 26;
+    }
+
+    #{$b}.is-animate & {
+      animation-name: lvkLogo26;
+    }
+  }
+
+  &__left-bottom-hill-6 {
+    animation-duration: .25s;
+    animation-delay: .83s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+
+    #{$b}.js-sr & {
+      stroke-dasharray: 0 26;
+    }
+
+    #{$b}.is-animate & {
+      animation-name: lvkLogo26;
+    }
+  }
+
+  &__right-top-hill-1 {
+    animation-duration: .1s;
+    animation-delay: .85s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+
+    #{$b}.js-sr & {
+      stroke-dasharray: 0 5;
+    }
+
+    #{$b}.is-animate & {
+      animation-name: lvkLogo5;
+    }
+  }
+
+  &__right-top-hill-2 {
+    animation-duration: .2s;
+    animation-delay: .9s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+
+    #{$b}.js-sr & {
+      stroke-dasharray: 0 13;
+    }
+
+    #{$b}.is-animate & {
+      animation-name: lvkLogo13;
+    }
+  }
+
+  &__right-top-hill-3 {
+    animation-duration: .22s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+
+    #{$b}.js-sr & {
+      stroke-dasharray: 0 23;
+    }
+
+    #{$b}.is-animate & {
+      animation-name: lvkLogo23;
+    }
+  }
+
+  &__right-top-hill-4 {
+    animation-duration: .23s;
+    animation-delay: 1.13s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+
+    #{$b}.js-sr & {
+      stroke-dasharray: 0 30;
+    }
+
+    #{$b}.is-animate & {
+      animation-name: lvkLogo30;
+    }
+  }
+
+  &__right-top-hill-5 {
+    animation-duration: .24s;
+    animation-delay: 1.22s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+
+    #{$b}.js-sr & {
+      stroke-dasharray: 0 32;
+    }
+
+    #{$b}.is-animate & {
+      animation-name: lvkLogo32;
+    }
+  }
+
+  &__right-top-hill-6 {
+    animation-duration: .24s;
+    animation-delay: 1.32s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+
+    #{$b}.js-sr & {
+      stroke-dasharray: 0 32;
+    }
+
+    #{$b}.is-animate & {
+      animation-name: lvkLogo32;
+    }
+  }
+
+  &__right-top-hill-7 {
+    animation-duration: .24s;
+    animation-delay: 1.42s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+
+    #{$b}.js-sr & {
+      stroke-dasharray: 0 32;
+    }
+
+    #{$b}.is-animate & {
+      animation-name: lvkLogo32;
+    }
+  }
+
+  &__right-bottom-hill-1 {
+    animation-duration: .24s;
+    animation-delay: 1.27s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+
+    #{$b}.js-sr & {
+      stroke-dasharray: 0 30;
+    }
+
+    #{$b}.is-animate & {
+      animation-name: lvkLogo30;
+    }
+  }
+
+  &__right-bottom-hill-2 {
+    animation-duration: .22s;
+    animation-delay: 1.2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+
+    #{$b}.js-sr & {
+      stroke-dasharray: 0 30;
+    }
+
+    #{$b}.is-animate & {
+      animation-name: lvkLogo30;
+    }
+  }
+
+  &__right-bottom-hill-3 {
+    animation-duration: .26s;
+    animation-delay: 1.06s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+
+    #{$b}.js-sr & {
+      stroke-dasharray: 0 30;
+    }
+
+    #{$b}.is-animate & {
+      animation-name: lvkLogo30;
+    }
+  }
+
+  &__right-bottom-hill-4 {
+    animation-duration: .26s;
+    animation-delay: .96s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+
+    #{$b}.js-sr & {
+      stroke-dasharray: 0 30;
+    }
+
+    #{$b}.is-animate & {
+      animation-name: lvkLogo30;
+    }
+  }
+
+  &__right-bottom-hill-5 {
+    animation-duration: .2s;
+    animation-delay: .86s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+
+    #{$b}.js-sr & {
+      stroke-dasharray: 0 20;
+    }
+
+    #{$b}.is-animate & {
+      animation-name: lvkLogo20;
+    }
+  }
+}

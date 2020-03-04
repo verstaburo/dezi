@@ -19,5 +19,6 @@
     flex: none;
 
     @include rule(width, (xxl2: 376, xl: 376, lg: 376, md2: 272));
+    @include rule(height, (xxl2: 193, xl: 193, lg: 193, md2: 139));
   }
 }
