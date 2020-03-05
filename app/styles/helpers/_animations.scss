@@ -165,6 +165,7 @@ $animationScale: .9;
 }
 
 @keyframes scaleXIn {
+
   0% {
     transform: scaleX(0);
     opacity: 0;
@@ -177,6 +178,7 @@ $animationScale: .9;
 }
 
 @keyframes scaleYIn {
+
   0% {
     transform: scaleY(0);
     opacity: 0;
@@ -200,6 +202,7 @@ $animationScale: .9;
 }
 
 @keyframes rotation-inverse {
+
   0% {
     transform: rotate(0);
   }
@@ -379,6 +382,7 @@ $animationScale: .9;
 }
 
 @keyframes mapCloseMdLand {
+
   0% {
     clip-path: circle(200vw at 95% 50%);
   }
@@ -562,12 +566,14 @@ $animationScale: .9;
 }
 
 @keyframes autofill {
+
   to {
     background: transparent;
   }
 }
 
 @keyframes logoDraw {
+
   from {
     stroke-dasharray: 0 100;
   }

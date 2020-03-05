@@ -133,7 +133,7 @@
 @keyframes lvkLogoSwing {
 
   0% {
-    transform: rotate(0);
+    transform: rotate(2deg);
   }
 
   50% {
@@ -148,7 +148,18 @@
 .lavkin-logo {
   $b: &;
 
+  transform-origin: 50% 25% 0;
+  animation-duration: .3s;
+  animation-delay: .5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+
   &.js-sr {
+    transform: rotate(2deg);
+  }
+
+  &.is-animate {
+    animation-name: lvkLogoSwing;
     visibility: visible;
   }
 
