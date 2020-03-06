@@ -265,7 +265,7 @@
     transform-origin: 50% 100% 0;
     animation-fill-mode: forwards;
     animation-duration: .627s;
-    animation-timing-function: cubic-bezier(.45, .01, .64, .12);
+    animation-timing-function: linear;
     animation-delay: 1.386s;
 
     #{$b}.js-sr & {
@@ -291,7 +291,7 @@
     }
 
     #{$b}.is-animate & {
-      animation: lvkLogoFace;
+      animation-name: lvkLogoFace;
     }
   }
 
