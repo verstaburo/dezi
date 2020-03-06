@@ -50,13 +50,14 @@
   &__pattern {
     position: absolute;
     display: block;
-    width: 100vw;
+    width: 93.125vw;
     left: 50%;
     bottom: 100%;
     transform: translate3d(-50%, 24.9%, 0);
     z-index: 2;
 
     @include screen('xl') {
+      width: 100vw;
       transform: translate3d(-50%, 20.6%, 0);
     }
 
@@ -76,16 +77,16 @@
     left: 0;
     z-index: 3;
 
-    @include rule(padding-top, (xxl2: 102, xl: 98, lg: 72, md2: 63));
-    @include rule(padding-bottom, (xxl2: 102, xl: 98, lg: 72, md2: 63));
-    @include rule(padding-left, (xxl2: 98, xl: 90, lg: 66, md2: 0));
-    @include rule(padding-right, (xxl2: 98, xl: 90, lg: 66, md2: 0));
+    @include rule(padding-top, (xxl: 90, xl: 98, lg: 72, md2: 63));
+    @include rule(padding-bottom, (xxl: 90, xl: 98, lg: 72, md2: 63));
+    @include rule(padding-left, (xxl: 120, xl: 90, lg: 66, md2: 0));
+    @include rule(padding-right, (xxl: 120, xl: 90, lg: 66, md2: 0));
 
     #{$b}_pattern & {
-      @include rule(padding-top, (xxl2: 188, xl: 188, lg: 138, md2: 0));
-      @include rule(padding-bottom, (xxl2: 188, xl: 188, lg: 138, md2: 75));
-      @include rule(padding-left, (xxl2: 117, xl: 111, lg: 81, md2: 0));
-      @include rule(padding-right, (xxl2: 117, xl: 111, lg: 81, md2: 0));
+      @include rule(padding-top, (xxl: 186, xl: 188, lg: 138, md2: 0));
+      @include rule(padding-bottom, (xxl: 186, xl: 188, lg: 138, md2: 75));
+      @include rule(padding-left, (xxl: 160, xl: 111, lg: 81, md2: 0));
+      @include rule(padding-right, (xxl: 160, xl: 111, lg: 81, md2: 0));
 
       @include screen('md') {
         position: relative;
@@ -100,17 +101,17 @@
     display: block;
     width: 100%;
 
-    @include rule(max-width, (xxl2: 815, xl: 815, lg: 815, md2: 280));
+    @include rule(max-width, (xxl: 815, xl: 815, lg: 815, md2: 280));
 
     #{$b}_pattern & {
-      @include rule(max-width, (xxl2: 560, xl: 560, lg: 560, md2: 274));
+      @include rule(max-width, (xxl: 560, xl: 560, lg: 560, md2: 274));
     }
   }
 
   &__theme {
 
     &:not(:last-child) {
-      @include rule(margin-bottom, (xxl2: 80, xl: 80, lg: 58, md2: 64));
+      @include rule(margin-bottom, (xxl: 88, xl: 80, lg: 58, md2: 64));
     }
   }
 }

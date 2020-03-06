@@ -156,6 +156,17 @@
   }
 }
 
+@keyframes lvkLogoFace {
+
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
 .lavkin-logo {
   $b: &;
 
@@ -176,10 +187,10 @@
   }
 
   &__circle-out-line {
-    animation-duration: 1.1s;
-    animation-delay: .15s;
+    animation-duration: .693s;
+    animation-delay: .363s;
     animation-fill-mode: forwards;
-    animation-timing-function: ease-in;
+    animation-timing-function: cubic-bezier(.25, .09, .43, .26);
 
     #{$b}.js-sr & {
       stroke-dasharray: 0 354;
@@ -191,10 +202,10 @@
   }
 
   &__circle-inner {
-    animation-duration: 1.1s;
-    animation-delay: .15s;
+    animation-duration: .693s;
+    animation-delay: .363s;
     animation-fill-mode: forwards;
-    animation-timing-function: ease-in;
+    animation-timing-function: cubic-bezier(.25, .09, .43, .26);
     // animation-name: lvkLogoCIn;
 
     #{$b}.js-sr & {
@@ -207,10 +218,10 @@
   }
 
   &__hat {
-    animation-duration: 1s;
-    animation-delay: .27s;
+    animation-duration: .627s;
+    animation-delay: .429s;
     animation-fill-mode: forwards;
-    animation-timing-function: ease-in;
+    animation-timing-function: cubic-bezier(.25, .09, .43, .26);
 
     #{$b}.js-sr & {
       stroke-dasharray: 0 360;
@@ -222,10 +233,10 @@
   }
 
   &__ear {
-    animation-duration: .9s;
-    animation-delay: .34s;
+    animation-duration: .429s;
+    animation-delay: .396s;
     animation-fill-mode: forwards;
-    animation-timing-function: ease-in;
+    animation-timing-function: cubic-bezier(.25, .09, .43, .26);
 
     #{$b}.js-sr & {
       stroke-dasharray: 0 30;
@@ -255,7 +266,7 @@
     transform-origin: 50% 100% 0;
     animation-fill-mode: forwards;
     animation-duration: .54s;
-    animation-timing-function: ease-in;
+    animation-timing-function: cubic-bezier(.25, .09, .43, .26);
     animation-delay: 1.33s;
 
     #{$b}.js-sr & {

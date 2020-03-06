@@ -122,8 +122,8 @@ body {
   &_lavkin {
     max-width: none;
 
-    @include rule(padding-left, (xxl2: 100, xl: 100, lg: 100, md2: 30));
-    @include rule(padding-right, (xxl2: 100, xl: 100, lg: 100, md2: 30));
+    @include rule(padding-left, (xxl: 160, xl: 100, lg: 100, md2: 30));
+    @include rule(padding-right, (xxl: 160, xl: 100, lg: 100, md2: 30));
   }
 }
 

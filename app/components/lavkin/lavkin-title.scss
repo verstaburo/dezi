@@ -6,17 +6,17 @@
   font-weight: 700;
   $b: &;
 
-  @include rule(font-size, (xxl2: $fz-title, xl: $fz-title, lg: $fz48, md2: $fz30));
+  @include rule(font-size, (xxl: $fz-title, xl: $fz-title, lg: $fz48, md2: $fz30));
 
   &:not(:last-child) {
-    @include rule(margin-bottom, (xxl2: 40, xl: 40, lg: 40, md2: 37));
+    @include rule(margin-bottom, (xxl: 50, xl: 40, lg: 40, md2: 37));
   }
 
   &_small {
-    @include rule(font-size, (xxl2: $fz48, xl: $fz48, lg: $fz48, md2: $fz30));
+    @include rule(font-size, (xxl: $fz48, xl: $fz48, lg: $fz48, md2: $fz30));
 
     &:not(:last-child) {
-      @include rule(margin-bottom, (xxl2: 62, xl: 62, lg: 62, md2: 40));
+      @include rule(margin-bottom, (xxl: 73, xl: 62, lg: 62, md2: 40));
     }
   }
 }

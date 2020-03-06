@@ -4,8 +4,8 @@
   box-sizing: border-box;
   $b: &;
 
-  @include rule(padding-top, (xxl2: 200, xl: 200, lg: 146, md2: 90));
-  @include rule(padding-bottom, (xxl2: 240, xl: 244, lg: 178, md2: 113));
+  @include rule(padding-top, (xxl: 236, xl: 200, lg: 146, md2: 90));
+  @include rule(padding-bottom, (xxl: 244, xl: 244, lg: 178, md2: 113));
 
   .container {
     display: flex;
@@ -18,7 +18,7 @@
     box-sizing: border-box;
     flex: none;
 
-    @include rule(width, (xxl2: 376, xl: 376, lg: 376, md2: 272));
-    @include rule(height, (xxl2: 193, xl: 193, lg: 193, md2: 139));
+    @include rule(width, (xxl: 603, xl: 376, lg: 376, md2: 272));
+    @include rule(height, (xxl: 309, xl: 193, lg: 193, md2: 139));
   }
 }
