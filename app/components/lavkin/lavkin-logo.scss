@@ -284,7 +284,7 @@
     animation-fill-mode: forwards;
     animation-timing-function: ease-out;
     animation-duration: .132s;
-    transition-delay: .528s;
+    animation-delay: .528s;
 
     #{$b}.js-sr & {
       transform: scale(0);
