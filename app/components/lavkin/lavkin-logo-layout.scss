@@ -1,128 +1,128 @@
 @keyframes lvkLogoL4070-1 {
 
-  0% {
+  0%, 2.5% {
     stroke-dasharray: 0 4070;
   }
 
-  5% {
-    stroke-dasharray: 0 4070;
-  }
+  // 5% {
+  //   stroke-dasharray: 0 4070;
+  // }
 
-  35% {
-    stroke-dasharray: 4070 4070;
-  }
+  // 35% {
+  //   stroke-dasharray: 4070 4070;
+  // }
 
-  100% {
+  17.5%, 100% {
     stroke-dasharray: 4070 4070;
   }
 }
 
 @keyframes lvkLogoL4070-2 {
 
-  0% {
+  0%, 5% {
     stroke-dasharray: 0 4070;
   }
 
-  10% {
-    stroke-dasharray: 0 4070;
-  }
+  // 10% {
+  //   stroke-dasharray: 0 4070;
+  // }
 
-  40% {
-    stroke-dasharray: 4070 4070;
-  }
+  // 40% {
+  //   stroke-dasharray: 4070 4070;
+  // }
 
-  100% {
+  20%, 100% {
     stroke-dasharray: 4070 4070;
   }
 }
 
 @keyframes lvkLogoL4070-3 {
 
-  0% {
+  0%, 12.5% {
     stroke-dasharray: 0 4070;
   }
 
-  25% {
-    stroke-dasharray: 0 4070;
-  }
+  // 25% {
+  //   stroke-dasharray: 0 4070;
+  // }
 
-  55% {
-    stroke-dasharray: 4070 4070;
-  }
+  // 55% {
+  //   stroke-dasharray: 4070 4070;
+  // }
 
-  100% {
+  27.5%, 100% {
     stroke-dasharray: 4070 4070;
   }
 }
 
 @keyframes lvkLogoL1640-1 {
 
-  0% {
+  0%, 35% {
     stroke-dasharray: 0 1640;
   }
 
-  70% {
-    stroke-dasharray: 0 1640;
-  }
+  // 70% {
+  //   stroke-dasharray: 0 1640;
+  // }
 
-  85% {
-    stroke-dasharray: 1640 1640;
-  }
+  // 85% {
+  //   stroke-dasharray: 1640 1640;
+  // }
 
-  100% {
+  42.5%, 100% {
     stroke-dasharray: 1640 1640;
   }
 }
 
 @keyframes lvkLogoL1640-2 {
 
-  0% {
+  0%, 42.5% {
     stroke-dasharray: 0 1640;
   }
 
-  85% {
-    stroke-dasharray: 0 1640;
-  }
+  // 85% {
+  //   stroke-dasharray: 0 1640;
+  // }
 
-  100% {
+  50%, 100% {
     stroke-dasharray: 1640 1640;
   }
 }
 
 @keyframes lvkLogoL1850 {
 
-  0% {
+  0%, 35% {
     stroke-dasharray: 0 1850;
   }
 
-  70% {
-    stroke-dasharray: 0 1850;
-  }
+  // 70% {
+  //   stroke-dasharray: 0 1850;
+  // }
 
-  85% {
-    stroke-dasharray: 1850 1850;
-  }
+  // 85% {
+  //   stroke-dasharray: 1850 1850;
+  // }
 
-  100% {
+  42.5%, 100% {
     stroke-dasharray: 1850 1850;
   }
 }
 
 @keyframes lvkLogoLFade {
 
-  0% {
+  0%, 27.5% {
     opacity: 0;
   }
 
-  55% {
-    opacity: 0;
-  }
+  // 55% {
+  //   opacity: 0;
+  // }
 
-  70% {
-    opacity: 1;
-  }
+  // 70% {
+  //   opacity: 1;
+  // }
 
-  100% {
+  35%, 100% {
     opacity: 1;
   }
 }
@@ -135,7 +135,7 @@
   }
 
   &__base {
-    animation-duration: 2s;
+    animation-duration: 4s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
     animation-iteration-count: infinite;
@@ -151,7 +151,7 @@
   }
 
   &__circle-c {
-    animation-duration: 2s;
+    animation-duration: 4s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
     animation-iteration-count: infinite;
@@ -167,7 +167,7 @@
   }
 
   &__circle-l1 {
-    animation-duration: 2s;
+    animation-duration: 4s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
     animation-iteration-count: infinite;
@@ -183,7 +183,7 @@
   }
 
   &__circle-l2 {
-    animation-duration: 2s;
+    animation-duration: 4s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
     animation-iteration-count: infinite;
@@ -199,7 +199,7 @@
   }
 
   &__circle-r1 {
-    animation-duration: 2s;
+    animation-duration: 4s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
     animation-iteration-count: infinite;
@@ -215,7 +215,7 @@
   }
 
   &__circle-r2 {
-    animation-duration: 2s;
+    animation-duration: 4s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
     animation-iteration-count: infinite;
@@ -231,7 +231,7 @@
   }
 
   &__line-v1 {
-    animation-duration: 2s;
+    animation-duration: 4s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
     animation-iteration-count: infinite;
@@ -247,7 +247,7 @@
   }
 
   &__line-v2 {
-    animation-duration: 2s;
+    animation-duration: 4s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
     animation-iteration-count: infinite;
@@ -263,7 +263,7 @@
   }
 
   &__line-v3 {
-    animation-duration: 2s;
+    animation-duration: 4s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
     animation-iteration-count: infinite;
@@ -279,7 +279,7 @@
   }
 
   &__line-s {
-    animation-duration: 2s;
+    animation-duration: 4s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
     animation-iteration-count: infinite;
@@ -295,7 +295,7 @@
   }
 
   &__line-h1 {
-    animation-duration: 2s;
+    animation-duration: 4s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
     animation-iteration-count: infinite;
@@ -311,7 +311,7 @@
   }
 
   &__line-h2 {
-    animation-duration: 2s;
+    animation-duration: 4s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
     animation-iteration-count: infinite;
