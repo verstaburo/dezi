@@ -344,20 +344,9 @@
     z-index: 3;
     color: $color-main;
     box-sizing: border-box;
-    // padding-top: 100px;
-    // padding-bottom: 211px;
+
     @include rule(padding-top, (xxl: 100, xl: 158, lg: 172, md: 105));
     @include rule(padding-bottom, (xxl: 211, xl: 200, lg: 180, md: 285));
-
-    // @include screen('xl') {
-    //   padding-top: 158px;
-    //   padding-bottom: 200px;
-    // }
-
-    // @include screen('lg') {
-    //   padding-top: 172px;
-    //   padding-bottom: 180px;
-    // }
 
     @include screen('md') {
       padding-top: var(--mpt);
@@ -367,17 +356,7 @@
         padding-top: var(--mptland);
         padding-bottom: var(--mpbland);
       }
-      // @media only screen and (max-height: 580px) {
-      //   padding-top: calc((75 / 320) * 100vw);
-      //   padding-bottom: calc((255 / 320) * 100vw);
-      // }
     }
-
-    // .is-firefox & {
-    //   @include screen('md') {
-    //     padding-bottom: 70vw;
-    //   }
-    // }
 
     #{$b}.is-map-open & {
       opacity: 1;

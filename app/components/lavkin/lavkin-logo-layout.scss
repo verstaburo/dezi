@@ -1,43 +1,128 @@
-@keyframes lvkLogoL4070 {
+@keyframes lvkLogoL4070-1 {
 
-  from {
+  0% {
     stroke-dasharray: 0 4070;
   }
 
-  to {
+  5% {
+    stroke-dasharray: 0 4070;
+  }
+
+  20% {
+    stroke-dasharray: 4070 4070;
+  }
+
+  100% {
     stroke-dasharray: 4070 4070;
   }
 }
 
-@keyframes lvkLogoL1640 {
+@keyframes lvkLogoL4070-2 {
 
-  from {
+  0% {
+    stroke-dasharray: 0 4070;
+  }
+
+  10% {
+    stroke-dasharray: 0 4070;
+  }
+
+  25% {
+    stroke-dasharray: 4070 4070;
+  }
+
+  100% {
+    stroke-dasharray: 4070 4070;
+  }
+}
+
+@keyframes lvkLogoL4070-3 {
+
+  0% {
+    stroke-dasharray: 0 4070;
+  }
+
+  25% {
+    stroke-dasharray: 0 4070;
+  }
+
+  40% {
+    stroke-dasharray: 4070 4070;
+  }
+
+  100% {
+    stroke-dasharray: 4070 4070;
+  }
+}
+
+@keyframes lvkLogoL1640-1 {
+
+  0% {
     stroke-dasharray: 0 1640;
   }
 
-  to {
+  70% {
+    stroke-dasharray: 0 1640;
+  }
+
+  85% {
+    stroke-dasharray: 1640 1640;
+  }
+
+  100% {
+    stroke-dasharray: 1640 1640;
+  }
+}
+
+@keyframes lvkLogoL1640-2 {
+
+  0% {
+    stroke-dasharray: 0 1640;
+  }
+
+  85% {
+    stroke-dasharray: 0 1640;
+  }
+
+  100% {
     stroke-dasharray: 1640 1640;
   }
 }
 
 @keyframes lvkLogoL1850 {
 
-  from {
+  0% {
     stroke-dasharray: 0 1850;
   }
 
-  to {
+  70% {
+    stroke-dasharray: 0 1850;
+  }
+
+  85% {
+    stroke-dasharray: 1850 1850;
+  }
+
+  100% {
     stroke-dasharray: 1850 1850;
   }
 }
 
 @keyframes lvkLogoLFade {
 
-  from {
+  0% {
     opacity: 0;
   }
 
-  to {
+  45% {
+    opacity: 0;
+  }
+
+  60% {
+    opacity: 1;
+  }
+
+  100% {
     opacity: 1;
   }
 }
@@ -50,182 +135,194 @@
   }
 
   &__base {
-    animation-duration: .3s;
-    animation-delay: .9s;
+    animation-duration: 2s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    animation-name: lvkLogoLFade;
 
     #{$b}.js-sr & {
-      opacity: 0;
+      animation-play-state: paused;
     }
 
     #{$b}.is-animate & {
-      animation-name: lvkLogoLFade;
+      animation-play-state: running;
     }
   }
 
   &__circle-c {
-    animation-duration: .3s;
-    animation-delay: .1s;
+    animation-duration: 2s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    animation-name: lvkLogoL4070-1;
 
     #{$b}.js-sr & {
-      stroke-dasharray: 0 4070;
+      animation-play-state: paused;
     }
 
     #{$b}.is-animate & {
-      animation-name: lvkLogoL4070;
+      animation-play-state: running;
     }
   }
 
   &__circle-l1 {
-    animation-duration: .3s;
-    animation-delay: .2s;
+    animation-duration: 2s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    animation-name: lvkLogoL4070-2;
 
     #{$b}.js-sr & {
-      stroke-dasharray: 0 4070;
+      animation-play-state: paused;
     }
 
     #{$b}.is-animate & {
-      animation-name: lvkLogoL4070;
+      animation-play-state: running;
     }
   }
 
   &__circle-l2 {
-    animation-duration: .3s;
-    animation-delay: .5s;
+    animation-duration: 2s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    animation-name: lvkLogoL4070-3;
 
     #{$b}.js-sr & {
-      stroke-dasharray: 0 4070;
+      animation-play-state: paused;
     }
 
     #{$b}.is-animate & {
-      animation-name: lvkLogoL4070;
+      animation-play-state: running;
     }
   }
 
   &__circle-r1 {
-    animation-duration: .3s;
-    animation-delay: .2s;
+    animation-duration: 2s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    animation-name: lvkLogoL4070-2;
 
     #{$b}.js-sr & {
-      stroke-dasharray: 0 4070;
+      animation-play-state: paused;
     }
 
     #{$b}.is-animate & {
-      animation-name: lvkLogoL4070;
+      animation-play-state: running;
     }
   }
 
   &__circle-r2 {
-    animation-duration: .3s;
-    animation-delay: .5s;
+    animation-duration: 2s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    animation-name: lvkLogoL4070-3;
 
     #{$b}.js-sr & {
-      stroke-dasharray: 0 4070;
+      animation-play-state: paused;
     }
 
     #{$b}.is-animate & {
-      animation-name: lvkLogoL4070;
+      animation-play-state: running;
     }
   }
 
   &__line-v1 {
-    animation-duration: .3s;
-    animation-delay: 1.4s;
+    animation-duration: 2s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    animation-name: lvkLogoL1640-1;
 
     #{$b}.js-sr & {
-      stroke-dasharray: 0 1640;
+      animation-play-state: paused;
     }
 
     #{$b}.is-animate & {
-      animation-name: lvkLogoL1640;
+      animation-play-state: running;
     }
   }
 
   &__line-v2 {
-    animation-duration: .3s;
-    animation-delay: 1.7s;
+    animation-duration: 2s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    animation-name: lvkLogoL1640-2;
 
     #{$b}.js-sr & {
-      stroke-dasharray: 0 1640;
+      animation-play-state: paused;
     }
 
     #{$b}.is-animate & {
-      animation-name: lvkLogoL1640;
+      animation-play-state: running;
     }
   }
 
   &__line-v3 {
-    animation-duration: .3s;
-    animation-delay: 1.7s;
+    animation-duration: 2s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    animation-name: lvkLogoL1640-2;
 
     #{$b}.js-sr & {
-      stroke-dasharray: 0 1640;
+      animation-play-state: paused;
     }
 
     #{$b}.is-animate & {
-      animation-name: lvkLogoL1640;
+      animation-play-state: running;
     }
   }
 
   &__line-s {
-    animation-duration: .3s;
-    animation-delay: 1.4s;
+    animation-duration: 2s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    animation-name: lvkLogoL1640-1;
 
     #{$b}.js-sr & {
-      stroke-dasharray: 0 1640;
+      animation-play-state: paused;
     }
 
     #{$b}.is-animate & {
-      animation-name: lvkLogoL1640;
+      animation-play-state: running;
     }
   }
 
   &__line-h1 {
-    animation-duration: .3s;
-    animation-delay: 1.4s;
+    animation-duration: 2s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    animation-name: lvkLogoL1850;
 
     #{$b}.js-sr & {
-      stroke-dasharray: 0 1850;
+      animation-play-state: paused;
     }
 
     #{$b}.is-animate & {
-      animation-name: lvkLogoL1850;
+      animation-play-state: running;
     }
   }
 
   &__line-h2 {
-    animation-duration: .3s;
-    animation-delay: 1.4s;
+    animation-duration: 2s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    animation-name: lvkLogoL1850;
 
     #{$b}.js-sr & {
-      stroke-dasharray: 0 1850;
+      animation-play-state: paused;
     }
 
     #{$b}.is-animate & {
-      animation-name: lvkLogoL1850;
+      animation-play-state: running;
     }
   }
 }
