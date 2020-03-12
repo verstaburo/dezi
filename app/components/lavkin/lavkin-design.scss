@@ -144,4 +144,8 @@
       }
     }
   }
+
+  &__onelove {
+    @include rule(margin-top, (xxl: 66, xl: 66, lg: 66, md2: 40));
+  }
 }

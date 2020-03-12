@@ -1,0 +1,94 @@
+@keyframes lvkOneLove {
+
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.lavkin-onelove {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding-top: 58.2%;
+  $b: &;
+
+  @include rule(margin-left, (md2: -30));
+  @include rule(margin-right, (md2: -30));
+
+  @include screen('md') {
+    padding-top: 58.2vw;
+    width: 100vw;
+  }
+
+  &__picture {
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    &::after {
+      @include pseudo;
+
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(0deg, rgba(14, 16, 16, .21), rgba(14, 16, 16, .21)) no-repeat 0 0;
+      z-index: 2;
+    }
+  }
+
+  &__image {
+    @include fill-img;
+
+    z-index: 1;
+  }
+
+  &__slogan {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    width: 95.6%;
+    transform: translate3d(-50%, -50%, 0);
+    z-index: 2;
+
+    &.js-sr {
+      visibility: visible;
+    }
+  }
+
+  &__symbol {
+    animation-duration: .3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+    transform-origin: 50% 50%;
+
+    @for $i from 1 through 15 {
+
+      &:nth-child(#{$i}) {
+        animation-delay: ($i * 0.2) * 1s;
+      }
+    }
+
+    #{$b}__slogan.js-sr & {
+      opacity: 0;
+      transform: scale(0);
+    }
+
+    #{$b}__slogan.is-animate & {
+      animation-name: lvkOneLove;
+    }
+  }
+}
