@@ -1,6 +1,6 @@
 @keyframes lvkLogoL4070-1 {
 
-  0%, 2.5% {
+  0%, 15% {
     stroke-dasharray: 0 4070;
   }
 
@@ -12,14 +12,14 @@
   //   stroke-dasharray: 4070 4070;
   // }
 
-  17.5%, 100% {
+  30%, 100% {
     stroke-dasharray: 4070 4070;
   }
 }
 
 @keyframes lvkLogoL4070-2 {
 
-  0%, 5% {
+  0%, 17.5% {
     stroke-dasharray: 0 4070;
   }
 
@@ -31,14 +31,14 @@
   //   stroke-dasharray: 4070 4070;
   // }
 
-  20%, 100% {
+  32.5%, 100% {
     stroke-dasharray: 4070 4070;
   }
 }
 
 @keyframes lvkLogoL4070-3 {
 
-  0%, 12.5% {
+  0%, 25% {
     stroke-dasharray: 0 4070;
   }
 
@@ -50,14 +50,14 @@
   //   stroke-dasharray: 4070 4070;
   // }
 
-  27.5%, 100% {
+  40%, 100% {
     stroke-dasharray: 4070 4070;
   }
 }
 
 @keyframes lvkLogoL1640-1 {
 
-  0%, 35% {
+  0%, 47.5% {
     stroke-dasharray: 0 1640;
   }
 
@@ -69,14 +69,14 @@
   //   stroke-dasharray: 1640 1640;
   // }
 
-  42.5%, 100% {
+  55%, 100% {
     stroke-dasharray: 1640 1640;
   }
 }
 
 @keyframes lvkLogoL1640-2 {
 
-  0%, 42.5% {
+  0%, 55% {
     stroke-dasharray: 0 1640;
   }
 
@@ -84,14 +84,14 @@
   //   stroke-dasharray: 0 1640;
   // }
 
-  50%, 100% {
+  62.5%, 100% {
     stroke-dasharray: 1640 1640;
   }
 }
 
 @keyframes lvkLogoL1850 {
 
-  0%, 35% {
+  0%, 47.5% {
     stroke-dasharray: 0 1850;
   }
 
@@ -103,14 +103,14 @@
   //   stroke-dasharray: 1850 1850;
   // }
 
-  42.5%, 100% {
+  55%, 100% {
     stroke-dasharray: 1850 1850;
   }
 }
 
 @keyframes lvkLogoLFade {
 
-  0%, 27.5% {
+  0%, 40% {
     opacity: 0;
   }
 
@@ -122,7 +122,7 @@
   //   opacity: 1;
   // }
 
-  35%, 100% {
+  47.5%, 100% {
     opacity: 1;
   }
 }
@@ -139,6 +139,7 @@
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
     animation-iteration-count: infinite;
+    animation-direction: alternate;
     animation-name: lvkLogoLFade;
 
     #{$b}.js-sr & {
@@ -155,6 +156,7 @@
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
     animation-iteration-count: infinite;
+    animation-direction: alternate;
     animation-name: lvkLogoL4070-1;
 
     #{$b}.js-sr & {
@@ -171,6 +173,7 @@
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
     animation-iteration-count: infinite;
+    animation-direction: alternate;
     animation-name: lvkLogoL4070-2;
 
     #{$b}.js-sr & {
@@ -187,6 +190,7 @@
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
     animation-iteration-count: infinite;
+    animation-direction: alternate;
     animation-name: lvkLogoL4070-3;
 
     #{$b}.js-sr & {
@@ -203,6 +207,7 @@
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
     animation-iteration-count: infinite;
+    animation-direction: alternate;
     animation-name: lvkLogoL4070-2;
 
     #{$b}.js-sr & {
@@ -219,6 +224,7 @@
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
     animation-iteration-count: infinite;
+    animation-direction: alternate;
     animation-name: lvkLogoL4070-3;
 
     #{$b}.js-sr & {
@@ -235,6 +241,7 @@
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
     animation-iteration-count: infinite;
+    animation-direction: alternate;
     animation-name: lvkLogoL1640-1;
 
     #{$b}.js-sr & {
@@ -251,6 +258,7 @@
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
     animation-iteration-count: infinite;
+    animation-direction: alternate;
     animation-name: lvkLogoL1640-2;
 
     #{$b}.js-sr & {
@@ -267,6 +275,7 @@
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
     animation-iteration-count: infinite;
+    animation-direction: alternate;
     animation-name: lvkLogoL1640-2;
 
     #{$b}.js-sr & {
@@ -283,6 +292,7 @@
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
     animation-iteration-count: infinite;
+    animation-direction: alternate;
     animation-name: lvkLogoL1640-1;
 
     #{$b}.js-sr & {
@@ -299,6 +309,7 @@
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
     animation-iteration-count: infinite;
+    animation-direction: alternate;
     animation-name: lvkLogoL1850;
 
     #{$b}.js-sr & {
@@ -315,6 +326,7 @@
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
     animation-iteration-count: infinite;
+    animation-direction: alternate;
     animation-name: lvkLogoL1850;
 
     #{$b}.js-sr & {
