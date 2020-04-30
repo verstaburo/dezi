@@ -66,7 +66,7 @@
     "inputmask": "^3.3.8",
     "is-touch-device": "^1.0.1",
     "jade-get-data": "^1.0.1",
-    "jquery": "^3.2.1",
+    "jquery": "^3.5.0",
     "jquery-scrollify": "^1.0.20",
     "jquery.scrollbar": "^0.2.11",
     "leaflet": "^1.6.0",
