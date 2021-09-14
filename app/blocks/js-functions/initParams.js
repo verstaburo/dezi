@@ -1,12 +1,12 @@
-const $ = window.$;
+const { $ } = window;
 
 window.globalOptions.headerLight = $('.header').is('.header_light');
 
 // фиксируем высоту страницы на мобильных для обходв vh
 function setVH() {
-  const wH = window.innerHeight ||
-    document.documentElement.clientHeight ||
-    document.body.clientHeight;
+  const wH = window.innerHeight
+    || document.documentElement.clientHeight
+    || document.body.clientHeight;
   const el = document.createElement('div');
   el.setAttribute('style', 'display: block; position: absolute;pointer - events: none; width: 100vw; height: 100vh; z - index: -1; ');
   el.classList.add('js-vh-test');

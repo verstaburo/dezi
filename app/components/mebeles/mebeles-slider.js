@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 
-const $ = window.$;
+const { $ } = window;
 
 export default function mebelesSlider() {
   $(window).on('scroll', (evt) => {

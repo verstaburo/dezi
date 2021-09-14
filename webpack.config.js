@@ -10,33 +10,48 @@ module.exports = (watch = false) => ({
     filename: 'app.min.js',
     path: path.resolve('./dist/assets/scripts/'),
   },
-  watch,
-  devtool: isDebug ? 'cheap-module-inline-source-map' : false,
+  watch: isDebug,
+  mode: isDebug ? 'development' : 'production',
   module: {
+
+    // {
+    //   test: new RegExp('scrollmagic/scrollmagic/uncompressed'),
+    //   use: [
+    //     {
+    //       loader: 'imports-loader',
+    //       options: {
+    //         additionalCode:
+    //       'var define = false; /* Disable AMD for misbehaving libraries */',
+    //       },
+    //     },
+    //   ],
+    // },
     rules: [{
-        enforce: 'pre',
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'eslint-loader',
-      },
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader',
-      },
-      {
-        test: /\.glsl$/,
-        loader: 'webpack-glsl-loader',
-      },
+      test: /\.glsl$/,
+      use: 'raw-loader',
+    },
+    {
+      test: new RegExp('scrollmagic/scrollmagic/uncompressed'),
+      use: [
+        {
+          loader: 'imports-loader',
+          options: {
+            additionalCode:
+          'var define = false; /* Disable AMD for misbehaving libraries */',
+          },
+        },
+      ],
+    }, {
+      enforce: 'pre',
+      test: /\.js$/,
+      exclude: /node_modules/,
+      use: 'eslint-loader',
+    },
+    {
+      test: /\.js$/,
+      exclude: /node_modules/,
+      use: 'babel-loader',
+    },
     ],
   },
-  plugins: [
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development'),
-      },
-    }),
-    new webpack.NoErrorsPlugin(),
-    !isDebug ? new webpack.optimize.UglifyJsPlugin() : f => f,
-  ],
 });

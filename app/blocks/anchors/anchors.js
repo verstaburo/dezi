@@ -1,4 +1,4 @@
-const $ = window.$;
+const { $ } = window;
 
 export default function anchors() {
   $(document).on('click', '.js-section-anchor', (evt) => {

@@ -2,11 +2,10 @@ import * as THREE from 'three';
 import {
   TimelineMax,
 } from 'gsap';
-import ResizeObserver from 'resize-observer-polyfill';
 import fragment from './fragment.glsl';
 import vertex from './vertex.glsl';
 
-const $ = window.$;
+const { $ } = window;
 
 export default class CanvasSlider {
   constructor(el) {
@@ -74,6 +73,7 @@ export default class CanvasSlider {
     this.isPlay = false;
     this.tl = new TimelineMax();
   }
+
   getSizes() {
     const that = this;
     return {
@@ -81,6 +81,7 @@ export default class CanvasSlider {
       h: that.height,
     };
   }
+
   updateSizes() {
     const that = this;
     that.width = $(that.el).outerWidth();
@@ -90,11 +91,12 @@ export default class CanvasSlider {
       h: that.height,
     };
   }
+
   resize() {
     const that = this;
     const sizes = this.updateSizes();
-    const w = sizes.w;
-    const h = sizes.h;
+    const { w } = sizes;
+    const { h } = sizes;
     that.renderer.setSize(w, h);
     that.camera.aspect = w / h;
 
@@ -121,6 +123,7 @@ export default class CanvasSlider {
     }
     that.camera.updateProjectionMatrix();
   }
+
   resizeObserver() {
     const that = this;
     const targets = that.el;
@@ -135,10 +138,12 @@ export default class CanvasSlider {
       }
     }
   }
+
   render() {
     const that = this;
     that.renderer.render(that.scene, that.camera);
   }
+
   animate() {
     requestAnimationFrame(this.animate);
     if (this.isPlay) {
@@ -148,9 +153,10 @@ export default class CanvasSlider {
       this.render();
     }
   }
+
   init() {
     const that = this;
-    const resize = this.resize;
+    const { resize } = this;
     that.resize();
     that.resizeObserver();
     that.animate();
@@ -160,19 +166,22 @@ export default class CanvasSlider {
     }, 4000);
     (that.el)[0].wglslider = that;
   }
+
   play() {
     const that = this;
     that.isPlay = true;
   }
+
   stop() {
     const that = this;
     that.isPlay = false;
   }
+
   animation() {
     const that = this;
-    const tl = that.tl;
+    const { tl } = that;
     const index = that.currIndex;
-    const maxIndex = that.maxIndex;
+    const { maxIndex } = that;
     const nextIndex = ((index + 1) > maxIndex) ? 0 : index + 1;
     const nextNextIndex = (nextIndex + 1 > maxIndex) ? 0 : nextIndex + 1;
     const start = that.material.uniforms.progress.value;

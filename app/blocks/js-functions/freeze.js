@@ -1,20 +1,19 @@
 // Скрипт "замораживает" страничку, запрещая скролл
-const $ = window.$;
+const {
+  $,
+} = window;
 
 export function freeze() {
   const h = $('html');
-  const b = $('body');
 
   if (h.css('position') !== 'fixed') {
     const top = h.scrollTop() ? h.scrollTop() : $('body').scrollTop();
 
-    if (window.innerHeight < b.height()) {
+    if (window.innerWidth > h.width()) {
       h.css('overflow-y', 'scroll');
     }
 
     h.css({
-      width: '100%',
-      height: '100%',
       position: 'fixed',
       top: -top,
     });
@@ -30,8 +29,6 @@ export function unfreeze() {
     $('html, body').scrollTop(-parseInt(h.css('top'), 10));
     h.css({
       position: '',
-      width: '',
-      height: '',
       top: '',
       'overflow-y': '',
     });

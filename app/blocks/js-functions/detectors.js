@@ -1,6 +1,6 @@
 import bowser from 'bowser';
 
-const $ = window.$;
+const { $ } = window;
 
 export default function browsersDetection() {
   const parser = bowser.getParser(window.navigator.userAgent);

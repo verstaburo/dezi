@@ -1,15 +1,16 @@
-/* eslint-disable */
-
+/* eslint-disable no-unused-vars */
 import {
   TweenMax,
   TimelineMax,
-  Power0,
   Power1,
 } from 'gsap/TweenMax';
 import ScrollMagic from 'scrollmagic';
-import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap';
+// eslint-disable-next-line max-len
+import { ScrollMagicPluginGsap } from 'scrollmagic-plugin-gsap';
 
-const $ = window.$;
+ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
+
+const { $ } = window;
 
 export default function splace() {
   const controller = new ScrollMagic.Controller();
@@ -94,7 +95,6 @@ export default function splace() {
       }),
     ], '-=0.3');
 
-
   if ($('.splace').length > 0) {
     const scene = new ScrollMagic
       .Scene({
@@ -121,10 +121,9 @@ export default function splace() {
         triggerElement: '.splace-look__figure',
         duration: 0,
         reverse: false,
-        triggerHook: .5,
+        triggerHook: 0.5,
       })
       .setTween(anim2)
       .addTo(controller);
   }
 }
-/* eslint-enable */

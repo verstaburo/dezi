@@ -1,7 +1,8 @@
+/* eslint-disable */
 // import * as PIXI from 'pixi.js';
 import CanvasSlider from './CanvasSlider';
 
-const $ = window.$;
+const { $ } = window;
 
 export default function sliderBg() {
   const sliders = $('.js-bg-slider');
@@ -16,3 +17,4 @@ export default function sliderBg() {
     });
   }
 }
+/* eslint-enable */

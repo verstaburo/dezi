@@ -6,7 +6,7 @@ import {
   unfreeze,
 } from '../js-functions/freeze';
 
-const $ = window.$;
+const { $ } = window;
 
 export default function popups() {
   const bp = window.globalOptions.sizes;

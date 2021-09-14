@@ -1,8 +1,8 @@
 function setDevice() {
-  var
-    scale = 1,
-    siteWidth,
-    screenSize = $(window).width();
+  let
+    scale = 1;
+  let siteWidth;
+  const screenSize = $(window).width();
 
   if (screenSize < 768) {
     siteWidth = 320;

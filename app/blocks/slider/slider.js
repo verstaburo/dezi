@@ -8,7 +8,7 @@ import {
   Power1,
 } from 'gsap/TweenMax';
 
-const $ = window.$;
+const { $ } = window;
 
 export default function slider() {
   const wW = $(window).width();

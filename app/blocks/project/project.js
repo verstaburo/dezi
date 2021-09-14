@@ -1,4 +1,4 @@
-const $ = window.$;
+const { $ } = window;
 
 export default function bgvideo() {
   const breakpoints = window.globalOptions.sizes;
@@ -10,7 +10,7 @@ export default function bgvideo() {
     $('.js-video').each((i, el) => {
       const container = $(el).closest('[data-video-container]');
       if (container.length === 0 || $(container).hasClass('is-loaded')) {
-        const top = $(el).offset().top;
+        const { top } = $(el).offset();
         const vH = $(el).outerHeight();
         const bottom = top + vH;
         $(el).attr('preload', 'auto');

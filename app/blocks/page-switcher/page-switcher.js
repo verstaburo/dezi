@@ -1,9 +1,9 @@
-const $ = window.$;
+const { $ } = window;
 
 export default function pageSwitcher() {
   window.globalOptions.pages = {};
 
-  const pages = window.globalOptions.pages;
+  const { pages } = window.globalOptions;
 
   function pageLoad(uri, pagename, callback) {
     const url = uri;
