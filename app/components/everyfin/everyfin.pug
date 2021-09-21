@@ -1,0 +1,63 @@
+mixin everyfin()
+  +b.SECTION.everyfin&attributes(attributes)
+    +b.SECTION.everyfin-lead
+      +e.bg
+        +e.PICTURE.image
+          source(srcset="assets/images/everyfin/lead-bg-sm.jgp" media="(max-width: 767px)")
+          source(srcset="assets/images/everyfin/lead-bg.jpg" media="(min-width: 768px)")
+          img(src="assets/images/everyfin/lead-bg.jpg" alt="@@" width="1781" height="926")
+      +e.H1.title everyfin
+        +e.IMG.image(src="assets/images/everyfin/everyfin-small.svg" width="308" height="82")
+
+    +b.SECTION.everyfin-case
+      .container.container_everyfin
+        +b.everyfin-issue
+          +e.P.text Issue: develop a logo for a financial service
+          +e.H2.title Everyfin Financial Services logo design
+          +e.PICTURE.image
+            source(media="(min-width: 768px)", srcset="assets/images/everyfin/design.jpg")
+            source(media="(max-width: 767px)", srcset="assets/images/everyfin/design-sm.jpg")
+            img(src="assets/images/everyfin/design.jpg", alt="@@")
+
+        +b.everyfin-logo
+          +e.IMG.logo(src="assets/images/everyfin/everyfin-logo.png" alt="@@")
+
+    +b.SECTION.everyfin-brand
+      .container.container_everyfin
+        +b.everyfin-merch
+          +e.IMG.image_big(src="assets/images/everyfin/cards.jpg" alt="@@")
+          +e.IMG.image_small(src="assets/images/everyfin/merch.jpg" alt="@@")
+
+        +b.everyfin-colors
+          +e.card_purple
+            +e.label
+              +e.name Everyfin purple
+              +e.colors
+                +e.color EF1B58
+                +e.color 792059
+          +e.card_yellow
+            +e.label
+              +e.color F8B02F
+              +e.name Sea Buckthorn
+          +e.card_green
+            +e.label
+              +e.color 4EF19F
+              +e.name Screamin' Green
+          +e.card_black
+            +e.label
+              +e.color 17151E
+              +e.name Cinder
+
+
+    +b.SECTION.everyfin-app
+      +e.IMG.wide-logo(src="assets/images/everyfin/everyfin-gradient.svg" width="2030" height="546" alt="everyfin")
+      +e.IMG.phone(src="assets/images/everyfin/phone.png" width="846" height="1177" alt="@@")
+
+      .container.container_everyfin
+        +b.everyfin-stickers
+          +e.IMG.image_small(src="assets/images/everyfin/brand-1.jpg" alt="@@")
+          +e.IMG.image_big(src="assets/images/everyfin/brand-2.jpg" alt="@@")
+
+
+
+    block
