@@ -125,6 +125,13 @@ body {
     @include rule(padding-left, (xxl: 160, xl: 100, lg: 100, md2: 30));
     @include rule(padding-right, (xxl: 160, xl: 100, lg: 100, md2: 30));
   }
+
+  &_everyfin {
+    max-width: none;
+
+    @include wRule(padding-left, (xl: 247, blg: 185, sm: 27));
+    @include wRule(padding-right, (xl: 247, blg: 185, sm: 27));
+  }
 }
 
 .js-sr {

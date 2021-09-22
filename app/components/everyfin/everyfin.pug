@@ -3,30 +3,32 @@ mixin everyfin()
     +b.SECTION.everyfin-lead
       +e.bg
         +e.PICTURE.image
-          source(srcset="assets/images/everyfin/lead-bg-sm.jgp" media="(max-width: 767px)")
+          source(srcset="assets/images/everyfin/lead-bg-sm.jpg" media="(max-width: 767px)")
           source(srcset="assets/images/everyfin/lead-bg.jpg" media="(min-width: 768px)")
           img(src="assets/images/everyfin/lead-bg.jpg" alt="@@" width="1781" height="926")
       +e.H1.title everyfin
-        +e.IMG.image(src="assets/images/everyfin/everyfin-small.svg" width="308" height="82")
+        +e.IMG.logo(src="assets/images/everyfin/everyfin-small.svg" width="308" height="82" alt="everyfin")
 
     +b.SECTION.everyfin-case
       .container.container_everyfin
         +b.everyfin-issue
           +e.P.text Issue: develop a logo for a financial service
-          +e.H2.title Everyfin Financial Services logo design
+          +e.H2.title Everyfin Financial <br> Services logo <br> design
           +e.PICTURE.image
             source(media="(min-width: 768px)", srcset="assets/images/everyfin/design.jpg")
             source(media="(max-width: 767px)", srcset="assets/images/everyfin/design-sm.jpg")
             img(src="assets/images/everyfin/design.jpg", alt="@@")
 
         +b.everyfin-logo
-          +e.IMG.logo(src="assets/images/everyfin/everyfin-logo.png" alt="@@")
+          +e.IMG.logo(src="assets/images/everyfin/everyfin-logo.png" alt="everyfin logo")
 
     +b.SECTION.everyfin-brand
       .container.container_everyfin
         +b.everyfin-merch
-          +e.IMG.image_big(src="assets/images/everyfin/cards.jpg" alt="@@")
-          +e.IMG.image_small(src="assets/images/everyfin/merch.jpg" alt="@@")
+          +e.card_big
+            +e.IMG.image(src="assets/images/everyfin/cards.jpg" alt="@@")
+          +e.card_small
+            +e.IMG.image(src="assets/images/everyfin/merch.jpg" alt="@@")
 
         +b.everyfin-colors
           +e.card_purple
