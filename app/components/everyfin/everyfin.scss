@@ -6,6 +6,8 @@
   font-family: $font-stolzl;
 
   $b: &;
+
+  @include wRule(padding-bottom, (xl: 273, blg: 204, sm: 178));
 }
 
 .everyfin-lead {
@@ -55,8 +57,8 @@
     z-index: 2;
 
     @include wRule(bottom, (xl: 118, blg: 88, sm: 205));
-    @include wRule(right, (xl: 373, blg: 176, sm: auto));
-    @include wRule(left, (sm: 85));
+    @include wRule(right, (xl: 373, blg: 280, sm: auto));
+    @include wRule(left, (sm: 75));
   }
 
   &__logo {
@@ -274,7 +276,7 @@
     align-items: flex-end;
     text-align: right;
 
-    @include wRule(padding, (xl: 33 23 33 76, blg: 25 57 25 25, sm: 14 15));
+    @include wRule(padding, (xl: 33 23 33 76, blg: 22 19 22 57, sm: 14 15));
 
     @include screen2('sm') {
       text-align: left;
@@ -384,6 +386,8 @@
   width: 100%;
   overflow: hidden;
 
+  @include wRule(margin-top, (xl: -120, blg: -90, sm: 77));
+
   &__wide-logo {
     position: absolute;
     top: 0;
@@ -391,6 +395,7 @@
     width: auto;
     z-index: 1;
 
+    @include wRule(top, (xl: 171, blg: 128, sm: 205));
     @include wRule(height, (xl: 546, blg: 410, sm: 137));
     @include wRule(left, (xl: -55, blg: -42, sm: -67));
     @include wRule(right, (xl: -55, blg: -42, sm: -67));
@@ -398,6 +403,67 @@
 
   &__phone {
     position: relative;
+    display: block;
+    font-size: 0;
+    line-height: 0;
     z-index: 2;
+    height: auto;
+
+    @include wRule(margin-left, (xl: 620, blg: 466, sm: -34));
+    @include wRule(width, (xl: 846, blg: 635, sm: 504));
+  }
+}
+
+.everyfin-stickers {
+  display: flex;
+  width: 100%;
+  z-index: 3;
+
+  @include wRule(margin-top, (xl: -205, blg: -154, sm: -90));
+
+  @include screen2('sm') {
+    display: block;
+  }
+
+  &__card {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    box-sizing: border-box;
+
+    @include wRule(border-radius, (xl: 10, blg: 7.5, sm: 10));
+    @include wRule(height, (xl: 723, blg: 542, sm: auto));
+
+    &:not(:first-child) {
+      @include wRule(margin-left, (xl: 45, blg: 34, sm: 0));
+      @include wRule(margin-top, (sm: 20));
+    }
+
+    &_big {
+      flex: 1;
+
+      @include screen2('sm') {
+        flex: none;
+        width: 100%;
+
+        @include ratio(320, 276);
+      }
+    }
+
+    &_small {
+      @include wRule(width, (xl: 543, blg: 407, sm: 100%));
+
+      @include screen2('sm') {
+        width: 100%;
+
+        @include ratio(320, 427);
+      }
+    }
+  }
+
+  &__image {
+    @include fill-img;
+
+    @include wRule(border-radius, (xl: 10, blg: 7.5, sm: 10));
   }
 }

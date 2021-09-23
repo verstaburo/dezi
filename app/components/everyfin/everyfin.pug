@@ -57,8 +57,10 @@ mixin everyfin()
 
       .container.container_everyfin
         +b.everyfin-stickers
-          +e.IMG.image_small(src="assets/images/everyfin/brand-1.jpg" alt="@@")
-          +e.IMG.image_big(src="assets/images/everyfin/brand-2.jpg" alt="@@")
+          +e.card_small
+            +e.IMG.image(src="assets/images/everyfin/brand-1.jpg" alt="@@")
+          +e.card_big
+            +e.IMG.image(src="assets/images/everyfin/brand-2.jpg" alt="@@")
 
 
 
