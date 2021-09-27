@@ -55,7 +55,7 @@ $berguskati-brown: #644b34;
   width: 100%;
   box-sizing: border-box;
 
-  @include wRule(padding-top, (xl: 340, blg: 230, slg: 204, sm: 77));
+  @include wRule(padding-top, (xl: 340, blg: 253, slg: 226, sm: 74));
 
   .container {
     display: grid;
@@ -64,12 +64,12 @@ $berguskati-brown: #644b34;
 
     @include screen2('blg') {
       grid-template-columns: pxtovw(370, blg) 1fr;
-      grid-template-rows: pxtovw(595, blg) auto 1fr;
+      grid-template-rows: pxtovw(572, blg) auto 1fr;
     }
 
     @include screen2('slg') {
       grid-template-columns: pxtovw(328, slg) 1fr;
-      grid-template-rows: pxtovw(529, slg) auto 1fr;
+      grid-template-rows: pxtovw(507, slg) auto 1fr;
     }
 
     @include screen2('sm') {
@@ -121,6 +121,7 @@ $berguskati-brown: #644b34;
 
     @include wRule(margin-left, (xl: -102, blg: -77, slg: -70, sm: auto));
     @include wRule(margin-right, (sm: auto));
+    @include wRule(margin-top, (sm: 109));
 
     @include screen2('sm') {
       grid-column: 1 / 2;
@@ -157,7 +158,11 @@ $berguskati-brown: #644b34;
 
     p {
       &:not(:first-child) {
-        margin-top: 1em;
+        margin-top: 1.4em;
+
+        @include screen2('slg') {
+          margin-top: 1.7em;
+        }
       }
     }
   }
@@ -167,7 +172,7 @@ $berguskati-brown: #644b34;
   display: block;
   width: 100%;
 
-  @include wRule(margin-top, (xl: 121, blg: 91, slg: 81, sm: 55));
+  @include wRule(margin-top, (xl: 155, blg: 114, slg: 92, sm: 65));
 
   .container {
     display: flex;
@@ -260,6 +265,9 @@ $berguskati-brown: #644b34;
     display: flex;
     justify-content: flex-start;
     align-items: baseline;
+    box-sizing: border-box;
+
+    @include wRule(padding-right, (xl: 12, blg: 7, slg: 8, sm: 0));
   }
 
   &__type {
@@ -270,7 +278,7 @@ $berguskati-brown: #644b34;
     @include wRule(font-size, (xl: 13, blg: 9.75, slg: 8.66667, sm: 8.66667));
 
     &:not(:last-child) {
-      @include wRule(margin-right, (xl: 62, blg: 52, slg: 46, sm: 46));
+      @include wRule(margin-right, (xl: 66, blg: 52, slg: 46, sm: 46));
     }
   }
 
@@ -286,7 +294,7 @@ $berguskati-brown: #644b34;
     }
 
     .berguskati-landing__description & {
-      @include wRule(margin-top, (xl: 62, blg: 47, slg: 42, sm: 0));
+      @include wRule(margin-top, (xl: 105, blg: 81, slg: 60, sm: 0));
 
       @include screen2('sm') {
         display: none;
@@ -388,7 +396,7 @@ $berguskati-brown: #644b34;
       margin-left: pxtovw(-24, sm);
       margin-right: pxtovw(-24, sm);
 
-      @include ratio(375, 205);
+      @include ratio(327, 205);
     }
 
     iframe {
@@ -402,8 +410,10 @@ $berguskati-brown: #644b34;
   width: 100%;
   justify-content: space-between;
   align-items: flex-start;
+  box-sizing: border-box;
 
   @include wRule(margin-top, (xl: 123, blg: 92, slg: 82, sm: 84));
+  @include wRule(padding, (xl: 0 17, blg: 0 13, slg: 0 11, sm: 0));
 
   @include screen2('sm') {
     flex-wrap: wrap;
@@ -417,11 +427,21 @@ $berguskati-brown: #644b34;
 
     @include screen2('sm') {
       width: 100%;
+      order: 2;
+    }
+
+    &:nth-child(2) {
+      @include screen2('sm') {
+        order: 1;
+      }
     }
 
     &:not(:first-child) {
       @include wRule(margin-left, (xl: 40, blg: 30, slg: 20, sm: 0));
-      @include wRule(margin-top, (sm: 62));
+    }
+
+    &:not(:last-child) {
+      @include wRule(margin-bottom, (sm: 61));
     }
   }
 
@@ -507,9 +527,9 @@ $berguskati-brown: #644b34;
   border: 0;
   align-items: start;
 
-  @include wRule(margin-top, (xl: -253, blg: -190, slg: -169, sm: 70));
+  @include wRule(margin-top, (xl: -234, blg: -177, slg: -158, sm: 60));
   @include wRule(padding, (xl: 0 100, blg: 0 75, slg: 0 67, sm: 0));
-  @include wRule(column-gap, (xl: 42, blg: 32, slg: 28, sm: 21));
+  @include wRule(column-gap, (xl: 45, blg: 32, slg: 28, sm: 21));
   @include wRule(row-gap, (sm: 20));
 
   @include screen2('blg') {
@@ -637,7 +657,7 @@ $berguskati-brown: #644b34;
   display: block;
   width: 100%;
 
-  @include wRule(margin-top, (xl: 222, blg: 166, slg: 148, sm: 86));
+  @include wRule(margin-top, (xl: 222, blg: 166, slg: 148, sm: 65));
 
   &__row {
     display: flex;
@@ -664,7 +684,7 @@ $berguskati-brown: #644b34;
       margin-left: pxtovw(-24, sm);
       margin-right: pxtovw(-24, sm);
 
-      @include ratio(375, 457);
+      @include ratio(327, 457);
     }
 
     img {
@@ -681,7 +701,7 @@ $berguskati-brown: #644b34;
     align-items: flex-start;
 
     @include wRule(padding, (xl: 109 0, blg: 82 0, slg: 73 0, sm: 51 0));
-    @include wRule(border-radius, (xl: 50, blg: 37.5, slg: 33.3333, sm: 10));
+    @include wRule(border-radius, (xl: 50, blg: 37.5, slg: 33.3333, sm: 23.2272));
 
     @include screen2('sm') {
       width: 100%;
@@ -703,7 +723,7 @@ $berguskati-brown: #644b34;
     overflow: hidden;
     flex: 1;
 
-    @include wRule(border-radius, (xl: 50, blg: 37.5, slg: 33.3333, sm: 10));
+    @include wRule(border-radius, (xl: 50, blg: 37.5, slg: 33.3333, sm: 23.2272));
     @include wRule(margin-left, (xl: 44, blg: 33, slg: 29, sm: 0));
     @include wRule(margin-top, (sm: 31));
 
@@ -749,7 +769,7 @@ $berguskati-brown: #644b34;
     background-clip: text;
 
     @include wRule(font-size, (xl: 100, blg: 75, slg: 66.6667, sm: 30));
-    @include wRule(margin-top, (xl: 40, blg: 30, slg: 25, sm: 28));
+    @include wRule(margin-top, (xl: 40, blg: 30, slg: 25, sm: 52));
   }
 
   .berguskati-link {

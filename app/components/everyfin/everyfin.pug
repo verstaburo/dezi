@@ -1,65 +1,65 @@
 mixin everyfin()
   +b.SECTION.everyfin&attributes(attributes)
     +b.SECTION.everyfin-lead
-      +e.bg
+      +e.bg.js-sr_14
         +e.PICTURE.image
           source(srcset="assets/images/everyfin/lead-bg-sm.jpg" media="(max-width: 767px)")
           source(srcset="assets/images/everyfin/lead-bg.jpg" media="(min-width: 768px)")
           img(src="assets/images/everyfin/lead-bg.jpg" alt="@@" width="1781" height="926")
-      +e.H1.title everyfin
+      +e.H1.title.js-sr_29 everyfin
         +e.IMG.logo(src="assets/images/everyfin/everyfin-small.svg" width="308" height="82" alt="everyfin")
 
     +b.SECTION.everyfin-case
       .container.container_everyfin
         +b.everyfin-issue
-          +e.P.text Issue: develop a logo for a financial service
-          +e.H2.title Everyfin Financial <br> Services logo <br> design
-          +e.PICTURE.image
+          +e.P.text.js-sr_2 Issue: develop a logo for a financial service
+          +e.H2.title.js-sr_3 Everyfin Financial <br> Services logo <br> design
+          +e.PICTURE.image.js-sr_21
             source(media="(min-width: 768px)", srcset="assets/images/everyfin/design.jpg")
             source(media="(max-width: 767px)", srcset="assets/images/everyfin/design-sm.jpg")
             img(src="assets/images/everyfin/design.jpg", alt="@@")
 
-        +b.everyfin-logo
-          +e.IMG.logo(src="assets/images/everyfin/everyfin-logo.png" alt="everyfin logo")
+        +b.everyfin-logo.js-sr_21
+          +e.IMG.logo.js-sr_13(src="assets/images/everyfin/everyfin-logo.png" alt="everyfin logo")
 
     +b.SECTION.everyfin-brand
       .container.container_everyfin
         +b.everyfin-merch
-          +e.card_big
+          +e.card_big.js-sr_10
             +e.IMG.image(src="assets/images/everyfin/cards.jpg" alt="@@")
-          +e.card_small
+          +e.card_small.js-sr_6
             +e.IMG.image(src="assets/images/everyfin/merch.jpg" alt="@@")
 
         +b.everyfin-colors
-          +e.card_purple
+          +e.card_purple.js-sr_7
             +e.label
               +e.name Everyfin purple
               +e.colors
                 +e.color EF1B58
                 +e.color 792059
-          +e.card_yellow
+          +e.card_yellow.js-sr_7
             +e.label
               +e.color F8B02F
               +e.name Sea Buckthorn
-          +e.card_green
+          +e.card_green.js-sr_7
             +e.label
               +e.color 4EF19F
               +e.name Screamin' Green
-          +e.card_black
+          +e.card_black.js-sr_7
             +e.label
               +e.color 17151E
               +e.name Cinder
 
 
     +b.SECTION.everyfin-app
-      +e.IMG.wide-logo(src="assets/images/everyfin/everyfin-gradient.svg" width="2030" height="546" alt="everyfin")
-      +e.IMG.phone(src="assets/images/everyfin/phone.png" width="846" height="1177" alt="@@")
+      +e.IMG.wide-logo.js-sr_1(src="assets/images/everyfin/everyfin-gradient.svg" width="2030" height="546" alt="everyfin")
+      +e.IMG.phone.js-sr_32(src="assets/images/everyfin/phone.png" width="846" height="1177" alt="@@")
 
       .container.container_everyfin
         +b.everyfin-stickers
-          +e.card_small
+          +e.card_small.js-sr_8
             +e.IMG.image(src="assets/images/everyfin/brand-1.jpg" alt="@@")
-          +e.card_big
+          +e.card_big.js-sr_8
             +e.IMG.image(src="assets/images/everyfin/brand-2.jpg" alt="@@")
 
 

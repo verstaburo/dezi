@@ -63,6 +63,10 @@
     }
   }
 
+  .popup__scrollblock {
+    z-index: 2;
+  }
+
   .popup__close {
     // top: 50px;
     // left: 190px;

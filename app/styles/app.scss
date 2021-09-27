@@ -136,8 +136,8 @@ body {
   &_berguskati {
     max-width: none;
 
-    @include wRule(padding-left, (xl: 247, blg: 185, lg: 164, sm: 24));
-    @include wRule(padding-right, (xl: 247, blg: 185, lg: 164, sm: 24));
+    @include wRule(padding-left, (xl: 247, blg: 185, slg: 164, sm: 24));
+    @include wRule(padding-right, (xl: 247, blg: 185, slg: 164, sm: 24));
   }
 }
 
