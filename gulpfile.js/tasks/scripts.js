@@ -5,22 +5,24 @@ const webpack = require('webpack');
 
 const scriptsErrorHandler = errorHandler('Error in \'scripts\' task');
 
-module.exports = (watch = false) => {
-  return function(callback) { // eslint-disable-line
-    const webpackConfig = require('../../webpack.config')(watch); // eslint-disable-line global-require
+module.exports = (watch = false) => function (callback) { // eslint-disable-line
+  const webpackConfig = require('../../webpack.config')(watch); // eslint-disable-line global-require
 
-    return webpack(webpackConfig, (error, stats) => {
-      const jsonStats = stats.toJson();
-      if (jsonStats.errors.length) {
-        jsonStats.errors.forEach((message) => {
-          scriptsErrorHandler.call({ emit() { /* noop */ } }, { message });
+  return webpack(webpackConfig, (error, stats) => {
+    const jsonStats = stats.toJson();
+    if (jsonStats.errors.length) {
+      jsonStats.errors.forEach((message) => {
+        scriptsErrorHandler.call({
+          emit() {},
+        }, {
+          message,
         });
-      }
-      statsLogger(error, stats);
+      });
+    }
+    statsLogger(error, stats);
 
-      if (watch === false) {
-        callback();
-      }
-    });
-  };
+    if (watch === false) {
+      callback();
+    }
+  });
 };

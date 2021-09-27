@@ -1,6 +1,6 @@
 import isTouchDevice from 'is-touch-device';
 
-const $ = window.$;
+const { $ } = window;
 
 export default function contacts() {
   function removeMouse(callback) {

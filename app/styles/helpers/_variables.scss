@@ -21,6 +21,10 @@ $grid-col-width-12: $grid-container-width / 12; // Ширина одной ко�
 ); */
 $breakpoints: ('xxl': 1920px, 'xl': 1367px, 'lg': 1025px, 'md': 768px, 'sm': 480px, 'xs': 320px);
 
+$breakpoints2: ('xl': 1920px, 'blg': 1600px, 'lg': 1380px, 'slg': 1300px, 'md': 1025px, 'sm': 768px, 'xs': 320px);
+
+$breakBases: (xl: 1920, blg: 1440, lg: 1440, slg: 1280, md: 1024, sm: 375);
+
 // ##########
 // Цвета
 // ##########
@@ -122,14 +126,15 @@ $ease-main: .3s ease;
 // ##########
 // Шрифты
 // ##########
-$font-main: 'Montserrat', 'ProximaNova', Arial, sans-serif; // Основной шрифт сайта
-$font-second: 'Roboto', 'ProximaNova', Arial, sans-serif; // Дополнительный шрифт
-$font-third: 'Corbel', 'ProximaNova', Arial, sans-serif; // Дополнительный шрифт
-$font-4: 'Journal', 'ProximaNova', Arial, sans-serif; // Дополнительный шрифт
-$font-site: 'ProximaNova', Arial, sans-serif;
-$font-mebeles: 'Pragmatica', 'ProximaNova', Arial, sans-serif; // Шрифт для 4mebeles
-$font-cdc: 'Cabin', 'ProximaNova', Arial, sans-serif; // Шрифт для 4mebeles
-$font-archivo: 'Archivo', 'ProximaNova', Arial, sans-serif;
+$font-main: 'Montserrat', 'ProximaNova', arial, sans-serif; // Основной шрифт сайта
+$font-second: 'Roboto', 'ProximaNova', arial, sans-serif; // Дополнительный шрифт
+$font-third: 'Corbel', 'ProximaNova', arial, sans-serif; // Дополнительный шрифт
+$font-4: 'Journal', 'ProximaNova', arial, sans-serif; // Дополнительный шрифт
+$font-site: 'ProximaNova', arial, sans-serif;
+$font-mebeles: 'Pragmatica', 'ProximaNova', arial, sans-serif; // Шрифт для 4mebeles
+$font-cdc: 'Cabin', 'ProximaNova', arial, sans-serif; // Шрифт для 4mebeles
+$font-archivo: 'Archivo', 'ProximaNova', arial, sans-serif;
+$font-stolzl: 'Stolzl', 'ProximaNova', arial, sans-serif;
 
 // ########
 // Шрифты - размеры

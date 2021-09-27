@@ -1,7 +1,7 @@
 // https://kingsora.github.io/OverlayScrollbars
 import OverlayScrollbars from 'overlayscrollbars';
 
-const $ = window.$;
+const { $ } = window;
 
 export default function scrollbar() {
   $('.js-scrollbar').each((i, el) => {

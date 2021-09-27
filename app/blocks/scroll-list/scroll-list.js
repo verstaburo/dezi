@@ -1,4 +1,4 @@
-const $ = window.$;
+const { $ } = window;
 
 export default function scrollList() {
   const trig = $(document).find('[data-list-wrapper]');

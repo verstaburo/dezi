@@ -1,4 +1,4 @@
-const $ = window.$;
+const { $ } = window;
 
 function putBlockIntoSlot() {
   $('[data-target-slot]').each(function () {
@@ -15,11 +15,11 @@ function putBlockIntoSlot() {
       // получаем слот под нужное разрешение
       if (vw < window.globalOptions.sizes.xs && slots.filter('[data-slot-res="xs"]').length) {
         return res === 'xs';
-      } else if (vw < window.globalOptions.sizes.sm && slots.filter('[data-slot-res="sm"]').length) {
+      } if (vw < window.globalOptions.sizes.sm && slots.filter('[data-slot-res="sm"]').length) {
         return res === 'sm';
-      } else if (vw < window.globalOptions.sizes.md && slots.filter('[data-slot-res="md"]').length) {
+      } if (vw < window.globalOptions.sizes.md && slots.filter('[data-slot-res="md"]').length) {
         return res === 'md';
-      } else if (vw < window.globalOptions.sizes.lg && slots.filter('[data-slot-res="lg"]').length) {
+      } if (vw < window.globalOptions.sizes.lg && slots.filter('[data-slot-res="lg"]').length) {
         return res === 'lg';
       }
 

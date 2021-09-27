@@ -13,7 +13,7 @@ import autosize from 'autosize';
 // https://github.com/RobinHerbots/Inputmask
 // import Inputmask from 'inputmask';
 
-const $ = window.$;
+const { $ } = window;
 
 // export function selects() {
 //   /* eslint-disable no-unused-vars */

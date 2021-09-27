@@ -1,7 +1,7 @@
 import ScrollMagic from 'scrollmagic';
 import watch from '../../blocks/watch/watch';
 
-const $ = window.$;
+const { $ } = window;
 
 export default function watchAnimation() {
   function watchAnim() {

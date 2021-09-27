@@ -1,6 +1,6 @@
 // /* eslint-disable */
-const $ = window.$;
-const Blotter = window.Blotter;
+const { $ } = window;
+const { Blotter } = window;
 
 function a(a1, b1, c1, d1) {
   const e = 180 * (Math.atan2(d1 - b1, c1 - a1) / Math.PI);
@@ -37,6 +37,7 @@ export default class BlotterString {
     this._prepareBlotter();
     this.el.textEffect = this;
   }
+
   _setListeners() {
     const t = this;
     $(document).on('mousemove', t._handleMousemove);
@@ -46,6 +47,7 @@ export default class BlotterString {
       $(t.el).removeClass('is-loading');
     });
   }
+
   onRender() {
     const t = this;
     t.blotter.on('ready', () => {
@@ -76,11 +78,13 @@ export default class BlotterString {
       t._setInitialCenter();
     });
   }
+
   onDestroy() {
     const t = this;
     t.blotter.stop();
     $(t.container).empty();
   }
+
   getOption() {
     const t = this;
     const wW = $(window).width();
@@ -110,6 +114,7 @@ export default class BlotterString {
     };
     return option;
   }
+
   _prepareBlotter() {
     const t = this;
     $(t.el).addClass('is-loading');
@@ -130,6 +135,7 @@ export default class BlotterString {
     });
     t.onRender();
   }
+
   _blotterTexts() {
     const t = this;
     const texts = [];
@@ -158,6 +164,7 @@ export default class BlotterString {
     t.strings = textParam;
     return texts;
   }
+
   _setInitialCenter() {
     const t = this;
     const cW = $(t.container).width();
@@ -169,6 +176,7 @@ export default class BlotterString {
     const exY = (examplePosition.top + (eH / 2)) / cH;
     t._handleNewCenter(exX, exY);
   }
+
   _handleMousemove(evt) {
     const t = this;
     const cW = $(t.container).width();
@@ -177,6 +185,7 @@ export default class BlotterString {
     const e = evt.pageY / cH;
     t._handleNewCenter(d, e);
   }
+
   _handleTouchMove(evt) {
     const t = this;
     const cW = $(t.container).width();
@@ -185,6 +194,7 @@ export default class BlotterString {
     const e = evt.originalEvent.touches[0].pageY / cH;
     t._handleNewCenter(d, e);
   }
+
   _handleNewCenter(x, y) {
     const t = this;
     const cW = $(t.container).width();
@@ -201,6 +211,7 @@ export default class BlotterString {
       scope.material.uniforms.uOffset.value = m;
     });
   }
+
   update() {
     const t = this;
     $(t.el).addClass('is-loading');
@@ -208,7 +219,7 @@ export default class BlotterString {
     bt.stop();
     $.each(t.scopes, (i, scope) => {
       const scp = scope;
-      const text = scope.text;
+      const { text } = scope;
       const mt = scope.material;
       text.properties = t.getOption();
       text.needsUpdate = true;

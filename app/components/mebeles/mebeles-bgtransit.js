@@ -6,7 +6,10 @@ import {
   Power0,
 } from 'gsap/TweenMax';
 import ScrollMagic from 'scrollmagic';
-import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap';
+// import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap';
+import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
+
+ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
 
 const $ = window.$;
 
@@ -39,5 +42,3 @@ export default function mebelesBgMove() {
       .addTo(controller);
   }
 }
-
-/* eslint-enable */

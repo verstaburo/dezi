@@ -1,14 +1,17 @@
-/* eslint-disable */
-
+/* eslint-disable no-unused-vars */
 import {
   TweenMax,
   TimelineMax,
   Power0,
 } from 'gsap/TweenMax';
 import ScrollMagic from 'scrollmagic';
-import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap';
+// eslint-disable-next-line max-len
+// import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap';
+import { ScrollMagicPluginGsap } from 'scrollmagic-plugin-gsap';
 
-const $ = window.$;
+ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
+
+const { $ } = window;
 
 export default function venezia() {
   const controller = new ScrollMagic.Controller();
@@ -57,5 +60,3 @@ export default function venezia() {
       .addTo(controller);
   }
 }
-
-/* eslint-enable */

@@ -129,6 +129,20 @@ div {
   }
 }
 
+@mixin screen2($width, $type: max) {
+  @if map_has_key($breakpoints2, $width) {
+    $width: map_get($breakpoints2, $width);
+
+    @if $type==max {
+      $width: $width - 1px;
+    }
+
+    @media only screen and (#{$type}-width: $width) {
+      @content;
+    }
+  }
+}
+
 @mixin screenOrientation($orientation: portrait) {
   @media only screen and (orientation: $orientation) {
     @content;
@@ -248,6 +262,71 @@ div {
   width: 0;
   min-width: 100%;
   min-height: 100%;
+}
+
+/* Миксин для перевод в vw */
+@function pxtovw($value, $base: xl) {
+  $result: $value;
+
+  @if (type-of($value)=='number'and unit($value)=='') {
+    $result: ($value / map_get($breakBases, $base)) * 100vw;
+  }
+
+  @else if (type-of($value)=='list') {
+    $newValW: $value;
+
+    @for $i from 1 to length($value)+1 {
+      @if (type-of(nth($value, $i))=='number'and unit(nth($value, $i))=='') {
+        $newValW: set-nth($newValW, $i, (nth($value, $i) / map_get($breakBases, $base)) * 100vw);
+      }
+    }
+
+    $result: $newValW;
+  }
+
+  @return $result;
+}
+
+/*
+Миксин для адаптивных свойств
+@include rule(width, (xl: 100px, lg: 200px));
+@include rule(width, (sm: 500px), min); (для mobile-first)
+*/
+@mixin cRule($name, $pointsAndValues, $direction: max) {
+
+  @each $breakpoint,
+  $value in $pointsAndValues {
+    @if ($breakpoint==xl) and ($direction==max) {
+      #{$name}: #{$value};
+    }
+
+    @else {
+      @include screen('#{$breakpoint}', $direction) {
+        #{$name}: #{$value};
+      }
+    }
+  }
+}
+
+/*
+Миксин для адаптивных свойств (масштабируемых)
+@include rule(width, (xl: 100px, lg: 200px));
+@include rule(width, (sm: 500px), min); (для mobile-first)
+*/
+@mixin wRule($name, $pointsAndValues, $direction: max) {
+
+  @each $breakpoint,
+  $value in $pointsAndValues {
+    @if ($breakpoint==xl) and ($direction==max) {
+      #{$name}: #{pxtovw($value, xl)};
+    }
+
+    @else {
+      @include screen2('#{$breakpoint}', $direction) {
+        #{$name}: #{pxtovw($value, $breakpoint)};
+      }
+    }
+  }
 }
 
 /*

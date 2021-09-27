@@ -1,0 +1,10 @@
+extends ../../layouts/case
+
+block head
+  - var pageTitle = 'Dezi | Everyfin'
+
+block header
+  - var headerData = getData('headerAgrosyn.json')
+
+block content
+  +everyfin()(data-section="portfolio")

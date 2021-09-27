@@ -1,14 +1,13 @@
 /* eslint-disable no-restricted-syntax */
-import ResizeObserver from 'resize-observer-polyfill';
 
-const $ = window.$;
+const { $ } = window;
 
 export default function navigation() {
   window.pageSections = {};
 
   function updateSectionParam(el) {
     const name = el.getAttribute('data-section');
-    const top = $(el).position().top;
+    const { top } = $(el).position();
     const height = $(el).outerHeight(true);
     const bottom = top + height;
     window.pageSections[name] = {

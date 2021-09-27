@@ -1,0 +1,778 @@
+$berguskati-gold: #cb9866;
+$berguskati-text: #dde5ec;
+$berguskati-gray: #656f74;
+$berguskati-brown: #644b34;
+
+.berguskati {
+  display: block;
+  width: 100%;
+  font-family: $font-stolzl;
+  background-color: #1a2124;
+  color: $berguskati-text;
+
+  @include wRule(padding-bottom, (xl: 231, blg: 173, slg: 153, sm: 110));
+  @include wRule(margin-bottom, (xl: -2, blg: -2, slg: -2, sm: -2));
+
+  $b: &;
+}
+
+.berguskati-link {
+  position: relative;
+  display: inline-block;
+  color: $berguskati-gold;
+  font-weight: 400;
+  line-height: 1.2;
+
+  @include wRule(font-size, (xl: 22, blg: 16.5, slg: 14.6667, sm: 14.6667));
+
+  &::after {
+    @include pseudo;
+
+    @include wRule(width, (xl: 20, blg: 15, slg: 13.34, sm: 13.34));
+    @include wRule(height, (xl: 10, blg: 7.5, slg: 6.67, sm: 6.67));
+    @include wRule(top, (xl: -2, blg: -1.5, slg: -1.334, sm: -1.334));
+    background-image: url("data:image/svg+xml,%3Csvg width='11' height='11' viewBox='0 0 11 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 1H10V11' stroke='white' stroke-width='2'/%3E%3C/svg%3E%0A");
+    background-size: auto 100%;
+    background-position: 100% 50%;
+    background-repeat: no-repeat;
+    left: 100%;
+    transition: transform $ease-main;
+    transform: translate3d(0, 0, 0);
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      &::after {
+        transform: translate3d(-30%, 0, 0);
+      }
+    }
+  }
+}
+
+.berguskati-lead {
+  position: relative;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+
+  @include wRule(padding-top, (xl: 340, blg: 253, slg: 226, sm: 74));
+
+  .container {
+    display: grid;
+    grid-template-columns: pxtovw(492, xl) 1fr;
+    grid-template-rows: pxtovw(760, xl) auto 1fr;
+
+    @include screen2('blg') {
+      grid-template-columns: pxtovw(370, blg) 1fr;
+      grid-template-rows: pxtovw(572, blg) auto 1fr;
+    }
+
+    @include screen2('slg') {
+      grid-template-columns: pxtovw(328, slg) 1fr;
+      grid-template-rows: pxtovw(507, slg) auto 1fr;
+    }
+
+    @include screen2('sm') {
+      grid-template-rows: repeat(3, auto);
+      grid-template-columns: 100%;
+    }
+  }
+
+  &__title {
+    position: absolute;
+    font-weight: 700;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    line-height: 0.865;
+    background-image: url('../images/berguskati/bg.jpg');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    z-index: 1;
+
+    @include wRule(top, (xl: 34, blg: 26, slg: 22, sm: 137));
+    @include wRule(font-size, (xl: 224.216, blg: 168.162, slg: 149.477, sm: 48.8847));
+  }
+
+  &__link {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    z-index: 3;
+
+    @include screen2('sm') {
+      grid-row: 1 / 2;
+      text-align: center;
+    }
+  }
+
+  &__phones {
+    display: block;
+    grid-column: 2 / 3;
+    grid-row: 1 / 4;
+    z-index: 2;
+
+    @include wRule(width, (xl: 651, blg: 488, slg: 434, sm: 263));
+    @include wRule(height, (xl: 1255, blg: 941, slg: 837, sm: 507));
+
+    @include wRule(margin-left, (xl: -102, blg: -77, slg: -70, sm: auto));
+    @include wRule(margin-right, (sm: auto));
+    @include wRule(margin-top, (sm: 109));
+
+    @include screen2('sm') {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+    }
+
+    img {
+      display: block;
+      font-size: 0;
+      line-height: 0;
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__text {
+    display: block;
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+    z-index: 3;
+    line-height: 1.5;
+    font-weight: 400;
+
+    @include wRule(font-size, (xl: 22, blg: 16.5, slg: 15, sm: 15));
+
+    @include screen2('sm') {
+      grid-row: 3 / 4;
+      text-align: center;
+    }
+
+    &:not(:first-child) {
+      @include wRule(margin-top, (xl: 95, blg: 71, slg: 63, sm: -40));
+    }
+
+    p {
+      &:not(:first-child) {
+        margin-top: 1.4em;
+
+        @include screen2('slg') {
+          margin-top: 1.7em;
+        }
+      }
+    }
+  }
+}
+
+.berguskati-landing {
+  display: block;
+  width: 100%;
+
+  @include wRule(margin-top, (xl: 155, blg: 114, slg: 92, sm: 65));
+
+  .container {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  &__page {
+    display: block;
+    flex: 1;
+
+    @include screen2('sm') {
+      flex: none;
+      width: 100%;
+    }
+
+    &.hide-sm {
+      @include screen2('sm') {
+        display: none;
+      }
+    }
+
+    &.show-sm {
+      @include screen2('sm', min) {
+        display: none;
+      }
+    }
+
+    &_left {
+      @include wRule(padding-top, (xl: 90, blg: 68, slg: 60, sm: 0));
+    }
+
+    &_right {
+
+    }
+
+    &_mobile {
+      @include wRule(margin-top, (sm: 56));
+    }
+
+    &:not(:first-child) {
+      @include wRule(margin-left, (xl: 44, blg: 33, slg: 29, sm: 0));
+    }
+  }
+
+  &__description {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+
+    @include wRule(padding-left, (xl: 148, blg: 111, slg: 99, sm: 0));
+  }
+
+  &__logos {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    @include screen2('sm') {
+      justify-content: center;
+    }
+  }
+
+  &__logo {
+    @include wRule(width, (xl: 122, blg: 92, slg: 81, sm: 96));
+    @include wRule(height, (xl: 100, blg: 75, slg: 67, sm: 79));
+
+    &:not(:first-child) {
+      @include wRule(margin-left, (xl: 59, blg: 44, slg: 40, sm: 46));
+    }
+  }
+
+  &__text {
+    display: block;
+    width: 100%;
+    line-height: 1.5;
+    font-weight: 400;
+
+    @include wRule(font-size, (xl: 16, blg: 12, slg: 12, sm: 12));
+    @include wRule(margin-top, (xl: 62, blg: 47, slg: 42, sm: 0));
+
+    &.hide-sm {
+      @include screen2('sm') {
+        display: none;
+      }
+    }
+  }
+
+  &__info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    box-sizing: border-box;
+
+    @include wRule(padding-right, (xl: 12, blg: 7, slg: 8, sm: 0));
+  }
+
+  &__type {
+    color: $berguskati-brown;
+    line-height: 1.2;
+    font-weight: 400;
+
+    @include wRule(font-size, (xl: 13, blg: 9.75, slg: 8.66667, sm: 8.66667));
+
+    &:not(:last-child) {
+      @include wRule(margin-right, (xl: 66, blg: 52, slg: 46, sm: 46));
+    }
+  }
+
+  &__counter {
+    color: $berguskati-gray;
+    line-height: 1.2;
+    font-weight: 400;
+
+    @include wRule(font-size, (xl: 13, blg: 9.75, slg: 8.66667, sm: 8.66667));
+
+    .berguskati-landing__info & {
+      margin-left: auto;
+    }
+
+    .berguskati-landing__description & {
+      @include wRule(margin-top, (xl: 105, blg: 81, slg: 60, sm: 0));
+
+      @include screen2('sm') {
+        display: none;
+      }
+    }
+  }
+
+  &__page-screen {
+    display: block;
+    width: 100%;
+    font-size: 0;
+    line-height: 0;
+
+    @include wRule(border-radius, (xl: 10, blg: 7.5, slg: 6.6667, sm: 10));
+
+    &_left {
+      @include wRule(margin-top, (xl: 58, blg: 44, slg: 39, sm: 0));
+    }
+
+    &_right {
+      @include wRule(margin-top, (xl: 29, blg: 22, slg: 19, sm: 0));
+    }
+
+    &_mobile {
+      @include wRule(width, (sm: 237));
+
+      margin: 0 auto;
+      filter: drop-shadow(0px 1.37128px 17.141px rgba(0, 0, 0, 0.25));
+    }
+
+    &.hide-sm {
+      @include screen2('sm') {
+        display: none;
+      }
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      font-size: 0;
+      line-height: 0;
+
+      @include wRule(border-radius, (xl: 10, blg: 7.5, slg: 6.6667, sm: 10));
+    }
+  }
+}
+
+.berguskati-promo {
+  display: block;
+  width: 100%;
+
+  @include wRule(margin-top, (xl: 184, blg: 138, slg: 122, sm: 84));
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  &__title {
+    line-height: 1.2;
+    font-weight: 400;
+    color: $berguskati-gold;
+
+    @include wRule(font-size, (xl: 20, blg: 15, slg: 15, sm: 15));
+
+    @include screen2('sm') {
+      text-align: center;
+      width: 100%;
+    }
+  }
+
+  &__info {
+    line-height: 1.2;
+    font-weight: 400;
+    color: $berguskati-brown;
+
+    @include wRule(font-size, (xl: 13, blg: 9.75, slg: 10, sm: 8.66667));
+
+    &.hide-sm {
+      @include screen2('sm') {
+        display: none;
+      }
+    }
+  }
+
+  &__video {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+
+    @include ratio(1426, 784);
+    @include wRule(border-radius, (xl: 50, blg: 37.5, slg: 33.3333, sm: 0));
+    @include wRule(margin-top, (xl: 60, blg: 45, slg: 40, sm: 28));
+
+    @include screen2('sm') {
+      width: auto;
+      margin-left: pxtovw(-24, sm);
+      margin-right: pxtovw(-24, sm);
+
+      @include ratio(327, 205);
+    }
+
+    iframe {
+      @include fill-img;
+    }
+  }
+}
+
+.berguskati-statistic {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-start;
+  box-sizing: border-box;
+
+  @include wRule(margin-top, (xl: 123, blg: 92, slg: 82, sm: 84));
+  @include wRule(padding, (xl: 0 17, blg: 0 13, slg: 0 11, sm: 0));
+
+  @include screen2('sm') {
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    display: block;
+    text-align: center;
+    line-height: 1.2;
+    font-weight: 400;
+
+    @include screen2('sm') {
+      width: 100%;
+      order: 2;
+    }
+
+    &:nth-child(2) {
+      @include screen2('sm') {
+        order: 1;
+      }
+    }
+
+    &:not(:first-child) {
+      @include wRule(margin-left, (xl: 40, blg: 30, slg: 20, sm: 0));
+    }
+
+    &:not(:last-child) {
+      @include wRule(margin-bottom, (sm: 61));
+    }
+  }
+
+  &__name {
+    color: #fff;
+
+    @include wRule(font-size, (xl: 16, blg: 12, slg: 12, sm: 12));
+  }
+
+  &__data {
+    color: $berguskati-gold;
+
+    @include wRule(font-size, (xl: 70, blg: 52.5, slg: 46.6667, sm: 46.6667));
+    @include wRule(margin-top, (xl: 21, blg: 16, slg: 13, sm: 13));
+  }
+}
+
+.berguskati-instagramm {
+  display: block;
+  width: 100%;
+
+  @include wRule(margin-top, (xl: 223, blg: 167, slg: 148, sm: 104));
+
+  &__description {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    box-sizing: border-box;
+
+    @include wRule(min-height, (xl: 253, blg: 190, slg: 169, sm: 0));
+    @include wRule(padding-bottom, (xl: 40, blg: 30, slg: 20, sm: 0));
+
+    @include screen2('sm') {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  &__logo {
+    flex: none;
+
+    @include wRule(width, (xl: 68, blg: 51, slg: 45, sm: 45));
+    @include wRule(height, (xl: 68, blg: 51, slg: 45, sm: 45));
+  }
+
+  &__info {
+    display: block;
+    width: 100%;
+
+    @include wRule(max-width, (xl: 543, blg: 407, slg: 362, sm: none));
+
+    &:not(:first-child) {
+      @include wRule(margin-left, (xl: 79, blg: 59, slg: 53, sm: 0));
+      @include wRule(margin-top, (sm: 31));
+    }
+  }
+
+  &__title {
+    color: $berguskati-gold;
+    line-height: 1.2;
+    font-weight: 400;
+
+    @include wRule(font-size, (xl: 20, blg: 15, slg: 15, sm: 15));
+  }
+
+  &__text {
+    font-weight: 400;
+    line-height: 1.5;
+
+    @include wRule(font-size, (xl: 16, blg: 12, slg: 12, sm: 12));
+    @include wRule(margin-top, (xl: 37, blg: 28, slg: 23, sm: 31));
+  }
+}
+
+.berguskati-collage {
+  display: grid;
+  grid-template-columns: 1fr pxtovw(547, xl) 1fr pxtovw(246, xl);
+  grid-template-rows: pxtovw(253, xl) pxtovw(90, xl) auto pxtovw(87, xl) auto pxtovw(71, xl);
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  border: 0;
+  align-items: start;
+
+  @include wRule(margin-top, (xl: -234, blg: -177, slg: -158, sm: 60));
+  @include wRule(padding, (xl: 0 100, blg: 0 75, slg: 0 67, sm: 0));
+  @include wRule(column-gap, (xl: 45, blg: 32, slg: 28, sm: 21));
+  @include wRule(row-gap, (sm: 20));
+
+  @include screen2('blg') {
+    grid-template-columns: 1fr pxtovw(410, blg) 1fr pxtovw(185, blg);
+    grid-template-rows: pxtovw(190, blg) pxtovw(67, blg) auto pxtovw(65, blg) auto pxtovw(53, blg);
+  }
+
+  @include screen2('slg') {
+    grid-template-columns: 1fr pxtovw(365, slg) 1fr pxtovw(164, slg);
+    grid-template-rows: pxtovw(169, slg) pxtovw(60, slg) auto pxtovw(58, slg) auto pxtovw(47, slg);
+  }
+
+  @include screen2('sm') {
+    width: auto;
+    grid-template-columns: pxtovw(175, sm) pxtovw(242, sm);
+    grid-template-rows: pxtovw(63, sm) repeat(5, auto);
+    margin-left: pxtovw(-28, sm);
+  }
+
+  &__card {
+    position: relative;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+
+    @include wRule(border-radius, (xl: 50, blg: 37.5, slg: 33.3333, sm: 10));
+
+    &_1 {
+      grid-column: 1 / 2;
+      grid-row: 2 / 4;
+      justify-self: end;
+
+      @include wRule(height, (xl: 249, blg: 187, slg: 166, sm: 66));
+      @include wRule(width, (xl: 249, blg: 187, slg: 166, sm: 66));
+
+      @include screen2('sm') {
+        grid-column: 2 / 3;
+        grid-row: 4 / 5;
+        justify-self: start;
+      }
+    }
+
+    &_2 {
+      width: 100%;
+      grid-column: 1 / 2;
+      grid-row: 4 / 6;
+      padding-top: 100%;
+      align-self: start;
+
+      @include wRule(margin-top, (xl: 60, blg: 45, slg: 40, sm: 0));
+
+      @include screen2('sm') {
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+        padding-top: 0;
+        width: pxtovw(175, sm);
+        height: pxtovw(175, sm);
+        justify-self: start;
+      }
+    }
+
+    &_3 {
+      grid-column: 2 / 3;
+      grid-row: 2 / 7;
+      width: 100%;
+
+      @include wRule(height, (xl: 782, blg: 587, slg: 521, sm: 345));
+
+      @include screen2('sm') {
+        grid-column: 2 / 3;
+        grid-row: 1 / 3;
+      }
+    }
+
+    &_4 {
+      grid-column: 3 / 4;
+      grid-row: 1 / 5;
+
+      @include wRule(height, (xl: 595, blg: 446, slg: 396, sm: 262));
+
+      @include screen2('sm') {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+      }
+    }
+
+    &_5 {
+      grid-column: 3 / 4;
+      grid-row: 5 / 7;
+      width: 100%;
+      padding-top: 100%;
+      align-self: start;
+
+      @include wRule(margin-top, (xl: 45, blg: 33.75, slg: 30, sm: 0));
+
+      @include screen2('sm') {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+      }
+    }
+
+    &_6 {
+      grid-column: 4 / 5;
+      grid-row: 3 / 5;
+      width: 100%;
+
+      @include wRule(height, (xl: 246, blg: 185, slg: 164, sm: 108));
+
+      @include screen2('sm') {
+        grid-column: 1 / 2;
+        grid-row: 4 / 6;
+        width: pxtovw(108, sm);
+        justify-self: end;
+      }
+    }
+
+    img {
+      @include fill-img;
+      @include wRule(border-radius, (xl: 50, blg: 37.5, slg: 33.3333, sm: 10));
+    }
+  }
+}
+
+.berguskati-app {
+  display: block;
+  width: 100%;
+
+  @include wRule(margin-top, (xl: 222, blg: 166, slg: 148, sm: 65));
+
+  &__row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  &__landscape {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+
+    @include wRule(border-radius, (xl: 50, blg: 37.5, slg: 33.3333, sm: 0));
+    @include wRule(margin-bottom, (xl: 53, blg: 40, slg: 35, sm: 94));
+
+    @include ratio(1426, 785);
+
+    @include screen2('sm') {
+      width: 100vw;
+      margin-left: pxtovw(-24, sm);
+      margin-right: pxtovw(-24, sm);
+
+      @include ratio(327, 457);
+    }
+
+    img {
+      @include fill-img;
+    }
+  }
+
+  &__icons {
+    flex: 1;
+    background-color: #151b1e;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    @include wRule(padding, (xl: 109 0, blg: 82 0, slg: 73 0, sm: 51 0));
+    @include wRule(border-radius, (xl: 50, blg: 37.5, slg: 33.3333, sm: 23.2272));
+
+    @include screen2('sm') {
+      width: 100%;
+      flex: none;
+    }
+
+    img {
+      display: block;
+      font-size: 0;
+      line-height: 0;
+      @include wRule(width, (xl: 509, blg: 382, slg: 339, sm: 236));
+      @include wRule(height, (xl: 503, blg: 377, slg: 335, sm: 234));
+    }
+  }
+
+  &__app {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    flex: 1;
+
+    @include wRule(border-radius, (xl: 50, blg: 37.5, slg: 33.3333, sm: 23.2272));
+    @include wRule(margin-left, (xl: 44, blg: 33, slg: 29, sm: 0));
+    @include wRule(margin-top, (sm: 31));
+
+    @include screen2('sm') {
+      width: 100%;
+      flex: none;
+      height: pxtovw(335, sm);
+    }
+
+    img {
+      @include fill-img;
+    }
+  }
+
+  &__description {
+    display: block;
+    width: 100%;
+    text-align: center;
+
+    @include wRule(margin-top, (xl: 120, blg: 90, slg: 80, sm: 47));
+  }
+
+  &__text {
+    display: block;
+    color: #3a494f;
+    line-height: 1.5;
+    font-weight: 400;
+
+    @include wRule(font-size, (xl: 16, blg: 12, slg: 12, sm: 12));
+    @include wRule(max-width, (sm: 247));
+    @include cRule(margin, (sm: 0 auto));
+  }
+
+  &__title {
+    font-weight: 700;
+    line-height: .9;
+    background-image: url('../images/berguskati/bg.jpg');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    @include wRule(font-size, (xl: 100, blg: 75, slg: 66.6667, sm: 30));
+    @include wRule(margin-top, (xl: 40, blg: 30, slg: 25, sm: 52));
+  }
+
+  .berguskati-link {
+    @include wRule(margin-top, (xl: 80, blg: 60, slg: 53, sm: 49));
+  }
+}
