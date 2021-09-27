@@ -3,7 +3,8 @@ mixin berguskati()
     +b.SECTION.berguskati-lead
       .container.container_berguskati
         +e.H1.title BERGU SKATI <br> WEBSITE AND <br> ADVETISEMENT <br> CAMPAIGN
-        +b.A.berguskati-link(href="https://berguskati.lv") berguskati.lv
+        +e.link
+          +b.A.berguskati-link(href="https://berguskati.lv") berguskati.lv
         +e.text
           p Bergu Skati is a modern and luxurious private village located near Riga. Our client, Land & Home properties, wanted to reflect the huge potential of the freshly built settlement and show all its amazing features with a stylish and informative landing page.
           p After creating the landing page we engaged in an advertising campaign for the village, which resulted in the sale of almost all plots within 3 months.
@@ -12,21 +13,21 @@ mixin berguskati()
 
     +b.SECTION.berguskati-landing
       .container.container_berguskati
-        +e.logos
-          +e.IMG.logo(src="assets/images/berguskati/berguskati-logo-1.svg" width="90" height="74" alt="@@")
-          +e.IMG.logo(src="assets/images/berguskati/berguskati-logo-2.svg" width="91" height="75" alt="@@")
-        +e.text.hide-sm Bergu Skati consists of two village projects that differ in layout, lot size and price. Each of the villages has its own landing page to separate the target traffic and be more convenient for the potential buyer.
         +e.page_left.hide-sm
-          +e.page-description
+          +e.info
             +e.type Full HD 1920
             +e.type DESKTOP
             +e.counter 1 / 2
           +e.page-screen_left
             +e.IMG.screen(src="assets/images/berguskati/landing-1.jpg" alt="@@")
-        +e.page_right.hide-sm
-          +e.page-description
+        +e.page_right
+          +e.description
+            +e.logos
+              +e.IMG.logo(src="assets/images/berguskati/berguskati-logo-1.svg" width="90" height="74" alt="@@")
+              +e.IMG.logo(src="assets/images/berguskati/berguskati-logo-2.svg" width="91" height="75" alt="@@")
+            +e.text.hide-sm Bergu Skati consists of two village projects that differ in layout, lot size and price. Each of the villages has its own landing page to separate the target traffic and be more convenient for the potential buyer.
             +e.counter 2 / 2
-          +e.page-screen_left
+          +e.page-screen_right.hide-sm
             +e.IMG.screen(src="assets/images/berguskati/landing-2.jpg" alt="@@")
         +e.page_mobile.show-sm
           +e.page-screen_mobile
@@ -34,8 +35,11 @@ mixin berguskati()
 
     +b.SECTION.berguskati-promo
       .container.container_berguskati
-        +e.H3.title Advertising Campaign and SMM Styling
+        +e.head
+          +e.H3.title Advertising Campaign and SMM Styling
+          +e.info.hide-sm Youtube Ads Video
         +e.video
+          iframe.y-video(width="1904" height="800" src="https://www.youtube.com/embed/4dLx-O2bqn4?&autoplay=1&mute=1" title="YouTube video player" frameborder="0" allowfullscreen)
         +b.UL.berguskati-statistic
           +e.LI.item
             +e.name Impressions
@@ -58,19 +62,19 @@ mixin berguskati()
             +e.H3.title Instagram Styling
             +e.text We worked extensively on social media throughout the advertising campaign. We created a new image of the company on Instagram and caught the right mood to help sell properties.
 
-        +b.FIGURE.berguskati-collage
-          +e.card_1
-            +e.IMG(src="assets/images/berguskati/collage-1.jpg" alt="@@")
-          +e.card_2
-            +e.IMG(src="assets/images/berguskati/collage-2.jpg" alt="@@")
-          +e.card_3
-            +e.IMG(src="assets/images/berguskati/collage-3.jpg" alt="@@")
-          +e.card_4
-            +e.IMG(src="assets/images/berguskati/collage-4.jpg" alt="@@")
-          +e.card_5
-            +e.IMG(src="assets/images/berguskati/collage-5.jpg" alt="@@")
-          +e.card_6
-            +e.IMG(src="assets/images/berguskati/collage-6.jpg" alt="@@")
+      +b.FIGURE.berguskati-collage
+        +e.card_1
+          +e.IMG(src="assets/images/berguskati/collage-1.jpg" alt="@@")
+        +e.card_2
+          +e.IMG(src="assets/images/berguskati/collage-2.jpg" alt="@@")
+        +e.card_3
+          +e.IMG(src="assets/images/berguskati/collage-3.jpg" alt="@@")
+        +e.card_4
+          +e.IMG(src="assets/images/berguskati/collage-4.jpg" alt="@@")
+        +e.card_5
+          +e.IMG(src="assets/images/berguskati/collage-5.jpg" alt="@@")
+        +e.card_6
+          +e.IMG(src="assets/images/berguskati/collage-6.jpg" alt="@@")
 
     +b.SECTION.berguskati-app
       .container.container_berguskati
