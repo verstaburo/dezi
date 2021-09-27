@@ -1,17 +1,95 @@
+/* eslint-disable max-len */
 import * as THREE from 'three';
 import {
   TimelineMax,
 } from 'gsap';
-import fragment from './fragment.glsl';
-import vertex from './vertex.glsl';
+// import fragment from './fragment.glsl';
+// import vertex from './vertex.glsl';
 
 const { $ } = window;
 
+const vertex = `uniform float time;
+varying vec2 vUv;
+varying vec2 vUv1;
+varying vec4 vPosition;
+
+uniform sampler2D texture1;
+uniform sampler2D texture2;
+uniform vec2 pixels;
+uniform vec2 uvRate1;
+
+void main(){
+  vUv=uv;
+  vec2 _uv=uv-.5;
+  vUv1=_uv;
+  vUv1*=uvRate1.xy;
+
+  vUv1+=.5;
+
+  gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);
+}
+`;
+const fragment = `uniform float time;
+uniform float progress;
+uniform sampler2D texture1;
+uniform sampler2D texture2;
+uniform vec2 pixels;
+uniform vec2 uvRate1;
+uniform vec2 accel;
+
+varying vec2 vUv;
+varying vec2 vUv1;
+varying vec4 vPosition;
+
+vec2 mirrored(vec2 v){
+  vec2 m=mod(v,2.);
+  return mix(m,2.-m,step(1.,m));
+}
+
+float tri(float p){
+  return mix(p,1.-p,step(.5,p))*2.;
+}
+
+void main(){
+  vec2 uv=gl_FragCoord.xy/pixels.xy;
+
+  float p=progress;
+
+  float delayValue=p*7.-uv.y*2.+uv.x-2.;
+
+  delayValue=clamp(delayValue,0.,1.);
+
+  vec2 translateValue=p+delayValue*accel;
+  vec2 translateValue1=vec2(-.5,1.)*translateValue;
+  vec2 translateValue2=vec2(-.5,1.)*(translateValue-1.-accel);
+
+  vec2 w=sin(sin(time)*vec2(0,.3)+vUv.yx*vec2(0,4.))*vec2(0,.5);
+  vec2 xy=w*(tri(p)*.5+tri(delayValue)*.5);
+
+  vec2 uv1=vUv1+translateValue1+xy;
+  vec2 uv2=vUv1+translateValue2+xy;
+
+  vec4 rgba1=texture2D(texture1,mirrored(uv1));
+  vec4 rgba2=texture2D(texture2,mirrored(uv2));
+
+  vec4 rgba=mix(rgba1,rgba2,delayValue);
+  gl_FragColor=rgba;
+}
+`;
+
 export default class CanvasSlider {
   constructor(el) {
+    const textLoader = new THREE.TextureLoader();
+    textLoader.crossOrigin = 'Anonymous';
     this.el = $(el);
-    this.imgEl = $(this.el).find('img');
-    this.images = $(this.imgEl).map((ix, img) => $(img).attr('src')).get();
+    this.imgEl = $(this.el).find('img').toArray();
+    console.log(this.imgEl);
+    this.images = [];
+    this.imgEl.forEach((img) => {
+      const image = textLoader.load(`${img.getAttribute('src')}?v=${Date.now()}`);
+      this.images.push(image);
+    });
+    console.log(this.images);
     this.width = $(this.el).outerWidth();
     this.height = $(this.el).outerHeight();
     this.scene = new THREE.Scene();
@@ -24,13 +102,14 @@ export default class CanvasSlider {
       this.width / this.height,
       0.001, 100,
     );
+    // this.camera = new THREE.OrthographicCamera(this.width / -2, this.width / 2, this.height / 2, this.height / -2, 1, 1000);
     this.camera.position.set(0, 0, 1);
     this.currIndex = 0;
     this.maxIndex = this.images.length - 1;
     this.currSlider = this.images[this.currIndex];
     this.nextSlider = this.images[this.currIndex + 1];
     this.material = new THREE.ShaderMaterial({
-      side: THREE.DoubleSide,
+      // side: THREE.DoubleSide,
       uniforms: {
         time: {
           type: 'f',
@@ -52,10 +131,10 @@ export default class CanvasSlider {
           value: new THREE.Vector2(1, 1),
         },
         texture1: {
-          value: THREE.ImageUtils.loadTexture(this.currSlider),
+          value: this.currSlider,
         },
         texture2: {
-          value: THREE.ImageUtils.loadTexture(this.nextSlider),
+          value: this.nextSlider,
         },
       },
       // wireframe: true,
@@ -109,14 +188,14 @@ export default class CanvasSlider {
 
     if (w / h > 1) {
       that.plane.scale.x = w / h; // w / h;
-      // that.material.uniforms.uvRate1.value.x = 1;
-      // that.material.uniforms.uvRate1.value.y = h / w;
-      // } else {
-      //   that.plane.scale.y = h / w;
-      //   that.plane.scale.x = 1;
+      // // that.material.uniforms.uvRate1.value.x = 1;
+      // // that.material.uniforms.uvRate1.value.y = h / w;
+      // // } else {
+      // //   that.plane.scale.y = h / w;
+      // //   that.plane.scale.x = 1;
       that.material.uniforms.uvRate1.value.y = h / w;
-      //   // that.material.uniforms.uvRate1.value.y = 1;
-      // }
+      // //   // that.material.uniforms.uvRate1.value.y = 1;
+      // // }
     } else {
       that.plane.scale.y = h / w;
       that.material.uniforms.uvRate1.value.x = w / h;
@@ -196,9 +275,9 @@ export default class CanvasSlider {
         onComplete() {
           // that.play();
           if (val === 0) {
-            that.material.uniforms.texture2.value = THREE.ImageUtils.loadTexture(that.nextSlider);
+            that.material.uniforms.texture2.value = that.nextSlider;
           } else {
-            that.material.uniforms.texture1.value = THREE.ImageUtils.loadTexture(that.nextSlider);
+            that.material.uniforms.texture1.value = that.nextSlider;
           }
         },
       });

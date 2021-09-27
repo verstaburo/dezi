@@ -31,6 +31,7 @@
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-loader": "^4.0.0",
     "eslint-plugin-import": "^2.0.0",
+    "gift": "^0.10.2",
     "gsap": "^2.1.2",
     "gulp": "^4.0.0",
     "gulp-cached": "^1.1.0",
@@ -97,5 +98,8 @@
   "peerDependencies": {
     "gulp-postcss": "^9.0.0",
     "postcss": "^8.2.6"
+  },
+  "resolutions": {
+    "gift": "^0.10.2"
   }
 }

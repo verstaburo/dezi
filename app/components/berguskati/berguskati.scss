@@ -386,6 +386,7 @@ $berguskati-brown: #644b34;
     overflow: hidden;
     width: 100%;
     position: relative;
+    pointer-events: none;
 
     @include ratio(1426, 784);
     @include wRule(border-radius, (xl: 50, blg: 37.5, slg: 33.3333, sm: 0));
