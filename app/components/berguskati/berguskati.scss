@@ -128,6 +128,18 @@ $berguskati-bg: #1a2124;
       @include ratio(375, 172);
     }
 
+    &::after {
+      @include pseudo;
+
+      box-shadow: 0 0 6px 6px $berguskati-bg;
+      box-sizing: border-box;
+      top: 1px;
+      left: 1px;
+      right: 1px;
+      bottom: 1px;
+      z-index: 3;
+    }
+
     img {
       @include fill-img;
 
@@ -141,6 +153,10 @@ $berguskati-bg: #1a2124;
     left: 0;
     width: 100%;
     height: 100%;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    margin: 0;
     z-index: 2;
 
     #alpha1 {
@@ -149,6 +165,7 @@ $berguskati-bg: #1a2124;
 
     #base1 {
       fill: $berguskati-bg;
+      stroke: $berguskati-bg;
       mask: url(#mask1);
     }
   }
@@ -853,6 +870,18 @@ $berguskati-bg: #1a2124;
     @include wRule(width, (xl: 1096, blg: 822, slg: 731, sm: 319));
     @include wRule(height, (xl: 196, blg: 148, slg: 132, sm: 60));
 
+    &::after {
+      @include pseudo;
+
+      box-shadow: 0 0 4px 4px $berguskati-bg;
+      box-sizing: border-box;
+      top: 1px;
+      left: 1px;
+      right: 1px;
+      bottom: 1px;
+      z-index: 3;
+    }
+
     img {
       @include fill-img;
 
@@ -866,14 +895,21 @@ $berguskati-bg: #1a2124;
     left: 0;
     width: 100%;
     height: 100%;
+    box-shadow: 0 0 1px 1px $berguskati-bg;
     z-index: 2;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    margin: 0;
 
     #alpha2 {
       fill: rgba(255, 255, 255, 1);
+      stroke: rgba(255, 255, 255, 1);
     }
 
     #base2 {
       fill: $berguskati-bg;
+      stroke: $berguskati-bg;
       mask: url(#mask2);
     }
   }
