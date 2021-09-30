@@ -2,7 +2,20 @@ mixin berguskati()
   +b.berguskati&attributes(attributes)
     +b.SECTION.berguskati-lead
       .container.container_berguskati
-        +e.H1.title.js-sr_14 BERGU SKATI <br> WEBSITE AND <br> ADVETISEMENT <br> CAMPAIGN
+        +e.H1.title-bg.js-sr_14
+          img.js-berguskati-paralax1(src="assets/images/berguskati/bg.jpg" alt='@@')
+          +e.SVG.title-text(xmlns="http://www.w3.org/2000/svg")
+            defs
+              mask#mask1(x="0" y="0" width="100%" height="100%")
+                rect#alpha1(x="0" y="0" width="100%" height="100%")
+                +e.G.title-line
+                  +e.TEXT(x="50%" y="0" dy="0.865em") BERGU SKATI
+                  +e.TEXT(x="50%" y="0" dy="1.73em") WEBSITE AND
+                  +e.TEXT(x="50%" y="0" dy="2.595em") ADVETISEMENT
+                  +e.TEXT(x="50%" y="0" dy="3.46em") CAMPAIGN
+            rect#base1(x="0" y="0" width="100%" height="100%")
+
+        //- +e.H1.title.js-sr_14 BERGU SKATI <br> WEBSITE AND <br> ADVETISEMENT <br> CAMPAIGN
         +e.link.js-sr_10
           +b.A.berguskati-link(href="https://berguskati.lv") berguskati.lv
         +e.text.js-sr_2
@@ -88,7 +101,17 @@ mixin berguskati()
 
         +e.description
           +e.text.js-sr_1 While working on the project, one thought never left us:
-          +e.H3.title.js-sr_2 After all, the best is <br> yet to come!
+          //- +e.H3.title.js-sr_2 After all, the best is <br> yet to come!
+          +e.H3.title-bg.js-sr_2
+            img.js-berguskati-paralax2(src="assets/images/berguskati/bg.jpg" alt='@@')
+            +e.SVG.title-text(xmlns="http://www.w3.org/2000/svg")
+              defs
+                mask#mask2(x="0" y="0" width="100%" height="100%")
+                  rect#alpha2(x="0" y="0" width="100%" height="100%")
+                  +e.G.title-line
+                    +e.TEXT(x="50%" y="0" dy="0.9em") After all, the best is
+                    +e.TEXT(x="50%" y="0" dy="1.8em") yet to come!
+              rect#base2(x="0" y="0" width="100%" height="100%")
           +b.A.berguskati-link.js-sr_3(href="https://berguskati.lv") berguskati.lv
 
 

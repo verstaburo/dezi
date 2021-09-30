@@ -1,28 +1,58 @@
-// export default function BerguskatiVideo() {
-//   const video = document.querySelector('#y-video');
+/* eslint-disable no-unused-vars */
+import {
+  TweenMax,
+  TimelineMax,
+  Power0,
+} from 'gsap/TweenMax';
+import ScrollMagic from 'scrollmagic';
+import { ScrollMagicPluginGsap } from 'scrollmagic-plugin-gsap';
 
-//   if (video) {
-//     const tag = document.createElement('script');
-//     tag.src = 'https://www.youtube.com/iframe_api';
-//     const firstScriptTag = document.getElementsByTagName('script')[0];
-//     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
 
-//     const player = null;
+const { $ } = window;
 
-//     function onYouTubeIframeAPIReady() {
-//       player = new YT.Player('y-video', {
-//         playerVars: {
-//           autoplay: 1,
-//           controls: 0,
-//         },
-//         events: {
-//           onReady: onPlayerReady,
-//         },
-//       });
-//     }
+export default function berguskati() {
+  const controller = new ScrollMagic.Controller();
+  const bgskTop = document.querySelector('.berguskati-lead');
+  const bgskBottom = document.querySelector('.berguskati-app__description');
 
-//     function onPlayerReady(event) {
-//       event.target.playVideo();
-//     }
-//   }
-// }
+  if (bgskTop) {
+    const anim = new TimelineMax()
+      .add([
+        TweenMax.fromTo('.js-berguskati-paralax1', 1, {
+          y: '15%',
+        }, {
+          y: '-15%',
+          ease: Power0.easeNone,
+        }),
+      ]);
+
+    const scene = new ScrollMagic
+      .Scene({
+        triggerElement: '.berguskati-lead',
+        duration: $(window).height(),
+      })
+      .setTween(anim)
+      .addTo(controller);
+  }
+
+  if (bgskBottom) {
+    const anim = new TimelineMax()
+      .add([
+        TweenMax.fromTo('.js-berguskati-paralax2', 1, {
+          y: '10%',
+        }, {
+          y: '-10%',
+          ease: Power0.easeNone,
+        }),
+      ]);
+
+    const scene = new ScrollMagic
+      .Scene({
+        triggerElement: '.berguskati-app__description',
+        duration: $(window).height(),
+      })
+      .setTween(anim)
+      .addTo(controller);
+  }
+}

@@ -36,6 +36,7 @@ import mebelesSlider from '../components/mebeles/mebeles-slider';
 import mebelesBgMove from '../components/mebeles/mebeles-bgtransit';
 import logoChangeWords from '../blocks/logo/logo';
 import UserTrap from '../blocks/user-trap/user-trap';
+import berguskati from '../components/berguskati/berguskati';
 
 const { $ } = window;
 
@@ -71,5 +72,6 @@ $(() => {
   mebelesSlider();
   mebelesBgMove();
   logoChangeWords();
+  berguskati();
   UserTrap();
 });

@@ -2,12 +2,13 @@ $berguskati-gold: #cb9866;
 $berguskati-text: #dde5ec;
 $berguskati-gray: #656f74;
 $berguskati-brown: #644b34;
+$berguskati-bg: #1a2124;
 
 .berguskati {
   display: block;
   width: 100%;
   font-family: $font-stolzl;
-  background-color: #1a2124;
+  background-color: $berguskati-bg;
   color: $berguskati-text;
 
   @include wRule(padding-bottom, (xl: 231, blg: 173, slg: 153, sm: 110));
@@ -97,6 +98,64 @@ $berguskati-brown: #644b34;
 
     @include wRule(top, (xl: 34, blg: 26, slg: 22, sm: 137));
     @include wRule(font-size, (xl: 224.216, blg: 168.162, slg: 149.477, sm: 48.8847));
+  }
+
+  &__title-bg {
+    position: absolute;
+    font-weight: 700;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    line-height: 0.865;
+    overflow: hidden;
+    box-shadow: 0 0 1px 1px $berguskati-bg;
+
+    @include wRule(top, (xl: 34, blg: 26, slg: 22, sm: 137));
+    @include wRule(font-size, (xl: 224.216, blg: 168.162, slg: 149.477, sm: 48.8847));
+
+    @include ratio(1920, 791);
+
+    @include screen2('blg') {
+      @include ratio(1440, 593);
+    }
+
+    @include screen2('slg') {
+      @include ratio(1280, 527);
+    }
+
+    @include screen2('sm') {
+      @include ratio(375, 172);
+    }
+
+    img {
+      @include fill-img;
+
+      z-index: 0;
+    }
+  }
+
+  &__title-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+
+    #alpha1 {
+      fill: rgba(255, 255, 255, 1);
+    }
+
+    #base1 {
+      fill: $berguskati-bg;
+      mask: url(#mask1);
+    }
+  }
+
+  &__title-line {
+    font-weight: 700;
+    text-anchor: middle;
   }
 
   &__link {
@@ -775,5 +834,51 @@ $berguskati-brown: #644b34;
 
   .berguskati-link {
     @include wRule(margin-top, (xl: 80, blg: 60, slg: 53, sm: 49));
+  }
+
+  &__title-bg {
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    display: block;
+    font-weight: 700;
+    line-height: .9;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0 1px 1px $berguskati-bg;
+
+    @include wRule(font-size, (xl: 100, blg: 75, slg: 66.6667, sm: 30));
+    @include wRule(margin-top, (xl: 40, blg: 30, slg: 25, sm: 52));
+    @include wRule(width, (xl: 1096, blg: 822, slg: 731, sm: 319));
+    @include wRule(height, (xl: 196, blg: 148, slg: 132, sm: 60));
+
+    img {
+      @include fill-img;
+
+      z-index: 0;
+    }
+  }
+
+  &__title-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+
+    #alpha2 {
+      fill: rgba(255, 255, 255, 1);
+    }
+
+    #base2 {
+      fill: $berguskati-bg;
+      mask: url(#mask2);
+    }
+  }
+
+  &__title-line {
+    font-weight: 700;
+    text-anchor: middle;
   }
 }

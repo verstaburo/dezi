@@ -98,7 +98,7 @@ export default function CanvasSlider2(prnt, imgs, canvas) {
   loader.crossOrigin = 'anonymous';
 
   images.forEach((img) => {
-    image = loader.load(`${img.getAttribute('src')}?v=${Date.now()}`);
+    image = loader.load(img.getAttribute('src'));
     sliderImages.push(image);
   });
 
