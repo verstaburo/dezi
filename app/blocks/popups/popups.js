@@ -1,5 +1,6 @@
 // http://fancyapps.com/fancybox/3/
 import '@fancyapps/fancybox';
+import CanvasSlider2 from '../slider/CanvasSlider2';
 
 import {
   freeze,
@@ -12,15 +13,6 @@ export default function popups() {
   const bp = window.globalOptions.sizes;
 
   const fancyOpts = {
-    beforeShow() {
-      $(this.src).find('.js-bg-slider').each(() => {
-        const wW = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-
-        if (window.globalFunctions.shaderSlider && wW >= bp.md) {
-          window.globalFunctions.shaderSlider.play();
-        }
-      });
-    },
     afterLoad() {
       freeze();
       $(this.src).addClass('is-animate');
@@ -28,6 +20,19 @@ export default function popups() {
         if (el.swiper !== undefined) {
           el.swiper.update();
           el.swiper.autoplay.start();
+        }
+      });
+      $(this.src).find('.js-bg-slider').each((i, el) => {
+        const wW = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+        window.globalFunctions.shaderSlider.stop();
+
+        if (window.globalFunctions.shaderSlider && wW >= bp.md) {
+          const images = el.querySelectorAll('img');
+          const desk = el.querySelector('canvas');
+          if (images) {
+            CanvasSlider2(el, images, desk);
+          }
+          window.globalFunctions.shaderSlider.play();
         }
       });
     },
