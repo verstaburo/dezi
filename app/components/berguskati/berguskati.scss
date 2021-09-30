@@ -455,6 +455,7 @@ $berguskati-bg: #1a2124;
       width: auto;
       margin-left: pxtovw(-24, sm);
       margin-right: pxtovw(-24, sm);
+      pointer-events: auto;
 
       @include ratio(327, 205);
     }
