@@ -13,11 +13,11 @@ export default function popups() {
 
   const fancyOpts = {
     beforeShow() {
-      $(this.src).find('.js-bg-slider').each((i, el) => {
+      $(this.src).find('.js-bg-slider').each(() => {
         const wW = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 
-        if (el.wglslider !== undefined && wW >= bp.md) {
-          el.wglslider.play();
+        if (window.globalFunctions.shaderSlider && wW >= bp.md) {
+          window.globalFunctions.shaderSlider.play();
         }
       });
     },
@@ -43,9 +43,9 @@ export default function popups() {
           el.swiper.autoplay.stop();
         }
       });
-      $(this.src).find('.js-bg-slider').each((i, el) => {
-        if (el.wglslider !== undefined) {
-          el.wglslider.stop();
+      $(this.src).find('.js-bg-slider').each(() => {
+        if (window.globalFunctions.shaderSlider) {
+          window.globalFunctions.shaderSlider.stop();
         }
       });
     },

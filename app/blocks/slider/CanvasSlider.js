@@ -92,18 +92,23 @@ export default class CanvasSlider {
     console.log(this.images);
     this.width = $(this.el).outerWidth();
     this.height = $(this.el).outerHeight();
-    this.scene = new THREE.Scene();
-    this.renderer = new THREE.WebGLRenderer();
-    this.renderer.setPixelRatio(window.devicePixelRatio || 1);
+    this.renderer = new THREE.WebGLRenderer({
+      antialias: false,
+    });
+    this.renderer.setPixelRatio(window.devicePixelRatio);
     this.renderer.setSize(this.width, this.height);
     $(this.el).append(this.renderer.domElement);
-    this.camera = new THREE.PerspectiveCamera(
-      70,
-      this.width / this.height,
-      0.001, 100,
+    this.camera = new THREE.OrthographicCamera(
+      this.width / -2,
+      this.width / 2,
+      this.height / 2,
+      this.height / -2,
+      1,
+      1000,
     );
+    this.scene = new THREE.Scene();
     // this.camera = new THREE.OrthographicCamera(this.width / -2, this.width / 2, this.height / 2, this.height / -2, 1, 1000);
-    this.camera.position.set(0, 0, 1);
+    this.camera.position.z = 1;
     this.currIndex = 0;
     this.maxIndex = this.images.length - 1;
     this.currSlider = this.images[this.currIndex];
@@ -138,12 +143,17 @@ export default class CanvasSlider {
         },
       },
       // wireframe: true,
-      depthWrite: false,
-      needsUpdate: true,
+      // depthWrite: false,
+      // needsUpdate: true,
       vertexShader: vertex,
       fragmentShader: fragment,
     });
-    this.plane = new THREE.Mesh(new THREE.PlaneGeometry(1, 1, 1, 1), this.material);
+    const geometry = new THREE.PlaneBufferGeometry(
+      this.el.offsetWidth,
+      this.el.offsetHeight,
+      1,
+    );
+    this.plane = new THREE.Mesh(geometry, this.material);
     this.scene.add(this.plane);
     this.time = 0;
     this.animate = this.animate.bind(this);

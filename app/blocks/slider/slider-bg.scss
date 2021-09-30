@@ -4,6 +4,8 @@
 
   &__image {
     @include fill-img;
+
+    visibility: hidden;
   }
 
   canvas {
