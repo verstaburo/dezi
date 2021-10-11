@@ -15,7 +15,7 @@ module.exports = () => (
   .pipe(changed('dist/assets/images'))
   .pipe(imagemin([
     imageminJpegtran({
-      quality: 80,
+      quality: 100,
       progressive: true,
     }),
     imagemin.gifsicle(),
