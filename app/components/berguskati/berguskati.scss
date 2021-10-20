@@ -724,10 +724,23 @@ $berguskati-bg: #1a2124;
     )
   );
 
+  .container_berguskati {
+    @include screen2("sm") {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
   &__head {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+    box-sizing: border-box;
+    width: 100%;
+
+    @include screen2("sm") {
+      padding: 0 pxtovw(24, sm);
+    }
   }
 
   &__title {
@@ -804,7 +817,7 @@ $berguskati-bg: #1a2124;
     @include screen2("sm") {
       width: 100vw;
       height: 56.25vw;
-      margin-left: pxtovw(-24, sm);
+      // margin-left: pxtovw(-24, sm);
       pointer-events: auto;
       padding-top: 0;
     }
@@ -816,6 +829,7 @@ $berguskati-bg: #1a2124;
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: 50% 50%;
 
       @include wRule(
         border-radius,
@@ -852,7 +866,7 @@ $berguskati-bg: #1a2124;
       xl: 0 17,
       blg: 0 13,
       slg: 0 11,
-      sm: 0,
+      sm: 0 24,
     )
   );
 
